@@ -6,6 +6,12 @@ public class GridSystem : MonoBehaviour
 {
     [SerializeField] private GameObject gridSpace;
     [SerializeField] private LayerMask layerMask;
+   
+    
+    /*
+      Tittar konstant efter ändringar även när musen är still.
+      Längre fram kan det vara bra att lägga grid-positioner i en dictionary med rutnäts kordinater.
+    */
     void OnMouseOver()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
