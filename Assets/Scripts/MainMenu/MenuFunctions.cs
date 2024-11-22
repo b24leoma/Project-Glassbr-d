@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonAction : MonoBehaviour
+public class MenuFunctions : MonoBehaviour
 {
     [SerializeField] private Animator settingsAnimator;
     private void Start()
@@ -10,15 +10,15 @@ public class ButtonAction : MonoBehaviour
         
     }
 
-    public void PlayGame()
+    public void PlayIntro()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("IntroHistoryBook");
     }
     public void QuitGame()
     {
-    #if UNITY_EDITOR
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-    #endif
+        #endif
         Application.Quit();
     }
 
@@ -30,5 +30,10 @@ public class ButtonAction : MonoBehaviour
     public void CloseSettings()
     {
         settingsAnimator.SetBool("isOpen",false);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
