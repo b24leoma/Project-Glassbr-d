@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c866539a2bb5664c806ecb53ebf3df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 1d6482047d2122d4a850ff9666851c59, type: 2}
   audioMixerParameter: 
   slider: {fileID: 0}
   sliderValueText: {fileID: 0}
@@ -2315,9 +2315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c866539a2bb5664c806ecb53ebf3df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 92f3d335495bcfb429a1dde243c92068, type: 2}
   audioMixerParameter: 
-  slider: {fileID: 0}
+  slider: {fileID: 256174499}
   sliderValueText: {fileID: 0}
   valueScaleType: 0
 --- !u!1 &1092998905
@@ -3729,9 +3729,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c866539a2bb5664c806ecb53ebf3df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: bd30df7295263214ca97cc539106b44f, type: 2}
   audioMixerParameter: 
-  slider: {fileID: 0}
+  slider: {fileID: 1092998907}
   sliderValueText: {fileID: 0}
   valueScaleType: 0
 --- !u!1 &2141741818
