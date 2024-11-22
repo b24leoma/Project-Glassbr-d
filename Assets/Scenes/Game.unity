@@ -127,6 +127,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5703230295739524390, guid: 1f4cbf595f6f8c04fac7e636ccc4d3af, type: 3}
   m_PrefabInstance: {fileID: 295875978}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &225191134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1940892494966905724, guid: 1f4cbf595f6f8c04fac7e636ccc4d3af, type: 3}
+  m_PrefabInstance: {fileID: 1541413299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &295875978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -543,10 +548,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -1383,6 +1388,10 @@ PrefabInstance:
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8488913910846815499, guid: 1f4cbf595f6f8c04fac7e636ccc4d3af, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 225191134}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
