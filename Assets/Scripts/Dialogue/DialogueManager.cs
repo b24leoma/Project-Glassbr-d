@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     
     private Queue<string> sentences = new Queue<string>();
     public Animator animator;
+    public UnityEvent WhenComplete;
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -49,7 +51,8 @@ public class DialogueManager : MonoBehaviour
     {
         StopAllCoroutines();
         
-//        animator.SetBool("isOpen", false);
+        //        animator.SetBool("isOpen", false);
+        WhenComplete?.Invoke();
         Debug.Log("Ending conversation");
     }
 }
