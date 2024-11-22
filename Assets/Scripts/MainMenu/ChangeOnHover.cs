@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuStuff : MonoBehaviour
+public class ChangeOnHover : MonoBehaviour
 {
     public void PlayGame()
     {
@@ -13,5 +13,15 @@ public class MenuStuff : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
     #endif
         Application.Quit();
+    }
+
+    public void OpenSettings()
+    {
+        
+    }
+
+    public void CloseSettings()
+    {
+        
     }
 }

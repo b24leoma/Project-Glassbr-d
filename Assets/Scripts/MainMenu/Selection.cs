@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class MenuSelection : MonoBehaviour
+public class Selection : MonoBehaviour
 {
     private int selection;
     [SerializeField] private List<Button> buttons;
