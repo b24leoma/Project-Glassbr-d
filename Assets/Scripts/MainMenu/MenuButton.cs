@@ -16,6 +16,6 @@ public class MenuButton : MonoBehaviour
 
     public void MouseEnter(int selection) //https://discussions.unity.com/t/solve-onmouseenter-not-working-on-ui-elements/142738
     {
-        menuSelect.GetComponent<MenuSelection>().ChangeSelection(selection);
+        menuSelect.GetComponent<Selection>().ChangeSelection(selection);
     }
 }
