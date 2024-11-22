@@ -1,8 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeOnHover : MonoBehaviour
+public class ButtonAction : MonoBehaviour
 {
+    [SerializeField] private Animator settingsAnimator;
+    private void Start()
+    {
+        
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Game");
@@ -17,11 +24,11 @@ public class ChangeOnHover : MonoBehaviour
 
     public void OpenSettings()
     {
-        
+        settingsAnimator.SetBool("isOpen",true);
     }
 
     public void CloseSettings()
     {
-        
+        settingsAnimator.SetBool("isOpen",false);
     }
 }

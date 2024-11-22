@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 
-public class MenuButton : MonoBehaviour
+public class OnHoverSelection : MonoBehaviour
 {
     [SerializeField] private Transform menuSelect;
     private TextMeshProUGUI textMesh;
