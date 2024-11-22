@@ -33,13 +33,19 @@ public class AudioSlider : MonoBehaviour
 
         // Logarithmic to linear
         slider.value = Mathf.Pow(10, (previousValue / 20));
-
-       SetText(slider.value);
+        if (sliderValueText != null)
+        {
+            SetText(slider.value);
+        }
+       
     }
 
     public void SetLevel(float sliderValue)
     {
-        SetText(sliderValue);
+        if (sliderValueText != null)
+        {
+            SetText(sliderValue);
+        }
 
         // Make sure code doesn't break by setting very low values to the minimum db manually instead of doing the math
         if (sliderValue < 0.0001f)
