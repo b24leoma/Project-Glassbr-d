@@ -8,6 +8,7 @@ public class Demon : Entity
     void Start()
     {
         isHuman = false;
+        Range = 2.3f;
     }
 
     // Update is called once per frame

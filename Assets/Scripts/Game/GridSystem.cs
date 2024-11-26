@@ -11,6 +11,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private Transform entityParent;
     [SerializeField] private GameObject human;
     [SerializeField] private GameObject demon;
+    [SerializeField] private LineRenderer pathLine;
     private Dictionary<Vector2, Tile> tiles;
     private Vector3 size;
     private Entity highligtedEntity;
@@ -26,7 +27,8 @@ public class GridSystem : MonoBehaviour
         tilemap = GetComponent<Tilemap>();
         tiles = new Dictionary<Vector2, Tile>();
         characters = new List<Entity>();
-       size = GetComponent<Tilemap>().size;
+        size = GetComponent<Tilemap>().size;
+        
         size.x = size.x / 2 - 0.5f;
         size.y = size.y / 2 - 0.5f;
         for (int i = -(int)size.x; i <= size.x; i++)
@@ -40,6 +42,7 @@ public class GridSystem : MonoBehaviour
         Debug.Log(tiles.Count);
         CreateEntity(Vector2.zero, true);
         CreateEntity(new Vector2(3,0), false);
+        CreateEntity(new Vector2(2,1), false);
     }
 
     void CreateEntity(Vector2 pos, bool isHuman)
@@ -57,103 +60,98 @@ public class GridSystem : MonoBehaviour
         if (context.started)
         {
             Entity e = tiles[hoveredTile].linkedEntity;
-            if (e != null && e.isHuman)
+            if (e != null)
             {
-                    selectPos = hoveredTile;
+                if (e.isHuman)
+                {
                     isMoving = true;
-                        
+                    pathLine.positionCount = 1;
+                    pathLine.SetPosition(0, new Vector3(selectPos.x - 0.5f, selectPos.y - 0.5f, -5f));
+                }
+                    selectPos = hoveredTile;
+                    tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0),
+                        new Color(0.5f, 0.5f, 0.5f));
             }
         }
         else if (context.canceled && isMoving)
         {
             isMoving = false;
-            if (hoveredTile == selectPos) return;
+            if (hoveredTile == selectPos || tiles[hoveredTile].linkedEntity != null) return;
 
-            if (validHoveredTile)
+            if (validHoveredTile && Vector2.Distance(hoveredTile, highligtedEntity.Position - new Vector2(-0.5f,-0.5f)) < highligtedEntity.Range)
             {
+                HighlightSquaresInRange(highligtedEntity, Color.white);
                 MoveUnit(selectPos, hoveredTile);
                 Debug.Log(selectPos + "->" + hoveredTile);
-                for (int i = -(int)size.x; i <= size.x; i++)
-                {
-                    for (int j = -(int)size.y; j <= size.y; j++)
-                    {
-                        tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), Color.white);   
-                    }
-                }
+                HighlightSquaresInRange(highligtedEntity, new Color(0.8f,0.8f,0.8f));
             }
             isMoving = false;
-            tilemap.SetColor(new Vector3Int(selectPos.x-1, selectPos.y-1, 0), Color.white);
-            tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), 
-                new Color(0.8f, 0.8f, 0.8f));
         }
     }
 
     public void TileDetect(InputAction.CallbackContext context)
     {
-        if (isMoving)
-        {
-            if (isMoving && Vector2.Distance(hoveredTile, selectPos) > 5)
-            {
-                tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), new Color(0.8f, 0.8f, 0.8f));
-            }
-            else
-            {
-                tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
-            }
-            tilemap.SetColor(new Vector3Int(selectPos.x - 1, selectPos.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
-               
-        }
-        tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
-
-        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+        
+        tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
+       if (highligtedEntity != null) HighlightSquaresInRange(highligtedEntity, Color.white);
+        
         if (hit.collider != null)
         {
             Vector2 pos = Vector2.Scale(transform.InverseTransformPoint(hit.point),transform.localScale);
             hoveredTile = new Vector2Int((int)Mathf.Round(pos.x + 0.5f), (int)Mathf.Round(pos.y + 0.5f));
-            tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0),
-                isMoving ? new Color(0.5f, 0.5f, 0.5f) : new Color(0.8f, 0.8f, 0.8f));
+            //tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0),
+              //  isMoving ? new Color(0.5f, 0.5f, 0.5f) : new Color(0.8f, 0.8f, 0.8f));
             validHoveredTile = true;
-
-            if (!isMoving)
-            {
-                highligtedEntity = tiles[hoveredTile].linkedEntity;   
-            }
-            if (highligtedEntity != null)
-            {
-                for (int i = -(int)size.x; i <= size.x; i++)
-                {
-                    for (int j = -(int)size.y; j <= size.y; j++)
-                    {
-                        if (Vector2.Distance(highligtedEntity.Position - new Vector2(-0.5f,-0.5f), new Vector2(i, j)) < highligtedEntity.Range)
-                        {
-                            tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), new Color(0.8f, 0.8f, 0.8f));   
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (highligtedEntity != null)
-                for (int i = -(int)size.x; i <= size.x; i++)
-                {
-                    for (int j = -(int)size.y; j <= size.y; j++)
-                    {
-                        if (Vector2.Distance(highligtedEntity.Position - new Vector2(-0.5f,-0.5f), new Vector2(i, j)) < highligtedEntity.Range)
-                        {
-                            tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), Color.white);   
-                        }
-                    }
-                }
-            }
         }
         else
         {
             validHoveredTile = false;
-            highligtedEntity = null;
+        }
+        
+        
+        
+        if (!isMoving)
+        {
+            highligtedEntity = tiles[hoveredTile].linkedEntity;
+            if (highligtedEntity != null) HighlightSquaresInRange(highligtedEntity, Color.white);
+        }
+        if (highligtedEntity != null)
+        {
+            HighlightSquaresInRange(highligtedEntity, new Color(0.8f, 0.8f, 0.8f));
+        }
+            
+        if (isMoving) //Highlighted squares when moving character
+        {
+            if (Vector2.Distance(hoveredTile, selectPos) < highligtedEntity.Range)
+            {
+                    pathLine.positionCount++;
+                    pathLine.SetPosition(pathLine.positionCount - 1,
+                        new Vector3(selectPos.x - 0.5f, selectPos.y - 0.5f, -5f));
+                tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
+            }
+            tilemap.SetColor(new Vector3Int(selectPos.x - 1, selectPos.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
+        }
+        else //Highlighted when not moving character
+        {
+            tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), new Color(0.8f, 0.8f, 0.8f));
         }
 
+    }
+
+    void HighlightSquaresInRange(Entity entity, Color color)
+    {
+        for (int i = -(int)size.x; i <= size.x; i++)
+        {
+            for (int j = -(int)size.y; j <= size.y; j++)
+            {
+                if (Vector2.Distance(entity.Position - new Vector2(-0.5f,-0.5f), new Vector2(i, j)) < entity.Range)
+                {
+                    tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), color);   
+                }
+            }
+        }
     }
 
     void MoveUnit(Vector2 currentPos, Vector2 newPos)
