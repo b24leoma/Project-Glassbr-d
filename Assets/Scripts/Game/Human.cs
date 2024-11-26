@@ -8,7 +8,7 @@ public class Human : Entity
     void Start()
     {
         isHuman = true;
-        Range = 5;
+        Range = 2.3f;
     }
 
     // Update is called once per frame
