@@ -39,6 +39,7 @@ public class GridSystem : MonoBehaviour
         }
         Debug.Log(tiles.Count);
         CreateEntity(Vector2.zero, true);
+        CreateEntity(new Vector2(3,0), false);
     }
 
     void CreateEntity(Vector2 pos, bool isHuman)
@@ -134,6 +135,7 @@ public class GridSystem : MonoBehaviour
             }
             else
             {
+                if (highligtedEntity != null)
                 for (int i = -(int)size.x; i <= size.x; i++)
                 {
                     for (int j = -(int)size.y; j <= size.y; j++)
