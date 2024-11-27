@@ -80,9 +80,8 @@ public class GridSystem : MonoBehaviour
                     isMoving = true;
                     pathLine.positionCount = 1;
                     pathLine.SetPosition(0, new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f));
+                    selectPos = hoveredTile;
                 }
-
-                selectPos = hoveredTile;
             }
         }
         else if (context.canceled && isMoving) // Click finished
@@ -91,7 +90,7 @@ public class GridSystem : MonoBehaviour
             Vector3 pos = new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5);
 
             //Can move to tile
-            if (isAttacking || (tiles[hoveredTile].linkedEntity == null && highlightedEntity.isHuman &&
+            if (isAttacking || (tiles[hoveredTile].linkedEntity == null &&
                                 pos == pathLine.GetPosition(pathLine.positionCount - 1) &&
                                 Vector2.Distance(hoveredTile, highlightedEntity.Position - new Vector2(-0.5f, -0.5f)) <
                                 highlightedEntity.Range))
