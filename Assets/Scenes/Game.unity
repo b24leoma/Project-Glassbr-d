@@ -547,6 +547,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d96122eb7beccc4084e10d5d70de8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnList:
+  - Position: {x: -3, y: 2}
+    isHuman: 1
+  - Position: {x: 5, y: -2}
+    isHuman: 0
   entityParent: {fileID: 2146461521}
   human: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
   demon: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
