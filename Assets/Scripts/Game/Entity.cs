@@ -8,6 +8,7 @@ public class Entity : MonoBehaviour
     public int CurrentHealth { get; protected set; }
     public int Damage { get; protected set; } 
     public float Range { get; protected set; } 
+    public float AttackRange { get; protected set; }
 
     public bool isHuman;
     public Vector2 Position

@@ -96,11 +96,12 @@ public class GridSystem : MonoBehaviour
                                 Vector2.Distance(hoveredTile, highlightedEntity.Position - new Vector2(-0.5f, -0.5f)) <
                                 highlightedEntity.Range))
             {
-                HighlightSquaresInRange(highlightedEntity, Color.white);
+                HighlightSquaresInRange(highlightedEntity, highlightedEntity.AttackRange, Color.white);
                 MoveUnit(selectPos,
                     new Vector2Int((int)(pathLine.GetPosition(pathLine.positionCount - 1).x + 0.5f),
                         (int)(pathLine.GetPosition(pathLine.positionCount - 1).y + 0.5f)));
-                HighlightSquaresInRange(highlightedEntity, new Color(0.8f, 0.8f, 0.8f));
+                HighlightSquaresInRange(highlightedEntity, highlightedEntity.AttackRange, new Color(0.9f, 0.9f, 0.9f));
+                HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range, new Color(0.8f, 0.8f, 0.8f));
                 if (isAttacking)
                 {
                     attackOverlay.SetActive(false);
@@ -121,7 +122,7 @@ public class GridSystem : MonoBehaviour
 
         //Reset highlights
         tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
-        HighlightSquaresInRange(highlightedEntity, Color.white);
+        if(highlightedEntity != null) HighlightSquaresInRange(highlightedEntity, highlightedEntity.AttackRange, Color.white);
 
         if (hit.collider != null)
         {
@@ -203,18 +204,19 @@ public class GridSystem : MonoBehaviour
         
         if (highlightedEntity != null) // Highlight Hover Range
         {
-            HighlightSquaresInRange(highlightedEntity, new Color(0.8f, 0.8f, 0.8f));
+            HighlightSquaresInRange(highlightedEntity, highlightedEntity.AttackRange, new Color(0.9f, 0.9f, 0.9f));
+            HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range, new Color(0.8f, 0.8f, 0.8f));
         }
     }
 
-    void HighlightSquaresInRange(Entity entity, Color color)
+    void HighlightSquaresInRange(Entity entity, float range, Color color)
     {
         if(entity == null) return;
         for (int i = -(int)size.x; i <= size.x; i++)
         {
             for (int j = -(int)size.y; j <= size.y; j++)
             {
-                if (Vector2.Distance(entity.Position - new Vector2(-0.5f, -0.5f), new Vector2(i, j)) < entity.Range && tiles[new Vector2(i,j)].walkable)
+                if (Vector2.Distance(entity.Position - new Vector2(-0.5f, -0.5f), new Vector2(i, j)) < range && tiles[new Vector2(i,j)].walkable)
                 {
                     tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), color);
                 }

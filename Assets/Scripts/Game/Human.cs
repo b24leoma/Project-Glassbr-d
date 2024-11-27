@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Human : Entity
 {
     // Start is called before the first frame update
@@ -9,6 +5,7 @@ public class Human : Entity
     {
         isHuman = true;
         Range = 2.3f;
+        AttackRange = Range + 1;
     }
 
     // Update is called once per frame

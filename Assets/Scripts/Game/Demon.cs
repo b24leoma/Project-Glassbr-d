@@ -9,6 +9,7 @@ public class Demon : Entity
     {
         isHuman = false;
         Range = 2.3f;
+        AttackRange = Range + 1;
     }
 
     // Update is called once per frame
