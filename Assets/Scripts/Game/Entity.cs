@@ -21,6 +21,11 @@ public class Entity : MonoBehaviour
         set => transform.position = value;
     }
 
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth-= damage;
+    }
+
     private static List<string> _human = new List<string>
     {
         "Aldric",

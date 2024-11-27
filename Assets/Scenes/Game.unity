@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 651517035}
   - component: {fileID: 651517034}
   - component: {fileID: 651517038}
+  - component: {fileID: 651517039}
   m_Layer: 6
   m_Name: TILEMAP
   m_TagString: Untagged
@@ -608,37 +609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d96122eb7beccc4084e10d5d70de8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnList:
-  - Position: {x: -8, y: 2}
-    isHuman: 1
-  - Position: {x: -8, y: 0}
-    isHuman: 1
-  - Position: {x: -8, y: -2}
-    isHuman: 1
-  - Position: {x: -7, y: 0}
-    isHuman: 1
-  - Position: {x: 7, y: -1}
-    isHuman: 0
-  - Position: {x: 7, y: 0}
-    isHuman: 0
-  - Position: {x: 7, y: 1}
-    isHuman: 0
-  - Position: {x: 9, y: 1}
-    isHuman: 0
-  - Position: {x: 9, y: 0}
-    isHuman: 0
-  - Position: {x: 9, y: -1}
-    isHuman: 0
-  - Position: {x: 8, y: 5}
-    isHuman: 0
-  - Position: {x: 8, y: -5}
-    isHuman: 0
-  entityParent: {fileID: 2146461521}
-  human: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
-  demon: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
-  attackHighlightIcon: {fileID: 8647851982552627174, guid: 4c65087676a8c1945a0733a846acc5d4, type: 3}
-  iconParent: {fileID: 1150914486}
-  pathLine: {fileID: 1425331444}
   solidTiles:
   - {fileID: 11400000, guid: ff75159cb17e8624181147cea85aa81c, type: 2}
 --- !u!19719996 &651517035
@@ -3126,6 +3096,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayStats: {fileID: 1037766086}
   displayName: {fileID: 508322861}
+  spawnList:
+  - Position: {x: -8, y: 2}
+    isHuman: 1
+  - Position: {x: -8, y: 0}
+    isHuman: 1
+  - Position: {x: -8, y: -2}
+    isHuman: 1
+  - Position: {x: -7, y: 0}
+    isHuman: 1
+  - Position: {x: 7, y: -1}
+    isHuman: 0
+  - Position: {x: 7, y: 0}
+    isHuman: 0
+  - Position: {x: 7, y: 1}
+    isHuman: 0
+  - Position: {x: 9, y: 1}
+    isHuman: 0
+  - Position: {x: 9, y: 0}
+    isHuman: 0
+  - Position: {x: 9, y: -1}
+    isHuman: 0
+  - Position: {x: 8, y: 5}
+    isHuman: 0
+  - Position: {x: 8, y: -5}
+    isHuman: 0
+  entityParent: {fileID: 2146461521}
+  human: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
+  demon: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
+  isPlayerTurn: 0
+--- !u!114 &651517039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651517032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c603f19528ad324bbe2d6f1f049cf35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathLine: {fileID: 1425331444}
+  attackHighlightIcon: {fileID: 8647851982552627174, guid: 4c65087676a8c1945a0733a846acc5d4, type: 3}
+  iconParent: {fileID: 1150914486}
 --- !u!1 &667459983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,9 +3624,9 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 651517034}
-        m_TargetAssemblyTypeName: GridSystem, Assembly-CSharp
-        m_MethodName: TileDetect
+      - m_Target: {fileID: 651517039}
+        m_TargetAssemblyTypeName: PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: MouseMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3626,9 +3640,9 @@ MonoBehaviour:
     m_ActionName: Player/PointerReference[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 651517034}
-        m_TargetAssemblyTypeName: GridSystem, Assembly-CSharp
-        m_MethodName: SelectTile
+      - m_Target: {fileID: 651517039}
+        m_TargetAssemblyTypeName: PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: TileClicked
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
