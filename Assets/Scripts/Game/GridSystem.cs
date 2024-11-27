@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +17,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private GameObject demon;
     [SerializeField] private LineRenderer pathLine;
     [SerializeField] private GameObject attackOverlay;
+    [SerializeField] private TileBase[] solidTiles;
     private Dictionary<Vector2, Tile> tiles;
     private Vector3 size;
     private Entity highlightedEntity;
@@ -41,7 +43,13 @@ public class GridSystem : MonoBehaviour
             for (int j = -(int)size.y; j <= size.y; j++)
             {
                 tiles[new Vector2(i, j)] = new Tile();
-                tilemap.SetTileFlags(new Vector3Int(i - 1, j - 1, 0), TileFlags.None);
+                if (solidTiles.Contains(tilemap.GetTile(new Vector3Int(i - 1, j - 1, 0))))
+                {
+                    tiles[new Vector2(i,j)].walkable = false;
+                }
+               else  tilemap.SetTileFlags(new Vector3Int(i - 1, j - 1, 0), TileFlags.None);
+                
+                
             }
         }
 
@@ -75,8 +83,6 @@ public class GridSystem : MonoBehaviour
                 }
 
                 selectPos = hoveredTile;
-                tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0),
-                    new Color(0.5f, 0.5f, 0.5f));
             }
         }
         else if (context.canceled && isMoving) // Click finished
@@ -104,7 +110,7 @@ public class GridSystem : MonoBehaviour
             }
 
             isMoving = false;
-            pathLine.positionCount = 0;
+            pathLine.positionCount = 1;
         }
     }
 
@@ -115,8 +121,7 @@ public class GridSystem : MonoBehaviour
 
         //Reset highlights
         tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
-        if (highlightedEntity != null && !isMoving) HighlightSquaresInRange(highlightedEntity, Color.white);
-
+        HighlightSquaresInRange(highlightedEntity, Color.white);
 
         if (hit.collider != null)
         {
@@ -147,66 +152,69 @@ public class GridSystem : MonoBehaviour
                 attackOverlay.SetActive(false);
                 isAttacking = false;
             }
-
-            if (isMoving) //Highlighted squares when moving character
+        }
+        
+        if (isMoving) //Highlighted squares when moving character
+        {
+            if (Vector2.Distance(hoveredTile, selectPos) < highlightedEntity.Range)
             {
-                if (Vector2.Distance(hoveredTile, selectPos) < highlightedEntity.Range)
+                if (pathLine.positionCount > 0 || isAttacking)
                 {
-                    if (pathLine.positionCount > 0 || isAttacking)
-                    {
-                        Vector3 pos = pathLine.GetPosition(pathLine.positionCount - 1);
-                        tilemap.SetColor(new Vector3Int((int)(pos.x - 0.5f), (int)(pos.y - 0.5f), 0),
-                            new Color(0.5f, 0.5f, 0.5f));
-                    }
-
-                    //Add to path
-                    if (validHoveredTile && Vector3.Distance(
-                            new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f),
-                            pathLine.GetPosition(pathLine.positionCount - 1)) <= 1 &&
-                        (tiles[hoveredTile].linkedEntity == null ||
-                         tiles[hoveredTile].linkedEntity == highlightedEntity) &&
-                        pathLine.GetPosition(pathLine.positionCount - 1) !=
-                        new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5))
-                    {
-                        bool valid = true;
-                        for (int i = 0; i < pathLine.positionCount; i++)
-                        {
-                            if (pathLine.GetPosition(i) == new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5))
-                            {
-                                valid = false;
-                                pathLine.positionCount = i + 1;
-                            }
-                        }
-
-                        if (valid)
-                            pathLine.positionCount++;
-                        pathLine.SetPosition(pathLine.positionCount - 1,
-                            new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f));
-                    }
+                    Vector3 pos = pathLine.GetPosition(pathLine.positionCount - 1);
+                    tilemap.SetColor(new Vector3Int((int)(pos.x - 0.5f), (int)(pos.y - 0.5f), 0),
+                        new Color(0.5f, 0.5f, 0.5f));
                 }
 
-                tilemap.SetColor(new Vector3Int(selectPos.x - 1, selectPos.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
-            }
-            else
-            {
-                highlightedEntity = tiles[hoveredTile].linkedEntity;
-                if (highlightedEntity != null) HighlightSquaresInRange(highlightedEntity, Color.white);
-            }
+                //Add to path
+                if (validHoveredTile && tiles[hoveredTile].walkable && Vector3.Distance(
+                        new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f),
+                        pathLine.GetPosition(pathLine.positionCount - 1)) <= 1 &&
+                    (tiles[hoveredTile].linkedEntity == null ||
+                     tiles[hoveredTile].linkedEntity == highlightedEntity) &&
+                    pathLine.GetPosition(pathLine.positionCount - 1) !=
+                    new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5))
+                {
+                    bool valid = true;
+                    for (int i = 0; i < pathLine.positionCount; i++)
+                    {
+                        if (pathLine.GetPosition(i) == new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5))
+                        {
+                            valid = false;
+                            pathLine.positionCount = i + 1;
+                        }
+                    }
 
-            if (highlightedEntity != null)
-            {
-                HighlightSquaresInRange(highlightedEntity, new Color(0.8f, 0.8f, 0.8f));
+                    if (valid)
+                    {
+                        pathLine.positionCount++;
+                        pathLine.SetPosition(pathLine.positionCount - 1,
+                            new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f));
+                        isAttacking = false;
+                        attackOverlay.SetActive(false);
+                    }
+                }
             }
+            tilemap.SetColor(new Vector3Int(selectPos.x - 1, selectPos.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
+        }
+        else
+        {
+            highlightedEntity = tiles[hoveredTile].linkedEntity;
+        }
+        
+        if (highlightedEntity != null) // Highlight Hover Range
+        {
+            HighlightSquaresInRange(highlightedEntity, new Color(0.8f, 0.8f, 0.8f));
         }
     }
 
     void HighlightSquaresInRange(Entity entity, Color color)
     {
+        if(entity == null) return;
         for (int i = -(int)size.x; i <= size.x; i++)
         {
             for (int j = -(int)size.y; j <= size.y; j++)
             {
-                if (Vector2.Distance(entity.Position - new Vector2(-0.5f, -0.5f), new Vector2(i, j)) < entity.Range)
+                if (Vector2.Distance(entity.Position - new Vector2(-0.5f, -0.5f), new Vector2(i, j)) < entity.Range && tiles[new Vector2(i,j)].walkable)
                 {
                     tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), color);
                 }
