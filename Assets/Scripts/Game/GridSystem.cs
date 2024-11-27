@@ -91,7 +91,7 @@ public class GridSystem : MonoBehaviour
             Vector3 pos = new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5);
 
             //Can move to tile
-            if (isAttacking || (tiles[hoveredTile].linkedEntity == null &&
+            if (isAttacking || (tiles[hoveredTile].linkedEntity == null && highlightedEntity.isHuman &&
                                 pos == pathLine.GetPosition(pathLine.positionCount - 1) &&
                                 Vector2.Distance(hoveredTile, highlightedEntity.Position - new Vector2(-0.5f, -0.5f)) <
                                 highlightedEntity.Range))
