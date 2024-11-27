@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class BattleController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BattleController : MonoBehaviour
     private List<Entity> characters;
     public bool isPlayerTurn;
     private GridSystem gridSystem;
+    private PlayerAttackSystem playerAttack;
 
     void Start()
     {
@@ -22,7 +24,8 @@ public class BattleController : MonoBehaviour
         {
             CreateEntity(spawn.Position, spawn.isHuman);
         }
-        
+
+        GetComponent<PlayerAttackSystem>();
         isPlayerTurn = true;
     }
 
@@ -38,6 +41,7 @@ public class BattleController : MonoBehaviour
     {
         target.TakeDamage(attacker.Damage);
         isPlayerTurn = !isPlayerTurn;
+        
     }
     
     

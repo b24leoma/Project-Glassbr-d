@@ -9,7 +9,7 @@ public class Demon : Entity
     {
         isHuman = false;
         Range = 1.2f;
-        AttackRange = Range + 1;
+        AttackRange = 1;
         MaxHealth = 200;
         CurrentHealth = MaxHealth;
         Damage = 10;

@@ -5,7 +5,7 @@ public class Human : Entity
     {
         isHuman = true;
         Range = 2.3f;
-        AttackRange = Range + 1;
+        AttackRange = 1;
         MaxHealth = 100;
         CurrentHealth = MaxHealth;
         Damage = 20;
