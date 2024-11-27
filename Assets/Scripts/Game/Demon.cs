@@ -8,8 +8,12 @@ public class Demon : Entity
     void Start()
     {
         isHuman = false;
-        Range = 2.3f;
+        Range = 1.2f;
         AttackRange = Range + 1;
+        MaxHealth = 200;
+        CurrentHealth = MaxHealth;
+        Damage = 10;
+        Name = GenerateName(isHuman);
     }
 
     // Update is called once per frame

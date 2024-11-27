@@ -15,8 +15,9 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private Transform entityParent;
     [SerializeField] private GameObject human;
     [SerializeField] private GameObject demon;
+    [SerializeField] private GameObject attackHighlightIcon;
+    [SerializeField] private Transform iconParent;
     [SerializeField] private LineRenderer pathLine;
-    [SerializeField] private GameObject attackOverlay;
     [SerializeField] private TileBase[] solidTiles;
     private Dictionary<Vector2, Tile> tiles;
     private Vector3 size;
@@ -29,8 +30,11 @@ public class GridSystem : MonoBehaviour
     private bool isMoving;
     private bool isAttacking;
 
+    private BattleController battleController;
+
     private void Start()
     {
+        battleController = GetComponent<BattleController>();
         tilemap = GetComponent<Tilemap>();
         tiles = new Dictionary<Vector2, Tile>();
         characters = new List<Entity>();
@@ -103,9 +107,9 @@ public class GridSystem : MonoBehaviour
                 HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range, new Color(0.8f, 0.8f, 0.8f));
                 if (isAttacking)
                 {
-                    attackOverlay.SetActive(false);
                     isAttacking = false;
                     Debug.Log("Attacking");
+                    battleController.UpdateCharacterDisplay(tiles[hoveredTile].linkedEntity);
                 }
             }
 
@@ -122,6 +126,10 @@ public class GridSystem : MonoBehaviour
         //Reset highlights
         tilemap.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
         if(highlightedEntity != null) HighlightSquaresInRange(highlightedEntity, highlightedEntity.AttackRange, Color.white);
+        foreach(Transform child in iconParent)
+        {
+            Destroy(child.gameObject);
+        }
 
         if (hit.collider != null)
         {
@@ -133,23 +141,18 @@ public class GridSystem : MonoBehaviour
         {
             validHoveredTile = false;
         }
-
+        if (tiles[hoveredTile] == null) return;
         if (tiles[hoveredTile].linkedEntity != null)
         {
+            battleController.UpdateCharacterDisplay(tiles[hoveredTile].linkedEntity);
             if (!tiles[hoveredTile].linkedEntity.isHuman && hoveredTile != selectPos &&
                 Vector3.Distance(pathLine.GetPosition(pathLine.positionCount - 1),
                     new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5)) <= 1)
             {
-
-                attackOverlay.SetActive(true);
                 isAttacking = true;
-                attackOverlay.transform.position = new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, 0);
-
-
             }
             else
             {
-                attackOverlay.SetActive(false);
                 isAttacking = false;
             }
         }
@@ -158,13 +161,6 @@ public class GridSystem : MonoBehaviour
         {
             if (Vector2.Distance(hoveredTile, selectPos) < highlightedEntity.Range)
             {
-                if (pathLine.positionCount > 0 || isAttacking)
-                {
-                    Vector3 pos = pathLine.GetPosition(pathLine.positionCount - 1);
-                    tilemap.SetColor(new Vector3Int((int)(pos.x - 0.5f), (int)(pos.y - 0.5f), 0),
-                        new Color(0.5f, 0.5f, 0.5f));
-                }
-
                 //Add to path
                 if (validHoveredTile && tiles[hoveredTile].walkable && Vector3.Distance(
                         new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f),
@@ -190,22 +186,43 @@ public class GridSystem : MonoBehaviour
                         pathLine.SetPosition(pathLine.positionCount - 1,
                             new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f));
                         isAttacking = false;
-                        attackOverlay.SetActive(false);
                     }
                 }
             }
-            tilemap.SetColor(new Vector3Int(selectPos.x - 1, selectPos.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
         }
         else
         {
             highlightedEntity = tiles[hoveredTile].linkedEntity;
         }
-        
+
         if (highlightedEntity != null) // Highlight Hover Range
         {
             HighlightSquaresInRange(highlightedEntity, highlightedEntity.AttackRange, new Color(0.9f, 0.9f, 0.9f));
             HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range, new Color(0.8f, 0.8f, 0.8f));
+            for (int i = 0; i < characters.Count; i++)
+            {
+                if (Vector2.Distance(highlightedEntity.Position, characters[i].Position) <
+                    highlightedEntity.AttackRange && characters[i].isHuman != highlightedEntity.isHuman)
+                {
+                    GameObject a = Instantiate(attackHighlightIcon, characters[i].Position, Quaternion.identity,
+                        iconParent);
+                    if (new Vector2Int((int)(characters[i].Position.x + 0.5f), (int)(characters[i].Position.y + 0.5f)) == hoveredTile// &&Vector3.Distance(pathLine.GetPosition(pathLine.positionCount - 1),
+                            )//new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5)) <= 1)
+                    {
+                        a.GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+                }
+
+            }
+            if (isMoving && pathLine.positionCount > 0 || isAttacking)
+            {
+                Vector3 pos = pathLine.GetPosition(pathLine.positionCount - 1);
+                tilemap.SetColor(new Vector3Int((int)(pos.x - 0.5f), (int)(pos.y - 0.5f), 0),
+                    new Color(0.5f, 0.5f, 0.5f));
+                tilemap.SetColor(new Vector3Int(selectPos.x - 1, selectPos.y - 1, 0), new Color(0.5f, 0.5f, 0.5f));
+            }
         }
+
     }
 
     void HighlightSquaresInRange(Entity entity, float range, Color color)

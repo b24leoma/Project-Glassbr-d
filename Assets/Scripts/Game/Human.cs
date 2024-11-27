@@ -6,6 +6,10 @@ public class Human : Entity
         isHuman = true;
         Range = 2.3f;
         AttackRange = Range + 1;
+        MaxHealth = 100;
+        CurrentHealth = MaxHealth;
+        Damage = 20;
+        Name = GenerateName(isHuman);
     }
 
     // Update is called once per frame
