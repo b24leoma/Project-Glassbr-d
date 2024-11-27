@@ -1,0 +1,5464 @@
+fileFormatVersion: 2
+guid: 771e454a157f75e46b982e8bfd6789a6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a0e5ed840f6a64dbb64cb535f898dc
+      internalID: 610430623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ea997af3ac1b944bf497ad2ebd85e7
+      internalID: -263656651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe82e68e09edda48a1016ad2bef6b82
+      internalID: -1636531592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f6a4ec23826014aaedb17dfed8c60c
+      internalID: -462925642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_4
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6351e56be1bfdee48b7527807e0b8ffe
+      internalID: -2082396321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bff452ba636e41409d2237bff1ec18b
+      internalID: 1060939850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_6
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a2dbd3a9c1eaa4b897a1a61574c971
+      internalID: -101511265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_7
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e511b3c0c50bc254e9798b51b71d34ba
+      internalID: -399086169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_8
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 212
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3e27de68aafee4cb22110d6371839e
+      internalID: 972590883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_9
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de6e3d07260fef4b843263e0e56a6d1
+      internalID: 1588747589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641ae97f644f55f4f968491636f9934d
+      internalID: 1217601448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_11
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b9e0a197f5a724aacace6ad7c0eebe
+      internalID: 1695665301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_12
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f7f5c603b12d44e9f462af9f670f9a
+      internalID: 337427879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_13
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0017d66600243d45ae1178d595dc6ae
+      internalID: -1139809343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_14
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43ef240f50f4b349b19915ca1280de7
+      internalID: 1078190799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_15
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9821b6e0351109744a432e046209f979
+      internalID: -1111681052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_16
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d709ee32b566eb244a51cb6a2c4223e0
+      internalID: 86772196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_17
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb64e40ff60361a4abec04cbb8fb4969
+      internalID: -574925934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_18
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e77d70dd4125440a56334cf7545791
+      internalID: -2033191032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_19
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1bcd9d036546c45b463f2a36278627
+      internalID: -922030739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_20
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 209.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec135bd55fad4e0469f23ee9a3b81d63
+      internalID: -1944323257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71d9661c9ab0cd459ca3e1a8c4d04fc
+      internalID: 804243532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_22
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f96633c1a6c6e47a1b852a4451cd0d
+      internalID: -72839529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_23
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afaf8d0de55dea346bfcd0e3179e8f5b
+      internalID: 1207002547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_24
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbe410a02c74384f89fe09308633655
+      internalID: 1888315041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_25
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d081be11d9b534a8f4795c6a6450e0
+      internalID: -649033278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_26
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80792608be9f45249a6dccd097ecd199
+      internalID: 95078735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_27
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09d7c31b8ee9b34484e3b0526dc8cdc
+      internalID: -1178445925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_28
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b58bcb623191849a4d7d5d4aa625f6
+      internalID: 482533613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_29
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 194
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f4f16ce13a8a44aa92090592dd4789
+      internalID: -1603588262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_30
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f840c907e18f5a2408c64f2e08ff08b5
+      internalID: -624947995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_31
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce5ee06b4839b541b62dfa9b4f126bd
+      internalID: 37868956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_32
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31934e883f27b5c47800725153efb5fb
+      internalID: 1256514850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_33
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51da0cdd3589ebd44a37a6a276a164bf
+      internalID: -2024304895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_34
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fac18720def454ca26fd0c2aac22b2
+      internalID: 1269275320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_35
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1798bc19138fc5f498c5bbc81400c669
+      internalID: 1939479248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_36
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e5da9fe97fa1b4d9f9d2d162687e74
+      internalID: -814143481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db6c4b08d9ced049b635227b400c562
+      internalID: -272175730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_38
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0060e8a6e9cad14692f6bdb81ccd11a
+      internalID: -1823274625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_39
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5285c13eab3647a43aa7f2976cea5bbd
+      internalID: 59971274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_40
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ce0cc37a5905a4d82cf3623f7ba12b
+      internalID: 1546007767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_41
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 190.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d9c4fc21e470d43975348528b4bdce
+      internalID: -1081429321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6754399763e0a6f4195acb4ad4e74bc1
+      internalID: -1736459608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_43
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39c98c4fdd9cff47b337dcb60eda08d
+      internalID: 569522540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_44
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1af137a47202e46a45c9703a8f4d31
+      internalID: 2138392950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_45
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e033b0913e857e741bd4586c5915c6a2
+      internalID: 935454581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_46
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a3812f5742715488d9ceeadd358022
+      internalID: -1786698754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_47
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccafd461bc9a15747bbae31a2d21463c
+      internalID: -588524226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_48
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 176
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554905dfb3022da47a8e2a11e04c4cd7
+      internalID: 1517244431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_49
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f26cc992d47024a87d44d02d2f05fd
+      internalID: 1787554397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_50
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 173
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb484b667173254f8489dd33d65e491
+      internalID: -1557275028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_51
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ef93b4317634d4f8a4770593dcf7ba
+      internalID: 1219398432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_52
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ce604383772394bacc78d84474559c
+      internalID: -2094323222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_53
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704941c823b2eea4d83306c023a0ee1b
+      internalID: 698808778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_54
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133769b84255ed746a7efecc61ec1e0f
+      internalID: -943125423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_55
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccceebbf99ae1f34b81259b0df14fe9d
+      internalID: -857112449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_56
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1926b85cf1361a4583196ae674d06f6
+      internalID: -373896259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_57
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8974453abb0903047adc7b355389a7e7
+      internalID: -159466699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_58
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae85976fda40744c888201437573a61
+      internalID: 1692812032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_59
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7465528e33c65234db7d756778fda13d
+      internalID: 1395085878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_60
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc810e32a527b644a0d71cfb77efc79
+      internalID: 1492835092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_61
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396691c88198180478dfb87690ec52e1
+      internalID: 1437297885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_62
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 171.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c778ca2adf02246a7c842412e23c46
+      internalID: -1894394547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738e2e2a56c7b9c4199f9b23db2520c7
+      internalID: 17878822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_64
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6d7f865db19b447b8f79e3db0f6f09
+      internalID: -767935434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_65
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d465e74c78f149646b799fc0f6e5bcba
+      internalID: -1606970801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_66
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb92cdece6453e649be48f5616c5f4bb
+      internalID: 1770170849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_67
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddea35d335d1ab4f82ee218c8b0d0b8
+      internalID: 2071364814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_68
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c668710e9fbe86443a6e339e98ab5b41
+      internalID: -904637709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_69
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11169f6164dd31d4dabcbc12249c744f
+      internalID: 1189194120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_70
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942aee45921074e4194af1fd1274fb47
+      internalID: 2120817272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_71
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5338b78ecceab24194d2785c42d77ec
+      internalID: -1958649008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_72
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4b61a8d5d164d4b893f8717658ecd9
+      internalID: 1384734165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_73
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9a6abf85cee95428ea601d055ded7f
+      internalID: -732621490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_74
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e307e8565150884fa23c609449dfef9
+      internalID: -1024013780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_75
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b8ad5aa48f1044690a1a503f900123
+      internalID: 1556020856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_76
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be81ef10e21d3e4da5fcbb55ae689b7
+      internalID: 1388680801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_77
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1554ec711ca38d64b9d280830f0ac6a4
+      internalID: 982030523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_78
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce7cacf832a93b4d8dcff511a26b0e1
+      internalID: -804735440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_79
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23aafc8687886ce4cb04e7f9662ae9e7
+      internalID: 1346888984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_80
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4f9a6d363b7174cae7d7e7575ab55a
+      internalID: -939184083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_81
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe753524bfb898e4c837c46f6b6b1af7
+      internalID: 982629842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_82
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e2425c5af3eeb4bb9bb4da8902caf4
+      internalID: 1313293116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_83
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 152.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b37014fcc50974d9d7c8b4a1ae0fbb
+      internalID: -1151136114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce5ed795a8c68340b6fcbe8e2e95a98
+      internalID: -1856142260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_85
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c63aff31cbf1aa4a80db8a83103b897
+      internalID: 1036950919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_86
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab567b2c6f936984a89d527ce85b5514
+      internalID: -1540698968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_87
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a196bfdbced5c48a4b347f2154c3f7
+      internalID: 1201076786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_88
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98238faef1274354ba7b0986cb7d017a
+      internalID: -318835447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_89
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f397b9217c6280499a58976053a22f1
+      internalID: 1202399465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_90
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5b1ff49b60553448bdbd9c16e1990b
+      internalID: 492778709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_91
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1139d4352782a8409dac4f2d975a159
+      internalID: -2065127919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_92
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ea9cc1ac5246a4f8359d1dbd70e526
+      internalID: -509433554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_93
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2145109675047439d69733bb4fa74d
+      internalID: -560030675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_94
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b2b3fe5f2331747b892bec05013897
+      internalID: 1007477948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_95
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaae0ba6022d8e046a0a230dab957eeb
+      internalID: -1085113162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_96
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0bc775f948ff64c99d0f2f1748cb86
+      internalID: 871102297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_97
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38274880f61ac204a92f1e342909be17
+      internalID: 1072933400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_98
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c584034a0029f14c86c2c1be4c5a9da
+      internalID: 1908565270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_99
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31dca5892ca99634b8ee08299b1df948
+      internalID: 1434249803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_100
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a822bb07acebcd04090474fa2e419a7a
+      internalID: -964596294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_101
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd26e80aee2461479aafc94af2eaeef
+      internalID: 1271647557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_102
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f21d392c25c097449333e239812a341
+      internalID: 575759481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_103
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e958e677aa866f746be743d9744b7b46
+      internalID: -695119419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_104
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 133.91667
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07577f16a35fcb14aa52003b71c93722
+      internalID: -2108655457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ff46428176adf14d9cb70eee26221d6
+      internalID: 2136257342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_106
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9956828cff7d3524ca4c4f1bab434589
+      internalID: 149123580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_107
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae6093cd953a734982ccddfa0bae177
+      internalID: -1036363470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_108
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f756c6e72e56e34da928e62854d34b3
+      internalID: -845999327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_109
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5765e74e870d3e34b920708917734bc3
+      internalID: 1459724263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_110
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c2920cad3473b45a96765d3ba9425c
+      internalID: 1514576951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_111
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ffde4a28f285e47808a73fd2c52e1e
+      internalID: -1722034339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_112
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6501c3c6f7be991478302683f9f4ae42
+      internalID: -217491907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_113
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a15905ce60f296488b8fe9f6062fcec
+      internalID: -887345318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_114
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d041cbd28828c9d45b83acd742825549
+      internalID: 1342034972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_115
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0306af042665ec419c4978a8840f76f
+      internalID: 899502254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_116
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44ae1d2536009e4f96efdcc8b4070d5
+      internalID: 85671930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_117
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f7f03e477cdb8478bc7b9b11710577
+      internalID: -257389856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_118
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8136cd56e03ce4694f177df01ee1ae
+      internalID: 1494231564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_119
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca0dfd0dcd92a444ae0ddf5127d31ee
+      internalID: 1589770129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_120
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224440f707b7e3f43a70e52141518207
+      internalID: -1535184135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_121
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05cb77bf2a5cbd4ab9bfbccb1de24fc
+      internalID: -2136772142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_122
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe33b108616af34f8d52081dc092aa6
+      internalID: 622374809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_123
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb3692da49f4114290a6ea9816293f2
+      internalID: 298456309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_124
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e574705860066984b91a91d1c64ffa53
+      internalID: 1300403571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_125
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 114.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6e0d0ac9c67d544b3c65bc964bc4b4
+      internalID: 1645024321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f7221df580045408253ec8a449c015
+      internalID: -2094808228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_127
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20fab30233e186547916c716fa7d4340
+      internalID: -899475787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_128
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3665c3bf4ff324a8cdaf6f1c5f073c
+      internalID: 640502932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_129
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1770d0fef0eca4ea255fb6bdd0039a
+      internalID: -307104215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_130
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cb33ce8ae13a54ab6d3411cc355e67
+      internalID: -519995614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_131
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 100
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e0cdfa169bcbe4c8a5cada817d0bf2
+      internalID: -1893334789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_132
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 98
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f015de7152ef84d8767e4830b75dfb
+      internalID: -1046709081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_133
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adec34a379ddc744ac6fb8416ed263a
+      internalID: 1580564246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_134
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29afa8c44509df946bb6b5c6172fdaa2
+      internalID: 1212129313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_135
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb54266d0a6b85242803780c06361e30
+      internalID: 1237023036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_136
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0d352e12162c24b89db56807a12db0
+      internalID: -126202212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_137
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb84ba1aaa5d444f8947bb0d74a83ce
+      internalID: 1197999793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_138
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3febdfd4bcb4f42bbcbf41765ff925
+      internalID: -125827286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_139
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec57dad018a19748b968e1276fd08c1
+      internalID: -1288541415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_140
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 96
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4411cfa8a1d3e844805608e0bb1409c
+      internalID: -1180971901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_141
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f1edba872c2b0459d8d8aee5fd486c
+      internalID: -420845205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_142
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729b03b763b648b48b16e18c74cc419b
+      internalID: -1453232038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_143
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f60a9de2a16aed47b38d6dd4b06c4f2
+      internalID: 1161833146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_144
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b981fc37df73394ca5ad1338b1e1006
+      internalID: 1337841494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_145
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 95.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992d30c0dfe1cd14f806a70aa21893fd
+      internalID: 2100893249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_146
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4282fd0a18af5c649af9a6e8daa423e5
+      internalID: -806399051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_147
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ae0cfa6f92ed746b7342bcd3501b5d
+      internalID: -777595814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_148
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8c41c54df721745a4c3d2b5960a95c
+      internalID: 1456839058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_149
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4795916f12d2647a55ac81158dea71
+      internalID: -1678429863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_150
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd923803136c234a8a11d5cd930a118
+      internalID: -1568026811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_151
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec759d4dd73b31d4ba65180fb072dc06
+      internalID: 42457439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_152
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c2c2f04c1a63e4daf2a8628130531d
+      internalID: -608921755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_153
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5572ad68cc329504282cb9cd6cb78454
+      internalID: 826753657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_154
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de97657607b4cc42bb0f6059088cb26
+      internalID: 1180725386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_155
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2e54aed83ebec469c6980bd49225bc
+      internalID: 1268128148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_156
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e759492169c58741878968374cdba2a
+      internalID: 1241070465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_157
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f14a166aa748864585f1775a6dfc00d
+      internalID: 876471719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_158
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd04cae40b8adb47987fe2b2fac57ff
+      internalID: 914435859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_159
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eda61fb19f607e4c849cfaf2adab194
+      internalID: 1171352162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_160
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104830e27451952419e424cbb7e5c1f7
+      internalID: -164254644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_161
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f278c237881cd4f40a8976d7255f0a0b
+      internalID: -744578863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_162
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c06144bd18dfa40b7c0b9f1bdbc965
+      internalID: 2028491151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_163
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9b36edd755914438033570e2dc2b24
+      internalID: -11991202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_164
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193514c144a18514cbbb47274402a190
+      internalID: -739611807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_165
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718b7e97d2d43f643bba0b127fed3f8c
+      internalID: -106860242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_166
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 76.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d399b9831ab3bf4faa1365678241ef3
+      internalID: 2088843576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_167
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ddefc04d5f36b14bb73cc970711a374
+      internalID: -2059453290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_168
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e54e65a39c40f8438beda77c590894d
+      internalID: 494673444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_169
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03bcab337e056b40a8ef66fc1051f94
+      internalID: 546843616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_170
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7336ecdb859db4ea70b323a9feeaa4
+      internalID: -1050375320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_171
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5afeb5e6972d1344a01441a9ced2ed8
+      internalID: -564569703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_172
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b604bc58ff39349af7244e2257e071
+      internalID: 1399889611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_173
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1758219d5f5ee914db650879f344a382
+      internalID: 1386119214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_174
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37bacb239c7df5f429fe260aef2b8610
+      internalID: 1234903930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_175
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3cf522227bbc36418092503fed6caab
+      internalID: -1206281223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_176
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f95b26f76382864581f730e21705443
+      internalID: 1767934157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_177
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe968501e5c48441bbacfdbcfd9fb22
+      internalID: 1277805214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_178
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9dee6bdff7d214bb4a9a6490607c25
+      internalID: 41947063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_179
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5af2576e48a4874587239f869c99562
+      internalID: -1805482779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_180
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3625aedd51a8b542b7a1bd4fc212c43
+      internalID: 1271740839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_181
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f09bbb13191d64fa1b127febb67c83
+      internalID: 815222985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_182
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bbf863a05baee4a80d2fc34c4cbaf1
+      internalID: 451371157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_183
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2510269ea656a6d45b5224598bd3631d
+      internalID: 2061715785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_184
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f2254b199e42e4c9d7a23f254032ad
+      internalID: 106283146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_185
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353a9de4b88c9584aaa79be269d4fe61
+      internalID: 57663224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_186
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1f52410c37b9941a2a3aefbd07fad6
+      internalID: 1090021246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_187
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 57.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34307ab0c058cc6409186a403b1abdff
+      internalID: -604824384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_188
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b5b649d3b48fe4587c982b2a02625d
+      internalID: -657958460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_189
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee55ea4fb3ba994dad22ac6ca1fcc1e
+      internalID: 72601500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_190
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9655f9a4df6a6a947a3fe7bd5a339594
+      internalID: -1627428666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_191
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5dc8dfd4ef5e444a5e0ac0db9dc4e7
+      internalID: 2139671867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_192
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedeccf92a260ae4cafb0b8b44ef3737
+      internalID: 398571558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_193
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320d45e9fccf9b6479bf8154e282b819
+      internalID: 1366843357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_194
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277accbd7de65774e9de43cc8bcc9d98
+      internalID: 549917443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_195
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd92a9c173e661488594242a266e2fc
+      internalID: -1373724177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_196
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8520fbb18cf7f2c4891417e858cecb3f
+      internalID: 1029727693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_197
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f5ef420f204c94598e947f0bafa9a0
+      internalID: -72942818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_198
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537b07795e2175d40a9c31260da6afc5
+      internalID: -444555324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_199
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cb009b5426dbf479c64aa567658324
+      internalID: -513985584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_200
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4541996fd234f1a4d9b282125335678f
+      internalID: -1041791843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_201
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fc0696cb302004d96c10cb18f1a3e8
+      internalID: -433485206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_202
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f423afb699118459b837dd7a7ac5e2
+      internalID: -2000965028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_203
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ec8da0168f4264189a0e0fc87d7510
+      internalID: -1565679907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_204
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653d7d56e88594147bdb72ca05b492f4
+      internalID: 1331519531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_205
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa5e5e6937d79447a811ce8cd687959
+      internalID: 34427767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_206
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3a70334bd656948b82d5e778c55dbf
+      internalID: 2010861038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_207
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8542f6151ff42404c8b3e3d63acfd826
+      internalID: 937807494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_208
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 38.916664
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2518b49e293483543981f3ff5653bbbf
+      internalID: -1995364438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_209
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206614ca2af314946bca7fe0bba8a4d0
+      internalID: -1853624659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_210
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c2cef3dcf7929439301bd194076d4b
+      internalID: 728256506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_211
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf60010c6896034ba465b2be4e9c5b7
+      internalID: 488556080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_212
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc499c7f0e590746b8d10660f924277
+      internalID: -1840159087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_213
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a53296cc8bcf1c4f98d901e0aa7c1c8
+      internalID: 1201395370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_214
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d07aa3545dc9fc747bd4cf4b8eafa33b
+      internalID: -1077881769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_215
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da045d6258916224e9d2e5c260cce0e3
+      internalID: 417464540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_216
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ddcd56c7aa2fc43a7f685fd26e5f5f
+      internalID: 1590533747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_217
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5914f0d1c47d9a743a4f83df0b31a735
+      internalID: 1376380514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_218
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20af70d86456f5448a10ab989e45235
+      internalID: -841632117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_219
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0be965defb8a0040b70548d1bfb5186
+      internalID: -389029330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_220
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a91a5b38111b3c4093d84df5ba35395
+      internalID: -1176226480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_221
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217c5f4c8437d2042a20d4635b787bc6
+      internalID: 915985933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_222
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e8571f93d0b2a439ed259782b1caf8
+      internalID: -587528257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_223
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71864610b4ceb14b8e20816b11140bf
+      internalID: 1416310272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_224
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c0da1b7a5a60645b70a508c1f4a049
+      internalID: 1160276755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_225
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e578c6e6b589ce479b5507a9727523a
+      internalID: 216129947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_226
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c683292582b504baad5dfdffbd43b0
+      internalID: -1978574531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_227
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 19.916666
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfb606fadba7024a8e47ce7240a94d5
+      internalID: 696568756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_228
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4f8a9e6d7c5bf438d1b9332a3ce0c9
+      internalID: -1591863744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_229
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1484dc0621f034ebe78ec8f597c39f
+      internalID: -1470075334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_230
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71aedab949730ec40a07049baf2af668
+      internalID: 576904845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_231
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2ca8888ab01ca42af24f48c4bba3a2
+      internalID: -1435490281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_232
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fcf1af43912374281f5b1905239610
+      internalID: 1473926524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_233
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f65cf5fe3f7b8d4b9e71e2dd770479e
+      internalID: 1174867909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_234
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5971a32745a9be64cb41cf71919fca6d
+      internalID: 701905152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_235
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce05912b115dce439a9d0d28d9b23f9
+      internalID: -1703404779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_236
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce32164ddf1d3834bbd7ade54f60a95d
+      internalID: 1054416970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_237
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5e202308c1aa543925d7cf3c51b4d6
+      internalID: 771711786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_238
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d59f57bdca88a040bcf68efc93bc1c7
+      internalID: 35437575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_239
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a4dc7d206ba884a91696c6848bf93b
+      internalID: -415699470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_240
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81ed21af9ccb5b4988e5f37283da40e
+      internalID: -1808072313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solaria Demo Tiles_241
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0.91666603
+        width: 21.333334
+        height: 19.083334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c35480edc2fb7e43860192a5800f340
+      internalID: 285229329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Solaria Demo Tiles_0: 610430623
+      Solaria Demo Tiles_1: -263656651
+      Solaria Demo Tiles_10: 1217601448
+      Solaria Demo Tiles_100: -964596294
+      Solaria Demo Tiles_101: 1271647557
+      Solaria Demo Tiles_102: 575759481
+      Solaria Demo Tiles_103: -695119419
+      Solaria Demo Tiles_104: -2108655457
+      Solaria Demo Tiles_105: 2136257342
+      Solaria Demo Tiles_106: 149123580
+      Solaria Demo Tiles_107: -1036363470
+      Solaria Demo Tiles_108: -845999327
+      Solaria Demo Tiles_109: 1459724263
+      Solaria Demo Tiles_11: 1695665301
+      Solaria Demo Tiles_110: 1514576951
+      Solaria Demo Tiles_111: -1722034339
+      Solaria Demo Tiles_112: -217491907
+      Solaria Demo Tiles_113: -887345318
+      Solaria Demo Tiles_114: 1342034972
+      Solaria Demo Tiles_115: 899502254
+      Solaria Demo Tiles_116: 85671930
+      Solaria Demo Tiles_117: -257389856
+      Solaria Demo Tiles_118: 1494231564
+      Solaria Demo Tiles_119: 1589770129
+      Solaria Demo Tiles_12: 337427879
+      Solaria Demo Tiles_120: -1535184135
+      Solaria Demo Tiles_121: -2136772142
+      Solaria Demo Tiles_122: 622374809
+      Solaria Demo Tiles_123: 298456309
+      Solaria Demo Tiles_124: 1300403571
+      Solaria Demo Tiles_125: 1645024321
+      Solaria Demo Tiles_126: -2094808228
+      Solaria Demo Tiles_127: -899475787
+      Solaria Demo Tiles_128: 640502932
+      Solaria Demo Tiles_129: -307104215
+      Solaria Demo Tiles_13: -1139809343
+      Solaria Demo Tiles_130: -519995614
+      Solaria Demo Tiles_131: -1893334789
+      Solaria Demo Tiles_132: -1046709081
+      Solaria Demo Tiles_133: 1580564246
+      Solaria Demo Tiles_134: 1212129313
+      Solaria Demo Tiles_135: 1237023036
+      Solaria Demo Tiles_136: -126202212
+      Solaria Demo Tiles_137: 1197999793
+      Solaria Demo Tiles_138: -125827286
+      Solaria Demo Tiles_139: -1288541415
+      Solaria Demo Tiles_14: 1078190799
+      Solaria Demo Tiles_140: -1180971901
+      Solaria Demo Tiles_141: -420845205
+      Solaria Demo Tiles_142: -1453232038
+      Solaria Demo Tiles_143: 1161833146
+      Solaria Demo Tiles_144: 1337841494
+      Solaria Demo Tiles_145: 2100893249
+      Solaria Demo Tiles_146: -806399051
+      Solaria Demo Tiles_147: -777595814
+      Solaria Demo Tiles_148: 1456839058
+      Solaria Demo Tiles_149: -1678429863
+      Solaria Demo Tiles_15: -1111681052
+      Solaria Demo Tiles_150: -1568026811
+      Solaria Demo Tiles_151: 42457439
+      Solaria Demo Tiles_152: -608921755
+      Solaria Demo Tiles_153: 826753657
+      Solaria Demo Tiles_154: 1180725386
+      Solaria Demo Tiles_155: 1268128148
+      Solaria Demo Tiles_156: 1241070465
+      Solaria Demo Tiles_157: 876471719
+      Solaria Demo Tiles_158: 914435859
+      Solaria Demo Tiles_159: 1171352162
+      Solaria Demo Tiles_16: 86772196
+      Solaria Demo Tiles_160: -164254644
+      Solaria Demo Tiles_161: -744578863
+      Solaria Demo Tiles_162: 2028491151
+      Solaria Demo Tiles_163: -11991202
+      Solaria Demo Tiles_164: -739611807
+      Solaria Demo Tiles_165: -106860242
+      Solaria Demo Tiles_166: 2088843576
+      Solaria Demo Tiles_167: -2059453290
+      Solaria Demo Tiles_168: 494673444
+      Solaria Demo Tiles_169: 546843616
+      Solaria Demo Tiles_17: -574925934
+      Solaria Demo Tiles_170: -1050375320
+      Solaria Demo Tiles_171: -564569703
+      Solaria Demo Tiles_172: 1399889611
+      Solaria Demo Tiles_173: 1386119214
+      Solaria Demo Tiles_174: 1234903930
+      Solaria Demo Tiles_175: -1206281223
+      Solaria Demo Tiles_176: 1767934157
+      Solaria Demo Tiles_177: 1277805214
+      Solaria Demo Tiles_178: 41947063
+      Solaria Demo Tiles_179: -1805482779
+      Solaria Demo Tiles_18: -2033191032
+      Solaria Demo Tiles_180: 1271740839
+      Solaria Demo Tiles_181: 815222985
+      Solaria Demo Tiles_182: 451371157
+      Solaria Demo Tiles_183: 2061715785
+      Solaria Demo Tiles_184: 106283146
+      Solaria Demo Tiles_185: 57663224
+      Solaria Demo Tiles_186: 1090021246
+      Solaria Demo Tiles_187: -604824384
+      Solaria Demo Tiles_188: -657958460
+      Solaria Demo Tiles_189: 72601500
+      Solaria Demo Tiles_19: -922030739
+      Solaria Demo Tiles_190: -1627428666
+      Solaria Demo Tiles_191: 2139671867
+      Solaria Demo Tiles_192: 398571558
+      Solaria Demo Tiles_193: 1366843357
+      Solaria Demo Tiles_194: 549917443
+      Solaria Demo Tiles_195: -1373724177
+      Solaria Demo Tiles_196: 1029727693
+      Solaria Demo Tiles_197: -72942818
+      Solaria Demo Tiles_198: -444555324
+      Solaria Demo Tiles_199: -513985584
+      Solaria Demo Tiles_2: -1636531592
+      Solaria Demo Tiles_20: -1944323257
+      Solaria Demo Tiles_200: -1041791843
+      Solaria Demo Tiles_201: -433485206
+      Solaria Demo Tiles_202: -2000965028
+      Solaria Demo Tiles_203: -1565679907
+      Solaria Demo Tiles_204: 1331519531
+      Solaria Demo Tiles_205: 34427767
+      Solaria Demo Tiles_206: 2010861038
+      Solaria Demo Tiles_207: 937807494
+      Solaria Demo Tiles_208: -1995364438
+      Solaria Demo Tiles_209: -1853624659
+      Solaria Demo Tiles_21: 804243532
+      Solaria Demo Tiles_210: 728256506
+      Solaria Demo Tiles_211: 488556080
+      Solaria Demo Tiles_212: -1840159087
+      Solaria Demo Tiles_213: 1201395370
+      Solaria Demo Tiles_214: -1077881769
+      Solaria Demo Tiles_215: 417464540
+      Solaria Demo Tiles_216: 1590533747
+      Solaria Demo Tiles_217: 1376380514
+      Solaria Demo Tiles_218: -841632117
+      Solaria Demo Tiles_219: -389029330
+      Solaria Demo Tiles_22: -72839529
+      Solaria Demo Tiles_220: -1176226480
+      Solaria Demo Tiles_221: 915985933
+      Solaria Demo Tiles_222: -587528257
+      Solaria Demo Tiles_223: 1416310272
+      Solaria Demo Tiles_224: 1160276755
+      Solaria Demo Tiles_225: 216129947
+      Solaria Demo Tiles_226: -1978574531
+      Solaria Demo Tiles_227: 696568756
+      Solaria Demo Tiles_228: -1591863744
+      Solaria Demo Tiles_229: -1470075334
+      Solaria Demo Tiles_23: 1207002547
+      Solaria Demo Tiles_230: 576904845
+      Solaria Demo Tiles_231: -1435490281
+      Solaria Demo Tiles_232: 1473926524
+      Solaria Demo Tiles_233: 1174867909
+      Solaria Demo Tiles_234: 701905152
+      Solaria Demo Tiles_235: -1703404779
+      Solaria Demo Tiles_236: 1054416970
+      Solaria Demo Tiles_237: 771711786
+      Solaria Demo Tiles_238: 35437575
+      Solaria Demo Tiles_239: -415699470
+      Solaria Demo Tiles_24: 1888315041
+      Solaria Demo Tiles_240: -1808072313
+      Solaria Demo Tiles_241: 285229329
+      Solaria Demo Tiles_25: -649033278
+      Solaria Demo Tiles_26: 95078735
+      Solaria Demo Tiles_27: -1178445925
+      Solaria Demo Tiles_28: 482533613
+      Solaria Demo Tiles_29: -1603588262
+      Solaria Demo Tiles_3: -462925642
+      Solaria Demo Tiles_30: -624947995
+      Solaria Demo Tiles_31: 37868956
+      Solaria Demo Tiles_32: 1256514850
+      Solaria Demo Tiles_33: -2024304895
+      Solaria Demo Tiles_34: 1269275320
+      Solaria Demo Tiles_35: 1939479248
+      Solaria Demo Tiles_36: -814143481
+      Solaria Demo Tiles_37: -272175730
+      Solaria Demo Tiles_38: -1823274625
+      Solaria Demo Tiles_39: 59971274
+      Solaria Demo Tiles_4: -2082396321
+      Solaria Demo Tiles_40: 1546007767
+      Solaria Demo Tiles_41: -1081429321
+      Solaria Demo Tiles_42: -1736459608
+      Solaria Demo Tiles_43: 569522540
+      Solaria Demo Tiles_44: 2138392950
+      Solaria Demo Tiles_45: 935454581
+      Solaria Demo Tiles_46: -1786698754
+      Solaria Demo Tiles_47: -588524226
+      Solaria Demo Tiles_48: 1517244431
+      Solaria Demo Tiles_49: 1787554397
+      Solaria Demo Tiles_5: 1060939850
+      Solaria Demo Tiles_50: -1557275028
+      Solaria Demo Tiles_51: 1219398432
+      Solaria Demo Tiles_52: -2094323222
+      Solaria Demo Tiles_53: 698808778
+      Solaria Demo Tiles_54: -943125423
+      Solaria Demo Tiles_55: -857112449
+      Solaria Demo Tiles_56: -373896259
+      Solaria Demo Tiles_57: -159466699
+      Solaria Demo Tiles_58: 1692812032
+      Solaria Demo Tiles_59: 1395085878
+      Solaria Demo Tiles_6: -101511265
+      Solaria Demo Tiles_60: 1492835092
+      Solaria Demo Tiles_61: 1437297885
+      Solaria Demo Tiles_62: -1894394547
+      Solaria Demo Tiles_63: 17878822
+      Solaria Demo Tiles_64: -767935434
+      Solaria Demo Tiles_65: -1606970801
+      Solaria Demo Tiles_66: 1770170849
+      Solaria Demo Tiles_67: 2071364814
+      Solaria Demo Tiles_68: -904637709
+      Solaria Demo Tiles_69: 1189194120
+      Solaria Demo Tiles_7: -399086169
+      Solaria Demo Tiles_70: 2120817272
+      Solaria Demo Tiles_71: -1958649008
+      Solaria Demo Tiles_72: 1384734165
+      Solaria Demo Tiles_73: -732621490
+      Solaria Demo Tiles_74: -1024013780
+      Solaria Demo Tiles_75: 1556020856
+      Solaria Demo Tiles_76: 1388680801
+      Solaria Demo Tiles_77: 982030523
+      Solaria Demo Tiles_78: -804735440
+      Solaria Demo Tiles_79: 1346888984
+      Solaria Demo Tiles_8: 972590883
+      Solaria Demo Tiles_80: -939184083
+      Solaria Demo Tiles_81: 982629842
+      Solaria Demo Tiles_82: 1313293116
+      Solaria Demo Tiles_83: -1151136114
+      Solaria Demo Tiles_84: -1856142260
+      Solaria Demo Tiles_85: 1036950919
+      Solaria Demo Tiles_86: -1540698968
+      Solaria Demo Tiles_87: 1201076786
+      Solaria Demo Tiles_88: -318835447
+      Solaria Demo Tiles_89: 1202399465
+      Solaria Demo Tiles_9: 1588747589
+      Solaria Demo Tiles_90: 492778709
+      Solaria Demo Tiles_91: -2065127919
+      Solaria Demo Tiles_92: -509433554
+      Solaria Demo Tiles_93: -560030675
+      Solaria Demo Tiles_94: 1007477948
+      Solaria Demo Tiles_95: -1085113162
+      Solaria Demo Tiles_96: 871102297
+      Solaria Demo Tiles_97: 1072933400
+      Solaria Demo Tiles_98: 1908565270
+      Solaria Demo Tiles_99: 1434249803
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
