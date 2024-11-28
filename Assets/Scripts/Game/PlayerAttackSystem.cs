@@ -45,7 +45,7 @@ public class PlayerAttackSystem : MonoBehaviour
                     }
                 }
             }
-            else if (isAttacking)
+            else if (isAttacking && gridSystem.GetTile(hoveredTile).linkedEntity != null)
             {
                 if (Vector2.Distance(gridSystem.GetTile(moveStartTile).linkedEntity.Position, gridSystem.GetTile(hoveredTile).linkedEntity.Position) <=
                     gridSystem.GetTile(moveStartTile).linkedEntity.AttackRange && gridSystem.GetTile(hoveredTile).linkedEntity != null)
@@ -121,7 +121,7 @@ public class PlayerAttackSystem : MonoBehaviour
         //Reset highlights
         if (!isAttacking) gridSystem.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
         if (highlightedEntity != null) gridSystem.HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range + highlightedEntity.AttackRange, Color.white);
-        foreach(Transform child in iconParent)
+        if(!isAttacking) foreach(Transform child in iconParent)
         {
             Destroy(child.gameObject);
         }
