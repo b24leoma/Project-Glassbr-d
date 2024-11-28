@@ -171,7 +171,7 @@ public class PlayerAttackSystem : MonoBehaviour
         }
 
         if (!isMoving) hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
-        if (!isAttacking)
+        if (!isAttacking && hit.collider != null)
             gridSystem.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), new Color(0.8f, 0.8f, 0.8f));
 
 
