@@ -4,17 +4,12 @@ public class Human : Entity
     void Start()
     {
         isHuman = true;
-        Range = 2.3f;
+        MoveRange = 2;
         AttackRange = 1;
         MaxHealth = 100;
         CurrentHealth = MaxHealth;
         Damage = 20;
         Name = GenerateName(isHuman);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        IsMelee = AttackRange <= 1;
     }
 }

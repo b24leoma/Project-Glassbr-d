@@ -8,10 +8,15 @@ public class Entity : MonoBehaviour
     public int MaxHealth { get; protected set; }
     public int CurrentHealth { get; protected set; }
     public int Damage { get; protected set; } 
-    public float Range { get; protected set; } 
-    public float AttackRange { get; protected set; }
+    public int MoveRange { get; protected set; } 
+    public int AttackRange { get; protected set; }
+    public bool IsMelee { get; protected set; }
 
     public bool isHuman;
+    
+    public bool hasQueuedMovement;
+    public bool hasQueuedAttack;
+    
     public Vector2 Position
     {
         get {return transform.position; }
@@ -27,6 +32,8 @@ public class Entity : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        hasQueuedMovement = false;
+        hasQueuedMovement = false;
     }
 
     public void MoveToTile(Vector2 pos)

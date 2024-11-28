@@ -26,8 +26,9 @@ public class BattleController : MonoBehaviour
             CreateEntity(spawn.Position, spawn.isHuman);
         }
 
-        GetComponent<PlayerAttackSystem>();
+        playerAttack = GetComponent<PlayerAttackSystem>();
         isPlayerTurn = true;
+        infoDisplay.SetActive(false);
     }
 
     void CreateEntity(Vector2 pos, bool isHuman)
@@ -38,12 +39,22 @@ public class BattleController : MonoBehaviour
         characters.Add(e);
     }
 
+
+    public void Move(Vector2 from, Vector2 to)
+    {
+        Debug.Log("Move!!!");
+        gridSystem.MoveUnit(from, to);
+    }
     public void Attack(Entity attacker, Entity target)
     {
-        Debug.Log("Attacked!!!");
+        Debug.Log("Attack!!!");
         target.TakeDamage(attacker.Damage);
+    }
+
+    public void EndTurn()
+    {
         isPlayerTurn = !isPlayerTurn;
-        
+        if(isPlayerTurn) playerAttack.StartTurn();
     }
 
 
@@ -52,7 +63,7 @@ public class BattleController : MonoBehaviour
         infoDisplay.SetActive(showDisplay);
         if (showDisplay)
         {
-            displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}";
+            displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
             displayName.text = entity.Name;
         }
     }
