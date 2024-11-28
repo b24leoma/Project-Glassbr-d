@@ -1,15 +1,18 @@
-public class Demon : Entity
+namespace Game
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Demon : Entity
     {
-        isHuman = false;
-        MoveRange = 2;
-        AttackRange = 2;
-        MaxHealth = 100;
-        CurrentHealth = MaxHealth;
-        Damage = 10;
-        Name = GenerateName(isHuman);
-        IsMelee = AttackRange <= 1;
+        // Start is called before the first frame update
+        void Start()
+        {
+            isHuman = false;
+            MoveRange = 2;
+            AttackRange = 1;
+            MaxHealth = 100;
+            CurrentHealth = MaxHealth;
+            Damage = 10;
+            GenerateName();
+            IsMelee = AttackRange <= 1;
+        }
     }
 }
