@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class BattleController : MonoBehaviour
 {
+    [SerializeField] private GameObject infoDisplay;
     [SerializeField] private TextMeshProUGUI displayStats;
     [SerializeField] private TextMeshProUGUI displayName;
     [SerializeField] private List<Spawning> spawnList;
@@ -44,16 +45,20 @@ public class BattleController : MonoBehaviour
         isPlayerTurn = !isPlayerTurn;
         
     }
-    
-    
-    public void UpdateCharacterDisplay(Entity entity)
+
+
+    public void UpdateCharacterDisplay(bool showDisplay, Entity entity)
     {
-        displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}";
-        displayName.text = entity.Name;
+        infoDisplay.SetActive(showDisplay);
+        if (showDisplay)
+        {
+            displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}";
+            displayName.text = entity.Name;
+        }
     }
-    
-    
-    
+
+
+
     public List<Entity> GetCharacters(){return characters;}
     public Entity GetCharacterAt(int i){return characters[i];}
     

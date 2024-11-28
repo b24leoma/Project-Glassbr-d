@@ -4,7 +4,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public Animator animator;
-    public string Name;
+    public string Name { get; protected set; }
     public int MaxHealth { get; protected set; }
     public int CurrentHealth { get; protected set; }
     public int Damage { get; protected set; } 
@@ -34,14 +34,20 @@ public class Entity : MonoBehaviour
         Position = pos + new Vector2(-0.5f, -0.5f);
     }
     
-    public string GenerateName(bool isHuman)
+    protected string GenerateName(bool isHuman)
     {
-
         if (isHuman)
         {
-            return NameGenerator._human[Random.Range(1, NameGenerator._human.Count)]; 
+            string name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
+            NameGenerator._human.Remove(name);
+            return name;
         }
-        return NameGenerator._demon[Random.Range(1, NameGenerator._demon.Count)];
+        else
+        {
+            string name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
+            NameGenerator._human.Remove(name);
+            return name;
+        }
     }
 }
 

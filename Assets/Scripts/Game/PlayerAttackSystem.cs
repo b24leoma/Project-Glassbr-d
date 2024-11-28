@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttackSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject actionButtonParent;
+    [SerializeField] private GameObject endTurnButton;
     [SerializeField] private LineRenderer pathLine;
     [SerializeField] private GameObject attackHighlightIcon;
     [SerializeField] private Transform iconParent;
@@ -59,7 +59,7 @@ public class PlayerAttackSystem : MonoBehaviour
                 if (isAttacking)
                 {
                     battleController.Attack(highlightedEntity, gridSystem.GetTile(hoveredTile).linkedEntity);
-                    battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity);
+                    battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
 
                 }
                 isAttacking = false;
@@ -101,23 +101,9 @@ public class PlayerAttackSystem : MonoBehaviour
         {
             validHoveredTile = false;
         }
-
+        battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity != null, gridSystem.GetTile(hoveredTile).linkedEntity);
         if (gridSystem.GetTile(hoveredTile) == null) return;
-        if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
-        {
-            battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity);
-            if (!gridSystem.GetTile(hoveredTile).linkedEntity.isHuman && hoveredTile != moveStartTile &&
-                Vector3.Distance(pathLine.GetPosition(pathLine.positionCount - 1),
-                    new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5)) <= 1)
-            {
-                isAttacking = true;
-            }
-        }
-        else
-        {
-            isAttacking = false;
-        }
-
+        
         if (isMoving) //Highlighted squares when moving character
         {
             if (highlightedEntity != null)
@@ -162,9 +148,10 @@ public class PlayerAttackSystem : MonoBehaviour
         if (highlightedEntity != null)
         {
             gridSystem.HighlightSquaresInRange(highlightedEntity,
-                highlightedEntity.Range + highlightedEntity.AttackRange, new Color(0.9f, 0.9f, 0.9f));
+                highlightedEntity.Range + highlightedEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
             gridSystem.HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range,
-                new Color(0.8f, 0.8f, 0.8f));
+                new Color(0.7f, 0.7f, 0.7f));
+            isAttacking = false;
             if (isMoving)
             {
                 for (int i = 0; i < battleController.GetCharacters().Count; i++)
@@ -181,12 +168,12 @@ public class PlayerAttackSystem : MonoBehaviour
                         if (new Vector2Int((int)(e.Position.x + 0.5f), (int)(e.Position.y + 0.5f)) == hoveredTile && Vector3.Distance(pathLine.GetPosition(pathLine.positionCount -1), new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f)) <= 1)
                         {
                             a.GetComponent<SpriteRenderer>().color = Color.red;
+                            isAttacking = true;
                         }
                     }
                 }
 
             }
-            Debug.Log($"mov{isMoving} attk:{isAttacking}");
         }
 
 
@@ -199,31 +186,12 @@ public class PlayerAttackSystem : MonoBehaviour
                 new Color(0.5f, 0.5f, 0.5f));
         }
     }
-    public void StartPlayerTurn()
-    {
-        isPlayerTurn = true;
-        actionButtonParent.SetActive(true);
-    }
-    
-    public void StartMoving()
-    {
-        if(!isPlayerTurn) return;
-        isAttacking = false;
-        Debug.Log("Moving");
-    }
-
-    public void StartAttacking()
-    {
-        if (!isPlayerTurn) return;
-        Debug.Log("Attacking");
-        isMoving = false;
-    }
 
     public void EndTurn()
     {
         if(!isPlayerTurn) return;
         isPlayerTurn = false;
-        actionButtonParent.SetActive(false);
+        endTurnButton.SetActive(false);
     }
     
 }

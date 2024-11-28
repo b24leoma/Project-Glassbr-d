@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
 public class GridSystem : MonoBehaviour
@@ -10,11 +9,9 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private TileBase[] solidTiles;
     private Dictionary<Vector2, Tile> tiles;
     private Vector3 size;
-    private BattleController battleController;
 
     private void Start()
     {
-        battleController = GetComponent<BattleController>();
         tilemap = GetComponent<Tilemap>();
         tiles = new Dictionary<Vector2, Tile>();
         size = GetComponent<Tilemap>().size;
