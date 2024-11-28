@@ -2,11 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
-
-
 {
     public Animator animator;
-
     public string Name;
     public int MaxHealth { get; protected set; }
     public int CurrentHealth { get; protected set; }
@@ -25,8 +22,32 @@ public class Entity : MonoBehaviour
     {
         CurrentHealth-= damage;
     }
+    
+    
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
-    private static List<string> _human = new List<string>
+    public void MoveToTile(Vector2 pos)
+    {
+        Position = pos + new Vector2(-0.5f, -0.5f);
+    }
+    
+    public string GenerateName(bool isHuman)
+    {
+
+        if (isHuman)
+        {
+            return NameGenerator._human[Random.Range(1, NameGenerator._human.Count)]; 
+        }
+        return NameGenerator._demon[Random.Range(1, NameGenerator._demon.Count)];
+    }
+}
+
+public static class NameGenerator
+{
+    public static List<string> _human = new List<string>
     {
         "Aldric",
         "Baldwin",
@@ -69,7 +90,7 @@ public class Entity : MonoBehaviour
         "Ursula",
         "Vivianne",
     };
-    private static List<string> _demon = new List<string>
+    public static List<string> _demon = new List<string>
     {
         "Azgorn",
         "Belthar",
@@ -97,25 +118,4 @@ public class Entity : MonoBehaviour
         "Zulkarn",
         "Bob",
     };
-    
-    
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    public void MoveToTile(Vector2 pos)
-    {
-        Position = pos + new Vector2(-0.5f, -0.5f);
-    }
-
-    public string GenerateName(bool isHuman)
-    {
-
-        if (isHuman)
-        {
-            return _human[Random.Range(1, _demon.Count)]; 
-        }
-        return _demon[Random.Range(1, _demon.Count)];
-    }
 }

@@ -39,6 +39,7 @@ public class BattleController : MonoBehaviour
 
     public void Attack(Entity attacker, Entity target)
     {
+        Debug.Log("Attacked!!!");
         target.TakeDamage(attacker.Damage);
         isPlayerTurn = !isPlayerTurn;
         
