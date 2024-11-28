@@ -43,7 +43,7 @@ public class GridSystem : MonoBehaviour
         {
             for (int j = -(int)size.y; j <= size.y; j++)
             {
-                if (Vector2.Distance(entity.Position - new Vector2(-0.5f, -0.5f), new Vector2(i, j)) < range && tiles[new Vector2(i,j)].walkable)
+                if (Vector2.Distance(entity.Position - new Vector2(-0.5f, -0.5f), new Vector2(i, j)) <= range && tiles[new Vector2(i,j)].walkable)
                 {
                     tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), color);
                 }
