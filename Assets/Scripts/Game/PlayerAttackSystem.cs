@@ -28,17 +28,44 @@ public class PlayerAttackSystem : MonoBehaviour
 
     public void TileClicked(InputAction.CallbackContext context)
     {
-        if (context.started && isInMovingState && isPlayerTurn) // Click pressed
+        if (context.started && isPlayerTurn) // Click pressed
         {
-            Entity e = gridSystem.GetTile(hoveredTile).linkedEntity;
-            if (e != null)
+            if (isInMovingState)
             {
-                if (e.isHuman)
+                Entity e = gridSystem.GetTile(hoveredTile).linkedEntity;
+                if (e != null)
                 {
-                    isMoving = true;
-                    pathLine.positionCount = 1;
-                    pathLine.SetPosition(0, new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f));
-                    moveStartTile = hoveredTile;
+                    if (e.isHuman)
+                    {
+                        isMoving = true;
+                        pathLine.positionCount = 1;
+                        pathLine.SetPosition(0, new Vector3(hoveredTile.x - 0.5f, hoveredTile.y - 0.5f, -5f));
+                        moveStartTile = hoveredTile;
+                    }
+                }
+            }
+            else if (isAttacking)
+            {
+                if (Vector3.Distance(new Vector3(hoveredTile.x, hoveredTile.y), gridSystem.GetTile(moveStartTile).linkedEntity.Position) <
+                    gridSystem.GetTile(moveStartTile).linkedEntity.AttackRange && gridSystem.GetTile(hoveredTile).linkedEntity != null)
+                {
+                    if (!gridSystem.GetTile(hoveredTile).linkedEntity.isHuman)
+                    {
+                        battleController.Attack(gridSystem.GetTile(moveStartTile).linkedEntity, gridSystem.GetTile(hoveredTile).linkedEntity);
+                    }
+                }
+            }
+            else if (isInAttackingState)
+            {
+                Entity e = gridSystem.GetTile(hoveredTile).linkedEntity;
+                if (e != null)
+                {
+                    if (e.isHuman)
+                    {
+                        Debug.Log("Valid Person");
+                        isAttacking = true;
+                        moveStartTile = hoveredTile;
+                    }
                 }
             }
         }
@@ -54,7 +81,7 @@ public class PlayerAttackSystem : MonoBehaviour
                                     pos == pathLine.GetPosition(pathLine.positionCount - 1) &&
                                     Vector2.Distance(hoveredTile,
                                         highlightedEntity.Position - new Vector2(-0.5f, -0.5f)) <
-                                    highlightedEntity.Range + highlightedEntity.AttackRange)
+                                    highlightedEntity.Range)
                 {
                     if (hoveredTile != moveStartTile)
                     {
@@ -82,13 +109,13 @@ public class PlayerAttackSystem : MonoBehaviour
 
     public void MouseMove(InputAction.CallbackContext context)
     {
-        Debug.Log(isPlayerTurn + " " + isInMovingState + " " + isMoving);
+        Debug.Log(isPlayerTurn + " " + isInMovingState + ":" + isMoving + " " + isInAttackingState+":" + isAttacking + " " + hoveredTile + ":" + highlightedEntity);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
 
         //Reset highlights
-        gridSystem.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
-        if(highlightedEntity != null) gridSystem.HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range + highlightedEntity.AttackRange, Color.white);
+        if (!isAttacking) gridSystem.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0), Color.white);
+        if((highlightedEntity != null && !isAttacking) || (isAttacking)) gridSystem.HighlightSquaresInRange(highlightedEntity, highlightedEntity.Range + highlightedEntity.AttackRange, Color.white);
         foreach(Transform child in iconParent)
         {
             Destroy(child.gameObject);
@@ -99,7 +126,7 @@ public class PlayerAttackSystem : MonoBehaviour
             Vector2 pos = transform.InverseTransformPoint(hit.point);
             hoveredTile = new Vector2Int((int)Mathf.Round(pos.x + 0.5f), (int)Mathf.Round(pos.y + 0.5f));
             validHoveredTile = true;
-            if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
+            if (gridSystem.GetTile(hoveredTile).linkedEntity != null && !isAttacking)
             { 
                 highlightedEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
             }
@@ -118,7 +145,7 @@ public class PlayerAttackSystem : MonoBehaviour
             {
                 isAttacking = true;
             }
-            else
+            else if (!isInAttackingState)
             {
                 isAttacking = false;
             }
@@ -128,7 +155,7 @@ public class PlayerAttackSystem : MonoBehaviour
         {
             if (highlightedEntity != null)
             {
-                if (Vector2.Distance(hoveredTile, moveStartTile) < highlightedEntity.Range + highlightedEntity.AttackRange)
+                if (Vector2.Distance(hoveredTile, moveStartTile) < highlightedEntity.Range)
                 {
                     //Add to path
                     if (validHoveredTile && gridSystem.GetTile(hoveredTile).walkable && Vector3.Distance(
@@ -175,14 +202,14 @@ public class PlayerAttackSystem : MonoBehaviour
                 {
                     GameObject a = Instantiate(attackHighlightIcon, e.Position, Quaternion.identity,
                         iconParent);
-                    if (new Vector2Int((int)(e.Position.x + 0.5f), (int)(e.Position.y + 0.5f)) == hoveredTile)
+                    if ( isAttacking || new Vector2Int((int)(e.Position.x + 0.5f), (int)(e.Position.y + 0.5f)) == hoveredTile)
                     {
                         a.GetComponent<SpriteRenderer>().color = Color.red;
                     }
                 }
 
             }
-            if (isMoving && pathLine.positionCount > 0 || isAttacking)
+            if (isMoving && pathLine.positionCount > 0)
             {
                 Vector3 pos = pathLine.GetPosition(pathLine.positionCount - 1);
                 gridSystem.SetColor(new Vector3Int((int)(pos.x - 0.5f), (int)(pos.y - 0.5f), 0),
@@ -191,7 +218,6 @@ public class PlayerAttackSystem : MonoBehaviour
             }
         }
     }
-
     public void StartPlayerTurn()
     {
         isPlayerTurn = true;
