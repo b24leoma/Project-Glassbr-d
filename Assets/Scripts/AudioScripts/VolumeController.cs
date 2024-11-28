@@ -1,33 +1,41 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using FMOD.Studio;
 using UnityEngine;
-using FMODUnity;
-using UnityEngine.Serialization;
 
 public class VolumeController : MonoBehaviour
 {
-   [SerializeField] private VCA Master;
-   [SerializeField] private VCA Music;
-   [SerializeField] private VCA SFX;
-   [SerializeField] private VCA Ambience;
+    private VCA _masterVca;
+    private VCA _musicVca;
+    private VCA _sfxVca;
+    private VCA _ambienceVca;
     
- [Range (0, 100)]
-    public int master;
-   [Range (0, 100)]
-    public int music;
-   [Range (0, 100)]
-    public int sfx;
-[Range (0, 100)]
-    public int ambience;
+    
+ [Range(0f, 1f)] public float masterVolume = 1f;
+ [Range(0f, 1f)] public float musicVolume = 1f;
+ [Range(0f, 1f)] public float sfxVolume = 1f;
+ [Range(0f, 1f)] public float ambienceVolume = 1f;
 
     private void Start()
     {
-        master = 100;
-        music = 100;
-        sfx = 100;    
-        ambience = 100;
+        _masterVca = FMODUnity.RuntimeManager.GetVCA("vca:/Master");
+        _musicVca = FMODUnity.RuntimeManager.GetVCA("vca:/Music");
+        _sfxVca = FMODUnity.RuntimeManager.GetVCA("vca:/SFX");
+        _ambienceVca = FMODUnity.RuntimeManager.GetVCA("vca:/Ambience");
         
+        UpdateVca();
+        
+
+    }
+
+    private void OnValidate()
+    {
+        UpdateVca();
+    }
+
+    private void UpdateVca()
+    {
+        if (_masterVca.isValid()) _masterVca.setVolume(masterVolume);
+        if (_musicVca.isValid()) _musicVca.setVolume(musicVolume);
+        if (_sfxVca.isValid()) _sfxVca.setVolume(sfxVolume);
+        if (_ambienceVca.isValid()) _ambienceVca.setVolume(ambienceVolume);
     }
 }
