@@ -74,3 +74,7 @@ Assets/Plugins/FMOD/Resources/FMODStudioCache.asset
 Assets/StreamingAssets/*.bank
 fmod_editor.log
 *.plist
+/[Aa]ssets/**/FMODStudioCache.asset
+/[Aa]ssets/**/FMODStudioCache.asset.meta
+/[Aa]ssets/Plugins/FMOD/Cache.meta
+/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
