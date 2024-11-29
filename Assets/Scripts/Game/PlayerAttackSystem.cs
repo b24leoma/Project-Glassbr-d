@@ -27,21 +27,19 @@ namespace Game
         void Start()
         {
             battleController = GetComponent<BattleController>();
-            isPlayerTurn = true;
             moveIcon.color = Color.gray;
             attackIcon.color = Color.gray;
         }
 
         public void TileClicked(InputAction.CallbackContext context)
         {
-            Debug.Log(isPlayerTurn);
             if (!isPlayerTurn) return;
             if (context.started) // Click pressed
             {
                 Entity currentEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                 if (currentEntity != null)
                 {
-                    if (currentEntity.isHuman && !attackMode)
+                    if (currentEntity.isHuman && !attackMode && currentEntity.hasQueuedMovement)
                     {
                         isMoving = true;
                         pathLine.positionCount = 1;
@@ -58,7 +56,7 @@ namespace Game
                 {
                     if (isAttacking)
                     {
-                        hoveredEntity.hasQueuedAttack = true;
+                        hoveredEntity.AttackQueued(true);
                         battleController.Attack(hoveredEntity, gridSystem.GetTile(hoveredTile).linkedEntity);
                         battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
 

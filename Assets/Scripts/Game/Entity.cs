@@ -56,6 +56,16 @@ namespace Game
                 NameGenerator._human.Remove(Name);
             }
         }
+
+
+        public virtual void MoveQueued(bool hasQueued)
+        {
+            hasQueuedMovement = hasQueued;
+        }
+        public virtual void AttackQueued(bool hasQueued)
+        {
+            hasQueuedAttack = hasQueued;
+        }
     }
 
     public static class NameGenerator
