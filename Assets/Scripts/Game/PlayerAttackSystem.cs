@@ -6,6 +6,9 @@ namespace Game
 {
     public class PlayerAttackSystem : MonoBehaviour
     {
+        [Header("Components")]
+        [SerializeField]private GridSystem gridSystem;
+        [Header("Assets")]
         [SerializeField] private GameObject endTurnButton;
         [SerializeField] private LineRenderer pathLine;
         [SerializeField] private GameObject attackHighlightIcon;
@@ -19,14 +22,11 @@ namespace Game
         private bool isMoving;
         private bool isAttacking;
         private bool attackMode;
-        private BattleController battleController;
-        private GridSystem gridSystem;
         private bool isPlayerTurn;
-
+        private BattleController battleController;
         void Start()
         {
             battleController = GetComponent<BattleController>();
-            gridSystem = GetComponent<GridSystem>();
             isPlayerTurn = true;
             moveIcon.color = Color.gray;
             attackIcon.color = Color.gray;

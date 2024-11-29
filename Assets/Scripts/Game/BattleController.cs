@@ -1,35 +1,59 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
     public class BattleController : MonoBehaviour
     {
+        [Header("Levels")]
+        [SerializeField] public List<Level> LevelEntities;
+        [Header("Events")]
+        [SerializeField] private UnityEvent Player1TurnStart;
+        [SerializeField] private UnityEvent Player2TurnStart;
+        [Header("Components")]
+        [SerializeField] private GridSystem gridSystem;
+        [SerializeField] private bool isPlayer1Turn;  
+        [Header("Assets")]
         [SerializeField] private GameObject infoDisplay;
         [SerializeField] private TextMeshProUGUI displayStats;
         [SerializeField] private TextMeshProUGUI displayName;
-        [SerializeField] private List<Spawning> spawnList;
         [SerializeField] private Transform entityParent;
         [SerializeField] private GameObject human;
         [SerializeField] private GameObject demon;
         private List<Entity> characters;
-        public bool isPlayerTurn;
-        private GridSystem gridSystem;
-        private PlayerAttackSystem playerAttack;
-
+        private int level;
         void Start()
         {
             characters = new List<Entity>();
-            gridSystem = GetComponent<GridSystem>();   
-            foreach (Spawning spawn in spawnList)
+            LoadLevel();
+        }
+
+        void LoadLevel()
+        {
+            characters.Clear();
+            foreach (SpawnEntity spawn in LevelEntities[level].spawnList)
             {
                 CreateEntity(spawn.Position, spawn.isHuman);
             }
-
-            playerAttack = GetComponent<PlayerAttackSystem>();
-            isPlayerTurn = true;
             infoDisplay.SetActive(false);
+        }
+
+        public void NextLevel()
+        {
+            level++;
+            if (level >= LevelEntities.Count)
+            {
+                Debug.Log("Win");
+            }
+            else
+            {
+                gridSystem.ClearGrid();
+                LoadLevel();
+            }
         }
 
         void CreateEntity(Vector2 pos, bool isHuman)
@@ -54,8 +78,9 @@ namespace Game
 
         public void EndTurn()
         {
-            isPlayerTurn = !isPlayerTurn;
-            if(isPlayerTurn) playerAttack.StartTurn();
+            isPlayer1Turn = !isPlayer1Turn;
+            if(isPlayer1Turn) Player1TurnStart?.Invoke();
+            else Player2TurnStart?.Invoke();
         }
 
 
@@ -74,10 +99,16 @@ namespace Game
         public List<Entity> GetCharacters(){return characters;}
         public Entity GetCharacterAt(int i){return characters[i];}
     
-        [System.Serializable] public class Spawning
+        [System.Serializable] public class SpawnEntity
         {
             public Vector2 Position;
             public bool isHuman;
+        }
+
+        [System.Serializable]
+        public class Level
+        {
+            public List<SpawnEntity> spawnList;
         }
     }
 }

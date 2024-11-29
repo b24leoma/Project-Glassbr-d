@@ -11,11 +11,10 @@ namespace Game
         [SerializeField] private TileBase[] solidTiles;
         private Dictionary<Vector2, Tile> tiles;
         private Vector3 size;
-
         private void Start()
         {
             tilemap = GetComponent<Tilemap>();
-            tiles = new Dictionary<Vector2, Tile>();
+           tiles = new Dictionary<Vector2, Tile>();
             size = GetComponent<Tilemap>().size;
 
             size.x = size.x / 2 - 0.5f;
@@ -79,11 +78,27 @@ namespace Game
         {
             tilemap.SetColor(pos, color);
         }
+
+        public void ClearGrid()
+        {
+            for (int i = -(int)size.x; i <= size.x; i++)
+            {
+                for (int j = -(int)size.y; j <= size.y; j++)
+                {
+                    Tile t = tiles[new Vector2(i, j)];
+                    if (t.linkedEntity != null)
+                    {
+                        tiles[new Vector2(i, j)].linkedEntity = null;
+                        Destroy(t.linkedEntity.gameObject);
+                    }
+                }
+            }
+        }
     }
 
     public class Tile
     {
-        public Entity linkedEntity = null;
+        public Entity linkedEntity;
         public bool walkable = true;
     }
 }
