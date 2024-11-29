@@ -34,6 +34,7 @@ namespace Game
 
         public void TileClicked(InputAction.CallbackContext context)
         {
+            Debug.Log(isPlayerTurn);
             if (!isPlayerTurn) return;
             if (context.started) // Click pressed
             {

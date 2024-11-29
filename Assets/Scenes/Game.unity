@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c603f19528ad324bbe2d6f1f049cf35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSystem: {fileID: 0}
+  gridSystem: {fileID: 651517034}
   endTurnButton: {fileID: 1392535647}
   pathLine: {fileID: 1425331444}
   attackHighlightIcon: {fileID: 8647851982552627174, guid: 4c65087676a8c1945a0733a846acc5d4, type: 3}
@@ -173,11 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelEntities:
   - spawnList:
-    - Position: {x: -8, y: 2}
+    - Position: {x: -8, y: -2}
       isHuman: 1
     - Position: {x: -8, y: 0}
       isHuman: 1
-    - Position: {x: -8, y: -2}
+    - Position: {x: -8, y: 2}
       isHuman: 1
     - Position: {x: -7, y: 0}
       isHuman: 1
@@ -187,7 +187,7 @@ MonoBehaviour:
       isHuman: 0
     - Position: {x: 7, y: 1}
       isHuman: 0
-    - Position: {x: 9, y: -1}
+    - Position: {x: 9, y: 1}
       isHuman: 0
     - Position: {x: 9, y: 0}
       isHuman: 0
@@ -198,9 +198,9 @@ MonoBehaviour:
     - Position: {x: 8, y: -5}
       isHuman: 0
   - spawnList:
-    - Position: {x: -8, y: 0}
+    - Position: {x: 0, y: 0}
       isHuman: 1
-    - Position: {x: 8, y: 0}
+    - Position: {x: 0, y: 0}
       isHuman: 0
   Player1TurnStart:
     m_PersistentCalls:
@@ -253,7 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 698159205}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &251200903
 GameObject:
@@ -3362,39 +3362,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667459983}
   m_CullTransparentMesh: 1
---- !u!1 &698159204
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 698159205}
-  m_Layer: 0
-  m_Name: DONTDESTROYONLOAD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &698159205
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698159204}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 56033652}
-  - {fileID: 1955312828}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037766082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,8 +3850,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackSystem, Assembly-CSharp
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
         m_MethodName: MouseMove
         m_Mode: 0
         m_Arguments:
@@ -3899,8 +3866,8 @@ MonoBehaviour:
     m_ActionName: Player/PointerReference[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttackSystem, Assembly-CSharp
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
         m_MethodName: TileClicked
         m_Mode: 0
         m_Arguments:
@@ -4377,7 +4344,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 529959158}
-  m_Father: {fileID: 698159205}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146461520
 GameObject:
@@ -4415,7 +4382,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 698159205}
+  - {fileID: 56033652}
+  - {fileID: 1955312828}
   - {fileID: 1234673373}
   - {fileID: 2146461521}
   - {fileID: 1150914486}

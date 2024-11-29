@@ -11,10 +11,10 @@ namespace Game
         [SerializeField] private TileBase[] solidTiles;
         private Dictionary<Vector2, Tile> tiles;
         private Vector3 size;
-        private void Start()
+        private void OnEnable()
         {
             tilemap = GetComponent<Tilemap>();
-           tiles = new Dictionary<Vector2, Tile>();
+            tiles = new Dictionary<Vector2, Tile>();
             size = GetComponent<Tilemap>().size;
 
             size.x = size.x / 2 - 0.5f;
@@ -57,10 +57,10 @@ namespace Game
             Debug.Log("Moved");
         }
 
-        public void ConnectToTile(Vector2 tile, Entity entity)
+        public void ConnectToTile(Vector2 pos, Entity entity)
         {
-            tiles[tile].linkedEntity = entity;
-            entity.MoveToTile(tile);
+            tiles[pos].linkedEntity = entity;
+            entity.MoveToTile(pos);
         }
 
         public Tile GetTile(Vector2Int position)
