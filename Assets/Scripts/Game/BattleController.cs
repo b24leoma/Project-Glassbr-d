@@ -82,6 +82,7 @@ namespace Game
         public void EndTurn()
         {
             isPlayer1Turn = !isPlayer1Turn;
+            Debug.Log(isPlayer1Turn ? "Player1" : "Player2");
             if(isPlayer1Turn) Player1TurnStart?.Invoke();
             else Player2TurnStart?.Invoke();
         }
