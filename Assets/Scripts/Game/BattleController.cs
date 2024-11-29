@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -29,6 +30,7 @@ namespace Game
         void Start()
         {
             characters = new List<Entity>();
+            gridSystem.ClearGrid();
             LoadLevel();
         }
 
@@ -40,6 +42,7 @@ namespace Game
                 CreateEntity(spawn.Position, spawn.isHuman);
             }
             infoDisplay.SetActive(false);
+            Player1TurnStart.Invoke();
         }
 
         public void NextLevel()
@@ -56,7 +59,7 @@ namespace Game
             }
         }
 
-        void CreateEntity(Vector2 pos, bool isHuman)
+        void CreateEntity(Vector2Int pos, bool isHuman)
         {
             Entity e = Instantiate(isHuman ? human : demon, Vector3.zero, Quaternion.identity, entityParent)
                 .GetComponent<Entity>();
@@ -101,7 +104,7 @@ namespace Game
     
         [System.Serializable] public class SpawnEntity
         {
-            public Vector2 Position;
+            public Vector2Int Position;
             public bool isHuman;
         }
 
