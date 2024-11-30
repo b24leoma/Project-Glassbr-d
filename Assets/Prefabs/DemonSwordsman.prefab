@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4625574051710295882}
   - component: {fileID: 7390972885558429114}
   - component: {fileID: 6515289899751708479}
-  - component: {fileID: 5350940503570981573}
+  - component: {fileID: 5663522254906529691}
   m_Layer: 6
-  m_Name: Demon
+  m_Name: DemonSwordsman
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5350940503570981573
+--- !u!114 &5663522254906529691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,9 +116,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5302196309894914950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d1099870ede8624ab2465828894a2f8, type: 3}
+  m_Script: {fileID: 11500000, guid: b413cb616cd80f545a5e42903ef87593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 6515289899751708479}
-  Name: 
+  animator: {fileID: 0}
   isHuman: 0
+  hasQueuedMovement: 0
+  hasQueuedAttack: 0

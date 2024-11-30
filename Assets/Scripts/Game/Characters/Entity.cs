@@ -5,8 +5,15 @@ namespace Game
 {
     public class Entity : MonoBehaviour
     {
+        public enum EntityType
+        {
+            HumanSpearman,
+            HumanArcher,
+            DemonSwordsman,
+            DemonTank
+        };
         public Animator animator;
-        public string Name { get; private set; }
+        public string Name { get; protected set; }
         public int MaxHealth { get; protected set; }
         public int CurrentHealth { get; protected set; }
         public int Damage { get; protected set; } 
@@ -14,10 +21,9 @@ namespace Game
         public int AttackRange { get; protected set; }
         public bool IsMelee { get; protected set; }
 
-        public bool isHuman;
-    
-        public bool hasQueuedMovement;
-        public bool hasQueuedAttack;
+        [HideInInspector] public bool isHuman;
+        [HideInInspector] public bool hasQueuedMovement;
+        [HideInInspector] public bool hasQueuedAttack;
     
         public Vector2 Position
         {
@@ -42,20 +48,6 @@ namespace Game
         {
             Position = pos + new Vector2(-0.5f, -0.5f);
         }
-    
-        protected void GenerateName()
-        {
-            if (isHuman)
-            {
-                Name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
-                NameGenerator._human.Remove(Name);
-            }
-            else
-            {
-                Name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
-                NameGenerator._human.Remove(Name);
-            }
-        }
 
 
         public virtual void MoveQueued(bool hasQueued)
@@ -70,6 +62,23 @@ namespace Game
 
     public static class NameGenerator
     {
+        public static string GenerateName(bool isHuman)
+        {
+            if (isHuman)
+            {
+                string name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
+                NameGenerator._human.Remove(name);
+                return name;
+                
+            }
+            else
+            {
+                string name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
+                NameGenerator._human.Remove(name);
+                return name;
+            }
+        }
+        
         public static readonly List<string> _human = new List<string>
         {
             "Aldric",

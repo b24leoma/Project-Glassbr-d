@@ -1,10 +1,7 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -23,8 +20,10 @@ namespace Game
         [SerializeField] private TextMeshProUGUI displayStats;
         [SerializeField] private TextMeshProUGUI displayName;
         [SerializeField] private Transform entityParent;
-        [SerializeField] private GameObject human;
-        [SerializeField] private GameObject demon;
+        [SerializeField] private GameObject humanSpearman;
+        [SerializeField] private GameObject humanArcher;
+        [SerializeField] private GameObject demonSwordsman;
+        [SerializeField] private GameObject demonTank;
         private List<Entity> characters;
         private int level;
         void Start()
@@ -39,7 +38,7 @@ namespace Game
             characters.Clear();
             foreach (SpawnEntity spawn in LevelEntities[level].spawnList)
             {
-                CreateEntity(spawn.Position, spawn.isHuman);
+                CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);
             }
             infoDisplay.SetActive(false);
             Player1TurnStart.Invoke();
@@ -59,10 +58,25 @@ namespace Game
             }
         }
 
-        void CreateEntity(Vector2Int pos, bool isHuman)
+        void CreateEntity(Vector2Int pos, Entity.EntityType type)
         {
-            Entity e = Instantiate(isHuman ? human : demon, Vector3.zero, Quaternion.identity, entityParent)
-                .GetComponent<Entity>();
+            GameObject g = null;
+            switch (type)
+            {
+                case Entity.EntityType.HumanSpearman:
+                    g = Instantiate(humanSpearman, Vector3.zero, Quaternion.identity, entityParent);
+                    break;
+                case Entity.EntityType.HumanArcher:
+                    g = Instantiate(humanArcher, Vector3.zero, Quaternion.identity, entityParent);
+                    break;
+                case Entity.EntityType.DemonSwordsman:
+                    g = Instantiate(demonSwordsman, Vector3.zero, Quaternion.identity, entityParent);
+                    break;
+                case Entity.EntityType.DemonTank:
+                    g = Instantiate(demonTank, Vector3.zero, Quaternion.identity, entityParent);
+                    break;
+            }
+            Entity e = g.GetComponent<Entity>();
             gridSystem.ConnectToTile(pos, e);
             characters.Add(e);
         }
@@ -103,10 +117,17 @@ namespace Game
         public List<Entity> GetCharacters(){return characters;}
         public Entity GetCharacterAt(int i){return characters[i];}
     
+        
+        
+        
+        
+        
+        
+        
         [System.Serializable] public class SpawnEntity
         {
-            public Vector2Int Position;
-            public bool isHuman;
+            public Vector2 Position;
+            public Entity.EntityType Type;
         }
 
         [System.Serializable]

@@ -175,34 +175,34 @@ MonoBehaviour:
   LevelEntities:
   - spawnList:
     - Position: {x: -8, y: -2}
-      isHuman: 1
+      Type: 0
     - Position: {x: -8, y: 0}
-      isHuman: 1
+      Type: 0
     - Position: {x: -8, y: 2}
-      isHuman: 1
+      Type: 0
     - Position: {x: -7, y: 0}
-      isHuman: 1
+      Type: 0
     - Position: {x: 7, y: -1}
-      isHuman: 0
+      Type: 3
     - Position: {x: 7, y: 0}
-      isHuman: 0
+      Type: 3
     - Position: {x: 7, y: 1}
-      isHuman: 0
+      Type: 3
     - Position: {x: 9, y: 1}
-      isHuman: 0
+      Type: 3
     - Position: {x: 9, y: 0}
-      isHuman: 0
+      Type: 3
     - Position: {x: 9, y: -1}
-      isHuman: 0
+      Type: 3
     - Position: {x: 8, y: 5}
-      isHuman: 0
+      Type: 3
     - Position: {x: 8, y: -5}
-      isHuman: 0
+      Type: 3
   - spawnList:
-    - Position: {x: 0, y: 0}
-      isHuman: 1
-    - Position: {x: 0, y: 0}
-      isHuman: 0
+    - Position: {x: 5, y: 0}
+      Type: 0
+    - Position: {x: -5, y: 0}
+      Type: 3
   Player1TurnStart:
     m_PersistentCalls:
       m_Calls:
@@ -239,8 +239,10 @@ MonoBehaviour:
   displayStats: {fileID: 1037766086}
   displayName: {fileID: 508322861}
   entityParent: {fileID: 2146461521}
-  human: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
-  demon: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
+  humanSpearman: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
+  humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
+  demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
+  demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
 --- !u!4 &56033652
 Transform:
   m_ObjectHideFlags: 0

@@ -179,9 +179,9 @@ GameObject:
   - component: {fileID: 7663342931390442820}
   - component: {fileID: 5547023461235488692}
   - component: {fileID: 8071026092369503537}
-  - component: {fileID: 1375164955956534204}
+  - component: {fileID: -5561470016792315613}
   m_Layer: 6
-  m_Name: Human
+  m_Name: HumanSpearman
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1375164955956534204
+--- !u!114 &-5561470016792315613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,11 +286,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7205145530146460040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958c28328c3370846aa78f02cee41f92, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b4a765f398fbd24fa6b9b21132069dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 8071026092369503537}
-  isHuman: 1
+  animator: {fileID: 0}
+  isHuman: 0
   hasQueuedMovement: 0
   hasQueuedAttack: 0
   movingIcon: {fileID: 4951628918647575082}

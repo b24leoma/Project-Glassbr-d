@@ -6,15 +6,10 @@ namespace Game
     {
         [SerializeField] private GameObject movingIcon;
         [SerializeField] private GameObject attackingIcon;
-        void Start()
+        void Awake()
         {
-            MoveRange = 3;
-            AttackRange = 1;
-            MaxHealth = 100;
-            CurrentHealth = MaxHealth;
-            Damage = 20; 
-            GenerateName();
-            IsMelee = AttackRange <= 1;
+           isHuman = true;
+           Name = NameGenerator.GenerateName(true);
         }
         
         public override void MoveQueued(bool hasQueued)
