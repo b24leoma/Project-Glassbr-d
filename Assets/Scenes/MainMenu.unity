@@ -642,10 +642,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 365257341}
-          m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
-          m_MethodName: ChangeSelection
-          m_Mode: 3
+        - m_Target: {fileID: 277388776}
+          m_TargetAssemblyTypeName: OnHoverSelection, Assembly-CSharp
+          m_MethodName: MouseEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1080,7 +1080,6 @@ GameObject:
   m_Component:
   - component: {fileID: 365257340}
   - component: {fileID: 365257342}
-  - component: {fileID: 365257341}
   m_Layer: 0
   m_Name: SelectionHighlight
   m_TagString: Untagged
@@ -1088,16 +1087,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &365257340
-Transform:
+--- !u!224 &365257340
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365257339}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 700, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1105,22 +1103,11 @@ Transform:
   - {fileID: 257334987}
   m_Father: {fileID: 967774397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &365257341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365257339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a4621cb28ae18c4abaa958a23d70873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 449671340}
-  - {fileID: 277388777}
-  - {fileID: 2125155167}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 700}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365257342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1147,7 @@ MonoBehaviour:
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 365257341}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
         m_MethodName: ChangeSelection
         m_Mode: 0
@@ -1176,7 +1163,7 @@ MonoBehaviour:
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 365257341}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
         m_MethodName: OnEnter
         m_Mode: 0
@@ -1283,11 +1270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c866539a2bb5664c806ecb53ebf3df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: 1d6482047d2122d4a850ff9666851c59, type: 2}
-  audioMixerParameter: MasterVolume
-  slider: {fileID: 1287482870}
-  sliderValueText: {fileID: 0}
-  valueScaleType: 0
 --- !u!1 &449671338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,18 +1369,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuFunctions, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &449671341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,10 +1437,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 365257341}
-          m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
-          m_MethodName: ChangeSelection
-          m_Mode: 3
+        - m_Target: {fileID: 449671343}
+          m_TargetAssemblyTypeName: OnHoverSelection, Assembly-CSharp
+          m_MethodName: MouseEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2557,11 +2527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c866539a2bb5664c806ecb53ebf3df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: 92f3d335495bcfb429a1dde243c92068, type: 2}
-  audioMixerParameter: SFXVolume
-  slider: {fileID: 256174499}
-  sliderValueText: {fileID: 0}
-  valueScaleType: 0
 --- !u!1 &1092998905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,8 +3737,8 @@ GameObject:
   - component: {fileID: 2125155169}
   - component: {fileID: 2125155168}
   - component: {fileID: 2125155167}
-  - component: {fileID: 2125155172}
   - component: {fileID: 2125155170}
+  - component: {fileID: 2125155172}
   - component: {fileID: 2125155171}
   m_Layer: 5
   m_Name: QuitButton
@@ -3926,10 +3891,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 365257341}
-          m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
-          m_MethodName: ChangeSelection
-          m_Mode: 3
+        - m_Target: {fileID: 2125155170}
+          m_TargetAssemblyTypeName: OnHoverSelection, Assembly-CSharp
+          m_MethodName: MouseEnter
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4007,11 +3972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c866539a2bb5664c806ecb53ebf3df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: bd30df7295263214ca97cc539106b44f, type: 2}
-  audioMixerParameter: MusicVolume
-  slider: {fileID: 1092998907}
-  sliderValueText: {fileID: 0}
-  valueScaleType: 0
 --- !u!1 &2141741818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,7 +4031,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 365257341}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
           m_MethodName: ChangeSelection
           m_Mode: 3
