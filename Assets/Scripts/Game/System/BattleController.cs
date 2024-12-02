@@ -89,9 +89,9 @@ namespace Game
         }
         private void Attack(Entity attacker, Entity target)
         {
-            int reduction = (1 - (gridSystem.GetTile(new Vector2Int((int)target.Position.x, (int)target.Position.y))
-                .DamageReductionPercent / 100));
-            target.TakeDamage(attacker.Damage * reduction);
+            float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)target.Position.x+1, (int)target.Position.y+1))
+                .DamageReductionPercent / 100f);
+            target.TakeDamage(reduction * target.Damage);
             FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
             FMODManager.instance.OneShot("GenericHit", target.transform.position);
             

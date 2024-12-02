@@ -31,9 +31,9 @@ namespace Game
             private set => transform.position = value;
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(float damage)
         {
-            CurrentHealth-= damage;
+            CurrentHealth-= (int)damage;
         }
     
     
