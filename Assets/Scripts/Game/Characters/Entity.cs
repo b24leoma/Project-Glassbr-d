@@ -75,8 +75,8 @@ namespace Game
             }
             else
             {
-                string name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
-                NameGenerator._human.Remove(name);
+                string name = NameGenerator._demon[Random.Range(1, NameGenerator._demon.Count)];
+                NameGenerator._demon.Remove(name);
                 return name;
             }
         }
