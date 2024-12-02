@@ -26,14 +26,16 @@ namespace Game
                 {
                     tiles[new Vector2(i, j)] = new Tile();
                     tilemap.SetTileFlags(new Vector3Int(i - 1, j - 1, 0), TileFlags.None);
-                    
+                    TileBase tile = tilemap.GetTile(new Vector3Int(i - 1, j - 1, 0));
                     //Assign Custom Effects
-                    int index = Array.IndexOf(CustomTiles, tilemap.GetTile(new Vector3Int(i - 1, j - 1, 0)));
-                    if (index > -1)
+                    for (int k = 0; k < CustomTiles.Length; k++)
                     {
-                        tiles[new Vector2(i, j)].walkable = CustomTiles[index].walkable;
-                        tiles[new Vector2(i, j)].ArcherRangeIncrease = CustomTiles[index].ArcherRangeIncrease;
-                        tiles[new Vector2(i, j)].DamageReductionPercent = CustomTiles[index].DamageReductionPercent;
+                        if (CustomTiles[k].tile == tile)
+                        {
+                            tiles[new Vector2(i, j)].walkable = CustomTiles[k].walkable;
+                            tiles[new Vector2(i, j)].ArcherRangeIncrease = CustomTiles[k].ArcherRangeIncrease;
+                            tiles[new Vector2(i, j)].DamageReductionPercent = CustomTiles[k].DamageReductionPercent;
+                        }
                     }
                 }
             }
@@ -77,9 +79,9 @@ namespace Game
         }
 
 
-        public void SetColor(Vector3Int pos, Color color)
+        public void SetColor(Vector2 pos, Color color)
         {
-            tilemap.SetColor(pos, color);
+            if (tiles[new Vector2(pos.x,pos.y)].walkable) tilemap.SetColor(new Vector3Int((int)pos.x - 1, (int)pos.y - 1, 0), color);;
         }
 
         public void ClearGrid()

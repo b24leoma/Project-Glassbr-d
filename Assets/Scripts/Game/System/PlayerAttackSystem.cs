@@ -105,7 +105,7 @@ namespace Game
                     isAttacking = false;
                     isMoving = false;
                     pathLine.positionCount = 1;
-                    gridSystem.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0),
+                    gridSystem.SetColor(hoveredTile,
                         new Color(0.8f, 0.8f, 0.8f));
                 }
                 else
@@ -215,7 +215,7 @@ namespace Game
 
             if (!isMoving) hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
             if (!isAttacking)
-                gridSystem.SetColor(new Vector3Int(hoveredTile.x - 1, hoveredTile.y - 1, 0),
+                gridSystem.SetColor(hoveredTile,
                     new Color(0.8f, 0.8f, 0.8f));
 
 
@@ -296,9 +296,9 @@ namespace Game
             if (isMoving && pathLine.positionCount > 0)
             {
                 Vector3 pos = pathLine.GetPosition(pathLine.positionCount - 1);
-                gridSystem.SetColor(new Vector3Int((int)(pos.x - 0.5f), (int)(pos.y - 0.5f), 0),
+                gridSystem.SetColor(pos + new Vector3(0.5f, 0.5f),
                     new Color(0.5f, 0.5f, 0.5f));
-                gridSystem.SetColor(new Vector3Int(moveStartTile.x - 1, moveStartTile.y - 1, 0),
+                gridSystem.SetColor(moveStartTile,
                     new Color(0.5f, 0.5f, 0.5f));
             }
         }
