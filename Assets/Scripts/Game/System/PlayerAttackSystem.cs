@@ -22,12 +22,14 @@ namespace Game
         private bool isAttacking;
         private bool attackMode;
         private bool isPlayerTurn;
+        private Vector3 offsetFix;
         private BattleController battleController;
         private Dictionary<Entity, Entity> attackList;
         void Start()
         {
             battleController = GetComponent<BattleController>();
             attackList = new Dictionary<Entity, Entity>();
+            offsetFix = transform.InverseTransformPoint(Vector3.zero);
         }
 
         public void TileClicked(InputAction.CallbackContext context)
@@ -142,7 +144,8 @@ namespace Game
 
             if (hit.collider != null)
             {
-                Vector2 pos = transform.InverseTransformPoint(hit.point);
+                Vector2 pos = transform.InverseTransformPoint(hit.point) - offsetFix;
+                Debug.Log(pos);
                 Vector2Int newPos = new Vector2Int((int)Mathf.Round(pos.x + 0.5f), (int)Mathf.Round(pos.y + 0.5f));
                 if (hoveredTile == newPos) return;
                 hoveredTile = newPos;
