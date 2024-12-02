@@ -122,7 +122,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   MaxHealth: 175
   Damage: 25
-  MoveRange: 1
+  MoveRange: 3
   AttackRange: 1
   isHuman: 0
   hasQueuedMovement: 0

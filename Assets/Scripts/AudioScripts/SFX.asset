@@ -13,14 +13,6 @@ MonoBehaviour:
   m_Name: SFX
   m_EditorClassIdentifier: 
   audioEvents:
-  - nameRef: Hit
-    eventReference:
-      Guid:
-        Data1: -271617029
-        Data2: 1230054026
-        Data3: 139029161
-        Data4: 1559222730
-      Path: event:/Hit
   - nameRef: UISelect
     eventReference:
       Guid:
@@ -37,3 +29,27 @@ MonoBehaviour:
         Data3: 1483682216
         Data4: -1265979148
       Path: event:/UIClick
+  - nameRef: GenericHit
+    eventReference:
+      Guid:
+        Data1: -271617029
+        Data2: 1230054026
+        Data3: 139029161
+        Data4: 1559222730
+      Path: event:/Hit
+  - nameRef: GenericAttack
+    eventReference:
+      Guid:
+        Data1: 945319318
+        Data2: 1142002533
+        Data3: 2070741665
+        Data4: 2007031916
+      Path: event:/UISelect
+  - nameRef: GenericWalk
+    eventReference:
+      Guid:
+        Data1: -229300437
+        Data2: 1250876390
+        Data3: 891156660
+        Data4: -271788847
+      Path: event:/Walk

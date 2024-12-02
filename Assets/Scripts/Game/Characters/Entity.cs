@@ -75,8 +75,8 @@ namespace Game
             }
             else
             {
-                string name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
-                NameGenerator._human.Remove(name);
+                string name = NameGenerator._demon[Random.Range(1, NameGenerator._demon.Count)];
+                NameGenerator._demon.Remove(name);
                 return name;
             }
         }
@@ -126,30 +126,26 @@ namespace Game
         };
         public static readonly List<string> _demon = new List<string>
         {
-            "Azgorn",
-            "Belthar",
-            "Calzeth",
-            "Daemora",
-            "Eryx",
-            "Falthor",
-            "Gorrak",
-            "Helzra",
-            "Inferius",
-            "Jyxar",
-            "Karzog",
-            "Lorthan",
-            "Malzeth",
-            "Nefyra",
-            "Ozzrak",
-            "Pyrak",
-            "Quorath",
-            "Razgoul",
-            "Skarneth",
-            "Thalzor",
-            "Umbrak",
-            "Vraxxis",
-            "Xanthar",
-            "Zulkarn",
+            "Luster",
+            "Larceny",
+            "Execution",
+            "Devours",
+            "Picker",
+            "Haughty",
+            "Ire",
+            "Rapacity",
+            "Envyn",
+            "Idlek",
+            "Immodera",
+            "Solipsi",
+            "Treach",
+            "Wiolat",
+            "Malick",
+            "Lia",
+            "Torment",
+            "Pherver",
+            "Cultest",
+            "Preshor",
             "Bob",
         };
     }
