@@ -84,12 +84,10 @@ namespace Game
 
         public void Move(Vector2 from, Vector2 to)
         {
-            Debug.Log("Move!!!");
             gridSystem.MoveUnit(from, to);
         }
-        public void Attack(Entity attacker, Entity target)
+        private void Attack(Entity attacker, Entity target)
         {
-            Debug.Log($"{attacker.Position} -> {target.Position}");
             int reduction = (1 - (gridSystem.GetTile(new Vector2Int((int)target.Position.x, (int)target.Position.y))
                 .DamageReductionPercent / 100));
             target.TakeDamage(attacker.Damage * reduction);

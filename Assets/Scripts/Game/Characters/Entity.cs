@@ -42,6 +42,8 @@ namespace Game
             animator = GetComponent<Animator>();
             hasQueuedMovement = false;
             hasQueuedMovement = false;
+            CurrentHealth = MaxHealth;
+            IsMelee = AttackRange <= 1;
         }
 
         public void MoveToTile(Vector2 pos)

@@ -58,7 +58,6 @@ namespace Game
             Entity e = tiles[currentPos].linkedEntity;
             tiles[currentPos].linkedEntity = null;
             ConnectToTile(newPos, e);
-            Debug.Log("Moved");
         }
 
         public void ConnectToTile(Vector2 pos, Entity entity)

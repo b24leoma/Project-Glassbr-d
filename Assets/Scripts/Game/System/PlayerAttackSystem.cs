@@ -145,7 +145,6 @@ namespace Game
             if (hit.collider != null)
             {
                 Vector2 pos = transform.InverseTransformPoint(hit.point) - offsetFix;
-                Debug.Log(pos);
                 Vector2Int newPos = new Vector2Int((int)Mathf.Round(pos.x + 0.5f), (int)Mathf.Round(pos.y + 0.5f));
                 if (hoveredTile == newPos) return;
                 hoveredTile = newPos;
