@@ -89,12 +89,16 @@ namespace Game
         }
         public void Attack(Entity attacker, Entity target)
         {
-            Debug.Log("Attack!!!");
+            Debug.Log($"{attacker.Position} -> {target.Position}");
             target.TakeDamage(attacker.Damage);
         }
 
-        public void EndTurn()
+        public void EndTurn(Dictionary<Entity,Entity> attackList)
         {
+            foreach (KeyValuePair<Entity,Entity> attack in attackList)
+            {
+                Attack(attack.Key, attack.Value);
+            }
             isPlayer1Turn = !isPlayer1Turn;
             Debug.Log(isPlayer1Turn ? "Player1" : "Player2");
             if(isPlayer1Turn) Player1TurnStart?.Invoke();

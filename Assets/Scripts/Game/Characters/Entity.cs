@@ -14,11 +14,11 @@ namespace Game
         };
         public Animator animator;
         public string Name { get; protected set; }
-        public int MaxHealth { get; protected set; }
+        public int MaxHealth;
         public int CurrentHealth { get; protected set; }
-        public int Damage { get; protected set; } 
-        public int MoveRange { get; protected set; } 
-        public int AttackRange { get; protected set; }
+        public int Damage;
+        public int MoveRange;
+        public int AttackRange;
         public bool IsMelee { get; protected set; }
 
         [HideInInspector] public bool isHuman;

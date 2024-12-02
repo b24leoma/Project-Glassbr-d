@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -13,8 +14,6 @@ namespace Game
         [SerializeField] private LineRenderer pathLine;
         [SerializeField] private GameObject attackHighlightIcon;
         [SerializeField] private Transform iconParent;
-        [SerializeField] private Image moveIcon;
-        [SerializeField] private Image attackIcon;
         private Entity hoveredEntity;
         private Vector2Int hoveredTile;
         private bool validHoveredTile;
@@ -24,11 +23,11 @@ namespace Game
         private bool attackMode;
         private bool isPlayerTurn;
         private BattleController battleController;
+        private Dictionary<Entity, Entity> attackList;
         void Start()
         {
             battleController = GetComponent<BattleController>();
-            moveIcon.color = Color.gray;
-            attackIcon.color = Color.gray;
+            attackList = new Dictionary<Entity, Entity>();
         }
 
         public void TileClicked(InputAction.CallbackContext context)
@@ -50,18 +49,30 @@ namespace Game
             }
             else if (context.canceled) // Click released
             {
-                if (isAttacking && gridSystem.GetTile(hoveredTile).linkedEntity != null) ////// CHECK IF IN VALID POSITION OK THANKS
+                Debug.Log(isAttacking);
+                Debug.Log(moveStartTile);
+                if (isAttacking  && gridSystem.GetGridDistance(moveStartTile, hoveredTile) <= gridSystem.GetTile(moveStartTile).linkedEntity.AttackRange)
                 {
-                    if(hoveredEntity != null) gridSystem.GetTile(moveStartTile).linkedEntity.AttackQueued(true);
-                    battleController.Attack(hoveredEntity, gridSystem.GetTile(hoveredTile).linkedEntity);
-                    battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
+                    if (hoveredEntity != null && !hoveredEntity.isHuman)
+                    {
+                        gridSystem.GetTile(moveStartTile).linkedEntity.AttackQueued(true);
+                        attackList[hoveredEntity] = gridSystem.GetTile(hoveredTile).linkedEntity;
+                        battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
+                        attackMode = false;
+                    }
 
+                    if (hoveredEntity == gridSystem.GetTile(hoveredTile).linkedEntity)
+                    {
+                        attackList.Remove(hoveredEntity);
+                        hoveredEntity.AttackQueued(false);
+                        attackMode = false;
+                    }
                 }
-                else
+                /*else
                 {
                     if(hoveredEntity != null) hoveredEntity.AttackQueued(false);
                     else if (gridSystem.GetTile(moveStartTile).linkedEntity != null) gridSystem.GetTile(moveStartTile).linkedEntity.AttackQueued(false);
-                }
+                }*/
                 
                 if (isMoving)
                 {
@@ -100,6 +111,7 @@ namespace Game
                     if (hoveredEntity != null && hoveredEntity.hasQueuedMovement)
                     {
                         attackMode = true;
+                        moveStartTile = hoveredTile;
                     }
                     else
                     {
@@ -107,7 +119,7 @@ namespace Game
                         isAttacking = false;
                     }
 
-                    if (hoveredEntity == null)
+                    if (isMoving && hoveredEntity == null)
                     {
                         gridSystem.GetTile(moveStartTile).linkedEntity.MoveQueued(false);
                     }
@@ -207,10 +219,18 @@ namespace Game
 
             if (hoveredEntity != null && !attackMode)
             {
-                gridSystem.HighlightSquaresInRange(hoveredEntity.Position,
-                    hoveredEntity.MoveRange + hoveredEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
-                gridSystem.HighlightSquaresInRange(hoveredEntity.Position, hoveredEntity.MoveRange,
-                    new Color(0.7f, 0.7f, 0.7f));
+                if (hoveredEntity.hasQueuedMovement)
+                {
+                    gridSystem.HighlightSquaresInRange(hoveredEntity.Position,
+                        hoveredEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
+                }
+                else
+                {
+                    gridSystem.HighlightSquaresInRange(hoveredEntity.Position,
+                        hoveredEntity.MoveRange + hoveredEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
+                    gridSystem.HighlightSquaresInRange(hoveredEntity.Position, hoveredEntity.MoveRange,
+                        new Color(0.7f, 0.7f, 0.7f));
+                }
                 isAttacking = false;
                 if (isMoving)
                 {
@@ -279,9 +299,6 @@ namespace Game
                 gridSystem.SetColor(new Vector3Int(moveStartTile.x - 1, moveStartTile.y - 1, 0),
                     new Color(0.5f, 0.5f, 0.5f));
             }
-
-            moveIcon.color = isMoving && !attackMode ? Color.white : Color.gray;
-            attackIcon.color = attackMode || isAttacking ? Color.white : Color.gray;
         }
         
 
@@ -298,9 +315,6 @@ namespace Game
         {
             isPlayerTurn = true;
             endTurnButton.SetActive(true);
-            moveIcon.gameObject.SetActive(true);
-            attackIcon.gameObject.SetActive(true);
         }
-
     }
 }
