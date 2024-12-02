@@ -21,3 +21,19 @@ MonoBehaviour:
         Data3: 139029161
         Data4: 1559222730
       Path: event:/Hit
+  - nameRef: UISelect
+    eventReference:
+      Guid:
+        Data1: 945319318
+        Data2: 1142002533
+        Data3: 2070741665
+        Data4: 2007031916
+      Path: event:/UISelect
+  - nameRef: UIClick
+    eventReference:
+      Guid:
+        Data1: 1089056710
+        Data2: 1151730737
+        Data3: 1483682216
+        Data4: -1265979148
+      Path: event:/UIClick
