@@ -90,7 +90,9 @@ namespace Game
         public void Attack(Entity attacker, Entity target)
         {
             Debug.Log($"{attacker.Position} -> {target.Position}");
-            target.TakeDamage(attacker.Damage);
+            int reduction = (1 - (gridSystem.GetTile(new Vector2Int((int)target.Position.x, (int)target.Position.y))
+                .DamageReductionPercent / 100));
+            target.TakeDamage(attacker.Damage * reduction);
         }
 
         public void EndTurn(Dictionary<Entity,Entity> attackList)
