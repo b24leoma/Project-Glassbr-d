@@ -15,10 +15,10 @@ namespace Game
         private void OnEnable()
         {
             tilemap = GetComponent<Tilemap>();
-            tiles = new Dictionary<Vector2, Tile>();
-            size = GetComponent<Tilemap>().size;
+            tiles = new Dictionary<Vector2, Tile>();   // Vector2Int? :thinking:
+            size = GetComponent<Tilemap>().size; // Tilemap är redan hämtad ovan tilemap.size räcker
 
-            size.x = size.x / 2 - 0.5f;
+            size.x = size.x / 2 - 0.5f;     // -0.5 finns överallt, borde namnges så man lätt hänger med
             size.y = size.y / 2 - 0.5f;
             for (int i = -(int)size.x; i <= size.x; i++)
             {
@@ -42,7 +42,7 @@ namespace Game
         }
         public void HighlightSquaresInRange(Vector2 pos, float range, Color color)
         {
-            for (int i = -(int)size.x; i <= size.x; i++)
+            for (int i = -(int)size.x; i <= size.x; i++)     //Checkar alla tiles, borde gå att ta den valda tilen och titta enbart ett visst avstånd (range) omkring.
             {
                 for (int j = -(int)size.y; j <= size.y; j++)
                 {
