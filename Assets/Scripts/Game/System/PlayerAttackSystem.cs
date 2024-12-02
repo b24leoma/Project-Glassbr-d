@@ -33,9 +33,9 @@ namespace Game
         public void TileClicked(InputAction.CallbackContext context)
         {
             if (!isPlayerTurn) return;
+            Entity currentEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
             if (context.started) // Click pressed
             {
-                Entity currentEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                 if (currentEntity != null)
                 {
                     if (currentEntity.isHuman && !attackMode && !currentEntity.hasQueuedMovement)
@@ -49,22 +49,21 @@ namespace Game
             }
             else if (context.canceled) // Click released
             {
-                Debug.Log(isAttacking);
-                Debug.Log(moveStartTile);
-                if (isAttacking  && gridSystem.GetGridDistance(moveStartTile, hoveredTile) <= gridSystem.GetTile(moveStartTile).linkedEntity.AttackRange)
+                if (isAttacking )// && gridSystem.GetGridDistance(moveStartTile, hoveredTile) <= gridSystem.GetTile(moveStartTile).linkedEntity.AttackRange)
                 {
-                    if (hoveredEntity != null && !hoveredEntity.isHuman)
+                    Entity startEntity = gridSystem.GetTile(moveStartTile).linkedEntity;
+                    if (currentEntity != null && !currentEntity.isHuman)
                     {
                         gridSystem.GetTile(moveStartTile).linkedEntity.AttackQueued(true);
-                        attackList[hoveredEntity] = gridSystem.GetTile(hoveredTile).linkedEntity;
-                        battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
+                        attackList[startEntity] = currentEntity;
+                        battleController.UpdateCharacterDisplay(true, currentEntity);
                         attackMode = false;
                     }
 
-                    if (hoveredEntity == gridSystem.GetTile(hoveredTile).linkedEntity)
+                    if (currentEntity == startEntity)
                     {
-                        attackList.Remove(hoveredEntity);
-                        hoveredEntity.AttackQueued(false);
+                        attackList.Remove(startEntity);
+                        startEntity.AttackQueued(false);
                         attackMode = false;
                     }
                 }
@@ -76,6 +75,7 @@ namespace Game
                 
                 if (isMoving)
                 {
+                    hoveredEntity = gridSystem.GetTile(moveStartTile).linkedEntity;
                     gridSystem.HighlightSquaresInRange(hoveredEntity.Position,
                         hoveredEntity.MoveRange + hoveredEntity.AttackRange, Color.white);
                     if (hoveredTile != moveStartTile)
@@ -309,6 +309,7 @@ namespace Game
                 e.AttackQueued(false);
                 e.MoveQueued(false);
             }
+            battleController.EndTurn(attackList);
         }
 
         public void StartTurn()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace Game
     public class GridSystem : MonoBehaviour
     {
         private Tilemap tilemap;
-        [SerializeField] private TileBase[] solidTiles;
+        [SerializeField] private Tile[] CustomTiles;
         private Dictionary<Vector2, Tile> tiles;
         private Vector3 size;
         private void OnEnable()
@@ -24,13 +25,16 @@ namespace Game
                 for (int j = -(int)size.y; j <= size.y; j++)
                 {
                     tiles[new Vector2(i, j)] = new Tile();
-                    if (solidTiles.Contains(tilemap.GetTile(new Vector3Int(i - 1, j - 1, 0))))
+                    tilemap.SetTileFlags(new Vector3Int(i - 1, j - 1, 0), TileFlags.None);
+                    
+                    //Assign Custom Effects
+                    int index = Array.IndexOf(CustomTiles, tilemap.GetTile(new Vector3Int(i - 1, j - 1, 0)));
+                    if (index > -1)
                     {
-                        tiles[new Vector2(i,j)].walkable = false;
+                        tiles[new Vector2(i, j)].walkable = CustomTiles[index].walkable;
+                        tiles[new Vector2(i, j)].ArcherRangeIncrease = CustomTiles[index].ArcherRangeIncrease;
+                        tiles[new Vector2(i, j)].DamageReductionPercent = CustomTiles[index].DamageReductionPercent;
                     }
-                    else  tilemap.SetTileFlags(new Vector3Int(i - 1, j - 1, 0), TileFlags.None);
-                
-                
                 }
             }
         }
@@ -96,9 +100,13 @@ namespace Game
         }
     }
 
-    public class Tile
+    [Serializable] public class Tile
     {
-        public Entity linkedEntity;
+        [HideInInspector] public Entity linkedEntity;
+        public TileBase tile;
         public bool walkable = true;
+        
+        public int ArcherRangeIncrease = 0;
+        public int DamageReductionPercent = 0;
     }
 }
