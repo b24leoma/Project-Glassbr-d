@@ -291,8 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   MaxHealth: 100
-  Damage: 20
-  MoveRange: 2
+  Damage: 30
+  MoveRange: 5
   AttackRange: 1
   isHuman: 0
   hasQueuedMovement: 0
