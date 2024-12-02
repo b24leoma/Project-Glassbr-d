@@ -85,12 +85,16 @@ namespace Game
         public void Move(Vector2 from, Vector2 to)
         {
             gridSystem.MoveUnit(from, to);
+            FMODManager.instance.OneShot("GenericWalk", to);
         }
         private void Attack(Entity attacker, Entity target)
         {
             int reduction = (1 - (gridSystem.GetTile(new Vector2Int((int)target.Position.x, (int)target.Position.y))
                 .DamageReductionPercent / 100));
             target.TakeDamage(attacker.Damage * reduction);
+            FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
+            FMODManager.instance.OneShot("GenericHit", target.transform.position);
+            
         }
 
         public void EndTurn(Dictionary<Entity,Entity> attackList)
