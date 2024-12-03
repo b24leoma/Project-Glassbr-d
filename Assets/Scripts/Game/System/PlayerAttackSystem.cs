@@ -47,9 +47,9 @@ namespace Game
             }
             else if (context.canceled)
             {
+                hoveredEntity = gridSystem.GetTile(moveStartTile).linkedEntity;
                 if (isMoving)
                 {
-                    hoveredEntity = gridSystem.GetTile(moveStartTile).linkedEntity;
                     gridSystem.HighlightSquaresInRange(hoveredEntity.Position,
                         hoveredEntity.MoveRange + hoveredEntity.AttackRange, Color.white);
                     if (hoveredTile != moveStartTile)
@@ -60,12 +60,9 @@ namespace Game
                             (int)(pathLine.GetPosition(pathLine.positionCount - 1).y + 0.5f));
                         battleController.Move(moveStartTile, newPos);
                         Debug.Log(attackMode + " " + isAttacking);
-                        if (isAttacking)
+                        if (isAttacking || hoveredEntity != null)
                         {
                             moveStartTile = newPos;
-                        }
-                        else
-                        {
                             attackMode = true;
                         }
                     }
@@ -81,6 +78,7 @@ namespace Game
                     {
                         gridSystem.GetTile(moveStartTile).linkedEntity.AttackQueued(true);
                         battleController.Attack(startEntity, currentEntity);
+                        startEntity.animator.SetBool("Attack", true);
                         battleController.UpdateCharacterDisplay(true, currentEntity);
                         attackMode = false;
                         isAttacking = false;
@@ -91,28 +89,23 @@ namespace Game
                         attackMode = false;
                     }
                 }
-                /*else
+                else
                 {
-                    if (hoveredEntity != null && hoveredEntity.hasQueuedMovement)
+                    if (gridSystem.GetTile(moveStartTile).linkedEntity != null && hoveredEntity != null && gridSystem.GetTile(moveStartTile).linkedEntity.isHuman)
                     {
-                        attackMode = true;
-                        isAttacking = true;
-                        moveStartTile = hoveredTile;
+                        if (hoveredEntity.hasQueuedMovement)
+                        {
+                            attackMode = true; ;
+                            moveStartTile = hoveredTile;
+                        }
+                        else if (!hoveredEntity.hasQueuedAttack)
+                        {
+                            Debug.Log("ADSFSFGDGD");
+                            attackMode = true;
+                        }
                     }
-                    else
-                    {
-                        attackMode = false;
-                        isAttacking = false;
-                    }
-
-                    if (isMoving && hoveredEntity == null)
-                    {
-                        gridSystem.GetTile(moveStartTile).linkedEntity.MoveQueued(false);
-                    }
-                }*/
-
+                }
             }
-
             UpdateBoard();
         }
 
@@ -123,6 +116,7 @@ namespace Game
 
         public void MouseMove(InputAction.CallbackContext context)
         {
+            Debug.Log($"{isMoving} {isAttacking} {attackMode}");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
 
@@ -146,7 +140,7 @@ namespace Game
 
 
 
-        void UpdateBoard()
+         void UpdateBoard()
         {
 
             //Reset board colors
@@ -247,36 +241,42 @@ namespace Game
 
                 }
             }
-            else if (attackMode && hoveredEntity != null)
+            else if (attackMode)
             {
-                if (hoveredEntity.isHuman && !hoveredEntity.hasQueuedAttack)
+                Entity currentEntity = gridSystem.GetTile(moveStartTile).linkedEntity;
+                if (currentEntity != null)
                 {
-                    Entity currentEntity = gridSystem.GetTile(moveStartTile).linkedEntity;
-                    if (currentEntity != null)
-                        gridSystem.HighlightSquaresInRange(currentEntity.Position, currentEntity.AttackRange,
-                            new Color(0.8f, 0.8f, 0.8f));
-
-                    for (int i = 0; i < battleController.GetCharacters().Count; i++)
+                    if (currentEntity.isHuman && !currentEntity.hasQueuedAttack)
                     {
-                        Entity highlightedEntity = battleController.GetCharacterAt(i);
-                        if (highlightedEntity != null)
+                        if (currentEntity != null)
                         {
-                            if (!highlightedEntity.hasQueuedAttack &&
-                                highlightedEntity.isHuman != currentEntity.isHuman)
+                            gridSystem.HighlightSquaresInRange(currentEntity.Position, currentEntity.AttackRange,
+                                new Color(0.8f, 0.8f, 0.8f));
+
+                            for (int i = 0; i < battleController.GetCharacters().Count; i++)
                             {
-                                GameObject a = Instantiate(attackHighlightIcon, highlightedEntity.Position,
-                                    Quaternion.identity,
-                                    iconParent);
-                                if (gridSystem.GetGridDistance(currentEntity.Position, highlightedEntity.Position) >
-                                    currentEntity.AttackRange)
+                                Entity highlightedEntity = battleController.GetCharacterAt(i);
+                                if (currentEntity != null)
                                 {
-                                    a.GetComponent<SpriteRenderer>().color = Color.gray;
-                                }
-                                else if (new Vector2Int((int)(highlightedEntity.Position.x + 0.5f),
-                                             (int)(highlightedEntity.Position.y + 0.5f)) == hoveredTile)
-                                {
-                                    a.GetComponent<SpriteRenderer>().color = Color.red;
-                                    isAttacking = true;
+                                    if (!currentEntity.hasQueuedAttack &&
+                                        highlightedEntity.isHuman != currentEntity.isHuman)
+                                    {
+                                        GameObject a = Instantiate(attackHighlightIcon, highlightedEntity.Position,
+                                            Quaternion.identity,
+                                            iconParent);
+                                        if (gridSystem.GetGridDistance(currentEntity.Position,
+                                                highlightedEntity.Position) >
+                                            currentEntity.AttackRange)
+                                        {
+                                            a.GetComponent<SpriteRenderer>().color = Color.gray;
+                                        }
+                                        else if (new Vector2Int((int)(highlightedEntity.Position.x + 0.5f),
+                                                     (int)(highlightedEntity.Position.y + 0.5f)) == hoveredTile)
+                                        {
+                                            a.GetComponent<SpriteRenderer>().color = Color.red;
+                                            isAttacking = true;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -298,6 +298,8 @@ namespace Game
 
         public void EndTurn()
         {
+            attackMode = false;
+            isAttacking = false;
             foreach (Entity e in battleController.GetCharacters())
             {
                 e.AttackQueued(false);
