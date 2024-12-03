@@ -13,19 +13,11 @@ MonoBehaviour:
   m_Name: Music
   m_EditorClassIdentifier: 
   audioEvents:
-  - nameRef: cutefluffyhampter
+  - nameRef: Music
     eventReference:
       Guid:
-        Data1: -1827119859
-        Data2: 1146551307
-        Data3: -1984323689
-        Data4: -2067102505
-      Path: event:/cutefluffyhampter
-  - nameRef: kittycatwonderland
-    eventReference:
-      Guid:
-        Data1: -85613270
-        Data2: 1134431635
-        Data3: 647926415
-        Data4: -709916040
-      Path: event:/kittycatwonderland
+        Data1: -1295529925
+        Data2: 1302915063
+        Data3: -1056490076
+        Data4: -591944084
+      Path: event:/Music
