@@ -92,7 +92,7 @@ namespace Game
             float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
                 .DamageReductionPercent / 100f);
             Debug.Log($"{reduction} at {target.Position}");
-            target.TakeDamage(reduction * target.Damage);
+            target.TakeDamage(reduction * attacker.Damage);
             FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
             FMODManager.instance.OneShot("GenericHit", target.transform.position);
             
