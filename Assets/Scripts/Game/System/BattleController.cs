@@ -26,6 +26,8 @@ namespace Game
         [SerializeField] private GameObject demonTank;
         private List<Entity> characters;
         private int level;
+        [HideInInspector] public int demons;
+        [HideInInspector] public int humans;
         void Start()
         {
             characters = new List<Entity>();
@@ -36,6 +38,8 @@ namespace Game
         void LoadLevel()
         {
             characters.Clear();
+            humans = 0;
+            demons = 0;
             foreach (SpawnEntity spawn in LevelEntities[level].spawnList)
             {
                 CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);
@@ -77,6 +81,8 @@ namespace Game
                     break;
             }
             Entity e = g.GetComponent<Entity>();
+            if (e.isHuman) humans++;
+            else demons++;
             gridSystem.ConnectToTile(pos, e);
             characters.Add(e);
         }

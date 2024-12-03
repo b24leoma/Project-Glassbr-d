@@ -77,6 +77,11 @@ namespace Game
         {
             return (int)Mathf.Abs(from.x - to.x) + (int)Mathf.Abs(from.y - to.y);
         }
+        
+        public Dictionary<Vector2, Tile> GetAllTiles()
+        {
+            return tiles;
+        }
 
 
         public void SetColor(Vector2 pos, Color color)
