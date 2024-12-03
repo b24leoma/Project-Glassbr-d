@@ -87,24 +87,20 @@ namespace Game
             gridSystem.MoveUnit(from, to);
             FMODManager.instance.OneShot("GenericWalk", to);
         }
-        private void Attack(Entity attacker, Entity target)
+        public void Attack(Entity attacker, Entity target)
         {
-            float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)target.Position.x+1, (int)target.Position.y+1))
+            float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
                 .DamageReductionPercent / 100f);
+            Debug.Log($"{reduction} at {target.Position}");
             target.TakeDamage(reduction * target.Damage);
             FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
             FMODManager.instance.OneShot("GenericHit", target.transform.position);
             
         }
 
-        public void EndTurn(Dictionary<Entity,Entity> attackList)
+        public void EndTurn()
         {
-            foreach (KeyValuePair<Entity,Entity> attack in attackList)
-            {
-                Attack(attack.Key, attack.Value);
-            }
             isPlayer1Turn = !isPlayer1Turn;
-            Debug.Log(isPlayer1Turn ? "Player1" : "Player2");
             if(isPlayer1Turn) Player1TurnStart?.Invoke();
             else Player2TurnStart?.Invoke();
         }
