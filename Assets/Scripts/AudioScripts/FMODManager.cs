@@ -6,8 +6,8 @@ public class FMODManager : MonoBehaviour
     public static FMODManager instance { get; private set; }
     [SerializeField] private FMODRefData [] fmodRefData;
 private FMOD.Studio.EventInstance _currentTimelineInstance;
-private const string FadeOutParam = "FadeOut";
-private const string FadeInParam = "FadeIn";
+private const string BattleMusic = "Battle";
+
     private void Awake()
     {
         if (instance != null && instance != this)
