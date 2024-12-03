@@ -10,11 +10,9 @@ namespace Game
         [Header("Assets")]
         [SerializeField] private GameObject endTurnButton;
         [SerializeField] private LineRenderer pathLine;
-        [SerializeField] private GameObject attackHighlightIcon;
         [SerializeField] private Transform iconParent;
         private Entity hoveredEntity;
         private Vector2Int hoveredTile;
-        private bool validHoveredTile;
         private bool isActing;
         private Entity actingEntity;
         private bool isPlayerTurn;
@@ -29,34 +27,38 @@ namespace Game
         public void TileClicked(InputAction.CallbackContext context)
         {
             if (!isPlayerTurn) return;
-            Entity currentEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
-
             if (context.canceled)
             {
+                hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                 if (isActing) // MOVE AND ATTACK MODE
                 {
-                    if (currentEntity == null && pathLine.positionCount > 0) //MOVES TO EMPTY TILE
+                    if (hoveredEntity == null && pathLine.positionCount > 0) //MOVES TO EMPTY TILE
                     {
-                        actingEntity.MoveQueued(true);
-                        Vector2Int newPos = GetPathlinePos(pathLine.positionCount - 1);
+                        actingEntity.SetMoving(true);
+                        Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
                         battleController.Move(actingEntity.Position, newPos);
                         pathLine.positionCount = 1;
-                        isActing = false;
+                        SetPathLinePos(0, actingEntity.Position);
                     }
-                    else //TILE HAS ENTITY
+                    else if (hoveredEntity != null ) //TILE HAS ENTITY
                     {
-                        if (currentEntity.isHuman) // SELECTS ANOTHER ACTOR
+                        if (hoveredEntity.isHuman && hoveredEntity != actingEntity) // SELECTS ANOTHER ACTOR
                         {
-                            actingEntity = currentEntity; 
+                            actingEntity = hoveredEntity;
+                            pathLine.positionCount = 1;
+                            SetPathLinePos(0, actingEntity.Position);
                         }
                         else // ATTACKS ENEMY
                         {
-                            if (gridSystem.GetGridDistance(actingEntity.Position, currentEntity.Position) <
+                            if (!actingEntity.hasAttacked && !hoveredEntity.isHuman && gridSystem.GetGridDistance(actingEntity.Position, hoveredEntity.Position) <=
                                 actingEntity.AttackRange)
                             {
-                                actingEntity.AttackQueued(true);
-                                battleController.Attack(actingEntity, currentEntity);
-                                battleController.UpdateCharacterDisplay(true, currentEntity);
+                                actingEntity.SetAttacking(true);
+                                battleController.Attack(actingEntity, hoveredEntity);
+                                battleController.UpdateCharacterDisplay(true, hoveredEntity);
+                                Demon demon = hoveredEntity as Demon;
+                                demon?.DisplayAttackingImage(false, Color.white);
+                                
                             }
                         }
                     }
@@ -65,13 +67,14 @@ namespace Game
                 else
                 {
                     actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
-                    if (actingEntity != null)
+                    if (actingEntity != null) // SWAP CHARACTER
                     {
-                        if (actingEntity.isHuman && !actingEntity.hasQueuedMovement)
+                        if (actingEntity.isHuman)
                         {
                             isActing = true;
                             pathLine.positionCount = 1;
-                            SetPathlinePos(0, actingEntity.Position);
+                            actingEntity = hoveredEntity;
+                            SetPathLinePos(0, actingEntity.Position);
                         }
                     }
                 }
@@ -100,8 +103,6 @@ namespace Game
                     hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                 }
             }
-
-            validHoveredTile = hit.collider != null;
             UpdateBoard();
         }
 
@@ -109,7 +110,7 @@ namespace Game
 
 
 
-         void UpdateBoard()
+        void UpdateBoard()
         {
             //Reset board colors
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
@@ -121,50 +122,100 @@ namespace Game
             battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity != null,
                 gridSystem.GetTile(hoveredTile).linkedEntity);
             if (gridSystem.GetTile(hoveredTile) == null) return;
-            
-            gridSystem.SetColor(hoveredTile, new Color(0.7f,0.7f,0.7f));
 
             if (isActing)
             {
-                //MOVEPATH IF WITHIN RANGE
-                if (gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <= actingEntity.MoveRange) 
+                //MOVE PATH IF WITHIN RANGE
+                if (!actingEntity.hasMoved && gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <=
+                    actingEntity.MoveRange)
                 {
-                     if (gridSystem.GetTile(hoveredTile).walkable //&& gridSystem.GetGridDistance(hoveredEntity.Position, GetPathlinePos(pathLine.positionCount - 1))  <= 1
-                                                                  && gridSystem.GetTile(hoveredTile).linkedEntity == null && gridSystem.GetGridDistance(hoveredTile, GetPathlinePos(pathLine.positionCount - 1)) <= 1)
+                    if (gridSystem.GetTile(hoveredTile).walkable &&
+                        (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
+                         gridSystem.GetTile(hoveredTile).linkedEntity == actingEntity) &&
+                        gridSystem.GetGridDistance(hoveredTile, GetPathLinePos(pathLine.positionCount - 1)) <= 1)
+                    {
+                        bool valid = true;
+                        for (int i = 0; i < pathLine.positionCount; i++)
                         {
-                            bool valid = true;
-                            for (int i = 0; i < pathLine.positionCount; i++)
+                            if (GetPathLinePos(i) == hoveredTile)
                             {
-                                if (GetPathlinePos(i) == hoveredTile)
-                                {
-                                    valid = false;
-                                    pathLine.positionCount = i + 1;
-                                }
-                            }
-
-                            if (valid && pathLine.positionCount < actingEntity.MoveRange)
-                            {
-                                pathLine.positionCount++;
-                                SetPathlinePos(pathLine.positionCount - 1, hoveredTile);
+                                valid = false;
+                                pathLine.positionCount = i + 1;
                             }
                         }
-                    gridSystem.HighlightSquaresInRange(GetPathlinePos(pathLine.positionCount - 1), actingEntity.MoveRange - pathLine.positionCount, new Color(0.8f,0.8f,0.8f));
-                } // ATTACKHIGHLIGHT
-                else if (gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) < actingEntity.MoveRange +
-                         actingEntity.AttackRange - (pathLine.positionCount - 1) && hoveredEntity != null) 
+
+                        if (valid && pathLine.positionCount < actingEntity.MoveRange)
+                        {
+                            pathLine.positionCount++;
+                            SetPathLinePos(pathLine.positionCount - 1, hoveredTile);
+                        }
+                    }
+                }
+
+
+                //GRID SPACE HIGHLIGHT
+                if (actingEntity.hasMoved)
                 {
-                    GameObject a = Instantiate(attackHighlightIcon, new Vector3(hoveredTile.x, hoveredTile.y, 0),
-                        Quaternion.identity,
-                        iconParent);
+                    if (!actingEntity.hasAttacked)
+                    {
+                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
+                            actingEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
+                        foreach (Vector2Int pos in battleController.demons) // ATTACK HIGHLIGHT
+                        {
+                            Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
+                            if (gridSystem.GetGridDistance(actingEntity.Position, pos) <=
+                                actingEntity.AttackRange)
+                                demon?.DisplayAttackingImage(true, hoveredTile == pos ? Color.red : Color.white);
+                            else demon?.DisplayAttackingImage(false, Color.white);
+
+                        }
+                    }
+                }
+                else
+                {
+                    if (actingEntity.hasAttacked)
+                    {
+                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
+                            actingEntity.MoveRange - pathLine.positionCount, new Color(0.9f, 0.9f, 0.9f));
+                    }
+                    else
+                    {
+                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
+                            actingEntity.MoveRange + actingEntity.AttackRange - pathLine.positionCount,
+                            new Color(0.8f, 0.8f, 0.8f));
+                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
+                            actingEntity.MoveRange - pathLine.positionCount, new Color(0.9f, 0.9f, 0.9f));
+                        gridSystem.SetColor(GetPathLinePos(pathLine.positionCount - 1), new Color(0.7f, 0.7f, 0.7f));
+                        foreach (Vector2Int pos in battleController.demons) // ATTACK HIGHLIGHT
+                        {
+                            Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
+                            if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1) , pos) <=
+                                actingEntity.MoveRange + actingEntity.AttackRange - pathLine.positionCount)
+                            {
+                                demon?.DisplayAttackingImage(true, Color.white);
+                            }
+                            else demon?.DisplayAttackingImage(false, Color.white);
+
+                        }
+                    }
                 }
             }
+            else
+            {
+                foreach (Vector2Int pos in battleController.demons) // ATTACK HIGHLIGHT
+                {
+                    Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
+                    demon?.DisplayAttackingImage(false, Color.white);
+                }
+            }
+            gridSystem.SetColor(hoveredTile, new Color(0.7f, 0.7f, 0.7f));
         }
 
-        private Vector2Int GetPathlinePos(int pos)
+        private Vector2Int GetPathLinePos(int pos)
         {
             return new Vector2Int((int)(pathLine.GetPosition(pos).x + 0.5f), (int)(pathLine.GetPosition(pos).y + 0.5f));
         }
-        private void SetPathlinePos(int index, Vector2Int pos)
+        private void SetPathLinePos(int index, Vector2Int pos)
         {
             pathLine.SetPosition(index, new Vector3(pos.x - 0.5f, pos.y - 0.5f, -5));
         }
@@ -174,8 +225,8 @@ namespace Game
             isActing = false;
             foreach (Entity e in battleController.GetCharacters())
             {
-                e.AttackQueued(false);
-                e.MoveQueued(false);
+                e.SetAttacking(false);
+                e.SetMoving(false);
             }
         }
 

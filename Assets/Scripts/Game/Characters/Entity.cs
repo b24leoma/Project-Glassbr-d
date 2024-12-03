@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Game
@@ -26,8 +27,8 @@ namespace Game
         public bool IsMelee { get; protected set; }
 
         [HideInInspector] public bool isHuman;
-        [HideInInspector] public bool hasQueuedMovement;
-        [HideInInspector] public bool hasQueuedAttack;
+        [HideInInspector] public bool hasMoved;
+        [HideInInspector] public bool hasAttacked;
     
         public Vector2Int Position
         {
@@ -44,8 +45,8 @@ namespace Game
         void Start()
         {
             animator = GetComponent<Animator>();
-            hasQueuedMovement = false;
-            hasQueuedMovement = false;
+            hasMoved = false;
+            hasMoved = false;
             CurrentHealth = MaxHealth;
             IsMelee = AttackRange <= 1;
         }
@@ -56,15 +57,15 @@ namespace Game
         }
 
 
-        public virtual void MoveQueued(bool hasQueued)
+        public virtual void SetMoving(bool moving)
         {
-            hasQueuedMovement = hasQueued;
+            hasMoved = moving;
         }
 
-        public virtual void AttackQueued(bool hasQueued)
+        public virtual void SetAttacking(bool attacking)
         {
-            hasQueuedAttack = hasQueued;
-            if (hasQueued) PlayAttack();
+            hasAttacked = attacking;
+            if (attacking) PlayAttack();
                 
         }
         
@@ -92,15 +93,15 @@ namespace Game
         {
             if (isHuman)
             {
-                string name = NameGenerator._human[Random.Range(1, NameGenerator._human.Count)];
-                NameGenerator._human.Remove(name);
+                string name = _human[Random.Range(1, _human.Count)];
+                _human.Remove(name);
                 return name;
                 
             }
             else
             {
-                string name = NameGenerator._demon[Random.Range(1, NameGenerator._demon.Count)];
-                NameGenerator._demon.Remove(name);
+                string name = _demon[Random.Range(1, _demon.Count)];
+                _demon.Remove(name);
                 return name;
             }
         }

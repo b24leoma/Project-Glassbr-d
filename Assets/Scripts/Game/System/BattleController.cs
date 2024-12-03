@@ -26,8 +26,8 @@ namespace Game
         [SerializeField] private GameObject demonTank;
         private List<Entity> characters;
         private int level;
-        [HideInInspector] public List<Vector2> demons;
-        [HideInInspector] public List<Vector2> humans;
+        [HideInInspector] public List<Vector2Int> demons;
+        [HideInInspector] public List<Vector2Int> humans;
         void Start()
         {
             characters = new List<Entity>();
@@ -38,8 +38,8 @@ namespace Game
         void LoadLevel()
         {
             characters.Clear();
-            humans = new List<Vector2>();
-            demons = new List<Vector2>();
+            humans = new List<Vector2Int>();
+            demons = new List<Vector2Int>();
             foreach (SpawnEntity spawn in LevelEntities[level].spawnList)
             {
                 CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);

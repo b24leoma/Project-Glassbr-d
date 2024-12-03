@@ -156,7 +156,6 @@ MonoBehaviour:
   gridSystem: {fileID: 651517034}
   endTurnButton: {fileID: 1392535647}
   pathLine: {fileID: 1425331444}
-  attackHighlightIcon: {fileID: 8647851982552627174, guid: 4c65087676a8c1945a0733a846acc5d4, type: 3}
   iconParent: {fileID: 1150914486}
 --- !u!114 &56033651
 MonoBehaviour:
@@ -245,8 +244,8 @@ MonoBehaviour:
   humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
-  demons: 0
-  humans: 0
+  demons: []
+  humans: []
 --- !u!4 &56033652
 Transform:
   m_ObjectHideFlags: 0
@@ -511,7 +510,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 

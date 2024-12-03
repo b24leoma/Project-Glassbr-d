@@ -12,17 +12,17 @@ namespace Game
            Name = NameGenerator.GenerateName(true);
         }
         
-        public override void MoveQueued(bool hasQueued)
+        public override void SetMoving(bool Moving)
         {
-            hasQueuedMovement = hasQueued;
-            movingIcon.SetActive(hasQueued);
+            hasMoved = Moving;
+            movingIcon.SetActive(Moving);
         }
 
-        public override void AttackQueued(bool hasQueued)
+        public override void SetAttacking(bool attacking)
         {
-            hasQueuedAttack = hasQueued;
-            attackingIcon.SetActive(hasQueued);
-            if (hasQueued) PlayAttack();
+            hasAttacked = attacking;
+            attackingIcon.SetActive(attacking);
+            if (attacking) PlayAttack();
         }
     }
 }
