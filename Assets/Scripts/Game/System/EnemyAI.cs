@@ -10,9 +10,9 @@ namespace Game
 
         public void StartTurn()
         {
-            List<Vector2> humans = new List<Vector2>();
-            List<Vector2> demons = new List<Vector2>();
-            foreach (KeyValuePair<Vector2, Tile> tile in gridSystem.GetAllTiles())
+            List<Vector2Int> humans = new List<Vector2Int>();
+            List<Vector2Int> demons = new List<Vector2Int>();
+            foreach (KeyValuePair<Vector2Int, Tile> tile in gridSystem.GetAllTiles())
             {
                 if (tile.Value.linkedEntity != null)
                 {
@@ -33,26 +33,26 @@ namespace Game
                     if (gridSystem.GetGridDistance(demons[i], humans[j]) < distance) target = humans[j];
                 }
 
-                Vector2 demonCurrentPos = demons[i];
+                Vector2Int demonCurrentPos = demons[i];
                 for (int k = 0; k < gridSystem.GetTile(new Vector2Int((int)demons[i].x, (int)demons[i].y)).linkedEntity.MoveRange; k++)
                 {
                     if (target.y > demonCurrentPos.y && TileIsFree(demons[i] + Vector2.up))
                     {
-                        demonCurrentPos += Vector2.up;
+                        demonCurrentPos += Vector2Int.up;
                     }
                     else if (target.y < demonCurrentPos.y && TileIsFree(demons[i] + Vector2.down))
                     {
-                        demonCurrentPos += Vector2.down;
+                        demonCurrentPos += Vector2Int.down;
                     }   
                     else if (target.y == demonCurrentPos.y)
                     {
                         if (target.x > demonCurrentPos.x && TileIsFree(demons[i] + Vector2.right))
                         {
-                            demonCurrentPos += Vector2.right;
+                            demonCurrentPos += Vector2Int.right;
                         }
                         else if (target.x < demonCurrentPos.x && TileIsFree(demons[i] + Vector2.left))
                         {
-                            demonCurrentPos += Vector2.left;
+                            demonCurrentPos += Vector2Int.left;
                         }  
                     }   
                 }

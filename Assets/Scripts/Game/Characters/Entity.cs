@@ -29,10 +29,10 @@ namespace Game
         [HideInInspector] public bool hasQueuedMovement;
         [HideInInspector] public bool hasQueuedAttack;
     
-        public Vector2 Position
+        public Vector2Int Position
         {
-            get => transform.position;
-            private set => transform.position = value;
+            get => new ((int)(transform.position.x+0.5f), (int)(transform.position.y+0.5f));
+            set => transform.position = new Vector3(value.x -0.5f, value.y-0.5f);
         }
 
         public void TakeDamage(float damage)
@@ -50,9 +50,9 @@ namespace Game
             IsMelee = AttackRange <= 1;
         }
 
-        public void MoveToTile(Vector2 pos)
+        public void MoveToTile(Vector2Int pos)
         {
-            Position = pos + new Vector2(-0.5f, -0.5f);
+            Position = pos;
         }
 
 

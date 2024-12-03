@@ -26,8 +26,8 @@ namespace Game
         [SerializeField] private GameObject demonTank;
         private List<Entity> characters;
         private int level;
-        [HideInInspector] public int demons;
-        [HideInInspector] public int humans;
+        [HideInInspector] public List<Vector2> demons;
+        [HideInInspector] public List<Vector2> humans;
         void Start()
         {
             characters = new List<Entity>();
@@ -38,8 +38,8 @@ namespace Game
         void LoadLevel()
         {
             characters.Clear();
-            humans = 0;
-            demons = 0;
+            humans = new List<Vector2>();
+            demons = new List<Vector2>();
             foreach (SpawnEntity spawn in LevelEntities[level].spawnList)
             {
                 CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);
@@ -81,23 +81,22 @@ namespace Game
                     break;
             }
             Entity e = g.GetComponent<Entity>();
-            if (e.isHuman) humans++;
-            else demons++;
+            if (e.isHuman) humans.Add(pos);
+            else demons.Add(pos);
             gridSystem.ConnectToTile(pos, e);
             characters.Add(e);
         }
 
 
-        public void Move(Vector2 from, Vector2 to)
+        public void Move(Vector2Int from, Vector2Int to)
         {
             gridSystem.MoveUnit(from, to);
-            FMODManager.instance.OneShot("GenericWalk", to);
+            FMODManager.instance.OneShot("GenericWalk", new Vector3(to.x, to.y, 0));
         }
         public void Attack(Entity attacker, Entity target)
         {
             float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
                 .DamageReductionPercent / 100f);
-            Debug.Log($"{reduction} at {target.Position}");
             target.TakeDamage(reduction * attacker.Damage);
             FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
             FMODManager.instance.OneShot("GenericHit", target.transform.position);
