@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game
 {
@@ -12,7 +14,9 @@ namespace Game
             DemonSwordsman,
             DemonTank
         };
-        public Animator animator;
+
+        public EntityType Type;
+        protected Animator animator;
         public string Name { get; protected set; }
         public int MaxHealth;
         public int CurrentHealth { get; protected set; }
@@ -56,9 +60,29 @@ namespace Game
         {
             hasQueuedMovement = hasQueued;
         }
+
         public virtual void AttackQueued(bool hasQueued)
         {
             hasQueuedAttack = hasQueued;
+            if (hasQueued) PlayAttack();
+                
+        }
+        
+        protected void PlayAttack()
+        {
+            Debug.Log(Type);
+            switch (Type)
+            {
+                case EntityType.HumanSpearman:
+                    animator.SetTrigger("Attack");
+                    break;
+                case EntityType.HumanArcher:
+                    break;
+                case EntityType.DemonSwordsman:
+                    break;
+                case EntityType.DemonTank:
+                    break;
+            }
         }
     }
 
