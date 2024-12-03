@@ -6,6 +6,8 @@ public class FMODManager : MonoBehaviour
     public static FMODManager instance { get; private set; }
     [SerializeField] private FMODRefData [] fmodRefData;
 private FMOD.Studio.EventInstance _currentTimelineInstance;
+private const string FadeOutParam = "FadeOut";
+private const string FadeInParam = "FadeIn";
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -39,7 +41,7 @@ private FMOD.Studio.EventInstance _currentTimelineInstance;
     }
 
 
-    public void Timeline(string eventName)
+    public void NewTimeline(string eventName)
     {
         EventReference eventReference = GetEventReference(eventName);
 
@@ -49,20 +51,22 @@ private FMOD.Studio.EventInstance _currentTimelineInstance;
             return;
         }
         
-        StopTimeline();
+        StopAndRemoveTimeline();
 
         _currentTimelineInstance = RuntimeManager.CreateInstance(eventReference);
         _currentTimelineInstance.start();
     }
     
-    public void StopTimeline()
+  
+    
+    
+
+
+    private void StopAndRemoveTimeline()
     {
-        if (_currentTimelineInstance.isValid())
-        {
-            _currentTimelineInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            _currentTimelineInstance.release();
-            _currentTimelineInstance.clearHandle();
-        }
+        _currentTimelineInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        _currentTimelineInstance.release();
+        _currentTimelineInstance.clearHandle();
     }
 
     public void PauseTimeline(bool pause)
@@ -72,6 +76,17 @@ private FMOD.Studio.EventInstance _currentTimelineInstance;
             _currentTimelineInstance.setPaused(pause);
         }
     }
+
+    public void SetParameter(string parameterName, float value)
+    {
+        if (_currentTimelineInstance.isValid())
+        {
+            _currentTimelineInstance.setParameterByName(parameterName, value);
+        }
+    }
+
+
+    
 
 
     public void OneShot(string eventName, Vector3? position = null)
