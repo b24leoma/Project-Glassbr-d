@@ -28,6 +28,7 @@ public class PlayOnStart : MonoBehaviour
                     break;
 
                 case "Game":
+                    FMODManager.instance.SetParameter("Battle", 1f);
                     break;
 
                 default:
