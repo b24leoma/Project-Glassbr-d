@@ -22,6 +22,7 @@ namespace Game
         {
             hasQueuedAttack = hasQueued;
             attackingIcon.SetActive(hasQueued);
+            if (hasQueued) PlayAttack();
         }
     }
 }

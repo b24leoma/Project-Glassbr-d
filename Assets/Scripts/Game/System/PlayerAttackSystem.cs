@@ -78,7 +78,6 @@ namespace Game
                     {
                         gridSystem.GetTile(moveStartTile).linkedEntity.AttackQueued(true);
                         battleController.Attack(startEntity, currentEntity);
-                        startEntity.animator.SetBool("Attack", true);
                         battleController.UpdateCharacterDisplay(true, currentEntity);
                         attackMode = false;
                         isAttacking = false;
