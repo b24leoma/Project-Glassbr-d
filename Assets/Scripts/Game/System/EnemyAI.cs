@@ -69,8 +69,9 @@ namespace Game
                         moves++;
                         demonCurrentPos += Vector2Int.down;
                     }
+                    else moves = 100;
 
-                    if (moves == gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved)
+                    if (moves >= gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved)
                     {
                         battleController.Move(demons[i], demonCurrentPos);
                         hasMoved = true;
