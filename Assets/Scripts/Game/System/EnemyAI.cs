@@ -38,7 +38,7 @@ namespace Game
                     battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
                         gridSystem.GetTile(target).linkedEntity);
                     hasAttacked = true;
-                    if (gridSystem.humans.Count > 0)
+                    if (gridSystem.GetTile(target).linkedEntity == null && gridSystem.humans.Count > 0) // FIND NEW TARGET
                     {
                         for (int j = 0; j < gridSystem.humans.Count; j++)
                         {
@@ -84,13 +84,12 @@ namespace Game
                     
                     if(!couldMove) moves = 100;
 
-                    if (moves >= gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved && gridSystem.GetGridDistance(target, demonCurrentPos) <=
-                        range)
+                    if (moves >= gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved)
                     {
                         battleController.Move(demons[i], demonCurrentPos);
                         hasMoved = true;
-
-                        if (!hasAttacked)
+                        
+                        if (!hasAttacked && gridSystem.GetGridDistance(demonCurrentPos, target) <= gridSystem.GetTile(demonCurrentPos).linkedEntity.AttackRange)
                         {
                             battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
                                 gridSystem.GetTile(target).linkedEntity);
