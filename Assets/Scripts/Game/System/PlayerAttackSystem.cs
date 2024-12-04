@@ -194,6 +194,14 @@ namespace Game
             }
             else
             {
+                if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
+                {
+                    gridSystem.HighlightSquaresInRange(gridSystem.GetTile(hoveredTile).linkedEntity.Position,
+                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange + gridSystem.GetTile(hoveredTile).linkedEntity.AttackRange, new Color(0.9f, 0.9f, 0.9f));
+                    gridSystem.HighlightSquaresInRange(gridSystem.GetTile(hoveredTile).linkedEntity.Position,
+                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange, new Color(0.8f, 0.8f, 0.8f));
+                }
+                
                 foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
                 {
                     Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
