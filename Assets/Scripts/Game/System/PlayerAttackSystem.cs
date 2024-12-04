@@ -34,11 +34,19 @@ namespace Game
                 {
                     if (hoveredEntity == null && pathLine.positionCount > 0) //MOVES TO EMPTY TILE
                     {
-                        actingEntity.SetMoving(true);
-                        Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
-                        battleController.Move(actingEntity.Position, newPos);
-                        pathLine.positionCount = 1;
-                        SetPathLinePos(0, actingEntity.Position);
+                        if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
+                        {
+                            actingEntity.SetMoving(true);
+                            Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
+                            battleController.Move(actingEntity.Position, newPos);
+                            pathLine.positionCount = 1;
+                            SetPathLinePos(0, actingEntity.Position);
+                        }
+                        else
+                        {
+                            pathLine.positionCount = 0;
+                            isActing = false;
+                        }
                     }
                     else if (hoveredEntity != null ) //TILE HAS ENTITY
                     {
@@ -157,48 +165,27 @@ namespace Game
                     }
                 }
 
-
-                //GRID SPACE HIGHLIGHT
-                if (actingEntity.hasMoved)
-                {
-                    if (!actingEntity.hasAttacked)
+                
+                if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) == 0)
+                {     //MOVE HIGHLIGHT
+                    if (!actingEntity.hasMoved)
                     {
                         gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
+                            actingEntity.MoveRange - pathLine.positionCount, new Color(0.9f, 0.9f, 0.9f));
+                    }
+                }
+                else 
+                {   // ATTACK HIGHLIGHT
+                    if (!actingEntity.hasAttacked)
+                    {
+                        gridSystem.HighlightSquaresInRange(actingEntity.Position,
                             actingEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
-                        foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
+                        foreach (Vector2Int pos in gridSystem.demons) // ATTACK ICON
                         {
                             Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
                             if (gridSystem.GetGridDistance(actingEntity.Position, pos) <=
                                 actingEntity.AttackRange)
                                 demon.DisplayAttackingImage(true, hoveredTile == pos ? Color.red : Color.white);
-                            else demon.DisplayAttackingImage(false, Color.white);
-
-                        }
-                    }
-                }
-                else
-                {
-                    if (actingEntity.hasAttacked)
-                    {
-                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
-                            actingEntity.MoveRange - pathLine.positionCount, new Color(0.9f, 0.9f, 0.9f));
-                    }
-                    else
-                    {
-                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
-                            actingEntity.MoveRange + actingEntity.AttackRange - pathLine.positionCount,
-                            new Color(0.8f, 0.8f, 0.8f));
-                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
-                            actingEntity.MoveRange - pathLine.positionCount, new Color(0.9f, 0.9f, 0.9f));
-                        gridSystem.SetColor(GetPathLinePos(pathLine.positionCount - 1), new Color(0.7f, 0.7f, 0.7f));
-                        foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
-                        {
-                            Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
-                            if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1) , pos) <=
-                                actingEntity.MoveRange + actingEntity.AttackRange - pathLine.positionCount)
-                            {
-                                demon.DisplayAttackingImage(true, Color.white);
-                            }
                             else demon.DisplayAttackingImage(false, Color.white);
 
                         }
