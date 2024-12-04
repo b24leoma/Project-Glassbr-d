@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -96,8 +97,16 @@ namespace Game
             target.TakeDamage(reduction * attacker.Damage);
             if (target.CurrentHealth <= 0)
             {
-                if (target.isHuman) gridSystem.humans.Remove(target.Position);
-                else gridSystem.demons.Remove(target.Position);
+                if (target.isHuman)
+                {
+                    gridSystem.humans.Remove(target.Position);
+                    if (gridSystem.humans.Count == 0) SceneManager.LoadScene("MainMenu");
+                }
+                else
+                {
+                    gridSystem.demons.Remove(target.Position);
+                    if (gridSystem.demons.Count == 0) SceneManager.LoadScene("MainMenu");
+                }
                 target.Kill();
             }
             
