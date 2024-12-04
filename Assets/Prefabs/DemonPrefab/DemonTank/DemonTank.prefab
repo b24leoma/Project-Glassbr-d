@@ -207,7 +207,7 @@ MonoBehaviour:
   Type: 0
   MaxHealth: 150
   Damage: 25
-  MoveRange: 5
+  MoveRange: 4
   AttackRange: 1
   isHuman: 0
   hasMoved: 0
