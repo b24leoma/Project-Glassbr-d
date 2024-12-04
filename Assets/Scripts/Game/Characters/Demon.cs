@@ -8,7 +8,6 @@ namespace Game
     {
         [SerializeField] private GameObject AttackingImage;
         private SpriteRenderer attackImg;
-        Color white = Color.white;
         // Start is called before the first frame update
         void Awake()
         {

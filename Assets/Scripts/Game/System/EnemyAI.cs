@@ -15,12 +15,13 @@ namespace Game
         {
             StartCoroutine(DoTheMagic());
         }
+        // ReSharper disable Unity.PerformanceAnalysis
         private IEnumerator DoTheMagic()
         {
+            yield return new WaitForSeconds(1);
             demons = gridSystem.demons;
             for (int i = 0; i < demons.Count; i++)
             {
-                yield return new WaitForSeconds(1);
                 int distance = 999;
                 Vector2Int target = Vector2Int.zero;
                 for (int j = 0; j < gridSystem.humans.Count; j++)
@@ -39,9 +40,9 @@ namespace Game
                 
                 //Attack before move
                 if ( gridSystem.GetGridDistance(target, demonCurrentPos) <=
-                    range)
+                     gridSystem.GetTile(demons[i]).linkedEntity.AttackRange)
                 {
-                    Debug.Log("ATTACKER" + demonCurrentPos);
+                    gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                     battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
                         gridSystem.GetTile(target).linkedEntity);
                     hasAttacked = true;
@@ -96,14 +97,17 @@ namespace Game
                     if (moves >= gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved)
                     {
                         battleController.Move(demons[i], demonCurrentPos);
+                        gridSystem.GetTile(demons[i]).linkedEntity.SetMoving(true);
                         hasMoved = true;
+                        yield return new WaitForSeconds(0.5f);
 
                         if (!hasAttacked && gridSystem.GetGridDistance(demonCurrentPos, target) <=
                             gridSystem.GetTile(demonCurrentPos).linkedEntity.AttackRange)
                         {
+                            yield return new WaitForSeconds(0.5f);
                             battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
                                 gridSystem.GetTile(target).linkedEntity);
-                            Debug.Log("ATTACKER" + demonCurrentPos);
+                            gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                             if (gridSystem.humans.Count == 0) yield break;
                             for (int j = 0; j < gridSystem.humans.Count; j++)
                             {
