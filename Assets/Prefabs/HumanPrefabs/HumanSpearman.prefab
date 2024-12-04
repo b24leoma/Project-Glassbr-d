@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   MaxHealth: 100
-  Damage: 30
+  Damage: 45
   MoveRange: 5
   AttackRange: 1
   isHuman: 0
