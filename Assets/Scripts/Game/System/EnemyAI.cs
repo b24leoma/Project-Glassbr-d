@@ -25,7 +25,6 @@ namespace Game
                         target = gridSystem.humans[j];
                     }
                 }
-                Debug.Log(target);
                 Vector2Int demonCurrentPos = demons[i];
                 for (int k = 0; k < gridSystem.GetTile(demons[i]).linkedEntity.MoveRange; k++)
                 {
