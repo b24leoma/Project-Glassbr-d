@@ -12,13 +12,17 @@ namespace Game
         [SerializeField] private Tile[] CustomTiles;
         private Dictionary<Vector2Int, Tile> tiles;
         private Vector3 size;
+        [HideInInspector] public List<Vector2Int> demons;
+        [HideInInspector] public List<Vector2Int> humans;
         private void OnEnable()
         {
+            humans = new List<Vector2Int>();
+            demons = new List<Vector2Int>();
             tilemap = GetComponent<Tilemap>();
             tiles = new Dictionary<Vector2Int, Tile>();   // Vector2Int? :thinking:
-            size = GetComponent<Tilemap>().size; // Tilemap är redan hämtad ovan tilemap.size räcker
+            size = tilemap.size;
 
-            size.x = size.x / 2 - 0.5f;     // -0.5 finns överallt, borde namnges så man lätt hänger med
+            size.x = size.x / 2 - 0.5f;
             size.y = size.y / 2 - 0.5f;
             for (int i = -(int)size.x; i <= size.x; i++)
             {
@@ -59,6 +63,8 @@ namespace Game
             if (tiles[currentPos] == null || tiles[currentPos].linkedEntity == null) return;
             Entity e = tiles[currentPos].linkedEntity;
             tiles[currentPos].linkedEntity = null;
+            if (e is Human) humans[humans.IndexOf(currentPos)] = newPos;
+            else demons[demons.IndexOf(currentPos)] = newPos;
             ConnectToTile(newPos, e);
         }
 

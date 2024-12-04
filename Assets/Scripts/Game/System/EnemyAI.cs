@@ -8,56 +8,50 @@ namespace Game
         [SerializeField] private BattleController battleController;
         [SerializeField] private GridSystem gridSystem;
 
+        private List<Vector2Int> demons;
+
         public void StartTurn()
         {
-            List<Vector2Int> humans = new List<Vector2Int>();
-            List<Vector2Int> demons = new List<Vector2Int>();
-            foreach (KeyValuePair<Vector2Int, Tile> tile in gridSystem.GetAllTiles())
-            {
-                if (tile.Value.linkedEntity != null)
-                {
-                    if (tile.Value.linkedEntity.isHuman)
-                    {
-                        humans.Add(tile.Key);
-                    }
-                    else demons.Add(tile.Key);
-                }
-            }
-
+            demons = gridSystem.demons;
             for (int i = 0; i < demons.Count; i++)
             {
                 int distance = 999;
-                Vector2 target = Vector2.zero;
-                for (int j = 0; j < humans.Count; j++)
+                Vector2Int target = Vector2Int.zero;
+                for (int j = 0; j < gridSystem.humans.Count; j++)
                 {
-                    if (gridSystem.GetGridDistance(demons[i], humans[j]) < distance) target = humans[j];
+                    if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
+                    {
+                        distance = gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]);
+                        target = gridSystem.humans[j];
+                    }
                 }
-
+                Debug.Log(target);
                 Vector2Int demonCurrentPos = demons[i];
-                for (int k = 0; k < gridSystem.GetTile(new Vector2Int((int)demons[i].x, (int)demons[i].y)).linkedEntity.MoveRange; k++)
+                for (int k = 0; k < gridSystem.GetTile(demons[i]).linkedEntity.MoveRange; k++)
                 {
-                    if (target.y > demonCurrentPos.y && TileIsFree(demons[i] + Vector2.up))
+                    if (target.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.right))
+                    {
+                        demonCurrentPos += Vector2Int.right;
+                    }
+                    else if (target.x < demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.left))
+                    {
+                        demonCurrentPos += Vector2Int.left;
+                    }  
+                    else if (target.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up))
                     {
                         demonCurrentPos += Vector2Int.up;
                     }
-                    else if (target.y < demonCurrentPos.y && TileIsFree(demons[i] + Vector2.down))
+                    else if (target.y < demonCurrentPos.y && TileIsFree(demonCurrentPos + Vector2.down))
                     {
                         demonCurrentPos += Vector2Int.down;
-                    }   
-                    else if (target.y == demonCurrentPos.y)
-                    {
-                        if (target.x > demonCurrentPos.x && TileIsFree(demons[i] + Vector2.right))
-                        {
-                            demonCurrentPos += Vector2Int.right;
-                        }
-                        else if (target.x < demonCurrentPos.x && TileIsFree(demons[i] + Vector2.left))
-                        {
-                            demonCurrentPos += Vector2Int.left;
-                        }  
-                    }   
+                    }
                 }
-                Debug.Log("DAFSDF");
-                gridSystem.MoveUnit(demons[i], demonCurrentPos);
+                battleController.Move(demons[i], demonCurrentPos);
+                if (gridSystem.GetGridDistance(target, demonCurrentPos) <=
+                    gridSystem.GetTile(demonCurrentPos).linkedEntity.AttackRange)
+                {
+                    battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, gridSystem.GetTile(target).linkedEntity);
+                }
             }
             
             EndTurn();
@@ -70,7 +64,7 @@ namespace Game
 
         bool TileIsFree(Vector2 pos)
         {
-            return gridSystem.GetTile(new Vector2Int((int)pos.x, (int)pos.y)).linkedEntity == null ||
+            return gridSystem.GetTile(new Vector2Int((int)pos.x, (int)pos.y)).linkedEntity == null &&
                    gridSystem.GetTile(new Vector2Int((int)pos.x, (int)pos.y)).walkable;
         }
     }

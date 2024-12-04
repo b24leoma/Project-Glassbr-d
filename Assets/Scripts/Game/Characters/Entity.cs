@@ -68,6 +68,11 @@ namespace Game
             if (attacking) PlayAttack();
                 
         }
+
+        public void Kill()
+        {
+            Destroy(gameObject);
+        }
         
         protected void PlayAttack()
         {

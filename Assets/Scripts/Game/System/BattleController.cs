@@ -26,8 +26,6 @@ namespace Game
         [SerializeField] private GameObject demonTank;
         private List<Entity> characters;
         private int level;
-        [HideInInspector] public List<Vector2Int> demons;
-        [HideInInspector] public List<Vector2Int> humans;
         void Start()
         {
             characters = new List<Entity>();
@@ -38,8 +36,6 @@ namespace Game
         void LoadLevel()
         {
             characters.Clear();
-            humans = new List<Vector2Int>();
-            demons = new List<Vector2Int>();
             foreach (SpawnEntity spawn in LevelEntities[level].spawnList)
             {
                 CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);
@@ -81,8 +77,8 @@ namespace Game
                     break;
             }
             Entity e = g.GetComponent<Entity>();
-            if (e.isHuman) humans.Add(pos);
-            else demons.Add(pos);
+            if (e.isHuman) gridSystem.humans.Add(pos);
+            else gridSystem.demons.Add(pos);
             gridSystem.ConnectToTile(pos, e);
             characters.Add(e);
         }
@@ -98,6 +94,14 @@ namespace Game
             float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
                 .DamageReductionPercent / 100f);
             target.TakeDamage(reduction * attacker.Damage);
+            if (target.CurrentHealth <= 0)
+            {
+                if (target.isHuman) gridSystem.humans.Remove(target.Position);
+                else gridSystem.demons.Remove(target.Position);
+                target.Kill();
+            }
+            
+            
             FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
             FMODManager.instance.OneShot("GenericHit", target.transform.position);
             

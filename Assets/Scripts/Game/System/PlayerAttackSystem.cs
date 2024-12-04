@@ -56,9 +56,14 @@ namespace Game
                                 actingEntity.SetAttacking(true);
                                 battleController.Attack(actingEntity, hoveredEntity);
                                 battleController.UpdateCharacterDisplay(true, hoveredEntity);
-                                Demon demon = hoveredEntity as Demon;
-                                demon?.DisplayAttackingImage(false, Color.white);
-                                
+                                if (hoveredEntity is Demon demon)
+                                {
+                                    demon.DisplayAttackingImage(false, Color.white);   
+                                }
+                                pathLine.positionCount = 1;
+                                SetPathLinePos(0, actingEntity.Position);
+                                isActing = false;
+
                             }
                         }
                     }
@@ -160,13 +165,13 @@ namespace Game
                     {
                         gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
                             actingEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
-                        foreach (Vector2Int pos in battleController.demons) // ATTACK HIGHLIGHT
+                        foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
                         {
                             Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
                             if (gridSystem.GetGridDistance(actingEntity.Position, pos) <=
                                 actingEntity.AttackRange)
-                                demon?.DisplayAttackingImage(true, hoveredTile == pos ? Color.red : Color.white);
-                            else demon?.DisplayAttackingImage(false, Color.white);
+                                demon.DisplayAttackingImage(true, hoveredTile == pos ? Color.red : Color.white);
+                            else demon.DisplayAttackingImage(false, Color.white);
 
                         }
                     }
@@ -186,15 +191,15 @@ namespace Game
                         gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
                             actingEntity.MoveRange - pathLine.positionCount, new Color(0.9f, 0.9f, 0.9f));
                         gridSystem.SetColor(GetPathLinePos(pathLine.positionCount - 1), new Color(0.7f, 0.7f, 0.7f));
-                        foreach (Vector2Int pos in battleController.demons) // ATTACK HIGHLIGHT
+                        foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
                         {
                             Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
                             if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1) , pos) <=
                                 actingEntity.MoveRange + actingEntity.AttackRange - pathLine.positionCount)
                             {
-                                demon?.DisplayAttackingImage(true, Color.white);
+                                demon.DisplayAttackingImage(true, Color.white);
                             }
-                            else demon?.DisplayAttackingImage(false, Color.white);
+                            else demon.DisplayAttackingImage(false, Color.white);
 
                         }
                     }
@@ -202,10 +207,10 @@ namespace Game
             }
             else
             {
-                foreach (Vector2Int pos in battleController.demons) // ATTACK HIGHLIGHT
+                foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
                 {
                     Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
-                    demon?.DisplayAttackingImage(false, Color.white);
+                    demon.DisplayAttackingImage(false, Color.white);
                 }
             }
             gridSystem.SetColor(hoveredTile, new Color(0.7f, 0.7f, 0.7f));
@@ -223,8 +228,11 @@ namespace Game
         public void EndTurn()
         {
             isActing = false;
-            foreach (Entity e in battleController.GetCharacters())
+            isPlayerTurn = false;
+            endTurnButton.SetActive(false);
+            foreach (Vector2Int p in gridSystem.humans)
             {
+                Entity e = gridSystem.GetTile(p).linkedEntity;
                 e.SetAttacking(false);
                 e.SetMoving(false);
             }
