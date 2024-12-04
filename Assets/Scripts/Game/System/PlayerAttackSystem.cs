@@ -165,7 +165,7 @@ namespace Game
                     }
                 }
 
-                if (isActing)
+                if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) == 0)
                 {
                     //MOVE HIGHLIGHT
                     if (!actingEntity.hasMoved)

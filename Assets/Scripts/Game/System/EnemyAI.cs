@@ -28,63 +28,69 @@ namespace Game
                 Vector2Int demonCurrentPos = demons[i];
                 bool hasMoved = false;
                 bool hasAttacked = false;
-                for (int moves = 0; moves < gridSystem.GetTile(demons[i]).linkedEntity.MoveRange;)
+                int range = gridSystem.GetTile(demons[i]).linkedEntity.MoveRange;
+                
+                
+                //Attack before move
+                if ( gridSystem.GetGridDistance(target, demonCurrentPos) <=
+                    range)
                 {
-                    if (moves == 0 && gridSystem.GetGridDistance(target, demonCurrentPos) <=
-                        gridSystem.GetTile(demons[i]).linkedEntity.AttackRange)
+                    battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
+                        gridSystem.GetTile(target).linkedEntity);
+                    hasAttacked = true;
+                    if (gridSystem.humans.Count > 0)
                     {
-                        battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
-                            gridSystem.GetTile(target).linkedEntity);
-                        hasAttacked = true;
-                        if (gridSystem.humans.Count > 0)
+                        for (int j = 0; j < gridSystem.humans.Count; j++)
                         {
-                            for (int j = 0; j < gridSystem.humans.Count; j++)
+                            if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
                             {
-                                if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
-                                {
-                                    distance = gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]);
-                                    target = gridSystem.humans[j];
-                                }
+                                distance = gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]);
+                                target = gridSystem.humans[j];
                             }
                         }
                     }
+                }
+                
+                for (int moves = 0; moves < range;)
+                {
+                    bool couldMove = false;
 
-                    if (target.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.right))
+                    if (moves < range && target.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.right))
                     {
                         demonCurrentPos += Vector2Int.right;
                         moves++;
+                        couldMove = true;
                     }
-                    else if (target.x < demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.left))
+                    else if (moves < range && target.x < demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.left))
                     {
                         demonCurrentPos += Vector2Int.left;
                         moves++;
+                        couldMove = true;
                     }  
-                    else if (target.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up))
+                    
+                    
+                    if (moves < range && target.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up))
                     {
                         demonCurrentPos += Vector2Int.up;
                         moves++;
+                        couldMove = true;
                     }
-                    else if (target.y < demonCurrentPos.y && TileIsFree(demonCurrentPos + Vector2.down))
+                    else if (moves < range && target.y < demonCurrentPos.y && TileIsFree(demonCurrentPos + Vector2.down))
                     {
                         moves++;
                         demonCurrentPos += Vector2Int.down;
+                        couldMove = true;
                     }
-                    else moves = 100;
+                    
+                    if(!couldMove) moves = 100;
 
                     if (moves >= gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved)
                     {
                         battleController.Move(demons[i], demonCurrentPos);
                         hasMoved = true;
                         
-                        if (!hasAttacked && gridSystem.GetGridDistance(target, demonCurrentPos) <=
-                            gridSystem.GetTile(demons[i]).linkedEntity.AttackRange)
-                        {
-                            battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, gridSystem.GetTile(target).linkedEntity);
-                            hasAttacked = true;
-                        }
                     }
                 }
-                
             }
             
             EndTurn();
