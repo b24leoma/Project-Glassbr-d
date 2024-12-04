@@ -210,6 +210,6 @@ MonoBehaviour:
   MoveRange: 3
   AttackRange: 1
   isHuman: 0
-  hasQueuedMovement: 0
-  hasQueuedAttack: 0
+  hasMoved: 0
+  hasAttacked: 0
   AttackingImage: {fileID: 2360588373174240012}
