@@ -93,11 +93,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PropsWallRuins_0
+      name: PropsWallRuinsV1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a56fec1a6d82afa4fade985865a57434
-      internalID: -437827383
+      spriteID: ab0593108a0f6c340b20f8b50712dcde
+      internalID: -351999414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_1
+      name: PropsWallRuinsV1_1
       rect:
         serializedVersion: 2
         x: 112
@@ -132,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6210ca9f216f23a479c3c9e2ceb3596a
-      internalID: -774767629
+      spriteID: d52dc57a0700cd94899d6c8af0e54258
+      internalID: -2093277114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_2
+      name: PropsWallRuinsV1_2
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e7c8dc7db24eeb489b7d6ec0ef213a9
-      internalID: 995423299
+      spriteID: e4f0b75b33b1e11478f6585bc04eccd8
+      internalID: 1534643010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_3
+      name: PropsWallRuinsV1_3
       rect:
         serializedVersion: 2
         x: 16
@@ -174,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 422125fe4faf1ea44b3711549d13a85b
-      internalID: 1019598813
+      spriteID: 039874a05332e1f44a8aeb3943d2cc2e
+      internalID: -282763307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_4
+      name: PropsWallRuinsV1_4
       rect:
         serializedVersion: 2
         x: 32
@@ -195,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcaa16940e03fc14bb6951b1fbac1ded
-      internalID: -223053261
+      spriteID: 68b83d910b134844c8276afadfc74c14
+      internalID: 1872466463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_5
+      name: PropsWallRuinsV1_5
       rect:
         serializedVersion: 2
         x: 48
@@ -216,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebf8af0707aaf034dac5989bdc16ee0d
-      internalID: 1592928666
+      spriteID: ef9e35b137ac72e4ea5acc11ad2590cc
+      internalID: -1624355607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_6
+      name: PropsWallRuinsV1_6
       rect:
         serializedVersion: 2
         x: 64
@@ -237,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe0ec86d0661d344cbefa80cb948335a
-      internalID: 329120516
+      spriteID: 97be476cfcfa4fa44878970dd4163e1f
+      internalID: -594264093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_7
+      name: PropsWallRuinsV1_7
       rect:
         serializedVersion: 2
         x: 80
@@ -258,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a9ee310d5b1e564ebd6a84c4900aafa
-      internalID: -2138167497
+      spriteID: b8e4067ee44bdd64aa3c8068a206b1ce
+      internalID: -1355956975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_8
+      name: PropsWallRuinsV1_8
       rect:
         serializedVersion: 2
         x: 96
@@ -279,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bce59716c18f5124ab62a1adb605a73d
-      internalID: -1427591230
+      spriteID: 5372d71125d860848ae397b2bff7edf6
+      internalID: 720632856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_9
+      name: PropsWallRuinsV1_9
       rect:
         serializedVersion: 2
         x: 112
@@ -300,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 253d9c413be55d44a995a2a254e75c7b
-      internalID: -1356911722
+      spriteID: 3bc68cc5a2e743f45914074cd5a9681a
+      internalID: -1595485119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_10
+      name: PropsWallRuinsV1_10
       rect:
         serializedVersion: 2
         x: 0
@@ -321,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4da7b89d4a65d6d4898c3f0bb717ea40
-      internalID: -1535212701
+      spriteID: 1d702ef2cd83d344d944fd43e116f00a
+      internalID: 1818877326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_11
+      name: PropsWallRuinsV1_11
       rect:
         serializedVersion: 2
         x: 112
@@ -342,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cee0ac81c440604d838838971b4594d
-      internalID: -1749765872
+      spriteID: cecc3d02b027e5c45b3f3936761aed29
+      internalID: -1352175935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_12
+      name: PropsWallRuinsV1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -363,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0578084cd344b954eaf5e474647872be
-      internalID: -1211784707
+      spriteID: b5518cfa16242054182ccd4608b6faf4
+      internalID: -1215773509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_13
+      name: PropsWallRuinsV1_13
       rect:
         serializedVersion: 2
         x: 112
@@ -384,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf025a08aed316a42b010377cc2deb81
-      internalID: -1853664928
+      spriteID: 2df11b7ae87d2f44d8248457f83dfcb7
+      internalID: -760925814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_14
+      name: PropsWallRuinsV1_14
       rect:
         serializedVersion: 2
         x: 0
@@ -405,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07f128040b86a8a478220afc4ef5ffed
-      internalID: -933024577
+      spriteID: c759731bf7cbe3546b9688c1b541afa5
+      internalID: -573578506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_15
+      name: PropsWallRuinsV1_15
       rect:
         serializedVersion: 2
         x: 112
@@ -426,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b86280dc762a424da59b1d9b7a94ca9
-      internalID: 470230451
+      spriteID: 340a07e15ec752c48ae0e5dcb2914663
+      internalID: 625142049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_16
+      name: PropsWallRuinsV1_16
       rect:
         serializedVersion: 2
         x: 0
@@ -447,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce51a29bb0b319c4c93b008e221af22c
-      internalID: 1440751625
+      spriteID: b91fb836691eba546884699e44a7471a
+      internalID: -2091379629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_17
+      name: PropsWallRuinsV1_17
       rect:
         serializedVersion: 2
         x: 112
@@ -468,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e5e617865a1b804ab284b3616200e58
-      internalID: -103663626
+      spriteID: 7450418410c7c7f46aee535a7b578bc9
+      internalID: -2085223725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_18
+      name: PropsWallRuinsV1_18
       rect:
         serializedVersion: 2
         x: 0
@@ -489,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 854334acd19ccb348b9e7763e06e5729
-      internalID: -1273525045
+      spriteID: 5c6b999eff74cf249bf4a83c803cf66a
+      internalID: 578932443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_19
+      name: PropsWallRuinsV1_19
       rect:
         serializedVersion: 2
         x: 16
@@ -510,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68a0f66e6ed2b3f469c09e6448b71080
-      internalID: 740079746
+      spriteID: eb84e7db805104f46976704482a10191
+      internalID: -935581592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_20
+      name: PropsWallRuinsV1_20
       rect:
         serializedVersion: 2
         x: 32
@@ -531,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d4f607ad88e4f7429b98f93dfd5783b
-      internalID: -1191943012
+      spriteID: 8c8b90ef7d2c2b348bd991c1904f764e
+      internalID: -797304634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_21
+      name: PropsWallRuinsV1_21
       rect:
         serializedVersion: 2
         x: 48
@@ -552,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb7945c026839d44094d339a13de9085
-      internalID: -185981953
+      spriteID: 6c2fd162bd8245c488376243bf1952c1
+      internalID: 524749182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_22
+      name: PropsWallRuinsV1_22
       rect:
         serializedVersion: 2
         x: 64
@@ -573,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fa4cba47c6453348b8f6ddfcdd60af0
-      internalID: -562339099
+      spriteID: 02eea4061ed9db442b6b61d07f497ad3
+      internalID: 731320324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_23
+      name: PropsWallRuinsV1_23
       rect:
         serializedVersion: 2
         x: 80
@@ -594,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5b267e5d075a87429ea9046405a6048
-      internalID: -1359463616
+      spriteID: 96bec2caba2557d418bff0e692937606
+      internalID: 599341586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_24
+      name: PropsWallRuinsV1_24
       rect:
         serializedVersion: 2
         x: 96
@@ -615,14 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1e852445dcfedd429276e7ab350a25b
-      internalID: -738731634
+      spriteID: 8a38d75618925134f92c61020f48aa3a
+      internalID: 388907410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PropsWallRuins_25
+      name: PropsWallRuinsV1_25
       rect:
         serializedVersion: 2
         x: 112
@@ -636,8 +662,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebdd777edc0f0104bb4f738252f737bb
-      internalID: 761770337
+      spriteID: 06278bc7a74db284699520c906ca3cc9
+      internalID: -1498164716
       vertices: []
       indices: 
       edges: []
@@ -653,32 +679,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PropsWallRuins_0: -437827383
-      PropsWallRuins_1: -774767629
-      PropsWallRuins_10: -1535212701
-      PropsWallRuins_11: -1749765872
-      PropsWallRuins_12: -1211784707
-      PropsWallRuins_13: -1853664928
-      PropsWallRuins_14: -933024577
-      PropsWallRuins_15: 470230451
-      PropsWallRuins_16: 1440751625
-      PropsWallRuins_17: -103663626
-      PropsWallRuins_18: -1273525045
-      PropsWallRuins_19: 740079746
-      PropsWallRuins_2: 995423299
-      PropsWallRuins_20: -1191943012
-      PropsWallRuins_21: -185981953
-      PropsWallRuins_22: -562339099
-      PropsWallRuins_23: -1359463616
-      PropsWallRuins_24: -738731634
-      PropsWallRuins_25: 761770337
-      PropsWallRuins_3: 1019598813
-      PropsWallRuins_4: -223053261
-      PropsWallRuins_5: 1592928666
-      PropsWallRuins_6: 329120516
-      PropsWallRuins_7: -2138167497
-      PropsWallRuins_8: -1427591230
-      PropsWallRuins_9: -1356911722
+      PropsWallRuinsV1_0: -351999414
+      PropsWallRuinsV1_1: -2093277114
+      PropsWallRuinsV1_10: 1818877326
+      PropsWallRuinsV1_11: -1352175935
+      PropsWallRuinsV1_12: -1215773509
+      PropsWallRuinsV1_13: -760925814
+      PropsWallRuinsV1_14: -573578506
+      PropsWallRuinsV1_15: 625142049
+      PropsWallRuinsV1_16: -2091379629
+      PropsWallRuinsV1_17: -2085223725
+      PropsWallRuinsV1_18: 578932443
+      PropsWallRuinsV1_19: -935581592
+      PropsWallRuinsV1_2: 1534643010
+      PropsWallRuinsV1_20: -797304634
+      PropsWallRuinsV1_21: 524749182
+      PropsWallRuinsV1_22: 731320324
+      PropsWallRuinsV1_23: 599341586
+      PropsWallRuinsV1_24: 388907410
+      PropsWallRuinsV1_25: -1498164716
+      PropsWallRuinsV1_3: -282763307
+      PropsWallRuinsV1_4: 1872466463
+      PropsWallRuinsV1_5: -1624355607
+      PropsWallRuinsV1_6: -594264093
+      PropsWallRuinsV1_7: -1355956975
+      PropsWallRuinsV1_8: 720632856
+      PropsWallRuinsV1_9: -1595485119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
