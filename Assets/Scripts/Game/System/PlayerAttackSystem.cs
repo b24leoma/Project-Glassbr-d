@@ -157,7 +157,7 @@ namespace Game
                             }
                         }
 
-                        if (valid && pathLine.positionCount < actingEntity.MoveRange)
+                        if (valid && pathLine.positionCount < actingEntity.MoveRange + 1)
                         {
                             pathLine.positionCount++;
                             SetPathLinePos(pathLine.positionCount - 1, hoveredTile);
@@ -165,13 +165,13 @@ namespace Game
                     }
                 }
 
-                
-                if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) == 0)
-                {     //MOVE HIGHLIGHT
+                if (isActing)
+                {
+                    //MOVE HIGHLIGHT
                     if (!actingEntity.hasMoved)
                     {
                         gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
-                            actingEntity.MoveRange - pathLine.positionCount, new Color(0.9f, 0.9f, 0.9f));
+                            actingEntity.MoveRange - pathLine.positionCount + 1, new Color(0.9f, 0.9f, 0.9f));
                     }
                 }
                 else 
