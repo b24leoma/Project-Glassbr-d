@@ -10,7 +10,6 @@ namespace Game
         [Header("Assets")]
         [SerializeField] private GameObject endTurnButton;
         [SerializeField] private LineRenderer pathLine;
-        [SerializeField] private Transform iconParent;
         private Entity hoveredEntity;
         private Vector2Int hoveredTile;
         private bool isActing;
@@ -127,11 +126,6 @@ namespace Game
         {
             //Reset board colors
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
-            foreach (Transform child in iconParent)
-            {
-                Destroy(child.gameObject);
-            }
-
             battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity != null,
                 gridSystem.GetTile(hoveredTile).linkedEntity);
             if (gridSystem.GetTile(hoveredTile) == null) return;
