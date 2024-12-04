@@ -26,31 +26,64 @@ namespace Game
                     }
                 }
                 Vector2Int demonCurrentPos = demons[i];
-                for (int k = 0; k < gridSystem.GetTile(demons[i]).linkedEntity.MoveRange; k++)
+                bool hasMoved = false;
+                bool hasAttacked = false;
+                for (int moves = 0; moves < gridSystem.GetTile(demons[i]).linkedEntity.MoveRange;)
                 {
+                    if (moves == 0 && gridSystem.GetGridDistance(target, demonCurrentPos) <=
+                        gridSystem.GetTile(demons[i]).linkedEntity.AttackRange)
+                    {
+                        battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
+                            gridSystem.GetTile(target).linkedEntity);
+                        hasAttacked = true;
+                        if (gridSystem.humans.Count > 0)
+                        {
+                            for (int j = 0; j < gridSystem.humans.Count; j++)
+                            {
+                                if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
+                                {
+                                    distance = gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]);
+                                    target = gridSystem.humans[j];
+                                }
+                            }
+                        }
+                    }
+
                     if (target.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.right))
                     {
                         demonCurrentPos += Vector2Int.right;
+                        moves++;
                     }
                     else if (target.x < demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.left))
                     {
                         demonCurrentPos += Vector2Int.left;
+                        moves++;
                     }  
                     else if (target.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up))
                     {
                         demonCurrentPos += Vector2Int.up;
+                        moves++;
                     }
                     else if (target.y < demonCurrentPos.y && TileIsFree(demonCurrentPos + Vector2.down))
                     {
+                        moves++;
                         demonCurrentPos += Vector2Int.down;
                     }
+
+                    if (moves == gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved)
+                    {
+                        battleController.Move(demons[i], demonCurrentPos);
+                        hasMoved = true;
+                        
+                        if (!hasAttacked && gridSystem.GetGridDistance(target, demonCurrentPos) <=
+                            gridSystem.GetTile(demons[i]).linkedEntity.AttackRange)
+                        {
+                            battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, gridSystem.GetTile(target).linkedEntity);
+                            hasAttacked = true;
+                        }
+                    }
                 }
-                battleController.Move(demons[i], demonCurrentPos);
-                if (gridSystem.GetGridDistance(target, demonCurrentPos) <=
-                    gridSystem.GetTile(demonCurrentPos).linkedEntity.AttackRange)
-                {
-                    battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, gridSystem.GetTile(target).linkedEntity);
-                }
+                
             }
             
             EndTurn();

@@ -76,7 +76,6 @@ namespace Game
         
         protected void PlayAttack()
         {
-            Debug.Log(Type);
             switch (Type)
             {
                 case EntityType.HumanSpearman:
