@@ -84,11 +84,28 @@ namespace Game
                     
                     if(!couldMove) moves = 100;
 
-                    if (moves >= gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved)
+                    if (moves >= gridSystem.GetTile(demons[i]).linkedEntity.MoveRange && !hasMoved && gridSystem.GetGridDistance(target, demonCurrentPos) <=
+                        range)
                     {
                         battleController.Move(demons[i], demonCurrentPos);
                         hasMoved = true;
-                        
+
+                        if (!hasAttacked)
+                        {
+                            battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
+                                gridSystem.GetTile(target).linkedEntity);
+                            if (gridSystem.humans.Count > 0)
+                            {
+                                for (int j = 0; j < gridSystem.humans.Count; j++)
+                                {
+                                    if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
+                                    {
+                                        distance = gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]);
+                                        target = gridSystem.humans[j];
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
