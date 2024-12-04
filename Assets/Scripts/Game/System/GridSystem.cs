@@ -8,6 +8,7 @@ namespace Game
 {
     public class GridSystem : MonoBehaviour
     {
+        [SerializeField] private Tilemap ObstacleTilemap;
         private Tilemap tilemap;
         [SerializeField] private Tile[] CustomTiles;
         private Dictionary<Vector2Int, Tile> tiles;
@@ -30,15 +31,19 @@ namespace Game
                 {
                     tiles[new Vector2Int(i, j)] = new Tile();
                     tilemap.SetTileFlags(new Vector3Int(i - 1, j - 1, 0), TileFlags.None);
-                    TileBase tile = tilemap.GetTile(new Vector3Int(i - 1, j - 1, 0));
                     //Assign Custom Effects
-                    for (int k = 0; k < CustomTiles.Length; k++)
+                    if (ObstacleTilemap.GetTile(new Vector3Int(i - 1, j - 1, 0)) != null)
                     {
-                        if (CustomTiles[k].tile == tile)
+                        TileBase tile = ObstacleTilemap.GetTile(new Vector3Int(i - 1, j - 1, 0));
+                        for (int k = 0; k < CustomTiles.Length; k++)
                         {
-                            tiles[new Vector2Int(i, j)].walkable = CustomTiles[k].walkable;
-                            tiles[new Vector2Int(i, j)].ArcherRangeIncrease = CustomTiles[k].ArcherRangeIncrease;
-                            tiles[new Vector2Int(i, j)].DamageReductionPercent = CustomTiles[k].DamageReductionPercent;
+                            if (CustomTiles[k].tile == tile)
+                            {
+                                tiles[new Vector2Int(i, j)].walkable = CustomTiles[k].walkable;
+                                tiles[new Vector2Int(i, j)].ArcherRangeIncrease = CustomTiles[k].ArcherRangeIncrease;
+                                tiles[new Vector2Int(i, j)].DamageReductionPercent =
+                                    CustomTiles[k].DamageReductionPercent;
+                            }
                         }
                     }
                 }
