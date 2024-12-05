@@ -80,18 +80,6 @@ namespace Game
         protected void PlayAttack()
         {
             animator.SetTrigger("Attack");
-            /*switch (Type)
-            {
-                case EntityType.HumanSpearman:
-                    animator.SetTrigger("Attack");
-                    break;
-                case EntityType.HumanArcher:
-                    break;
-                case EntityType.DemonSwordsman:
-                    break;
-                case EntityType.DemonTank:
-                    break;
-            }*/
         }
     }
 
