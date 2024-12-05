@@ -1975,8 +1975,8 @@ Tilemap:
   - first: {x: -4, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2875,8 +2875,8 @@ Tilemap:
   - first: {x: -4, y: 2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3376,12 +3376,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7106145e4639778498b6ef15c6eadf8e, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 6a366b2e708e10b4f88be91553c5349b, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 5fe5479269d76b34fb6a3fbd71e23450, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 9100405edbe85954087dd33a4d3e4aae, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 18
     m_Data: {fileID: -1286439587, guid: 1ac0bb5ed1d69854cbec833b22d522d5, type: 3}
@@ -3395,12 +3395,12 @@ Tilemap:
     m_Data: {fileID: -2036118225, guid: 1ac0bb5ed1d69854cbec833b22d522d5, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: -1856142260, guid: 771e454a157f75e46b982e8bfd6789a6, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -1352175935, guid: 3a6b8dde42d29924582150471a4f9638, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 1517244431, guid: 771e454a157f75e46b982e8bfd6789a6, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 180
     m_Data:
@@ -6007,7 +6007,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  GameEnded: 0
+  gameEnded: 0
 --- !u!4 &2031621821
 Transform:
   m_ObjectHideFlags: 0
