@@ -25,14 +25,15 @@ namespace Game
 
             size.x = size.x / 2 - 0.5f;
             size.y = size.y / 2 - 0.5f;
-            for (int i = -(int)size.x; i <= size.x; i++)
+            for (int i = -(int)size.x; i <= size.x + 1; i++)
             {
-                for (int j = -(int)size.y; j <= size.y; j++)
+                for (int j = -(int)size.y; j <= size.y + 1; j++)
                 {
                     tiles[new Vector2Int(i, j)] = new Tile();
-                    tilemap.SetTileFlags(new Vector3Int(i - 1, j - 1, 0), TileFlags.None);
+                    tilemap.SetTileFlags(new Vector3Int(i-1, j-1, 0), TileFlags.None);
+                    ObstacleTilemap.SetTileFlags(new Vector3Int(i-1, j-1, 0), TileFlags.None);
                     //Assign Custom Effects
-                    if (ObstacleTilemap.GetTile(new Vector3Int(i - 1, j - 1, 0)) != null)
+                    if (ObstacleTilemap.GetTile(new Vector3Int(i-1, j-1, 0)) != null)
                     {
                         TileBase tile = ObstacleTilemap.GetTile(new Vector3Int(i - 1, j - 1, 0));
                         for (int k = 0; k < CustomTiles.Length; k++)
@@ -43,6 +44,7 @@ namespace Game
                                 tiles[new Vector2Int(i, j)].ArcherRangeIncrease = CustomTiles[k].ArcherRangeIncrease;
                                 tiles[new Vector2Int(i, j)].DamageReductionPercent =
                                     CustomTiles[k].DamageReductionPercent;
+                                tiles[new Vector2Int(i, j)].hidingSpot = CustomTiles[k].hidingSpot;
                             }
                         }
                     }
@@ -100,6 +102,11 @@ namespace Game
             if (tiles[pos].walkable) tilemap.SetColor(new Vector3Int((int)pos.x - 1, (int)pos.y - 1, 0), color);;
         }
 
+        public void SetHidingSpotColor(Vector2Int pos, Color color)
+        {
+            ObstacleTilemap.SetColor(new Vector3Int(pos.x-1, pos.y-1, 0), color);
+        }
+
         public void ClearGrid()
         {
             for (int i = -(int)size.x; i <= size.x; i++)
@@ -122,6 +129,7 @@ namespace Game
         [HideInInspector] public Entity linkedEntity;
         public TileBase tile;
         public bool walkable = true;
+        public bool hidingSpot = false;
         
         public int ArcherRangeIncrease = 0;
         public int DamageReductionPercent = 0;

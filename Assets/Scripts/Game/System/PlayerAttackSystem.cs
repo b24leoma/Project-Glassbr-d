@@ -37,6 +37,8 @@ namespace Game
                         {
                             actingEntity.SetMoving(true);
                             Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
+                            if (gridSystem.GetTile(actingEntity.Position).hidingSpot) gridSystem.SetHidingSpotColor(actingEntity.Position,Color.white);
+                            if (gridSystem.GetTile(newPos).hidingSpot) gridSystem.SetHidingSpotColor(newPos, new Color(1,1,1,0.3f));
                             battleController.Move(actingEntity.Position, newPos);
                             pathLine.positionCount = 1;
                             SetPathLinePos(0, actingEntity.Position);
@@ -165,7 +167,7 @@ namespace Game
                     if (!actingEntity.hasMoved)
                     {
                         gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
-                            actingEntity.MoveRange - pathLine.positionCount + 1, new Color(0.9f, 0.9f, 0.9f));
+                            actingEntity.MoveRange - pathLine.positionCount + 1, new Color(0.8f, 0.8f, 0.8f));
                     }
                 }
                 else 
