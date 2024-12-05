@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 242ba3dc7ba080a4d9ea7ae9492901c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2eebdd559204f1148a2f23a307833c78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,7 +183,7 @@ Animator:
   m_GameObject: {fileID: 5302196309894914950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a6f10b1b5146d504d87ef66e51c55029, type: 2}
+  m_Controller: {fileID: 9100000, guid: cd01c4c7774e464498e792b4dff3137e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   MaxHealth: 100
-  Damage: 20
-  MoveRange: 2
+  Damage: 30
+  MoveRange: 10
   AttackRange: 1
   movingIcon: {fileID: 7738304059087909806}
   attackingIcon: {fileID: 6697217130054760279}
@@ -217,6 +217,7 @@ MonoBehaviour:
   hasMoved: 0
   hasAttacked: 0
   AttackingImage: {fileID: 4956809188021841018}
+  target: {fileID: 0}
 --- !u!1 &6697217130054760279
 GameObject:
   m_ObjectHideFlags: 0
