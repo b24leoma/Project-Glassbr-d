@@ -86,6 +86,11 @@ namespace Game
             return tiles[position];
         }
 
+        public bool TileIsInBounds(Vector2Int pos)
+        {
+            return (pos.x > -size.x && pos.x < size.x && pos.y > -size.y && pos.y < size.y);
+        }
+
         public int GetGridDistance(Vector2 from, Vector2 to)
         {
             return (int)Mathf.Abs(from.x - to.x) + (int)Mathf.Abs(from.y - to.y);

@@ -42,21 +42,21 @@ namespace Game
                 {
                     bool couldMove = false;
 
-                    if (moves < range && demon.target.Position.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                    if (moves < range && demon.target.Position.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2Int.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
                         demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.right;
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.left) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.left) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
                              demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.left;
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
                              demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.right;
@@ -65,21 +65,21 @@ namespace Game
                     }
                     
                     
-                    if (moves < range && demon.target.Position.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                    if (moves < range && demon.target.Position.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2Int.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
                         demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.up;
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.down) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.down) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
                              demon.AttackRange)
                     {
                         moves++;
                         demonCurrentPos += Vector2Int.down;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
                              demon.AttackRange)
                     {
                         moves++;
@@ -123,10 +123,15 @@ namespace Game
             battleController.EndTurn();
         }
 
-        bool TileIsFree(Vector2 pos)
+        bool TileIsFree(Vector2Int pos)
         {
-            return gridSystem.GetTile(new Vector2Int((int)pos.x, (int)pos.y)).linkedEntity == null &&
-                   gridSystem.GetTile(new Vector2Int((int)pos.x, (int)pos.y)).walkable;
+            if (gridSystem.TileIsInBounds(pos))
+            {
+                return gridSystem.GetTile(pos).linkedEntity == null &&
+                       gridSystem.GetTile(pos).walkable;
+            }
+
+            return false;
         }
 
         void GetRandomTarget(Demon demon)
