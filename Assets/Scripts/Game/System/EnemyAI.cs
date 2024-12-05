@@ -51,7 +51,7 @@ namespace Game
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && demon.target.Position.x < demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.left))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.left))
                     {
                         demonCurrentPos += Vector2Int.left;
                         moves++;
@@ -65,7 +65,7 @@ namespace Game
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && demon.target.Position.y < demonCurrentPos.y && TileIsFree(demonCurrentPos + Vector2.down))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.down))
                     {
                         moves++;
                         demonCurrentPos += Vector2Int.down;
