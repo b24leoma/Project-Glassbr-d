@@ -23,16 +23,9 @@ namespace Game
             for (int i = 0; i < demons.Count; i++)
             {
                 int distance = 999;
-                Vector2Int target = Vector2Int.zero;
-                for (int j = 0; j < gridSystem.humans.Count; j++)
-                {
-                    if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
-                    {
-                        distance = gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]);
-                        target = gridSystem.humans[j];
-                    }
-                }
                 Vector2Int demonCurrentPos = demons[i];
+                Vector2Int target = gridSystem.humans[Random.Range(0, gridSystem.humans.Count - 1)];
+                distance = gridSystem.GetGridDistance(demons[i], target);
                 bool hasMoved = false;
                 bool hasAttacked = false;
                 int range = gridSystem.GetTile(demons[i]).linkedEntity.MoveRange;
