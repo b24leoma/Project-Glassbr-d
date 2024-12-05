@@ -58,16 +58,7 @@ namespace Game
 
         public void NextLevel()
         {
-            level++;
-            if (level >= LevelEntities.Count)
-            {
-                Debug.Log("Win");
-            }
-            else
-            {
-                gridSystem.ClearGrid();
-                LoadLevel();
-            }
+            SceneManager.LoadScene("Game");
         }
 
         void CreateEntity(Vector2Int pos, Entity.EntityType type)
