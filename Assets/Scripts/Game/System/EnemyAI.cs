@@ -19,10 +19,12 @@ namespace Game
             for (int i = 0; i < gridSystem.demons.Count; i++)
             {
                 Demon demon = gridSystem.GetTile(gridSystem.demons[i]).linkedEntity as Demon;
-                int distance = 999;
                 Vector2Int demonCurrentPos = demon.Position;
-                if (demon.target == null || demon.target.CurrentHealth <= 0) GetNewTarget(demon);
-                distance = gridSystem.GetGridDistance(demon.Position, demon.Position);
+                if (demon.target == null || demon.target.CurrentHealth <= 0)
+                {
+                    if (demon.Type == Entity.EntityType.DemonSwordsman) GetFurthestTarget(demon);
+                    else if (demon.Type == Entity.EntityType.DemonTank) GetClosestTarget(demon);
+                }
                 bool hasMoved = false;
                 bool hasAttacked = false;
                 int range = demon.MoveRange;
@@ -37,7 +39,8 @@ namespace Game
                     hasAttacked = true;
                     yield return new WaitForSeconds(1);
                     if (gridSystem.humans.Count == 0) yield break;
-                    if (demon.target.CurrentHealth <= 0) GetNewTarget(demon);
+                    if (demon.Type == Entity.EntityType.DemonSwordsman && demon.target.CurrentHealth <= 0) GetFurthestTarget(demon);
+                    else if (demon.Type == Entity.EntityType.DemonTank) GetClosestTarget(demon);
                 }
                 
                 for (int moves = 0; moves < range;)
@@ -106,7 +109,8 @@ namespace Game
                             gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                             if (gridSystem.humans.Count == 0) yield break;
                             yield return new WaitForSeconds(0.5f);
-                            if (demon.target.CurrentHealth <= 0) GetNewTarget(demon);
+                            if (demon.Type == Entity.EntityType.DemonSwordsman && demon.target.CurrentHealth <= 0) GetFurthestTarget(demon);
+                            else if (demon.Type == Entity.EntityType.DemonTank) GetClosestTarget(demon);
 
                         }
                     }
@@ -134,9 +138,34 @@ namespace Game
                    gridSystem.GetTile(new Vector2Int((int)pos.x, (int)pos.y)).walkable;
         }
 
-        void GetNewTarget(Demon demon)
+        void GetRandomTarget(Demon demon)
         {
             demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(0, gridSystem.humans.Count - 1)]).linkedEntity as Human;
+        }
+        void GetClosestTarget(Demon demon)
+        {
+            Debug.Log("aaaa");
+            int distance = 999;
+            for (int i = 0; i < gridSystem.humans.Count; i++)
+            {
+                if (gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]) < distance)
+                {
+                    distance = gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]);
+                    demon.target = gridSystem.GetTile(gridSystem.humans[i]).linkedEntity as Human;
+                }
+            }
+        }
+        void GetFurthestTarget(Demon demon)
+        {
+            int distance = 0;
+            for (int i = 0; i < gridSystem.humans.Count; i++)
+            {
+                if (gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]) > distance)
+                {
+                    distance = gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]);
+                    demon.target = gridSystem.GetTile(gridSystem.humans[i]).linkedEntity as Human;
+                }
+            }
         }
     }
 }
