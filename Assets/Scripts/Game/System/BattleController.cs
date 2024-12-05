@@ -29,6 +29,10 @@ namespace Game
         [SerializeField] private GameObject demonTank;
         private List<Entity> characters;
         private int level;
+
+        
+        
+        
         void Start()
         {
             if (gridSystem == null || uiStates == null || canvas == null)
@@ -170,5 +174,18 @@ namespace Game
         {
             public List<SpawnEntity> spawnList;
         }
+        
+        public void DebugLose ()
+        {
+            uiStates.LossUI();
+        }
+
+        public void DebugWin()
+        {
+            uiStates.WinUI();
+        }
     }
+    
+    
+    
 }
