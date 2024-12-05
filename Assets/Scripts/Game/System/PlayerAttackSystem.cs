@@ -165,7 +165,7 @@ namespace Game
                     if (!actingEntity.hasMoved)
                     {
                         gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
-                            actingEntity.MoveRange - pathLine.positionCount + 1, new Color(0.9f, 0.9f, 0.9f));
+                            actingEntity.MoveRange - pathLine.positionCount + 1, new Color(0.8f, 0.8f, 0.8f));
                     }
                 }
                 else 
