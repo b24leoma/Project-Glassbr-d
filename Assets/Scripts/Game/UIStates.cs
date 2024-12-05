@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -11,7 +10,7 @@ public class UIStates : MonoBehaviour
     [SerializeField] UnityEvent onWin;
     [SerializeField] UnityEvent onLoss;
     [SerializeField] UnityEvent onOpenSettings;
-    [SerializeField] private bool GameEnded;
+    [SerializeField] private bool gameEnded;
 
 
     
@@ -35,7 +34,7 @@ public class UIStates : MonoBehaviour
         {
             case 0:
             {
-                GameEnded = true;
+                gameEnded = true;
                 onLoss.Invoke();
                 AnimateToggle();
                 break;
@@ -43,14 +42,14 @@ public class UIStates : MonoBehaviour
 
             case 1:
             {
-                GameEnded = true;
+                gameEnded = true;
                 onWin.Invoke();
                 AnimateToggle();
                 break;
             }
             case 3:
             {
-                if (GameEnded == false)
+                if (gameEnded == false)
                 {
                     onOpenSettings.Invoke();
                     AnimateToggle();
@@ -79,6 +78,11 @@ public class UIStates : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene("Game");
     }
     
     

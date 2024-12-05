@@ -15,6 +15,7 @@ namespace Game
         private bool isActing;
         private Entity actingEntity;
         private bool isPlayerTurn;
+        private bool isPaused;
         private Vector3 offsetFix;
         private BattleController battleController;
         void Start()
@@ -25,7 +26,7 @@ namespace Game
 
         public void TileClicked(InputAction.CallbackContext context)
         {
-            if (!isPlayerTurn) return;
+            if (!isPlayerTurn || isPaused) return;
             if (context.canceled)
             {
                 hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
@@ -103,6 +104,7 @@ namespace Game
 
         public void MouseMove(InputAction.CallbackContext context)
         {
+            if (isPaused) return;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
 
@@ -233,6 +235,11 @@ namespace Game
         {
             isPlayerTurn = true;
             endTurnButton.SetActive(true);
+        }
+
+        public void SetPaused(bool paused)
+        {
+            isPaused = paused;
         }
     }
 }
