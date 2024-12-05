@@ -104,11 +104,11 @@ namespace Game
                         if (!hasAttacked && gridSystem.GetGridDistance(demonCurrentPos, target) <=
                             gridSystem.GetTile(demonCurrentPos).linkedEntity.AttackRange)
                         {
-                            yield return new WaitForSeconds(0.5f);
                             battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
                                 gridSystem.GetTile(target).linkedEntity);
                             gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                             if (gridSystem.humans.Count == 0) yield break;
+                            yield return new WaitForSeconds(0.5f);
                             for (int j = 0; j < gridSystem.humans.Count; j++)
                             {
                                 if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
@@ -121,7 +121,7 @@ namespace Game
                         }
                     }
                 }
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.25f);
             }
             EndTurn();
         }
