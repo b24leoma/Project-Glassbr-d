@@ -4099,6 +4099,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &654439694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4498320844459315719, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+  m_PrefabInstance: {fileID: 1100398208}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c0fbfae94e55f42b0db912cdfe89ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667459983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,52 +4419,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865335123}
   m_CullTransparentMesh: 1
---- !u!1 &923720460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 923720462}
-  - component: {fileID: 923720461}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &923720461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923720460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 770232b971772a84280c03e98a8fdffc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fmodRefData:
-  - {fileID: 11400000, guid: e50fdfd813be0284bb6bcfec6ad16d0f, type: 2}
---- !u!4 &923720462
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923720460}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5532824, y: 0.4551711, z: 0.5508644}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000992508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4859,6 +4824,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053508687}
   m_CullTransparentMesh: 1
+--- !u!1001 &1100398208
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 528.5651
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -860.1445
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.215117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518132195253513267, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952667304925598784, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: m_Name
+      value: AudioManager (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
 --- !u!1 &1215170045
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,13 +7152,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioSlider, Assembly-CSharp
-        m_MethodName: SetLevel
+      - m_Target: {fileID: 654439694}
+        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8335,13 +8357,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioSlider, Assembly-CSharp
-        m_MethodName: SetLevel
+      - m_Target: {fileID: 654439694}
+        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
+        m_MethodName: SetSfxVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8468,13 +8490,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioSlider, Assembly-CSharp
-        m_MethodName: SetLevel
+      - m_Target: {fileID: 654439694}
+        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8726,5 +8748,5 @@ SceneRoots:
   - {fileID: 1234673373}
   - {fileID: 2146461521}
   - {fileID: 1290126560}
-  - {fileID: 923720462}
   - {fileID: 2031621821}
+  - {fileID: 1100398208}
