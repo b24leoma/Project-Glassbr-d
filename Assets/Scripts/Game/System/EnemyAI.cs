@@ -55,7 +55,13 @@ namespace Game
                         demonCurrentPos += Vector2Int.left;
                         moves++;
                         couldMove = true;
-                    }  
+                    }
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.right))
+                    {
+                        demonCurrentPos += Vector2Int.right;
+                        moves++;
+                        couldMove = true;
+                    }
                     
                     
                     if (moves < range && demon.target.Position.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up))
@@ -68,6 +74,12 @@ namespace Game
                     {
                         moves++;
                         demonCurrentPos += Vector2Int.down;
+                        couldMove = true;
+                    }
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.up))
+                    {
+                        moves++;
+                        demonCurrentPos += Vector2Int.up;
                         couldMove = true;
                     }
                     

@@ -25,9 +25,9 @@ namespace Game
 
             size.x = size.x / 2 - 0.5f;
             size.y = size.y / 2 - 0.5f;
-            for (int i = -(int)size.x; i <= size.x; i++)
+            for (int i = -(int)size.x; i <= size.x + 1; i++)
             {
-                for (int j = -(int)size.y; j <= size.y; j++)
+                for (int j = -(int)size.y; j <= size.y + 1; j++)
                 {
                     tiles[new Vector2Int(i, j)] = new Tile();
                     tilemap.SetTileFlags(new Vector3Int(i-1, j-1, 0), TileFlags.None);
