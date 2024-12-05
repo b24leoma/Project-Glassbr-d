@@ -53,9 +53,9 @@ namespace Game
         }
         public void HighlightSquaresInRange(Vector2 pos, float range, Color color)
         {
-            for (int i = -(int)size.x; i <= size.x; i++)     //Checkar alla tiles, borde gå att ta den valda tilen och titta enbart ett visst avstånd (range) omkring.
+            for (int i = -(int)size.x; i < size.x + 1; i++)     //Checkar alla tiles, borde gå att ta den valda tilen och titta enbart ett visst avstånd (range) omkring.
             {
-                for (int j = -(int)size.y; j <= size.y; j++)
+                for (int j = -(int)size.y; j < size.y + 1; j++)
                 {
                     if (GetGridDistance(pos, new Vector2(i, j)) <= range && tiles[new Vector2Int(i,j)].walkable)
                     {
