@@ -31,10 +31,9 @@ namespace Game
         private int level;
 
         
-        
-        
         void Start()
         {
+            NameGenerator.RepopulateList();
             if (gridSystem == null || uiStates == null || canvas == null)
             {
                 Debug.LogError("You forgot to assign some components in the inspector :)");
@@ -58,6 +57,10 @@ namespace Game
 
         public void NextLevel()
         {
+            foreach (Entity entity in characters)
+            {
+                Destroy(gameObject);
+            }
             SceneManager.LoadScene("Game");
         }
 
