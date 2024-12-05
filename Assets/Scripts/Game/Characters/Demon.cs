@@ -13,7 +13,7 @@ namespace Game
         void Awake()
         {
             isHuman = false;
-            Name = GenerateName(false);
+            Name = NameGenerator.GenerateName(false);
             attackImg = AttackingImage.GetComponent<SpriteRenderer>();
         }
 

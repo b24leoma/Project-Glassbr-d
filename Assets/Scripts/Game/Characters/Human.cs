@@ -7,7 +7,7 @@ namespace Game
         void Awake()
         {
            isHuman = true;
-           Name = GenerateName(true);
+           Name = NameGenerator.GenerateName(true);
         }
     }
 }

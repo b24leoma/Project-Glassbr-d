@@ -81,8 +81,74 @@ namespace Game
         {
             animator.SetTrigger("Attack");
         }
+    }
 
-        public string GenerateName(bool isHuman)
+    public static class NameGenerator
+    {
+        public static List<string> _human;
+        public static List<string> _demon;
+        public static void RepopulateList()
+        {
+            _human = new List<string>
+            {
+                "Sigrid",
+                "Mathilda",
+                "Brenna",
+                "Col",
+                "Nicole",
+                "Borko",
+                "Oliver",
+                "Ivar",
+                "Colette",
+                "Hildeth",
+                "Victoria",
+                "Berenice",
+                "Tilda",
+                "Luthera",
+                "Maude",
+                "Esme",
+                "Wilma",
+                "Erika",
+                "Annora",
+                "Desislava",
+                "Agatha",
+                "Maxim",
+                "Leopold",
+                "Frost",
+                "Ferdinand",
+                "Baldwin",
+                "Wilkie",
+                "Harold",
+                "Emmerich",
+                "Dragan",
+                "Bridget",
+            };
+            _demon = new List<string>
+            {
+                "Luster",
+                "Larceny",
+                "Execution",
+                "Devours",
+                "Picker",
+                "Haughty",
+                "Ire",
+                "Rapacity",
+                "Envyn",
+                "Idlek",
+                "Immodera",
+                "Solipsi",
+                "Treach",
+                "Wiolat",
+                "Malick",
+                "Lia",
+                "Torment",
+                "Pherver",
+                "Cultest",
+                "Preshor",
+                "Bob",
+            };
+        }
+        public static string GenerateName(bool isHuman)
         {
             if (isHuman)
             {
@@ -99,63 +165,5 @@ namespace Game
             }
         }
         
-        private static readonly List<string> _human = new List<string>
-        {
-            "Sigrid",
-            "Mathilda",
-            "Brenna",
-            "Col",
-            "Nicole",
-            "Borko",
-            "Oliver",
-            "Ivar",
-            "Colette",
-            "Hildeth",
-            "Victoria",
-            "Berenice",
-            "Tilda",
-            "Luthera",
-            "Maude",
-            "Esme",
-            "Wilma",
-            "Erika",
-            "Annora",
-            "Desislava",
-            "Agatha",
-            "Maxim",
-            "Leopold",
-            "Frost",
-            "Ferdinand",
-            "Baldwin",
-            "Wilkie",
-            "Harold",
-            "Emmerich",
-            "Dragan",
-            "Bridget",
-        };
-        private static readonly List<string> _demon = new List<string>
-        {
-            "Luster",
-            "Larceny",
-            "Execution",
-            "Devours",
-            "Picker",
-            "Haughty",
-            "Ire",
-            "Rapacity",
-            "Envyn",
-            "Idlek",
-            "Immodera",
-            "Solipsi",
-            "Treach",
-            "Wiolat",
-            "Malick",
-            "Lia",
-            "Torment",
-            "Pherver",
-            "Cultest",
-            "Preshor",
-            "Bob",
-        };
     }
 }
