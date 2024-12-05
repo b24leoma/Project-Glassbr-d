@@ -38,4 +38,30 @@ public class VolumeController : MonoBehaviour
         if (_sfxVca.isValid()) _sfxVca.setVolume(sfxVolume);
         if (_ambienceVca.isValid()) _ambienceVca.setVolume(ambienceVolume);
     }
+    
+    
+    //For UI 
+    public void SetMasterVolume(float value)
+    {
+        masterVolume = value;
+        if (_masterVca.isValid()) _masterVca.setVolume(masterVolume);
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        musicVolume = value;
+        if (_musicVca.isValid()) _musicVca.setVolume(musicVolume);
+    }
+
+    public void SetSfxVolume(float value)
+    {
+        sfxVolume = value;
+        if (_sfxVca.isValid()) _sfxVca.setVolume(sfxVolume);
+    }
+
+    public void SetAmbienceVolume(float value)
+    {
+        ambienceVolume = value;
+        if (_ambienceVca.isValid()) _ambienceVca.setVolume(ambienceVolume);
+    }
 }
