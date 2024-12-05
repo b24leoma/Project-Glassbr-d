@@ -207,9 +207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
-  MaxHealth: 150
-  Damage: 30
-  MoveRange: 10
+  MaxHealth: 100
+  Damage: 50
+  MoveRange: 6
   AttackRange: 1
   movingIcon: {fileID: 7738304059087909806}
   attackingIcon: {fileID: 6697217130054760279}
