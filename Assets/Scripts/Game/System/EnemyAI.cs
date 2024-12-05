@@ -19,7 +19,6 @@ namespace Game
             for (int i = 0; i < gridSystem.demons.Count; i++)
             {
                 Demon demon = gridSystem.GetTile(gridSystem.demons[i]).linkedEntity as Demon;
-                Debug.Log(gridSystem.GetTile(gridSystem.demons[i]).linkedEntity is Demon);
                 int distance = 999;
                 Vector2Int demonCurrentPos = demon.Position;
                 if (demon.target == null || demon.target.CurrentHealth <= 0) GetNewTarget(demon);
@@ -51,7 +50,7 @@ namespace Game
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && demon.target.Position.x < demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.left))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.left))
                     {
                         demonCurrentPos += Vector2Int.left;
                         moves++;
@@ -65,7 +64,7 @@ namespace Game
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && demon.target.Position.y < demonCurrentPos.y && TileIsFree(demonCurrentPos + Vector2.down))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.down))
                     {
                         moves++;
                         demonCurrentPos += Vector2Int.down;
