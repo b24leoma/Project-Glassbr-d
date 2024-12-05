@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -7,10 +8,14 @@ public class UIStates : MonoBehaviour
     private static readonly int IsOpen = Animator.StringToHash("isOpen");
     [SerializeField] private Animator settingsAnimator;
 
- [SerializeField] UnityEvent onWin;
- [SerializeField] UnityEvent onLoss;
- [SerializeField] UnityEvent onOpenSettings;
- 
+    [SerializeField] UnityEvent onWin;
+    [SerializeField] UnityEvent onLoss;
+    [SerializeField] UnityEvent onOpenSettings;
+    [SerializeField] private bool GameEnded;
+
+
+    
+    
     
     public void QuitGame()
     {
@@ -19,32 +24,58 @@ public class UIStates : MonoBehaviour
 #endif
         Application.Quit();
     }
-
-    public void WinUI()
-    {
-        onWin.Invoke();
-        TogglePanel();
-    }
     
-    public void LossUI()
+    
+     
+    
+
+    public void TogglePanel(int magicnumber)
     {
-        onLoss.Invoke();
-        TogglePanel();
+        switch (magicnumber)
+        {
+            case 0:
+            {
+                GameEnded = true;
+                onLoss.Invoke();
+                AnimateToggle();
+                break;
+            }
+
+            case 1:
+            {
+                GameEnded = true;
+                onWin.Invoke();
+                AnimateToggle();
+                break;
+            }
+            case 3:
+            {
+                if (GameEnded == false)
+                {
+                    onOpenSettings.Invoke();
+                    AnimateToggle();
+                    break;
+                }
+                AnimateToggle();
+                break;
+            }
+                    
+        }
+        
+        
+        
+        
+        
     }
 
-    private void TogglePanel()
+    private void AnimateToggle()
     {
         bool isOpen = settingsAnimator.GetBool(IsOpen);
-        
+
         settingsAnimator.SetBool(IsOpen, !isOpen);
     }
 
-    public void OpenSettings()
-    {
-        onOpenSettings.Invoke();
-        TogglePanel();
-    }
-
+  
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");

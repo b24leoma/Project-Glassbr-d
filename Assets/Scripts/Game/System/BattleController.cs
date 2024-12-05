@@ -113,7 +113,7 @@ namespace Game
                     gridSystem.humans.Remove(target.Position);
                     if (gridSystem.humans.Count == 0)
                     {
-                        uiStates.LossUI();
+                        uiStates.TogglePanel(0);
                     }
                 }
                 else
@@ -121,7 +121,7 @@ namespace Game
                     gridSystem.demons.Remove(target.Position);
                     if (gridSystem.demons.Count == 0)
                     {
-                        uiStates.WinUI();
+                        uiStates.TogglePanel(1);
                     }
                 }
                 target.Kill();
@@ -177,12 +177,12 @@ namespace Game
         
         public void DebugLose ()
         {
-            uiStates.LossUI();
+            uiStates.TogglePanel(0);
         }
 
         public void DebugWin()
         {
-            uiStates.WinUI();
+            uiStates.TogglePanel(1);
         }
     }
     
