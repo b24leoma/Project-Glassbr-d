@@ -19,7 +19,6 @@ namespace Game
             for (int i = 0; i < gridSystem.demons.Count; i++)
             {
                 Demon demon = gridSystem.GetTile(gridSystem.demons[i]).linkedEntity as Demon;
-                Debug.Log(gridSystem.GetTile(gridSystem.demons[i]).linkedEntity is Demon);
                 int distance = 999;
                 Vector2Int demonCurrentPos = demon.Position;
                 if (demon.target == null || demon.target.CurrentHealth <= 0) GetNewTarget(demon);
