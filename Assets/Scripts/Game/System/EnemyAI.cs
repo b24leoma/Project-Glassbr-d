@@ -29,7 +29,7 @@ namespace Game
                 
                 
                 //Attack before move
-                if ( gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
+                if (gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
                      demon.AttackRange)
                 {
                     gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
@@ -44,19 +44,22 @@ namespace Game
                 {
                     bool couldMove = false;
 
-                    if (moves < range && demon.target.Position.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.right))
+                    if (moves < range && demon.target.Position.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                        demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.right;
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.left))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.left) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                             demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.left;
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.right))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                             demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.right;
                         moves++;
@@ -64,19 +67,22 @@ namespace Game
                     }
                     
                     
-                    if (moves < range && demon.target.Position.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up))
+                    if (moves < range && demon.target.Position.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                        demon.AttackRange)
                     {
                         demonCurrentPos += Vector2Int.up;
                         moves++;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.down))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.down) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                             demon.AttackRange)
                     {
                         moves++;
                         demonCurrentPos += Vector2Int.down;
                         couldMove = true;
                     }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.up))
+                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
+                             demon.AttackRange)
                     {
                         moves++;
                         demonCurrentPos += Vector2Int.up;
