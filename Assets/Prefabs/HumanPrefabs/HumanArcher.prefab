@@ -349,13 +349,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958c28328c3370846aa78f02cee41f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
   MaxHealth: 50
   Damage: 35
   MoveRange: 3
   AttackRange: 6
+  movingIcon: {fileID: 4951628918647575082}
+  attackingIcon: {fileID: 6881891519022880643}
   isHuman: 0
   hasMoved: 0
   hasAttacked: 0
-  movingIcon: {fileID: 4951628918647575082}
-  attackingIcon: {fileID: 6881891519022880643}

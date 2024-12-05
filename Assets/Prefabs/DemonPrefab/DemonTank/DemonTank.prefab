@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1099870ede8624ab2465828894a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 3
   MaxHealth: 150
   Damage: 20
   MoveRange: 4
@@ -217,6 +217,7 @@ MonoBehaviour:
   hasMoved: 0
   hasAttacked: 0
   AttackingImage: {fileID: 2360588373174240012}
+  target: {fileID: 0}
 --- !u!1 &8838345302825886456
 GameObject:
   m_ObjectHideFlags: 0

@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1099870ede8624ab2465828894a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 2
   MaxHealth: 200
   Damage: 30
   MoveRange: 10
