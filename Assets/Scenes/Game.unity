@@ -541,6 +541,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173022033}
   m_CullTransparentMesh: 1
+--- !u!1 &189659177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 189659179}
+  - component: {fileID: 189659178}
+  m_Layer: 0
+  m_Name: AudioSilvertejp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &189659178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189659177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6b1d86453bae8488354c3f2f5af499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeController: {fileID: 0}
+  audioManager: {fileID: 0}
+--- !u!4 &189659179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189659177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.062149048, y: -0.026599184, z: 9.26833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196455654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,17 +4145,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &654439694 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4498320844459315719, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
-  m_PrefabInstance: {fileID: 1100398208}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04c0fbfae94e55f42b0db912cdfe89ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &667459983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5773,6 +5808,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 189659178}
+        m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
+        m_MethodName: DebugThing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b2c0322c-7d7d-4806-a69a-04bda4ec9fbb
     m_ActionName: Player/OpenSettings[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
@@ -7172,9 +7219,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 654439694}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: SetMasterVolume
+      - m_Target: {fileID: 189659178}
+        m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
+        m_MethodName: MasterMiddleman
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8377,9 +8424,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 654439694}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: SetSfxVolume
+      - m_Target: {fileID: 189659178}
+        m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
+        m_MethodName: SfxMiddleman
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8510,9 +8557,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 654439694}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+      - m_Target: {fileID: 189659178}
+        m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
+        m_MethodName: MusicMiddleman
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8765,4 +8812,5 @@ SceneRoots:
   - {fileID: 2146461521}
   - {fileID: 1290126560}
   - {fileID: 2031621821}
+  - {fileID: 189659179}
   - {fileID: 1100398208}
