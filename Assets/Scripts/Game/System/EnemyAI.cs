@@ -47,17 +47,12 @@ namespace Game
                         gridSystem.GetTile(target).linkedEntity);
                     hasAttacked = true;
                     yield return new WaitForSeconds(1);
-                    if (gridSystem.humans.Count == 0) yield break; 
+                    if (gridSystem.humans.Count == 0) yield break;
                     if (gridSystem.GetTile(target).linkedEntity == null) // FIND NEW TARGET
                     {
-                        for (int j = 0; j < gridSystem.humans.Count; j++)
-                        {
-                            if (gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]) < distance)
-                            {
-                                distance = gridSystem.GetGridDistance(gridSystem.humans[j], demons[i]);
-                                target = gridSystem.humans[j];
-                            }
-                        }
+                        target = gridSystem.humans[Random.Range(0, gridSystem.humans.Count - 1)];
+                        distance = gridSystem.GetGridDistance(demons[i], target);
+
                     }
                 }
                 
