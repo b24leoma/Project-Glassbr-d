@@ -6470,9 +6470,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2031621820}
-        m_TargetAssemblyTypeName: UIStates, Assembly-CSharp
-        m_MethodName: RetryLevel
+      - m_Target: {fileID: 56033651}
+        m_TargetAssemblyTypeName: Game.BattleController, Assembly-CSharp
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

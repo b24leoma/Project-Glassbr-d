@@ -81,11 +81,8 @@ namespace Game
         {
             animator.SetTrigger("Attack");
         }
-    }
 
-    public static class NameGenerator
-    {
-        public static string GenerateName(bool isHuman)
+        public string GenerateName(bool isHuman)
         {
             if (isHuman)
             {
@@ -102,7 +99,7 @@ namespace Game
             }
         }
         
-        public static readonly List<string> _human = new List<string>
+        private static readonly List<string> _human = new List<string>
         {
             "Sigrid",
             "Mathilda",
@@ -136,7 +133,7 @@ namespace Game
             "Dragan",
             "Bridget",
         };
-        public static readonly List<string> _demon = new List<string>
+        private static readonly List<string> _demon = new List<string>
         {
             "Luster",
             "Larceny",

@@ -58,6 +58,10 @@ namespace Game
 
         public void NextLevel()
         {
+            foreach (Entity entity in characters)
+            {
+                Destroy(gameObject);
+            }
             SceneManager.LoadScene("Game");
         }
 
