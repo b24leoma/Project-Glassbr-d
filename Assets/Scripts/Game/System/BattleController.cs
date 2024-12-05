@@ -15,7 +15,9 @@ namespace Game
         [SerializeField] private UnityEvent Player2TurnStart;
         [Header("Components")]
         [SerializeField] private GridSystem gridSystem;
-        [SerializeField] private bool isPlayer1Turn;  
+        [SerializeField] private bool isPlayer1Turn;
+        [SerializeField] private Canvas canvas;
+        [SerializeField] private UIStates uiStates;
         [Header("Assets")]
         [SerializeField] private GameObject infoDisplay;
         [SerializeField] private TextMeshProUGUI displayStats;
@@ -29,6 +31,11 @@ namespace Game
         private int level;
         void Start()
         {
+            if (gridSystem == null || uiStates == null || canvas == null)
+            {
+                Debug.LogError("You forgot to assign some components in the inspector :)");
+                return;
+            }
             characters = new List<Entity>();
             gridSystem.ClearGrid();
             LoadLevel();
@@ -100,12 +107,18 @@ namespace Game
                 if (target.isHuman)
                 {
                     gridSystem.humans.Remove(target.Position);
-                    if (gridSystem.humans.Count == 0) SceneManager.LoadScene("MainMenu");
+                    if (gridSystem.humans.Count == 0)
+                    {
+                        uiStates.LossUI();
+                    }
                 }
                 else
                 {
                     gridSystem.demons.Remove(target.Position);
-                    if (gridSystem.demons.Count == 0) SceneManager.LoadScene("MainMenu");
+                    if (gridSystem.demons.Count == 0)
+                    {
+                        uiStates.WinUI();
+                    }
                 }
                 target.Kill();
             }
