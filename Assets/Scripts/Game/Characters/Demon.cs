@@ -8,6 +8,7 @@ namespace Game
     {
         [SerializeField] private GameObject AttackingImage;
         private SpriteRenderer attackImg;
+        public Human target;
         // Start is called before the first frame update
         void Awake()
         {
