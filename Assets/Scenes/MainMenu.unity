@@ -133,17 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177d2c3c52c62ec4582b9fe1ee0fe9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &66018400 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4498320844459315719, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
-  m_PrefabInstance: {fileID: 5199948414765585349}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04c0fbfae94e55f42b0db912cdfe89ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &138201650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1599,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464793053}
   m_CullTransparentMesh: 1
+--- !u!1 &1578944122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1578944124}
+  - component: {fileID: 1578944123}
+  m_Layer: 0
+  m_Name: AudioSilvertejp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1578944123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578944122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6b1d86453bae8488354c3f2f5af499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeController: {fileID: 0}
+  audioManager: {fileID: 0}
+--- !u!4 &1578944124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578944122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1130.9519, y: 126.27678, z: 1.8946669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1674289372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,10 +2683,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 66018400}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: SetMasterVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1578944123}
+        m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
+        m_MethodName: MasterMiddleman
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3510,6 +3545,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8951433331912526051, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: fmodRefData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951433331912526051, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: fmodRefData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17f415166e0ba3b47b6c325bdea3855a, type: 2}
+    - target: {fileID: 8951433331912526051, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+      propertyPath: fmodRefData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17f415166e0ba3b47b6c325bdea3855a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3748,10 +3795,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 66018400}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: SetSfxVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1578944123}
+        m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
+        m_MethodName: SfxMiddleman
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4249,10 +4296,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 66018400}
-        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: SetMusicVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1578944123}
+        m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
+        m_MethodName: MusicMiddleman
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4337,3 +4384,4 @@ SceneRoots:
   - {fileID: 865937998}
   - {fileID: 5199948414765585349}
   - {fileID: 2081761017}
+  - {fileID: 1578944124}
