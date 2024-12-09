@@ -24,92 +24,41 @@ namespace Game
                 bool hasMoved = false;
                 bool hasAttacked = false;
                 int range = demon.MoveRange;
-                
-                
+
+
                 //Attack before move
                 if (gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
-                     demon.AttackRange)
+                    demon.AttackRange)
                 {
                     gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                     battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                    if (demon.target.CurrentHealth <= 0 && gridSystem.GetTile(demon.target.Position).hidingSpot) gridSystem.SetHidingSpotColor(demon.target.Position,Color.white);
+                    if (demon.target.CurrentHealth <= 0 && gridSystem.GetTile(demon.target.Position).hidingSpot)
+                        gridSystem.SetHidingSpotColor(demon.target.Position, Color.white);
                     hasAttacked = true;
                     yield return new WaitForSeconds(1);
                     if (gridSystem.humans.Count == 0) yield break;
                     GetClosestTarget(demon);
                 }
+
                 Debug.Log(demon.target.Position);
-                for (int moves = 0; moves < range;)
+                gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.AttackRange);
+                //battleController.Move(demon.Position, path[path.Length-1]);
+                yield return new WaitForSeconds(0.5f);
+                if (!hasAttacked && gridSystem.GetGridDistance(demon.Position, demon.target.Position) <=
+                    demon.AttackRange)
                 {
-                    bool couldMove = false;
-
-                    if (moves < range && demon.target.Position.x > demonCurrentPos.x && TileIsFree(demonCurrentPos + Vector2Int.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
-                        demon.AttackRange)
-                    {
-                        demonCurrentPos += Vector2Int.right;
-                        moves++;
-                        couldMove = true;
-                    }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.left) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
-                             demon.AttackRange)
-                    {
-                        demonCurrentPos += Vector2Int.left;
-                        moves++;
-                        couldMove = true;
-                    }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.right) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
-                             demon.AttackRange)
-                    {
-                        demonCurrentPos += Vector2Int.right;
-                        moves++;
-                        couldMove = true;
-                    }
-                    
-                    
-                    if (moves < range && demon.target.Position.y > demonCurrentPos.y && TileIsFree( demonCurrentPos + Vector2Int.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
-                        demon.AttackRange)
-                    {
-                        demonCurrentPos += Vector2Int.up;
-                        moves++;
-                        couldMove = true;
-                    }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.down) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
-                             demon.AttackRange)
-                    {
-                        moves++;
-                        demonCurrentPos += Vector2Int.down;
-                        couldMove = true;
-                    }
-                    else if (moves < range && TileIsFree(demonCurrentPos + Vector2Int.up) && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) >
-                             demon.AttackRange)
-                    {
-                        moves++;
-                        demonCurrentPos += Vector2Int.up;
-                        couldMove = true;
-                    }
-                    
-                    if(!couldMove || gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <= demon.AttackRange) moves = 100;
-
-                    if (moves >= demon.MoveRange && !hasMoved)
-                    {
-                        battleController.Move(demon.Position, demonCurrentPos);
-                        demon.SetMoving(true);
-                        hasMoved = true;
-                        yield return new WaitForSeconds(0.5f);
-                        if (!hasAttacked && gridSystem.GetGridDistance(demonCurrentPos, demon.target.Position) <=
-                            gridSystem.GetTile(demonCurrentPos).linkedEntity.AttackRange)
-                        {
-                            battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
-                                demon.target);
-                            if (demon.target.CurrentHealth <= 0 && gridSystem.GetTile(demon.target.Position).hidingSpot) gridSystem.SetHidingSpotColor(demon.target.Position,Color.white);
-                            gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
-                            if (gridSystem.humans.Count == 0) yield break;
-                            yield return new WaitForSeconds(0.5f);
-                        }
-                    }
+                    battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
+                        demon.target);
+                    if (demon.target.CurrentHealth <= 0 && gridSystem.GetTile(demon.target.Position).hidingSpot)
+                        gridSystem.SetHidingSpotColor(demon.target.Position, Color.white);
+                    gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
+                    if (gridSystem.humans.Count == 0) yield break;
+                    yield return new WaitForSeconds(0.5f);
                 }
+
                 yield return new WaitForSeconds(0.25f);
             }
+
             EndTurn();
         }
 
@@ -123,17 +72,6 @@ namespace Game
             }
             
             battleController.EndTurn();
-        }
-
-        bool TileIsFree(Vector2Int pos)
-        {
-            if (gridSystem.TileIsInBounds(pos))
-            {
-                return gridSystem.GetTile(pos).linkedEntity == null &&
-                       gridSystem.GetTile(pos).walkable;
-            }
-
-            return false;
         }
 
         void GetRandomTarget(Demon demon)

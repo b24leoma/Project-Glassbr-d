@@ -127,6 +127,113 @@ namespace Game
                 }
             }
         }
+
+        public Vector2Int[] PathFindValidPath(Vector2Int start, Vector2Int end, int range)
+        {
+            HashSet<Vector2Int> used = new HashSet<Vector2Int>();
+            HashSet<Vector2Int>[] paths = new HashSet<Vector2Int>[range + 2];
+            used.Add(start);
+            paths[0] = new HashSet<Vector2Int>() { start };
+            for (int i = 0; i <= range; i++)
+            {
+                paths[i+1] = new HashSet<Vector2Int>();
+                Vector2Int[] validHelper = paths[i].ToArray();
+                foreach (Vector2Int pos in validHelper)
+                {
+                    if (TileIsFree(pos + Vector2Int.up) && !used.Contains(pos + Vector2Int.up))
+                    {
+                        used.Add(pos + Vector2Int.up);
+                        paths[i+1].Add(pos + Vector2Int.up);
+                    }
+
+                    if (TileIsFree(pos + Vector2Int.right) && !used.Contains(pos + Vector2Int.right))
+                    {
+                        used.Add(pos + Vector2Int.right);
+                        used.Add(pos + Vector2Int.right);
+                        paths[i+1].Add(pos + Vector2Int.right);
+                    }
+
+                    if (TileIsFree(pos + Vector2Int.down) && !used.Contains(pos + Vector2Int.down))
+                    {
+                        used.Add(pos + Vector2Int.down);
+                        paths[i+1].Add(pos + Vector2Int.down);
+                    }
+
+                    if (TileIsFree(pos + Vector2Int.left) && !used.Contains(pos + Vector2Int.left))
+                    {
+                        used.Add(pos + Vector2Int.left);
+                        paths[i+1].Add(pos + Vector2Int.left);
+                    }
+                }
+            }
+
+            Vector2Int optimalTile = start;
+            int selectRange = 999;
+            foreach (Vector2Int pos in used)
+            {
+                int distance = GetGridDistance(pos, end);
+                if (distance < selectRange)
+                {
+                    optimalTile = pos;
+                    selectRange = distance;
+                }
+            }
+
+            List<Vector2Int> traced = new List<Vector2Int>(){optimalTile};
+            
+            //Debug.Log($"{paths[0].Count} {paths[1].Count} {paths[2].Count} {paths[3].Count} {paths[4].Count} ");
+            
+            for (int i = 0; i < range + 1; i++)
+            {
+                if (paths[i].Contains(optimalTile))
+                {
+                    Vector2Int currentTile = optimalTile;
+                    for (int j = i; j > 0; j--)
+                    {
+                        if (paths[j-1].Contains(currentTile + Vector2Int.up))
+                        {
+                            currentTile += Vector2Int.up;
+                            traced.Add(currentTile);
+                        }
+                        else if (paths[j-1].Contains(currentTile + Vector2Int.right))
+                        {
+                            currentTile += Vector2Int.right;
+                            traced.Add(currentTile);
+                        }
+                        else if (paths[j-1].Contains(currentTile + Vector2Int.down))
+                        {
+                            currentTile += Vector2Int.down;
+                            traced.Add(currentTile);
+                        }
+                        else if (paths[j-1].Contains(currentTile + Vector2Int.left))
+                        {
+                            currentTile += Vector2Int.left;
+                            traced.Add(currentTile);
+                        }
+                    }
+                }
+            }
+
+            string possi = "";
+            foreach (Vector2Int p in traced)
+            {
+                possi += $"{p.x},{p.y}_";
+            }
+            //Debug.Log(possi);
+            traced.Reverse();
+            return traced.ToArray();
+        }
+        
+        bool TileIsFree(Vector2Int pos)
+        {
+            if (TileIsInBounds(pos))
+            {
+                return GetTile(pos).linkedEntity == null &&
+                       GetTile(pos).walkable;
+            }
+
+            return false;
+        }
     }
 
     [Serializable] public class Tile

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,10 +19,14 @@ namespace Game
         private bool isPaused;
         private Vector3 offsetFix;
         private BattleController battleController;
+        private Color moveColor;
+        private Color attackColor;
         void Start()
         {
             battleController = GetComponent<BattleController>();
             offsetFix = transform.InverseTransformPoint(Vector3.zero);
+            moveColor = new Color(0.6f, 0.6f, 1f);
+            attackColor = new Color(1f, 0.6f, 0.6f);
         }
 
         public void TileClicked(InputAction.CallbackContext context)
@@ -143,41 +148,34 @@ namespace Game
                     if (gridSystem.GetTile(hoveredTile).walkable &&
                         (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
                          gridSystem.GetTile(hoveredTile).linkedEntity == actingEntity) &&
-                        gridSystem.GetGridDistance(hoveredTile, GetPathLinePos(pathLine.positionCount - 1)) <= 1)
+                        gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <= actingEntity.MoveRange)
                     {
-                        bool valid = true;
-                        for (int i = 0; i < pathLine.positionCount; i++)
-                        {
-                            if (GetPathLinePos(i) == hoveredTile)
-                            {
-                                valid = false;
-                                pathLine.positionCount = i + 1;
-                            }
-                        }
-
-                        if (valid && pathLine.positionCount < actingEntity.MoveRange + 1)
+                        pathLine.positionCount = 1;
+                        Vector2Int[] path = gridSystem.PathFindValidPath(actingEntity.Position, hoveredTile,
+                            actingEntity.MoveRange);
+                        foreach (Vector2Int pos in path)
                         {
                             pathLine.positionCount++;
-                            SetPathLinePos(pathLine.positionCount - 1, hoveredTile);
+                            SetPathLinePos(pathLine.positionCount - 1, pos);
                         }
+
                     }
                 }
 
-                if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) == 0)
+                if (!actingEntity.hasMoved)
                 {
                     //MOVE HIGHLIGHT
-                    if (!actingEntity.hasMoved)
-                    {
-                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount - 1),
-                            actingEntity.MoveRange - pathLine.positionCount + 1, new Color(0.8f, 0.8f, 0.8f));
-                    }
+                    gridSystem.HighlightSquaresInRange(actingEntity.Position,
+                        actingEntity.MoveRange + actingEntity.AttackRange, attackColor);
+                    gridSystem.HighlightSquaresInRange(actingEntity.Position,
+                        actingEntity.MoveRange, moveColor);
                 }
                 else 
                 {   // ATTACK HIGHLIGHT
                     if (!actingEntity.hasAttacked)
                     {
                         gridSystem.HighlightSquaresInRange(actingEntity.Position,
-                            actingEntity.AttackRange, new Color(0.8f, 0.8f, 0.8f));
+                            actingEntity.AttackRange, attackColor);
                         foreach (Vector2Int pos in gridSystem.demons) // ATTACK ICON
                         {
                             Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
@@ -192,12 +190,13 @@ namespace Game
             }
             else
             {
+                //HOVER HIGHLIGHT
                 if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
                 {
                     gridSystem.HighlightSquaresInRange(gridSystem.GetTile(hoveredTile).linkedEntity.Position,
-                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange + gridSystem.GetTile(hoveredTile).linkedEntity.AttackRange, new Color(0.9f, 0.9f, 0.9f));
+                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange + gridSystem.GetTile(hoveredTile).linkedEntity.AttackRange, attackColor);
                     gridSystem.HighlightSquaresInRange(gridSystem.GetTile(hoveredTile).linkedEntity.Position,
-                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange, new Color(0.8f, 0.8f, 0.8f));
+                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange, moveColor);
                 }
                 
                 foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
