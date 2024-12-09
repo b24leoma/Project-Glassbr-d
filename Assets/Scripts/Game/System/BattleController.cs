@@ -210,7 +210,7 @@ namespace Game
 
         private void TutorialTrigger ()
         {
-            tutorialManager.totalStateChecker();
+            tutorialManager.TotalStateChecker();
         }
     }
     

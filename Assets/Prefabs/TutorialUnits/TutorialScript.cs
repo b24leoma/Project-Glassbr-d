@@ -13,6 +13,12 @@ public class TutorialScript : MonoBehaviour
 
     private void OnEnable()
     {
+        CheckingUnits();
+    }
+
+
+    public void CheckingUnits()
+    {
         if (tutorialManager == null)
         {
             gameManager = GameObject.Find("GameManager");
@@ -44,10 +50,10 @@ public class TutorialScript : MonoBehaviour
             if (humanScript.hasMoved)
             {
                 Moved();
+                
             }
         }
         
-        Debug.Log("PERFORMANCE :D");
     }
 
     private void Attacked()
