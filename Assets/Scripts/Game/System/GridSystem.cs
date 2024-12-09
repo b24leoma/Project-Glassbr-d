@@ -65,6 +65,36 @@ namespace Game
             }
         }
 
+        public void HighlightMoveTiles(Vector2Int start, float range, Color color, bool highlightEnemy = false)
+        {
+            HashSet<Vector2Int> used = new HashSet<Vector2Int>();
+            used.Add(start);
+            for (int i = 0; i < range; i++)
+            {
+                Vector2Int[] check = used.ToArray();
+                foreach (Vector2Int pos in check)
+                {
+                        if (TileIsFree(pos + Vector2Int.up) && !used.Contains(pos + Vector2Int.up))
+                            used.Add(pos + Vector2Int.up);
+
+                        if (TileIsFree(pos + Vector2Int.right) && !used.Contains(pos + Vector2Int.right))
+                            used.Add(pos + Vector2Int.right);
+
+                        if (TileIsFree(pos + Vector2Int.down) && !used.Contains(pos + Vector2Int.down))
+                            used.Add(pos + Vector2Int.down);
+
+                        if (TileIsFree(pos + Vector2Int.left) && !used.Contains(pos + Vector2Int.left))
+                            used.Add(pos + Vector2Int.left);
+                }
+            }
+
+            foreach (Vector2Int pos in used)
+            {
+                if (!highlightEnemy && GetTile(pos).linkedEntity != null && !GetTile(pos).linkedEntity.isHuman) continue;
+                SetColor(pos, color);
+            }
+        }
+
         public void MoveUnit(Vector2Int currentPos, Vector2Int newPos)
         {
             if (tiles[currentPos] == null || tiles[currentPos].linkedEntity == null) return;
@@ -86,7 +116,7 @@ namespace Game
             return tiles[position];
         }
 
-        public bool TileIsInBounds(Vector2Int pos)
+        private bool TileIsInBounds(Vector2Int pos)
         {
             return (pos.x > -size.x && pos.x < size.x && pos.y > -size.y && pos.y < size.y);
         }
@@ -104,30 +134,14 @@ namespace Game
 
         public void SetColor(Vector2Int pos, Color color)
         {
-            if (tiles[pos].walkable) tilemap.SetColor(new Vector3Int((int)pos.x - 1, (int)pos.y - 1, 0), color);;
+            if (tiles[pos].walkable) tilemap.SetColor(new Vector3Int(pos.x - 1, pos.y - 1, 0), color);;
         }
 
         public void SetHidingSpotColor(Vector2Int pos, Color color)
         {
-            ObstacleTilemap.SetColor(new Vector3Int(pos.x-1, pos.y-1, 0), color);
+            ObstacleTilemap.SetColor(new Vector3Int(pos.x - 1, pos.y - 1, 0), color);
         }
-
-        public void ClearGrid()
-        {
-            for (int i = -(int)size.x; i <= size.x; i++)
-            {
-                for (int j = -(int)size.y; j <= size.y; j++)
-                {
-                    Tile t = tiles[new Vector2Int(i, j)];
-                    if (t.linkedEntity != null)
-                    {
-                        tiles[new Vector2Int(i, j)].linkedEntity = null;
-                        Destroy(t.linkedEntity.gameObject);
-                    }
-                }
-            }
-        }
-
+        
         public Vector2Int[] PathFindValidPath(Vector2Int start, Vector2Int end, int range)
         {
             HashSet<Vector2Int> used = new HashSet<Vector2Int>();

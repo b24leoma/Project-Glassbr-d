@@ -23,7 +23,6 @@ namespace Game
                 GetClosestTarget(demon);
                 bool hasMoved = false;
                 bool hasAttacked = false;
-                int range = demon.MoveRange;
 
 
                 //Attack before move
@@ -41,7 +40,16 @@ namespace Game
                 }
                 
                 Vector2Int[] path = gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                battleController.Move(demon.Position, path[path.Length-1]);
+                demonCurrentPos = path[^1];
+                if (demon.Position != demonCurrentPos)
+                {
+                    if (gridSystem.GetTile(demon.Position).hidingSpot)
+                        gridSystem.SetHidingSpotColor(demon.Position, Color.white);
+                    if (gridSystem.GetTile(demonCurrentPos).hidingSpot)
+                        gridSystem.SetHidingSpotColor(demonCurrentPos, new Color(1, 1, 1, 0.3f));
+                    battleController.Move(demon.Position, demonCurrentPos);
+                }
+
                 yield return new WaitForSeconds(0.5f);
                 if (!hasAttacked && gridSystem.GetGridDistance(demon.Position, demon.target.Position) <=
                     demon.AttackRange)

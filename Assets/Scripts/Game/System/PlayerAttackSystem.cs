@@ -21,12 +21,14 @@ namespace Game
         private BattleController battleController;
         private Color moveColor;
         private Color attackColor;
+        private Color possibleAttackColor;
         void Start()
         {
             battleController = GetComponent<BattleController>();
             offsetFix = transform.InverseTransformPoint(Vector3.zero);
             moveColor = new Color(0.6f, 0.6f, 1f);
             attackColor = new Color(1f, 0.6f, 0.6f);
+            possibleAttackColor = new Color(1, 0.8f, 0.8f);
         }
 
         public void TileClicked(InputAction.CallbackContext context)
@@ -137,18 +139,28 @@ namespace Game
             battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity != null,
                 gridSystem.GetTile(hoveredTile).linkedEntity);
             if (gridSystem.GetTile(hoveredTile) == null) return;
-
+            if (gridSystem.GetTile(hoveredTile).hidingSpot && gridSystem.GetTile(hoveredTile).linkedEntity == null) gridSystem.SetHidingSpotColor(hoveredEntity.Position,Color.white);
+            foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
+            {
+                Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
+                demon.DisplayAttackingImage(false, Color.white);
+            }
+            
             if (isActing)
             {
                 //MOVE PATH IF WITHIN RANGE
-                if (!actingEntity.hasMoved && gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <=
-                    actingEntity.MoveRange)
+                if (!actingEntity.hasMoved)
                 {
-                    if (gridSystem.GetTile(hoveredTile).walkable &&
-                        (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
-                         gridSystem.GetTile(hoveredTile).linkedEntity == actingEntity) &&
-                        gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <= actingEntity.MoveRange)
+                    if ((gridSystem.GetTile(hoveredTile).walkable &&
+                         (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
+                          gridSystem.GetTile(hoveredTile).linkedEntity == actingEntity) ||
+                         gridSystem.GetTile(hoveredTile).linkedEntity != null &&
+                         !gridSystem.GetTile(hoveredTile).linkedEntity.isHuman) &&
+                        gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <= actingEntity.MoveRange &&
+                        gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <=
+                        actingEntity.MoveRange) 
                     {
+                        Debug.Log(Time.time);
                         pathLine.positionCount = 1;
                         Vector2Int[] path = gridSystem.PathFindValidPath(actingEntity.Position, hoveredTile,
                             actingEntity.MoveRange);
@@ -164,17 +176,32 @@ namespace Game
                 if (!actingEntity.hasMoved)
                 {
                     //MOVE HIGHLIGHT
-                    gridSystem.HighlightSquaresInRange(actingEntity.Position,
-                        actingEntity.MoveRange + actingEntity.AttackRange, attackColor);
-                    gridSystem.HighlightSquaresInRange(actingEntity.Position,
-                        actingEntity.MoveRange, moveColor);
+                    if (actingEntity.IsMelee)
+                    {
+                        gridSystem.HighlightMoveTiles(actingEntity.Position,
+                            actingEntity.MoveRange + actingEntity.AttackRange, possibleAttackColor);
+                        gridSystem.HighlightMoveTiles(actingEntity.Position,
+                            actingEntity.MoveRange, moveColor);
+                        gridSystem.HighlightMoveTiles(GetPathLinePos(pathLine.positionCount-1),
+                            actingEntity.AttackRange, attackColor);
+                    }
+                    else
+                    {
+                        gridSystem.HighlightSquaresInRange(actingEntity.Position, actingEntity.AttackRange,
+                            attackColor);
+                        gridSystem.HighlightMoveTiles(actingEntity.Position,
+                            actingEntity.MoveRange, moveColor);
+                    }
                 }
                 else 
                 {   // ATTACK HIGHLIGHT
                     if (!actingEntity.hasAttacked)
                     {
-                        gridSystem.HighlightSquaresInRange(actingEntity.Position,
-                            actingEntity.AttackRange, attackColor);
+                        if (actingEntity.IsMelee)
+                            gridSystem.HighlightMoveTiles(actingEntity.Position,
+                                actingEntity.AttackRange, attackColor);
+                        else gridSystem.HighlightSquaresInRange(actingEntity.Position, actingEntity.AttackRange,
+                                attackColor);
                         foreach (Vector2Int pos in gridSystem.demons) // ATTACK ICON
                         {
                             Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
@@ -192,19 +219,26 @@ namespace Game
                 //HOVER HIGHLIGHT
                 if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
                 {
-                    gridSystem.HighlightSquaresInRange(gridSystem.GetTile(hoveredTile).linkedEntity.Position,
-                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange + gridSystem.GetTile(hoveredTile).linkedEntity.AttackRange, attackColor);
-                    gridSystem.HighlightSquaresInRange(gridSystem.GetTile(hoveredTile).linkedEntity.Position,
-                        gridSystem.GetTile(hoveredTile).linkedEntity.MoveRange, moveColor);
-                }
-                
-                foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
-                {
-                    Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
-                    demon.DisplayAttackingImage(false, Color.white);
+                    if (hoveredEntity.IsMelee)
+                    {
+                        gridSystem.HighlightMoveTiles(hoveredEntity.Position,
+                            hoveredEntity.MoveRange + hoveredEntity.AttackRange, possibleAttackColor);
+                        gridSystem.HighlightMoveTiles(hoveredEntity.Position,
+                            hoveredEntity.MoveRange, moveColor);
+                        gridSystem.HighlightMoveTiles(hoveredEntity.Position,
+                            hoveredEntity.AttackRange, attackColor);
+                    }
+                    else
+                    {
+                        gridSystem.HighlightSquaresInRange(hoveredEntity.Position, hoveredEntity.AttackRange,
+                            attackColor);
+                        gridSystem.HighlightMoveTiles(hoveredEntity.Position,
+                            hoveredEntity.MoveRange, moveColor);
+                    }
                 }
             }
             gridSystem.SetColor(hoveredTile, new Color(0.7f, 0.7f, 0.7f));
+            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.3f));
         }
 
         private Vector2Int GetPathLinePos(int pos)
