@@ -1,33 +1,24 @@
-using System.Net;
+using System;
 using Game;
-using UnityEditor.Build.Content;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TutorialScript : MonoBehaviour
 {
     private bool hasAttacked;
     private bool hasMoved;
     private Human humanScript;
-    public UnityEvent onMove;
-    public UnityEvent onAttack;
-    public UnityEvent onFirstAttack;
-    public UnityEvent onFirstMove;
-    private int attackCount;
-    private int moveCount;
+
     [SerializeField] private TutorialManager tutorialManager;
-     private GameObject gameManager;
+    private GameObject gameManager;
 
     private void OnEnable()
     {
-       
-        
         if (tutorialManager == null)
         {
             gameManager = GameObject.Find("GameManager");
             tutorialManager = gameManager.GetComponent<TutorialManager>();
         }
-        
+
         if (tutorialManager)
         {
             var hasHumanScript = gameObject.GetComponent<Human>();
@@ -37,50 +28,49 @@ public class TutorialScript : MonoBehaviour
                 StateChecker();
             }
         }
-        
-        
     }
+
+    
 
     private void StateChecker()
     {
-        
-        if (humanScript.hasAttacked)
+        if (humanScript)
         {
-            Attacked();
-        }
+            if (humanScript.hasAttacked)
+            {
+                Attacked();
+            }
 
-        if (humanScript.hasMoved)
-        {
-            Moved();
+            if (humanScript.hasMoved)
+            {
+                Moved();
+            }
         }
+        
+        Debug.Log("PERFORMANCE :D");
     }
 
     private void Attacked()
     {
-        if (0 == attackCount)
+        if (0 == tutorialManager.attackCounter)
         {
-            onFirstAttack.Invoke();
-            attackCount++;
+            tutorialManager.onFirstAttack.Invoke();
+            tutorialManager.attackCounter++;
         }
-        
-        onAttack.Invoke();
-        attackCount++;
 
-
+        tutorialManager.onAttack.Invoke();
+        tutorialManager.attackCounter++;
     }
-    
+
     private void Moved()
     {
-        if (0 == moveCount)
+        if (0 == tutorialManager.moveCounter)
         {
-            onFirstMove.Invoke();
-            moveCount++;
+            tutorialManager.onFirstMove.Invoke();
+            tutorialManager.moveCounter++;
         }
-        
-        onMove.Invoke();
-        moveCount++;
 
-
+        tutorialManager.onMove.Invoke();
+        tutorialManager.moveCounter++;
     }
-   
 }
