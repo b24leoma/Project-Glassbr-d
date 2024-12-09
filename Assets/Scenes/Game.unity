@@ -1465,153 +1465,123 @@ MonoBehaviour:
   ObstacleTilemap: {fileID: 1215170048}
   CustomTiles:
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 328a914fe44562c48ba1aba1029d9307, type: 2}
+    tile: {fileID: 11400000, guid: 230aa12310482d94585b898e14aadfb1, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 7b51e0a7942672d45b78ec62fbe49b6a, type: 2}
+    tile: {fileID: 11400000, guid: 3040efede6797dc4ca84ee3db3636b1f, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: a05e433bb8a0acd4988d2f617e4b5029, type: 2}
+    tile: {fileID: 11400000, guid: d6fd978b4cddaeb419eafa934f941c45, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: e23e78bf745a04e42a4da5e3f2004cb0, type: 2}
+    tile: {fileID: 11400000, guid: 9beb82fa791594a41849710111f31b54, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 27f5361813a49b04cb12521d38d42db8, type: 2}
+    tile: {fileID: 11400000, guid: e57ea79d6bf4b80419e1c281d290da70, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5ecb39a9d9bd6e84e91a03f1e3d10642, type: 2}
+    tile: {fileID: 11400000, guid: 4978e0b29041688448ef7625d623d603, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 70879f75c96df4c46b1b7e6be350a4c6, type: 2}
+    tile: {fileID: 11400000, guid: 65893068c3ae780438ba15acefd5556c, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 1a74ae78c0195024fa2ba9395389e368, type: 2}
+    tile: {fileID: 11400000, guid: f19a47133b3e95340b053355a88da95c, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: f365d8c882fde304fa4297efd1e8df24, type: 2}
+    tile: {fileID: 11400000, guid: b384ceea1f55362408e46ef9a6a18fb5, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5fe5479269d76b34fb6a3fbd71e23450, type: 2}
+    tile: {fileID: 11400000, guid: 7fd2918b6000b7b4a99908ab1059d38d, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 4a4530d7952fe4d4fb52fbd9487eaed2, type: 2}
+    tile: {fileID: 11400000, guid: cb451e2df44473547b710c9cd7c6f2e5, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 1911539b609d9e549bd65eef81e086d4, type: 2}
+    tile: {fileID: 11400000, guid: b198561dec195f44aafd2939944dcc77, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 3206e81cafe82854da6dcb2b4beb2b48, type: 2}
+    tile: {fileID: 11400000, guid: 2986359bc2a5a7c4a8d8d363aa6ef2cd, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 8d1830b007e3c05478d989edb3d410df, type: 2}
+    tile: {fileID: 11400000, guid: 6f862b811609cbd4387aab01b165996e, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 153025e54cd6cf5438911ff620e14d17, type: 2}
+    tile: {fileID: 11400000, guid: 4695ed2468a9a424bab61a910874aa15, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: b2a573f680271584e931d0d866046a09, type: 2}
+    tile: {fileID: 11400000, guid: 227920022f68a32419d33b993eee8e10, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5a725631c86eccb40b1d648a9b1e902c, type: 2}
+    tile: {fileID: 11400000, guid: 9f367ac9576d9d645912e1d7a4d46126, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 6694091c816a9e442a9088452ed10c9d, type: 2}
+    tile: {fileID: 11400000, guid: b2fed97cebb294846a0800ad21c10e87, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 7f9071e075ec46f408bb560d8f3b57bc, type: 2}
+    tile: {fileID: 11400000, guid: 593f92bf780a7034894c7794652e8389, type: 2}
     walkable: 0
     hidingSpot: 0
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 9b2a33a5ba2eb594f8d4de4fff4ebbc3, type: 2}
+    tile: {fileID: 11400000, guid: f6e0bb65f7dc12e40b84d70ca5a0fe9f, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5389f2177fe20f84198d70c5ddd63d5c, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: aedb7f84fa64d144486ec58b092b7a93, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: f367a80dc773516449f793bb6874a308, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 45817f4fc76540c40b02764ac35b24bf, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 6a366b2e708e10b4f88be91553c5349b, type: 2}
-    walkable: 1
-    hidingSpot: 1
     ArcherRangeIncrease: 0
     DamageReductionPercent: 0
   demons: []
@@ -5177,8 +5147,8 @@ Tilemap:
   - first: {x: -8, y: -4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
+      m_TileIndex: 1
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5229,6 +5199,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 23
       m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -8, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5398,7 +5378,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 22
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5428,7 +5408,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 15
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5468,7 +5448,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 22
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5478,7 +5458,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 21
-      m_TileSpriteIndex: 12
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5506,9 +5486,9 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: fe7128717e3f27449883d079287898bf, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: f6e0bb65f7dc12e40b84d70ca5a0fe9f, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -5532,8 +5512,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 9b2a33a5ba2eb594f8d4de4fff4ebbc3, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -5579,27 +5559,27 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 304443992, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1718812981, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 304443992, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 524749182, guid: 3a6b8dde42d29924582150471a4f9638, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 1
     m_Data: {fileID: -1840840526, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -1856024101, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 415081762, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 441659516, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 444396442, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 1814912454, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 158725024, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
@@ -5608,7 +5588,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1779922366, guid: b88c6ac5d51771f4d9d0dc3de5fa4645, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 36
+  - m_RefCount: 37
     m_Data:
       e00: 1
       e01: 0
@@ -5627,8 +5607,10 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 36
+  - m_RefCount: 37
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 4.7213e-41, g: 4.7213e-41, b: 4.7213e-41, a: 4.7213e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
