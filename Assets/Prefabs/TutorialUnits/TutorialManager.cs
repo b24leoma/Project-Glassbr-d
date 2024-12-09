@@ -9,10 +9,13 @@ public class TutorialManager : MonoBehaviour
 {
     public int moveCounter;
    public int attackCounter;
+   public int bushCounter;
    public UnityEvent onMove;
    public UnityEvent onAttack;
    public UnityEvent onFirstAttack;
    public UnityEvent onFirstMove;
+   public UnityEvent onFirstBush;
+   public UnityEvent onBush;
 
    private BattleController battleController;
    private List<Entity> allUnits;
@@ -59,8 +62,4 @@ public class TutorialManager : MonoBehaviour
    }
 
 
-   private void wtf()
-   {
-       
-   }
-}
+ }
