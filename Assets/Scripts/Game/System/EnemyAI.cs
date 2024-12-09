@@ -39,10 +39,9 @@ namespace Game
                     if (gridSystem.humans.Count == 0) yield break;
                     GetClosestTarget(demon);
                 }
-
-                Debug.Log(demon.target.Position);
-                gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.AttackRange);
-                //battleController.Move(demon.Position, path[path.Length-1]);
+                
+                Vector2Int[] path = gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
+                battleController.Move(demon.Position, path[path.Length-1]);
                 yield return new WaitForSeconds(0.5f);
                 if (!hasAttacked && gridSystem.GetGridDistance(demon.Position, demon.target.Position) <=
                     demon.AttackRange)

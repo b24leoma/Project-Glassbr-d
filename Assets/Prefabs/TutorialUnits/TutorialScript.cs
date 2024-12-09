@@ -1,4 +1,3 @@
-using System;
 using Game;
 using UnityEngine;
 
@@ -44,13 +43,19 @@ public class TutorialScript : MonoBehaviour
         {
             if (humanScript.hasAttacked)
             {
-                Attacked();
+                if (!hasAttacked)
+                {
+                    Attacked();
+                }
             }
 
             if (humanScript.hasMoved)
             {
-                Moved();
-                
+                if (!hasMoved)
+                {
+                    Moved();
+                }
+
             }
         }
         
@@ -58,25 +63,40 @@ public class TutorialScript : MonoBehaviour
 
     private void Attacked()
     {
+        hasAttacked = true;
+        Debug.Log("I attacked!");
         if (0 == tutorialManager.attackCounter)
         {
             tutorialManager.onFirstAttack.Invoke();
-            tutorialManager.attackCounter++;
+            
         }
-
-        tutorialManager.onAttack.Invoke();
+        else
+        {
+            tutorialManager.onAttack.Invoke();
+           
+        }
         tutorialManager.attackCounter++;
+        
     }
 
     private void Moved()
     {
+        Debug.Log("I moved!");
+        hasMoved = true;
+        
         if (0 == tutorialManager.moveCounter)
         {
             tutorialManager.onFirstMove.Invoke();
-            tutorialManager.moveCounter++;
+         
         }
-
-        tutorialManager.onMove.Invoke();
+        else
+        {
+            tutorialManager.onMove.Invoke();
+            
+        }
         tutorialManager.moveCounter++;
+        
     }
+    
+    
 }

@@ -134,7 +134,7 @@ namespace Game
             HashSet<Vector2Int>[] paths = new HashSet<Vector2Int>[range + 2];
             used.Add(start);
             paths[0] = new HashSet<Vector2Int>() { start };
-            for (int i = 0; i <= range; i++)
+            for (int i = 0; i < range; i++)
             {
                 paths[i+1] = new HashSet<Vector2Int>();
                 Vector2Int[] validHelper = paths[i].ToArray();
@@ -148,7 +148,6 @@ namespace Game
 
                     if (TileIsFree(pos + Vector2Int.right) && !used.Contains(pos + Vector2Int.right))
                     {
-                        used.Add(pos + Vector2Int.right);
                         used.Add(pos + Vector2Int.right);
                         paths[i+1].Add(pos + Vector2Int.right);
                     }
@@ -166,23 +165,23 @@ namespace Game
                     }
                 }
             }
-
+            
+            //Picks best tile
             Vector2Int optimalTile = start;
-            int selectRange = 999;
+            float selectRange = 999;
             foreach (Vector2Int pos in used)
             {
-                int distance = GetGridDistance(pos, end);
+                float distance = Vector2Int.Distance(pos, end);
                 if (distance < selectRange)
                 {
                     optimalTile = pos;
                     selectRange = distance;
                 }
             }
-
+            
+            
+            //Creates path
             List<Vector2Int> traced = new List<Vector2Int>(){optimalTile};
-            
-            //Debug.Log($"{paths[0].Count} {paths[1].Count} {paths[2].Count} {paths[3].Count} {paths[4].Count} ");
-            
             for (int i = 0; i < range + 1; i++)
             {
                 if (paths[i].Contains(optimalTile))
@@ -213,13 +212,6 @@ namespace Game
                     }
                 }
             }
-
-            string possi = "";
-            foreach (Vector2Int p in traced)
-            {
-                possi += $"{p.x},{p.y}_";
-            }
-            //Debug.Log(possi);
             traced.Reverse();
             return traced.ToArray();
         }
