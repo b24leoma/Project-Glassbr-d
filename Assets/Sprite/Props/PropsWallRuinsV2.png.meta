@@ -126,9 +126,9 @@ TextureImporter:
       name: PropsWallRuinsV2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 96
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -147,9 +147,9 @@ TextureImporter:
       name: PropsWallRuinsV2_1
       rect:
         serializedVersion: 2
-        x: 105
+        x: 110
         y: 96
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -168,9 +168,9 @@ TextureImporter:
       name: PropsWallRuinsV2_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 80
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -189,9 +189,9 @@ TextureImporter:
       name: PropsWallRuinsV2_3
       rect:
         serializedVersion: 2
-        x: 21
+        x: 20
         y: 80
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -210,9 +210,9 @@ TextureImporter:
       name: PropsWallRuinsV2_4
       rect:
         serializedVersion: 2
-        x: 42
+        x: 38
         y: 80
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -231,9 +231,9 @@ TextureImporter:
       name: PropsWallRuinsV2_5
       rect:
         serializedVersion: 2
-        x: 63
+        x: 56
         y: 80
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,9 +252,9 @@ TextureImporter:
       name: PropsWallRuinsV2_6
       rect:
         serializedVersion: 2
-        x: 84
+        x: 74
         y: 80
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -273,9 +273,9 @@ TextureImporter:
       name: PropsWallRuinsV2_7
       rect:
         serializedVersion: 2
-        x: 105
+        x: 92
         y: 80
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -294,9 +294,9 @@ TextureImporter:
       name: PropsWallRuinsV2_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 21.333334
+        x: 110
+        y: 80
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -315,9 +315,9 @@ TextureImporter:
       name: PropsWallRuinsV2_9
       rect:
         serializedVersion: 2
-        x: 105
+        x: 2
         y: 64
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -336,9 +336,9 @@ TextureImporter:
       name: PropsWallRuinsV2_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 21.333334
+        x: 110
+        y: 64
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -357,9 +357,9 @@ TextureImporter:
       name: PropsWallRuinsV2_11
       rect:
         serializedVersion: 2
-        x: 105
+        x: 2
         y: 48
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -378,9 +378,9 @@ TextureImporter:
       name: PropsWallRuinsV2_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 21.333334
+        x: 110
+        y: 48
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -399,9 +399,9 @@ TextureImporter:
       name: PropsWallRuinsV2_13
       rect:
         serializedVersion: 2
-        x: 105
+        x: 2
         y: 32
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -420,9 +420,9 @@ TextureImporter:
       name: PropsWallRuinsV2_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 21.333334
+        x: 110
+        y: 32
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -441,9 +441,9 @@ TextureImporter:
       name: PropsWallRuinsV2_15
       rect:
         serializedVersion: 2
-        x: 105
+        x: 2
         y: 16
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -462,9 +462,9 @@ TextureImporter:
       name: PropsWallRuinsV2_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 21.333334
+        x: 110
+        y: 16
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -483,9 +483,9 @@ TextureImporter:
       name: PropsWallRuinsV2_17
       rect:
         serializedVersion: 2
-        x: 21
+        x: 2
         y: 0
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -504,9 +504,9 @@ TextureImporter:
       name: PropsWallRuinsV2_18
       rect:
         serializedVersion: 2
-        x: 42
+        x: 20
         y: 0
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -525,9 +525,9 @@ TextureImporter:
       name: PropsWallRuinsV2_19
       rect:
         serializedVersion: 2
-        x: 63
+        x: 38
         y: 0
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -546,9 +546,9 @@ TextureImporter:
       name: PropsWallRuinsV2_20
       rect:
         serializedVersion: 2
-        x: 84
+        x: 56
         y: 0
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -567,9 +567,9 @@ TextureImporter:
       name: PropsWallRuinsV2_21
       rect:
         serializedVersion: 2
-        x: 105
+        x: 74
         y: 0
-        width: 21.333334
+        width: 18
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -580,6 +580,48 @@ TextureImporter:
       bones: []
       spriteID: b48fcbde16cf9a54b8d5b3f8f75243a0
       internalID: 1814912454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_22
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98dd5cf3319730f488ad15c2be4df40d
+      internalID: -992924283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_23
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98d1ef7ce3cf344b968d7153884826c
+      internalID: 439880924
       vertices: []
       indices: 
       edges: []
@@ -610,6 +652,8 @@ TextureImporter:
       PropsWallRuinsV2_2: 543685532
       PropsWallRuinsV2_20: 158725024
       PropsWallRuinsV2_21: 1814912454
+      PropsWallRuinsV2_22: -992924283
+      PropsWallRuinsV2_23: 439880924
       PropsWallRuinsV2_3: -1718812981
       PropsWallRuinsV2_4: 415081762
       PropsWallRuinsV2_5: 1615864454
