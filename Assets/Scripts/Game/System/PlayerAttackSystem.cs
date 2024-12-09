@@ -44,8 +44,7 @@ namespace Game
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
                             Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
-                            if (gridSystem.GetTile(actingEntity.Position).hidingSpot) gridSystem.SetHidingSpotColor(actingEntity.Position,Color.white);
-                            if (gridSystem.GetTile(newPos).hidingSpot) gridSystem.SetHidingSpotColor(newPos, new Color(1,1,1,0.3f));
+                            if (gridSystem.GetTile(newPos).hidingSpot) gridSystem.SetHidingSpotColor(newPos, new Color(1,1,1,0.5f));
                             battleController.Move(actingEntity.Position, newPos);
                             pathLine.positionCount = 1;
                             SetPathLinePos(0, actingEntity.Position);
@@ -139,7 +138,7 @@ namespace Game
             battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity != null,
                 gridSystem.GetTile(hoveredTile).linkedEntity);
             if (gridSystem.GetTile(hoveredTile) == null) return;
-            if (gridSystem.GetTile(hoveredTile).hidingSpot && gridSystem.GetTile(hoveredTile).linkedEntity == null) gridSystem.SetHidingSpotColor(hoveredEntity.Position,Color.white);
+            gridSystem.ResetUnusedHidingspotColor();
             foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
             {
                 Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
@@ -238,7 +237,7 @@ namespace Game
                 }
             }
             gridSystem.SetColor(hoveredTile, new Color(0.7f, 0.7f, 0.7f));
-            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.3f));
+            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.5f));
         }
 
         private Vector2Int GetPathLinePos(int pos)

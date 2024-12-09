@@ -31,8 +31,6 @@ namespace Game
                 {
                     gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                     battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                    if (demon.target.CurrentHealth <= 0 && gridSystem.GetTile(demon.target.Position).hidingSpot)
-                        gridSystem.SetHidingSpotColor(demon.target.Position, Color.white);
                     hasAttacked = true;
                     yield return new WaitForSeconds(1);
                     if (gridSystem.humans.Count == 0) yield break;
@@ -46,7 +44,7 @@ namespace Game
                     if (gridSystem.GetTile(demon.Position).hidingSpot)
                         gridSystem.SetHidingSpotColor(demon.Position, Color.white);
                     if (gridSystem.GetTile(demonCurrentPos).hidingSpot)
-                        gridSystem.SetHidingSpotColor(demonCurrentPos, new Color(1, 1, 1, 0.3f));
+                        gridSystem.SetHidingSpotColor(demonCurrentPos, new Color(1, 1, 1, 0.5f));
                     battleController.Move(demon.Position, demonCurrentPos);
                 }
 

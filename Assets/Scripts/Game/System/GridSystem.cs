@@ -121,6 +121,14 @@ namespace Game
             return (pos.x > -size.x && pos.x < size.x && pos.y > -size.y && pos.y < size.y);
         }
 
+        public void ResetUnusedHidingspotColor()
+        {
+            foreach (KeyValuePair<Vector2Int, Tile> tile in tiles)
+            {
+                if (tile.Value.hidingSpot && tile.Value.linkedEntity == null) SetHidingSpotColor(tile.Key,Color.white);   
+            }
+        }
+
         public int GetGridDistance(Vector2 from, Vector2 to)
         {
             return (int)Mathf.Abs(from.x - to.x) + (int)Mathf.Abs(from.y - to.y);
