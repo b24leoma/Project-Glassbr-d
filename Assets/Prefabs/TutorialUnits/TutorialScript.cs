@@ -93,13 +93,18 @@ public class TutorialScript : MonoBehaviour
     private void BushChecker()
     {
 
-        foreach (var thing  in gridSystem.GetAllTiles())
+        foreach (var humanposition  in gridSystem.humans)
         {
-            Debug.Log("POG");
-            var tile = thing.Value;
-            var isbush = tile.hidingSpot;
+           var  tile =  gridSystem.GetTile(humanposition);
+           
+           if (tile != null && tile.hidingSpot)
+           {
+               BushCounter();
+           }
+           
              
             //jag tror mina två hjärnceller gav upp i will solve this after some coffee : ) 
+            //de kom tillbaka efter mat och kaffe :)
 
 
 
@@ -114,7 +119,7 @@ public class TutorialScript : MonoBehaviour
         
     }
 
-    private void BushAgain()
+    private void BushCounter()
     {
         if (0 == tutorialManager.bushCounter)
         {

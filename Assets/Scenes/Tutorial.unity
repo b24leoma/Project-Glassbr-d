@@ -1570,7 +1570,7 @@ MonoBehaviour:
   ObstacleTilemap: {fileID: 1215170048}
   CustomTiles:
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 9100405edbe85954087dd33a4d3e4aae, type: 2}
+    tile: {fileID: 11400000, guid: 6a366b2e708e10b4f88be91553c5349b, type: 2}
     walkable: 1
     hidingSpot: 1
     ArcherRangeIncrease: 0
@@ -4225,6 +4225,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  stopAfterSentence: 01000000
+  stopSentence: 1
+  currentSentence: 0
 --- !u!4 &846653636
 Transform:
   m_ObjectHideFlags: 0
