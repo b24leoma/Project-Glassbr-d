@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: b88c6ac5d51771f4d9d0dc3de5fa4645
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec6b9142548c6d4f92ad4cb1d3e97a6
+      internalID: -204902663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 96
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9184fa89356874e488b83aee482f8942
+      internalID: 444396442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b90cd063caa1343bc647e23165a940
+      internalID: 543685532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 80
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736c268cfbba6eb45a57ba6e6886b1c9
+      internalID: -1718812981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 80
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f1a1e64e25f63478c0fbfc60cd9306
+      internalID: 415081762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_5
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 80
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b880af5e75bdb488e083460eccdbb1
+      internalID: 1615864454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 80
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf5c21bec158f64bac7d9ebe867b161
+      internalID: 304443992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_7
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 80
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21d4ea6b9120b845a751ca23e342450
+      internalID: -615413254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611b25e80db2a5743b9bf4927c0e9d4c
+      internalID: 1150395206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 64
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e1c24a14ea85f4eba46330c4c55bf4
+      internalID: 1900999003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae224939d8df9244b3b4907d516cb8a
+      internalID: 873052873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_11
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 48
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1baef4cef29f82d458b7681dabd7b675
+      internalID: 888617945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f782c23c89126044eb21129021bbe0e2
+      internalID: -757583217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_13
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 32
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65d72b679d6a4a42ac5d6c433ffcc18
+      internalID: -225536550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60adab56ab26463499e7e5eabe5f9f86
+      internalID: -1840840526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 16
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ad2e590f9653d408442b95f7979124
+      internalID: -767841430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7d972aebc9b2844bb61d0d1dae980e
+      internalID: -1856024101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_17
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1802c59ada3d13a4ab188d0309668505
+      internalID: -1779922366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_18
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2616d4fe8ca7436498795345bd8e23fd
+      internalID: 441659516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7013b59a576d74fb2dc7bc9705d423
+      internalID: -1982264109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_20
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4278f089dbe23408de45472dbd0300
+      internalID: 158725024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PropsWallRuinsV2_21
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 21.333334
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48fcbde16cf9a54b8d5b3f8f75243a0
+      internalID: 1814912454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PropsWallRuinsV2_0: -204902663
+      PropsWallRuinsV2_1: 444396442
+      PropsWallRuinsV2_10: 873052873
+      PropsWallRuinsV2_11: 888617945
+      PropsWallRuinsV2_12: -757583217
+      PropsWallRuinsV2_13: -225536550
+      PropsWallRuinsV2_14: -1840840526
+      PropsWallRuinsV2_15: -767841430
+      PropsWallRuinsV2_16: -1856024101
+      PropsWallRuinsV2_17: -1779922366
+      PropsWallRuinsV2_18: 441659516
+      PropsWallRuinsV2_19: -1982264109
+      PropsWallRuinsV2_2: 543685532
+      PropsWallRuinsV2_20: 158725024
+      PropsWallRuinsV2_21: 1814912454
+      PropsWallRuinsV2_3: -1718812981
+      PropsWallRuinsV2_4: 415081762
+      PropsWallRuinsV2_5: 1615864454
+      PropsWallRuinsV2_6: 304443992
+      PropsWallRuinsV2_7: -615413254
+      PropsWallRuinsV2_8: 1150395206
+      PropsWallRuinsV2_9: 1900999003
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
