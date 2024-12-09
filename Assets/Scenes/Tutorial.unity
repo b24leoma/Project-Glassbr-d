@@ -262,6 +262,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a59e6da175ad304880b34b30ac33bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveCounter: 0
+  attackCounter: 0
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onFirstAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 847310680}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFirstMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &148753875
 GameObject:
   m_ObjectHideFlags: 0

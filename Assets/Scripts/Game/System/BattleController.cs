@@ -29,10 +29,26 @@ namespace Game
         [SerializeField] private GameObject demonTank;
         private List<Entity> characters;
         private int level;
+        private string currentScene;
+        private string tutorialScene;
+        private bool isTutorial;
+        private TutorialManager tutorialManager;
 
         
         void Start()
         {
+            currentScene = SceneManager.GetActiveScene().name;
+            tutorialScene = "Tutorial";
+
+            if (currentScene == tutorialScene)
+            {
+               tutorialManager = GetComponent<TutorialManager>();
+                
+                isTutorial = true;
+            }
+            
+            
+            
             NameGenerator.RepopulateList();
             if (gridSystem == null || uiStates == null || canvas == null)
             {
@@ -94,9 +110,21 @@ namespace Game
         {
             gridSystem.MoveUnit(from, to);
             FMODManager.instance.OneShot("GenericWalk", new Vector3(to.x, to.y, 0));
+            if (isTutorial)
+            {
+                TutorialTrigger();
+            }
+            
         }
         public void Attack(Entity attacker, Entity target)
         {
+            
+            if (isTutorial)
+            {
+                TutorialTrigger();
+            }
+            
+            
             float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
                 .DamageReductionPercent / 100f);
             target.TakeDamage(reduction * attacker.Damage);
@@ -119,6 +147,7 @@ namespace Game
                     }
                 }
                 target.Kill();
+                
             }
             
             
@@ -177,6 +206,11 @@ namespace Game
         public void DebugWin()
         {
             uiStates.TogglePanel(1);
+        }
+
+        private void TutorialTrigger ()
+        {
+            tutorialManager.totalStateChecker();
         }
     }
     
