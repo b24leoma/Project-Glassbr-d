@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     
     private Queue<string> sentences = new Queue<string>();
     public Animator animator;
-    public UnityEvent WhenComplete;
+    public UnityEvent whenComplete;
 
     
     
@@ -24,7 +21,7 @@ public class DialogueManager : MonoBehaviour
      [SerializeField] private List<int> stopAfterSentence = new List<int>();
      public bool stopSentence=true;
      [SerializeField] int currentSentence;
-     private bool StartedDialogue;
+     
     
 
      
@@ -32,7 +29,7 @@ public class DialogueManager : MonoBehaviour
 
      public void StartDialogue(Dialogue dialogue)
      {
-         StartedDialogue = true;
+         
          currentSentence = 0;
         foreach (string sentence in dialogue.sentences)
         {
@@ -88,7 +85,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         
         //        animator.SetBool("isOpen", false);
-        WhenComplete?.Invoke();
+        whenComplete?.Invoke();
         Debug.Log("Ending conversation");
     }
 
