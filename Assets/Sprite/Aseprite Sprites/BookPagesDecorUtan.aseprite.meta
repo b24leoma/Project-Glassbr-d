@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: 49bdd84378f636340ab11d696873619f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: BookPagesDecorUtan_Frame_0
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 500
+      height: 250
+    spriteID: 304f9f010e59be24985aead9184d17a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: BookPagesDecorUtan_Frame_1
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 4
+      width: 500
+      height: 250
+    spriteID: 3eb84d511da931d468e8cbafe599925c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 512, y: 4}
+  - name: BookPagesDecorUtan_Frame_2
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1020
+      y: 4
+      width: 500
+      height: 250
+    spriteID: 5d65d22243b170645ac2fa01633a7c44
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1020, y: 4}
+  - name: BookPagesDecorUtan_Frame_3
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1528
+      y: 4
+      width: 500
+      height: 250
+    spriteID: 85a8ad92d26d890428fd739da25444e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1528, y: 4}
+  - name: BookPagesDecorUtan_Frame_4
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 262
+      width: 500
+      height: 250
+    spriteID: 5b422c501e893cf48abc2b397e269701
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 262}
+  - name: BookPagesDecorUtan_Frame_5
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 262
+      width: 500
+      height: 250
+    spriteID: e8255965c88d914439c4d03bad9c8a02
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 512, y: 262}
+  - name: BookPagesDecorUtan_Frame_6
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1020
+      y: 262
+      width: 500
+      height: 250
+    spriteID: 2fa5a0ed8c9d25f4ab6a1757cd2b7710
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1020, y: 262}
+  - name: BookPagesDecorUtan_Frame_7
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1528
+      y: 262
+      width: 500
+      height: 250
+    spriteID: 0bad78a78c800de4298219c65d651444
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1528, y: 262}
+  - name: BookPagesDecorUtan_Frame_8
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 520
+      width: 500
+      height: 250
+    spriteID: 083e58a5f1012d640a17c1618c283fb2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 520}
+  - name: BookPagesDecorUtan_Frame_9
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 520
+      width: 500
+      height: 250
+    spriteID: cd3af9d300bcb324fbab2271c317e456
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 512, y: 520}
+  - name: BookPagesDecorUtan_Frame_10
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1020
+      y: 520
+      width: 500
+      height: 250
+    spriteID: e988c4b1668eb304ba2b08b7753b22f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1020, y: 520}
+  - name: BookPagesDecorUtan_Frame_11
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1528
+      y: 520
+      width: 500
+      height: 250
+    spriteID: 21e59bd77b9b557498f9fdfc47783b96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1528, y: 520}
+  - name: BookPagesDecorUtan_Frame_12
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 778
+      width: 500
+      height: 250
+    spriteID: fe06626e2324db54f9b7eca8b4b891f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 778}
+  - name: BookPagesDecorUtan_Frame_13
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 512
+      y: 778
+      width: 500
+      height: 250
+    spriteID: e543f9aa1617b3042ad1a3aee5b57c76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 512, y: 778}
+  - name: BookPagesDecorUtan_Frame_14
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1020
+      y: 778
+      width: 500
+      height: 250
+    spriteID: 3747b96fbdc80b6428e577977dc9776e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1020, y: 778}
+  - name: BookPagesDecorUtan_Frame_15
+    originalName: 
+    pivot: {x: 0.504, y: -0.012}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1528
+      y: 778
+      width: 500
+      height: 250
+    spriteID: f683df6acd40d744889d615e3fb31aee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1528, y: 778}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -275700716
+    name: BookPagesDecorUtan
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BookPagesDecorUtan_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 304f9f010e59be24985aead9184d17a2
+    - name: BookPagesDecorUtan_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 3eb84d511da931d468e8cbafe599925c
+    - name: BookPagesDecorUtan_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 5d65d22243b170645ac2fa01633a7c44
+    - name: BookPagesDecorUtan_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 85a8ad92d26d890428fd739da25444e3
+    - name: BookPagesDecorUtan_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 5b422c501e893cf48abc2b397e269701
+    - name: BookPagesDecorUtan_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: e8255965c88d914439c4d03bad9c8a02
+    - name: BookPagesDecorUtan_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 2fa5a0ed8c9d25f4ab6a1757cd2b7710
+    - name: BookPagesDecorUtan_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 0bad78a78c800de4298219c65d651444
+    - name: BookPagesDecorUtan_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 083e58a5f1012d640a17c1618c283fb2
+    - name: BookPagesDecorUtan_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: cd3af9d300bcb324fbab2271c317e456
+    - name: BookPagesDecorUtan_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: e988c4b1668eb304ba2b08b7753b22f4
+    - name: BookPagesDecorUtan_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 21e59bd77b9b557498f9fdfc47783b96
+    - name: BookPagesDecorUtan_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: fe06626e2324db54f9b7eca8b4b891f5
+    - name: BookPagesDecorUtan_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: e543f9aa1617b3042ad1a3aee5b57c76
+    - name: BookPagesDecorUtan_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: 3747b96fbdc80b6428e577977dc9776e
+    - name: BookPagesDecorUtan_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 3
+        width: 500
+        height: 250
+      spriteId: f683df6acd40d744889d615e3fb31aee
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 512, y: 256}

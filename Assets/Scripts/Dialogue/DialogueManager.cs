@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class DialogueManager : MonoBehaviour
      [SerializeField] private List<int> stopAfterSentence = new List<int>();
      public bool stopSentence=true;
      [SerializeField] int currentSentence;
-     
+     public bool sentenceIsStopped;
     
 
      
@@ -29,7 +30,7 @@ public class DialogueManager : MonoBehaviour
 
      public void StartDialogue(Dialogue dialogue)
      {
-         
+         sentenceIsStopped=false;
          currentSentence = 0;
         foreach (string sentence in dialogue.sentences)
         {
@@ -42,18 +43,21 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
 
-        
-        if (currentSentence > 0 && stopSentence && !stopAfterSentence.Contains(currentSentence) )
+        if (stopAfterSentence.Count != 0)
         {
-            
-            
-                Debug.Log("Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
-                return;
-            
+            if (currentSentence >= 0 && stopSentence && stopAfterSentence.Contains(currentSentence))
+            {
 
-            
+                sentenceIsStopped = true;
+                Debug.Log(
+                    "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
+                return;
+
+
+
+            }
         }
-        
+
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -95,6 +99,7 @@ public class DialogueManager : MonoBehaviour
     public void UnpauseDialogue()
     {
         stopSentence = false;
+        sentenceIsStopped = false;
         DisplayNextSentence();
     }
 }
