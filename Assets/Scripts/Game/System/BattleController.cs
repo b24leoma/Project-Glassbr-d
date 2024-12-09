@@ -56,7 +56,11 @@ namespace Game
                 return;
             }
             characters = new List<Entity>();
-            gridSystem.ClearGrid();
+            for (int i = characters.Count; i > 0; i++)
+            {
+                Destroy(characters[i].gameObject);
+                characters.RemoveAt(i);
+            }
             LoadLevel();
         }
 
