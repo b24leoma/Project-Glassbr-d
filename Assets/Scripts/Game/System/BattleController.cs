@@ -109,6 +109,7 @@ namespace Game
         public void Move(Vector2Int from, Vector2Int to)
         {
             gridSystem.MoveUnit(from, to);
+            gridSystem.GetTile(to).linkedEntity.SetMoving(true);
             FMODManager.instance.OneShot("GenericWalk", new Vector3(to.x, to.y, 0));
             if (isTutorial)
             {

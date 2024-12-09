@@ -41,7 +41,6 @@ namespace Game
                     {
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
-                            actingEntity.SetMoving(true);
                             Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
                             if (gridSystem.GetTile(actingEntity.Position).hidingSpot) gridSystem.SetHidingSpotColor(actingEntity.Position,Color.white);
                             if (gridSystem.GetTile(newPos).hidingSpot) gridSystem.SetHidingSpotColor(newPos, new Color(1,1,1,0.3f));
