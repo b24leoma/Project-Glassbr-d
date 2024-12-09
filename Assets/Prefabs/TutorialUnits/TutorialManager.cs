@@ -16,6 +16,7 @@ public class TutorialManager : MonoBehaviour
 
    private BattleController battleController;
    private List<Entity> allUnits;
+   private GridSystem gridSystem;
 
    private TutorialScript tutorialScript;
 
@@ -44,5 +45,22 @@ public class TutorialManager : MonoBehaviour
                tutorialScript = entity.GetComponent<TutorialScript>();
                tutorialScript.CheckingUnits();
            }
+   }
+
+    
+   public void DebugLogger1()
+   {
+       Debug.Log("WOWIE I DID THE THING");
+   }
+   
+   public void DebugLogger2()
+   {
+       Debug.Log("WOWIE I DID THE OTHER THING");
+   }
+
+
+   private void wtf()
+   {
+       
    }
 }
