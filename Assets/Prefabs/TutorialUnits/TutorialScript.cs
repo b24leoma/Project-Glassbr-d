@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Game;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TutorialScript : MonoBehaviour
@@ -9,19 +11,37 @@ public class TutorialScript : MonoBehaviour
 
     [SerializeField] private TutorialManager tutorialManager;
     private GameObject gameManager;
+    private GridSystem gridSystem;
+    private List<Tile> bushUnits;
+    private GameObject TILEMAP;
 
     private void OnEnable()
     {
         CheckingUnits();
+        
+        
     }
 
 
     public void CheckingUnits()
     {
-        if (tutorialManager == null)
+        if (gameManager == null)
         {
             gameManager = GameObject.Find("GameManager");
+        }
+
+        if (tutorialManager == null)
+        {
             tutorialManager = gameManager.GetComponent<TutorialManager>();
+        }
+        
+        
+        
+        
+        if (gridSystem == null)
+        {
+           TILEMAP = GameObject.Find("TILEMAP");
+            gridSystem = TILEMAP.GetComponent<GridSystem>();
         }
 
         if (tutorialManager)
@@ -31,6 +51,7 @@ public class TutorialScript : MonoBehaviour
             if (humanScript)
             {
                 StateChecker();
+                
             }
         }
     }
@@ -47,6 +68,8 @@ public class TutorialScript : MonoBehaviour
                 {
                     Attacked();
                 }
+                
+                
             }
 
             if (humanScript.hasMoved)
@@ -57,8 +80,54 @@ public class TutorialScript : MonoBehaviour
                 }
 
             }
+
+            
+            
+                
+            
         }
         
+    }
+
+
+    private void BushChecker()
+    {
+
+        foreach (var thing  in gridSystem.GetAllTiles())
+        {
+            Debug.Log("POG");
+            var tile = thing.Value;
+            var isbush = tile.hidingSpot;
+             
+            //jag tror mina två hjärnceller gav upp i will solve this after some coffee : ) 
+
+
+
+
+
+
+        }
+           
+       
+       
+            
+        
+    }
+
+    private void BushAgain()
+    {
+        if (0 == tutorialManager.bushCounter)
+        {
+            tutorialManager.onFirstBush.Invoke();
+            Debug.Log("Bush virgin");
+        }
+        else
+        {
+            Debug.Log("Bush Slut");
+            tutorialManager.onBush.Invoke(); 
+        }
+
+        tutorialManager.bushCounter++;
     }
 
     private void Attacked()
@@ -83,6 +152,12 @@ public class TutorialScript : MonoBehaviour
     {
         Debug.Log("I moved!");
         hasMoved = true;
+        
+
+       
+        
+            BushChecker();
+        
         
         if (0 == tutorialManager.moveCounter)
         {
