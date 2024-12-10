@@ -44,7 +44,7 @@ namespace Game
                     {
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
-                            battleController.Move(GetFullPathLine());
+                            StartCoroutine(battleController.Move(GetFullPathLine(), false));
                             isActing = false;
                             pathLine.positionCount = 1;
                             SetPathLinePos(0, actingEntity.Position);
@@ -71,21 +71,12 @@ namespace Game
                                 Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
                                 if (newPos != actingEntity.Position && actingEntity.IsMelee)
                                 {
-                                    battleController.Move(GetFullPathLine());
+                                    StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
+                                    hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
                                     pathLine.positionCount = 1;
                                     SetPathLinePos(0, actingEntity.Position);
+                                    isActing = false;
                                 }
-
-                                actingEntity.SetAttacking(true);
-                                battleController.Attack(actingEntity, hoveredEntity);
-                                battleController.UpdateCharacterDisplay(true, hoveredEntity);
-                                if (hoveredEntity is Demon demon)
-                                {
-                                    demon.DisplayAttackingImage(false, Color.white);   
-                                }
-                                pathLine.positionCount = 1;
-                                SetPathLinePos(0, actingEntity.Position);
-                                isActing = false;
 
                             }
                         }
@@ -224,6 +215,7 @@ namespace Game
                 //HOVER HIGHLIGHT
                 if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
                 {
+                    hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                     if (hoveredEntity.IsMelee)
                     {
                         gridSystem.HighlightMoveTiles(hoveredEntity.Position,

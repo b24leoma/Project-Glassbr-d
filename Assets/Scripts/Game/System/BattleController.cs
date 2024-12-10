@@ -106,34 +106,29 @@ namespace Game
             characters.Add(e);
         }
 
-
-        public void Move(Vector2Int[] movements)
+        public IEnumerator Move(Vector2Int[] pos, bool attackAfter, Entity attackTarget = null)
         {
-            StartCoroutine(AnimateMove(movements));
-            gridSystem.GetTile(movements[0]).linkedEntity.SetMoving(true);
+            gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(true);
             FMODManager.instance.OneShot("GenericWalk", new Vector3(0, 0, 0));
             if (isTutorial)
             {
                 TutorialTrigger();
             }
             
-        }
-
-        private IEnumerator AnimateMove(Vector2Int[] pos)
-        {
             Vector2Int startPos = pos[0];
+            gridSystem.MoveUnit(pos[0], pos[^1]);
             if (gridSystem.GetTile(startPos).hidingSpot)
                 gridSystem.SetHidingSpotColor(startPos, Color.white);
             for (int i = 1; i < pos.Length; i++)
             {
                 if (gridSystem.GetTile(pos[i-1]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[i-1], Color.white);
-                gridSystem.ConnectToTile(pos[i-1], gridSystem.GetTile(startPos).linkedEntity);
+                gridSystem.ConnectToTile(pos[i], gridSystem.GetTile(pos[^1]).linkedEntity);
                 if (gridSystem.GetTile(pos[i]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
                 yield return new WaitForSeconds(0.2f);
             }
-            gridSystem.MoveUnit(pos[0], pos[^1]);
+            if (attackAfter) Attack(gridSystem.GetTile(pos[^1]).linkedEntity, attackTarget);
         }
         
         public void Attack(Entity attacker, Entity target)
