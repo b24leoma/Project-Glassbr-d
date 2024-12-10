@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class DialogueManager : MonoBehaviour
      public bool sentenceIsStopped;
      public bool alwaysStop;
      private Coroutine _currentCoroutine;
+     [SerializeField] private UnityEvent onDialoguePause;
+     [SerializeField] private UnityEvent onDialogueUnpause;
     
 
      
@@ -53,7 +56,8 @@ public class DialogueManager : MonoBehaviour
                 alwaysStop = false;
                 Debug.Log(
                     "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
-                
+
+                onDialoguePause.Invoke();
                 return;
 
 
@@ -104,6 +108,7 @@ public class DialogueManager : MonoBehaviour
         canStopSentence = false;
         sentenceIsStopped = false;
         alwaysStop = false;
+        onDialogueUnpause.Invoke();
         DisplayNextSentence();
     }
 
@@ -115,7 +120,7 @@ public class DialogueManager : MonoBehaviour
         
         if (_currentCoroutine != null)
         {
-            StopCoroutine(_currentCoroutine); // Stoppa den pågående skrivningen
+            StopCoroutine(_currentCoroutine); // Stoppa meningen maybe
         }
     }
     

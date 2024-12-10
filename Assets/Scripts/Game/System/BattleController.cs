@@ -129,7 +129,6 @@ namespace Game
                     gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
                 yield return new WaitForSeconds(0.2f);
             }
-            Debug.Log(gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <= entity.AttackRange);
             if (attackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <= entity.AttackRange)
             {
                 Attack(entity, attackTarget);
