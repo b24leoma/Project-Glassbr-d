@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -20,9 +19,11 @@ public class DialogueManager : MonoBehaviour
     
     // För dialogue kontroll
      [SerializeField] private List<int> stopAfterSentence = new List<int>();
-     public bool stopSentence=true;
+     public bool canStopSentence=true;
      [SerializeField] int currentSentence;
      public bool sentenceIsStopped;
+     public bool alwaysStop;
+     private Coroutine _currentCoroutine;
     
 
      
@@ -43,20 +44,22 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
 
-        if (stopAfterSentence.Count != 0)
-        {
-            if (currentSentence >= 0 && stopSentence && stopAfterSentence.Contains(currentSentence))
+        if (sentenceIsStopped) return;
+        
+            if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
             {
 
                 sentenceIsStopped = true;
+                alwaysStop = false;
                 Debug.Log(
                     "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
+                
                 return;
 
 
 
             }
-        }
+        
 
         if (sentences.Count == 0)
         {
@@ -68,10 +71,10 @@ public class DialogueManager : MonoBehaviour
 
         
         currentSentence++;
-        stopSentence = true;
+        canStopSentence = true;
           
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+       _currentCoroutine = StartCoroutine(TypeSentence(sentence));
     }
 
     private IEnumerator TypeSentence(string sentence)
@@ -98,8 +101,22 @@ public class DialogueManager : MonoBehaviour
     
     public void UnpauseDialogue()
     {
-        stopSentence = false;
+        canStopSentence = false;
         sentenceIsStopped = false;
+        alwaysStop = false;
         DisplayNextSentence();
     }
+
+    public void PauseDialogue()
+    {
+        canStopSentence = true;
+        sentenceIsStopped = true;
+        alwaysStop = true;
+        
+        if (_currentCoroutine != null)
+        {
+            StopCoroutine(_currentCoroutine); // Stoppa den pågående skrivningen
+        }
+    }
+    
 }
