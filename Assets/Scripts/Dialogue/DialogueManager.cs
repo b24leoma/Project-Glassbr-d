@@ -4,7 +4,6 @@ using DG.Tweening;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -117,6 +116,7 @@ public class DialogueManager : MonoBehaviour
     
     public void UnpauseDialogue()
     {
+        
         canStopSentence = false;
         sentenceIsStopped = false;
         alwaysStop = false;
