@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Game
 {
@@ -15,7 +14,7 @@ namespace Game
         };
 
         public EntityType Type;
-        protected Animator animator;
+        private Animator animator;
         public string Name { get; protected set; }
         public int MaxHealth;
         public int CurrentHealth { get; protected set; }
@@ -58,13 +57,13 @@ namespace Game
         }
 
 
-        public virtual void SetMoving(bool moving)
+        public void SetMoving(bool moving)
         {
             hasMoved = moving;
             movingIcon.SetActive(moving);
         }
 
-        public virtual void SetAttacking(bool attacking)
+        public void SetAttacking(bool attacking)
         {
             hasAttacked = attacking;
             attackingIcon.SetActive(attacking);
@@ -77,7 +76,7 @@ namespace Game
             Destroy(gameObject);
         }
         
-        protected void PlayAttack()
+        private void PlayAttack()
         {
             animator.SetTrigger("Attack");
         }
@@ -85,8 +84,8 @@ namespace Game
 
     public static class NameGenerator
     {
-        public static List<string> _human;
-        public static List<string> _demon;
+        private static List<string> _human;
+        private static List<string> _demon;
         public static void RepopulateList()
         {
             _human = new List<string>

@@ -9,7 +9,7 @@ namespace Game
     public class BattleController : MonoBehaviour
     {
         [Header("Levels")]
-        [SerializeField] public List<Level> LevelEntities;
+        [SerializeField] public List<SpawnEntity> LevelEntities;
         [Header("Events")]
         [SerializeField] private UnityEvent Player1TurnStart;
         [SerializeField] private UnityEvent Player2TurnStart;
@@ -67,7 +67,7 @@ namespace Game
         void LoadLevel()
         {
             characters.Clear();
-            foreach (SpawnEntity spawn in LevelEntities[level].spawnList)
+            foreach (SpawnEntity spawn in LevelEntities)
             {
                 CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);
             }
@@ -77,10 +77,6 @@ namespace Game
 
         public void NextLevel()
         {
-            foreach (Entity entity in characters)
-            {
-                Destroy(gameObject);
-            }
             SceneManager.LoadScene("Game");
         }
 
@@ -131,7 +127,7 @@ namespace Game
             
             
             float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
-                .DamageReductionPercent / 100f);
+                .damageReductionPercent / 100f);
             target.TakeDamage(reduction * attacker.Damage);
             if (target.CurrentHealth <= 0)
             {
