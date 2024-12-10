@@ -18,8 +18,6 @@ public class TutorialScript : MonoBehaviour
     private void OnEnable()
     {
         CheckingUnits();
-        
-        
     }
 
 
@@ -46,6 +44,8 @@ public class TutorialScript : MonoBehaviour
 
         if (tutorialManager)
         {
+            tutorialManager.bushCounter = 0;
+            BushChecker();
             var hasHumanScript = gameObject.GetComponent<Human>();
             humanScript = hasHumanScript;
             if (humanScript)
