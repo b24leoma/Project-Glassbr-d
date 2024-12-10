@@ -170,15 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelEntities:
-  - spawnList:
-    - Position: {x: -5, y: 0}
-      Type: 0
-    - Position: {x: -6, y: 1}
-      Type: 1
-    - Position: {x: 1, y: 0}
-      Type: 3
-    - Position: {x: 1, y: 1}
-      Type: 2
+  - Position: {x: 0, y: 0}
+    Type: 0
   Player1TurnStart:
     m_PersistentCalls:
       m_Calls:
@@ -344,9 +337,10 @@ GameObject:
   - component: {fileID: 148753876}
   - component: {fileID: 148753879}
   - component: {fileID: 148753880}
-  - component: {fileID: 148753881}
   - component: {fileID: 148753882}
   - component: {fileID: 148753883}
+  - component: {fileID: 148753884}
+  - component: {fileID: 148753885}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -473,26 +467,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!114 &148753881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148753875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 77
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!114 &148753882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,6 +615,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+--- !u!114 &148753884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148753875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_AssetsPPU: 77
+  m_RefResolutionX: 1920
+  m_RefResolutionY: 1080
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
+--- !u!114 &148753885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148753875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &168377131
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +744,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -958,7 +1001,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1179,7 +1223,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1446,7 +1491,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1573,152 +1619,152 @@ MonoBehaviour:
     tile: {fileID: 11400000, guid: 6a366b2e708e10b4f88be91553c5349b, type: 2}
     walkable: 1
     hidingSpot: 1
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 20
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 328a914fe44562c48ba1aba1029d9307, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 7b51e0a7942672d45b78ec62fbe49b6a, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: a05e433bb8a0acd4988d2f617e4b5029, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: e23e78bf745a04e42a4da5e3f2004cb0, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 27f5361813a49b04cb12521d38d42db8, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 5ecb39a9d9bd6e84e91a03f1e3d10642, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 70879f75c96df4c46b1b7e6be350a4c6, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 1a74ae78c0195024fa2ba9395389e368, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: f365d8c882fde304fa4297efd1e8df24, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 5fe5479269d76b34fb6a3fbd71e23450, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 4a4530d7952fe4d4fb52fbd9487eaed2, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 1911539b609d9e549bd65eef81e086d4, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 3206e81cafe82854da6dcb2b4beb2b48, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 8d1830b007e3c05478d989edb3d410df, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 153025e54cd6cf5438911ff620e14d17, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: b2a573f680271584e931d0d866046a09, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 5a725631c86eccb40b1d648a9b1e902c, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 6694091c816a9e442a9088452ed10c9d, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 7f9071e075ec46f408bb560d8f3b57bc, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 9b2a33a5ba2eb594f8d4de4fff4ebbc3, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 5389f2177fe20f84198d70c5ddd63d5c, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: aedb7f84fa64d144486ec58b092b7a93, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: f367a80dc773516449f793bb6874a308, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 45817f4fc76540c40b02764ac35b24bf, type: 2}
     walkable: 0
     hidingSpot: 0
-    ArcherRangeIncrease: 0
-    DamageReductionPercent: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   demons: []
   humans: []
 --- !u!19719996 &651517035
@@ -3767,7 +3813,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -3947,7 +3994,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -4210,24 +4258,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueField: {fileID: 926230822}
   animator: {fileID: 0}
-  WhenComplete:
+  whenComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 846653634}
-        m_TargetAssemblyTypeName: MenuFunctions, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   stopAfterSentence: 01000000
   stopSentence: 1
   currentSentence: 0
+  sentenceIsStopped: 0
 --- !u!4 &846653636
 Transform:
   m_ObjectHideFlags: 0
@@ -4481,7 +4518,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -4615,7 +4653,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -4886,7 +4925,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -5020,7 +5060,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -5146,7 +5187,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5731,7 +5772,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -6498,7 +6540,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -7730,7 +7773,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -8122,7 +8166,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
