@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +10,7 @@ namespace Game
         [Header("Assets")]
         [SerializeField] private GameObject endTurnButton;
         [SerializeField] private LineRenderer pathLine;
+        private Camera cam;
         private Entity hoveredEntity;
         private Vector2Int hoveredTile;
         private bool isActing;
@@ -24,6 +24,7 @@ namespace Game
         private Color possibleAttackColor;
         void Start()
         {
+            cam = Camera.main;
             battleController = GetComponent<BattleController>();
             offsetFix = transform.InverseTransformPoint(Vector3.zero);
             moveColor = new Color(0.6f, 0.6f, 1f);
@@ -121,7 +122,7 @@ namespace Game
         public void MouseMove(InputAction.CallbackContext context)
         {
             if (isPaused) return;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
 
             if (hit.collider != null)
@@ -161,12 +162,12 @@ namespace Game
                 //MOVE PATH IF WITHIN RANGE
                 if (!actingEntity.hasMoved)
                 {
-                    if ((gridSystem.GetTile(hoveredTile).walkable &&
+                    if (gridSystem.GetTile(hoveredTile).walkable &&
                          (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
                           gridSystem.GetTile(hoveredTile).linkedEntity == actingEntity ||
-                          gridSystem.GetTile(hoveredTile).linkedEntity != null &&
-                          !gridSystem.GetTile(hoveredTile).linkedEntity.isHuman) &&
-                         gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) > 1) &&
+                          (gridSystem.GetTile(hoveredTile).linkedEntity != null &&
+                          !gridSystem.GetTile(hoveredTile).linkedEntity.isHuman &&
+                         gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) > 1)) &&
                         gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <= actingEntity.MoveRange)
                     {
                         pathLine.positionCount = 1;
