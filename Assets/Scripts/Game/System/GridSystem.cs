@@ -41,9 +41,9 @@ namespace Game
                             if (CustomTiles[k].tile == tile)
                             {
                                 tiles[new Vector2Int(i, j)].walkable = CustomTiles[k].walkable;
-                                tiles[new Vector2Int(i, j)].ArcherRangeIncrease = CustomTiles[k].ArcherRangeIncrease;
-                                tiles[new Vector2Int(i, j)].DamageReductionPercent =
-                                    CustomTiles[k].DamageReductionPercent;
+                                tiles[new Vector2Int(i, j)].archerRangeIncrease = CustomTiles[k].archerRangeIncrease;
+                                tiles[new Vector2Int(i, j)].damageReductionPercent =
+                                    CustomTiles[k].damageReductionPercent;
                                 tiles[new Vector2Int(i, j)].hidingSpot = CustomTiles[k].hidingSpot;
                             }
                         }
@@ -53,15 +53,12 @@ namespace Game
         }
         public void HighlightSquaresInRange(Vector2 pos, float range, Color color)
         {
-            for (int i = -(int)size.x; i < size.x + 1; i++)     //Checkar alla tiles, borde gå att ta den valda tilen och titta enbart ett visst avstånd (range) omkring.
+            foreach (KeyValuePair<Vector2Int, Tile> tile in tiles)
             {
-                for (int j = -(int)size.y; j < size.y + 1; j++)
-                {
-                    if (GetGridDistance(pos, new Vector2(i, j)) <= range && tiles[new Vector2Int(i,j)].walkable)
+                    if (GetGridDistance(pos, tile.Key) <= range && tile.Value.walkable)
                     {
-                        tilemap.SetColor(new Vector3Int(i - 1, j - 1, 0), color);
+                        SetColor(tile.Key, color);
                     }
-                }
             }
         }
 
@@ -157,7 +154,7 @@ namespace Game
 
         public void SetColor(Vector2Int pos, Color color)
         {
-            if (tiles[pos].walkable) tilemap.SetColor(new Vector3Int(pos.x - 1, pos.y - 1, 0), color);;
+            if (tiles[pos].walkable) tilemap.SetColor(new Vector3Int(pos.x - 1, pos.y - 1, 0), color);
         }
 
         public void SetHidingSpotColor(Vector2Int pos, Color color)
@@ -272,7 +269,7 @@ namespace Game
         public bool walkable = true;
         public bool hidingSpot = false;
         
-        public int ArcherRangeIncrease = 0;
-        public int DamageReductionPercent = 0;
+        public int archerRangeIncrease = 0;
+        public int damageReductionPercent = 0;
     }
 }

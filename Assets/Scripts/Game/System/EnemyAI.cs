@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
@@ -21,7 +20,6 @@ namespace Game
                 Demon demon = gridSystem.GetTile(gridSystem.demons[i]).linkedEntity as Demon;
                 Vector2Int demonCurrentPos = demon.Position;
                 GetClosestTarget(demon);
-                bool hasMoved = false;
                 bool hasAttacked = false;
 
 
