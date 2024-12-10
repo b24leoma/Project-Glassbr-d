@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Game;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TutorialScript : MonoBehaviour
@@ -12,14 +12,13 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] private TutorialManager tutorialManager;
     private GameObject gameManager;
     private GridSystem gridSystem;
-    private List<Tile> bushUnits;
+    private List<Vector2Int> humanUnitPositions;
     private GameObject TILEMAP;
 
     private void OnEnable()
     {
         CheckingUnits();
     }
-
 
     public void CheckingUnits()
     {
@@ -32,104 +31,91 @@ public class TutorialScript : MonoBehaviour
         {
             tutorialManager = gameManager.GetComponent<TutorialManager>();
         }
-        
-        
-        
-        
+
         if (gridSystem == null)
         {
-           TILEMAP = GameObject.Find("TILEMAP");
+            TILEMAP = GameObject.Find("TILEMAP");
             gridSystem = TILEMAP.GetComponent<GridSystem>();
         }
 
         if (tutorialManager)
         {
-            tutorialManager.bushCounter = 0;
-            BushChecker();
             var hasHumanScript = gameObject.GetComponent<Human>();
             humanScript = hasHumanScript;
             if (humanScript)
             {
                 StateChecker();
-                
             }
         }
     }
 
-    
-
     private void StateChecker()
     {
+        
         if (humanScript)
         {
+            humanScript = gameObject.GetComponent<Human>();
+            
+            
             if (humanScript.hasAttacked)
             {
-                if (!hasAttacked)
-                {
-                    Attacked();
-                }
                 
+                
+                    Attacked();
                 
             }
 
             if (humanScript.hasMoved)
             {
-                if (!hasMoved)
-                {
-                    Moved();
-                }
-
-            }
-
-            
-            
                 
-            
+                
+                    Moved();
+                
+            }
         }
-        
     }
-
 
     private void BushChecker()
     {
+        Debug.Log("Runing BushChecker");
+        humanUnitPositions ??= new List<Vector2Int>();
 
-        foreach (var humanposition  in gridSystem.humans)
-        {
-           var  tile =  gridSystem.GetTile(humanposition);
-           
-           if (tile != null && tile.hidingSpot)
-           {
-               BushCounter();
-           }
-           
-             
-            //jag tror mina två hjärnceller gav upp i will solve this after some coffee : ) 
-            //de kom tillbaka efter mat och kaffe :)
-
-
-
-
-
-
-        }
-           
-       
-       
-            
+        humanUnitPositions.Clear();
+        humanUnitPositions.AddRange(gridSystem.humans);
         
+        Debug.Log("HUMAN COUNT:" + humanUnitPositions.Count);
+
+        foreach (var position in humanUnitPositions)
+        {
+            var tile = gridSystem.GetTile(position);
+            if (tile == null)
+            {
+                Debug.Log("Tile could not be found");
+            }
+            if (tile?.hidingSpot != null)
+            {
+                    Debug.Log("Kom till BushCounter");
+                    BushCounter();
+                    return;
+                
+            }
+            
+            Debug.Log("No units on bush");
+        }
     }
 
     private void BushCounter()
     {
-        if (0 == tutorialManager.bushCounter)
+        Debug.Log("BushCounter kördes");
+        if (tutorialManager.bushCounter == 0)
         {
-            tutorialManager.onFirstBush.Invoke();
-            Debug.Log("Bush virgin");
+            tutorialManager.onFirstBush?.Invoke();
+            Debug.Log("First Bush ;^)");
         }
         else
         {
-            Debug.Log("Bush Slut");
-            tutorialManager.onBush.Invoke(); 
+            Debug.Log("Bush.... ;^)");
+            tutorialManager.onBush?.Invoke();
         }
 
         tutorialManager.bushCounter++;
@@ -137,46 +123,40 @@ public class TutorialScript : MonoBehaviour
 
     private void Attacked()
     {
-        hasAttacked = true;
+        
+        var updateHumanScript = gameObject.GetComponent<Human>();
+        humanScript = updateHumanScript;
         Debug.Log("I attacked!");
         if (0 == tutorialManager.attackCounter)
         {
             tutorialManager.onFirstAttack.Invoke();
-            
         }
         else
         {
             tutorialManager.onAttack.Invoke();
-           
         }
+
         tutorialManager.attackCounter++;
-        
     }
 
     private void Moved()
     {
+        var updateHumanScript = gameObject.GetComponent<Human>();
+        humanScript = updateHumanScript;
         Debug.Log("I moved!");
-        hasMoved = true;
         
 
-       
-        
-            BushChecker();
-        
-        
+        DOVirtual.DelayedCall(0.3f, BushChecker);
+
         if (0 == tutorialManager.moveCounter)
         {
             tutorialManager.onFirstMove.Invoke();
-         
         }
         else
         {
             tutorialManager.onMove.Invoke();
-            
         }
+
         tutorialManager.moveCounter++;
-        
     }
-    
-    
 }

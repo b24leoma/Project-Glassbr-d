@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Game;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +15,8 @@ public class TutorialManager : MonoBehaviour
     public UnityEvent onFirstMove;
     public UnityEvent onFirstBush;
     public UnityEvent onBush;
+    public UnityEvent delayedEvent;
+   [Range(0, 10),SerializeField] private float delayEventTimer;
 
     private BattleController battleController;
     private List<Entity> allUnits;
@@ -52,27 +55,25 @@ public class TutorialManager : MonoBehaviour
 
         if (characters == null)
         {
-            Debug.Log("jaboba");
+            Debug.Log("NO UNITS ON FIELD");
         }
 
         if (characters != null)
             foreach (var entity in characters)
             {
-                tutorialScript = entity.GetComponent<TutorialScript>();
-                tutorialScript.CheckingUnits();
+                if (entity != null)
+                {
+                    tutorialScript = entity.GetComponent<TutorialScript>();
+                    if (tutorialScript != null)
+                    {
+                        tutorialScript.CheckingUnits();
+                    }
+                }
+                
             }
     }
 
-    public void DebugLogger1()
-    {
-        Debug.Log("WOWIE I DID THE THING");
-    }
-
-    public void DebugLogger2()
-    {
-        Debug.Log("WOWIE I DID THE OTHER THING");
-    }
-
+    
 
 
     public void TryNextSentence(int eventnumber)
@@ -82,6 +83,13 @@ public class TutorialManager : MonoBehaviour
            dialogueManager.UnpauseDialogue();
        }
        
+    }
+
+    public void EventDelayer()
+    {
+        //Use this as a middleman to delay an event... probably shitty way to do it, but it works.
+        DOVirtual.DelayedCall(delayEventTimer, delayedEvent.Invoke);
+
     }
 
 }
