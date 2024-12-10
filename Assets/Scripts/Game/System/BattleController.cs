@@ -108,27 +108,30 @@ namespace Game
 
         public IEnumerator Move(Vector2Int[] pos, bool attackAfter, Entity attackTarget = null)
         {
-            gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(pos.Length > 1);
-            FMODManager.instance.OneShot("GenericWalk", new Vector3(0, 0, 0));
-            if (isTutorial)
+            Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
+            if (pos != null && pos.Length > 1)
             {
-                TutorialTrigger();
+                gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(true);
+                FMODManager.instance.OneShot("GenericWalk", new Vector3(0, 0, 0));
+                if (isTutorial)
+                {
+                    TutorialTrigger();
+                }
+                
+                gridSystem.MoveUnit(pos[0], pos[^1]);
+                if (gridSystem.GetTile(pos[0]).hidingSpot)
+                    gridSystem.SetHidingSpotColor(pos[0], Color.white);
+                for (int i = 1; i < pos.Length; i++)
+                {
+                    if (gridSystem.GetTile(pos[i - 1]).hidingSpot)
+                        gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
+                    entity.MoveToTile(pos[i]);
+                    if (gridSystem.GetTile(pos[i]).hidingSpot)
+                        gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
+                    yield return new WaitForSeconds(0.2f);
+                }
             }
-            
-            Vector2Int startPos = pos[0];
-            Entity entity = gridSystem.GetTile(startPos).linkedEntity;
-            gridSystem.MoveUnit(pos[0], pos[^1]);
-            if (gridSystem.GetTile(startPos).hidingSpot)
-                gridSystem.SetHidingSpotColor(startPos, Color.white);
-            for (int i = 1; i < pos.Length; i++)
-            {
-                if (gridSystem.GetTile(pos[i-1]).hidingSpot)
-                    gridSystem.SetHidingSpotColor(pos[i-1], Color.white);
-                entity.MoveToTile(pos[i]);
-                if (gridSystem.GetTile(pos[i]).hidingSpot)
-                    gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
-                yield return new WaitForSeconds(0.2f);
-            }
+
             if (attackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <= entity.AttackRange)
             {
                 Attack(entity, attackTarget);

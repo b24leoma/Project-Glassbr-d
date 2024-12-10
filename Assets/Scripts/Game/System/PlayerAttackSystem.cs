@@ -45,7 +45,7 @@ namespace Game
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
                             StartCoroutine(battleController.Move(GetFullPathLine(), false));
-                            isActing = false;
+                            hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
                             pathLine.positionCount = 1;
                             SetPathLinePos(0, actingEntity.Position);
                         }
@@ -65,19 +65,20 @@ namespace Game
                         }
                         else // ATTACKS ENEMY
                         {
-                            if (!actingEntity.hasAttacked && !hoveredEntity.isHuman && gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount-1), hoveredEntity.Position) <=
-                                actingEntity.AttackRange)
+                            if (!actingEntity.hasAttacked && !hoveredEntity.isHuman)
                             {
-                                Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
-                                if (newPos != actingEntity.Position && actingEntity.IsMelee)
-                                {
+                                if (actingEntity.IsMelee &&
+                                    gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
+                                        hoveredEntity.Position) <=
+                                    actingEntity.AttackRange)
                                     StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
-                                    hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
-                                    pathLine.positionCount = 1;
-                                    SetPathLinePos(0, actingEntity.Position);
-                                    isActing = false;
-                                }
-
+                                else if (!actingEntity.IsMelee &&
+                                         gridSystem.GetGridDistance(actingEntity.Position, hoveredEntity.Position) <=
+                                         actingEntity.AttackRange) battleController.Attack(actingEntity, hoveredEntity);
+                                hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
+                                pathLine.positionCount = 1;
+                                SetPathLinePos(0, actingEntity.Position);
+                                isActing = false;
                             }
                         }
                     }
@@ -167,10 +168,7 @@ namespace Game
                         }
 
                     }
-                }
-
-                if (!actingEntity.hasMoved)
-                {
+             
                     //MOVE HIGHLIGHT
                     if (actingEntity.IsMelee)
                     {
@@ -198,9 +196,15 @@ namespace Game
                                 actingEntity.AttackRange, attackColor);
                         else gridSystem.HighlightSquaresInRange(actingEntity.Position, actingEntity.AttackRange,
                                 attackColor);
-                        foreach (Vector2Int pos in gridSystem.demons) // ATTACK ICON
+                    }
+                }
+
+                if (!actingEntity.hasAttacked)
+                {
+                    foreach (Vector2Int pos in gridSystem.demons) // ATTACK ICON
+                    {
+                        if (gridSystem.GetTile(pos).linkedEntity is Demon demon)
                         {
-                            Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
                             if (gridSystem.GetGridDistance(actingEntity.Position, pos) <=
                                 actingEntity.AttackRange)
                                 demon.DisplayAttackingImage(true, hoveredTile == pos ? Color.red : Color.white);
