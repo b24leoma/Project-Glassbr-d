@@ -116,6 +116,7 @@ namespace Game
             }
             
             Vector2Int startPos = pos[0];
+            Entity entity = gridSystem.GetTile(startPos).linkedEntity;
             gridSystem.MoveUnit(pos[0], pos[^1]);
             if (gridSystem.GetTile(startPos).hidingSpot)
                 gridSystem.SetHidingSpotColor(startPos, Color.white);
@@ -123,7 +124,7 @@ namespace Game
             {
                 if (gridSystem.GetTile(pos[i-1]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[i-1], Color.white);
-                gridSystem.ConnectToTile(pos[i], gridSystem.GetTile(pos[^1]).linkedEntity);
+                entity.MoveToTile(pos[i]);
                 if (gridSystem.GetTile(pos[i]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
                 yield return new WaitForSeconds(0.2f);
@@ -133,7 +134,7 @@ namespace Game
         
         public void Attack(Entity attacker, Entity target)
         {
-            
+            attacker.SetAttacking(true);   
             if (isTutorial)
             {
                 TutorialTrigger();

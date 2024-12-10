@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace Game
@@ -36,7 +37,7 @@ namespace Game
                 }
                 
                 Vector2Int[] path = gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                StartCoroutine(battleController.Move(path, !hasAttacked, demon.target));
+                StartCoroutine(battleController.Move(path, !hasAttacked && gridSystem.GetGridDistance(demon.Position, demon.target.Position) <= 1, demon.target));
                 
                 yield return new WaitForSeconds(0.5f);
             }
