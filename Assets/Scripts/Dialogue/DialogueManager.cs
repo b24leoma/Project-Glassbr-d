@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
@@ -24,6 +25,7 @@ public class DialogueManager : MonoBehaviour
      public int currentSentence;
      public bool sentenceIsStopped;
      public bool alwaysStop;
+     public bool typingPaused;
      private Coroutine _currentCoroutine;
      [SerializeField] private UnityEvent onDialoguePause;
      [SerializeField] private UnityEvent onDialogueUnpause;
@@ -86,9 +88,19 @@ public class DialogueManager : MonoBehaviour
         dialogueField.text = "";
         foreach (char letter in sentence)
         {
+
+            while (typingPaused)
+            {
+                yield return null;
+            }
+            
+            
+            
             dialogueField.text += letter;
             yield return new WaitForSeconds(0.05f);
         }
+        
+        sentenceIsStopped = false;
     }
 
     private void EndDialogue()
@@ -108,6 +120,7 @@ public class DialogueManager : MonoBehaviour
         canStopSentence = false;
         sentenceIsStopped = false;
         alwaysStop = false;
+        DOVirtual.DelayedCall(1.5f, DelayUnpause);
         onDialogueUnpause.Invoke();
         DisplayNextSentence();
     }
@@ -117,11 +130,18 @@ public class DialogueManager : MonoBehaviour
         canStopSentence = true;
         sentenceIsStopped = true;
         alwaysStop = true;
+        typingPaused = true;
         
         if (_currentCoroutine != null)
         {
             StopCoroutine(_currentCoroutine); // Stoppa meningen maybe
         }
     }
-    
+
+
+
+    private void DelayUnpause()
+    {
+        typingPaused = false;
+    }
 }
