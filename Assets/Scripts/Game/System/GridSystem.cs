@@ -65,34 +65,49 @@ namespace Game
             }
         }
 
-        public void HighlightMoveTiles(Vector2Int start, float range, Color color, bool highlightEnemy = false)
+        public void HighlightMoveTiles(Vector2Int start, float range, Color color)
         {
             HashSet<Vector2Int> used = new HashSet<Vector2Int>();
+            HashSet<Vector2Int> highlight = new HashSet<Vector2Int>();
             used.Add(start);
             for (int i = 0; i < range; i++)
             {
                 Vector2Int[] check = used.ToArray();
                 foreach (Vector2Int pos in check)
                 {
-                        if (TileIsFree(pos + Vector2Int.up) && !used.Contains(pos + Vector2Int.up))
-                            used.Add(pos + Vector2Int.up);
+                    if (TileIsFree(pos + Vector2Int.up) && !used.Contains(pos + Vector2Int.up))
+                        used.Add(pos + Vector2Int.up);
 
-                        if (TileIsFree(pos + Vector2Int.right) && !used.Contains(pos + Vector2Int.right))
-                            used.Add(pos + Vector2Int.right);
+                    if (TileIsFree(pos + Vector2Int.right) && !used.Contains(pos + Vector2Int.right))
+                        used.Add(pos + Vector2Int.right);
 
-                        if (TileIsFree(pos + Vector2Int.down) && !used.Contains(pos + Vector2Int.down))
-                            used.Add(pos + Vector2Int.down);
+                    if (TileIsFree(pos + Vector2Int.down) && !used.Contains(pos + Vector2Int.down))
+                        used.Add(pos + Vector2Int.down);
 
-                        if (TileIsFree(pos + Vector2Int.left) && !used.Contains(pos + Vector2Int.left))
-                            used.Add(pos + Vector2Int.left);
+                    if (TileIsFree(pos + Vector2Int.left) && !used.Contains(pos + Vector2Int.left))
+                        used.Add(pos + Vector2Int.left);
+
+                    if (TileIsInBounds(pos + Vector2Int.up) && GetTile(pos + Vector2Int.up).walkable &&
+                        GetTile(pos + Vector2Int.up).linkedEntity != null &&
+                        !highlight.Contains(pos + Vector2Int.up))
+                        highlight.Add(pos + Vector2Int.up);
+                    if (TileIsInBounds(pos + Vector2Int.right) && GetTile(pos + Vector2Int.right).walkable &&
+                        GetTile(pos + Vector2Int.right).linkedEntity != null &&
+                        !highlight.Contains(pos + Vector2Int.right))
+                        highlight.Add(pos + Vector2Int.right);
+                    if (TileIsInBounds(pos + Vector2Int.down) && GetTile(pos + Vector2Int.down).walkable &&
+                        GetTile(pos + Vector2Int.down).linkedEntity != null &&
+                        !highlight.Contains(pos + Vector2Int.down))
+                        highlight.Add(pos + Vector2Int.down);
+                    if (TileIsInBounds(pos + Vector2Int.left) && GetTile(pos + Vector2Int.left).walkable &&
+                        GetTile(pos + Vector2Int.left).linkedEntity != null &&
+                        !highlight.Contains(pos + Vector2Int.left))
+                        highlight.Add(pos + Vector2Int.left);
                 }
             }
-
-            foreach (Vector2Int pos in used)
-            {
-                if (!highlightEnemy && GetTile(pos).linkedEntity != null && !GetTile(pos).linkedEntity.isHuman) continue;
-                SetColor(pos, color);
-            }
+            
+            foreach (Vector2Int pos in used) SetColor(pos, color);
+            foreach (Vector2Int pos in highlight) SetColor(pos, color);
         }
 
         public void MoveUnit(Vector2Int currentPos, Vector2Int newPos)

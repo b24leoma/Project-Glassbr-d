@@ -58,7 +58,7 @@ namespace Game
                         gridSystem.SetHidingSpotColor(demon.target.Position, Color.white);
                     gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                     if (gridSystem.humans.Count == 0) yield break;
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(1f);
                 }
 
                 yield return new WaitForSeconds(0.25f);
