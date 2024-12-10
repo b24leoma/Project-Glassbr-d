@@ -44,9 +44,8 @@ namespace Game
                     {
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
-                            Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
-                            if (gridSystem.GetTile(newPos).hidingSpot) gridSystem.SetHidingSpotColor(newPos, new Color(1,1,1,0.5f));
-                            battleController.Move(actingEntity.Position, newPos);
+                            battleController.Move(GetFullPathLine());
+                            isActing = false;
                             pathLine.positionCount = 1;
                             SetPathLinePos(0, actingEntity.Position);
                         }
@@ -66,16 +65,13 @@ namespace Game
                         }
                         else // ATTACKS ENEMY
                         {
-                            Debug.Log("AAA");
                             if (!actingEntity.hasAttacked && !hoveredEntity.isHuman && gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount-1), hoveredEntity.Position) <=
                                 actingEntity.AttackRange)
                             {
                                 Vector2Int newPos = GetPathLinePos(pathLine.positionCount - 1);
                                 if (newPos != actingEntity.Position && actingEntity.IsMelee)
                                 {
-                                    if (gridSystem.GetTile(newPos).hidingSpot)
-                                        gridSystem.SetHidingSpotColor(newPos, new Color(1, 1, 1, 0.5f));
-                                    battleController.Move(actingEntity.Position, newPos);
+                                    battleController.Move(GetFullPathLine());
                                     pathLine.positionCount = 1;
                                     SetPathLinePos(0, actingEntity.Position);
                                 }
@@ -250,6 +246,16 @@ namespace Game
             if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.5f));
         }
 
+        private Vector2Int[] GetFullPathLine()
+        {
+            Vector2Int[] path = new Vector2Int[pathLine.positionCount];
+            for (int i = 0; i < pathLine.positionCount; i++)
+            {
+                path[i] = GetPathLinePos(i);
+            }
+
+            return path;
+        }
         private Vector2Int GetPathLinePos(int pos)
         {
             return new Vector2Int((int)(pathLine.GetPosition(pos).x + 0.5f), (int)(pathLine.GetPosition(pos).y + 0.5f));

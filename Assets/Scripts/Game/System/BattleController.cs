@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -106,17 +107,35 @@ namespace Game
         }
 
 
-        public void Move(Vector2Int from, Vector2Int to)
+        public void Move(Vector2Int[] movements)
         {
-            gridSystem.MoveUnit(from, to);
-            gridSystem.GetTile(to).linkedEntity.SetMoving(true);
-            FMODManager.instance.OneShot("GenericWalk", new Vector3(to.x, to.y, 0));
+            StartCoroutine(AnimateMove(movements));
+            gridSystem.GetTile(movements[0]).linkedEntity.SetMoving(true);
+            FMODManager.instance.OneShot("GenericWalk", new Vector3(0, 0, 0));
             if (isTutorial)
             {
                 TutorialTrigger();
             }
             
         }
+
+        private IEnumerator AnimateMove(Vector2Int[] pos)
+        {
+            Vector2Int startPos = pos[0];
+            if (gridSystem.GetTile(startPos).hidingSpot)
+                gridSystem.SetHidingSpotColor(startPos, Color.white);
+            for (int i = 1; i < pos.Length; i++)
+            {
+                if (gridSystem.GetTile(pos[i-1]).hidingSpot)
+                    gridSystem.SetHidingSpotColor(pos[i-1], Color.white);
+                gridSystem.ConnectToTile(pos[i-1], gridSystem.GetTile(startPos).linkedEntity);
+                if (gridSystem.GetTile(pos[i]).hidingSpot)
+                    gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
+                yield return new WaitForSeconds(0.2f);
+            }
+            gridSystem.MoveUnit(pos[0], pos[^1]);
+        }
+        
         public void Attack(Entity attacker, Entity target)
         {
             

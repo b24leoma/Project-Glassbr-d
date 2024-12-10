@@ -36,26 +36,18 @@ namespace Game
                 }
                 
                 Vector2Int[] path = gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                demonCurrentPos = path[^1];
-                if (demon.Position != demonCurrentPos)
-                {
-                    if (gridSystem.GetTile(demon.Position).hidingSpot)
-                        gridSystem.SetHidingSpotColor(demon.Position, Color.white);
-                    if (gridSystem.GetTile(demonCurrentPos).hidingSpot)
-                        gridSystem.SetHidingSpotColor(demonCurrentPos, new Color(1, 1, 1, 0.5f));
-                    battleController.Move(demon.Position, demonCurrentPos);
-                }
+                battleController.Move(path);
 
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(path.Length * 0.2f + 0.5f);
                 GetClosestTarget(demon);
                 if (!hasAttacked && gridSystem.GetGridDistance(demon.Position, demon.target.Position) <=
                     demon.AttackRange)
                 {
-                    battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity,
+                    battleController.Attack(demon,
                         demon.target);
                     if (demon.target.CurrentHealth <= 0 && gridSystem.GetTile(demon.target.Position).hidingSpot)
                         gridSystem.SetHidingSpotColor(demon.target.Position, Color.white);
-                    gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
+                    demon.SetAttacking(true);
                     if (gridSystem.humans.Count == 0) yield break;
                     yield return new WaitForSeconds(1f);
                 }
