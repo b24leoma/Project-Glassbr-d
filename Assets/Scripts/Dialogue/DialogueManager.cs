@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
     // För dialogue kontroll
      [SerializeField] private List<int> stopAfterSentence = new List<int>();
      public bool canStopSentence=true;
-     [SerializeField] int currentSentence;
+     public int currentSentence;
      public bool sentenceIsStopped;
      public bool alwaysStop;
      private Coroutine _currentCoroutine;
