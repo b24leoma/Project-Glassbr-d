@@ -205,9 +205,19 @@ namespace Game
                     {
                         if (gridSystem.GetTile(pos).linkedEntity is Demon demon)
                         {
-                            if (gridSystem.GetGridDistance(actingEntity.Position, pos) <=
-                                actingEntity.AttackRange)
-                                demon.DisplayAttackingImage(true, hoveredTile == pos ? Color.red : Color.white);
+                            if (actingEntity.IsMelee && gridSystem.GetGridDistance(actingEntity.Position, pos) <=
+                                actingEntity.MoveRange + actingEntity.AttackRange)
+                            {
+                                if (hoveredTile == pos && gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount-1), pos) <= 1) demon.DisplayAttackingImage(true, Color.red);
+                                else demon.DisplayAttackingImage(true, Color.white);
+                            }
+                            else if (!actingEntity.IsMelee && gridSystem.GetGridDistance(actingEntity.Position, pos) <=
+                                     actingEntity.AttackRange)
+                            {
+                                if (hoveredTile == pos && gridSystem.GetGridDistance(actingEntity.Position, pos) <=
+                                    actingEntity.AttackRange) demon.DisplayAttackingImage(true, Color.red);
+                                else demon.DisplayAttackingImage(true, Color.white);
+                            }
                             else demon.DisplayAttackingImage(false, Color.white);
 
                         }
