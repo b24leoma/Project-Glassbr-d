@@ -47,6 +47,7 @@ namespace Game
                 }
 
                 yield return new WaitForSeconds(0.5f);
+                GetClosestTarget(demon);
                 if (!hasAttacked && gridSystem.GetGridDistance(demon.Position, demon.target.Position) <=
                     demon.AttackRange)
                 {
