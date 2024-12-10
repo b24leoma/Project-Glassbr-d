@@ -108,7 +108,7 @@ namespace Game
 
         public IEnumerator Move(Vector2Int[] pos, bool attackAfter, Entity attackTarget = null)
         {
-            gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(true);
+            gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(pos.Length > 1);
             FMODManager.instance.OneShot("GenericWalk", new Vector3(0, 0, 0));
             if (isTutorial)
             {
@@ -129,7 +129,10 @@ namespace Game
                     gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
                 yield return new WaitForSeconds(0.2f);
             }
-            if (attackAfter) Attack(gridSystem.GetTile(pos[^1]).linkedEntity, attackTarget);
+            if (attackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <= entity.AttackRange)
+            {
+                Attack(entity, attackTarget);
+            }
         }
         
         public void Attack(Entity attacker, Entity target)

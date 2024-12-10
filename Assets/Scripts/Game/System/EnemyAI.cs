@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 namespace Game
@@ -18,28 +17,31 @@ namespace Game
             yield return new WaitForSeconds(1);
             for (int i = 0; i < gridSystem.demons.Count; i++)
             {
-                Demon demon = gridSystem.GetTile(gridSystem.demons[i]).linkedEntity as Demon;
-                Vector2Int demonCurrentPos = demon.Position;
-                GetClosestTarget(demon);
-                bool hasAttacked = false;
-
-
-                //Attack before move
-                if (gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
-                    demon.AttackRange)
+                if (gridSystem.GetTile(gridSystem.demons[i]).linkedEntity is Demon demon)
                 {
-                    gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
-                    battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                    hasAttacked = true;
-                    yield return new WaitForSeconds(1);
-                    if (gridSystem.humans.Count == 0) yield break;
+                    Vector2Int demonCurrentPos = demon.Position;
                     GetClosestTarget(demon);
+                    bool hasAttacked = false;
+
+
+                    //Attack before move
+                    if (gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
+                        demon.AttackRange)
+                    {
+                        gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
+                        battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
+                        hasAttacked = true;
+                        yield return new WaitForSeconds(1);
+                        if (gridSystem.humans.Count == 0) yield break;
+                        GetClosestTarget(demon);
+                    }
+
+                    Vector2Int[] path =
+                        gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
+                    StartCoroutine(battleController.Move(path, !hasAttacked, demon.target));
+
+                    yield return new WaitForSeconds(1.5f);
                 }
-                
-                Vector2Int[] path = gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                StartCoroutine(battleController.Move(path, !hasAttacked && gridSystem.GetGridDistance(demon.Position, demon.target.Position) <= 1, demon.target));
-                
-                yield return new WaitForSeconds(0.5f);
             }
 
             EndTurn();
@@ -49,11 +51,13 @@ namespace Game
         {
             foreach (Vector2Int demonPos in gridSystem.demons)
             {
-                Demon demon = gridSystem.GetTile(demonPos).linkedEntity as Demon;
-                demon.SetAttacking(false);
-                demon.SetMoving(false);
+                if (gridSystem.GetTile(demonPos).linkedEntity is Demon demon)
+                {
+                    demon.SetAttacking(false);
+                    demon.SetMoving(false);
+                }
             }
-            
+
             battleController.EndTurn();
         }
 
