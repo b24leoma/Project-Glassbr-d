@@ -21,6 +21,8 @@ public class TutorialManager : MonoBehaviour
     private PlayerAttackSystem playerAttackSystem;
 
     private TutorialScript tutorialScript;
+    [SerializeField] private int sentencenumber;
+    [SerializeField] DialogueManager dialogueManager;
 
     private void Start()
     {
@@ -38,10 +40,14 @@ public class TutorialManager : MonoBehaviour
         {
             playerAttackSystem.SetPaused(true);
         }
+
+        sentencenumber = dialogueManager.currentSentence;
+
     }
 
     public void TotalStateChecker()
     {
+        sentencenumber = dialogueManager.currentSentence;
         var characters = battleController.GetCharacters();
 
         if (characters == null)
@@ -66,4 +72,16 @@ public class TutorialManager : MonoBehaviour
     {
         Debug.Log("WOWIE I DID THE OTHER THING");
     }
+
+
+
+    public void TryNextSentence(int eventnumber)
+    {
+       if (sentencenumber == eventnumber)
+       {
+           dialogueManager.UnpauseDialogue();
+       }
+       
+    }
+
 }
