@@ -28,6 +28,7 @@ namespace Game
         [SerializeField] private GameObject humanArcher;
         [SerializeField] private GameObject demonSwordsman;
         [SerializeField] private GameObject demonTank;
+        [SerializeField] private GameObject damageNumber;
         private List<Entity> characters;
         private int level;
         private string currentScene;
@@ -150,6 +151,9 @@ namespace Game
             float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
                 .damageReductionPercent / 100f);
             target.TakeDamage(reduction * attacker.Damage);
+            GameObject dmg = Instantiate(damageNumber);
+            dmg.transform.position = target.transform.position;
+            dmg.GetComponent<DamageNumber>().SetDamage(reduction * attacker.Damage);
             if (target.CurrentHealth <= 0)
             {
                 if (target.isHuman)
