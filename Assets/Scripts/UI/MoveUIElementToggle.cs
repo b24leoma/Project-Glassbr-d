@@ -1,7 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Vector2 = UnityEngine.Vector2;
 
 public class MoveUIElementToggle : MonoBehaviour
 {

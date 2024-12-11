@@ -80,3 +80,5 @@ fmod_editor.log
 /[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+Assets/StreamingAssets/Master.bank.meta
+Assets/StreamingAssets/Master.strings.bank.meta
