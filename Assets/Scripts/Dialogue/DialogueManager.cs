@@ -105,8 +105,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         StopAllCoroutines();
-        
-        //        animator.SetBool("isOpen", false);
+        dialogueField.text = "";
         whenComplete?.Invoke();
         Debug.Log("Ending conversation");
     }

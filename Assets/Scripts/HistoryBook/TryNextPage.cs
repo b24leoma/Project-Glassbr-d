@@ -14,9 +14,9 @@ public class TryNextPage : MonoBehaviour
         }
         
         
-        if (dialogueManager.sentenceIsStopped)
+        if (dialogueManager.typingPaused)
         {
-            Debug.Log("Dialogue manager is stopped.");
+            Debug.Log("No flipping :D");
         }
         else
         {
