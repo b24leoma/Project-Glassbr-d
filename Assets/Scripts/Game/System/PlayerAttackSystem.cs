@@ -81,7 +81,7 @@ namespace Game
                                     else
                                     {
                                         Vector2Int[] movePath = GetFullPathLine();
-                                        movePath = GetFullPathLine().Take(pathLine.positionCount - 1).ToArray();
+                                        movePath = movePath.Take(pathLine.positionCount - 1).ToArray();
                                         StartCoroutine(battleController.Move(movePath, true, hoveredEntity));
                                     }
                                 }
