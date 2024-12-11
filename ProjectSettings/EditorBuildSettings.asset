@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroHistoryBook.unity
     guid: 54e3d5ee99d54bb44b1e92ca9741a78b
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d44c615d383f38a48afd00461bcbe36f
   m_configObjects: {}

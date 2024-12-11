@@ -518,9 +518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae953ebb58e5254caa6d50819c95376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPosition: {x: 0, y: 0}
-  duration: 0
-  targetCanvas: {fileID: 0}
+  targetPosition: {x: 0, y: 0}
+  duration: 1
+  targetCanvas: {fileID: 1252520616}
 --- !u!114 &1124689675
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ namespace Game
         // ReSharper disable Unity.PerformanceAnalysis
         private IEnumerator DoTheMagic()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2.5f);
             for (int i = 0; i < gridSystem.demons.Count; i++)
             {
                 if (gridSystem.GetTile(gridSystem.demons[i]).linkedEntity is Demon demon)
@@ -25,7 +25,7 @@ namespace Game
 
 
                     //Attack before move
-                    if (gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
+                    if (demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
                         demon.AttackRange)
                     {
                         gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
