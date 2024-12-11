@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -71,7 +72,19 @@ namespace Game
                                     gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
                                         hoveredEntity.Position) <=
                                     actingEntity.AttackRange)
-                                    StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
+                                {
+                                    if (gridSystem.GetGridDistance(actingEntity.Position, hoveredEntity.Position) <=
+                                        actingEntity.AttackRange)
+                                    {
+                                        battleController.Attack(actingEntity, hoveredEntity);
+                                    }
+                                    else
+                                    {
+                                        Vector2Int[] movePath = GetFullPathLine();
+                                        movePath = GetFullPathLine().Take(pathLine.positionCount - 1).ToArray();
+                                        StartCoroutine(battleController.Move(movePath, true, hoveredEntity));
+                                    }
+                                }
                                 else if (!actingEntity.IsMelee &&
                                          gridSystem.GetGridDistance(actingEntity.Position, hoveredEntity.Position) <=
                                          actingEntity.AttackRange) battleController.Attack(actingEntity, hoveredEntity);
