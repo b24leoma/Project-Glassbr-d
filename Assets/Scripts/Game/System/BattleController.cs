@@ -148,8 +148,7 @@ namespace Game
             }
             
             
-            float reduction = 1 - (gridSystem.GetTile(new Vector2Int((int)(target.Position.x+0.6f), (int)(target.Position.y+0.6f))) //0.6 due to floating point math suck
-                .damageReductionPercent / 100f);
+            float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
             target.TakeDamage(reduction * attacker.Damage);
             GameObject dmg = Instantiate(damageNumber);
             dmg.transform.position = target.transform.position;
