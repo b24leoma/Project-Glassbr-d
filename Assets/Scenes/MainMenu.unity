@@ -2736,7 +2736,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1578944123}
         m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
         m_MethodName: MasterMiddleman
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3848,7 +3848,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1578944123}
         m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
         m_MethodName: SfxMiddleman
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4351,7 +4351,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1578944123}
         m_TargetAssemblyTypeName: AudioSilvertejp, Assembly-CSharp
         m_MethodName: MusicMiddleman
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4434,6 +4434,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1674289376}
   - {fileID: 865937998}
+  - {fileID: 1578944124}
   - {fileID: 5199948414765585349}
   - {fileID: 2081761017}
-  - {fileID: 1578944124}
