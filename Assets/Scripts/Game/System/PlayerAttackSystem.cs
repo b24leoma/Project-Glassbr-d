@@ -80,9 +80,7 @@ namespace Game
                                     }
                                     else
                                     {
-                                        Vector2Int[] movePath = GetFullPathLine();
-                                        movePath = movePath.Take(pathLine.positionCount - 1).ToArray();
-                                        StartCoroutine(battleController.Move(movePath, true, hoveredEntity));
+                                        StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
                                     }
                                 }
                                 else if (!actingEntity.IsMelee &&
