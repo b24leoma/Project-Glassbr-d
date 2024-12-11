@@ -16,7 +16,7 @@ public class TryNextPage : MonoBehaviour
         
         if (dialogueManager.typingPaused)
         {
-            Debug.Log("Dialogue typing is false.");
+            Debug.Log("No flipping :D");
         }
         else
         {
