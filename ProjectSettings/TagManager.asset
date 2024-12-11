@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: shadow
+    uniqueID: 679617725
+    locked: 0
   - name: page details
     uniqueID: 919932695
     locked: 0
