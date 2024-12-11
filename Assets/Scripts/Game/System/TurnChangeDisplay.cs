@@ -12,7 +12,7 @@ public class TurnChangeDisplay : MonoBehaviour
     private float stayTimer;
     private Vector3 startPos;
 
-    void Start()
+    void OnEnable()
     {
         startPos = transform.position;
     }
