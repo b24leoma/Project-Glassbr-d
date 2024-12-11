@@ -5,7 +5,7 @@ public class DamageNumber : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float fadeSpeed;
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private TextMeshPro text;
     private Color alpha;
 
     public void SetDamage(float damage)

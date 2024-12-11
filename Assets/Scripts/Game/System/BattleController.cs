@@ -107,7 +107,7 @@ namespace Game
             characters.Add(e);
         }
 
-        public IEnumerator Move(Vector2Int[] pos, bool attackAfter, Entity attackTarget = null)
+        public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null)
         {
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
             if (pos != null && pos.Length > 1)
@@ -133,7 +133,7 @@ namespace Game
                 }
             }
 
-            if (attackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <= entity.AttackRange)
+            if (tryAttackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <= entity.AttackRange)
             {
                 Attack(entity, attackTarget);
             }
