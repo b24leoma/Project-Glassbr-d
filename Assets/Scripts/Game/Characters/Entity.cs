@@ -23,9 +23,6 @@ namespace Game
         public int AttackRange;
         public bool IsMelee { get; protected set; }
         
-        [SerializeField] protected GameObject movingIcon;
-        [SerializeField] protected GameObject attackingIcon;
-        
         [HideInInspector] public bool isHuman;
         [HideInInspector] public bool hasMoved;
         [HideInInspector] public bool hasAttacked;
@@ -57,16 +54,14 @@ namespace Game
         }
 
 
-        public void SetMoving(bool moving)
+        public virtual void SetMoving(bool moving)
         {
             hasMoved = moving;
-            movingIcon.SetActive(moving);
         }
 
-        public void SetAttacking(bool attacking)
+        public virtual void SetAttacking(bool attacking)
         {
             hasAttacked = attacking;
-            attackingIcon.SetActive(attacking);
             if (attacking) PlayAttack();
                 
         }
@@ -76,7 +71,7 @@ namespace Game
             Destroy(gameObject);
         }
         
-        private void PlayAttack()
+        protected void PlayAttack()
         {
             animator.SetTrigger("Attack");
         }

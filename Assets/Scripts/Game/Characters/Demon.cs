@@ -5,8 +5,8 @@ namespace Game
     public class Demon : Entity
     {
         [SerializeField] private GameObject AttackingImage;
+        [HideInInspector] public Human target;
         private SpriteRenderer attackImg;
-        public Human target;
         // Start is called before the first frame update
         void Awake()
         {
