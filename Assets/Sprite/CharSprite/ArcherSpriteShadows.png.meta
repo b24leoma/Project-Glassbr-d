@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 72c4d0821df25104ca91e9ad51191c8e
+guid: b134bfa8c12e2e0488ea08f8a527d410
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -73,8 +73,8 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -84,12 +84,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
-    compressionQuality: 100
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NewAnimSpritesheet_Archer_0
+      name: pixil-frame-0 (2)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04ba8a4eae45cb4c95f3e2bb3dd2b02
-      internalID: 1240071072
+      spriteID: 5bdac621c36cd464cb5ae2a671d5eff7
+      internalID: 684494214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewAnimSpritesheet_Archer_1
+      name: pixil-frame-0 (2)_1
       rect:
         serializedVersion: 2
         x: 48
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f6171256dfb6444cacbe0d01815c7df
-      internalID: 1034552492
+      spriteID: 7f4480c756876074895f25389f5b5886
+      internalID: 2067252303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewAnimSpritesheet_Archer_2
+      name: pixil-frame-0 (2)_2
       rect:
         serializedVersion: 2
         x: 96
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5706889e5f0098c448db5f304671f14a
-      internalID: -417055468
+      spriteID: cbd3f6a35af41344f9708640b41725c4
+      internalID: -815784503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewAnimSpritesheet_Archer_3
+      name: pixil-frame-0 (2)_3
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7217d873a6dcc408797d7341ca8cec
-      internalID: -1745558746
+      spriteID: e5fcb95ff810b834c9bb9b779e6743f2
+      internalID: -1962402308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewAnimSpritesheet_Archer_4
+      name: pixil-frame-0 (2)_4
       rect:
         serializedVersion: 2
         x: 48
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4acd26b7510ac504eac63d7cfbda4e59
-      internalID: -2141604296
+      spriteID: 52725821163532c4dbd4d3cabc4d4854
+      internalID: 2140272594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewAnimSpritesheet_Archer_5
+      name: pixil-frame-0 (2)_5
       rect:
         serializedVersion: 2
         x: 96
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd9c31290e5d4d04bbb402d708ab1475
-      internalID: 145514683
+      spriteID: 4dca4a708e77ac144b1bfe160fdea360
+      internalID: 1987713304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NewAnimSpritesheet_Archer_6
+      name: pixil-frame-0 (2)_6
       rect:
         serializedVersion: 2
         x: 144
@@ -263,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56f82ecf6dfb6114d9d193c75ab3749c
-      internalID: 212981947
+      spriteID: de0aff15317ded544ac4c342559a288e
+      internalID: -618237525
       vertices: []
       indices: 
       edges: []
@@ -280,13 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NewAnimSpritesheet_Archer_0: 1240071072
-      NewAnimSpritesheet_Archer_1: 1034552492
-      NewAnimSpritesheet_Archer_2: -417055468
-      NewAnimSpritesheet_Archer_3: -1745558746
-      NewAnimSpritesheet_Archer_4: -2141604296
-      NewAnimSpritesheet_Archer_5: 145514683
-      NewAnimSpritesheet_Archer_6: 212981947
+      pixil-frame-0 (2)_0: 684494214
+      pixil-frame-0 (2)_1: 2067252303
+      pixil-frame-0 (2)_2: -815784503
+      pixil-frame-0 (2)_3: -1962402308
+      pixil-frame-0 (2)_4: 2140272594
+      pixil-frame-0 (2)_5: 1987713304
+      pixil-frame-0 (2)_6: -618237525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
