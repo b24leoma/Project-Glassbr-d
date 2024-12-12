@@ -170,20 +170,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelEntities:
-  - Position: {x: 0, y: 0}
-    Type: 0
+  - Position: {x: -2, y: 0}
+    Type: 1
   - Position: {x: -1, y: 1}
     Type: 1
-  - Position: {x: 5, y: 0}
-    Type: 2
-  - Position: {x: 5, y: 1}
+  - Position: {x: 1, y: -3}
+    Type: 0
+  - Position: {x: 2, y: 2}
+    Type: 0
+  - Position: {x: 4, y: 0}
     Type: 3
+  - Position: {x: 4, y: 1}
+    Type: 3
+  - Position: {x: 7, y: 2}
+    Type: 2
   Player1TurnStart:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 56033650}
         m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
         m_MethodName: StartTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56033654}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: OnEndTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -208,6 +226,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  TutorialOnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1392535647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   gridSystem: {fileID: 651517034}
   isPlayer1Turn: 1
   canvas: {fileID: 782089870}
@@ -218,7 +251,7 @@ MonoBehaviour:
   entityParent: {fileID: 2146461521}
   humanSpearman: {fileID: 4041778724764704245, guid: 30706882dbe1fe74eac9c0b4e570055e, type: 3}
   humanArcher: {fileID: 9203100527676449050, guid: 6715d71615c804f4293d6bf3ece2941f, type: 3}
-  demonSwordsman: {fileID: 459452346792337390, guid: 78058a0c9a93b0d43999e623667a1e9c, type: 3}
+  demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 459452346792337390, guid: 78058a0c9a93b0d43999e623667a1e9c, type: 3}
   damageNumber: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
 --- !u!4 &56033652
@@ -290,10 +323,22 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1392535647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   onFirstAttack:
     m_PersistentCalls:
@@ -305,10 +350,22 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1392535647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   onFirstMove:
     m_PersistentCalls:
@@ -355,13 +412,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onEndTurn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 56033654}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: TryNextSentence
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 56033651}
-        m_TargetAssemblyTypeName: Game.BattleController, Assembly-CSharp
-        m_MethodName: NextLevel
-        m_Mode: 1
+      - m_Target: {fileID: 1948229807}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -370,7 +442,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  delayEventTimer: 5
+      - m_Target: {fileID: 847310677}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayEventTimer: 2
   sentencenumber: 0
   dialogueManager: {fileID: 846653635}
 --- !u!1 &148753875
@@ -1714,155 +1810,185 @@ MonoBehaviour:
   ObstacleTilemap: {fileID: 1215170048}
   CustomTiles:
   - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 2b52fd2aa45c0294295ecaec92ebe6e9, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 4498f69c19a836d4a9eff60d6fc7caeb, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 0d468a9d9eb4d2f43b9deef85e852476, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: eab158f0960db07439e4458d9bbc7143, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 0849b3d56b6392a43af263a8f39e71fd, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 75d16daa74a88844fb2a32d1155e38c6, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 790d3cd65083d6d41b59f3b3060ee541, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: a0c5b881ed17a7c469ae2b40844de168, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 50832a3c0375fbd409bb306e29f93e21, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 038f75f9509fe7649b86817e27a55ec0, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 6eb1f0d370d191041800989a65fc73f4, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 916b2cddd94e93c4a9e2ecfb0a957359, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: f9837718b1eeeeb4cbceb2cd7105b088, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: f80bf4a65d67e704babbf9ab76d1b41b, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 68ac86532c44f6b42aa8b613f9ace138, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 38244225a82577045bcb008ccd11e2f3, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 4ea344428625a7642bc5d835c26ae7f6, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 6a0c6b4bc91b26343952f8c956f982aa, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 63e6801a19acce14cad9704298400f6c, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 0f943f896eba8b04c896e0f5b0fd7c4a, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: d25861f90ff57104988f661af2072eca, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 3c1bbce6f4982c94080878c866021ef0, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 538f340e2e8778d40bafa1dbdf48583a, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 1c028230dea780742a0af526d9e111a4, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 301ee20849363c346b998df21225fb70, type: 2}
+    walkable: 1
+    hidingSpot: 1
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: eb4370b780b316344b106bd39d47b77b, type: 2}
+    walkable: 1
+    hidingSpot: 1
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 09ec2ed5a7944494596bd6f27d56d6f6, type: 2}
+    walkable: 1
+    hidingSpot: 1
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: faf3ce86e5026884b8402c1e790bc225, type: 2}
+    walkable: 1
+    hidingSpot: 1
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 52c6c38d0c6849b458897fce917bb1f7, type: 2}
+    walkable: 1
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 6a366b2e708e10b4f88be91553c5349b, type: 2}
     walkable: 1
     hidingSpot: 1
-    archerRangeIncrease: 20
+    archerRangeIncrease: 0
     damageReductionPercent: 20
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 328a914fe44562c48ba1aba1029d9307, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 7b51e0a7942672d45b78ec62fbe49b6a, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: a05e433bb8a0acd4988d2f617e4b5029, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: e23e78bf745a04e42a4da5e3f2004cb0, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 27f5361813a49b04cb12521d38d42db8, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5ecb39a9d9bd6e84e91a03f1e3d10642, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 70879f75c96df4c46b1b7e6be350a4c6, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 1a74ae78c0195024fa2ba9395389e368, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: f365d8c882fde304fa4297efd1e8df24, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5fe5479269d76b34fb6a3fbd71e23450, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 4a4530d7952fe4d4fb52fbd9487eaed2, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 1911539b609d9e549bd65eef81e086d4, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 3206e81cafe82854da6dcb2b4beb2b48, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 8d1830b007e3c05478d989edb3d410df, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 153025e54cd6cf5438911ff620e14d17, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: b2a573f680271584e931d0d866046a09, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5a725631c86eccb40b1d648a9b1e902c, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 6694091c816a9e442a9088452ed10c9d, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 7f9071e075ec46f408bb560d8f3b57bc, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 9b2a33a5ba2eb594f8d4de4fff4ebbc3, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 5389f2177fe20f84198d70c5ddd63d5c, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: aedb7f84fa64d144486ec58b092b7a93, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: f367a80dc773516449f793bb6874a308, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
-  - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 45817f4fc76540c40b02764ac35b24bf, type: 2}
-    walkable: 0
-    hidingSpot: 0
-    archerRangeIncrease: 0
-    damageReductionPercent: 0
   demons: []
   humans: []
 --- !u!19719996 &651517035
@@ -5349,7 +5475,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -5370,8 +5496,8 @@ Tilemap:
   - first: {x: -2, y: -5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 12
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5380,8 +5506,8 @@ Tilemap:
   - first: {x: -2, y: -4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 12
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5390,8 +5516,8 @@ Tilemap:
   - first: {x: -2, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 12
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5437,11 +5563,71 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -4, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 15
+      m_TileSpriteIndex: 15
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -2, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 8
+      m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 10
+      m_TileSpriteIndex: 10
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5450,8 +5636,18 @@ Tilemap:
   - first: {x: -2, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5460,8 +5656,8 @@ Tilemap:
   - first: {x: -2, y: 2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5510,8 +5706,8 @@ Tilemap:
   - first: {x: -2, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 12
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5520,8 +5716,8 @@ Tilemap:
   - first: {x: -2, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 12
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5529,25 +5725,73 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 6
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 50832a3c0375fbd409bb306e29f93e21, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 6a366b2e708e10b4f88be91553c5349b, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 6eb1f0d370d191041800989a65fc73f4, type: 2}
+    m_Data: {fileID: 11400000, guid: 1c028230dea780742a0af526d9e111a4, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: f9837718b1eeeeb4cbceb2cd7105b088, type: 2}
+    m_Data: {fileID: 11400000, guid: 38244225a82577045bcb008ccd11e2f3, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a0c5b881ed17a7c469ae2b40844de168, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 4498f69c19a836d4a9eff60d6fc7caeb, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 2b52fd2aa45c0294295ecaec92ebe6e9, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 68ac86532c44f6b42aa8b613f9ace138, type: 2}
+  - m_RefCount: 5
+    m_Data: {fileID: 11400000, guid: f80bf4a65d67e704babbf9ab76d1b41b, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 5f57a9a36e65f4b44813762ada128e87, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 4ea344428625a7642bc5d835c26ae7f6, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 6a0c6b4bc91b26343952f8c956f982aa, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 6
-    m_Data: {fileID: -184197557, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 8
     m_Data: {fileID: -1856142260, guid: 771e454a157f75e46b982e8bfd6789a6, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 5
+    m_Data: {fileID: 39124009, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: -1273747760, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+    m_Data: {fileID: -184197557, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1693804052, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+    m_Data: {fileID: 273729628, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1208741212, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -2080252793, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -923247028, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1160831118, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -982059391, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1076640333, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 451147070, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -2042706329, guid: fca184875e07a1141a26af7b0b7c07d5, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 16
+  - m_RefCount: 23
     m_Data:
       e00: 1
       e01: 0
@@ -5566,7 +5810,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 16
+  - m_RefCount: 23
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -5610,7 +5854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1392535648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6306,7 +6550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

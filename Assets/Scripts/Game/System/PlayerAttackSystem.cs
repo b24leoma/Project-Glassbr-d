@@ -281,15 +281,13 @@ namespace Game
                             else if (!hoveredEntity.IsMelee && gridSystem.GetGridDistance(hoveredEntity.Position, pos) <=
                                      hoveredEntity.AttackRange) 
                                 demon.DisplayAttackingImage(true, Color.white);
-                            
                             else demon.DisplayAttackingImage(false, Color.white);
-
                         }
                     }
                 }
             }
             gridSystem.SetColor(hoveredTile, new Color(0.6f, 0.6f, 0.6f));
-            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.5f));
+            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.4f));
         }
 
         private Vector2Int[] GetFullPathLine()
@@ -335,6 +333,7 @@ namespace Game
             isPaused = paused;
             isActing = false;
             pathLine.positionCount = 1;
+            gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
         }
     }
 }

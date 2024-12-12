@@ -14,6 +14,7 @@ namespace Game
         [Header("Events")]
         [SerializeField] private UnityEvent Player1TurnStart;
         [SerializeField] private UnityEvent Player2TurnStart;
+        [SerializeField] private UnityEvent TutorialOnStart;
         [Header("Components")]
         [SerializeField] private GridSystem gridSystem;
         [SerializeField] private bool isPlayer1Turn;
@@ -64,6 +65,7 @@ namespace Game
                 characters.RemoveAt(i);
             }
             LoadLevel();
+            if (isTutorial) TutorialOnStart?.Invoke();
         }
 
         void LoadLevel()
@@ -123,7 +125,7 @@ namespace Game
                         gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
                     entity.MoveToTile(pos[i]);
                     if (gridSystem.GetTile(pos[i]).hidingSpot)
-                        gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.5f));
+                        gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.4f));
                     yield return new WaitForSeconds(0.2f);
                 }
             }
