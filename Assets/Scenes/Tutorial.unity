@@ -4371,7 +4371,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  stopAfterSentence: 050000000800000009000000
+  stopAfterSentence: 050000000700000009000000
   canStopSentence: 0
   currentSentence: 0
   sentenceIsStopped: 1
