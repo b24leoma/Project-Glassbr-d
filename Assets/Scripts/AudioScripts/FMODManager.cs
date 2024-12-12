@@ -4,9 +4,9 @@ using UnityEngine;
 public class FMODManager : MonoBehaviour
 {
     public static FMODManager instance { get; private set; }
-    [SerializeField] private FMODRefData [] fmodRefData;
-private FMOD.Studio.EventInstance _currentTimelineInstance;
-private const string BattleMusic = "Battle";
+    [SerializeField] private FMODRefData[] fmodRefData;
+    private FMOD.Studio.EventInstance _currentTimelineInstance;
+    private const string BattleMusic = "Battle";
 
     private void Awake()
     {
@@ -16,12 +16,12 @@ private const string BattleMusic = "Battle";
             Destroy(gameObject);
             return;
         }
+
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    
-    
-    private EventReference GetEventReference (string eventName)
+
+    private EventReference GetEventReference(string eventName)
     {
         foreach (var fmodRefDataEntry in fmodRefData)
         {
@@ -32,14 +32,81 @@ private const string BattleMusic = "Battle";
                     return audioEvent.eventReference;
                 }
             }
+             
+            // I AM SO SORRY BUT I AM TIRED 
+            if (fmodRefDataEntry is HumanFMODRefTemplate humanTemplate)
+            {
+                foreach (var audioEvent in humanTemplate.attackEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+
+                foreach (var audioEvent in humanTemplate.damageEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+
+                foreach (var audioEvent in humanTemplate.deathEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+
+                foreach (var audioEvent in humanTemplate.moveEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+            }
+            else if (fmodRefDataEntry is DemonFMODRefTemplate demonTemplate)
+            {
+                foreach (var audioEvent in demonTemplate.attackEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+
+                foreach (var audioEvent in demonTemplate.damageEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+
+                foreach (var audioEvent in demonTemplate.deathEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+
+                foreach (var audioEvent in demonTemplate.moveEvents)
+                {
+                    if (audioEvent.nameRef == eventName)
+                    {
+                        return audioEvent.eventReference;
+                    }
+                }
+            }
         }
 
-        
-        
         Debug.LogWarning("FMOD Manager event not found!");
         return default;
     }
-
 
     public void NewTimeline(string eventName)
     {
@@ -50,17 +117,12 @@ private const string BattleMusic = "Battle";
             Debug.LogWarning($"FMOD event '{eventName}' is null or not found!");
             return;
         }
-        
+
         StopAndRemoveTimeline();
 
         _currentTimelineInstance = RuntimeManager.CreateInstance(eventReference);
         _currentTimelineInstance.start();
     }
-    
-  
-    
-    
-
 
     private void StopAndRemoveTimeline()
     {
@@ -84,10 +146,6 @@ private const string BattleMusic = "Battle";
             _currentTimelineInstance.setParameterByName(parameterName, value);
         }
     }
-
-
-    
-
 
     public void OneShot(string eventName, Vector3? position = null)
     {

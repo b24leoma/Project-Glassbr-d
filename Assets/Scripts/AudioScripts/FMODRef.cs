@@ -3,7 +3,7 @@ using FMODUnity;
 using UnityEngine.Rendering;
 
 
-[CreateAssetMenu(menuName = "Audio/FMODSound")]
+[CreateAssetMenu(menuName = "Audio/FMODReferenceData")]
 
 public class FMODRefData : ScriptableObject
 {

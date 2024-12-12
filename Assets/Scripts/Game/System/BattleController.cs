@@ -105,7 +105,6 @@ namespace Game
             if (pos != null && pos.Length > 1)
             {
                 gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(true);
-                FMODManager.instance.OneShot("GenericWalk", new Vector3(0, 0, 0));
                 gridSystem.MoveUnit(pos[0], pos[^1]);
                 if (gridSystem.GetTile(pos[0]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[0], Color.white);
@@ -114,6 +113,7 @@ namespace Game
                     if (gridSystem.GetTile(pos[i - 1]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
                     entity.MoveToTile(pos[i]);
+                    SFX.MOVE(entity.Type, entity.transform.position);
                     if (gridSystem.GetTile(pos[i]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.4f));
                     yield return new WaitForSeconds(0.2f);
@@ -162,8 +162,7 @@ namespace Game
             {
                 tutorialManager.TotalStateChecker();
             }
-            FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
-            FMODManager.instance.OneShot("GenericHit", target.transform.position);
+           
             
         }
 

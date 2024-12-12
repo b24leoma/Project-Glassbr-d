@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dfd7c0aaad88d47a2302e17986487a, type: 3}
+  m_Name: Demon_Swordsman
+  m_EditorClassIdentifier: 
+  audioEvents: []
+  miscEvents: []
+  attackEvents:
+  - nameRef: ATK_Demon.Sword
+    eventReference:
+      Guid:
+        Data1: -271617029
+        Data2: 1230054026
+        Data3: 139029161
+        Data4: 1559222730
+      Path: event:/Hit
+  damageEvents:
+  - nameRef: DMG_Demon.Sword
+    eventReference:
+      Guid:
+        Data1: -271617029
+        Data2: 1230054026
+        Data3: 139029161
+        Data4: 1559222730
+      Path: event:/Hit
+  deathEvents:
+  - nameRef: DEATH_Demon.Sword
+    eventReference:
+      Guid:
+        Data1: -271617029
+        Data2: 1230054026
+        Data3: 139029161
+        Data4: 1559222730
+      Path: event:/Hit
+  moveEvents:
+  - nameRef: MOVE_Demon.Sword
+    eventReference:
+      Guid:
+        Data1: -229300437
+        Data2: 1250876390
+        Data3: 891156660
+        Data4: -271788847
+      Path: event:/Walk

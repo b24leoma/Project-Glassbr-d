@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game
@@ -43,6 +44,7 @@ namespace Game
             if (!healthBar.IsActive()) healthBar.gameObject.SetActive(true);
             CurrentHealth -= (int)damage;
             healthBar.value = CurrentHealth;
+            SFX.DMG(Type, transform.position);
         }
 
 
@@ -83,6 +85,7 @@ namespace Game
         protected void PlayAttack()
         {
             animator.SetTrigger("Attack");
+            SFX.ATK(Type, transform.position);
         }
     }
 
