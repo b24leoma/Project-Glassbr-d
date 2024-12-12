@@ -10,7 +10,7 @@ public class TextGlowAnimator : MonoBehaviour
     [Range(0f, 1f), SerializeField] private float targetValue = 1f;
     private float _glowOuter;
     [SerializeField] private LoopType loopType;
-    [SerializeField] private EaseType easeType;
+    [SerializeField] private Ease easeType;
     void Start()
     {
         if (targetText.fontMaterial == null)
@@ -29,33 +29,12 @@ public class TextGlowAnimator : MonoBehaviour
                 _glowOuter = x;
                 targetText.fontMaterial.SetFloat(GlowOuter, _glowOuter);
             }, targetValue, duration)
-            .SetLoops(-1, (DG.Tweening.LoopType)loopType)
-            .SetEase((Ease)easeType);
+            .SetLoops(-1, loopType)
+            .SetEase(easeType);
     }
 
 
-    private enum LoopType
-    {
-        Yoyo,
-        Restart,
-        Incremental
-    }
-    
-    
-    private enum EaseType
-    {
-        InOutSine,
-        InSine,
-        OutSine,
-        Linear,
-        InQuad,
-        OutQuad,
-        InOutQuad,
-        InCubic,
-        OutCubic,
-        InOutCubic
-    }
-    
+   //wtf det är inbyggt pog
     
     
 }
