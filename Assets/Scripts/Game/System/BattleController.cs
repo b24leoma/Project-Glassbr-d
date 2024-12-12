@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Game
 {
@@ -31,6 +30,8 @@ namespace Game
         [SerializeField] private GameObject demonSwordsman;
         [SerializeField] private GameObject demonTank;
         [SerializeField] private GameObject damageNumber;
+        [SerializeField] private TextAsset humanNameList;
+        [SerializeField] private TextAsset demonNameList;
         private List<Entity> characters;
         private int level;
         private string currentScene;
@@ -53,31 +54,20 @@ namespace Game
             
             
             
-            NameGenerator.RepopulateList();
+            NameGenerator.ReadFromFile(humanNameList, demonNameList);
             if (gridSystem == null || uiStates == null || canvas == null)
             {
                 Debug.LogError("You forgot to assign some components in the inspector :)");
                 return;
             }
             characters = new List<Entity>();
-            for (int i = characters.Count; i > 0; i++)
-            {
-                Destroy(characters[i].gameObject);
-                characters.RemoveAt(i);
-            }
-            LoadLevel();
-            if (isTutorial) TutorialOnStart?.Invoke();
-        }
-
-        void LoadLevel()
-        {
-            characters.Clear();
             foreach (SpawnEntity spawn in LevelEntities)
             {
                 CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);
             }
             infoDisplay.SetActive(false);
             Player1TurnStart.Invoke();
+            if (isTutorial) TutorialOnStart?.Invoke();
         }
 
         public void NextLevel()

@@ -9,7 +9,10 @@ namespace Game
         void Awake()
         {
            isHuman = true;
-           Name = NameGenerator.GenerateName(true);
+           string[] identity = NameGenerator.GenerateIdentity(true);
+           Name = identity[0];
+           Age = identity[1];
+           Description = identity[2];
         }
         
         public override void SetMoving(bool moving)
