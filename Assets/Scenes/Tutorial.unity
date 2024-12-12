@@ -170,16 +170,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelEntities:
-  - Position: {x: 0, y: 0}
-    Type: 0
+  - Position: {x: -2, y: 0}
+    Type: 1
   - Position: {x: -1, y: 1}
     Type: 1
   - Position: {x: 1, y: -3}
     Type: 0
-  - Position: {x: 1, y: 4}
-    Type: 1
+  - Position: {x: 2, y: 2}
+    Type: 0
   - Position: {x: 4, y: 0}
-    Type: 2
+    Type: 3
   - Position: {x: 4, y: 1}
     Type: 3
   - Position: {x: 7, y: 2}
@@ -226,6 +226,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  TutorialOnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1392535647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   gridSystem: {fileID: 651517034}
   isPlayer1Turn: 1
   canvas: {fileID: 782089870}
@@ -236,7 +251,7 @@ MonoBehaviour:
   entityParent: {fileID: 2146461521}
   humanSpearman: {fileID: 4041778724764704245, guid: 30706882dbe1fe74eac9c0b4e570055e, type: 3}
   humanArcher: {fileID: 9203100527676449050, guid: 6715d71615c804f4293d6bf3ece2941f, type: 3}
-  demonSwordsman: {fileID: 459452346792337390, guid: 78058a0c9a93b0d43999e623667a1e9c, type: 3}
+  demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 459452346792337390, guid: 78058a0c9a93b0d43999e623667a1e9c, type: 3}
   damageNumber: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
 --- !u!4 &56033652
@@ -313,6 +328,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1392535647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onFirstAttack:
     m_PersistentCalls:
       m_Calls:
@@ -327,6 +354,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1392535647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   onFirstMove:
     m_PersistentCalls:
@@ -394,6 +433,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1948229807}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 847310677}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: SetPaused
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5791,7 +5854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1392535648
 RectTransform:
   m_ObjectHideFlags: 0

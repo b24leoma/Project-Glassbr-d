@@ -281,9 +281,7 @@ namespace Game
                             else if (!hoveredEntity.IsMelee && gridSystem.GetGridDistance(hoveredEntity.Position, pos) <=
                                      hoveredEntity.AttackRange) 
                                 demon.DisplayAttackingImage(true, Color.white);
-                            
                             else demon.DisplayAttackingImage(false, Color.white);
-
                         }
                     }
                 }

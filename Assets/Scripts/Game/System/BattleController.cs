@@ -14,6 +14,7 @@ namespace Game
         [Header("Events")]
         [SerializeField] private UnityEvent Player1TurnStart;
         [SerializeField] private UnityEvent Player2TurnStart;
+        [SerializeField] private UnityEvent TutorialOnStart;
         [Header("Components")]
         [SerializeField] private GridSystem gridSystem;
         [SerializeField] private bool isPlayer1Turn;
@@ -64,6 +65,7 @@ namespace Game
                 characters.RemoveAt(i);
             }
             LoadLevel();
+            if (isTutorial) TutorialOnStart?.Invoke();
         }
 
         void LoadLevel()
