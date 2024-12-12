@@ -11,7 +11,10 @@ namespace Game
         void Awake()
         {
             isHuman = false;
-            Name = NameGenerator.GenerateName(false);
+            string[] identity = NameGenerator.GenerateIdentity(false);
+            Name = identity[0];
+            Age = identity[1];
+            Description = identity[2];
             attackImg = AttackingImage.GetComponent<SpriteRenderer>();
         }
 
