@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -168,10 +169,9 @@ namespace Game
                         uiStates.TogglePanel(1);
                     }
                 }
+
                 target.Kill();
-                
             }
-            
             if (isTutorial)
             {
                 tutorialManager.TotalStateChecker();
