@@ -551,6 +551,9 @@ MonoBehaviour:
           m_StringArgument: Demon Turn
           m_BoolArgument: 0
         m_CallState: 2
+  TutorialOnStart:
+    m_PersistentCalls:
+      m_Calls: []
   gridSystem: {fileID: 651517034}
   isPlayer1Turn: 1
   canvas: {fileID: 1234673372}
