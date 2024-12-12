@@ -36,9 +36,12 @@ namespace Game
                         GetClosestTarget(demon);
                     }
 
-                    Vector2Int[] path =
-                        gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                    StartCoroutine(battleController.Move(path, !hasAttacked, demon.target));
+                    if (demon.target.CurrentHealth > 0)
+                    {
+                        Vector2Int[] path =
+                            gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
+                        StartCoroutine(battleController.Move(path, !hasAttacked, demon.target));   
+                    }
 
                     yield return new WaitForSeconds(1.5f);
                 }
@@ -57,8 +60,7 @@ namespace Game
                     demon.SetMoving(false);
                 }
             }
-
-            battleController.EndTurn();
+            if (gridSystem.humans.Count != 0) battleController.EndTurn();
         }
 
         void GetRandomTarget(Demon demon)

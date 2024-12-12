@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -23,6 +24,7 @@ namespace Game
         public int AttackRange;
         public bool IsMelee { get; protected set; }
         
+        [SerializeField] private Slider healthBar;
         [HideInInspector] public bool isHuman;
         [HideInInspector] public bool hasMoved;
         [HideInInspector] public bool hasAttacked;
@@ -35,7 +37,9 @@ namespace Game
 
         public void TakeDamage(float damage)
         {
+            if (!healthBar.IsActive()) healthBar.gameObject.SetActive(true);
             CurrentHealth-= (int)damage;
+            healthBar.value = CurrentHealth;
         }
     
     
@@ -46,6 +50,8 @@ namespace Game
             hasMoved = false;
             CurrentHealth = MaxHealth;
             IsMelee = AttackRange <= 1;
+            healthBar.maxValue = MaxHealth;
+            healthBar.value = MaxHealth;
         }
 
         public void MoveToTile(Vector2Int pos)
