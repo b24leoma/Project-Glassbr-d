@@ -220,7 +220,7 @@ MonoBehaviour:
   humanArcher: {fileID: 9203100527676449050, guid: 6715d71615c804f4293d6bf3ece2941f, type: 3}
   demonSwordsman: {fileID: 459452346792337390, guid: 78058a0c9a93b0d43999e623667a1e9c, type: 3}
   demonTank: {fileID: 459452346792337390, guid: 78058a0c9a93b0d43999e623667a1e9c, type: 3}
-  damageNumber: {fileID: 0}
+  damageNumber: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
 --- !u!4 &56033652
 Transform:
   m_ObjectHideFlags: 0
@@ -4371,7 +4371,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  stopAfterSentence: 050000000800000009000000
+  stopAfterSentence: 05000000070000000800000009000000
   canStopSentence: 0
   currentSentence: 0
   sentenceIsStopped: 1
