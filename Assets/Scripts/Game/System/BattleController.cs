@@ -114,11 +114,6 @@ namespace Game
             {
                 gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(true);
                 FMODManager.instance.OneShot("GenericWalk", new Vector3(0, 0, 0));
-                if (isTutorial)
-                {
-                    TutorialTrigger();
-                }
-                
                 gridSystem.MoveUnit(pos[0], pos[^1]);
                 if (gridSystem.GetTile(pos[0]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[0], Color.white);
@@ -133,21 +128,21 @@ namespace Game
                 }
             }
 
-            if (tryAttackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <= entity.AttackRange)
+            if (tryAttackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <=
+                entity.AttackRange)
             {
                 Attack(entity, attackTarget);
             }
+            else if (isTutorial)
+            {
+                tutorialManager.TotalStateChecker();
+            }
+
         }
-        
+
         public void Attack(Entity attacker, Entity target)
         {
             attacker.SetAttacking(true);   
-            if (isTutorial)
-            {
-                TutorialTrigger();
-            }
-            
-            
             float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
             target.TakeDamage(reduction * attacker.Damage);
             GameObject dmg = Instantiate(damageNumber);
@@ -175,7 +170,10 @@ namespace Game
                 
             }
             
-            
+            if (isTutorial)
+            {
+                tutorialManager.TotalStateChecker();
+            }
             FMODManager.instance.OneShot("GenericAttack", attacker.transform.position);
             FMODManager.instance.OneShot("GenericHit", target.transform.position);
             
@@ -231,11 +229,6 @@ namespace Game
         public void DebugWin()
         {
             uiStates.TogglePanel(1);
-        }
-
-        private void TutorialTrigger ()
-        {
-            tutorialManager.TotalStateChecker();
         }
     }
     
