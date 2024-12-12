@@ -235,7 +235,7 @@ namespace Game
                     }
                 }
             }
-            else if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
+            else if (gridSystem.GetTile(hoveredTile).linkedEntity != null && hoveredEntity != null)
             {
                 if (!hoveredEntity.hasMoved)
                 {
