@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using Game;
@@ -15,6 +16,7 @@ public class TutorialManager : MonoBehaviour
     public UnityEvent onFirstMove;
     public UnityEvent onFirstBush;
     public UnityEvent onBush;
+    public UnityEvent onEndTurn;
     public UnityEvent delayedEvent;
    [Range(0, 10),SerializeField] private float delayEventTimer;
 
@@ -73,7 +75,10 @@ public class TutorialManager : MonoBehaviour
             }
     }
 
-    
+    public void OnEndTurn()
+    {
+        onEndTurn?.Invoke();
+    }
 
 
     public void TryNextSentence(int eventnumber)

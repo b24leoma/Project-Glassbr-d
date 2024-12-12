@@ -120,7 +120,7 @@ public class TutorialScript : MonoBehaviour
 
         tutorialManager.bushCounter++;
     }
-
+    
     private void Attacked()
     {
         
