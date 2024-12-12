@@ -289,7 +289,7 @@ namespace Game
                 }
             }
             gridSystem.SetColor(hoveredTile, new Color(0.6f, 0.6f, 0.6f));
-            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.5f));
+            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.4f));
         }
 
         private Vector2Int[] GetFullPathLine()
