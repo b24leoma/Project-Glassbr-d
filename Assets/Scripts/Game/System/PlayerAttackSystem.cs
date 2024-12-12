@@ -335,6 +335,7 @@ namespace Game
             isPaused = paused;
             isActing = false;
             pathLine.positionCount = 1;
+            gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
         }
     }
 }
