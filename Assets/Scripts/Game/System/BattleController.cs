@@ -29,7 +29,6 @@ namespace Game
         [SerializeField] private GameObject humanArcher;
         [SerializeField] private GameObject demonSwordsman;
         [SerializeField] private GameObject demonTank;
-        [SerializeField] private GameObject damageNumber;
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
         private List<Entity> characters;
@@ -138,9 +137,6 @@ namespace Game
             attacker.SetAttacking(true);   
             float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
             target.TakeDamage(reduction * attacker.Damage);
-            GameObject dmg = Instantiate(damageNumber);
-            dmg.transform.position = target.transform.position;
-            dmg.GetComponent<DamageNumber>().SetDamage(reduction * attacker.Damage);
             if (target.CurrentHealth <= 0)
             {
                 if (target.isHuman)
