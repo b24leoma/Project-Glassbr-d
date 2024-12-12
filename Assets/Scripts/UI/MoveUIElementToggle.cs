@@ -30,6 +30,9 @@ public class MoveUIElementToggle : MonoBehaviour
 
     [Tooltip("Should the first move be teleported? Redundant if duration = 0")]
     [SerializeField] private bool teleportOnStart;
+
+    [Tooltip("Should targetPosition changes call movement? (Default: true)")]
+    [SerializeField] private bool shouldMove = true;
     
 
     [Header("Events")]
@@ -54,7 +57,7 @@ public class MoveUIElementToggle : MonoBehaviour
         
         if (startPosition == default)
         {
-            startPosition = targetObject.transform.localPosition;
+            startPosition = targetObject.GetComponent<RectTransform>().anchoredPosition;
         }
 
         if (targetCanvas == null)
@@ -83,7 +86,7 @@ public class MoveUIElementToggle : MonoBehaviour
     {
         float durationVar = teleportOnStart && _isFirstMove ? 0 : duration;
 
-        targetObject.transform.DOLocalMove(targetPosition, durationVar).SetEase(easeType).OnComplete(() => MoveCompleted(position));
+        targetObject.GetComponent<RectTransform>().DOAnchorPos(position, durationVar).SetEase(easeType).OnComplete(() => MoveCompleted(position));
         _isFirstMove = false;
     }
 
@@ -91,20 +94,55 @@ public class MoveUIElementToggle : MonoBehaviour
 
     public void ToggleMove()
     {
-        Vector2 currentPosition = targetObject.transform.localPosition;
+        Vector2 currentPosition = targetObject.GetComponent<RectTransform>().anchoredPosition;
 
         MoveToPosition(currentPosition == targetPosition ? startPosition : targetPosition);
     }
 
-    public void TargetPositionIsThis(bool shouldMove)
+    
+    
+    public void TargetPositionIsThis(Vector2 moveHere)
     {
-        targetPosition = targetObject.GetComponent<RectTransform>().rect.center;
+          
+        
+        targetPosition = moveHere;
+        
 
         if (shouldMove)
         {
             MoveToPosition(targetPosition);
         }
     }
+
+    public void InformationBroker(GameObject sentObject)
+    {
+        RectTransform canvasRect  = targetCanvas.GetComponent<RectTransform>();
+        RectTransform sentRect = sentObject.GetComponent<RectTransform>();
+        
+        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(targetCanvas.worldCamera, sentRect.position);
+
+        
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPoint, targetCanvas.worldCamera, out Vector2 localPoint))
+        {
+            TargetPositionIsThis(localPoint);
+        }
+        else
+        {
+            Debug.LogError("Failed to convert screen point to local point");
+        }
+    }
+    
+
+
+
+
+
+    
+
+
+
+   
+    
 
     
     private void MoveCompleted(Vector2 position)

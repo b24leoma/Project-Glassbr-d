@@ -52,7 +52,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
-    - _Thicc: 0.05
+    - _Thicc: 0.0017
     m_Colors:
-    - _Color: {r: 3253.322, g: 3253.322, b: 3253.322, a: 1}
+    - _Color: {r: 5.070065, g: 2.0274198, b: 0.50222343, a: 1}
   m_BuildTextureStacks: []
