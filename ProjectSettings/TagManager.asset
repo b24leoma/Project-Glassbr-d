@@ -48,3 +48,6 @@ TagManager:
   - name: page details
     uniqueID: 919932695
     locked: 0
+  - name: UIOverlay
+    uniqueID: 2897628749
+    locked: 0
