@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class UIButtonTweener : MonoBehaviour
 {
@@ -10,9 +7,13 @@ public class UIButtonTweener : MonoBehaviour
 
     [SerializeField] private LoopType loopType;
     [SerializeField] private Ease ease;
-    private Vector3 _startLocalValue;
-    private Vector3 _startWorldValue;
+    [Range(0f,5f),SerializeField] private float sizeDuration = 0.1f;
+    [Range(-5f,5f),SerializeField] private float sizeMultiplier=1.1f;
+    
+    
+    
     private Vector3 _startScale;
+    
 
     void Start()
     {
@@ -20,34 +21,45 @@ public class UIButtonTweener : MonoBehaviour
         {
             targetUIElement = gameObject.GetComponent<RectTransform>();
         }
+        
+        _startScale = targetUIElement.localScale;
 
-        _startLocalValue = targetUIElement.localPosition;
-        _startWorldValue = targetUIElement.position;
-        _startScale = gameObject.transform.localScale;
+       
     }
 
 
     public void UIShake()
     {
-        targetUIElement.DOShakeAnchorPos(0.2f, 10, 1).SetLoops(1, loopType).SetEase(ease);
+        targetUIElement.DOShakeAnchorPos(0.2f, 10, 1).SetLoops(2, loopType).SetEase(ease);
     }
 
 
-
-    public void UISize()
+    public void UISizeIn()
     {
+        targetUIElement.transform.DOScale(_startScale * sizeMultiplier, sizeDuration).SetEase(ease);
+    }
 
-        var endValue = _startScale*1.1f;
-        if (targetUIElement.transform.localScale == endValue)
+    public void UISizeOut()
+    {
+        targetUIElement.transform.DOScale(_startScale,sizeDuration).SetEase(ease).OnComplete(() =>
         {
-            endValue = _startScale;
-        }
+            if (targetUIElement.localScale != _startScale)
+            {
+                targetUIElement.transform.DOScale(_startScale, sizeDuration).SetEase(ease);
+            }
+        });
+    }
 
 
-        targetUIElement.transform.DOScale(endValue,  0.1f).SetLoops(1, loopType).SetEase(ease);
-        
-        //not done 
-
+    public void UISizeInAndOut()
+    {
+        targetUIElement.transform.DOScale(_startScale*sizeMultiplier,sizeDuration).SetLoops(2,loopType).SetEase(ease).OnComplete(() =>
+        {
+            if (targetUIElement.localScale != _startScale)
+            {
+                targetUIElement.transform.DOScale(_startScale, sizeDuration).SetEase(ease);
+            }
+        });
     }
     
 }

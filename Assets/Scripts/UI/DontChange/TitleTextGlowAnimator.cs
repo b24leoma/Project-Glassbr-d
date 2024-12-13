@@ -2,7 +2,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-public class TextGlowAnimator : MonoBehaviour
+public class TitleTextGlowAnimator : MonoBehaviour
 {
     private static readonly int GlowOuter = Shader.PropertyToID("_GlowOuter");
     [SerializeField] private TMP_Text targetText;

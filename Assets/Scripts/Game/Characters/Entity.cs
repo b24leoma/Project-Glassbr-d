@@ -86,13 +86,14 @@ namespace Game
 
         public void Kill()
         {
-            transform.DOShakeRotation(0.4f, 1080f); Debug.Log(Name + ": WEEEEEEEEEEEEEEEEEEEEEEEE");
+            transform.DOShakeRotation(0.4f, 1080f);
+            Debug.Log(Name + ": WEEEEEEEEEEEEEEEEEEEEEEEE");
             transform.DOMoveY(1.5f, 0.2f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutBounce).OnComplete(() =>
             {
                 transform.DOShakePosition(0.3f, new Vector3(0.2f, 0.2f, 0));
             });
-            
-            
+
+
             transform.DOShakeScale(0.6f, 0.3f).OnComplete(() =>
             {
                 _sprite.DOFade(0, 0.3f).OnComplete(() =>
@@ -101,8 +102,8 @@ namespace Game
                     DOTween.Kill(_sprite);
                     Destroy(gameObject);
                 });
-            }); 
-    }
+            });
+        }
 
         protected void PlayAttack()
         {
