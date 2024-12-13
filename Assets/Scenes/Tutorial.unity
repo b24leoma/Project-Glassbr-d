@@ -4604,34 +4604,24 @@ MonoBehaviour:
   dialogue:
     name: aaa
     sentences:
-    - Greetings "Name"! I am proud to be the general selected to introduce you into
-      our ranks. So let me teach you the ropes.
-    - HELP! AAAAAAARRGGHHH!! HEEEEELP!!!
-    - What's going on! Follow me.
-    - 'Demons! Well pretty good timing. I guess we''ll countinue this lesson practically.  '
-    - When you ecounter an army or encampment of demons you want to command your
-      troops to move throughout the battlefield. Do that by (clicking on the troop
-      you want to move and clicking where on the grid it should move, within movement
-      range).
-    - Fantastic maneuvers!
-    - Now then, when a filthy demon is in range of one of your troops' attack it.
-      (A troops' range is the darker tiles around your troop). Now destroy them general.
-      (Click on the troop you want to attack with then hover over a demon and a attack
-      icon on them will light up red if you can attack, then just click the demon
-      to attack).
-    - Once you have made your order your troops will follow, but shortly after the
-      demons will engage back. So you will only have time to move through the battlefield
-      and attack once per troop. (You can see what each troop has done by icons over
-      their heads). (Press end turn to continue the battle).
-    - Your troop seems to be in a dangerous situation, maybe you should move to a
-      more strategic point. Certain parts of the battlefield can offer cover from
-      attacks or give range troops a bigger attack range. Like bushes and walls or
-      heights respectively. So use the battlefield strategically.
-    - As you might have noticed different troops have different strenghs in battle.
-      When selecting which army to take into battle, try different strategies to
-      see what will lead to victory.
-    - Now I think you are ready. I taught you the basics. So now good luck soldi-,
-      I mean general. I look forward to be hearing about your future victories.
+    - Greetings "Name"! I'm proud to introduce you to our ranks. So let me teach
+      you the ropes.
+    - "When you ecounter an enemy, you want to command your troops to move on the
+      battlefield. \n\nClick on a unit to mark them and then move it to one of the
+      dark tiles."
+    - Fantastic maneuvers, General!
+    - "When an enemy is in range of one of your troops you can attack it. \n\nA units
+      attack range is the red tiles you see while a troop is selected. \n\nNow destroy
+      them General. Click on the troop you want to attack with, then click on a demon
+      to attack it."
+    - "Your troops follows your orders blindly but be aware, shortly after your orders
+      are executed the demons will strike back. \n\nPress \"End turn\" to continue
+      the battle."
+    - "Your troop seems to be out in the open, move to a bush for cover for a more
+      strategic position. \n\nCertain parts of the battlefield can offer cover or
+      give other benefits to your troops, so use the battlefield strategically."
+    - I taught you the basics and now you are ready. Good luck soldi-, I mean General.
+      I look forward to hear about your future endeavours.
 --- !u!114 &847310680
 MonoBehaviour:
   m_ObjectHideFlags: 0
