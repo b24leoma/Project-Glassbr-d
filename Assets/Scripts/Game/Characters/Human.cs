@@ -15,10 +15,10 @@ namespace Game
            Description = identity[2];
         }
         
-        public override void SetMoving(bool moving)
+        public override void MoveDistance(int distance)
         {
-            hasMoved = moving;
-            movingIcon.SetActive(moving);
+            moveDistanceRemaining -= distance;
+            movingIcon.SetActive(moveDistanceRemaining == 0);
         }
 
         public override void SetAttacking(bool attacking)
