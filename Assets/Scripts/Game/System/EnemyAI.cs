@@ -57,7 +57,7 @@ namespace Game
                 if (gridSystem.GetTile(demonPos).linkedEntity is Demon demon)
                 {
                     demon.SetAttacking(false);
-                    demon.SetMoving(false);
+                    demon.moveDistanceRemaining = demon.MoveRange;
                 }
             }
             if (gridSystem.humans.Count != 0) battleController.EndTurn();

@@ -9,7 +9,7 @@ public class TutorialScript : MonoBehaviour
     private bool hasMoved;
     private Human humanScript;
 
-    [SerializeField] private TutorialManager tutorialManager;
+    public TutorialManager tutorialManager;
     private GameObject gameManager;
     private GridSystem gridSystem;
     private List<Vector2Int> humanUnitPositions;
@@ -65,7 +65,7 @@ public class TutorialScript : MonoBehaviour
                 
             }
 
-            if (humanScript.hasMoved)
+            if (humanScript.moveDistanceRemaining < humanScript.MoveRange)
             {
                 
                 
