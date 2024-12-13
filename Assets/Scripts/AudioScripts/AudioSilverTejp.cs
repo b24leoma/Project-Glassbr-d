@@ -12,12 +12,7 @@ public class AudioSilvertejp : MonoBehaviour
 
            audioManager = GameObject.Find("AudioManager");
            volumeController = audioManager.GetComponent<VolumeController>();
-           if (audioManager || volumeController == null)
-           {
-               Debug.Log("No sound, please contact your local IT-Expert or just ignore :)");
-               
-               //this wont work men jag har två hjärnceller :) 
-           }
+           
        }
 
 

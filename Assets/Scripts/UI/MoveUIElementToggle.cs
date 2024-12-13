@@ -122,7 +122,7 @@ public class MoveUIElementToggle : MonoBehaviour
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(targetCanvas.worldCamera, sentRect.position);
 
         
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPoint, targetCanvas.worldCamera, out Vector2 localPoint))
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPoint, targetCanvas.worldCamera, out var localPoint))
         {
             TargetPositionIsThis(localPoint);
         }
