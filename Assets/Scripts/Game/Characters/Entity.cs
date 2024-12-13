@@ -131,10 +131,10 @@ namespace Game
             }
             
             info = demons.text.Split('\n');
-            if (info.Length % 3 != 0) Debug.Log("Demon file has incorrect amount of lines");
-            for (int i = 0; i < info.Length; i+=3)
+            if (info.Length % 2 != 0) Debug.Log("Demon file has incorrect amount of lines");
+            for (int i = 0; i < info.Length; i+=2)
             {
-                demonInfo.Add(new[] { info[i], info[i + 1], info[i + 2] });
+                demonInfo.Add(new[] { info[i], info[i + 1]});
             }
 
         }
