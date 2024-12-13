@@ -253,7 +253,8 @@ MonoBehaviour:
   humanArcher: {fileID: 9203100527676449050, guid: 6715d71615c804f4293d6bf3ece2941f, type: 3}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 459452346792337390, guid: 78058a0c9a93b0d43999e623667a1e9c, type: 3}
-  damageNumber: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
+  humanNameList: {fileID: 0}
+  demonNameList: {fileID: 0}
 --- !u!4 &56033652
 Transform:
   m_ObjectHideFlags: 0
@@ -1142,7 +1143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Karlsson
+  m_text: Greatness awaits you General!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4214,7 +4215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: kenneth
+  m_text: You are not the General we need but the one we have...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6847,6 +6848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSelect: {fileID: 0}
+  moveUI: {fileID: 0}
 --- !u!224 &199194884848938943
 RectTransform:
   m_ObjectHideFlags: 0
