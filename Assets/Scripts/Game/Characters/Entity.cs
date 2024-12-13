@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -18,6 +19,7 @@ namespace Game
 
         public EntityType Type;
         private Animator animator;
+        private SpriteRenderer _sprite;
         public string Name { get; protected set; }
         public string Age { get; protected set; }
         public string Description { get; protected set; }
@@ -44,6 +46,9 @@ namespace Game
             if (!healthBar.IsActive()) healthBar.gameObject.SetActive(true);
             CurrentHealth -= (int)damage;
             healthBar.value = CurrentHealth;
+            transform.DOShakeScale(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);
+            transform.DOShakeRotation(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);
+            transform.DOShakePosition(0.1f, 0.1f, 1).SetLoops(1, LoopType.Yoyo);
             SFX.DMG(Type, transform.position);
         }
 
@@ -51,6 +56,7 @@ namespace Game
         void Start()
         {
             animator = GetComponent<Animator>();
+            _sprite = GetComponent<SpriteRenderer>();
             hasMoved = false;
             hasMoved = false;
             CurrentHealth = MaxHealth;
@@ -79,6 +85,7 @@ namespace Game
 
         public void Kill()
         {
+            DOTween.Kill(transform);
             Destroy(gameObject);
         }
 
