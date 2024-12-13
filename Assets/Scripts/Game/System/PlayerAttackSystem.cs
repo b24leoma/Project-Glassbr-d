@@ -47,8 +47,9 @@ namespace Game
                         {
                             StartCoroutine(battleController.Move(GetFullPathLine(), false));
                             hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
+                            hoveredEntity = gridSystem.GetTile(GetPathLinePos(pathLine.positionCount -1)).linkedEntity;
                             pathLine.positionCount = 1;
-                            SetPathLinePos(0, actingEntity.Position);
+                            SetPathLinePos(0, hoveredTile);
                         }
                         else
                         {
@@ -159,7 +160,7 @@ namespace Game
             if (isActing)
             {
                 //MOVE PATH IF WITHIN RANGE
-                if (!actingEntity.hasMoved)
+                if (actingEntity.moveDistanceRemaining > 0)
                 {
                     if (gridSystem.GetTile(hoveredTile).walkable &&
                          (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
@@ -167,11 +168,11 @@ namespace Game
                           (gridSystem.GetTile(hoveredTile).linkedEntity != null &&
                           !gridSystem.GetTile(hoveredTile).linkedEntity.isHuman &&
                          gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) > 1)) &&
-                        gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <= actingEntity.MoveRange)
+                        gridSystem.GetGridDistance(actingEntity.Position, hoveredTile) <= actingEntity.moveDistanceRemaining)
                     {
                         pathLine.positionCount = 1;
                         Vector2Int[] path = gridSystem.PathFindValidPath(actingEntity.Position, hoveredTile,
-                            actingEntity.MoveRange);
+                            actingEntity.moveDistanceRemaining);
                         foreach (Vector2Int pos in path)
                         {
                             pathLine.positionCount++;
@@ -184,18 +185,18 @@ namespace Game
                     if (actingEntity.IsMelee)
                     {
                         gridSystem.HighlightMoveTiles(actingEntity.Position,
-                            actingEntity.MoveRange + actingEntity.AttackRange, possibleAttackColor);
+                            actingEntity.moveDistanceRemaining + actingEntity.AttackRange, possibleAttackColor);
                         gridSystem.HighlightMoveTiles(actingEntity.Position,
-                            actingEntity.MoveRange, moveColor);
-                        gridSystem.HighlightMoveTiles(GetPathLinePos(pathLine.positionCount-1),
-                            actingEntity.AttackRange, attackColor);
+                            actingEntity.moveDistanceRemaining, moveColor);
+                        /*gridSystem.HighlightMoveTiles(GetPathLinePos(pathLine.positionCount-1),
+                            actingEntity.AttackRange, attackColor);*/
                     }
                     else
                     {
-                        gridSystem.HighlightSquaresInRange(actingEntity.Position, actingEntity.AttackRange,
+                        gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount-1), actingEntity.AttackRange,
                             attackColor);
                         gridSystem.HighlightMoveTiles(actingEntity.Position,
-                            actingEntity.MoveRange, moveColor);
+                            actingEntity.moveDistanceRemaining, moveColor);
                     }
                 }
                 else 
@@ -204,7 +205,7 @@ namespace Game
                     {
                         if (actingEntity.IsMelee)
                             gridSystem.HighlightMoveTiles(actingEntity.Position,
-                                actingEntity.AttackRange, attackColor);
+                                actingEntity.moveDistanceRemaining + actingEntity.AttackRange, attackColor);
                         else gridSystem.HighlightSquaresInRange(actingEntity.Position, actingEntity.AttackRange,
                                 attackColor);
                     }
@@ -217,7 +218,7 @@ namespace Game
                         if (gridSystem.GetTile(pos).linkedEntity is Demon demon)
                         {
                             if (actingEntity.IsMelee && gridSystem.GetGridDistance(actingEntity.Position, pos) <=
-                                actingEntity.MoveRange + actingEntity.AttackRange)
+                                actingEntity.AttackRange)
                             {
                                 if (hoveredTile == pos && gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount-1), pos) <= 1) demon.DisplayAttackingImage(true, Color.red);
                                 else demon.DisplayAttackingImage(true, Color.white);
@@ -226,7 +227,7 @@ namespace Game
                                      actingEntity.AttackRange)
                             {
                                 if (hoveredTile == pos && gridSystem.GetGridDistance(actingEntity.Position, pos) <=
-                                    actingEntity.AttackRange) demon.DisplayAttackingImage(true, Color.red);
+                                    actingEntity.moveDistanceRemaining + actingEntity.AttackRange) demon.DisplayAttackingImage(true, Color.red);
                                 else demon.DisplayAttackingImage(true, Color.white);
                             }
                             else demon.DisplayAttackingImage(false, Color.white);
@@ -237,15 +238,15 @@ namespace Game
             }
             else if (gridSystem.GetTile(hoveredTile).linkedEntity != null && hoveredEntity != null)
             {
-                if (!hoveredEntity.hasMoved)
+                if (hoveredEntity.moveDistanceRemaining > 0)
                 {
                     //MOVE HIGHLIGHT
                     if (hoveredEntity.IsMelee)
                     {
                         gridSystem.HighlightMoveTiles(hoveredEntity.Position,
-                            hoveredEntity.MoveRange + hoveredEntity.AttackRange, possibleAttackColor);
+                            hoveredEntity.moveDistanceRemaining + hoveredEntity.AttackRange, possibleAttackColor);
                         gridSystem.HighlightMoveTiles(hoveredEntity.Position,
-                            hoveredEntity.MoveRange, moveColor);
+                            hoveredEntity.moveDistanceRemaining, moveColor);
                         gridSystem.HighlightMoveTiles(hoveredEntity.Position,
                             hoveredEntity.AttackRange, attackColor);
                     }
@@ -254,7 +255,7 @@ namespace Game
                         gridSystem.HighlightSquaresInRange(hoveredEntity.Position, hoveredEntity.AttackRange,
                             attackColor);
                         gridSystem.HighlightMoveTiles(hoveredEntity.Position,
-                            hoveredEntity.MoveRange, moveColor);
+                            hoveredEntity.moveDistanceRemaining, moveColor);
                     }
                 }
                 else 
@@ -269,14 +270,14 @@ namespace Game
                     }
                 }
 
-                if (!hoveredEntity.hasAttacked)
+                if (!hoveredEntity.hasAttacked && hoveredEntity.isHuman)
                 {
                     foreach (Vector2Int pos in gridSystem.demons) // ATTACK ICON
                     {
                         if (gridSystem.GetTile(pos).linkedEntity is Demon demon)
                         {
                             if (hoveredEntity.IsMelee && gridSystem.GetGridDistance(hoveredEntity.Position, pos) <=
-                                hoveredEntity.MoveRange + hoveredEntity.AttackRange) 
+                                hoveredEntity.moveDistanceRemaining + hoveredEntity.AttackRange) 
                                 demon.DisplayAttackingImage(true, Color.white);
                             else if (!hoveredEntity.IsMelee && gridSystem.GetGridDistance(hoveredEntity.Position, pos) <=
                                      hoveredEntity.AttackRange) 
@@ -286,8 +287,8 @@ namespace Game
                     }
                 }
             }
-            gridSystem.SetColor(hoveredTile, new Color(0.6f, 0.6f, 0.6f));
-            if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.4f));
+            //gridSystem.SetColor(hoveredTile, new Color(0.6f, 0.6f, 0.6f));
+            //if (gridSystem.GetTile(hoveredTile).hidingSpot) gridSystem.SetHidingSpotColor(hoveredTile, new Color(1,1,1,0.4f));
         }
 
         private Vector2Int[] GetFullPathLine()
@@ -318,7 +319,7 @@ namespace Game
             {
                 Entity e = gridSystem.GetTile(p).linkedEntity;
                 e.SetAttacking(false);
-                e.SetMoving(false);
+                e.moveDistanceRemaining = e.MoveRange;
             }
         }
 

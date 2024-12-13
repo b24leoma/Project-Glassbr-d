@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -98,15 +99,21 @@ namespace Game
             else gridSystem.demons.Add(pos);
             gridSystem.ConnectToTile(pos, e);
             characters.Add(e);
+            if (isTutorial)
+            { 
+                e.AddComponent<TutorialScript>();
+                e.GetComponent<TutorialScript>().tutorialManager = FindObjectOfType<TutorialManager>();
+            }
         }
 
         public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null)
         {
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
-            if (pos != null && pos.Length > 1)
+            if (pos.Length > 1)
             {
-                gridSystem.GetTile(pos[0]).linkedEntity.SetMoving(true);
                 gridSystem.MoveUnit(pos[0], pos[^1]);
+                Debug.Log(pos.Length);
+                entity.MoveDistance(pos.Length - 2);
                 if (gridSystem.GetTile(pos[0]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[0], Color.white);
                 for (int i = 1; i < pos.Length; i++)

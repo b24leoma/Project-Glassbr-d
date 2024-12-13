@@ -32,7 +32,7 @@ namespace Game
 
         [SerializeField] private Slider healthBar;
         [HideInInspector] public bool isHuman;
-        [HideInInspector] public bool hasMoved;
+        [HideInInspector] public int moveDistanceRemaining;
         [HideInInspector] public bool hasAttacked;
 
         public Vector2Int Position
@@ -57,10 +57,9 @@ namespace Game
         {
             animator = GetComponent<Animator>();
             _sprite = GetComponent<SpriteRenderer>();
-            hasMoved = false;
-            hasMoved = false;
             CurrentHealth = MaxHealth;
             IsMelee = AttackRange <= 1;
+            moveDistanceRemaining = MoveRange;
             healthBar.maxValue = MaxHealth;
             healthBar.value = MaxHealth;
         }
@@ -71,9 +70,9 @@ namespace Game
         }
 
 
-        public virtual void SetMoving(bool moving)
+        public virtual void MoveDistance(int distance)
         {
-            hasMoved = moving;
+            moveDistanceRemaining -= distance;
         }
 
         public virtual void SetAttacking(bool attacking)
