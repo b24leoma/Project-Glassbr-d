@@ -1851,7 +1851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Demon Kingdom
+  m_text: Repentia - Tactics
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b2028d2c48a3e04881b5a1774e61641, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: ffbd8e3f7c9fcf240a90322eb3251b03, type: 2}
