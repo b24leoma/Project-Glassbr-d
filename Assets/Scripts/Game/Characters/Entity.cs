@@ -49,6 +49,8 @@ namespace Game
             transform.DOShakeScale(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);
             transform.DOShakeRotation(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);
             transform.DOShakePosition(0.1f, 0.1f, 1).SetLoops(1, LoopType.Yoyo);
+            _sprite.DOColor(Color.red, 0.1f).SetLoops(2, LoopType.Yoyo);
+            
             SFX.DMG(Type, transform.position);
         }
 
@@ -84,9 +86,23 @@ namespace Game
 
         public void Kill()
         {
-            DOTween.Kill(transform);
-            Destroy(gameObject);
-        }
+            transform.DOShakeRotation(0.4f, 1080f); Debug.Log(Name + ": WEEEEEEEEEEEEEEEEEEEEEEEE");
+            transform.DOMoveY(1.5f, 0.2f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutBounce).OnComplete(() =>
+            {
+                transform.DOShakePosition(0.3f, new Vector3(0.2f, 0.2f, 0));
+            });
+            
+            
+            transform.DOShakeScale(0.6f, 0.3f).OnComplete(() =>
+            {
+                _sprite.DOFade(0, 0.3f).OnComplete(() =>
+                {
+                    DOTween.Kill(transform);
+                    DOTween.Kill(_sprite);
+                    Destroy(gameObject);
+                });
+            }); 
+    }
 
         protected void PlayAttack()
         {

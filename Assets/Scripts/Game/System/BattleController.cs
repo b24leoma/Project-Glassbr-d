@@ -122,7 +122,7 @@ namespace Game
                         gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
                     entity.MoveToTile(pos[i]);
                     SFX.MOVE(entity.Type, entity.transform.position);
-                    entity.transform.DOShakeRotation(0.2f, 10f).SetLoops(1, LoopType.Yoyo).SetEase(Ease.OutBounce);
+                    entity.transform.DOShakeRotation(0.2f, (1 + pos.Length)).SetLoops(1, LoopType.Yoyo).SetEase(Ease.OutBounce);
                     if (gridSystem.GetTile(pos[i]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.4f));
                     yield return new WaitForSeconds(0.2f);
