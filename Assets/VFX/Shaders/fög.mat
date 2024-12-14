@@ -42,16 +42,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _FogFade: 0.5
-    - _FogSize: 37
+    - _FogSize: 100
     - _FogSpeed: 0
     - _FogSpeedX: 0
-    - _FogSpeedY: 14.6
+    - _FogSpeedY: 1
+    - _FogX: 0.1
+    - _FogY: 0.1
     - _HUH: 0.1
     - _Lerp: 0
     - _NoFogCircleStrength: 34
     - _Roundness: 1
     - _Sides: 10
-    - _SpeedMultiplier: 0
+    - _SpeedMultiplier: 0.1
     - _X: 0.935
     - _Y: 0.23
     m_Colors:
