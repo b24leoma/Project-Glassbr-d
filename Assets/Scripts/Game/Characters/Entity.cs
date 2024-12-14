@@ -96,6 +96,7 @@ namespace Game
 
             transform.DOShakeScale(0.6f, 0.3f).OnComplete(() =>
             {
+               SFX.DEATH(Type, transform.position);
                 _sprite.DOFade(0, 0.3f).OnComplete(() =>
                 {
                     DOTween.Kill(transform);

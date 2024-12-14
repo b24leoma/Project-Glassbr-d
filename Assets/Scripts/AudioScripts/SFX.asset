@@ -53,3 +53,11 @@ MonoBehaviour:
         Data3: 891156660
         Data4: -271788847
       Path: event:/Walk
+  - nameRef: Lost
+    eventReference:
+      Guid:
+        Data1: -1395891429
+        Data2: 1324763245
+        Data3: 242161568
+        Data4: 1749155694
+      Path: event:/Lost

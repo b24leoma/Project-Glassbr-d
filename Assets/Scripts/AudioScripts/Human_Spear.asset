@@ -27,11 +27,11 @@ MonoBehaviour:
   - nameRef: DMG_Human.Spear
     eventReference:
       Guid:
-        Data1: -271617029
-        Data2: 1230054026
-        Data3: 139029161
-        Data4: 1559222730
-      Path: event:/Hit
+        Data1: 1138417437
+        Data2: 1339158975
+        Data3: 751696290
+        Data4: -824810959
+      Path: event:/Metal Meat
   deathEvents:
   - nameRef: DEATH_Human.Spear
     eventReference:
