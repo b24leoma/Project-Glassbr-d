@@ -20,6 +20,7 @@ namespace Game
         public EntityType Type;
         private Animator animator;
         private SpriteRenderer _sprite;
+        private ParticleSystem _particle;
         public string Name { get; protected set; }
         public string Age { get; protected set; }
         public string Description { get; protected set; }
@@ -52,6 +53,7 @@ namespace Game
             _sprite.DOColor(Color.red, 0.1f).SetLoops(2, LoopType.Yoyo);
             
             SFX.DMG(Type, transform.position);
+            if (_particle != null) _particle.Play();
         }
 
 
@@ -59,6 +61,7 @@ namespace Game
         {
             animator = GetComponent<Animator>();
             _sprite = GetComponent<SpriteRenderer>();
+            _particle=GetComponent<ParticleSystem>();
             CurrentHealth = MaxHealth;
             IsMelee = AttackRange <= 1;
             moveDistanceRemaining = MoveRange;
