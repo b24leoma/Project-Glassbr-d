@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -84,7 +83,7 @@ namespace Game
                                              hoveredEntity.Position) <=
                                          actingEntity.AttackRange)
                                 {
-                                    battleController.Move(GetFullPathLine(), true, hoveredEntity);
+                                    StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
                                 }
                                 hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
                                 pathLine.positionCount = 1;
@@ -217,16 +216,24 @@ namespace Game
                             if (actingEntity.IsMelee && gridSystem.GetGridDistance(actingEntity.Position,
                                     demon.Position) <= actingEntity.moveDistanceRemaining + actingEntity.AttackRange)
                             {
+                                gridSystem.ConnectedMovableTiles(actingEntity.Position,
+                                    actingEntity.moveDistanceRemaining + actingEntity.AttackRange,
+                                    out HashSet<Vector2Int> positions);
                                 if (hoveredTile == pos && gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount-1), pos) <= 1) demon.DisplayAttackingImage(true, Color.red);
-                                else demon.DisplayAttackingImage(true, Color.white);
+                                else if (positions.Contains(demon.Position)) demon.DisplayAttackingImage(true, Color.white);
+                                else demon.DisplayAttackingImage(false, Color.white);
                             }
-                            else if (!actingEntity.IsMelee && gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount -1), pos) <= actingEntity.AttackRange)
+                            else if (!actingEntity.IsMelee)
                             {
                                 if (hoveredTile == pos)
                                 {
-                                    demon.DisplayAttackingImage(true, Color.red);
                                     pathLine.positionCount = 1;
-                                    if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1), hoveredTile) > actingEntity.AttackRange) 
+                                    if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
+                                            hoveredTile) <= actingEntity.AttackRange)
+                                    {
+                                        demon.DisplayAttackingImage(true, Color.red);
+                                    }
+                                    else
                                     {
                                         Vector2Int[] path = gridSystem.PathFindValidPath(actingEntity.Position, hoveredTile,
                                             actingEntity.moveDistanceRemaining);
@@ -235,11 +242,22 @@ namespace Game
                                             pathLine.positionCount++;
                                             SetPathLinePos(pathLine.positionCount - 1, p);
                                         }
+                                        if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
+                                                hoveredTile) <= actingEntity.AttackRange)
+                                        {
+                                            demon.DisplayAttackingImage(true, Color.red);
+                                        }
                                     }
+                                    gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
+                                    gridSystem.HighlightSquaresInRange(GetPathLinePos(pathLine.positionCount-1), actingEntity.AttackRange,
+                                        attackColor);
+                                    gridSystem.HighlightMoveTiles(actingEntity.Position,
+                                        actingEntity.moveDistanceRemaining, moveColor);
                                 }
-                                else demon.DisplayAttackingImage(true, Color.white);
+                                else if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
+                                             demon.Position) <= actingEntity.AttackRange) demon.DisplayAttackingImage(true, Color.white);
+                                else demon.DisplayAttackingImage(false, Color.white);
                             }
-                            else demon.DisplayAttackingImage(false, Color.white);
 
                         }
                     }
