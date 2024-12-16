@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0545df3ff3cda1a4d804b50c794af851
+guid: c0739100b5edc0548b161d2033786654
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,11 +93,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilemapWaterNGround_0
+      name: Tilemapcrater_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d2ed678bf07dca4baa5018415722f56
-      internalID: 1553272339
+      spriteID: 66c8ace036664cc44a0c32137e876c25
+      internalID: -1116750834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_1
+      name: Tilemapcrater_1
       rect:
         serializedVersion: 2
         x: 16
@@ -132,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9531134bd421c2e45b845bc01c8620e1
-      internalID: -54171080
+      spriteID: 2a78c75f173afcd469af7dddd36a6707
+      internalID: 1788560824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_2
+      name: Tilemapcrater_2
       rect:
         serializedVersion: 2
         x: 32
@@ -153,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53bfeeab4da992a4195db185451becc9
-      internalID: -1995326812
+      spriteID: 95cc72bab5014ba46906b7ecd0204532
+      internalID: -1490641635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_3
+      name: Tilemapcrater_3
       rect:
         serializedVersion: 2
         x: 48
@@ -174,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8cf3941136ea4744ab4e338f5db8677
-      internalID: -14134455
+      spriteID: c7cfaf1e39628ec4b96fd281e8534e6b
+      internalID: -711414490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_4
+      name: Tilemapcrater_4
       rect:
         serializedVersion: 2
         x: 80
@@ -195,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e741fdbf2acd24042a0db278301606cf
-      internalID: 2108205661
+      spriteID: f5ad517e6db303642bf21a96d8d3c8b7
+      internalID: -928806310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_5
+      name: Tilemapcrater_5
       rect:
         serializedVersion: 2
         x: 96
@@ -216,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4167c267185143a419c8dc32112bdf61
-      internalID: -968948095
+      spriteID: 4eb5adbfbe8d42d479e02dffb74fbe6c
+      internalID: 102420847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_6
+      name: Tilemapcrater_6
       rect:
         serializedVersion: 2
         x: 0
@@ -237,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 055a26a05b156be40b531e9b9b0e602f
-      internalID: -457002204
+      spriteID: 96ba114fef75dc24695e1b86187d5081
+      internalID: -1535664412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_7
+      name: Tilemapcrater_7
       rect:
         serializedVersion: 2
         x: 16
@@ -258,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 602bf97be899a904da1aa6a8d765ce57
-      internalID: -171639436
+      spriteID: 5c31a8a74fba3c34cad7d1348fae5efe
+      internalID: -109811391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_8
+      name: Tilemapcrater_8
       rect:
         serializedVersion: 2
         x: 32
@@ -279,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0f45a4e25f733041b2c0b6949447059
-      internalID: -1567457521
+      spriteID: 857c92688e028fe40b4a77332d2be1c2
+      internalID: 181446578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_9
+      name: Tilemapcrater_9
       rect:
         serializedVersion: 2
         x: 48
@@ -300,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 102bdba7395e4b14ba73cd589c7ee5c3
-      internalID: 1598716672
+      spriteID: 9e61d520a4b38d84d83768994ff6bc95
+      internalID: -1659529230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_10
+      name: Tilemapcrater_10
       rect:
         serializedVersion: 2
         x: 80
@@ -321,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a13960eb36a08154798707a7555ab256
-      internalID: -1818010313
+      spriteID: e705813a7e5c4994db8ed6f734a868ef
+      internalID: -419476301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_11
+      name: Tilemapcrater_11
       rect:
         serializedVersion: 2
         x: 96
@@ -342,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dc5fd6cefa79fd40979baaf63c8ccc2
-      internalID: 1270432716
+      spriteID: af48e64395196b743a0a84c9ffe35ed2
+      internalID: -1044950877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_12
+      name: Tilemapcrater_12
       rect:
         serializedVersion: 2
         x: 0
@@ -363,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73224f58eae36364196afd50e9bf7cd6
-      internalID: -611261074
+      spriteID: 73f754e9cb8440446943a27a30f8426a
+      internalID: -1911108230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_13
+      name: Tilemapcrater_13
       rect:
         serializedVersion: 2
         x: 16
@@ -384,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9db4da5df592c76499ebac4f9226c761
-      internalID: -276344922
+      spriteID: 0ecaea9945ceb6d439ca3d36cb9805ed
+      internalID: -912583177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_14
+      name: Tilemapcrater_14
       rect:
         serializedVersion: 2
         x: 32
@@ -405,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae3c5e1461789a444b9c7903cd58ab32
-      internalID: -409134516
+      spriteID: 351d5de4d7ad69246b44ce76d6c12d8a
+      internalID: -98675191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_15
+      name: Tilemapcrater_15
       rect:
         serializedVersion: 2
         x: 48
@@ -426,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3325ed9bc85e4f4fb2014ddb28611d4
-      internalID: -1431120012
+      spriteID: 525e79514a193ea41a35b67d1287f1e3
+      internalID: 1154060417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_16
+      name: Tilemapcrater_16
       rect:
         serializedVersion: 2
         x: 80
@@ -447,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae3e8a06693119048a1a4f9e08bc382e
-      internalID: -788211108
+      spriteID: f10776cdb000c4846a5f4553e33356d4
+      internalID: -100100552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_17
+      name: Tilemapcrater_17
       rect:
         serializedVersion: 2
         x: 96
@@ -468,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8830f00a7576f7c41b94a1a70d05f0b8
-      internalID: -1488432054
+      spriteID: 8a2c884a936f72d4d96a4c5e24145008
+      internalID: -1538742750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_18
+      name: Tilemapcrater_18
       rect:
         serializedVersion: 2
         x: 0
@@ -489,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab82892a74299f841aadf4d18bfa5c8e
-      internalID: -273560856
+      spriteID: 4741467044f81084cb39bdf11b821f4b
+      internalID: 1655435357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_19
+      name: Tilemapcrater_19
       rect:
         serializedVersion: 2
         x: 16
@@ -510,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c1e24f608f12854f8e4f2b84aa815cd
-      internalID: 486820286
+      spriteID: de01e6ebe0bd28f4487dd2876e08cf56
+      internalID: -1801526475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_20
+      name: Tilemapcrater_20
       rect:
         serializedVersion: 2
         x: 32
@@ -531,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4dcfc8231103f64e83c8ff3a2fc1db1
-      internalID: 1438562214
+      spriteID: 5dc5f32515899454c89676386293c246
+      internalID: 1056863546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_21
+      name: Tilemapcrater_21
       rect:
         serializedVersion: 2
         x: 48
@@ -552,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b6d4ffd35c109f4f8d3b8b00ca25006
-      internalID: -145597196
+      spriteID: 117deddc246c258408b948cdd17ea66a
+      internalID: 800856298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_22
+      name: Tilemapcrater_22
       rect:
         serializedVersion: 2
         x: 64
@@ -573,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 287a14d112d21cf41ad724cd7a515b52
-      internalID: 132625761
+      spriteID: abecf42c27b286446a1d159e2e4c2875
+      internalID: 1769663884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_23
+      name: Tilemapcrater_23
       rect:
         serializedVersion: 2
         x: 80
@@ -594,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8453ccc593592cf42ab314d3361aa626
-      internalID: 220022672
+      spriteID: a05879b3ffea5fd449c14be7341a74e1
+      internalID: -1614031062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilemapWaterNGround_24
+      name: Tilemapcrater_24
       rect:
         serializedVersion: 2
         x: 96
@@ -615,8 +641,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c5c470cead72284d85ef2c1c26cb877
-      internalID: -1922862944
+      spriteID: 7cade1ec73fde4c4b8fc4f78bfc3938f
+      internalID: -210310736
       vertices: []
       indices: 
       edges: []
@@ -632,31 +658,31 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilemapWaterNGround_0: 1553272339
-      TilemapWaterNGround_1: -54171080
-      TilemapWaterNGround_10: -1818010313
-      TilemapWaterNGround_11: 1270432716
-      TilemapWaterNGround_12: -611261074
-      TilemapWaterNGround_13: -276344922
-      TilemapWaterNGround_14: -409134516
-      TilemapWaterNGround_15: -1431120012
-      TilemapWaterNGround_16: -788211108
-      TilemapWaterNGround_17: -1488432054
-      TilemapWaterNGround_18: -273560856
-      TilemapWaterNGround_19: 486820286
-      TilemapWaterNGround_2: -1995326812
-      TilemapWaterNGround_20: 1438562214
-      TilemapWaterNGround_21: -145597196
-      TilemapWaterNGround_22: 132625761
-      TilemapWaterNGround_23: 220022672
-      TilemapWaterNGround_24: -1922862944
-      TilemapWaterNGround_3: -14134455
-      TilemapWaterNGround_4: 2108205661
-      TilemapWaterNGround_5: -968948095
-      TilemapWaterNGround_6: -457002204
-      TilemapWaterNGround_7: -171639436
-      TilemapWaterNGround_8: -1567457521
-      TilemapWaterNGround_9: 1598716672
+      Tilemapcrater_0: -1116750834
+      Tilemapcrater_1: 1788560824
+      Tilemapcrater_10: -419476301
+      Tilemapcrater_11: -1044950877
+      Tilemapcrater_12: -1911108230
+      Tilemapcrater_13: -912583177
+      Tilemapcrater_14: -98675191
+      Tilemapcrater_15: 1154060417
+      Tilemapcrater_16: -100100552
+      Tilemapcrater_17: -1538742750
+      Tilemapcrater_18: 1655435357
+      Tilemapcrater_19: -1801526475
+      Tilemapcrater_2: -1490641635
+      Tilemapcrater_20: 1056863546
+      Tilemapcrater_21: 800856298
+      Tilemapcrater_22: 1769663884
+      Tilemapcrater_23: -1614031062
+      Tilemapcrater_24: -210310736
+      Tilemapcrater_3: -711414490
+      Tilemapcrater_4: -928806310
+      Tilemapcrater_5: 102420847
+      Tilemapcrater_6: -1535664412
+      Tilemapcrater_7: -109811391
+      Tilemapcrater_8: 181446578
+      Tilemapcrater_9: -1659529230
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
