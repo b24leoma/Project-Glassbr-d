@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Solaria Demo Tiles_84
+  m_Name: PropsBushesNStones 1_3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1856142260, guid: 771e454a157f75e46b982e8bfd6789a6, type: 3}
+  m_Sprite: {fileID: 237397379, guid: cf2dcabe830c1a649b66a05dfac7c0a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
