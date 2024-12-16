@@ -345,6 +345,7 @@ namespace Game
                 Entity e = gridSystem.GetTile(p).linkedEntity;
                 e.SetAttacking(false);
                 e.moveDistanceRemaining = e.MoveRange;
+                e.MoveDistance(0);
             }
         }
 
