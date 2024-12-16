@@ -64,8 +64,16 @@ namespace Game
 
         public void HighlightMoveTiles(Vector2Int start, float range, Color color)
         {
+            HashSet<Vector2Int> used = ConnectedMovableTiles(start, range, out HashSet<Vector2Int> highlight);
+            foreach (Vector2Int pos in used) SetColor(pos, color);
+            foreach (Vector2Int pos in highlight) SetColor(pos, color);
+        }
+
+
+        public HashSet<Vector2Int> ConnectedMovableTiles(Vector2Int start, float range, out HashSet<Vector2Int> nextToConnected)
+        {
             HashSet<Vector2Int> used = new HashSet<Vector2Int>();
-            HashSet<Vector2Int> highlight = new HashSet<Vector2Int>();
+            nextToConnected = new HashSet<Vector2Int>();
             used.Add(start);
             for (int i = 0; i < range; i++)
             {
@@ -86,25 +94,24 @@ namespace Game
 
                     if (TileIsInBounds(pos + Vector2Int.up) && GetTile(pos + Vector2Int.up).walkable &&
                         GetTile(pos + Vector2Int.up).linkedEntity != null &&
-                        !highlight.Contains(pos + Vector2Int.up))
-                        highlight.Add(pos + Vector2Int.up);
+                        !nextToConnected.Contains(pos + Vector2Int.up))
+                        nextToConnected.Add(pos + Vector2Int.up);
                     if (TileIsInBounds(pos + Vector2Int.right) && GetTile(pos + Vector2Int.right).walkable &&
                         GetTile(pos + Vector2Int.right).linkedEntity != null &&
-                        !highlight.Contains(pos + Vector2Int.right))
-                        highlight.Add(pos + Vector2Int.right);
+                        !nextToConnected.Contains(pos + Vector2Int.right))
+                        nextToConnected.Add(pos + Vector2Int.right);
                     if (TileIsInBounds(pos + Vector2Int.down) && GetTile(pos + Vector2Int.down).walkable &&
                         GetTile(pos + Vector2Int.down).linkedEntity != null &&
-                        !highlight.Contains(pos + Vector2Int.down))
-                        highlight.Add(pos + Vector2Int.down);
+                        !nextToConnected.Contains(pos + Vector2Int.down))
+                        nextToConnected.Add(pos + Vector2Int.down);
                     if (TileIsInBounds(pos + Vector2Int.left) && GetTile(pos + Vector2Int.left).walkable &&
                         GetTile(pos + Vector2Int.left).linkedEntity != null &&
-                        !highlight.Contains(pos + Vector2Int.left))
-                        highlight.Add(pos + Vector2Int.left);
+                        !nextToConnected.Contains(pos + Vector2Int.left))
+                        nextToConnected.Add(pos + Vector2Int.left);
                 }
             }
-            
-            foreach (Vector2Int pos in used) SetColor(pos, color);
-            foreach (Vector2Int pos in highlight) SetColor(pos, color);
+
+            return used;
         }
 
         public void MoveUnit(Vector2Int currentPos, Vector2Int newPos)
