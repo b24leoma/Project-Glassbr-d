@@ -46,16 +46,10 @@ namespace Game
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
                             StartCoroutine(battleController.Move(GetFullPathLine(), false));
-                            hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
-                            hoveredEntity = gridSystem.GetTile(GetPathLinePos(pathLine.positionCount -1)).linkedEntity;
-                            pathLine.positionCount = 1;
-                            SetPathLinePos(0, hoveredTile);
                         }
-                        else
-                        {
-                            pathLine.positionCount = 0;
-                            isActing = false;
-                        }
+
+                        pathLine.positionCount = 0;
+                        isActing = false;
                     }
                     else if (hoveredEntity != null ) //TILE HAS ENTITY
                     {

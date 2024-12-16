@@ -8,9 +8,9 @@ public class DamageNumber : MonoBehaviour
     [SerializeField] private TextMeshPro text;
     private Color alpha;
 
-    public void SetDamage(float damage)
+    public void SetDamage(string damage)
     {
-        text.text = damage.ToString();
+        text.text = damage;
     }
     void Start()
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -31,6 +32,7 @@ namespace Game
         [SerializeField] private GameObject humanArcher;
         [SerializeField] private GameObject demonSwordsman;
         [SerializeField] private GameObject demonTank;
+        [SerializeField] private GameObject damageNumbers;
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
         private List<Entity> characters;
@@ -112,7 +114,6 @@ namespace Game
             if (pos.Length > 1)
             {
                 gridSystem.MoveUnit(pos[0], pos[^1]);
-                Debug.Log(pos.Length);
                 entity.MoveDistance(pos.Length - 2);
                 if (gridSystem.GetTile(pos[0]).hidingSpot)
                     gridSystem.SetHidingSpotColor(pos[0], Color.white);
@@ -133,6 +134,7 @@ namespace Game
                 entity.AttackRange)
             {
                 Attack(entity, attackTarget);
+                yield return new WaitForSeconds(0.5f);
             }
             else if (isTutorial)
             {
@@ -146,6 +148,10 @@ namespace Game
             attacker.SetAttacking(true);   
             float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
             target.TakeDamage(reduction * attacker.Damage);
+            DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity).GetComponent<DamageNumber>();
+            if (reduction == 1) num.SetDamage($"-{reduction * attacker.Damage}");
+            else num.SetDamage($"-{reduction*attacker.Damage}\n({gridSystem.GetTile(target.Position).damageReductionPercent}% reduction)");
+            
             if (target.CurrentHealth <= 0)
             {
                 if (target.isHuman)
