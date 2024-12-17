@@ -145,8 +145,11 @@ namespace Game
         {
             //Reset board colors
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
-            battleController.UpdateCharacterDisplay(gridSystem.GetTile(hoveredTile).linkedEntity != null,
-                gridSystem.GetTile(hoveredTile).linkedEntity);
+            if (isPlayerTurn)
+            {
+                if (hoveredEntity != null) battleController.UpdateCharacterDisplay(true, hoveredEntity);
+                else if (isActing) battleController.UpdateCharacterDisplay(true, actingEntity);
+            }
             if (gridSystem.GetTile(hoveredTile) == null) return;
             gridSystem.ResetUnusedHidingspotColor();
             foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
