@@ -137,7 +137,6 @@ namespace Game
 
         private bool TileIsInBounds(Vector2Int pos)
         {
-            Debug.Log(size.x);
             return (pos.x > -size.x && pos.x < size.x + 0.6f && pos.y > -size.y && pos.y < size.y + 0.6f);
         }
 
