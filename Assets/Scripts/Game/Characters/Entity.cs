@@ -46,6 +46,7 @@ namespace Game
         {
             if (!healthBar.IsActive()) healthBar.gameObject.SetActive(true);
             CurrentHealth -= (int)damage;
+            if (CurrentHealth < 0) CurrentHealth = 0;
             healthBar.value = CurrentHealth;
             transform.DOShakeScale(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);
             transform.DOShakeRotation(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);

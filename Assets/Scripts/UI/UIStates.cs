@@ -84,7 +84,11 @@ public class UIStates : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
-    
+
+    public void ChangeLevel(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
     
     
 }

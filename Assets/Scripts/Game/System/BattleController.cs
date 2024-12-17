@@ -27,6 +27,7 @@ namespace Game
         [SerializeField] private GameObject infoDisplay;
         [SerializeField] private TextMeshProUGUI displayStats;
         [SerializeField] private TextMeshProUGUI displayName;
+        [SerializeField] private TextMeshProUGUI displayDescription;
         [SerializeField] private Transform entityParent;
         [SerializeField] private GameObject humanSpearman;
         [SerializeField] private GameObject humanArcher;
@@ -73,11 +74,6 @@ namespace Game
             if (isTutorial) TutorialOnStart?.Invoke();
         }
 
-        public void NextLevel()
-        {
-            SceneManager.LoadScene("Game");
-        }
-
         void CreateEntity(Vector2Int pos, Entity.EntityType type)
         {
             GameObject g = null;
@@ -108,6 +104,7 @@ namespace Game
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
             if (pos.Length > 1)
             {
+                UpdateCharacterDisplay(true, entity);
                 gridSystem.MoveUnit(pos[0], pos[^1]);
                 entity.MoveDistance(pos.Length - 2);
                 if (gridSystem.GetTile(pos[0]).hidingSpot)
@@ -147,7 +144,7 @@ namespace Game
             DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity).GetComponent<DamageNumber>();
             if (reduction == 1) num.SetDamage($"-{reduction * attacker.Damage}");
             else num.SetDamage($"-{reduction*attacker.Damage}\n({gridSystem.GetTile(target.Position).damageReductionPercent}% reduction)");
-            
+            UpdateCharacterDisplay(true, target);
             if (target.CurrentHealth <= 0)
             {
                 if (target.isHuman)
@@ -191,32 +188,16 @@ namespace Game
             if (showDisplay)
             {
                 displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
-                displayName.text = entity.Name;
+                displayName.text = $"{entity.Name}\n{entity.Age}";
+                displayDescription.text = entity.Description;
             }
         }
-
-
-
-        public List<Entity> GetCharacters(){return characters;}
-        public Entity GetCharacterAt(int i){return characters[i];}
-    
-        
-        
-        
-        
-        
         
         
         [System.Serializable] public class SpawnEntity
         {
             public Vector2 Position;
             public Entity.EntityType Type;
-        }
-
-        [System.Serializable]
-        public class Level
-        {
-            public List<SpawnEntity> spawnList;
         }
         
         public void DebugLose ()
