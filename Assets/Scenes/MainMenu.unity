@@ -1851,10 +1851,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Repentia - Tactics
+  m_text: 'Repentia
+
+    Withering Kingdom'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3b2028d2c48a3e04881b5a1774e61641, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: ffbd8e3f7c9fcf240a90322eb3251b03, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 99d30f95f9358324fb4f6b2b43f9adeb, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: ae8737ac3d08f1541bd750f274af53e0, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -1879,8 +1881,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 139.4
+  m_fontSizeBase: 139.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1915,7 +1917,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 110.12314, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
