@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: PropsBushesNStones 1_0
+  m_Name: TilemapRockNStone_5
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -395892195, guid: cf2dcabe830c1a649b66a05dfac7c0a2, type: 3}
+  m_Sprite: {fileID: -1791474112, guid: 491784ba2fad38e4aa193765e1ee92ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
