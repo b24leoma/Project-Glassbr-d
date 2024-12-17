@@ -145,6 +145,7 @@ namespace Game
             if (reduction == 1) num.SetDamage($"-{reduction * attacker.Damage}");
             else num.SetDamage($"-{reduction*attacker.Damage}\n({gridSystem.GetTile(target.Position).damageReductionPercent}% reduction)");
             UpdateCharacterDisplay(true, target);
+            attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (target.CurrentHealth <= 0)
             {
                 if (target.isHuman)
