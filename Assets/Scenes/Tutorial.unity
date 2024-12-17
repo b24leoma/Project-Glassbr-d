@@ -2144,11 +2144,35 @@ MonoBehaviour:
     archerRangeIncrease: 0
     damageReductionPercent: 0
   - linkedEntity: {fileID: 0}
-    tile: {fileID: 11400000, guid: 6a366b2e708e10b4f88be91553c5349b, type: 2}
+    tile: {fileID: 11400000, guid: 4db84cbc5ac9df945a4f3cce65d57af1, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 20
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 3f82846d62c8d4f4caab798a017db8d8, type: 2}
+    walkable: 1
+    hidingSpot: 1
+    archerRangeIncrease: 0
+    damageReductionPercent: 20
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 069ae03ae3c128d47a256bdc592a82bf, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 6abd990e915c7694d8167fdbdd29a24a, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 4fc3dc84e3eacc0489db775edb820e4e, type: 2}
+    walkable: 1
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
   demons: []
   humans: []
 --- !u!19719996 &651517035
@@ -5818,6 +5842,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 6, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 2
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -6, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -5863,16 +5897,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -1, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6088,16 +6112,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -5, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -6133,6 +6147,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 6, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
