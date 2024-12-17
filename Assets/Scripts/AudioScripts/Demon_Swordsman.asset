@@ -18,20 +18,20 @@ MonoBehaviour:
   - nameRef: ATK_Demon.Sword
     eventReference:
       Guid:
-        Data1: -271617029
-        Data2: 1230054026
-        Data3: 139029161
-        Data4: 1559222730
-      Path: event:/Hit
+        Data1: -1216127830
+        Data2: 1096066358
+        Data3: 1011031699
+        Data4: 1357404878
+      Path: event:/Demon_Rogue_01_ATK
   damageEvents:
   - nameRef: DMG_Demon.Sword
     eventReference:
       Guid:
-        Data1: -1569404256
-        Data2: 1179805175
-        Data3: -1886498652
-        Data4: 1729559429
-      Path: event:/Ribbit Double
+        Data1: -1777231860
+        Data2: 1266726459
+        Data3: 307541150
+        Data4: 1290975195
+      Path: event:/Demon_Rogue_01_DMG
   deathEvents:
   - nameRef: DEATH_Demon.Sword
     eventReference:
@@ -40,7 +40,7 @@ MonoBehaviour:
         Data2: 1161272294
         Data3: -1352234360
         Data4: -386544127
-      Path: event:/DemonSmolDie
+      Path: event:/Demon_Rogue_01_DEATH
   moveEvents:
   - nameRef: MOVE_Demon.Sword
     eventReference:
@@ -49,4 +49,4 @@ MonoBehaviour:
         Data2: 1225304332
         Data3: 1129387706
         Data4: -860607980
-      Path: event:/DemonSmolWalk
+      Path: event:/Demon_Rogue_01_MOVE
