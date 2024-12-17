@@ -10,7 +10,7 @@ public class SceneHandler : MonoBehaviour
     {
        var scene = SceneManager.GetActiveScene();
        
-       Debug.Log(scene.name + " - " + scene.buildIndex);
+       Debug.Log("Scene Name: " + scene.name + " - " + "Scene Index: " + scene.buildIndex);
     }
 
     public void NextScene()
