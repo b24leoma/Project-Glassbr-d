@@ -28,7 +28,6 @@ public class TutorialManager : MonoBehaviour
     {
         if (e is Human)
         {
-            Debug.Log("INVOKED ATTACK");
             onAttack?.Invoke();
         }
     }
@@ -37,11 +36,9 @@ public class TutorialManager : MonoBehaviour
     {
         if (e.isHuman)
         {
-            Debug.Log("INVOKED MOVE");
             onMove?.Invoke();
             if (gridSystem.GetTile(endPos).hidingSpot)
             {
-                Debug.Log("INVOKED BUSH");
                 onBush?.Invoke();
             }
         }
