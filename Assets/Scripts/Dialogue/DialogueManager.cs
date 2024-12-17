@@ -47,24 +47,22 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-
         if (sentenceIsStopped) return;
-        
-            if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
-            {
+        if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
+        {
 
-                sentenceIsStopped = true;
-                alwaysStop = false;
-                Debug.Log(
-                    "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
+            sentenceIsStopped = true;
+            alwaysStop = false;
+            Debug.Log(
+                "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
 
-                onDialoguePause.Invoke();
-                return;
-
+            onDialoguePause.Invoke();
+            return;
 
 
-            }
-        
+
+        }
+
 
         if (sentences.Count == 0)
         {
@@ -115,7 +113,7 @@ public class DialogueManager : MonoBehaviour
     
     public void UnpauseDialogue()
     {
-        
+        Debug.Log("UNPAUSED");
         canStopSentence = false;
         sentenceIsStopped = false;
         alwaysStop = false;
