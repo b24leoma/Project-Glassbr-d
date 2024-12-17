@@ -82,3 +82,5 @@ Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 Assets/StreamingAssets/Master.bank.meta
 Assets/StreamingAssets/Master.strings.bank.meta
+Assets/Resources/DOTweenSettings.asset
+ProjectSettings/ShaderGraphSettings.asset
