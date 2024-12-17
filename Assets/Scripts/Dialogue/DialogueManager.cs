@@ -55,12 +55,8 @@ public class DialogueManager : MonoBehaviour
             alwaysStop = false;
             Debug.Log(
                 "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
-
             onDialoguePause.Invoke();
             return;
-
-
-
         }
 
 
@@ -78,6 +74,16 @@ public class DialogueManager : MonoBehaviour
           
         StopAllCoroutines();
        _currentCoroutine = StartCoroutine(TypeSentence(sentence));
+       
+       if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
+       {
+
+           sentenceIsStopped = true;
+           alwaysStop = false;
+           Debug.Log(
+               "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
+           onDialoguePause.Invoke();
+       }
     }
 
     private IEnumerator TypeSentence(string sentence)
@@ -113,7 +119,6 @@ public class DialogueManager : MonoBehaviour
     
     public void UnpauseDialogue()
     {
-        Debug.Log("UNPAUSED");
         canStopSentence = false;
         sentenceIsStopped = false;
         alwaysStop = false;
@@ -139,6 +144,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DelayUnpause()
     {
+        
         typingPaused = false;
     }
 }
