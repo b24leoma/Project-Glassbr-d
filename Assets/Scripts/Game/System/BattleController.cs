@@ -101,11 +101,6 @@ namespace Game
             else gridSystem.demons.Add(pos);
             gridSystem.ConnectToTile(pos, e);
             characters.Add(e);
-            if (isTutorial)
-            { 
-                e.AddComponent<TutorialScript>();
-                e.GetComponent<TutorialScript>().tutorialManager = FindObjectOfType<TutorialManager>();
-            }
         }
 
         public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null)
@@ -136,9 +131,10 @@ namespace Game
                 Attack(entity, attackTarget);
                 yield return new WaitForSeconds(0.5f);
             }
-            else if (isTutorial)
+            
+            if (isTutorial)
             {
-                tutorialManager.TotalStateChecker();
+                tutorialManager.Moved(entity, pos[^1]);
             }
 
         }
@@ -175,7 +171,7 @@ namespace Game
             }
             if (isTutorial)
             {
-                tutorialManager.TotalStateChecker();
+                tutorialManager.Attacked(attacker);
             }
            
             

@@ -7,72 +7,41 @@ using UnityEngine.Events;
 
 public class TutorialManager : MonoBehaviour
 {
-    public int moveCounter;
-    public int attackCounter;
-    public int bushCounter;
     public UnityEvent onMove;
     public UnityEvent onAttack;
-    public UnityEvent onFirstAttack;
-    public UnityEvent onFirstMove;
-    public UnityEvent onFirstBush;
     public UnityEvent onBush;
     public UnityEvent onEndTurn;
     public UnityEvent delayedEvent;
    [Range(0, 10),SerializeField] private float delayEventTimer;
-
-    private BattleController battleController;
-    private List<Entity> allUnits;
+   
     private GridSystem gridSystem;
-    private PlayerAttackSystem playerAttackSystem;
-
-    private TutorialScript tutorialScript;
     [SerializeField] private int sentencenumber;
     [SerializeField] DialogueManager dialogueManager;
 
     private void Start()
     {
-        if (battleController == null)
-        {
-            battleController = GetComponent<BattleController>();
-        }
-
-        if (playerAttackSystem == null)
-        {
-            playerAttackSystem = GetComponent<PlayerAttackSystem>();
-        }
-
-        if (playerAttackSystem != null)
-        {
-            playerAttackSystem.SetPaused(true);
-        }
-
         sentencenumber = dialogueManager.currentSentence;
-
+        gridSystem = FindObjectOfType<GridSystem>();
     }
 
-    public void TotalStateChecker()
+    public void Attacked(Entity e)
     {
-        sentencenumber = dialogueManager.currentSentence;
-        var characters = battleController.GetCharacters();
-
-        if (characters == null)
+        if (e is Human)
         {
-            Debug.Log("NO UNITS ON FIELD");
+            onAttack?.Invoke();
         }
+    }
 
-        if (characters != null)
-            foreach (var entity in characters)
+    public void Moved(Entity e, Vector2Int endPos)
+    {
+        if (e.isHuman)
+        {
+            onMove?.Invoke();
+            if (gridSystem.GetTile(endPos).hidingSpot)
             {
-                if (entity != null)
-                {
-                    tutorialScript = entity.GetComponent<TutorialScript>();
-                    if (tutorialScript != null)
-                    {
-                        tutorialScript.CheckingUnits();
-                    }
-                }
-                
+                onBush?.Invoke();
             }
+        }
     }
 
     public void OnEndTurn()
@@ -83,11 +52,11 @@ public class TutorialManager : MonoBehaviour
 
     public void TryNextSentence(int eventnumber)
     {
-       if (sentencenumber == eventnumber)
-       {
-           dialogueManager.UnpauseDialogue();
-       }
-       
+        sentencenumber = dialogueManager.currentSentence;
+        if (sentencenumber == eventnumber)
+        {
+            dialogueManager.UnpauseDialogue();
+        }
     }
 
     public void EventDelayer()
