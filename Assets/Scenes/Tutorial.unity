@@ -4775,19 +4775,19 @@ MonoBehaviour:
     - Greetings "Name"! I'm proud to introduce you to our ranks. So let me teach
       you the ropes.
     - "When you ecounter an enemy, you want to command your troops to move on the
-      battlefield. \n\nClick on a unit to mark them and then move it to one of the
-      dark tiles."
+      battlefield. \n\n(Click on a unit to mark them and then move it to one of the
+      dark tiles)."
     - Fantastic maneuvers, General!
-    - "When an enemy is in range of one of your troops you can attack it. Make the
-      Attack order, General!\n\nA units attack range is the red tiles you see while
-      a troop is selected. \n\nNow destroy them, General. Click on the troop you
-      want to attack with, then click on a demon to attack it."
+    - "When an enemy is in range of one of your troops you can attack it.\n\n(A units
+      attack range is the red tiles you see while a troop is selected). \n\nNow destroy
+      them, General. Click on the troop you want to attack with, then click on a
+      demon to attack it."
     - "Your troops follows your orders blindly but be aware, shortly after your orders
-      are executed the demons will strike back. \n\nPress \"End turn\" to continue
-      the battle."
+      are executed the demons will strike back. \n\n(Press \"End turn\" to continue
+      the battle)."
     - "Your troops seems to be out in the open, move to a bush for cover for a more
-      strategic position. \n\nCertain parts of the battlefield can offer cover or
-      give other benefits to your troops, so use the battlefield strategically."
+      strategic position. \n\n(Certain parts of the battlefield can offer cover or
+      give other benefits to your troops, so use the battlefield strategically)."
     - I taught you the basics and now you are ready. Good luck soldi-, I mean General.
       I look forward to hear about your future endeavours.
 --- !u!114 &847310680
@@ -6254,7 +6254,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 1599498924, guid: 567e7046df28fe2429cd36e2ed70ca4d, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 16
+  - m_RefCount: 38
     m_Data:
       e00: 1
       e01: 0
@@ -6273,7 +6273,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 16
+  - m_RefCount: 38
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
