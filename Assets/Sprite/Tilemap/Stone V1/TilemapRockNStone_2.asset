@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Solaria Demo Tiles_167
+  m_Name: TilemapRockNStone_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2059453290, guid: 771e454a157f75e46b982e8bfd6789a6, type: 3}
+  m_Sprite: {fileID: 1520531857, guid: 491784ba2fad38e4aa193765e1ee92ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
