@@ -100,7 +100,7 @@ public class DialogueManager : MonoBehaviour
             
             
             dialogueField.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.04f);
         }
         
         sentenceIsStopped = false;

@@ -43,21 +43,25 @@ public class TutorialManager : MonoBehaviour
     
     public void Moving()
     {
+        if (!enabled) return;
         TryNextSentence(introduceMoveOnSentence);
         onMove?.Invoke();
     }
     public void Attacking()
     {
+        if (!enabled) return;
         TryNextSentence(introduceAttackOnSentence);
         onAttack?.Invoke();
     }
     public void OnEndTurn()
     {
+        if (!enabled) return;
         TryNextSentence(introduceEndTurnOnSentence);
         onEndTurn?.Invoke();
     }
     public void Bushing()
     {
+        if (!enabled) return;
         TryNextSentence(introduceBushOnSentence);
         onBush?.Invoke();
     }
