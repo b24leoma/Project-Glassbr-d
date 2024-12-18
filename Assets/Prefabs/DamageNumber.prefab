@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1223165719841085680, guid: cea4c5eb9dd911c42bafcc84bb0cf6e6, type: 2}
+  - {fileID: -7924261209144917466, guid: 99d30f95f9358324fb4f6b2b43f9adeb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +78,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &4098197125573794900
 MonoBehaviour:
@@ -102,15 +102,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 123
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cea4c5eb9dd911c42bafcc84bb0cf6e6, type: 2}
-  m_sharedMaterial: {fileID: -1223165719841085680, guid: cea4c5eb9dd911c42bafcc84bb0cf6e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 99d30f95f9358324fb4f6b2b43f9adeb, type: 2}
+  m_sharedMaterial: {fileID: -7924261209144917466, guid: 99d30f95f9358324fb4f6b2b43f9adeb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190280
-  m_fontColor: {r: 0.7830189, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

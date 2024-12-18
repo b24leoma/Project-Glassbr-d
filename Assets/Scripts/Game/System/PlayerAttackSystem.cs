@@ -186,7 +186,7 @@ namespace Game
                     if (actingEntity.IsMelee)
                     {
                         gridSystem.HighlightMoveTiles(actingEntity.Position,
-                            actingEntity.moveDistanceRemaining + actingEntity.AttackRange, possibleAttackColor);
+                            actingEntity.moveDistanceRemaining + actingEntity.AttackRange, attackColor);
                         gridSystem.HighlightMoveTiles(actingEntity.Position,
                             actingEntity.moveDistanceRemaining, moveColor);
                     }
@@ -274,11 +274,9 @@ namespace Game
                     if (hoveredEntity.IsMelee)
                     {
                         gridSystem.HighlightMoveTiles(hoveredEntity.Position,
-                            hoveredEntity.moveDistanceRemaining + hoveredEntity.AttackRange, possibleAttackColor);
+                            hoveredEntity.moveDistanceRemaining + hoveredEntity.AttackRange, attackColor);
                         gridSystem.HighlightMoveTiles(hoveredEntity.Position,
                             hoveredEntity.moveDistanceRemaining, moveColor);
-                        gridSystem.HighlightMoveTiles(hoveredEntity.Position,
-                            hoveredEntity.AttackRange, attackColor);
                     }
                     else
                     {

@@ -12,6 +12,12 @@ public class DamageNumber : MonoBehaviour
     {
         text.text = damage;
     }
+
+    public void SetSize(float size)
+    {
+        text.fontSize = size;
+    }
+    
     void Start()
     {
         //text = GetComponent<TMP_Text>();
