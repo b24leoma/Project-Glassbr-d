@@ -131,8 +131,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3140487875100493225}
-  - component: {fileID: 2418005426206631070}
   - component: {fileID: 4548362541803891173}
+  - component: {fileID: 903461086332993261}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -155,27 +155,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7663342931390442820}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2418005426206631070
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4965125288546259241}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1e70ed6813f2448489479dd970cd6a38, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4548362541803891173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +172,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000bd248228170fd536
@@ -226,6 +205,23 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &903461086332993261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4965125288546259241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcaf8086c716f99469982a686b698619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light2D: {fileID: 4548362541803891173}
+  ease: 5
+  duration: 6
+  targetMaxIntensity: 1
+  targetMinIntensity: 0
 --- !u!1 &6881891519022880643
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +492,7 @@ MonoBehaviour:
   - {x: 1.3333334, y: -1.3333334, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 38084
+  m_InstanceId: 65650
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1.3333334, y: 1.3333334, z: 0}

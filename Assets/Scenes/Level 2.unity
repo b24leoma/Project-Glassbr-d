@@ -6139,28 +6139,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a935b08c7a469344a3161cab52987a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 300
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0.6037736, g: 0.38484627, b: 0.03702387, a: 1}
-    key2: {r: 0.6320754, g: 0.22977342, b: 0.062611245, a: 1}
-    key3: {r: 0.33962262, g: 0.059273757, b: 0.1907957, a: 0}
-    key4: {r: 0.052513115, g: 0.024964407, b: 0.31132078, a: 0}
-    key5: {r: 0.01059096, g: 0.01059096, b: 0.13207549, a: 0}
+    key1: {r: 0.7830189, g: 0.54480183, b: 0.16620687, a: 1}
+    key2: {r: 0.764151, g: 0.32042634, b: 0.13336597, a: 0}
+    key3: {r: 0.6698113, g: 0.24959949, b: 0.57643086, a: 0}
+    key4: {r: 0.18195978, g: 0.18195978, b: 0.4433962, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 32768
-    ctime1: 50886
-    ctime2: 53777
-    ctime3: 57247
-    ctime4: 60716
-    ctime5: 65535
+    ctime1: 51464
+    ctime2: 55319
+    ctime3: 56861
+    ctime4: 61295
+    ctime5: 0
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 1542
-    atime2: 65535
+    atime1: 65535
+    atime2: 0
     atime3: 0
     atime4: 0
     atime5: 0
@@ -6168,17 +6167,22 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 6
-    m_NumAlphaKeys: 3
-  gradientPercent: 0
-  endValue: 1
-  ease: 4
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 2
+  whenNightInGradient: 0.783
+  duration: 90
+  ease: 22
   loopType: 1
+  chanceForNoFog: 8
+  battleController: {fileID: 56033651}
+  fog: {fileID: 4352671660053959380}
+  hasToggled: 0
+  hasFoggedThisNight: 0
   cycleCount: 0
   dygnCount: 0
-  fog: {fileID: 4352671660053959380}
-  chanceForNoFog: 8
   slumptal: 0
+  gradientPercent: 0
+  endValue: 1
 --- !u!1 &1215170045
 GameObject:
   m_ObjectHideFlags: 0
@@ -10914,7 +10918,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270054444114193163}
   serializedVersion: 8
-  lengthInSec: 150
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -11743,7 +11747,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -12955,7 +12959,7 @@ ParticleSystem:
     m_Curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
