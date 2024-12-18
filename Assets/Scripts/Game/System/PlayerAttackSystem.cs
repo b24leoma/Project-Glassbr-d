@@ -351,7 +351,6 @@ namespace Game
 
         public void SetPaused(bool paused)
         {
-            Debug.Log(paused+ " tut:"+isTutorialPaused);
             isPaused = paused;
             isActing = false;
             pathLine.positionCount = 1;
