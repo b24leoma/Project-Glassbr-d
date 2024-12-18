@@ -102,6 +102,16 @@ namespace Game
         public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null)
         {
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
+            
+            if (isTutorial && entity.isHuman)
+            {
+                if ((tutorialManager.TutorialMoveTime() && pos.Length < 2 && tryAttackAfter) ||
+                    (tutorialManager.TutorialAttackTime() && !tryAttackAfter) || (tutorialManager.TutorialBushTime(pos[^1])  && !gridSystem.GetTile(pos[^1]).hidingSpot))
+                {
+                    yield break;
+                }
+            }
+            
             if (pos.Length > 1)
             {
                 UpdateCharacterDisplay(true, entity);
@@ -122,22 +132,34 @@ namespace Game
                 }
             }
 
+            if (isTutorial)
+            {
+                if (tutorialManager.TutorialMoveTime()) tutorialManager.Moving();
+                else if (tutorialManager.TutorialBushTime(entity.Position))
+                {
+                    isTutorial = false;
+                    tutorialManager.Bushing();
+                }
+            }
+
             if (tryAttackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <=
                 entity.AttackRange)
             {
                 Attack(entity, attackTarget);
                 yield return new WaitForSeconds(0.5f);
             }
-            
-            if (isTutorial)
-            {
-                tutorialManager.Moved(entity, pos[^1]);
-            }
-
         }
 
         public void Attack(Entity attacker, Entity target)
         {
+            if (isTutorial && attacker.isHuman)
+            {
+                if (!tutorialManager.TutorialAttackTime())
+                {
+                    return;
+                }
+            }
+            
             attacker.SetAttacking(true);   
             float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
             target.TakeDamage(reduction * attacker.Damage);
@@ -146,6 +168,7 @@ namespace Game
             else num.SetDamage($"-{reduction*attacker.Damage}\n({gridSystem.GetTile(target.Position).damageReductionPercent}% reduction)");
             UpdateCharacterDisplay(true, target);
             attacker.MoveDistance(attacker.moveDistanceRemaining);
+            if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
             if (target.CurrentHealth <= 0)
             {
                 if (target.isHuman)
@@ -167,12 +190,6 @@ namespace Game
 
                 target.Kill();
             }
-            if (isTutorial)
-            {
-                tutorialManager.Attacked(attacker);
-            }
-           
-            
         }
 
         public void EndTurn()

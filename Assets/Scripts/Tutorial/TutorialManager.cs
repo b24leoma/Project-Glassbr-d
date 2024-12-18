@@ -24,24 +24,34 @@ public class TutorialManager : MonoBehaviour
         gridSystem = FindObjectOfType<GridSystem>();
     }
 
-    public void Attacked(Entity e)
+    public bool TutorialAttackTime()
     {
-        if (e is Human)
-        {
-            onAttack?.Invoke();
-        }
+        return (dialogueManager.currentSentence == 4);
     }
 
-    public void Moved(Entity e, Vector2Int endPos)
+    public void Attacking()
     {
-        if (e.isHuman)
-        {
-            onMove?.Invoke();
-            if (gridSystem.GetTile(endPos).hidingSpot)
-            {
-                onBush?.Invoke();
-            }
-        }
+        onAttack?.Invoke();
+    }
+
+    public bool TutorialMoveTime()
+    {
+        return dialogueManager.currentSentence == 2;
+    }
+
+    public bool TutorialBushTime(Vector2Int endPos)
+    {
+        return dialogueManager.currentSentence == 6;
+    }
+
+    public void Bushing()
+    {
+        onBush?.Invoke();
+    }
+
+    public void Moving()
+    {
+        onMove?.Invoke();
     }
 
     public void OnEndTurn()
