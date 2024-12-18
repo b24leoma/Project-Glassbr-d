@@ -105,8 +105,8 @@ namespace Game
             
             if (isTutorial && entity.isHuman)
             {
-                if ((tutorialManager.TutorialMoveTime() && pos.Length < 2 && tryAttackAfter) ||
-                    (tutorialManager.TutorialAttackTime() && !tryAttackAfter) || (tutorialManager.TutorialBushTime(pos[^1])  && !gridSystem.GetTile(pos[^1]).hidingSpot))
+                if ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
+                    (tutorialManager.TutorialAttackTime() && !tryAttackAfter) || (tutorialManager.TutorialBushTime()  && !gridSystem.GetTile(pos[^1]).hidingSpot))
                 {
                     yield break;
                 }
@@ -135,7 +135,7 @@ namespace Game
             if (isTutorial)
             {
                 if (tutorialManager.TutorialMoveTime()) tutorialManager.Moving();
-                else if (tutorialManager.TutorialBushTime(entity.Position))
+                else if (tutorialManager.TutorialBushTime())
                 {
                     isTutorial = false;
                     tutorialManager.Bushing();
@@ -164,8 +164,13 @@ namespace Game
             float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
             target.TakeDamage(reduction * attacker.Damage);
             DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity).GetComponent<DamageNumber>();
-            if (reduction == 1) num.SetDamage($"-{reduction * attacker.Damage}");
-            else num.SetDamage($"-{reduction*attacker.Damage}\n({gridSystem.GetTile(target.Position).damageReductionPercent}% reduction)");
+            num.SetDamage($"-{reduction * attacker.Damage}");
+            if (reduction < 1)
+            {
+                num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                num.SetDamage($"{gridSystem.GetTile(target.Position).damageReductionPercent}% reduction");
+                num.SetSize(4.5f);
+            }
             UpdateCharacterDisplay(true, target);
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();

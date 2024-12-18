@@ -7,6 +7,10 @@ using UnityEngine.Events;
 
 public class TutorialManager : MonoBehaviour
 {
+    public int introduceMoveOnSentence;
+    public int introduceAttackOnSentence;
+    public int introduceEndTurnOnSentence;
+    public int introduceBushOnSentence;
     public UnityEvent onMove;
     public UnityEvent onAttack;
     public UnityEvent onBush;
@@ -26,41 +30,42 @@ public class TutorialManager : MonoBehaviour
 
     public bool TutorialAttackTime()
     {
-        return (dialogueManager.currentSentence == 4);
+        return dialogueManager.currentSentence == introduceAttackOnSentence;
     }
-
-    public void Attacking()
-    {
-        onAttack?.Invoke();
-    }
-
+    
     public bool TutorialMoveTime()
     {
-        return dialogueManager.currentSentence == 2;
+        return dialogueManager.currentSentence == introduceMoveOnSentence;
     }
 
-    public bool TutorialBushTime(Vector2Int endPos)
+    public bool TutorialBushTime()
     {
-        return dialogueManager.currentSentence == 6;
+        return dialogueManager.currentSentence == introduceBushOnSentence;
     }
-
+    
+    public void Moving()
+    {
+        TryNextSentence(introduceMoveOnSentence);
+        onMove?.Invoke();
+    }
+    public void Attacking()
+    {
+        TryNextSentence(introduceAttackOnSentence);
+        onAttack?.Invoke();
+    }
+    public void OnEndTurn()
+    {
+        TryNextSentence(introduceEndTurnOnSentence);
+        onEndTurn?.Invoke();
+    }
     public void Bushing()
     {
+        TryNextSentence(introduceBushOnSentence);
         onBush?.Invoke();
     }
 
-    public void Moving()
-    {
-        onMove?.Invoke();
-    }
 
-    public void OnEndTurn()
-    {
-        onEndTurn?.Invoke();
-    }
-
-
-    public void TryNextSentence(int eventnumber)
+    private void TryNextSentence(int eventnumber)
     {
         sentencenumber = dialogueManager.currentSentence;
         if (sentencenumber == eventnumber)
