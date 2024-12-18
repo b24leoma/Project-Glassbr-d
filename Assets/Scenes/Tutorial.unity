@@ -334,10 +334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a59e6da175ad304880b34b30ac33bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introduceMoveOnSentence: 4
-  introduceAttackOnSentence: 6
-  introduceEndTurnOnSentence: 7
-  introduceBushOnSentence: 8
+  introduceMoveOnSentence: 5
+  introduceAttackOnSentence: 7
+  introduceEndTurnOnSentence: 8
+  introduceBushOnSentence: 9
   onMove:
     m_PersistentCalls:
       m_Calls: []
@@ -4356,7 +4356,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  stopAfterSentence: 02000000040000000500000006000000
+  stopAfterSentence: 05000000070000000800000009000000
   canStopSentence: 0
   currentSentence: 0
   sentenceIsStopped: 1
@@ -4500,21 +4500,18 @@ MonoBehaviour:
       is marked by red within the grid). So now order your troops to attack it general!
       To do that (click on the troop you want to attack with and then click on the
       you wanna demon attack).
-    - 'Demons will respond quickly after you given your commands. So your troops
-      have only time to move a certain distance and attack once. (When you move or
-      attack the colored tiles for that action disappear).
-
-
-      (Press "End turn"
-      to continue the battle).'
-    - "Your troops seems to be out in the open, move to a bush for cover for a more
-      strategic position. \n\nLooks like your troop is in a dangerous situation.
-      You should move it to a more strategic point. Certain parts of the battlefield
-      can give you different advantages. Bushes can give troops cover making attacks
-      more loose against the troop or even miss. And heights can give archers more
-      range.\n\nTry commanding a troop to a bush."
-    - There exist different types of troops with their own strengths and weaknesses.
-      Try different ways to utilize their strengths to seee what works best.
+    - Demons will respond quickly after you given your commands. So your troops have
+      only time to move a certain distance and attack once. (When you move or attack
+      the colored tiles for that action disappear). (Press "End turn" to continue
+      the battle).
+    - Looks like your troop is in a dangerous situation. You should move it to a
+      more strategic point. Certain parts of the battlefield can give you different
+      advantages. Bushes can give troops cover making attacks more loose against
+      the troop or even miss. And heights can give archers more range. Try commanding
+      a troop to a bush.
+    - There also exist different types of troops, they each have their own strengths
+      and weaknesses. Try different ways to utilize their strengths to seee what
+      works best.
     - Now I think you are ready. I taught you the basics. So now good luck soldi-,
       I mean General. I look forward to hear about your future victories.
 --- !u!114 &847310680
