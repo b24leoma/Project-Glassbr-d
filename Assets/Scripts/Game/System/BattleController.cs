@@ -232,7 +232,22 @@ namespace Game
         {
             uiStates.TogglePanel(1);
         }
+        
+        
+        public void ToggleNightLightOnHumans(bool toNight)
+        {
+            
+            foreach (var entity in characters)
+            {
+                if (entity is Human human)
+                {
+                  human.NightLightToggle(toNight);
+                }
+            }
+        }
+
     }
+    
     
     
     
