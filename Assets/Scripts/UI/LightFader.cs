@@ -8,7 +8,7 @@ public class LightFader : MonoBehaviour
     [SerializeField] private Ease ease;
     [Range (0f,10f),SerializeField] private float duration = 0.1f;
     [Range (0f,10f),SerializeField] private float targetMaxIntensity = 1f;
-    [Range (0f,10f),SerializeField] private float targetMinIntensity;
+    [Range (0f,10f),SerializeField] private float targetMinIntensity ;
     private Tween _currentTween;
     
     
@@ -25,9 +25,12 @@ public class LightFader : MonoBehaviour
 
     public void FadeLightToggle()
     {
+       
+        _currentTween?.Kill();
+        
         var targetIntensity = _toMaxIntensity ? targetMaxIntensity : targetMinIntensity;
 
-        DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease).OnComplete(()=>_toMaxIntensity = !_toMaxIntensity);
+       _currentTween= DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease).OnComplete(()=>_toMaxIntensity = !_toMaxIntensity);
 
         
 
@@ -44,14 +47,14 @@ public class LightFader : MonoBehaviour
     {
         _currentTween?.Kill();
 
-        _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, 1, duration).SetEase(ease);
+        _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetMaxIntensity, duration).SetEase(ease);
     }
     
     
     public void FadeOutLight()
     {
         _currentTween?.Kill();
-       _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, 0, duration).SetEase(ease);
+       _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetMinIntensity, duration).SetEase(ease);
     }
 
 }
