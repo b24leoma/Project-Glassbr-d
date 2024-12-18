@@ -10,6 +10,7 @@ public class UIStates : MonoBehaviour
     [SerializeField] UnityEvent onWin;
     [SerializeField] UnityEvent onLoss;
     [SerializeField] UnityEvent onOpenSettings;
+    [SerializeField] UnityEvent onCloseSettings;
     [SerializeField] private bool gameEnded;
 
 
@@ -49,12 +50,6 @@ public class UIStates : MonoBehaviour
             }
             case 3:
             {
-                if (gameEnded == false)
-                {
-                    onOpenSettings.Invoke();
-                    AnimateToggle();
-                    break;
-                }
                 AnimateToggle();
                 break;
             }
@@ -69,9 +64,10 @@ public class UIStates : MonoBehaviour
 
     private void AnimateToggle()
     {
-        bool isOpen = settingsAnimator.GetBool(IsOpen);
-
-        settingsAnimator.SetBool(IsOpen, !isOpen);
+        bool open = !settingsAnimator.GetBool(IsOpen);
+        settingsAnimator.SetBool(IsOpen, open);
+        if (open) onOpenSettings?.Invoke();
+        else onCloseSettings?.Invoke();
     }
 
   
