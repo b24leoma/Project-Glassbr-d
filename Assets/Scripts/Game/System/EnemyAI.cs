@@ -29,8 +29,6 @@ namespace Game
                 {
                     Vector2Int demonCurrentPos = demon.Position;
                     GetClosestTarget(demon);
-                    bool hasAttacked = false;
-
 
                     //Attack before move
                     if (demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
@@ -38,17 +36,16 @@ namespace Game
                     {
                         gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                         battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                        hasAttacked = true;
                         yield return new WaitForSeconds(1);
                         if (gridSystem.humans.Count == 0) yield break;
-                        GetClosestTarget(demon);
+                        continue;
                     }
 
                     if (demon.target.CurrentHealth > 0)
                     {
                         Vector2Int[] path =
                             gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                        StartCoroutine(battleController.Move(path, !hasAttacked, demon.target));
+                        StartCoroutine(battleController.Move(path, demon.target));
                         yield return new WaitForSeconds(2f);
                     }
                 }
