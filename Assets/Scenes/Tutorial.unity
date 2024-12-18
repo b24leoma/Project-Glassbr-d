@@ -4510,18 +4510,18 @@ MonoBehaviour:
   dialogue:
     name: aaa
     sentences:
-    - Greetings Alex! I'm proud to introduce you to our ranks. So let me teach you
-      the ropes.
+    - Greetings General! I'm proud to introduce you to our ranks. So let me teach
+      you the ropes.
     - AAAAAAARRRGH! Help! Help us!
     - Good Virtue! What's going on! Follow me.
     - Demons. Well I guess this is pretty good timing. We'll have this lesson practically.
     - When you ecounter an army or encampment of demons, you want to command your
       troops to move through the battlefield. You do that by (clicking on the troop
-      you want to move and then clicking on a tile marked darker blue to move there).
+      you want to move and then clicking on a tile marked dark blue to move there).
       Now push forth.
     - Fantastic maneuvers!
     - Now then, a filthy demon is in your troops' attack range. (Your attack range
-      is marked by red within the grid). So now order your troops to attack it general!
+      is marked by red within the grid). So now order your troops to attack it General!
       To do that (click on the troop you want to attack with and then click on the
       you wanna demon attack).
     - Demons will respond quickly after you given your commands. So your troops have
@@ -4531,11 +4531,10 @@ MonoBehaviour:
     - Looks like your troop is in a dangerous situation. You should move it to a
       more strategic point. Certain parts of the battlefield can give you different
       advantages. Bushes can give troops cover making attacks more loose against
-      the troop or even miss. And heights can give archers more range. Try commanding
-      a troop to a bush.
+      the troop or even miss. Try commanding a troop to a bush.
     - There also exist different types of troops, they each have their own strengths
-      and weaknesses. Try different ways to utilize their strengths to seee what
-      works best.
+      and weaknesses. Try different ways to utilize their strengths to see what works
+      best.
     - Now I think you are ready. I taught you the basics. So now good luck soldi-,
       I mean General. I look forward to hear about your future victories.
 --- !u!114 &847310680
