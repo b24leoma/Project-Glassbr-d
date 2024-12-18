@@ -13,6 +13,7 @@ namespace Game
             isHuman = false;
             string[] identity = NameGenerator.GenerateIdentity(false);
             Name = identity[0];
+            Age = "";
             Description = identity[1];
             attackImg = AttackingImage.GetComponent<SpriteRenderer>();
         }
