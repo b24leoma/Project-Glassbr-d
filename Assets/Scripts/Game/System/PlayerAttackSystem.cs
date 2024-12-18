@@ -68,8 +68,7 @@ namespace Game
                                         hoveredEntity.Position) <=
                                     actingEntity.AttackRange)
                                 {
-                                    if (gridSystem.GetGridDistance(actingEntity.Position, hoveredEntity.Position) <=
-                                        actingEntity.AttackRange)
+                                    if (pathLine.positionCount < 2)
                                     {
                                         battleController.Attack(actingEntity, hoveredEntity);
                                     }

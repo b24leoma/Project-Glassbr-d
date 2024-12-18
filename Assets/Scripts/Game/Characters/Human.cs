@@ -6,6 +6,7 @@ namespace Game
     {
         [SerializeField] protected GameObject movingIcon;
         [SerializeField] protected GameObject attackingIcon;
+        private LightFader _lightFader;
         void Awake()
         {
            isHuman = true;
@@ -13,6 +14,7 @@ namespace Game
            Name = identity[0];
            Age = identity[1];
            Description = identity[2];
+           _lightFader = GetComponentInChildren<LightFader>();
         }
         
         public override void MoveDistance(int distance)
@@ -28,5 +30,20 @@ namespace Game
             if (attacking) PlayAttack();
                 
         }
+
+
+        public void NightLightToggle(bool toNight)
+        {
+            switch (toNight)
+            {
+                case true:
+                    _lightFader.FadeInLight();
+                    break;
+                case false:
+                    _lightFader.FadeOutLight();
+                    break;
+            }
+        }
+            
     }
 }

@@ -9,6 +9,7 @@ public class LightFader : MonoBehaviour
     [Range (0f,10f),SerializeField] private float duration = 0.1f;
     [Range (0f,10f),SerializeField] private float targetMaxIntensity = 1f;
     [Range (0f,10f),SerializeField] private float targetMinIntensity;
+    private Tween _currentTween;
     
     
     private bool _toMaxIntensity = true;
@@ -26,9 +27,9 @@ public class LightFader : MonoBehaviour
     {
         var targetIntensity = _toMaxIntensity ? targetMaxIntensity : targetMinIntensity;
 
-        DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease);
+        DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease).OnComplete(()=>_toMaxIntensity = !_toMaxIntensity);
 
-        _toMaxIntensity = !_toMaxIntensity;
+        
 
 
     }
@@ -38,4 +39,19 @@ public class LightFader : MonoBehaviour
     {
         light2D.intensity = 0f;
     }
+
+    public void FadeInLight()
+    {
+        _currentTween?.Kill();
+
+        _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, 1, duration).SetEase(ease);
+    }
+    
+    
+    public void FadeOutLight()
+    {
+        _currentTween?.Kill();
+       _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, 0, duration).SetEase(ease);
+    }
+
 }

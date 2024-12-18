@@ -15,8 +15,6 @@ public class TutorialManager : MonoBehaviour
     public UnityEvent onAttack;
     public UnityEvent onBush;
     public UnityEvent onEndTurn;
-    public UnityEvent delayedEvent;
-   [Range(0, 10),SerializeField] private float delayEventTimer;
    
     private GridSystem gridSystem;
     [SerializeField] private int sentencenumber;
@@ -72,13 +70,6 @@ public class TutorialManager : MonoBehaviour
         {
             dialogueManager.UnpauseDialogue();
         }
-    }
-
-    public void EventDelayer()
-    {
-        //Use this as a middleman to delay an event... probably shitty way to do it, but it works.
-        DOVirtual.DelayedCall(delayEventTimer, delayedEvent.Invoke);
-
     }
 
 }
