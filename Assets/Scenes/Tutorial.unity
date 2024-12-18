@@ -358,14 +358,23 @@ MonoBehaviour:
         m_CallState: 2
   onBush:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1392535647}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onEndTurn:
     m_PersistentCalls:
-      m_Calls: []
-  delayedEvent:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1948229807}
+      - m_Target: {fileID: 1392535647}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -377,31 +386,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 847310677}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 56033650}
-        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
-        m_MethodName: SetPaused
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayEventTimer: 2
   sentencenumber: 0
   dialogueManager: {fileID: 846653635}
 --- !u!1 &148753875
@@ -1311,10 +1295,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 99d30f95f9358324fb4f6b2b43f9adeb, type: 2}
+  m_sharedMaterial: {fileID: -7924261209144917466, guid: 99d30f95f9358324fb4f6b2b43f9adeb, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -4348,10 +4332,22 @@ MonoBehaviour:
   whenComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 56033654}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: EventDelayer
-        m_Mode: 1
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1948229807}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4381,12 +4377,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 847310677}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDialogueUnpause:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 56033650}
         m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
         m_MethodName: SetPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 847310677}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4448,8 +4468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 870, y: -52.5}
-  m_SizeDelta: {x: 140, y: 45}
+  m_AnchoredPosition: {x: 840, y: 0}
+  m_SizeDelta: {x: 140, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &847310679
 MonoBehaviour:
@@ -4497,7 +4517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4505,7 +4525,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.6509434, g: 0.635591, b: 0.635591, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4879,8 +4899,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 35}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -125, y: 0}
+  m_SizeDelta: {x: 1550, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &926230822
 MonoBehaviour:
@@ -4966,7 +4986,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -790.0068, y: 0, z: -782.22327, w: 0}
+  m_margin: {x: -0.2748413, y: 0, z: 0.3569336, w: 0.14788818}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
