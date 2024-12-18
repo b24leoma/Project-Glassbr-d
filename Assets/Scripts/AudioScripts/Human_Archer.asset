@@ -18,11 +18,11 @@ MonoBehaviour:
   - nameRef: ATK_Human.Archer
     eventReference:
       Guid:
-        Data1: -271617029
-        Data2: 1230054026
-        Data3: 139029161
-        Data4: 1559222730
-      Path: event:/Hit
+        Data1: -52996860
+        Data2: 1100024294
+        Data3: 1586616742
+        Data4: -1347007884
+      Path: event:/M_Young_02_ATK
   damageEvents:
   - nameRef: DMG_Human.Archer
     eventReference:

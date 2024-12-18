@@ -18,29 +18,29 @@ MonoBehaviour:
   - nameRef: ATK_Human.Spear
     eventReference:
       Guid:
-        Data1: -271617029
-        Data2: 1230054026
-        Data3: 139029161
-        Data4: 1559222730
-      Path: event:/Hit
+        Data1: 1275121491
+        Data2: 1267482601
+        Data3: -961685356
+        Data4: 556775425
+      Path: event:/M_Old_01_ATK
   damageEvents:
   - nameRef: DMG_Human.Spear
     eventReference:
       Guid:
-        Data1: -101165017
-        Data2: 1107318079
-        Data3: 1848551838
-        Data4: 2040597619
-      Path: event:/M_Young_01_DMG
+        Data1: -473405524
+        Data2: 1284270554
+        Data3: -1008388199
+        Data4: 1628090656
+      Path: event:/M_Old_01_DMG
   deathEvents:
   - nameRef: DEATH_Human.Spear
     eventReference:
       Guid:
-        Data1: -1593788182
-        Data2: 1209730976
-        Data3: -1399769968
-        Data4: -1672308501
-      Path: event:/M_Young_01_DEATH
+        Data1: -1115724831
+        Data2: 1342098564
+        Data3: 785883270
+        Data4: 1788093087
+      Path: event:/M_Old_01_DEATH
   moveEvents:
   - nameRef: MOVE_Human.Spear
     eventReference:

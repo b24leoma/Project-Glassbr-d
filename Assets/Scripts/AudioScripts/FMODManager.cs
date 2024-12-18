@@ -158,7 +158,8 @@ public class FMODManager : MonoBehaviour
 
         if (position.HasValue)
         {
-            RuntimeManager.PlayOneShot(eventReference, position.Value);
+            Vector3 adjustedTopDownPosition = new Vector3(position.Value.x, position.Value.y, 0f);
+            RuntimeManager.PlayOneShot(eventReference, adjustedTopDownPosition);
         }
         else
         {

@@ -18,20 +18,20 @@ MonoBehaviour:
   - nameRef: ATK_Demon.Tank
     eventReference:
       Guid:
-        Data1: -271617029
-        Data2: 1230054026
-        Data3: 139029161
-        Data4: 1559222730
-      Path: event:/Hit
+        Data1: -826245639
+        Data2: 1149489813
+        Data3: 707651205
+        Data4: -441335229
+      Path: event:/Demon_Tank_01_ATK
   damageEvents:
   - nameRef: DMG_Demon.Tank
     eventReference:
       Guid:
-        Data1: -1762175794
-        Data2: 1173637725
-        Data3: 2050492068
-        Data4: 1091999423
-      Path: event:/Gurgle
+        Data1: 1579187407
+        Data2: 1330944784
+        Data3: 73565326
+        Data4: -232160840
+      Path: event:/Demon_Tank_01_DMG
   deathEvents:
   - nameRef: DEATH_Demon.Tank
     eventReference:
@@ -40,7 +40,7 @@ MonoBehaviour:
         Data2: 1126697872
         Data3: -724554564
         Data4: -1996578110
-      Path: event:/DemonTankDie
+      Path: event:/Demon_Tank_01_DEATH
   moveEvents:
   - nameRef: MOVE_Demon.Tank
     eventReference:
@@ -49,4 +49,4 @@ MonoBehaviour:
         Data2: 1150662037
         Data3: 539498151
         Data4: -946908988
-      Path: event:/HeavyWalk
+      Path: event:/Demon_Tank_01_MOVE
