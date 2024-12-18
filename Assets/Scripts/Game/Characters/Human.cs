@@ -26,7 +26,7 @@ namespace Game
         public override void SetAttacking(bool attacking)
         {
             hasAttacked = attacking;
-            attackingIcon.SetActive(attacking);
+            if (attackingIcon != null) attackingIcon.SetActive(attacking);
             if (attacking) PlayAttack();
                 
         }

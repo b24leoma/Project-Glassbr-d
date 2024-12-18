@@ -102,6 +102,7 @@ namespace Game
         public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null)
         {
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
+            if (entity == null) yield break;
             
             if (isTutorial && entity.isHuman)
             {

@@ -14,9 +14,17 @@ namespace Game
         // ReSharper disable Unity.PerformanceAnalysis
         private IEnumerator DoTheMagic()
         {
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(1.5f);
+            foreach (Vector2Int p in gridSystem.humans)
+            {
+                Entity e = gridSystem.GetTile(p).linkedEntity;
+                e.SetAttacking(false);
+                e.moveDistanceRemaining = e.MoveRange;
+                e.MoveDistance(0);
+            }
             for (int i = 0; i < gridSystem.demons.Count; i++)
             {
+                yield return new WaitForSeconds(1f);
                 if (gridSystem.GetTile(gridSystem.demons[i]).linkedEntity is Demon demon)
                 {
                     Vector2Int demonCurrentPos = demon.Position;
@@ -40,10 +48,9 @@ namespace Game
                     {
                         Vector2Int[] path =
                             gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                        StartCoroutine(battleController.Move(path, !hasAttacked, demon.target));   
+                        StartCoroutine(battleController.Move(path, !hasAttacked, demon.target));
+                        yield return new WaitForSeconds(2f);
                     }
-
-                    yield return new WaitForSeconds(1.5f);
                 }
             }
 
