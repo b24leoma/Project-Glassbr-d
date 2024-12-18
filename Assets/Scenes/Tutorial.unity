@@ -334,10 +334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a59e6da175ad304880b34b30ac33bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introduceMoveOnSentence: 2
-  introduceAttackOnSentence: 4
-  introduceEndTurnOnSentence: 5
-  introduceBushOnSentence: 6
+  introduceMoveOnSentence: 4
+  introduceAttackOnSentence: 6
+  introduceEndTurnOnSentence: 7
+  introduceBushOnSentence: 8
   onMove:
     m_PersistentCalls:
       m_Calls: []
@@ -4486,24 +4486,37 @@ MonoBehaviour:
   dialogue:
     name: aaa
     sentences:
-    - Greetings "Name"! I'm proud to introduce you to our ranks. So let me teach
-      you the ropes.
-    - "When you ecounter an enemy, you want to command your troops to move on the
-      battlefield. \n\nClick on a unit to mark them and then move it to one of the
-      dark tiles."
-    - Fantastic maneuvers, General!
-    - "When an enemy is in range of one of your troops you can attack it. Make the
-      Attack order, General!\n\nA units attack range is the red tiles you see while
-      a troop is selected. \n\nNow destroy them, General. Click on the troop you
-      want to attack with, then click on a demon to attack it."
-    - "Your troops follows your orders blindly but be aware, shortly after your orders
-      are executed the demons will strike back. \n\nPress \"End turn\" to continue
-      the battle."
+    - Greetings Alex! I'm proud to introduce you to our ranks. So let me teach you
+      the ropes.
+    - AAAAAAARRRGH! Help! Help us!
+    - Good Virtue! What's going on! Follow me.
+    - Demons. Well I guess this is pretty good timing. We'll have this lesson practically.
+    - When you ecounter an army or encampment of demons, you want to command your
+      troops to move through the battlefield. You do that by (clicking on the troop
+      you want to move and then clicking on a tile marked darker blue to move there).
+      Now push forth.
+    - Fantastic maneuvers!
+    - Now then, a filthy demon is in your troops' attack range. (Your attack range
+      is marked by red within the grid). So now order your troops to attack it general!
+      To do that (click on the troop you want to attack with and then click on the
+      you wanna demon attack).
+    - 'Demons will respond quickly after you given your commands. So your troops
+      have only time to move a certain distance and attack once. (When you move or
+      attack the colored tiles for that action disappear).
+
+
+      (Press "End turn"
+      to continue the battle).'
     - "Your troops seems to be out in the open, move to a bush for cover for a more
-      strategic position. \n\nCertain parts of the battlefield can offer cover or
-      give other benefits to your troops, so use the battlefield strategically."
-    - I taught you the basics and now you are ready. Good luck soldi-, I mean General.
-      I look forward to hear about your future endeavours.
+      strategic position. \n\nLooks like your troop is in a dangerous situation.
+      You should move it to a more strategic point. Certain parts of the battlefield
+      can give you different advantages. Bushes can give troops cover making attacks
+      more loose against the troop or even miss. And heights can give archers more
+      range.\n\nTry commanding a troop to a bush."
+    - There exist different types of troops with their own strengths and weaknesses.
+      Try different ways to utilize their strengths to seee what works best.
+    - Now I think you are ready. I taught you the basics. So now good luck soldi-,
+      I mean General. I look forward to hear about your future victories.
 --- !u!114 &847310680
 MonoBehaviour:
   m_ObjectHideFlags: 0
