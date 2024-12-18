@@ -18,6 +18,7 @@ namespace Game
         private Entity actingEntity;
         private bool isPlayerTurn;
         private bool isPaused;
+        private bool isTutorialPaused;
         private Vector3 offsetFix;
         private BattleController battleController;
         private Color moveColor;
@@ -35,7 +36,7 @@ namespace Game
 
         public void TileClicked(InputAction.CallbackContext context)
         {
-            if (!isPlayerTurn || isPaused) return;
+            if (!isPlayerTurn || isPaused || isTutorialPaused) return;
             if (context.canceled)
             {
                 hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
@@ -118,7 +119,7 @@ namespace Game
 
         public void MouseMove(InputAction.CallbackContext context)
         {
-            if (isPaused) return;
+            if (isPaused || isTutorialPaused) return;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
 
@@ -340,13 +341,6 @@ namespace Game
             isActing = false;
             isPlayerTurn = false;
             endTurnButton.SetActive(false);
-            foreach (Vector2Int p in gridSystem.humans)
-            {
-                Entity e = gridSystem.GetTile(p).linkedEntity;
-                e.SetAttacking(false);
-                e.moveDistanceRemaining = e.MoveRange;
-                e.MoveDistance(0);
-            }
         }
 
         public void StartTurn()
@@ -358,6 +352,14 @@ namespace Game
         public void SetPaused(bool paused)
         {
             isPaused = paused;
+            isActing = false;
+            pathLine.positionCount = 1;
+            gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
+        }
+        
+        public void SetTutorialPaused(bool paused)
+        {
+            isTutorialPaused = paused;
             isActing = false;
             pathLine.positionCount = 1;
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
