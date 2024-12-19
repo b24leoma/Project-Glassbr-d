@@ -13,7 +13,6 @@ namespace Game
         {
             StartCoroutine(DoTheMagic());
         }
-        // ReSharper disable Unity.PerformanceAnalysis
         private IEnumerator DoTheMagic()
         {
             yield return new WaitForSeconds(1.5f);
@@ -34,7 +33,8 @@ namespace Game
                 if (gridSystem.GetTile(demonList[i]).linkedEntity is Demon demon)
                 {
                     Vector2Int demonCurrentPos = demon.Position;
-                    GetClosestTarget(demon);
+                    if (demon.target == null) demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(1, gridSystem.humans.Count) - 1]).linkedEntity as Human;
+                    else GetClosestTarget(demon);
 
                     //Attack before move
                     if (demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
@@ -57,7 +57,6 @@ namespace Game
                     }
 
                     //Attack After move
-                    GetClosestTarget(demon);
                     if (demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
                         demon.AttackRange)
                     {
