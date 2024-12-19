@@ -177,6 +177,7 @@ namespace Game
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
             if (target.CurrentHealth <= 0)
             {
+                target.TakeDamage(target.CurrentHealth);
                 if (target.isHuman)
                 {
                     gridSystem.humans.Remove(target.Position);
@@ -193,7 +194,7 @@ namespace Game
                         uiStates.TogglePanel(1);
                     }
                 }
-
+                UpdateCharacterDisplay(true, target);
                 target.Kill();
             }
         }
