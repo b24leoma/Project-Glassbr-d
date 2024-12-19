@@ -3,16 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-   
-  
-
-    void Start()
-    {
-       var scene = SceneManager.GetActiveScene();
-       
-       Debug.Log("Scene Name: " + scene.name + " - " + "Scene Index: " + scene.buildIndex);
-    }
-
     public void NextScene()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

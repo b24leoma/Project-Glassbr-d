@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace Game
 {
@@ -161,22 +162,48 @@ namespace Game
                 }
             }
             
-            attacker.SetAttacking(true);   
-            float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
-            target.TakeDamage(reduction * attacker.Damage);
-            DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity).GetComponent<DamageNumber>();
-            num.SetDamage($"-{reduction * attacker.Damage}");
-            if (reduction < 1)
+            attacker.SetAttacking(true);
+            Tile tile = gridSystem.GetTile(target.Position);
+            float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
+            if (Random.Range(1, 100) < tile.missChancePercent)
             {
-                num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
-                num.SetDamage($"{gridSystem.GetTile(target.Position).damageReductionPercent}% reduction");
-                num.SetSize(4.5f);
+                // ---MISS---
+                DamageNumber num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                num.SetDamage($"MISS");
+                damage = 0;
             }
+            else
+            {
+                Vector3 targetPos = target.transform.position;
+                if (tile.damageReductionPercent > 0)
+                {
+                    // ---REDUCTION---
+                    float reduction = 1 - tile.damageReductionPercent / 100f;
+                    damage *= reduction;
+                    DamageNumber num = Instantiate(damageNumbers, targetPos, quaternion.identity)
+                        .GetComponent<DamageNumber>();
+                    num.SetDamage($"-{damage}");
+                    
+                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                    num.SetDamage($"{tile.damageReductionPercent}% reduction");
+                    num.SetSize(4.5f);
+                }
+                else
+                {
+                    // ---NORMAL ATTACK---
+                    DamageNumber num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
+                    num.SetDamage($"-{damage}");
+                }
+
+                target.TakeDamage(damage);
+            }
+            
             UpdateCharacterDisplay(true, target);
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
             if (target.CurrentHealth <= 0)
             {
+                target.TakeDamage(target.CurrentHealth);
                 if (target.isHuman)
                 {
                     gridSystem.humans.Remove(target.Position);
@@ -193,7 +220,7 @@ namespace Game
                         uiStates.TogglePanel(1);
                     }
                 }
-
+                UpdateCharacterDisplay(true, target);
                 target.Kill();
             }
         }
@@ -211,7 +238,7 @@ namespace Game
             infoDisplay.SetActive(showDisplay);
             if (showDisplay)
             {
-                displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
+                displayStats.text = $"{entity.MinDamage}-{entity.MaxDamage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
                 displayName.text = $"{entity.Name}\n{entity.Age}";
                 displayDescription.text = entity.Description;
             }

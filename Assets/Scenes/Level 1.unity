@@ -1969,468 +1969,546 @@ MonoBehaviour:
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 4498f69c19a836d4a9eff60d6fc7caeb, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 0d468a9d9eb4d2f43b9deef85e852476, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: eab158f0960db07439e4458d9bbc7143, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 0849b3d56b6392a43af263a8f39e71fd, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 75d16daa74a88844fb2a32d1155e38c6, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 790d3cd65083d6d41b59f3b3060ee541, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: a0c5b881ed17a7c469ae2b40844de168, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 50832a3c0375fbd409bb306e29f93e21, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 038f75f9509fe7649b86817e27a55ec0, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 6eb1f0d370d191041800989a65fc73f4, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 916b2cddd94e93c4a9e2ecfb0a957359, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: f9837718b1eeeeb4cbceb2cd7105b088, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: f80bf4a65d67e704babbf9ab76d1b41b, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 68ac86532c44f6b42aa8b613f9ace138, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 38244225a82577045bcb008ccd11e2f3, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 4ea344428625a7642bc5d835c26ae7f6, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 6a0c6b4bc91b26343952f8c956f982aa, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 63e6801a19acce14cad9704298400f6c, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 0f943f896eba8b04c896e0f5b0fd7c4a, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: d25861f90ff57104988f661af2072eca, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 3c1bbce6f4982c94080878c866021ef0, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 538f340e2e8778d40bafa1dbdf48583a, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 1c028230dea780742a0af526d9e111a4, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 301ee20849363c346b998df21225fb70, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: eb4370b780b316344b106bd39d47b77b, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 09ec2ed5a7944494596bd6f27d56d6f6, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: faf3ce86e5026884b8402c1e790bc225, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 52c6c38d0c6849b458897fce917bb1f7, type: 2}
     walkable: 1
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: eb69c2d417a86d0499f3d5f886e1e3e6, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 10
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: a5e8fe714f2f9ad4bbc8a15d31608576, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 1288a5eafd6e05a4896a237d2bf5e990, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 521e0cc978c86fa46b1aa83edae84665, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 3551385a6a279e044be0e88655576cef, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: f189da700cb25d34ca9c8e316d4a31e4, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 0f58a6b7596531b4e9d07d3188a913b3, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 0f3ccf381a14d5849920cc13d1e1e8a3, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 10
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 7a984c4d230ab044090d90f717825d76, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: dbdfd85b7bcdd1142bc2f789c29ddd71, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 30c5dbb8fbe297f4b83d7fd18eb10a09, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: a29a82b624a6b6546973aa4b5062728d, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 643051dae1c0c5c499ec43060f461cde, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 429c3fa3c09e1034b8f5fb4e7cd343b6, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 429c3fa3c09e1034b8f5fb4e7cd343b6, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 4db84cbc5ac9df945a4f3cce65d57af1, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 3f82846d62c8d4f4caab798a017db8d8, type: 2}
     walkable: 1
     hidingSpot: 1
     archerRangeIncrease: 0
     damageReductionPercent: 20
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 643051dae1c0c5c499ec43060f461cde, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: d311af3d331ed7f4c85a1eb14b01eaa4, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 593fcae4733c27a41bf0ebdfdac74fb3, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 429c3fa3c09e1034b8f5fb4e7cd343b6, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: f6e0bb65f7dc12e40b84d70ca5a0fe9f, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: cef0d537ef06929449cb376bf1b9f991, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: b2fed97cebb294846a0800ad21c10e87, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 9f367ac9576d9d645912e1d7a4d46126, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 227920022f68a32419d33b993eee8e10, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 230aa12310482d94585b898e14aadfb1, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: f19a47133b3e95340b053355a88da95c, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 6f862b811609cbd4387aab01b165996e, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: b2fed97cebb294846a0800ad21c10e87, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: b384ceea1f55362408e46ef9a6a18fb5, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 65893068c3ae780438ba15acefd5556c, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: e57ea79d6bf4b80419e1c281d290da70, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 3040efede6797dc4ca84ee3db3636b1f, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 069ae03ae3c128d47a256bdc592a82bf, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 6abd990e915c7694d8167fdbdd29a24a, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 71cd1b7872a0ae84bb95d72aa67159a9, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: b1a0b1069262a78499e589dcc6f4b607, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 643051dae1c0c5c499ec43060f461cde, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 429c3fa3c09e1034b8f5fb4e7cd343b6, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: aeadefe25ebacbc4d9c2c7e0091fc153, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: ee7c7f04ee78501458e9b9ba5d484770, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 593fcae4733c27a41bf0ebdfdac74fb3, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 643051dae1c0c5c499ec43060f461cde, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 30c5dbb8fbe297f4b83d7fd18eb10a09, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: a29a82b624a6b6546973aa4b5062728d, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: e320bcab29e1c2c44b6d921b5fc3fc03, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: a22a4a6f52441b144976d61c7c6e6ec9, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   - linkedEntity: {fileID: 0}
     tile: {fileID: 11400000, guid: 7fd2918b6000b7b4a99908ab1059d38d, type: 2}
     walkable: 0
     hidingSpot: 0
     archerRangeIncrease: 0
     damageReductionPercent: 0
+    missChancePercent: 0
   demons: []
   humans: []
 --- !u!19719996 &651517035
@@ -8896,6 +8974,171 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!43 &1397102849
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 11
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 42
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 16
+    localAABB:
+      m_Center: {x: -0.5, y: -0.5, z: 0}
+      m_Extent: {x: 10.5, y: 5.5, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 00000100020003000100000003000400010005000400030006000400050004000600070002000800000000000900030001000a00020004000b00010003000c00050007000d00040005000e00060006000f000700
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 16
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 704
+    _typelessdata: 000020410000c0c0000000000000803f000000800000008000000080000020410000c0c0000020410000c0c0000020410000a04000000000000000800000803f0000008000000080000020410000a040000020410000a04000002041000000bf000000000000803f000000800000008000000080000020410000a040000020410000c0c0000000bf0000c0c00000000000000080000080bf0000000000000080000020410000c0c0000030c10000c0c0000000bf0000a04000000000000000800000803f0000008000000080000030c10000a040000020410000a040000030c10000c0c00000000000000080000080bf0000000000000080000030c10000c0c0000030c10000c0c0000030c1000000bf00000000000080bf000000800000008000000080000030c10000c0c0000030c10000a040000030c10000a04000000000000080bf000000800000008000000080000030c10000a040000030c10000a04000002041000000bf000000000000803f000000800000008000000080000020410000a040000020410000c0c0000020410000c0c00000000000000080000080bf0000000000000080000020410000c0c0000020410000c0c0000020410000a040000000000000803f000000800000008000000080000020410000a040000020410000a040000000bf0000a04000000000000000800000803f0000008000000080000030c10000a040000020410000a040000000bf0000c0c00000000000000080000080bf0000000000000080000020410000c0c0000030c10000c0c0000030c10000a04000000000000000800000803f0000008000000080000030c10000a040000030c10000a040000030c10000c0c000000000000080bf000000800000008000000080000030c10000c0c0000030c10000c0c0000030c1000000bf00000000000080bf000000800000008000000080000030c10000c0c0000030c10000a040
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: -0.5, y: -0.5, z: 0}
+    m_Extent: {x: 10.5, y: 5.5, z: 0}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1425331442
 GameObject:
   m_ObjectHideFlags: 0

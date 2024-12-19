@@ -278,5 +278,6 @@ namespace Game
         
         public int archerRangeIncrease = 0;
         public int damageReductionPercent = 0;
+        public int missChancePercent = 0;
     }
 }

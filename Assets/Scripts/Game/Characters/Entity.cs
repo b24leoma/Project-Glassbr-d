@@ -19,14 +19,15 @@ namespace Game
 
         public EntityType Type;
         private Animator animator;
-        private SpriteRenderer _sprite;
+        protected SpriteRenderer _sprite;
         private ParticleSystem _particle;
         public string Name { get; protected set; }
         public string Age { get; protected set; }
         public string Description { get; protected set; }
         public int MaxHealth;
         public int CurrentHealth { get; protected set; }
-        public int Damage;
+        public int MinDamage;
+        public int MaxDamage;
         public int MoveRange;
         public int AttackRange;
         public bool IsMelee { get; protected set; }
@@ -76,7 +77,7 @@ namespace Game
         }
 
 
-        public virtual void MoveDistance(int distance)
+        public void MoveDistance(int distance)
         {
             moveDistanceRemaining -= distance;
         }
@@ -85,6 +86,7 @@ namespace Game
         {
             hasAttacked = attacking;
             if (attacking) PlayAttack();
+            else _sprite.color = Color.white;
 
         }
 
@@ -92,7 +94,6 @@ namespace Game
         {
             SFX.DEATH(Type, transform.position);
             transform.DOShakeRotation(0.4f, 1080f);
-            Debug.Log(Name + ": WEEEEEEEEEEEEEEEEEEEEEEEE");
             transform.DOMoveY(1.5f, 0.2f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutBounce).OnComplete(() =>
             {
                 transform.DOShakePosition(0.3f, new Vector3(0.2f, 0.2f, 0));
