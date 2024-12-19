@@ -40,13 +40,25 @@ namespace Game
                         if (gridSystem.humans.Count == 0) yield break;
                         continue;
                     }
-
+                    
+                    //Move
                     if (demon.target.CurrentHealth > 0)
                     {
                         Vector2Int[] path =
                             gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
-                        StartCoroutine(battleController.Move(path, demon.target));
+                        StartCoroutine(battleController.Move(path, true, demon.target));
                         yield return new WaitForSeconds(2f);
+                    }
+
+                    //Attack After move
+                    GetClosestTarget(demon);
+                    if (demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
+                        demon.AttackRange)
+                    {
+                        gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
+                        battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
+                        yield return new WaitForSeconds(1);
+                        if (gridSystem.humans.Count == 0) yield break;
                     }
                 }
             }
