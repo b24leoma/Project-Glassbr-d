@@ -16,7 +16,7 @@ public class PlayOnStart : MonoBehaviour
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            string currentScene = scene.name;
+            var currentScene = scene.name;
 
             switch (currentScene)
             {
@@ -27,7 +27,11 @@ public class PlayOnStart : MonoBehaviour
                 case "IntroHistoryBook":
                     break;
 
-                case "Game":
+                case "Level 1":
+                    FMODManager.instance.SetParameter("Battle", 1f);
+                    break;
+                
+                case "Level 2":
                     FMODManager.instance.SetParameter("Battle", 1f);
                     break;
 
