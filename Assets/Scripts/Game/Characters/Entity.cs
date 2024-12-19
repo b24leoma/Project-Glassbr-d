@@ -19,7 +19,7 @@ namespace Game
 
         public EntityType Type;
         private Animator animator;
-        private SpriteRenderer _sprite;
+        protected SpriteRenderer _sprite;
         private ParticleSystem _particle;
         public string Name { get; protected set; }
         public string Age { get; protected set; }
@@ -76,7 +76,7 @@ namespace Game
         }
 
 
-        public virtual void MoveDistance(int distance)
+        public void MoveDistance(int distance)
         {
             moveDistanceRemaining -= distance;
         }
@@ -85,6 +85,7 @@ namespace Game
         {
             hasAttacked = attacking;
             if (attacking) PlayAttack();
+            else _sprite.color = Color.white;
 
         }
 

@@ -180,8 +180,6 @@ MonoBehaviour:
     Type: 0
   - Position: {x: 4, y: 0}
     Type: 3
-  - Position: {x: 4, y: 1}
-    Type: 3
   - Position: {x: 7, y: 2}
     Type: 2
   Player1TurnStart:
