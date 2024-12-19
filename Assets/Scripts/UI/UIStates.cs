@@ -36,16 +36,16 @@ public class UIStates : MonoBehaviour
             case 0:
             {
                 gameEnded = true;
-                onLoss.Invoke();
                 AnimateToggle();
+                onLoss.Invoke();
                 break;
             }
 
             case 1:
             {
                 gameEnded = true;
-                onWin.Invoke();
                 AnimateToggle();
+                onWin.Invoke();
                 break;
             }
             case 3:
@@ -78,7 +78,7 @@ public class UIStates : MonoBehaviour
 
     public void RetryLevel()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeLevel(string sceneName)
