@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 186254b3d101c9245b56c0767b41ef8c
+guid: e00830bf22863144983f22b35403868e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,11 +93,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AnimSpritesheet_DemonRogueV2_0
+      name: RogueDemonShadows_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52229da708686af4aa0e50d3bddf9f64
-      internalID: 1448856256
+      spriteID: 03c35253abdb3dd4eb5a32f1d5b3b573
+      internalID: 1119720593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimSpritesheet_DemonRogueV2_1
+      name: RogueDemonShadows_1
       rect:
         serializedVersion: 2
         x: 48
@@ -132,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6892ec0ea8a1794782cd4f607fa4611
-      internalID: -198692174
+      spriteID: 898d393c344195a4a942f07a0ee5a8fc
+      internalID: 613317889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimSpritesheet_DemonRogueV2_2
+      name: RogueDemonShadows_2
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f6068242363ec246b89b9fba447d140
-      internalID: -1857299113
+      spriteID: c149ac7d06f03c44cb1f8888a4b7a805
+      internalID: -219618326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimSpritesheet_DemonRogueV2_3
+      name: RogueDemonShadows_3
       rect:
         serializedVersion: 2
         x: 48
@@ -174,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfa165fdf5785c0468e2b43603ca56eb
-      internalID: -315613672
+      spriteID: 0e3811f320919914f84d4bd5f588965c
+      internalID: 839968558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimSpritesheet_DemonRogueV2_4
+      name: RogueDemonShadows_4
       rect:
         serializedVersion: 2
         x: 96
@@ -195,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b52677d56ba37f84297ad5f9ff57f094
-      internalID: -1176085340
+      spriteID: 257a7b238fbbef346b44fe3950fb7139
+      internalID: -1246448023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimSpritesheet_DemonRogueV2_5
+      name: RogueDemonShadows_5
       rect:
         serializedVersion: 2
         x: 144
@@ -216,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36754b65c929f0f46b5376226c55ba32
-      internalID: -425379565
+      spriteID: 27f37807ad776c34e8b69701352932c4
+      internalID: -1483239787
       vertices: []
       indices: 
       edges: []
@@ -233,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AnimSpritesheet_DemonRogueV2_0: 1448856256
-      AnimSpritesheet_DemonRogueV2_1: -198692174
-      AnimSpritesheet_DemonRogueV2_2: -1857299113
-      AnimSpritesheet_DemonRogueV2_3: -315613672
-      AnimSpritesheet_DemonRogueV2_4: -1176085340
-      AnimSpritesheet_DemonRogueV2_5: -425379565
+      RogueDemonShadows_0: 1119720593
+      RogueDemonShadows_1: 613317889
+      RogueDemonShadows_2: -219618326
+      RogueDemonShadows_3: 839968558
+      RogueDemonShadows_4: -1246448023
+      RogueDemonShadows_5: -1483239787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
