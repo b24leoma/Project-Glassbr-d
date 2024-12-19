@@ -199,7 +199,7 @@ namespace Game
                     num.SetDamage($"-{damage}");
                     num.SetSize(5.5f);
 
-                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.75f, quaternion.identity)
+                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.65f, quaternion.identity)
                         .GetComponent<DamageNumber>();
                     num.SetDamage($"{tile.damageReductionPercent}% reduction");
                     num.SetSize(4.5f);
