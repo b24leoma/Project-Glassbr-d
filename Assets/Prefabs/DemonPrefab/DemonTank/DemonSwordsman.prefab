@@ -279,7 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 2
   MaxHealth: 100
-  Damage: 35
+  MinDamage: 30
+  MaxDamage: 40
   MoveRange: 6
   AttackRange: 1
   healthBar: {fileID: 8116932611591982883}
