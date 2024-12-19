@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
@@ -7,6 +8,7 @@ namespace Game
     {
         [SerializeField] private BattleController battleController;
         [SerializeField] private GridSystem gridSystem;
+        private List<Vector2Int> demonList;
         public void StartTurn()
         {
             StartCoroutine(DoTheMagic());
@@ -22,10 +24,14 @@ namespace Game
                 e.moveDistanceRemaining = e.MoveRange;
                 e.MoveDistance(0);
             }
-            for (int i = 0; i < gridSystem.demons.Count; i++)
+
+            demonList = gridSystem.demons;
+            ShuffleDemonList();
+            
+            for (int i = 0; i < demonList.Count; i++)
             {
-                yield return new WaitForSeconds(1f);
-                if (gridSystem.GetTile(gridSystem.demons[i]).linkedEntity is Demon demon)
+                yield return new WaitForSeconds(0.5f);
+                if (gridSystem.GetTile(demonList[i]).linkedEntity is Demon demon)
                 {
                     Vector2Int demonCurrentPos = demon.Position;
                     GetClosestTarget(demon);
@@ -57,18 +63,17 @@ namespace Game
                     {
                         gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                         battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                        yield return new WaitForSeconds(1);
                         if (gridSystem.humans.Count == 0) yield break;
                     }
                 }
             }
-
+            yield return new WaitForSeconds(1);
             EndTurn();
         }
 
         void EndTurn()
         {
-            foreach (Vector2Int demonPos in gridSystem.demons)
+            foreach (Vector2Int demonPos in demonList)
             {
                 if (gridSystem.GetTile(demonPos).linkedEntity is Demon demon)
                 {
@@ -78,11 +83,7 @@ namespace Game
             }
             if (gridSystem.humans.Count != 0) battleController.EndTurn();
         }
-
-        void GetRandomTarget(Demon demon)
-        {
-            demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(0, gridSystem.humans.Count - 1)]).linkedEntity as Human;
-        }
+        
         void GetClosestTarget(Demon demon)
         {
             int distance = 999;
@@ -95,17 +96,18 @@ namespace Game
                 }
             }
         }
-        void GetFurthestTarget(Demon demon)
+        
+        private void ShuffleDemonList()
         {
-            int distance = 0;
-            for (int i = 0; i < gridSystem.humans.Count; i++)
-            {
-                if (gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]) > distance)
-                {
-                    distance = gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]);
-                    demon.target = gridSystem.GetTile(gridSystem.humans[i]).linkedEntity as Human;
-                }
-            }
+            System.Random rnd = new System.Random();
+            int n = demonList.Count;  
+            while (n > 1) {  
+                n--;  
+                int k = rnd.Next(n + 1);  
+                Vector2Int value = demonList[k];  
+                demonList[k] = demonList[n];  
+                demonList[n] = value;
+            }  
         }
     }
 }
