@@ -174,7 +174,7 @@ namespace Game
             if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 100) < critChance)
             {
                 // ---MISS---
-                num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity)
+                num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
                     .GetComponent<DamageNumber>();
                 num.SetDamage($"MISS");
             }
@@ -197,6 +197,7 @@ namespace Game
                     num = Instantiate(damageNumbers, targetPos, quaternion.identity)
                         .GetComponent<DamageNumber>();
                     num.SetDamage($"-{damage}");
+                    num.SetSize(5.5f);
 
                     num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.75f, quaternion.identity)
                         .GetComponent<DamageNumber>();
@@ -208,6 +209,7 @@ namespace Game
                     // ---NORMAL ATTACK---
                     num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
                     num.SetDamage($"-{damage}");
+                    num.SetSize(5.5f);
                 }
 
                 target.TakeDamage(damage);
