@@ -74,7 +74,6 @@ public class FriendlyDayNight : MonoBehaviour
             
             if (!hasToggled)
             {
-                Debug.Log("toNight");
                 battleController.ToggleNightLightOnHumans(true);
                 TryFog();
                 hasToggled = true;
@@ -91,7 +90,6 @@ public class FriendlyDayNight : MonoBehaviour
             if (hasToggled)
             {
                 battleController.ToggleNightLightOnHumans(false);
-                Debug.Log("toDay");
                 hasToggled = false;
             }
 
