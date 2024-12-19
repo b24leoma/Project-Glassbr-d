@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 3
-  MaxHealth: 200
+  MaxHealth: 150
   MinDamage: 10
   MaxDamage: 20
   MoveRange: 8
