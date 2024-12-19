@@ -78,7 +78,7 @@ public class UIStates : MonoBehaviour
 
     public void RetryLevel()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeLevel(string sceneName)
