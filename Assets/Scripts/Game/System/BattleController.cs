@@ -37,6 +37,9 @@ namespace Game
         [SerializeField] private GameObject damageNumbers;
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
+        [Header("Chances")] 
+        [SerializeField] private int critChance;
+        [SerializeField] private int missChance;
         private List<Entity> characters;
         private int level;
         private string currentScene;
@@ -165,9 +168,9 @@ namespace Game
             attacker.SetAttacking(true);
             Tile tile = gridSystem.GetTile(target.Position);
             float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
-            bool crit = Random.Range(1, 20) == 1;
+            bool crit = Random.Range(1, 100) < critChance;
             DamageNumber num;
-            if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 20) == 1)
+            if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 100) < critChance)
             {
                 // ---MISS---
                 num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity)
