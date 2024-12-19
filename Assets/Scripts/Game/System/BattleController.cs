@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace Game
 {
@@ -161,17 +162,31 @@ namespace Game
                 }
             }
             
-            attacker.SetAttacking(true);   
-            float reduction = 1 - gridSystem.GetTile(target.Position).damageReductionPercent / 100f;
+            attacker.SetAttacking(true);
+            Tile tile = gridSystem.GetTile(target.Position);
+            float reduction = 1 - tile.damageReductionPercent / 100f;
+            float damage = attacker.Damage;
+            if (Random.Range(1, 100) < tile.missChancePercent) damage = 0;
+
             target.TakeDamage(reduction * attacker.Damage);
-            DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity).GetComponent<DamageNumber>();
-            num.SetDamage($"-{reduction * attacker.Damage}");
-            if (reduction < 1)
+            if (damage > 0)
             {
-                num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
-                num.SetDamage($"{gridSystem.GetTile(target.Position).damageReductionPercent}% reduction");
-                num.SetSize(4.5f);
+                DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
+                    .GetComponent<DamageNumber>();
+                num.SetDamage($"-{reduction * attacker.Damage}");
+                if (reduction < 1)
+                {
+                    num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                    num.SetDamage($"{tile.damageReductionPercent}% reduction");
+                    num.SetSize(4.5f);
+                }
             }
+            else
+            {
+                DamageNumber num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                num.SetDamage($"MISS");
+            }
+            
             UpdateCharacterDisplay(true, target);
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
