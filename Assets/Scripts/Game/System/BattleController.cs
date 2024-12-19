@@ -165,7 +165,7 @@ namespace Game
             attacker.SetAttacking(true);
             Tile tile = gridSystem.GetTile(target.Position);
             float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
-            bool crit = Random.Range(1, 5) == 1;
+            bool crit = Random.Range(1, 20) == 1;
             DamageNumber num;
             if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 20) == 1)
             {
