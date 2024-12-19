@@ -37,6 +37,8 @@ namespace Game
         [SerializeField] private GameObject damageNumbers;
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
+        private int critChance;
+        private int missChance;
         private List<Entity> characters;
         private int level;
         private string currentScene;
@@ -47,6 +49,8 @@ namespace Game
         
         void Start()
         {
+            critChance = 5;
+            missChance = 5;
             currentScene = SceneManager.GetActiveScene().name;
             tutorialScene = "Tutorial";
 
@@ -164,29 +168,51 @@ namespace Game
             
             attacker.SetAttacking(true);
             Tile tile = gridSystem.GetTile(target.Position);
-            float reduction = 1 - tile.damageReductionPercent / 100f;
-            float damage = attacker.Damage;
-            if (Random.Range(1, 100) < tile.missChancePercent) damage = 0;
-
-            target.TakeDamage(reduction * attacker.Damage);
-            if (damage > 0)
+            float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
+            bool crit = Random.Range(1, 100) < critChance;
+            DamageNumber num;
+            if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 100) < critChance)
             {
-                DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
+                // ---MISS---
+                num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity)
                     .GetComponent<DamageNumber>();
-                num.SetDamage($"-{reduction * attacker.Damage}");
-                if (reduction < 1)
-                {
-                    num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
-                    num.SetDamage($"{tile.damageReductionPercent}% reduction");
-                    num.SetSize(4.5f);
-                }
+                num.SetDamage($"MISS");
             }
             else
             {
-                DamageNumber num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
-                num.SetDamage($"MISS");
+                Vector3 targetPos = target.transform.position;
+                if (crit)
+                {
+                    damage = attacker.MaxDamage + 10;
+                    num = Instantiate(damageNumbers, targetPos + Vector3.up * 1.25f, quaternion.identity)
+                        .GetComponent<DamageNumber>();
+                    num.SetDamage($"CRITICAL HIT");
+                }
+
+                if (tile.damageReductionPercent > 0)
+                {
+                    // ---REDUCTION---
+                    float reduction = 1 - tile.damageReductionPercent / 100f;
+                    damage *= reduction;
+                    num = Instantiate(damageNumbers, targetPos, quaternion.identity)
+                        .GetComponent<DamageNumber>();
+                    num.SetDamage($"-{damage}");
+
+                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.75f, quaternion.identity)
+                        .GetComponent<DamageNumber>();
+                    num.SetDamage($"{tile.damageReductionPercent}% reduction");
+                    num.SetSize(4.5f);
+                }
+                else
+                {
+                    // ---NORMAL ATTACK---
+                    num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
+                    num.SetDamage($"-{damage}");
+                }
+
+                target.TakeDamage(damage);
             }
-            
+
             UpdateCharacterDisplay(true, target);
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
@@ -227,7 +253,7 @@ namespace Game
             infoDisplay.SetActive(showDisplay);
             if (showDisplay)
             {
-                displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
+                displayStats.text = $"{entity.MinDamage}-{entity.MaxDamage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
                 displayName.text = $"{entity.Name}\n{entity.Age}";
                 displayDescription.text = entity.Description;
             }

@@ -26,7 +26,8 @@ namespace Game
         public string Description { get; protected set; }
         public int MaxHealth;
         public int CurrentHealth { get; protected set; }
-        public int Damage;
+        public int MinDamage;
+        public int MaxDamage;
         public int MoveRange;
         public int AttackRange;
         public bool IsMelee { get; protected set; }
