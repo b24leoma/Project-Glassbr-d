@@ -122,7 +122,7 @@ public class DialogueManager : MonoBehaviour
         canStopSentence = false;
         sentenceIsStopped = false;
         alwaysStop = false;
-        DOVirtual.DelayedCall(1.5f, DelayUnpause);
+        DOVirtual.DelayedCall(1f, DelayUnpause);
         onDialogueUnpause.Invoke();
         DisplayNextSentence();
     }
