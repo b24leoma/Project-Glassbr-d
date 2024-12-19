@@ -37,9 +37,8 @@ namespace Game
         [SerializeField] private GameObject damageNumbers;
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
-        [Header("Chances")] 
-        [SerializeField] private int critChance;
-        [SerializeField] private int missChance;
+        private int critChance;
+        private int missChance;
         private List<Entity> characters;
         private int level;
         private string currentScene;
@@ -50,6 +49,8 @@ namespace Game
         
         void Start()
         {
+            critChance = 5;
+            missChance = 5;
             currentScene = SceneManager.GetActiveScene().name;
             tutorialScene = "Tutorial";
 
