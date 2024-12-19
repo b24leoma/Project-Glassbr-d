@@ -165,39 +165,50 @@ namespace Game
             attacker.SetAttacking(true);
             Tile tile = gridSystem.GetTile(target.Position);
             float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
-            if (Random.Range(1, 100) < tile.missChancePercent)
+            bool crit = Random.Range(1, 20) == 1;
+            DamageNumber num;
+            if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 20) == 1)
             {
                 // ---MISS---
-                DamageNumber num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity)
+                    .GetComponent<DamageNumber>();
                 num.SetDamage($"MISS");
-                damage = 0;
             }
             else
             {
                 Vector3 targetPos = target.transform.position;
+                if (crit)
+                {
+                    damage = attacker.MaxDamage + 10;
+                    num = Instantiate(damageNumbers, targetPos + Vector3.up * 1.25f, quaternion.identity)
+                        .GetComponent<DamageNumber>();
+                    num.SetDamage($"CRITICAL HIT");
+                }
+
                 if (tile.damageReductionPercent > 0)
                 {
                     // ---REDUCTION---
                     float reduction = 1 - tile.damageReductionPercent / 100f;
                     damage *= reduction;
-                    DamageNumber num = Instantiate(damageNumbers, targetPos, quaternion.identity)
+                    num = Instantiate(damageNumbers, targetPos, quaternion.identity)
                         .GetComponent<DamageNumber>();
                     num.SetDamage($"-{damage}");
-                    
-                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+
+                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.75f, quaternion.identity)
+                        .GetComponent<DamageNumber>();
                     num.SetDamage($"{tile.damageReductionPercent}% reduction");
                     num.SetSize(4.5f);
                 }
                 else
                 {
                     // ---NORMAL ATTACK---
-                    DamageNumber num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
+                    num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
                     num.SetDamage($"-{damage}");
                 }
 
                 target.TakeDamage(damage);
             }
-            
+
             UpdateCharacterDisplay(true, target);
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
