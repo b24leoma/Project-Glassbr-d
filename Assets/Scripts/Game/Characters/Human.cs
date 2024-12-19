@@ -4,8 +4,6 @@ namespace Game
 {
     public class Human : Entity
     {
-        [SerializeField] protected GameObject movingIcon;
-        [SerializeField] protected GameObject attackingIcon;
         private LightFader _lightFader;
         void Awake()
         {
@@ -16,19 +14,16 @@ namespace Game
            Description = identity[2];
            _lightFader = GetComponentInChildren<LightFader>();
         }
-        
-        public override void MoveDistance(int distance)
-        {
-            moveDistanceRemaining -= distance;
-            movingIcon.SetActive(moveDistanceRemaining == 0);
-        }
-
         public override void SetAttacking(bool attacking)
         {
             hasAttacked = attacking;
-            if (attackingIcon != null) attackingIcon.SetActive(attacking);
-            if (attacking) PlayAttack();
-                
+            if (attacking)
+            {
+                PlayAttack();
+                _sprite.color = new Color(0.6f, 0.6f, 0.6f);
+            }
+            else _sprite.color = Color.white;
+
         }
 
 
