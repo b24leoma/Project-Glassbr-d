@@ -164,27 +164,38 @@ namespace Game
             
             attacker.SetAttacking(true);
             Tile tile = gridSystem.GetTile(target.Position);
-            float reduction = 1 - tile.damageReductionPercent / 100f;
             float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
-            if (Random.Range(1, 100) < tile.missChancePercent) damage = 0;
-
-            target.TakeDamage(reduction * damage);
-            if (damage > 0)
+            if (Random.Range(1, 100) < tile.missChancePercent)
             {
-                DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
-                    .GetComponent<DamageNumber>();
-                num.SetDamage($"-{reduction * damage}");
-                if (reduction < 1)
-                {
-                    num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
-                    num.SetDamage($"{tile.damageReductionPercent}% reduction");
-                    num.SetSize(4.5f);
-                }
+                // ---MISS---
+                DamageNumber num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                num.SetDamage($"MISS");
+                damage = 0;
             }
             else
             {
-                DamageNumber num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
-                num.SetDamage($"MISS");
+                Vector3 targetPos = target.transform.position;
+                if (tile.damageReductionPercent > 0)
+                {
+                    // ---REDUCTION---
+                    float reduction = 1 - tile.damageReductionPercent / 100f;
+                    damage *= reduction;
+                    DamageNumber num = Instantiate(damageNumbers, targetPos, quaternion.identity)
+                        .GetComponent<DamageNumber>();
+                    num.SetDamage($"-{damage}");
+                    
+                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
+                    num.SetDamage($"{tile.damageReductionPercent}% reduction");
+                    num.SetSize(4.5f);
+                }
+                else
+                {
+                    // ---NORMAL ATTACK---
+                    DamageNumber num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
+                    num.SetDamage($"-{damage}");
+                }
+
+                target.TakeDamage(damage);
             }
             
             UpdateCharacterDisplay(true, target);
