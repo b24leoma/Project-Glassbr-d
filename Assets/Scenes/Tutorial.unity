@@ -4077,9 +4077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You won this battle.
-
-    Now onto the next one...'
+  m_text: I knew victory flowed through your veins General.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c14b040c278ad514bb8e1580d352e4e8, type: 2}
   m_sharedMaterial: {fileID: -4830963916827264455, guid: c14b040c278ad514bb8e1580d352e4e8, type: 2}
@@ -4623,7 +4621,7 @@ MonoBehaviour:
     - Now then, a filthy demon is in your troops' attack range. [Your attack range
       is marked by red within the grid]. So now order your troops to attack it General!
       [To do that click on the troop you want to attack with and then click on the
-      demon you wanna attack].
+      demon you want to attack].
     - Demons will respond quickly after you given your commands. So your troops have
       only time to move a certain distance and attack once. [When you move or attack
       the colored tiles for that action disappear]. [Press "End turn" to continue
@@ -7043,10 +7041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'DEFEAT!
-
-
-    Humanity pushed back'
+  m_text: More losses, I guess you aren't ready yet soldier.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
   m_sharedMaterial: {fileID: -753063563923673396, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
