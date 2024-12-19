@@ -5012,24 +5012,25 @@ MonoBehaviour:
   dialogue:
     name: aaa
     sentences:
-    - Greetings General! I'm proud to introduce you to our ranks. So let me teach
-      you the ropes.
+    - Greetings soldi-, I mean General! I'm proud to introduce you to our ranks.
+      So let me teach you the ropes.
     - AAAAAAARRRGH! Help! Help us!
-    - Good Virtue! What's going on! Follow me.
-    - Demons. Well I guess this is pretty good timing. We'll have this lesson practically.
+    - Good virtue! What's going on?! Follow me.
+    - Demons. Well I guess this is pretty good timing. Guess we'll have a practically
+      lesson instead.
     - When you encounter an army or encampment of demons, you want to command your
-      troops to move through the battlefield. You do that by (clicking on the troop
-      you want to move and then clicking on a tile marked dark blue to move there).
+      troops to move through the battlefield. [You do that by clicking on the troop
+      you want to move and then clicking on a tile marked dark blue to move there].
       Now push forth.
     - Fantastic maneuvers!
-    - Now then, a filthy demon is in your troops' attack range. (Your attack range
-      is marked by red within the grid). So now order your troops to attack it General!
-      To do that (click on the troop you want to attack with and then click on the
-      demon you wanna attack).
+    - Now then, a filthy demon is in your troops' attack range. [Your attack range
+      is marked by red within the grid]. So now order your troops to attack it General!
+      [To do that click on the troop you want to attack with and then click on the
+      demon you wanna attack].
     - Demons will respond quickly after you given your commands. So your troops have
-      only time to move a certain distance and attack once. (When you move or attack
-      the colored tiles for that action disappear). (Press "End turn" to continue
-      the battle).
+      only time to move a certain distance and attack once. [When you move or attack
+      the colored tiles for that action disappear]. [Press "End turn" to continue
+      the battle].
     - Looks like your troop is in a dangerous situation. You should move it to a
       more strategic point. Certain parts of the battlefield can give you different
       advantages. Like bushes can give troops cover making attacks more loose against
@@ -5037,8 +5038,8 @@ MonoBehaviour:
     - There also exist different types of troops, they each have their own strengths
       and weaknesses. Try different ways to utilize their strengths to see what works
       best.
-    - Now I think you are ready. I taught you the basics. So now good luck soldi-,
-      I mean General. I look forward to hear about your future victories.
+    - Now I think you are ready. I taught you the basics. So now good luck General.
+      I look forward to hear about your future victories.
 --- !u!114 &847310680
 MonoBehaviour:
   m_ObjectHideFlags: 0

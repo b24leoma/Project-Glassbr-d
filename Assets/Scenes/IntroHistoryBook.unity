@@ -715,13 +715,13 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - The first sin of man gave birth to the first demon. Like the evil they are
+    - The first sin of man gave birth to the first demon. Like the evil they were
       born from, so they act and think.
     - 'Humanity responded to the demons with protectors, soldiers and knights who
       would defend villages and cities from these sinister beasts. '
     - As humanity were defended by their protectors, they were able to grow. But
-      as they grew so did their sinners and in turn, demonkind. So humanity increased
-      their armies even more, to face the growing demon hords.
+      as they grew so did the number of sinners and in turn, demonkind. So humanity
+      increased their armies even more, to face the growing demon hords.
     - This has been repeated throughout the centuries, humanity constantly struggling,
       having to bolster their defences and armies. But now...
     - The demons have done something that has never been seen before. They have united
