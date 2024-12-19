@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class FULING : MonoBehaviour
 {
   [SerializeField] private GameObject target;
+  [SerializeField] private GameObject target2;
   [SerializeField] private UnityEvent onAnimationEnd;
 
 
@@ -18,7 +19,7 @@ public class FULING : MonoBehaviour
 
       
          target.SetActive(true); 
-      
+         target2.SetActive(true); 
 
    }
 
