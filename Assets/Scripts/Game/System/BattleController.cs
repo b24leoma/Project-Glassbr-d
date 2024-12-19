@@ -165,15 +165,15 @@ namespace Game
             attacker.SetAttacking(true);
             Tile tile = gridSystem.GetTile(target.Position);
             float reduction = 1 - tile.damageReductionPercent / 100f;
-            float damage = attacker.Damage;
+            float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
             if (Random.Range(1, 100) < tile.missChancePercent) damage = 0;
 
-            target.TakeDamage(reduction * attacker.Damage);
+            target.TakeDamage(reduction * damage);
             if (damage > 0)
             {
                 DamageNumber num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
                     .GetComponent<DamageNumber>();
-                num.SetDamage($"-{reduction * attacker.Damage}");
+                num.SetDamage($"-{reduction * damage}");
                 if (reduction < 1)
                 {
                     num = Instantiate(damageNumbers, target.transform.position + Vector3.down * 0.75f, quaternion.identity).GetComponent<DamageNumber>();
@@ -227,7 +227,7 @@ namespace Game
             infoDisplay.SetActive(showDisplay);
             if (showDisplay)
             {
-                displayStats.text = $"{entity.Damage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
+                displayStats.text = $"{entity.MinDamage}-{entity.MaxDamage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
                 displayName.text = $"{entity.Name}\n{entity.Age}";
                 displayDescription.text = entity.Description;
             }
