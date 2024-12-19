@@ -50,7 +50,7 @@ namespace Game
         void Start()
         {
             critChance = 5;
-            missChance = 5;
+            missChance = 5;           
             currentScene = SceneManager.GetActiveScene().name;
             tutorialScene = "Tutorial";
 
@@ -168,7 +168,7 @@ namespace Game
             
             attacker.SetAttacking(true);
             Tile tile = gridSystem.GetTile(target.Position);
-            float damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
+            int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
             bool crit = Random.Range(1, 100) < critChance;
             DamageNumber num;
             if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 100) < critChance)
@@ -193,7 +193,7 @@ namespace Game
                 {
                     // ---REDUCTION---
                     float reduction = 1 - tile.damageReductionPercent / 100f;
-                    damage *= reduction;
+                    damage = Mathf.RoundToInt(damage * reduction);
                     num = Instantiate(damageNumbers, targetPos, quaternion.identity)
                         .GetComponent<DamageNumber>();
                     num.SetDamage($"-{damage}");
