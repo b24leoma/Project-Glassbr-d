@@ -240,6 +240,20 @@ namespace Game
                 UpdateCharacterDisplay(true, target);
                 target.Kill();
             }
+
+            if (attacker.isHuman)
+            {
+                bool allAttacked = true;
+                foreach (Vector2Int humanPos in gridSystem.humans)
+                {
+                    if (!gridSystem.GetTile(humanPos).linkedEntity.hasAttacked)
+                    {
+                        allAttacked = false;
+                    }
+                }
+
+                if (allAttacked) EndTurn();
+            }
         }
 
         public void EndTurn()
