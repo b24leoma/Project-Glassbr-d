@@ -9,7 +9,10 @@ public class LightFader : MonoBehaviour
     [Range (0f,10f),SerializeField] private float duration = 0.1f;
     [Range (0f,10f),SerializeField] private float targetMaxIntensity = 1f;
     [Range (0f,10f),SerializeField] private float targetMinIntensity ;
-    private Tween _currentTween;
+    public Tween CurrentTween;
+    private float _valueOnPause;
+    private FriendlyDayNight _friendlyDayNight;
+    
     
     
     private bool _toMaxIntensity = true;
@@ -20,17 +23,22 @@ public class LightFader : MonoBehaviour
         {
             light2D = GetComponent<Light2D>();
         }
+
+        if (_friendlyDayNight == null)
+        {
+            _friendlyDayNight = FindObjectOfType<FriendlyDayNight>();
+        }
     }
 
 
     public void FadeLightToggle()
     {
        
-        _currentTween?.Kill();
+        CurrentTween?.Kill();
         
         var targetIntensity = _toMaxIntensity ? targetMaxIntensity : targetMinIntensity;
 
-       _currentTween= DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease).OnComplete(()=>_toMaxIntensity = !_toMaxIntensity);
+       CurrentTween= DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease).OnComplete(()=>_toMaxIntensity = !_toMaxIntensity);
 
         
 
@@ -40,21 +48,53 @@ public class LightFader : MonoBehaviour
 
     public void TurnOffLight()
     {
+        CurrentTween?.Kill();
         light2D.intensity = 0f;
     }
 
     public void FadeInLight()
     {
-        _currentTween?.Kill();
+        
+        CurrentTween?.Kill();
 
-        _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetMaxIntensity, duration).SetEase(ease);
+        CurrentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetMaxIntensity, duration).SetEase(ease);
     }
     
     
     public void FadeOutLight()
     {
-        _currentTween?.Kill();
-       _currentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetMinIntensity, duration).SetEase(ease);
+        CurrentTween?.Kill();
+       CurrentTween =  DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetMinIntensity, duration).SetEase(ease);
     }
 
+
+
+    public void PauseTween()
+    {
+        _valueOnPause = light2D.intensity;
+        light2D.intensity = 0f;
+        CurrentTween?.Pause();
+    }
+
+    public void UnPauseTween()
+    {
+        if (_friendlyDayNight.gradientPercent >= _friendlyDayNight.whenNightInGradient)
+        {
+            light2D.intensity = _valueOnPause;
+            CurrentTween?.Play();
+        }
+        else
+        {
+            _valueOnPause = 0;
+            CurrentTween?.Kill();
+        }
+    }
+    
+    
+    
+    
+
+
+
+    
 }

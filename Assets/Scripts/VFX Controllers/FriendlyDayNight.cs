@@ -7,7 +7,7 @@ using Random = System.Random;
 public class FriendlyDayNight : MonoBehaviour
 {
     [SerializeField] private Gradient gradient;
-    [Range(0f, 1f), SerializeField] private float whenNightInGradient;
+    [Range(0f, 1f)] public float whenNightInGradient;
     [SerializeField] private float duration;
     [SerializeField] private Ease ease;
     [SerializeField] private LoopType loopType;
@@ -24,8 +24,12 @@ public class FriendlyDayNight : MonoBehaviour
     [SerializeField] private int cycleCount;
     [SerializeField] private int dygnCount;
     [SerializeField] private int slumptal;
-    [SerializeField] private float gradientPercent;
+     public float gradientPercent;
     [Range(0f, 1f), SerializeField] private float endValue = 1;
+
+
+
+    
 
     private void Awake()
     {
@@ -104,6 +108,9 @@ public class FriendlyDayNight : MonoBehaviour
         Debug.Log("Playing fog, should last for 60 seconds...");
         fog.Play();
     }
+
+
+   
 
 
 
