@@ -6,6 +6,7 @@ namespace Game
     public class Human : Entity
     {
         private LightFader _lightFader;
+        private Color _hasAttackedColor;
      
         void Awake()
         {
@@ -16,6 +17,9 @@ namespace Game
            Description = identity[2];
            _lightFader = GetComponentInChildren<LightFader>();
            if (_lightFader == null) Debug.LogWarning("No LightFader found");
+            
+           _hasAttackedColor= new Color (0.6f, 0.6f, 0.6f);
+               
            
         }
         public override void SetAttacking(bool attacking)
@@ -24,14 +28,15 @@ namespace Game
             if (attacking)
             {
                 PlayAttack();
-                _sprite.color = new Color(0.6f, 0.6f, 0.6f);
+                _sprite.DOColor(_hasAttackedColor,  0.2f).SetEase(Ease.InSine);      
                
                 if (_lightFader.CurrentTween !=null) _lightFader.PauseTween();
                 
             }
             else
             {
-                _sprite.color = Color.white;
+                _sprite.DOColor(Color.white,  0.2f).SetEase(Ease.InSine);
+                
                 if (_lightFader.CurrentTween != null && !_lightFader.CurrentTween.IsPlaying())
                 {
                     _lightFader.UnPauseTween();
