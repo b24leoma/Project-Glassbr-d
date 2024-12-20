@@ -4622,10 +4622,11 @@ MonoBehaviour:
       is marked by red within the grid]. So now order your troops to attack it General!
       [To do that click on the troop you want to attack with and then click on the
       demon you want to attack].
-    - Demons will respond quickly after you given your commands. So your troops have
-      only time to move a certain distance and attack once. [When you move or attack
-      the colored tiles for that action disappear]. [Press "End turn" to continue
-      the battle].
+    - Demons will respond quickly to your armys actions so once all of your troops
+      have attacked they will strike back. So your troops have only time to move
+      a certain distance and attack once. [When you move or attack the colored tiles
+      for that action disappear]. [If you don't want to attack will all units press
+      "End turn" to continue the battle].
     - Looks like your troop is in a dangerous situation. You should move it to a
       more strategic point. Certain parts of the battlefield can give you different
       advantages. Like bushes can give troops cover making attacks more loose against
