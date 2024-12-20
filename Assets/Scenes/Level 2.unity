@@ -10133,10 +10133,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4352671660053959380}
     - target: {fileID: 5654858365121934712, guid: 7237b7a6d618636428812eb642fd34b3, type: 3}
-      propertyPath: duration
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5654858365121934712, guid: 7237b7a6d618636428812eb642fd34b3, type: 3}
       propertyPath: battleController
       value: 
       objectReference: {fileID: 56033651}
