@@ -129,7 +129,7 @@ namespace Game
                 Vector2Int newPos = new Vector2Int((int)Mathf.Round(pos.x +0.5f), (int)Mathf.Round(pos.y+0.5f));
                 if (hoveredTile == newPos) return;
                 hoveredTile = newPos;
-                if (gridSystem.GetTile(hoveredTile).linkedEntity != null)
+                if (hoveredTile != null && gridSystem.GetTile(hoveredTile).linkedEntity != null)
                 {
                     hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                 }
