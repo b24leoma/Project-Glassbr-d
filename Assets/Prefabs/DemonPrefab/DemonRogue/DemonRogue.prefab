@@ -281,7 +281,7 @@ MonoBehaviour:
   MaxHealth: 100
   MinDamage: 25
   MaxDamage: 30
-  MoveRange: 6
+  MoveRange: 8
   AttackRange: 1
   healthBar: {fileID: 8116932611591982883}
   isHuman: 0

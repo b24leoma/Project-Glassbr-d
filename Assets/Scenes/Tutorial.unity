@@ -248,6 +248,18 @@ MonoBehaviour:
           m_StringArgument: Demon Turn
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: EndTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Demon Turn
+          m_BoolArgument: 0
+        m_CallState: 2
   TutorialOnStart:
     m_PersistentCalls:
       m_Calls:
@@ -4622,10 +4634,11 @@ MonoBehaviour:
       is marked by red within the grid]. So now order your troops to attack it General!
       [To do that click on the troop you want to attack with and then click on the
       demon you want to attack].
-    - Demons will respond quickly after you given your commands. So your troops have
-      only time to move a certain distance and attack once. [When you move or attack
-      the colored tiles for that action disappear]. [Press "End turn" to continue
-      the battle].
+    - Demons will respond quickly to your armys actions so once all of your troops
+      have attacked they will strike back. So your troops have only time to move
+      a certain distance and attack once. [When you move or attack the colored tiles
+      for that action disappear]. [If you don't want to attack will all units press
+      "End turn" to continue the battle].
     - Looks like your troop is in a dangerous situation. You should move it to a
       more strategic point. Certain parts of the battlefield can give you different
       advantages. Like bushes can give troops cover making attacks more loose against
@@ -6066,18 +6079,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 56033650}
-        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
-        m_MethodName: EndTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 56033651}
         m_TargetAssemblyTypeName: Game.BattleController, Assembly-CSharp
         m_MethodName: EndTurn
