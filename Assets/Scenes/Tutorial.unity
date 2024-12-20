@@ -3845,6 +3845,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeController: {fileID: 0}
   audioManager: {fileID: 0}
+  _masterVolumeUI: {fileID: 0}
+  _musicVolumeUI: {fileID: 0}
+  _sfxVolumeUI: {fileID: 0}
 --- !u!4 &711383859
 Transform:
   m_ObjectHideFlags: 0
@@ -4634,10 +4637,10 @@ MonoBehaviour:
       is marked by red within the grid]. So now order your troops to attack it General!
       [To do that click on the troop you want to attack with and then click on the
       demon you want to attack].
-    - Demons will respond quickly to your armys actions so once all of your troops
+    - Demons will respond quickly to your army's actions so once all of your troops
       have attacked they will strike back. So your troops have only time to move
       a certain distance and attack once. [When you move or attack the colored tiles
-      for that action disappear]. [If you don't want to attack will all units press
+      for that action disappear]. [If you don't want to attack with all units press
       "End turn" to continue the battle].
     - Looks like your troop is in a dangerous situation. You should move it to a
       more strategic point. Certain parts of the battlefield can give you different
@@ -4908,7 +4911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125, y: 0}
+  m_AnchoredPosition: {x: -125, y: 14}
   m_SizeDelta: {x: 1550, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &926230822
@@ -7250,8 +7253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 1880, y: 150}
+  m_AnchoredPosition: {x: 0, y: -128.09485}
+  m_SizeDelta: {x: 1880, y: 206.1896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948229809
 MonoBehaviour:
