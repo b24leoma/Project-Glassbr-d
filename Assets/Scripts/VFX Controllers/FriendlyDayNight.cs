@@ -36,6 +36,10 @@ public class FriendlyDayNight : MonoBehaviour
         _targetLight = GetComponent<Light2D>();
         gradientPercent = 0f;
         StartDygn();
+        
+        var randomNumber = new Random();
+        slumptal = randomNumber.Next(10);
+        Debug.Log("This cycle RNG: " + slumptal);
     }
 
     private void StartDygn()
@@ -104,9 +108,17 @@ public class FriendlyDayNight : MonoBehaviour
 
     private void TryFog()
     {
-        if (!(slumptal >= chanceForNoFog)) return;
-        Debug.Log("Playing fog, should last for 60 seconds...");
-        fog.Play();
+        
+        
+        if (slumptal >= chanceForNoFog)
+        {
+            Debug.Log("Playing fog, should last for 60 seconds...");
+            fog.Play();
+        }
+        else
+        {
+            Debug.Log("No fog");
+        }
     }
 
 

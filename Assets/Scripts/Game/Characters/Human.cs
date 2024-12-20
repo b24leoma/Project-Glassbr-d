@@ -33,11 +33,12 @@ namespace Game
                 if (_lightFader.CurrentTween !=null) _lightFader.PauseTween();
                 
             }
-            else
+            
+            if (!attacking)
             {
                 _sprite.DOColor(Color.white,  0.2f).SetEase(Ease.InSine);
                 
-                if (_lightFader.CurrentTween != null && !_lightFader.CurrentTween.IsPlaying())
+                if (_lightFader.CurrentTween != null)
                 {
                     _lightFader.UnPauseTween();
                 }

@@ -83,11 +83,7 @@ public class LightFader : MonoBehaviour
             light2D.intensity = _valueOnPause;
             CurrentTween?.Play();
         }
-        else
-        {
-            _valueOnPause = 0;
-            CurrentTween?.Kill();
-        }
+       
     }
     
     
