@@ -252,7 +252,11 @@ namespace Game
                     }
                 }
 
-                if (allAttacked) EndTurn();
+                if (allAttacked)
+                {
+                    isPlayer1Turn = false;
+                    Player2TurnStart?.Invoke();
+                }
             }
         }
 
