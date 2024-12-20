@@ -132,7 +132,8 @@ namespace Game
 
         public Tile GetTile(Vector2Int position)
         {
-            return tiles[position];
+            if (TileIsInBounds(position)) return tiles[position];
+            else return null;
         }
 
         private bool TileIsInBounds(Vector2Int pos)
