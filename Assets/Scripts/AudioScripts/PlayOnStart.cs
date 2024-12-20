@@ -26,6 +26,10 @@ public class PlayOnStart : MonoBehaviour
 
                 case "IntroHistoryBook":
                     break;
+                
+                case "Tutorial" :
+                    FMODManager.instance.SetParameter("Battle", 1f);
+                    break;
 
                 case "Level 1":
                     FMODManager.instance.SetParameter("Battle", 1f);

@@ -41,6 +41,50 @@ public class VolumeController : MonoBehaviour
     
     
     //For UI 
+
+
+
+    public float UpdateUI(int magicnumber)
+    {
+        if (!_masterVca.isValid() || !_musicVca.isValid() || !_sfxVca.isValid() || !_ambienceVca.isValid())
+        {
+            Debug.LogError("One or more VCA references are invalid.");
+            return -1f;
+        }
+        float  currentVolume = 0;
+        
+            switch (magicnumber)
+            {
+                
+                case 0:
+                    currentVolume = masterVolume;
+                    break;
+                case 1 :
+                    currentVolume = musicVolume;
+                    break;
+                    
+                case 2 :
+                    currentVolume = sfxVolume;
+                    break;
+                case 3 : 
+                    currentVolume = ambienceVolume;
+                    break;
+                default:
+                    Debug.LogWarning("Invalid magic number");
+                    break;
+                    
+
+
+            }
+        
+        return currentVolume;
+
+    }
+    
+    
+    
+    
+    
     public void SetMasterVolume(float value)
     {
         masterVolume = value;
