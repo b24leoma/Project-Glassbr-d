@@ -30,7 +30,7 @@ namespace Game
                 PlayAttack();
                 _sprite.DOColor(_hasAttackedColor,  0.2f).SetEase(Ease.InSine);      
                
-              //  if (_lightFader.CurrentTween !=null) _lightFader.PauseTween();
+              _lightFader.PauseTween();
                 
             }
             
@@ -38,11 +38,7 @@ namespace Game
             {
                 _sprite.DOColor(Color.white,  0.2f).SetEase(Ease.InSine);
                 
-              /*  if (_lightFader.CurrentTween != null)
-                {
-                    _lightFader.UnPauseTween();
-                }
-              */
+              _lightFader.LightSync();
 
                 
             }

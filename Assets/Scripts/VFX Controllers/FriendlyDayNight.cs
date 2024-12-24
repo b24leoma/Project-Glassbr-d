@@ -8,7 +8,7 @@ public class FriendlyDayNight : MonoBehaviour
 {
     [SerializeField] private Gradient gradient;
     [Range(0f, 1f)] public float whenNightInGradient;
-    [SerializeField] private float duration;
+    public float duration;
     [SerializeField] private Ease ease;
     [SerializeField] private LoopType loopType;
     [Range(0, 10), SerializeField] private float chanceForNoFog = 8f;

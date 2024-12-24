@@ -7,6 +7,7 @@ public class LightFader : MonoBehaviour
     [SerializeField] Light2D light2D;
     [SerializeField] private Ease ease;
     [Range (0f,10f),SerializeField] private float duration = 0.1f;
+    [Range (0f,10f),SerializeField] private float fadeDuration = 0.2f;
     [Range (0f,10f),SerializeField] private float targetMaxIntensity = 1f;
     [Range (0f,10f),SerializeField] private float targetMinIntensity ;
     public Tween CurrentTween;
@@ -71,19 +72,27 @@ public class LightFader : MonoBehaviour
 
     public void PauseTween()
     {
-        _valueOnPause = light2D.intensity;
+       
         light2D.intensity = 0f;
-        CurrentTween?.Pause();
+        CurrentTween?.Kill();
     }
 
-    public void UnPauseTween()
+   
+
+    public void LightSync()
     {
-        if (_friendlyDayNight.gradientPercent >= _friendlyDayNight.whenNightInGradient)
-        {
-            light2D.intensity = _valueOnPause;
-            CurrentTween?.Play();
-        }
-       
+        float gradientSpeed = 1f / _friendlyDayNight.duration;
+        float futureGradientPercent = Mathf.Repeat(_friendlyDayNight.gradientPercent + gradientSpeed * fadeDuration, 1f);
+        
+        float targetIntensity = Mathf.Lerp(targetMinIntensity, targetMaxIntensity, futureGradientPercent);
+
+        
+        CurrentTween?.Kill();
+        CurrentTween = DOTween.To(() => light2D.intensity,
+                x => light2D.intensity = x,
+                targetIntensity,
+                fadeDuration)
+            .SetEase(ease);
     }
     
     
