@@ -72,26 +72,23 @@ public class LightFader : MonoBehaviour
 
     public void PauseTween()
     {
-       
-        light2D.intensity = 0f;
         CurrentTween?.Kill();
+        CurrentTween = DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetMinIntensity, 0.2f).SetEase(ease);
     }
 
    
 
     public void LightSync()
     {
+      
         float gradientSpeed = 1f / _friendlyDayNight.duration;
-        float futureGradientPercent = Mathf.Repeat(_friendlyDayNight.gradientPercent + gradientSpeed * fadeDuration, 1f);
-        
+        float futureGradientPercent =
+            Mathf.Repeat(_friendlyDayNight.gradientPercent + gradientSpeed * fadeDuration, 1f);
+
         float targetIntensity = Mathf.Lerp(targetMinIntensity, targetMaxIntensity, futureGradientPercent);
 
-        
         CurrentTween?.Kill();
-        CurrentTween = DOTween.To(() => light2D.intensity,
-                x => light2D.intensity = x,
-                targetIntensity,
-                fadeDuration)
+        CurrentTween = DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, fadeDuration)
             .SetEase(ease);
     }
     
