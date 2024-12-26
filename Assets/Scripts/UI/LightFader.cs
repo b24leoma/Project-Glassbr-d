@@ -27,7 +27,7 @@ public class LightFader : MonoBehaviour
 
         if (_friendlyDayNight == null)
         {
-            _friendlyDayNight = FindObjectOfType<FriendlyDayNight>();
+            _friendlyDayNight = GameObject.Find("DayNightCycle").GetComponent<FriendlyDayNight>();
         }
     }
 
@@ -80,7 +80,11 @@ public class LightFader : MonoBehaviour
 
     public void LightSync()
     {
-      
+      if (_friendlyDayNight== null)
+      {
+          Debug.Log("FriendlyDayNight is null");
+          return;
+      }
         float gradientSpeed = 1f / _friendlyDayNight.duration;
         float futureGradientPercent =
             Mathf.Repeat(_friendlyDayNight.gradientPercent + gradientSpeed * fadeDuration, 1f);

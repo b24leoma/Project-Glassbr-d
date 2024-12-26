@@ -37,10 +37,13 @@ namespace Game
             if (!attacking)
             {
                 _sprite.DOColor(Color.white,  0.2f).SetEase(Ease.InSine);
-                
-              _lightFader.LightSync();
 
-                
+                if (_lightFader)
+                {
+                    _lightFader.LightSync();
+                }
+
+
             }
 
         }
