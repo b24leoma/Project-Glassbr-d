@@ -46,6 +46,8 @@ namespace Game
         private bool isTutorial;
         private TutorialManager tutorialManager;
 
+        private int _attackvoids;
+
         
         void Start()
         {
@@ -165,8 +167,21 @@ namespace Game
                     return;
                 }
             }
+
+
+            if (attacker.Type != Entity.EntityType.HumanArcher || _attackvoids ==0 )
+            {
+                attacker.SetAttacking(true);
+            }
             
-            attacker.SetAttacking(true);
+
+            if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0)
+            {
+               StartCoroutine( ShootArrowAfterDelay(attacker, target, 0.3f));
+               StartCoroutine( DelayAttackLogic(attacker, target, 0.55f));
+               return;
+            }
+         
             Tile tile = gridSystem.GetTile(target.Position);
             int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
             bool crit = Random.Range(1, 100) < critChance;
@@ -258,6 +273,8 @@ namespace Game
                     Player2TurnStart?.Invoke();
                 }
             }
+
+            _attackvoids = 0;
         }
 
         public void EndTurn()
@@ -308,6 +325,43 @@ namespace Game
                 }
             }
         }
+
+
+
+        private IEnumerator ShootArrowAfterDelay(Entity attacker, Entity target, float delay)
+        {
+            yield return new WaitForSeconds(delay); 
+            ShootArrow(attacker, target);  
+        }
+        private void ShootArrow(Entity attacker, Entity target)
+        {
+            GameObject arrow = Instantiate(attacker.arrowPrefab, attacker.transform.position, Quaternion.identity);
+
+            var attackerPos = attacker.transform.position;
+            var targetPos = target.transform.position;
+            
+
+            var middlePos = (attackerPos + targetPos) / 2;
+            middlePos.y += 3f;
+
+            Vector3[] arrowPath = new Vector3[] { attackerPos, middlePos, targetPos };
+            
+       
+            
+
+            arrow.transform.DOPath(arrowPath, 0.25f, PathType.CatmullRom).SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
+        }
+        
+        private IEnumerator DelayAttackLogic(Entity attacker, Entity target, float delay)
+        {
+            _attackvoids++;
+            yield return new WaitForSeconds(delay);
+            Attack(attacker, target);
+        }
+
+
+        
+        
 
     }
     

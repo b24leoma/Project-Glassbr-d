@@ -7,7 +7,10 @@ namespace Game
     {
         private LightFader _lightFader;
         private Color _hasAttackedColor;
-     
+       
+
+      
+
         void Awake()
         {
            isHuman = true;

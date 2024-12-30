@@ -21,6 +21,7 @@ namespace Game
         private Animator animator;
         protected SpriteRenderer _sprite;
         private ParticleSystem _particle;
+        public GameObject arrowPrefab;
         public string Name { get; protected set; }
         public string Age { get; protected set; }
         public string Description { get; protected set; }
@@ -31,6 +32,8 @@ namespace Game
         public int MoveRange;
         public int AttackRange;
         public bool IsMelee { get; protected set; }
+        
+        
 
         [SerializeField] private Slider healthBar;
         [HideInInspector] public bool isHuman;

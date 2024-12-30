@@ -98,6 +98,7 @@ MonoBehaviour:
   light2D: {fileID: 4548362541803891173}
   ease: 5
   duration: 6
+  fadeDuration: 0.2
   targetMaxIntensity: 1
   targetMinIntensity: 0
 --- !u!1 &7205145530146460040
@@ -226,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
+  arrowPrefab: {fileID: 544397617371360787, guid: af09b339ba99c784f9bd583c1aa333c5, type: 3}
   MaxHealth: 50
   MinDamage: 20
   MaxDamage: 25
