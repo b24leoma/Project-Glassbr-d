@@ -337,14 +337,18 @@ namespace Game
         {
             GameObject arrow = Instantiate(attacker.arrowPrefab, attacker.transform.position, Quaternion.identity);
 
+            var minArch = 0.2f;
+            var maxArch = 2f;
             var attackerPos = attacker.transform.position;
             var targetPos = target.transform.position;
+            var distance = Vector3.Distance(attackerPos, targetPos);
+            var arcHeight = Mathf.Lerp(minArch, maxArch, Mathf.InverseLerp(minArch, maxArch, distance));
             
 
             var middlePos = (attackerPos + targetPos) / 2;
-            middlePos.y += 3f;
+            middlePos.y += arcHeight;
 
-            Vector3[] arrowPath = new Vector3[] { attackerPos, middlePos, targetPos };
+            Vector3[] arrowPath = { attackerPos, middlePos, targetPos };
             
        
             
