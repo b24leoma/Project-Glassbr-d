@@ -1,3 +1,4 @@
+using System;
 using FMODUnity;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class FMODManager : MonoBehaviour
     [SerializeField] private FMODRefData[] fmodRefData;
     private FMOD.Studio.EventInstance _currentTimelineInstance;
     private const string BattleMusic = "Battle";
-
+    
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -110,7 +111,7 @@ public class FMODManager : MonoBehaviour
 
     public void NewTimeline(string eventName)
     {
-        EventReference eventReference = GetEventReference(eventName);
+        var eventReference = GetEventReference(eventName);
 
         if (eventReference.IsNull)
         {
@@ -149,7 +150,7 @@ public class FMODManager : MonoBehaviour
 
     public void OneShot(string eventName, Vector3? position = null)
     {
-        EventReference eventReference = GetEventReference(eventName);
+        var eventReference = GetEventReference(eventName);
 
         if (eventReference.IsNull)
         {
@@ -158,7 +159,7 @@ public class FMODManager : MonoBehaviour
 
         if (position.HasValue)
         {
-            Vector3 adjustedTopDownPosition = new Vector3(position.Value.x, position.Value.y, 0f);
+            var adjustedTopDownPosition = new Vector3(position.Value.x, position.Value.y, 0f);
             RuntimeManager.PlayOneShot(eventReference, adjustedTopDownPosition);
         }
         else
