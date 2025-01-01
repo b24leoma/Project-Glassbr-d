@@ -328,32 +328,55 @@ namespace Game
 
 
 
-        private IEnumerator ShootArrowAfterDelay(Entity attacker, Entity target, float delay)
+        private static IEnumerator ShootArrowAfterDelay(Entity attacker, Entity target, float delay)
         {
             yield return new WaitForSeconds(delay); 
             ShootArrow(attacker, target);  
         }
-        private void ShootArrow(Entity attacker, Entity target)
+        private static void ShootArrow(Entity attacker, Entity target)
         {
-            GameObject arrow = Instantiate(attacker.arrowPrefab, attacker.transform.position, Quaternion.identity);
+            var arrow = Instantiate(attacker.arrowPrefab, attacker.transform.position, Quaternion.identity);
 
-            var minArch = 0.2f;
-            var maxArch = 2f;
+            const float minArch = 0.2f;
+            const float maxArch = 1f;
             var attackerPos = attacker.transform.position;
             var targetPos = target.transform.position;
             var distance = Vector3.Distance(attackerPos, targetPos);
-            var arcHeight = Mathf.Lerp(minArch, maxArch, Mathf.InverseLerp(minArch, maxArch, distance));
+            var clampedDistance = Mathf.Clamp(distance, minArch, maxArch);
+
+            var arcHeight = Mathf.Lerp(minArch, maxArch, Mathf.InverseLerp(minArch, maxArch, clampedDistance));
             
 
-            var middlePos = (attackerPos + targetPos) / 2;
+           var middlePos = (attackerPos + targetPos)*0.5f;
+            
+           
+            
             middlePos.y += arcHeight;
-
-            Vector3[] arrowPath = { attackerPos, middlePos, targetPos };
-            
+          
+          
+          var Point1 = Vector3.Lerp(attackerPos, middlePos, 0.5f);
+          var Point2 = Vector3.Lerp(middlePos, targetPos, 0.5f);
+          
+          
+          
+         
        
             
+           
+            
 
-            arrow.transform.DOPath(arrowPath, 0.25f, PathType.CatmullRom).SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
+          Vector3[] arrowPath = { Point1,Point2, targetPos, };
+          
+          Debug.DrawLine(attackerPos, Point1, Color.red, 10f);
+          Debug.DrawLine(Point1, middlePos, Color.yellow, 10f);
+          Debug.DrawLine(middlePos, Point2, Color.cyan, 10f);
+          Debug.DrawLine(Point2, targetPos, Color.blue,10f);
+
+            
+       
+            var duration = Mathf.Clamp(distance * 0.05f, 0.2f, 0.5f);
+
+            arrow.transform.DOPath(arrowPath, duration, PathType.CatmullRom).SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
         }
         
         private IEnumerator DelayAttackLogic(Entity attacker, Entity target, float delay)

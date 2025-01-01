@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class LightFader : MonoBehaviour
-{ 
-    [SerializeField] Light2D light2D;
+{
+    [SerializeField] private Light2D light2D;
     [SerializeField] private Ease ease;
     [Range (0f,10f),SerializeField] private float duration = 0.1f;
     [Range (0f,10f),SerializeField] private float fadeDuration = 0.2f;
@@ -28,6 +28,11 @@ public class LightFader : MonoBehaviour
         if (_friendlyDayNight == null)
         {
             _friendlyDayNight = GameObject.Find("DayNightCycle").GetComponent<FriendlyDayNight>();
+            
+            if (_friendlyDayNight == null)
+            {
+                Debug.Log("No DayNight Cycle Found, ignore om du är i MainMenu/Book");
+            }
         }
     }
 
@@ -85,15 +90,15 @@ public class LightFader : MonoBehaviour
           Debug.Log("FriendlyDayNight is null");
           return;
       }
-        float gradientSpeed = 1f / _friendlyDayNight.duration;
-        float futureGradientPercent =
-            Mathf.Repeat(_friendlyDayNight.gradientPercent + gradientSpeed * fadeDuration, 1f);
+      var gradientSpeed = 1f / _friendlyDayNight.duration;
+      var futureGradientPercent =
+          Mathf.Repeat(_friendlyDayNight.gradientPercent + gradientSpeed * fadeDuration, 1f);
 
-        float targetIntensity = Mathf.Lerp(targetMinIntensity, targetMaxIntensity, futureGradientPercent);
+      var targetIntensity = Mathf.Lerp(targetMinIntensity, targetMaxIntensity, futureGradientPercent);
 
-        CurrentTween?.Kill();
-        CurrentTween = DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, fadeDuration)
-            .SetEase(ease);
+      CurrentTween?.Kill();
+      CurrentTween = DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, fadeDuration)
+          .SetEase(ease);
     }
     
     
