@@ -2145,6 +2145,41 @@ MonoBehaviour:
     archerRangeIncrease: 0
     damageReductionPercent: 20
     missChancePercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 3f82846d62c8d4f4caab798a017db8d8, type: 2}
+    walkable: 1
+    hidingSpot: 1
+    archerRangeIncrease: 0
+    damageReductionPercent: 20
+    missChancePercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: a22a4a6f52441b144976d61c7c6e6ec9, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+    missChancePercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: e320bcab29e1c2c44b6d921b5fc3fc03, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+    missChancePercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 069ae03ae3c128d47a256bdc592a82bf, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+    missChancePercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 6abd990e915c7694d8167fdbdd29a24a, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+    missChancePercent: 0
   demons: []
   humans: []
 --- !u!19719996 &651517035
