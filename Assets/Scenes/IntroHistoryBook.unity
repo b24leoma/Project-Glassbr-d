@@ -352,12 +352,28 @@ MonoBehaviour:
   sentenceIsStopped: 0
   alwaysStop: 0
   typingPaused: 0
+  canFlip: 0
   onDialoguePause:
     m_PersistentCalls:
       m_Calls: []
   onDialogueUnpause:
     m_PersistentCalls:
       m_Calls: []
+  FlipPage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7878350319473964091}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FlipPage
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &301657848
 Transform:
   m_ObjectHideFlags: 0
@@ -399,37 +415,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 301657847}
-  nextPage:
+  SkipText:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 301657847}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: PauseDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  FlipPage:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7878350319473964091}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FlipPage
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1755875709}
-        m_TargetAssemblyTypeName: CanvasGroupFader, Assembly-CSharp
-        m_MethodName: FadeOut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FlipPage
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 301657847}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: PauseDialogue
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -840,13 +847,13 @@ MonoBehaviour:
       born from, so they act and think.
     - 'Humanity responded to the demons with protectors. Soldiers and knights who
       would defend villages and cities from these sinister beasts. '
-    - As humanity were defended by their protectors, they were able to grow. But
-      as they grew so did the number of sinners and in turn, demonkind. So humanity
-      increased their armies even more, to face the growing demon hords.
+    - As humanity was defended by their protectors, they were able to grow. But as
+      they grew so did the number of sinners and in turn, demonkind. So humanity
+      increased their armies even more, to face the growing demon hordes.
     - This has been repeated throughout the centuries, humanity constantly struggling,
       having to bolster their defences and armies. But now...
     - The demons have done something that has never been seen before. They have united
-      into a massive coordinated army. Humanity is now on the backfoot more then
+      into a massive coordinated army. Humanity is now on the backfoot more than
       ever before.
 --- !u!1 &1631513192
 GameObject:
@@ -1379,9 +1386,9 @@ MonoBehaviour:
   onFlippedPage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1755875709}
-        m_TargetAssemblyTypeName: CanvasGroupFader, Assembly-CSharp
-        m_MethodName: FadeIn
+      - m_Target: {fileID: 301657847}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: UnpauseDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1393,19 +1400,7 @@ MonoBehaviour:
         m_CallState: 2
   onFlippingPage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 301657847}
-        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: PauseDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &7878350319473964093
 MonoBehaviour:
   m_ObjectHideFlags: 0
