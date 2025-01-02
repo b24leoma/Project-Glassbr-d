@@ -13,6 +13,7 @@ namespace Game
         {
             HumanSpearman,
             HumanArcher,
+            HumanTank, 
             DemonSwordsman,
             DemonTank
         };

@@ -298,6 +298,7 @@ MonoBehaviour:
   entityParent: {fileID: 2146461521}
   humanSpearman: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
   humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
+  humanTank: {fileID: 0}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
   damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
@@ -345,9 +346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introduceMoveOnSentence: 5
-  introduceAttackOnSentence: 7
-  introduceEndTurnOnSentence: 8
-  introduceBushOnSentence: 9
+  introduceAttackOnSentence: 6
+  introduceEndTurnOnSentence: 7
+  introduceBushOnSentence: 8
   onMove:
     m_PersistentCalls:
       m_Calls: []
@@ -4492,12 +4493,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  stopAfterSentence: 05000000070000000800000009000000
+  stopAfterSentence: 05000000060000000700000008000000
   canStopSentence: 0
   currentSentence: 0
   sentenceIsStopped: 1
   alwaysStop: 0
   typingPaused: 0
+  canFlip: 0
   onDialoguePause:
     m_PersistentCalls:
       m_Calls:
@@ -4552,6 +4554,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  FlipPage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &846653636
 Transform:
   m_ObjectHideFlags: 0
@@ -4626,13 +4631,13 @@ MonoBehaviour:
       So let me teach you the ropes.
     - AAAAAAARRRGH! Help! Help us!
     - Good virtue! What's going on?! Follow me.
-    - Demons. We'll make to have this lesson practical instead.
+    - Demons. We'll have to make this lesson practical instead.
     - When you encounter a demon force, you want to command your troops to move through
       the battlefield. [You do that by clicking on the troop you want to move and
       then clicking on a tile marked dark blue to move there]. Now push forth.
     - Great, now a filthy demon is in your troops' attack range, order your troop
       to attack it General! [Your attack range is marked by red within the grid]. 
-      [To do that click on the troop you want to attack with and then click on the
+      [To attack click on the troop you want to attack with and then click on the
       demon you want to attack].
     - Your troops have only time to move a certain distance and attack once, after
       that demons will respond. [When you move or attack the colored tiles for that
@@ -4644,7 +4649,7 @@ MonoBehaviour:
     - There exist different types of troops and they each have their own strengths
       and weaknesses. Try different ways to utilize their strengths to see what works
       best.
-    - Now I think you are ready. I taught you the basics. So now good luck General.
+    - I think you are now ready. I taught you the basics. So now good luck General.
       I look forward to hearing about your future victories.
 --- !u!114 &847310680
 MonoBehaviour:
@@ -7035,7 +7040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: More losses, I guess you aren't ready yet soldier.
+  m_text: More losses, I guess you aren't ready yet, soldier.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
   m_sharedMaterial: {fileID: -753063563923673396, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}

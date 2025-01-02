@@ -3,10 +3,10 @@ Age: 27
 She was there during the destruction of Muntier. It was one of the first cities destroyed in the onslaught. She woke up under the rubble of her home and was able to squeeze her way out.
 Leopold Xavier
 Age: 33
-A nomad who travelled through the kingdom. He visited almost every town or city and therefore knows alot about the landscape and is saddened at every destroyed town.
+A nomad who travelled through the kingdom. He visited almost every town or city and therefore knows a lot about the landscape and is saddened at every destroyed town.
 Mathilda Yarborough
 Age: 40
-She fought demons for the kingdom even before the war. She has seen such horrors. She thoughts nothing could surprise her, but the war is the most horrific thing she has seen.
+She fought demons for the kingdom even before the war. She has seen such horrors. She thought nothing could surprise her, but the war is the most horrific thing she has seen.
 Brenna Carpenter
 Age: 20
 She just can’t bother to see the difference between now and 8 years ago. She lost people then, it’s just that she loses more now.
@@ -18,28 +18,28 @@ Age: 36
 He has always followed in his mothers footsteps. Therefore he followed suit into battle. Always ready to protect his mother.
 Colette Baker
 Age: 30
-Tough and hard headed, she fights brutally and gruff. But she never misses the chance to gorge on sweet things.
+Tough and hard headed, she fights brutally and gruffly. But she never misses the chance to gorge on sweet things.
 Oliver Gestour
 Age: 35
 Can somehow still joke and have fun during downtimes. His cling to hope is fascinating.
 Borko Caldwell
 Age: 32
-He is thick like a demons hide, but he has a heart of a true knight.
+He is thick like a demon's hide, but he has the heart of a true knight.
 Ivar Godwin
 Age: 17
 He was a willing recruit as a soldier. He is constantly romanticizing the job and is one of the few with great hope left.
 Hildeth Pendragon
 Age: 21
-She is a very scared person, but she wants to prove herselves fiercely. Therefore she makes dumb mistakes.
+She is a very scared person, but she wants to prove herself fiercely. Therefore she makes dumb mistakes.
 Victoria Fitzgerald
 Age: 25
 Her mom previously had this role before her head was ripped off. Now Victoria seeks revenge.
 Berenice Ironside
 Age: 45
-One of the great blacksmith in the capital, but when soldiers started to run short she was recruited in.
+One of the great blacksmiths in the capital, but when soldiers started to run short she was recruited in.
 Tilda Quenell
 Age: 22
-Her parents raised a strong resilience in her. So she sees a distant future of hope, but there still a glance over her eyes from the people she has lost.
+Her parents raised a strong resilience in her. So she sees a distant future of hope, but there is still a glance over her eyes from the people she has lost.
 Luthera Guinevere
 Age: 28
 A noblewoman who has now been dragged into the war. She hates the uncleanness of the war.
@@ -60,7 +60,7 @@ Age: 25
 A peasant, drafted early in the war with her family. It’s only her and her younger sister left.
 Desislava Morgansson
 Age: 33
-The daughter of a fisherman, her father was killed by a demon that snuck on the boat. Her only family gone.
+The daughter of a fisherman, her father was killed by a demon that snuck on the boat. Her only family, gone.
 Agatha Carver
 Age: 43
 She’s tired. She holds resentment for all who can be blamed. Her fury is ice cool.
@@ -72,10 +72,10 @@ Age: 14
 Despite his young age he is very intelligent and despite his name he doesn’t like winters.
 Ferdinand Guinevere
 Age: 28
-Think of himself as the best combaten. New in this war he will soon learn otherwise or meet a demons jaw.
+Think of himself as the best combaten. New in this war he will soon learn otherwise or meet a demon's jaw.
 Baldwin Marsden
 Age: 40
-Liked by few. He has a rough skin and a sharp tongue. He wishes to return to his cabin in the woods.
+Liked by few. He has rough skin and a sharp tongue. He wishes to return to his cabin in the woods.
 Wilkie Inglewood
 Age: 19
 Wilkie the wimp he was called. But as a wimp he hid while his village was mauled. And now his blood scalds.
@@ -84,7 +84,7 @@ Age: 46
 A cleric who let people take cover in his cathedral. He slowly gave up on his pacifism by seeing how much pain swept through it each day.
 Dragan Lovelace
 Age: 24
-He hope to find his true love somehow. Therefore he fights for a future to settle down.
+He hopes to find his true love somehow. Therefore he fights for a future to settle down.
 Bridget Axton
 Age: 30
 She’s grateful that she is now a soldier, because of her past as an executioner.

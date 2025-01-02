@@ -32,6 +32,7 @@ namespace Game
         [SerializeField] private Transform entityParent;
         [SerializeField] private GameObject humanSpearman;
         [SerializeField] private GameObject humanArcher;
+        [SerializeField] private GameObject humanTank;
         [SerializeField] private GameObject demonSwordsman;
         [SerializeField] private GameObject demonTank;
         [SerializeField] private GameObject damageNumbers;
@@ -91,6 +92,9 @@ namespace Game
                     break;
                 case Entity.EntityType.HumanArcher:
                     g = Instantiate(humanArcher, Vector3.zero, Quaternion.identity, entityParent);
+                    break;
+                case Entity.EntityType.HumanTank:
+                    g = Instantiate(humanTank, Vector3.zero, Quaternion.identity, entityParent);
                     break;
                 case Entity.EntityType.DemonSwordsman:
                     g = Instantiate(demonSwordsman, Vector3.zero, Quaternion.identity, entityParent);

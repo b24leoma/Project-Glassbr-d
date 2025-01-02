@@ -25,9 +25,11 @@ public class DialogueManager : MonoBehaviour
      public bool sentenceIsStopped;
      public bool alwaysStop;
      public bool typingPaused;
+     public bool canFlip;
      private Coroutine _currentCoroutine;
      [SerializeField] private UnityEvent onDialoguePause;
      [SerializeField] private UnityEvent onDialogueUnpause;
+     public UnityEvent FlipPage;
      private string currentSentenceString;
     
 
@@ -69,13 +71,13 @@ public class DialogueManager : MonoBehaviour
 
         currentSentenceString = sentences.Dequeue();
 
-        
+        canFlip = true;        
         currentSentence++;
         canStopSentence = true;
-          
-        StopAllCoroutines();
-       _currentCoroutine = StartCoroutine(TypeSentence(currentSentenceString));
-       
+
+        if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
+        dialogueField.text = "";
+        _currentCoroutine = StartCoroutine(TypeSentence(currentSentenceString));
        if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
        {
 
@@ -103,13 +105,15 @@ public class DialogueManager : MonoBehaviour
             dialogueField.text += letter;
             yield return new WaitForSeconds(0.04f);
         }
-        
+
+        typingPaused = true;
         sentenceIsStopped = false;
+        _currentCoroutine = null;
     }
 
     private void EndDialogue()
     {
-        StopAllCoroutines();
+        if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
         dialogueField.text = "";
         whenComplete?.Invoke();
         Debug.Log("Ending conversation");
@@ -120,34 +124,35 @@ public class DialogueManager : MonoBehaviour
 
     public void UnpauseDialogue()
     {
-        if (typingPaused)
-        {
-            StopCoroutine(_currentCoroutine);
-            dialogueField.text = currentSentenceString;
-            Debug.Log("Skipped text");
-        }
-        else if (_currentCoroutine != null)
-        {
-
-            canStopSentence = false;
-            sentenceIsStopped = false;
-            alwaysStop = false;
-            DOVirtual.DelayedCall(1f, DelayUnpause);
-            onDialogueUnpause.Invoke();
-            DisplayNextSentence();
-        }
+        canFlip = false;
+        canStopSentence = false;
+        sentenceIsStopped = false;
+        alwaysStop = false;
+        typingPaused = false;
+        DOVirtual.DelayedCall(1f, DelayUnpause);
+        onDialogueUnpause.Invoke();
+        DisplayNextSentence();
     }
 
     public void PauseDialogue()
     {
-        canStopSentence = true;
-        sentenceIsStopped = true;
-        alwaysStop = true;
-        typingPaused = true;
-        
-        if (_currentCoroutine != null)
+        if (_currentCoroutine == null)
         {
-            StopCoroutine(_currentCoroutine); // Stoppa meningen maybe
+            if (canFlip)
+            {
+                canFlip = false;
+                dialogueField.text = "";
+                FlipPage?.Invoke();
+            }
+        }
+        else
+        {
+        
+            StopCoroutine(_currentCoroutine);
+            _currentCoroutine = null;
+            dialogueField.text = currentSentenceString;
+            Debug.Log("Skipped text");
+            typingPaused = true;
         }
     }
 
