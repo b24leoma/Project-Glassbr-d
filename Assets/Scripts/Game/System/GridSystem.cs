@@ -138,7 +138,7 @@ namespace Game
 
         private bool TileIsInBounds(Vector2Int pos)
         {
-            return (pos.x > -size.x && pos.x < size.x + 0.6f && pos.y > -size.y && pos.y < size.y + 0.6f);
+            return (pos.x > -size.x && pos.x < size.x + 0.4f && pos.y > -size.y && pos.y < size.y + 0.4f);
         }
 
         public void ResetUnusedHidingspotColor()
