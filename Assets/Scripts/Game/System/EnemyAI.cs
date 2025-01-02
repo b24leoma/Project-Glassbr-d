@@ -11,11 +11,10 @@ namespace Game
         private List<Vector2Int> demonList;
         public void StartTurn()
         {
-            StartCoroutine(DoTheMagic());
+            StartCoroutine(DoTheMagic(false));
         }
-        private IEnumerator DoTheMagic()
+        private IEnumerator DoTheMagic(bool skipDelay)
         {
-            yield return new WaitForSeconds(1.5f);
             foreach (Vector2Int p in gridSystem.humans)
             {
                 Entity e = gridSystem.GetTile(p).linkedEntity;
@@ -29,7 +28,6 @@ namespace Game
             
             for (int i = 0; i < demonList.Count; i++)
             {
-                yield return new WaitForSeconds(0.5f);
                 if (gridSystem.GetTile(demonList[i]).linkedEntity is Demon demon)
                 {
                     Vector2Int demonCurrentPos = demon.Position;
@@ -42,7 +40,7 @@ namespace Game
                     {
                         gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                         battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                        yield return new WaitForSeconds(1);
+                        if(!skipDelay) yield return new WaitForSeconds(1);
                         if (gridSystem.humans.Count == 0) yield break;
                         continue;
                     }
@@ -50,10 +48,12 @@ namespace Game
                     //Move
                     if (demon.target.CurrentHealth > 0)
                     {
+                        
                         Vector2Int[] path =
                             gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
+                        if(path.Length > 1 && !skipDelay) yield return new WaitForSeconds(1.5f);
                         StartCoroutine(battleController.Move(path, true, demon.target));
-                        yield return new WaitForSeconds(2f);
+                        if(!skipDelay) yield return new WaitForSeconds(2f);
                     }
 
                     //Attack After move
@@ -66,7 +66,7 @@ namespace Game
                     }
                 }
             }
-            yield return new WaitForSeconds(1);
+            if(!skipDelay) yield return new WaitForSeconds(1);
             EndTurn();
         }
 

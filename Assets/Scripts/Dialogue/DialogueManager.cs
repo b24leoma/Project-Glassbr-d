@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
      private Coroutine _currentCoroutine;
      [SerializeField] private UnityEvent onDialoguePause;
      [SerializeField] private UnityEvent onDialogueUnpause;
+     private string currentSentenceString;
     
 
      
@@ -66,14 +67,14 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        currentSentenceString = sentences.Dequeue();
 
         
         currentSentence++;
         canStopSentence = true;
           
         StopAllCoroutines();
-       _currentCoroutine = StartCoroutine(TypeSentence(sentence));
+       _currentCoroutine = StartCoroutine(TypeSentence(currentSentenceString));
        
        if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
        {
@@ -116,15 +117,25 @@ public class DialogueManager : MonoBehaviour
 
 
 
-    
+
     public void UnpauseDialogue()
     {
-        canStopSentence = false;
-        sentenceIsStopped = false;
-        alwaysStop = false;
-        DOVirtual.DelayedCall(1f, DelayUnpause);
-        onDialogueUnpause.Invoke();
-        DisplayNextSentence();
+        if (typingPaused)
+        {
+            StopCoroutine(_currentCoroutine);
+            dialogueField.text = currentSentenceString;
+            Debug.Log("Skipped text");
+        }
+        else if (_currentCoroutine != null)
+        {
+
+            canStopSentence = false;
+            sentenceIsStopped = false;
+            alwaysStop = false;
+            DOVirtual.DelayedCall(1f, DelayUnpause);
+            onDialogueUnpause.Invoke();
+            DisplayNextSentence();
+        }
     }
 
     public void PauseDialogue()
@@ -144,7 +155,6 @@ public class DialogueManager : MonoBehaviour
 
     private void DelayUnpause()
     {
-        
         typingPaused = false;
     }
 }

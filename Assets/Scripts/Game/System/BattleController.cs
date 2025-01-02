@@ -106,7 +106,7 @@ namespace Game
             characters.Add(e);
         }
 
-        public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null)
+        public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null, bool skipAnimation = false)
         {
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
             if (entity == null) yield break;
@@ -136,7 +136,7 @@ namespace Game
                     entity.transform.DOShakeRotation(0.2f, (1 + pos.Length)).SetLoops(1, LoopType.Yoyo).SetEase(Ease.OutBounce);
                     if (gridSystem.GetTile(pos[i]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.4f));
-                    yield return new WaitForSeconds(0.2f);
+                    if (!skipAnimation) yield return new WaitForSeconds(0.2f);
                 }
             }
 
@@ -154,7 +154,7 @@ namespace Game
                 entity.AttackRange)
             {
                 Attack(entity, attackTarget);
-                yield return new WaitForSeconds(0.5f);
+                if (!skipAnimation) yield return new WaitForSeconds(0.5f);
             }
         }
 

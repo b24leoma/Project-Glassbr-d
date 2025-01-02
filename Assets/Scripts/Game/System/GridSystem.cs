@@ -64,6 +64,7 @@ namespace Game
 
         public void HighlightMoveTiles(Vector2Int start, float range, Color color)
         {
+            Debug.Log(TileIsInBounds(start + Vector2Int.up) + " " + (start+Vector2Int.up));
             HashSet<Vector2Int> used = ConnectedMovableTiles(start, range, out HashSet<Vector2Int> highlight);
             foreach (Vector2Int pos in used) SetColor(pos, color);
             foreach (Vector2Int pos in highlight) SetColor(pos, color);
@@ -138,7 +139,7 @@ namespace Game
 
         private bool TileIsInBounds(Vector2Int pos)
         {
-            return (pos.x > -size.x && pos.x < size.x + 0.4f && pos.y > -size.y && pos.y < size.y + 0.4f);
+            return (pos.x > -size.x && pos.x < size.x + 0.5f && pos.y > -size.y && pos.y < size.y + 0.5f);
         }
 
         public void ResetUnusedHidingspotColor()
@@ -172,6 +173,7 @@ namespace Game
         
         public Vector2Int[] PathFindValidPath(Vector2Int start, Vector2Int end, int range)
         {
+            Debug.Log(TileIsInBounds(start));
             HashSet<Vector2Int> used = new HashSet<Vector2Int>();
             HashSet<Vector2Int>[] paths = new HashSet<Vector2Int>[range + 2];
             used.Add(start);
