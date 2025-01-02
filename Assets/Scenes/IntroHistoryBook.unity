@@ -352,6 +352,7 @@ MonoBehaviour:
   sentenceIsStopped: 0
   alwaysStop: 0
   typingPaused: 0
+  canFlip: 0
   onDialoguePause:
     m_PersistentCalls:
       m_Calls: []
