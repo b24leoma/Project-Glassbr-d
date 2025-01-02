@@ -103,7 +103,7 @@ namespace Game
                         {
                             isActing = true;
                             pathLine.positionCount = 1;
-                            actingEntity = hoveredEntity;
+                            if (hoveredEntity != null) actingEntity = hoveredEntity;
                             SetPathLinePos(0, actingEntity.Position);
                         }
                     }
