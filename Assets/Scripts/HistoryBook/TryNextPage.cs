@@ -4,7 +4,8 @@ using UnityEngine.Events;
 public class TryNextPage : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
-    public UnityEvent nextPage;
+    [SerializeField] private UnityEvent SkipText;
+    [SerializeField] private UnityEvent FlipPage;
 
     public void TryPageFlip()
     {
@@ -12,15 +13,20 @@ public class TryNextPage : MonoBehaviour
         {
             Debug.LogError("Dialogue manager is null.");
         }
-        
-        
+
+
         if (dialogueManager.typingPaused)
         {
-            Debug.Log("No flipping :D");
+            if (dialogueManager.canFlip)
+            {
+                dialogueManager.canFlip = false;
+                dialogueManager.dialogueField.text = "";
+                dialogueManager.FlipPage?.Invoke();
+            }
         }
         else
         {
-            nextPage.Invoke();
+            SkipText.Invoke();
         }
         
         
