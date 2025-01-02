@@ -39,7 +39,7 @@ namespace Game
             if (!isPlayerTurn || isPaused || isTutorialPaused) return;
             if (context.canceled)
             {
-                hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
+                if (gridSystem.GetTile(hoveredTile) != null) hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                 if (isActing) // MOVE AND ATTACK MODE
                 {
                     if (hoveredEntity == null && pathLine.positionCount > 0) //MOVES TO EMPTY TILE
@@ -96,14 +96,14 @@ namespace Game
                 }
                 else
                 {
-                    actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
+                    if (gridSystem.GetTile(hoveredTile) != null) actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                     if (actingEntity != null) // SWAP CHARACTER
                     {
                         if (actingEntity.isHuman)
                         {
                             isActing = true;
                             pathLine.positionCount = 1;
-                            actingEntity = hoveredEntity;
+                            if (hoveredEntity != null) actingEntity = hoveredEntity;
                             SetPathLinePos(0, actingEntity.Position);
                         }
                     }
@@ -129,7 +129,7 @@ namespace Game
                 Vector2Int newPos = new Vector2Int((int)Mathf.Round(pos.x +0.5f), (int)Mathf.Round(pos.y+0.5f));
                 if (hoveredTile == newPos) return;
                 hoveredTile = newPos;
-                if (hoveredTile != null && gridSystem.GetTile(hoveredTile).linkedEntity != null)
+                if (gridSystem.GetTile(hoveredTile) != null && hoveredTile != null && gridSystem.GetTile(hoveredTile).linkedEntity != null)
                 {
                     hoveredEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
                 }

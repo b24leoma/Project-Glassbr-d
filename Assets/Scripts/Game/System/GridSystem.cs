@@ -23,8 +23,8 @@ namespace Game
             tiles = new Dictionary<Vector2Int, Tile>();   // Vector2Int? :thinking:
             size = tilemap.size;
 
-            size.x = size.x / 2 - 0.5f;
-            size.y = size.y / 2 - 0.5f;
+            size.x = size.x / 2;
+            size.y = size.y / 2;
             for (int i = -(int)size.x; i <= size.x + 1; i++)
             {
                 for (int j = -(int)size.y; j <= size.y + 1; j++)
@@ -133,12 +133,12 @@ namespace Game
         public Tile GetTile(Vector2Int position)
         {
             if (TileIsInBounds(position)) return tiles[position];
-            else return null;
+            return null;
         }
 
         private bool TileIsInBounds(Vector2Int pos)
         {
-            return (pos.x > -size.x && pos.x < size.x + 0.4f && pos.y > -size.y && pos.y < size.y + 0.4f);
+            return (pos.x > -size.x && pos.x < size.x && pos.y > -size.y && pos.y < size.y);
         }
 
         public void ResetUnusedHidingspotColor()
@@ -265,7 +265,6 @@ namespace Game
                 return GetTile(pos).linkedEntity == null &&
                        GetTile(pos).walkable;
             }
-
             return false;
         }
     }
