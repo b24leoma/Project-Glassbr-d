@@ -376,7 +376,7 @@ namespace Game
        
             var duration = Mathf.Clamp(distance * 0.05f, 0.2f, 0.5f);
 
-            arrow.transform.DOPath(arrowPath, duration, PathType.CatmullRom).SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
+            arrow.transform.DOPath(arrowPath, duration, PathType.CatmullRom, PathMode.TopDown2D, gizmoColor: Color.red).SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
         }
         
         private IEnumerator DelayAttackLogic(Entity attacker, Entity target, float delay)

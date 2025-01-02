@@ -23,7 +23,6 @@ public class LightFader : MonoBehaviour
 
     private void Start()
     {
-        isFriendlyDayNightNull = _friendlyDayNight== null;
         if (light2D == null)
         {
             light2D = GetComponent<Light2D>();
@@ -93,7 +92,7 @@ public class LightFader : MonoBehaviour
 
     public void LightSync()
     {
-      if (isFriendlyDayNightNull)
+      if (_friendlyDayNight ==null)
       {
           Debug.Log("FriendlyDayNight is null");
           return;
