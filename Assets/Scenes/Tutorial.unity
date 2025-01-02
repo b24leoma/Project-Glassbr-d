@@ -298,6 +298,7 @@ MonoBehaviour:
   entityParent: {fileID: 2146461521}
   humanSpearman: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
   humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
+  humanTank: {fileID: 0}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
   damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
@@ -4498,6 +4499,7 @@ MonoBehaviour:
   sentenceIsStopped: 1
   alwaysStop: 0
   typingPaused: 0
+  canFlip: 0
   onDialoguePause:
     m_PersistentCalls:
       m_Calls:
@@ -4552,6 +4554,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  FlipPage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &846653636
 Transform:
   m_ObjectHideFlags: 0
@@ -7035,7 +7040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: More losses, I guess you aren't ready yet soldier.
+  m_text: More losses, I guess you aren't ready yet, soldier.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
   m_sharedMaterial: {fileID: -753063563923673396, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
