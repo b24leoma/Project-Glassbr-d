@@ -25,7 +25,7 @@ namespace Game
 
             demonList = gridSystem.demons;
             ShuffleDemonList();
-            
+            yield return new WaitForSeconds(1);
             for (int i = 0; i < demonList.Count; i++)
             {
                 if (gridSystem.GetTile(demonList[i]).linkedEntity is Demon demon)
@@ -40,7 +40,7 @@ namespace Game
                     {
                         gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                         battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                        if(!skipDelay) yield return new WaitForSeconds(1);
+                        if(!skipDelay) yield return new WaitForSeconds(2.5f);
                         if (gridSystem.humans.Count == 0) yield break;
                         continue;
                     }
@@ -53,7 +53,7 @@ namespace Game
                             gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
                         if(path.Length > 1 && !skipDelay) yield return new WaitForSeconds(1.5f);
                         StartCoroutine(battleController.Move(path, true, demon.target));
-                        if(!skipDelay) yield return new WaitForSeconds(2f);
+                        if (!skipDelay) yield return new WaitForSeconds(0.25f * path.Length);
                     }
 
                     //Attack After move
