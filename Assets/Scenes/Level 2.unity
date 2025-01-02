@@ -311,14 +311,10 @@ MonoBehaviour:
   - Position: {x: -8, y: 2}
     Type: 1
   - Position: {x: -7, y: -1}
-    Type: 0
+    Type: 2
   - Position: {x: -7, y: 0}
     Type: 0
   - Position: {x: -7, y: 1}
-    Type: 0
-  - Position: {x: -6, y: 1}
-    Type: 2
-  - Position: {x: -6, y: -1}
     Type: 2
   - Position: {x: -5, y: 0}
     Type: 2
@@ -336,8 +332,6 @@ MonoBehaviour:
     Type: 4
   - Position: {x: 8, y: -2}
     Type: 4
-  - Position: {x: 7, y: -4}
-    Type: 3
   Player1TurnStart:
     m_PersistentCalls:
       m_Calls:
