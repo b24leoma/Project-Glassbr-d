@@ -352,6 +352,7 @@ MonoBehaviour:
   sentenceIsStopped: 0
   alwaysStop: 0
   typingPaused: 0
+  canFlip: 0
   onDialoguePause:
     m_PersistentCalls:
       m_Calls: []
@@ -846,13 +847,13 @@ MonoBehaviour:
       born from, so they act and think.
     - 'Humanity responded to the demons with protectors. Soldiers and knights who
       would defend villages and cities from these sinister beasts. '
-    - As humanity were defended by their protectors, they were able to grow. But
-      as they grew so did the number of sinners and in turn, demonkind. So humanity
-      increased their armies even more, to face the growing demon hords.
+    - As humanity was defended by their protectors, they were able to grow. But as
+      they grew so did the number of sinners and in turn, demonkind. So humanity
+      increased their armies even more, to face the growing demon hordes.
     - This has been repeated throughout the centuries, humanity constantly struggling,
       having to bolster their defences and armies. But now...
     - The demons have done something that has never been seen before. They have united
-      into a massive coordinated army. Humanity is now on the backfoot more then
+      into a massive coordinated army. Humanity is now on the backfoot more than
       ever before.
 --- !u!1 &1631513192
 GameObject:
