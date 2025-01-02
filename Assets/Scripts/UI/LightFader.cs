@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class LightFader : MonoBehaviour
 {
@@ -13,10 +14,12 @@ public class LightFader : MonoBehaviour
     public Tween CurrentTween;
     private float _valueOnPause;
     private FriendlyDayNight _friendlyDayNight;
+    private string currentScene;
     
     
     
     private bool _toMaxIntensity = true;
+    private bool isFriendlyDayNightNull;
 
     private void Start()
     {
@@ -27,11 +30,15 @@ public class LightFader : MonoBehaviour
 
         if (_friendlyDayNight == null)
         {
-            _friendlyDayNight = GameObject.Find("DayNightCycle").GetComponent<FriendlyDayNight>();
-            
-            if (_friendlyDayNight == null)
+            currentScene = SceneManager.GetActiveScene().name;
+            switch (currentScene)
             {
-                Debug.Log("No DayNight Cycle Found, ignore om du är i MainMenu/Book");
+                case "MainMenu":
+                case "IntroHistoryBook":
+                    return;
+                default:
+                    _friendlyDayNight = GameObject.Find("DayNightCycle").GetComponent<FriendlyDayNight>();
+                    break;
             }
         }
     }
@@ -85,7 +92,7 @@ public class LightFader : MonoBehaviour
 
     public void LightSync()
     {
-      if (_friendlyDayNight== null)
+      if (_friendlyDayNight ==null)
       {
           Debug.Log("FriendlyDayNight is null");
           return;
