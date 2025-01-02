@@ -345,9 +345,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introduceMoveOnSentence: 5
-  introduceAttackOnSentence: 7
-  introduceEndTurnOnSentence: 8
-  introduceBushOnSentence: 9
+  introduceAttackOnSentence: 6
+  introduceEndTurnOnSentence: 7
+  introduceBushOnSentence: 8
   onMove:
     m_PersistentCalls:
       m_Calls: []
@@ -4492,7 +4492,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  stopAfterSentence: 05000000070000000800000009000000
+  stopAfterSentence: 05000000060000000700000008000000
   canStopSentence: 0
   currentSentence: 0
   sentenceIsStopped: 1
@@ -4632,7 +4632,7 @@ MonoBehaviour:
       then clicking on a tile marked dark blue to move there]. Now push forth.
     - Great, now a filthy demon is in your troops' attack range, order your troop
       to attack it General! [Your attack range is marked by red within the grid]. 
-      [To do that click on the troop you want to attack with and then click on the
+      [To attack click on the troop you want to attack with and then click on the
       demon you want to attack].
     - Your troops have only time to move a certain distance and attack once, after
       that demons will respond. [When you move or attack the colored tiles for that
