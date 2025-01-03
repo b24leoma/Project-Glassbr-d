@@ -138,6 +138,11 @@ namespace Game
                 {
                     if (gridSystem.GetTile(pos[i - 1]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
+                    if (i > 1)
+                    {
+                        if (pos[i].x < entity.Position.x && !entity.Flipped) entity.Flip();
+                        if (pos[i].x > entity.Position.x && entity.Flipped) entity.Flip();
+                    }
                     entity.MoveToTile(pos[i]);
                     selectHighlight.position = entity.transform.position;
                     SFX.MOVE(entity.Type, entity.transform.position);
@@ -181,12 +186,8 @@ namespace Game
                     return;
                 }
             }
-
-
-            if (attacker.Type != Entity.EntityType.HumanArcher || _attackvoids ==0 )
-            {
-                attacker.SetAttacking(true);
-            }
+            
+            attacker.SetAttacking(true);
             
 
             if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0)
@@ -195,7 +196,8 @@ namespace Game
                StartCoroutine( DelayAttackLogic(attacker, target, 0.55f));
                return;
             }
-         
+
+            selectHighlight.position = attacker.transform.position;
             Tile tile = gridSystem.GetTile(target.Position);
             int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
             bool crit = Random.Range(1, 100) < critChance;
@@ -272,6 +274,7 @@ namespace Game
 
             if (attacker.isHuman)
             {
+                selectHighlight.position = Vector3.down * 100;
                 bool allAttacked = true;
                 foreach (Vector2Int humanPos in gridSystem.humans)
                 {
@@ -293,6 +296,7 @@ namespace Game
 
         public void EndTurn()
         {
+            selectHighlight.position = Vector3.down * 100;
             isPlayer1Turn = !isPlayer1Turn;
             if(isPlayer1Turn) Player1TurnStart?.Invoke();
             else Player2TurnStart?.Invoke();

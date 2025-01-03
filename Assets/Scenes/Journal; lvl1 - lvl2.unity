@@ -766,12 +766,15 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - 'I''m now a general. Maybe I can make a change, I mean I managed to command
-      the troops to victory in the first battle as a general. I will move out with
-      my battalion tomorrow.
+    - 'We managed to hold off the demon scouts at Cloudfallbridge. I''m glad. The
+      villages beyond it do not need to suffer and the larger demon army won''t get
+      any information, for now.
 
+      
 
-      Journal Entry 1'
+      Journal Entry 18
+
+'
 --- !u!114 &1356230947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,12 +884,15 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'I''m now a general. Maybe I can make a change, I mean I managed to command
-      the troops to victory in the first battle as a general. I will move out with
-      my battalion tomorrow.
+    - 'We managed to hold off the demon scouts at Cloudfallbridge. I''m glad. The
+      villages beyond it do not need to suffer and the larger demon army won''t get
+      any information, for now.
 
+      
 
-      Journal Entry 1'
+      Journal Entry 18
+
+'
 --- !u!1 &1631513192
 GameObject:
   m_ObjectHideFlags: 0
