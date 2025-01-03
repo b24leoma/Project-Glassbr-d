@@ -226,7 +226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: KENNETH KUKEN KARLSSON
+  m_text: New text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
   m_sharedMaterial: {fileID: -753063563923673396, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
