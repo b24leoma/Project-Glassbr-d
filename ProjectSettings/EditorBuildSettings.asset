@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: d44c615d383f38a48afd00461bcbe36f
   - enabled: 1
+    path: Assets/Scenes/Journal; tutorial-lv1.unity
+    guid: 4244904a922f0ca46bd7a48c351956a0
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 7739283c3141dd041a445a67636a5663
   - enabled: 1
