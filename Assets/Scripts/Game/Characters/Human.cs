@@ -7,7 +7,7 @@ namespace Game
     {
         private LightFader _lightFader;
         private Color _hasAttackedColor;
-       
+        public bool isMoving;
 
       
 
@@ -49,6 +49,11 @@ namespace Game
 
             }
 
+        }
+
+        public void SetMoving(bool moving)
+        {
+            isMoving = moving;
         }
 
 

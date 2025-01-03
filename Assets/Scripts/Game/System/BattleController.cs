@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -19,6 +18,7 @@ namespace Game
         [SerializeField] private UnityEvent Player1TurnStart;
         [SerializeField] private UnityEvent Player2TurnStart;
         [SerializeField] private UnityEvent TutorialOnStart;
+        [SerializeField] private UnityEvent MoveDone;
         [Header("Components")]
         [SerializeField] private GridSystem gridSystem;
         [SerializeField] private bool isPlayer1Turn;
@@ -38,6 +38,7 @@ namespace Game
         [SerializeField] private GameObject damageNumbers;
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
+        [SerializeField] private Transform selectHighlight;
         private int critChance;
         private int missChance;
         private List<Entity> characters;
@@ -115,10 +116,12 @@ namespace Game
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
             if (entity == null) yield break;
             
-            if (isTutorial && entity.isHuman)
+            if (entity.isHuman)
             {
-                if ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
-                    (tutorialManager.TutorialAttackTime() && !tryAttackAfter) || (tutorialManager.TutorialBushTime()  && !gridSystem.GetTile(pos[^1]).hidingSpot))
+                entity.GetComponent<Human>().SetMoving(true);
+                if (isTutorial && ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
+                                   (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
+                                   (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot)))
                 {
                     yield break;
                 }
@@ -136,12 +139,19 @@ namespace Game
                     if (gridSystem.GetTile(pos[i - 1]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
                     entity.MoveToTile(pos[i]);
+                    selectHighlight.position = entity.transform.position;
                     SFX.MOVE(entity.Type, entity.transform.position);
                     entity.transform.DOShakeRotation(0.2f, (1 + pos.Length)).SetLoops(1, LoopType.Yoyo).SetEase(Ease.OutBounce);
                     if (gridSystem.GetTile(pos[i]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.4f));
                     if (!skipAnimation) yield return new WaitForSeconds(0.2f);
                 }
+            }
+
+            if (entity.isHuman)
+            {
+                entity.GetComponent<Human>().SetMoving(false);
+                MoveDone?.Invoke();
             }
 
             if (isTutorial)

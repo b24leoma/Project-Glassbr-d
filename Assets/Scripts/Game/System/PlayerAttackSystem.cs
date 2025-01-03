@@ -11,11 +11,12 @@ namespace Game
         [Header("Assets")]
         [SerializeField] private GameObject endTurnButton;
         [SerializeField] private LineRenderer pathLine;
+        [SerializeField] private Transform selectHighlight;
         private Camera cam;
         private Entity hoveredEntity;
         private Vector2Int hoveredTile;
         private bool isActing;
-        private Entity actingEntity;
+        private Human actingEntity;
         private bool isPlayerTurn;
         private bool isPaused;
         private bool isTutorialPaused;
@@ -47,18 +48,32 @@ namespace Game
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
                             StartCoroutine(battleController.Move(GetFullPathLine(), false));
+                            pathLine.positionCount = 1;
+                            SetPathLinePos(0, hoveredTile);
                         }
-
-                        pathLine.positionCount = 0;
-                        isActing = false;
+                        else // DESELECTS ACTOR
+                        {
+                            isActing = false;
+                            selectHighlight.position = Vector3.down * 100;
+                            pathLine.positionCount = 0;
+                        }
                     }
                     else if (hoveredEntity != null ) //TILE HAS ENTITY
                     {
-                        if (hoveredEntity.isHuman && hoveredEntity != actingEntity) // SELECTS ANOTHER ACTOR
+                        if (hoveredEntity.isHuman)
                         {
-                            actingEntity = hoveredEntity;
-                            pathLine.positionCount = 1;
-                            SetPathLinePos(0, actingEntity.Position);
+                            if (hoveredEntity != actingEntity)  // SELECTS ANOTHER ACTOR
+                            {
+                                actingEntity = hoveredEntity as Human;
+                                pathLine.positionCount = 1;
+                                SetPathLinePos(0, hoveredTile);
+                            }
+                            else // DESELECTS ACTOR
+                            {
+                                isActing = false;
+                                selectHighlight.position = Vector3.down * 100;
+                                pathLine.positionCount = 0;
+                            }
                         }
                         else // ATTACKS ENEMY
                         {
@@ -87,8 +102,7 @@ namespace Game
                                 }
                                 hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
                                 pathLine.positionCount = 1;
-                                SetPathLinePos(0, actingEntity.Position);
-                                isActing = false;
+                                SetPathLinePos(0, hoveredTile);
                             }
                         }
                     }
@@ -96,14 +110,14 @@ namespace Game
                 }
                 else
                 {
-                    if (gridSystem.GetTile(hoveredTile) != null) actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity;
+                    if (gridSystem.GetTile(hoveredTile) != null) actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity as Human;
                     if (actingEntity != null) // SWAP CHARACTER
                     {
                         if (actingEntity.isHuman)
                         {
                             isActing = true;
                             pathLine.positionCount = 1;
-                            if (hoveredEntity != null) actingEntity = hoveredEntity;
+                            if (hoveredEntity != null) actingEntity = hoveredEntity as Human;
                             SetPathLinePos(0, actingEntity.Position);
                         }
                     }
@@ -141,7 +155,7 @@ namespace Game
 
 
 
-        void UpdateBoard()
+        public void UpdateBoard()
         {
             //Reset board colors
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
@@ -160,9 +174,11 @@ namespace Game
             
             if (isActing)
             {
+                selectHighlight.position = actingEntity.transform.position;
+                
                 //MOVE PATH IF WITHIN RANGE
-                if (actingEntity.moveDistanceRemaining > 0)
-                {
+                if (actingEntity.moveDistanceRemaining > 0 &&  !actingEntity.isMoving)
+                {                    
                     if (gridSystem.GetTile(hoveredTile).walkable &&
                          (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
                           gridSystem.GetTile(hoveredTile).linkedEntity == actingEntity ||
@@ -199,8 +215,11 @@ namespace Game
                     }
                 }
                 else 
-                {   // ATTACK HIGHLIGHT
-                    if (!actingEntity.hasAttacked)
+                {   
+                    selectHighlight.position = Vector3.down * 100;
+                    
+                    // ATTACK HIGHLIGHT
+                    if (!actingEntity.hasAttacked && !actingEntity.isMoving)
                     {
                         if (actingEntity.IsMelee)
                             gridSystem.HighlightMoveTiles(actingEntity.Position,
@@ -339,6 +358,7 @@ namespace Game
         public void EndTurn()
         {
             isActing = false;
+            selectHighlight.position = Vector3.down * 100;
             isPlayerTurn = false;
             endTurnButton.SetActive(false);
         }
@@ -353,6 +373,7 @@ namespace Game
         {
             isPaused = paused;
             isActing = false;
+            selectHighlight.position = Vector3.down * 100;
             pathLine.positionCount = 1;
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
         }
@@ -361,6 +382,7 @@ namespace Game
         {
             isTutorialPaused = paused;
             isActing = false;
+            selectHighlight.position = Vector3.down * 100;
             pathLine.positionCount = 1;
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
         }
