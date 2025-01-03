@@ -179,7 +179,7 @@ MonoBehaviour:
   afterFadeOut:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065201}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: UnpauseDialogue
         m_Mode: 1
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: KENNETH KUKEN KARLSSON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
   m_sharedMaterial: {fileID: -753063563923673396, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
@@ -373,7 +373,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1836770169}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -440,7 +440,7 @@ MonoBehaviour:
   delayedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065200}
         m_TargetAssemblyTypeName: MenuFunctions, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -552,7 +552,7 @@ MonoBehaviour:
   onFlippedPage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065201}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: UnpauseDialogue
         m_Mode: 1
@@ -705,7 +705,7 @@ MonoBehaviour:
   FlipPage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 539571212}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -747,7 +747,7 @@ MonoBehaviour:
   whenComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 317699921}
         m_TargetAssemblyTypeName: DelayEvent, Assembly-CSharp
         m_MethodName: DelayThisEvent
         m_Mode: 4
@@ -759,7 +759,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1798751001}
         m_TargetAssemblyTypeName: VignetteController, Assembly-CSharp
         m_MethodName: VignetteFade
         m_Mode: 4
@@ -771,7 +771,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1017095834}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -799,10 +799,10 @@ MonoBehaviour:
   FlipPage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 539571214}
+        m_TargetAssemblyTypeName: FlippedPage, Assembly-CSharp
+        m_MethodName: FlippingPage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -879,8 +879,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
+    name: bbbb
     sentences:
+    - 'Journal Entry 1
+
+
+      I''m now a general. Maybe I can make a change, I mean
+      I manage to command the troops to victory in the first battle as general. I
+      will move out with my battalion tomorrow.'
     - 'Journal Entry 1
 
 
@@ -902,18 +908,18 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - The first sin of man gave birth to the first demon. Like the evil they were
-      born from, so they act and think.
-    - Humanity responded to the demons with protectors. Soldiers and knights who
-      would defend villages and cities from these sinister beasts
-    - As humanity were defended by their protectors, they were able to grow. But
-      as they grew so did the number of sinners and in turn, demonkind. So humanity
-      increased their armies even more, to face the growing demon hords.
-    - This has been repeated throughout the centuries, humanity constantly struggling,
-      having to bolster their defences and armies. But now...
-    - The demons have done something that has never been seen before. They have united
-      into a massive coordinated army. Humanity is now on the backfoot more then
-      ever before.
+    - 'Journal Entry 1
+
+
+      I''m now a general. Maybe I can make a change, I mean
+      I manage to command the troops to victory in the first battle as general. I
+      will move out with my battalion tomorrow.'
+    - 'Journal Entry 1
+
+
+      I''m now a general. Maybe I can make a change, I mean
+      I manage to command the troops to victory in the first battle as general. I
+      will move out with my battalion tomorrow.'
 --- !u!114 &1017095838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,7 +964,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065199}
         m_TargetAssemblyTypeName: TryNextPage, Assembly-CSharp
         m_MethodName: TryPageFlip
         m_Mode: 1
@@ -1107,8 +1113,8 @@ Camera:
   m_GameObject: {fileID: 1836770167}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.3803922, g: 0.21960786, b: 0.14509805, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1290,7 +1296,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 317699921}
         m_TargetAssemblyTypeName: DelayEvent, Assembly-CSharp
         m_MethodName: DelayThisEvent
         m_Mode: 4
