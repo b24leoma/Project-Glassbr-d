@@ -766,8 +766,12 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - The first sin of man gave birth to the first demon. Like the evil they were
-      born from, so they act and think.
+    - 'Journal Entry 1
+
+
+      I''m now a general. Maybe I can make a change, I mean
+      I managed to command the troops to victory in the first battle as general.
+      I will move out with my battalion tomorrow.'
 --- !u!114 &1356230947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,8 +885,8 @@ MonoBehaviour:
 
 
       I''m now a general. Maybe I can make a change, I mean
-      I manage to command the troops to victory in the first battle as general. I
-      will move out with my battalion tomorrow.'
+      I managed to command the troops to victory in the first battle as general.
+      I will move out with my battalion tomorrow.'
 --- !u!1 &1631513192
 GameObject:
   m_ObjectHideFlags: 0
