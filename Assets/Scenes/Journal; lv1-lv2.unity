@@ -881,7 +881,12 @@ MonoBehaviour:
   dialogue:
     name: bbbb
     sentences:
-    - "Journal Entry \n\nWe managed"
+    - 'We managed to hold of the demon scouts at Cloudfallbridge. I''m glad. The
+      villages beyond it does not need to suffer and the larger demon army won''t
+      get any information, for now.
+
+
+      Journal Entry 18'
 --- !u!114 &1017095837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,7 +902,12 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - "Journal Entry \n\n"
+    - 'We managed to hold of the demon scouts at Cloudfallbridge. I''m glad. The
+      villages beyond it does not need to suffer and the larger demon army won''t
+      get any information, for now.
+
+
+      Journal Entry 18'
 --- !u!114 &1017095838
 MonoBehaviour:
   m_ObjectHideFlags: 0
