@@ -1817,6 +1817,13 @@ MonoBehaviour:
     archerRangeIncrease: 0
     damageReductionPercent: 20
     missChancePercent: 0
+  - linkedEntity: {fileID: 0}
+    tile: {fileID: 11400000, guid: 6abd990e915c7694d8167fdbdd29a24a, type: 2}
+    walkable: 0
+    hidingSpot: 0
+    archerRangeIncrease: 0
+    damageReductionPercent: 0
+    missChancePercent: 0
   demons: []
   humans: []
 --- !u!19719996 &651517035
