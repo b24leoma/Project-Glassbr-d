@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.IO;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game
@@ -33,6 +32,7 @@ namespace Game
         public int MoveRange;
         public int AttackRange;
         public bool IsMelee { get; protected set; }
+        public bool Flipped { get; protected set; }
         
         
 
@@ -91,7 +91,12 @@ namespace Game
             hasAttacked = attacking;
             if (attacking) PlayAttack();
             else _sprite.color = Color.white;
-
+        }
+        
+        public void Flip()
+        {
+            Flipped = !Flipped;
+            _sprite.flipX = !_sprite.flipX;
         }
 
         public void Kill()

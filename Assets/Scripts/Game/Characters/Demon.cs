@@ -16,6 +16,7 @@ namespace Game
             Age = "";
             Description = identity[1];
             attackImg = AttackingImage.GetComponent<SpriteRenderer>();
+            Flipped = true;
         }
 
         public void DisplayAttackingImage(bool display, Color color)

@@ -138,6 +138,8 @@ namespace Game
                 {
                     if (gridSystem.GetTile(pos[i - 1]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
+                    if (pos[i].x < entity.Position.x && !entity.Flipped) entity.Flip();
+                    if (pos[i].x > entity.Position.x && entity.Flipped) entity.Flip();
                     entity.MoveToTile(pos[i]);
                     selectHighlight.position = entity.transform.position;
                     SFX.MOVE(entity.Type, entity.transform.position);
@@ -195,7 +197,8 @@ namespace Game
                StartCoroutine( DelayAttackLogic(attacker, target, 0.55f));
                return;
             }
-         
+
+            selectHighlight.position = attacker.transform.position;
             Tile tile = gridSystem.GetTile(target.Position);
             int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
             bool crit = Random.Range(1, 100) < critChance;
@@ -293,6 +296,7 @@ namespace Game
 
         public void EndTurn()
         {
+            selectHighlight.position = Vector3.down * 100;
             isPlayer1Turn = !isPlayer1Turn;
             if(isPlayer1Turn) Player1TurnStart?.Invoke();
             else Player2TurnStart?.Invoke();
