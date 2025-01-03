@@ -179,7 +179,7 @@ MonoBehaviour:
   afterFadeOut:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065201}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: UnpauseDialogue
         m_Mode: 1
@@ -373,7 +373,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1836770169}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -440,7 +440,7 @@ MonoBehaviour:
   delayedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065200}
         m_TargetAssemblyTypeName: MenuFunctions, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -552,7 +552,7 @@ MonoBehaviour:
   onFlippedPage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065201}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: UnpauseDialogue
         m_Mode: 1
@@ -705,7 +705,7 @@ MonoBehaviour:
   FlipPage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 539571212}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -747,7 +747,7 @@ MonoBehaviour:
   whenComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 317699920}
         m_TargetAssemblyTypeName: DelayEvent, Assembly-CSharp
         m_MethodName: DelayThisEvent
         m_Mode: 4
@@ -759,7 +759,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 317699920}
         m_TargetAssemblyTypeName: VignetteController, Assembly-CSharp
         m_MethodName: VignetteFade
         m_Mode: 4
@@ -771,7 +771,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1017095834}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -799,7 +799,7 @@ MonoBehaviour:
   FlipPage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 539571212}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -958,7 +958,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 592065199}
         m_TargetAssemblyTypeName: TryNextPage, Assembly-CSharp
         m_MethodName: TryPageFlip
         m_Mode: 1
@@ -1107,8 +1107,8 @@ Camera:
   m_GameObject: {fileID: 1836770167}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.3803922, g: 0.21960786, b: 0.14509805, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 317699921}
         m_TargetAssemblyTypeName: DelayEvent, Assembly-CSharp
         m_MethodName: DelayThisEvent
         m_Mode: 4
