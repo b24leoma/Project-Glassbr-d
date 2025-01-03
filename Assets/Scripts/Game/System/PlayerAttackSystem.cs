@@ -90,6 +90,7 @@ namespace Game
                                         pathLine.positionCount = 1;
                                         SetPathLinePos(0, hoveredTile);
                                         isActing = false;
+                                        selectHighlight.position = Vector3.down * 100;
                                     }
                                     else
                                     {
@@ -217,9 +218,7 @@ namespace Game
                     }
                 }
                 else 
-                {   
-                    selectHighlight.position = Vector3.down * 100;
-                    
+                {
                     // ATTACK HIGHLIGHT
                     if (!actingEntity.hasAttacked && !actingEntity.isMoving)
                     {
