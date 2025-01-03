@@ -138,8 +138,11 @@ namespace Game
                 {
                     if (gridSystem.GetTile(pos[i - 1]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i - 1], Color.white);
-                    if (pos[i].x < entity.Position.x && !entity.Flipped) entity.Flip();
-                    if (pos[i].x > entity.Position.x && entity.Flipped) entity.Flip();
+                    if (i > 1)
+                    {
+                        if (pos[i].x < entity.Position.x && !entity.Flipped) entity.Flip();
+                        if (pos[i].x > entity.Position.x && entity.Flipped) entity.Flip();
+                    }
                     entity.MoveToTile(pos[i]);
                     selectHighlight.position = entity.transform.position;
                     SFX.MOVE(entity.Type, entity.transform.position);
@@ -183,12 +186,8 @@ namespace Game
                     return;
                 }
             }
-
-
-            if (attacker.Type != Entity.EntityType.HumanArcher || _attackvoids ==0 )
-            {
-                attacker.SetAttacking(true);
-            }
+            
+            attacker.SetAttacking(true);
             
 
             if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0)
@@ -275,6 +274,7 @@ namespace Game
 
             if (attacker.isHuman)
             {
+                selectHighlight.position = Vector3.down * 100;
                 bool allAttacked = true;
                 foreach (Vector2Int humanPos in gridSystem.humans)
                 {
