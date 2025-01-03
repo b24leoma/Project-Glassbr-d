@@ -54,7 +54,7 @@ namespace Game
         void Start()
         {
             critChance = 5;
-            missChance = 5;           
+            missChance = 3;
             currentScene = SceneManager.GetActiveScene().name;
             tutorialScene = "Tutorial";
 
