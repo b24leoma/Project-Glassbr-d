@@ -384,6 +384,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: SetTutorialPaused
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onBush:
     m_PersistentCalls:
       m_Calls:
@@ -4708,29 +4720,29 @@ MonoBehaviour:
     name: aaa
     sentences:
     - Greetings soldi-, I mean General! I'm proud to introduce you to our ranks.
-      So let me teach you the ropes.
+      Let me teach you the ropes.
     - AAAAAAARRRGH! Help! Help us!
     - Good virtue! What's going on?! Follow me.
     - Demons. We'll have to make this lesson practical instead.
     - When you encounter a demon force, you want to command your troops to move through
-      the battlefield. [You do that by clicking on the troop you want to move and
-      then clicking on a tile marked dark blue to move there]. Now push forth.
-    - Great, now a filthy demon is in your troops' attack range, order your troop
-      to attack it General! [Your attack range is marked by red within the grid]. 
-      [To attack click on the troop you want to attack with and then click on the
-      demon you want to attack].
-    - Your troops have only time to move a certain distance and attack once, after
-      that demons will respond. [When you move or attack the colored tiles for that
-      action disappear]. [If you don't want to attack with all units press "End turn"
-      to continue the battle].
-    - Looks like your troop is in a dangerous situation. You should move it to a
-      more strategic point, like bushes. They give troops cover making attacks lighter
-      against the troop or even miss it. Try commanding a troop to a bush.
+      the battlefield. [Select the troop you want to move and click on a blue tile
+      to move]. Now push forth.
+    - Great, now a filthy demon is in attacking range, order one of your troops to
+      attack it General! [To attack select the troop you want to attack with and
+      then click on the demon you want to attack withing the red grid].
+    - '[Each troop can only move a certain distance and attack once per turn,
+
+      after
+      that, demons will respond. When you move or attack, the colored tiles for that
+      action disappear. Press "End turn" to continue the battle].'
+    - Looks like your troop is in a dangerous situation. Move it to a more strategic
+      point, like a bush. They give troops cover making attacks lighter against it.
+      Try commanding a troop to a bush.
     - There exist different types of troops and they each have their own strengths
       and weaknesses. Try different ways to utilize their strengths to see what works
       best.
-    - I think you are now ready. I taught you the basics. So now good luck General.
-      I look forward to hearing about your future victories.
+    - I think you are ready. I taught you the basics. Now good luck General. I look
+      forward to hearing about your future victories.
 --- !u!114 &847310680
 MonoBehaviour:
   m_ObjectHideFlags: 0
