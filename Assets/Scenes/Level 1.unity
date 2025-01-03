@@ -311,9 +311,9 @@ MonoBehaviour:
   - Position: {x: -4, y: -5}
     Type: 0
   - Position: {x: -5, y: -1}
-    Type: 0
+    Type: 2
   - Position: {x: -5, y: 1}
-    Type: 0
+    Type: 2
   - Position: {x: -7, y: 0}
     Type: 1
   - Position: {x: -7, y: -2}
@@ -408,7 +408,7 @@ MonoBehaviour:
   entityParent: {fileID: 2146461521}
   humanSpearman: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
   humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
-  humanTank: {fileID: 0}
+  humanTank: {fileID: 8272381331362142641, guid: ba01e862aa35fbb4fbc8322daac05720, type: 3}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
   damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
