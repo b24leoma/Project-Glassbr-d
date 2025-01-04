@@ -277,7 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1099870ede8624ab2465828894a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 3
+  Type: 4
+  arrowPrefab: {fileID: 0}
   MaxHealth: 150
   MinDamage: 15
   MaxDamage: 20

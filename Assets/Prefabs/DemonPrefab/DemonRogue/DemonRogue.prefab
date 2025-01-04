@@ -277,14 +277,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1099870ede8624ab2465828894a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 2
+  Type: 3
   arrowPrefab: {fileID: 0}
   MaxHealth: 100
   MinDamage: 25
   MaxDamage: 40
   MoveRange: 6
   AttackRange: 1
-  Flipped: 0
   healthBar: {fileID: 8116932611591982883}
   isHuman: 0
   moveDistanceRemaining: 0

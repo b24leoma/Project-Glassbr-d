@@ -1,14 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class AudioSilvertejp : MonoBehaviour
 {
    [SerializeField] private VolumeController volumeController;
    [SerializeField] private GameObject audioManager;
-   [SerializeField]private Slider _masterVolumeUI;
-   [SerializeField] private Slider _musicVolumeUI;
-   [SerializeField] private Slider _sfxVolumeUI;
+   [FormerlySerializedAs("_masterVolumeUI")] [SerializeField]private Slider masterVolumeUI;
+   [FormerlySerializedAs("_musicVolumeUI")] [SerializeField] private Slider musicVolumeUI;
+   [FormerlySerializedAs("_sfxVolumeUI")] [SerializeField] private Slider sfxVolumeUI;
    private void Start()
    {
        if (audioManager || volumeController == null)
@@ -21,25 +22,25 @@ public class AudioSilvertejp : MonoBehaviour
            
        }
 
-       if (_masterVolumeUI == null)
+       if (masterVolumeUI == null)
        {
-           _masterVolumeUI = GameObject.Find("MasterVolumeSlider").GetComponent<Slider>();
+           masterVolumeUI = GameObject.Find("MasterVolumeSlider").GetComponent<Slider>();
           StartCoroutine(WaitAndSetVolume(0, 0.5f));
 
        }
        
        
        
-       if (_musicVolumeUI == null)
+       if (musicVolumeUI == null)
        {
-           _musicVolumeUI = GameObject.Find("MusicVolumeSlider").GetComponent<Slider>();
+           musicVolumeUI = GameObject.Find("MusicVolumeSlider").GetComponent<Slider>();
            StartCoroutine(WaitAndSetVolume(1, 0.5f));
        }
        
-       if (_sfxVolumeUI == null)
+       if (sfxVolumeUI == null)
        {
           
-           _sfxVolumeUI = GameObject.Find("SFXVolumeSlider").GetComponent<Slider>();
+           sfxVolumeUI = GameObject.Find("SFXVolumeSlider").GetComponent<Slider>();
           StartCoroutine(WaitAndSetVolume(2, 0.5f));
        }
 
@@ -74,13 +75,13 @@ public class AudioSilvertejp : MonoBehaviour
        switch (casenumber)
        {
            case 0:
-               _masterVolumeUI.value = volume;
+               masterVolumeUI.value = volume;
                break;
            case 1:
-               _musicVolumeUI.value = volume;
+               musicVolumeUI.value = volume;
                break;
            case 2:
-               _sfxVolumeUI.value = volume;
+               sfxVolumeUI.value = volume;
                break;
        }
    }

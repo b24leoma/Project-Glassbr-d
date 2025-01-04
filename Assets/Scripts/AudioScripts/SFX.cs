@@ -1,3 +1,4 @@
+using System;
 using Game;
 using UnityEngine;
 
@@ -55,6 +56,8 @@ public static class SFX
                 case Entity.EntityType.DemonTank: eventName = "MOVE_Demon.Tank"; break;
             }
             break;
+        default:
+            throw new ArgumentOutOfRangeException(nameof(fxType), fxType, null);
     }
        
 

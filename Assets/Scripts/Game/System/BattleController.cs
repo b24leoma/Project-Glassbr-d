@@ -376,8 +376,8 @@ namespace Game
             middlePos.y += arcHeight;
           
           
-          var Point1 = Vector3.Lerp(attackerPos, middlePos, 0.5f);
-          var Point2 = Vector3.Lerp(middlePos, targetPos, 0.5f);
+          var point1 = Vector3.Lerp(attackerPos, middlePos, 0.5f);
+          var point2 = Vector3.Lerp(middlePos, targetPos, 0.5f);
           
           
           
@@ -387,12 +387,12 @@ namespace Game
            
             
 
-          Vector3[] arrowPath = { Point1,Point2, targetPos, };
+          Vector3[] arrowPath = { point1,point2, targetPos, };
           
-          Debug.DrawLine(attackerPos, Point1, Color.red, 10f);
-          Debug.DrawLine(Point1, middlePos, Color.yellow, 10f);
-          Debug.DrawLine(middlePos, Point2, Color.cyan, 10f);
-          Debug.DrawLine(Point2, targetPos, Color.blue,10f);
+          Debug.DrawLine(attackerPos, point1, Color.red, 10f);
+          Debug.DrawLine(point1, middlePos, Color.yellow, 10f);
+          Debug.DrawLine(middlePos, point2, Color.cyan, 10f);
+          Debug.DrawLine(point2, targetPos, Color.blue,10f);
 
             
        
