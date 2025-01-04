@@ -186,9 +186,13 @@ namespace Game
                     return;
                 }
             }
-            
-            attacker.SetAttacking(true);
-            
+
+            if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0 ||
+                attacker.Type != Entity.EntityType.HumanArcher)
+            {
+                attacker.SetAttacking(true);
+            }
+
 
             if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0)
             {
