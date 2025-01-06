@@ -15,22 +15,38 @@ MonoBehaviour:
   audioEvents: []
   miscEvents: []
   attackEvents:
-  - nameRef: ATK_
+  - nameRef: ATK_Human.Tank
     eventReference:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: 1275121491
+        Data2: 1267482601
+        Data3: -961685356
+        Data4: 556775425
+      Path: event:/M_Old_01_ATK
   damageEvents:
-  - nameRef: 
+  - nameRef: DMG_Human.Tank
     eventReference:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
-  deathEvents: []
-  moveEvents: []
+        Data1: -473405524
+        Data2: 1284270554
+        Data3: -1008388199
+        Data4: 1628090656
+      Path: event:/M_Old_01_DMG
+  deathEvents:
+  - nameRef: DEATH_Human.Tank
+    eventReference:
+      Guid:
+        Data1: -1115724831
+        Data2: 1342098564
+        Data3: 785883270
+        Data4: 1788093087
+      Path: event:/M_Old_01_DEATH
+  moveEvents:
+  - nameRef: MOVE_Human.Tank
+    eventReference:
+      Guid:
+        Data1: -229300437
+        Data2: 1250876390
+        Data3: 891156660
+        Data4: -271788847
+      Path: event:/Walk
