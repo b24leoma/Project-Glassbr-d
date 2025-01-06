@@ -7218,13 +7218,12 @@ MonoBehaviour:
     - Demons. We'll have to make this lesson practical instead.
     - When you encounter a demon force, you want to command your troops to move through
       the battlefield. [Select the troop you want to move and click on a blue tile
-      to move]. Now push forth.
+      to move there]. Now push forth.
     - Great, now a filthy demon is in attacking range, order one of your troops to
-      attack it General! [To attack select the troop you want to attack with and
-      then click on the demon you want to attack withing the red grid].
-    - '[Each troop can only move a certain distance and attack once per turn,
-
-      after
+      attack it General! [To attack, select the troop you want to attack with, if
+      it isn't selected already, and then click on the demon you want to attack within
+      the red grid].
+    - '[Each troop can only move a certain distance and attack once per turn, after
       that, demons will respond. When you move or attack, the colored tiles for that
       action disappear. Press "End turn" to continue the battle].'
     - Looks like your troop is in a dangerous situation. Move it to a more strategic
