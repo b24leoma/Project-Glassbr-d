@@ -7,14 +7,10 @@ namespace Game
         [SerializeField] private GameObject AttackingImage;
         [HideInInspector] public Human target;
         private SpriteRenderer attackImg;
-        // Start is called before the first frame update
+        
         void Awake()
         {
             isHuman = false;
-            string[] identity = NameGenerator.GenerateIdentity(false);
-            Name = identity[0];
-            Age = "";
-            Description = identity[1];
             attackImg = AttackingImage.GetComponent<SpriteRenderer>();
             Flipped = true;
         }

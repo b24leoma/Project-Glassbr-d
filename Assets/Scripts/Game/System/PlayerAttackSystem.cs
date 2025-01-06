@@ -32,7 +32,7 @@ namespace Game
             offsetFix = transform.InverseTransformPoint(Vector3.zero);
             moveColor = new Color(0.6f, 0.6f, 1f);
             attackColor = new Color(1f, 0.6f, 0.6f);
-            possibleAttackColor = new Color(8, 0.8f, 0.8f);
+            possibleAttackColor = new Color(0.6f, 0.2f, 1f);
         }
 
         public void TileClicked(InputAction.CallbackContext context)
@@ -64,7 +64,7 @@ namespace Game
                         {
                             if (hoveredEntity != actingEntity)  // SELECTS ANOTHER ACTOR
                             {
-                                actingEntity = hoveredEntity as Human;
+                                actingEntity = hoveredEntity.GetComponent<Human>();
                                 pathLine.positionCount = 1;
                                 SetPathLinePos(0, hoveredTile);
                             }
@@ -114,14 +114,14 @@ namespace Game
                 }
                 else
                 {
-                    if (gridSystem.GetTile(hoveredTile) != null) actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity as Human;
+                    if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null) actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity.GetComponent<Human>();
                     if (actingEntity != null) // SWAP CHARACTER
                     {
                         if (actingEntity.isHuman)
                         {
                             isActing = true;
                             pathLine.positionCount = 1;
-                            if (hoveredEntity != null) actingEntity = hoveredEntity as Human;
+                            if (hoveredEntity != null) actingEntity = hoveredEntity.GetComponent<Human>();
                             SetPathLinePos(0, actingEntity.Position);
                         }
                     }
@@ -171,13 +171,18 @@ namespace Game
             gridSystem.ResetUnusedHidingspotColor();
             foreach (Vector2Int pos in gridSystem.demons) // ATTACK HIGHLIGHT
             {
-                Demon demon = gridSystem.GetTile(pos).linkedEntity as Demon;
-                demon.DisplayAttackingImage(false, Color.white);
+                gridSystem.GetTile(pos).linkedEntity.GetComponent<Demon>().DisplayAttackingImage(false, Color.white);
             }
             
             if (isActing)
             {
                 selectHighlight.position = actingEntity.transform.position;
+
+                if (actingEntity.isMoving)
+                {
+                    pathLine.positionCount = 1;
+                    SetPathLinePos(0, actingEntity.Position);
+                }
                 
                 //MOVE PATH IF WITHIN RANGE
                 if (actingEntity.moveDistanceRemaining > 0 &&  !actingEntity.isMoving)

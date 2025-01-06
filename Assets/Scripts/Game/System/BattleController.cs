@@ -47,6 +47,7 @@ namespace Game
         private string tutorialScene;
         private bool isTutorial;
         private TutorialManager tutorialManager;
+        private NameSystem nameSystem;
 
         private int _attackvoids;
 
@@ -57,23 +58,22 @@ namespace Game
             missChance = 3;
             currentScene = SceneManager.GetActiveScene().name;
             tutorialScene = "Tutorial";
+            nameSystem = FindObjectOfType<NameSystem>();
 
             if (currentScene == tutorialScene)
             {
                tutorialManager = GetComponent<TutorialManager>();
-                
                 isTutorial = true;
+                nameSystem.RefillNames(humanNameList, demonNameList);
             }
             
-            
-            
-            NameGenerator.ReadFromFile(humanNameList, demonNameList);
             if (gridSystem == null || uiStates == null || canvas == null)
             {
                 Debug.LogError("You forgot to assign some components in the inspector :)");
                 return;
             }
             characters = new List<Entity>();
+            nameSystem.NewLevel();
             foreach (SpawnEntity spawn in LevelEntities)
             {
                 CreateEntity(new Vector2Int((int)spawn.Position.x, (int)spawn.Position.y), spawn.Type);
@@ -105,6 +105,7 @@ namespace Game
                     break;
             }
             Entity e = g.GetComponent<Entity>();
+            nameSystem.GiveIdentity(e);
             if (e.isHuman) gridSystem.humans.Add(pos);
             else gridSystem.demons.Add(pos);
             gridSystem.ConnectToTile(pos, e);
@@ -159,6 +160,13 @@ namespace Game
                 MoveDone?.Invoke();
             }
 
+            if (tryAttackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <=
+                entity.AttackRange)
+            {
+                Attack(entity, attackTarget);
+                if (!skipAnimation) yield return new WaitForSeconds(0.5f);
+            }
+            
             if (isTutorial)
             {
                 if (tutorialManager.TutorialMoveTime()) tutorialManager.Moving();
@@ -167,13 +175,6 @@ namespace Game
                     isTutorial = false;
                     tutorialManager.Bushing();
                 }
-            }
-
-            if (tryAttackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <=
-                entity.AttackRange)
-            {
-                Attack(entity, attackTarget);
-                if (!skipAnimation) yield return new WaitForSeconds(0.5f);
             }
         }
 
@@ -201,7 +202,7 @@ namespace Game
                return;
             }
 
-            selectHighlight.position = attacker.transform.position;
+            if (!attacker.isHuman) selectHighlight.position = attacker.transform.position;
             Tile tile = gridSystem.GetTile(target.Position);
             int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
             bool crit = Random.Range(1, 100) < critChance;

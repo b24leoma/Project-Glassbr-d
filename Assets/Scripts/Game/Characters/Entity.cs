@@ -41,6 +41,18 @@ namespace Game
         [HideInInspector] public int moveDistanceRemaining;
         [HideInInspector] public bool hasAttacked;
 
+
+        public void GiveIdentity(string[] identity)
+        {
+            Name = identity[0];
+            if (isHuman)
+            {
+                Age = identity[1];
+                Description = identity[2];
+            }
+            else Description = identity[1];
+        }
+        
         public Vector2Int Position
         {
             get => new((int)(transform.position.x + 0.5f), (int)(transform.position.y + 0.5f));
@@ -125,51 +137,6 @@ namespace Game
         {
             animator.SetTrigger("Attack");
             SFX.ATK(Type, transform.position);
-        }
-    }
-
-    public static class NameGenerator
-    {
-        private static List<string[]> humanInfo;
-        private static List<string[]> demonInfo;
-        private static StreamReader reader;
-        
-
-        public static string[] GenerateIdentity(bool isHuman)
-        {
-            if (isHuman)
-            {
-                string[] name = humanInfo[Random.Range(1, humanInfo.Count)];
-                humanInfo.Remove(name);
-                return name;
-            }
-            else
-            {
-                string[] name = demonInfo[Random.Range(1, demonInfo.Count)];
-                demonInfo.Remove(name);
-                return name;
-            }
-        }
-
-        public static void ReadFromFile(TextAsset human, TextAsset demons)
-        {
-            humanInfo = new List<string[]>();
-            demonInfo = new List<string[]>();
-
-            string[] info = human.text.Split('\n');
-            if (info.Length % 3 != 0) Debug.Log("Human file has incorrect amount of lines");
-            for (int i = 0; i < info.Length; i += 3)
-            {
-                humanInfo.Add(new[] { info[i], info[i + 1], info[i + 2] });
-            }
-            
-            info = demons.text.Split('\n');
-            if (info.Length % 2 != 0) Debug.Log("Demon file has incorrect amount of lines");
-            for (int i = 0; i < info.Length; i+=2)
-            {
-                demonInfo.Add(new[] { info[i], info[i + 1]});
-            }
-
         }
     }
 }

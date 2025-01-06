@@ -8,22 +8,14 @@ namespace Game
         private LightFader _lightFader;
         private Color _hasAttackedColor;
         public bool isMoving;
-
-      
-
+        
         void Awake()
         {
            isHuman = true;
-           string[] identity = NameGenerator.GenerateIdentity(true);
-           Name = identity[0];
-           Age = identity[1];
-           Description = identity[2];
            _lightFader = GetComponentInChildren<LightFader>();
            if (_lightFader == null) Debug.LogWarning("No LightFader found");
             
            _hasAttackedColor= new Color (0.6f, 0.6f, 0.6f);
-               
-           
         }
         public override void SetAttacking(bool attacking)
         {
