@@ -48,8 +48,11 @@ namespace Game
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
                             StartCoroutine(battleController.Move(GetFullPathLine(), false));
-                            pathLine.positionCount = 1;
-                            SetPathLinePos(0, hoveredTile);
+                            if (gridSystem.GetTile(GetPathLinePos(0)).linkedEntity != null && gridSystem.GetTile(GetPathLinePos(0)).linkedEntity.GetComponent<Human>().isMoving)
+                            {
+                                pathLine.positionCount = 1;
+                                SetPathLinePos(0, hoveredTile);
+                            }
                         }
                         else // DESELECTS ACTOR
                         {
@@ -87,10 +90,13 @@ namespace Game
                                     if (pathLine.positionCount < 2)
                                     {
                                         battleController.Attack(actingEntity, hoveredEntity);
-                                        pathLine.positionCount = 1;
-                                        SetPathLinePos(0, hoveredTile);
-                                        isActing = false;
-                                        selectHighlight.position = Vector3.down * 100;
+                                        if (actingEntity.hasAttacked)
+                                        {
+                                            pathLine.positionCount = 1;
+                                            SetPathLinePos(0, hoveredTile);
+                                            isActing = false;
+                                            selectHighlight.position = Vector3.down * 100;
+                                        }
                                     }
                                     else
                                     {
@@ -104,9 +110,14 @@ namespace Game
                                 {
                                     StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
                                 }
-                                hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
-                                pathLine.positionCount = 1;
-                                SetPathLinePos(0, hoveredTile);
+                                
+                                Debug.Log(actingEntity.isMoving);
+                                if (actingEntity.isMoving)
+                                {
+                                    hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
+                                    pathLine.positionCount = 1;
+                                    SetPathLinePos(0, hoveredTile);
+                                }
                             }
                         }
                     }
