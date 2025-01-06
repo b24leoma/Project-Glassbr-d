@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1.unity
     guid: 7739283c3141dd041a445a67636a5663
   - enabled: 1
+    path: Assets/Scenes/Journal; lvl1 - lvl2.unity
+    guid: 718af9babfcff5e4583e20cf9c4ebb10
+  - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 1af9bbf4f6238bd46bc5fd130204fda8
+  - enabled: 1
+    path: Assets/Scenes/Journal; lvl2 - onward.unity
+    guid: 6f5363d564e28334996f77eab49db281
   m_configObjects: {}

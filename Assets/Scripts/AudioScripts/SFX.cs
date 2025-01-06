@@ -22,6 +22,8 @@ public static class SFX
             {
                 case Entity.EntityType.HumanSpearman: eventName = "ATK_Human.Spear"; break;
                 case Entity.EntityType.HumanArcher: eventName = "ATK_Human.Archer"; break;
+                case Entity.EntityType.HumanTank: eventName = "ATK_Human.Tank"; break;
+                //case Entity.EntityType.DemonArcher: eventName = "ATK_Demon.Archer"; break;
                 case Entity.EntityType.DemonSwordsman: eventName = "ATK_Demon.Sword"; break;
                 case Entity.EntityType.DemonTank: eventName = "ATK_Demon.Tank"; break;
             }
@@ -32,6 +34,8 @@ public static class SFX
             {
                 case Entity.EntityType.HumanSpearman: eventName = "DMG_Human.Spear"; break;
                 case Entity.EntityType.HumanArcher: eventName = "DMG_Human.Archer"; break;
+                case Entity.EntityType.HumanTank: eventName = "DMG_Human.Tank"; break;
+                //case Entity.EntityType.DemonArcher: eventName = "DMG_Demon.Archer"; break;
                 case Entity.EntityType.DemonSwordsman: eventName = "DMG_Demon.Sword"; break;
                 case Entity.EntityType.DemonTank: eventName = "DMG_Demon.Tank"; break;
             }
@@ -42,6 +46,8 @@ public static class SFX
             {
                 case Entity.EntityType.HumanSpearman: eventName = "DEATH_Human.Spear"; break;
                 case Entity.EntityType.HumanArcher: eventName = "DEATH_Human.Archer"; break;
+                case Entity.EntityType.HumanTank: eventName = "DEATH_Human.Tank"; break;
+              //  case Entity.EntityType.DemonArcher: eventName = "DEATH_Demon.Archer"; break;
                 case Entity.EntityType.DemonSwordsman: eventName = "DEATH_Demon.Sword"; break;
                 case Entity.EntityType.DemonTank: eventName = "DEATH_Demon.Tank"; break;
             }
@@ -52,6 +58,8 @@ public static class SFX
             {
                 case Entity.EntityType.HumanSpearman: eventName = "MOVE_Human.Spear"; break;
                 case Entity.EntityType.HumanArcher: eventName = "MOVE_Human.Archer"; break;
+                case Entity.EntityType.HumanTank: eventName = "MOVE_Human.Tank"; break;
+             //   case Entity.EntityType.DemonArcher: eventName = "MOVE_Demon.Archer"; break;
                 case Entity.EntityType.DemonSwordsman: eventName = "MOVE_Demon.Sword"; break;
                 case Entity.EntityType.DemonTank: eventName = "MOVE_Demon.Tank"; break;
             }
