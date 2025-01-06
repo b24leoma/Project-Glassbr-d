@@ -6,6 +6,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Game
@@ -29,6 +30,7 @@ namespace Game
         [SerializeField] private TextMeshProUGUI displayStats;
         [SerializeField] private TextMeshProUGUI displayName;
         [SerializeField] private TextMeshProUGUI displayDescription;
+        [SerializeField] private Slider displayHealthSlider;
         [SerializeField] private Transform entityParent;
         [SerializeField] private GameObject humanSpearman;
         [SerializeField] private GameObject humanArcher;
@@ -310,6 +312,8 @@ namespace Game
                 displayStats.text = $"{entity.MinDamage}-{entity.MaxDamage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
                 displayName.text = $"{entity.Name}\n{entity.Age}";
                 displayDescription.text = entity.Description;
+                HealthDisplayCalculator(entity.CurrentHealth, entity.MaxHealth);
+                
             }
         }
         
@@ -328,6 +332,21 @@ namespace Game
         public void DebugWin()
         {
             uiStates.TogglePanel(1);
+        }
+
+        private void HealthDisplayCalculator(float currentHealth, float maxHealth)
+        {
+            if (currentHealth <= 0) return;
+
+            if (displayHealthSlider.maxValue != maxHealth)
+            {
+                displayHealthSlider.maxValue = maxHealth;
+            }
+
+            if (displayHealthSlider.value != currentHealth)
+            {
+                displayHealthSlider.value = currentHealth;
+            }
         }
         
         
