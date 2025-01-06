@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 2570944904612392614}
   - component: {fileID: 4821006570126804606}
   m_Layer: 0
-  m_Name: TankStandIdle1
+  m_Name: HumanTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
