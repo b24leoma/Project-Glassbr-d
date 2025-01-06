@@ -257,204 +257,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11649514}
   m_CullTransparentMesh: 1
---- !u!1 &56033649
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 56033652}
-  - component: {fileID: 56033651}
-  - component: {fileID: 56033650}
-  - component: {fileID: 56033653}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &56033650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56033649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c603f19528ad324bbe2d6f1f049cf35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridSystem: {fileID: 651517034}
-  endTurnButton: {fileID: 1392535647}
-  pathLine: {fileID: 1425331444}
-  selectHighlight: {fileID: 0}
---- !u!114 &56033651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56033649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5400c73ac8a704439c603de2cce798f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelEntities:
-  - Position: {x: -8, y: -2}
-    Type: 1
-  - Position: {x: -7, y: 0}
-    Type: 0
-  - Position: {x: -8, y: 2}
-    Type: 1
-  - Position: {x: -6, y: -1}
-    Type: 2
-  - Position: {x: -6, y: 0}
-    Type: 0
-  - Position: {x: -6, y: 1}
-    Type: 2
-  - Position: {x: -5, y: 0}
-    Type: 2
-  - Position: {x: 7, y: 2}
-    Type: 3
-  - Position: {x: 9, y: -1}
-    Type: 3
-  - Position: {x: 7, y: -1}
-    Type: 3
-  - Position: {x: 8, y: 1}
-    Type: 4
-  - Position: {x: 8, y: 0}
-    Type: 4
-  - Position: {x: 8, y: -1}
-    Type: 4
-  - Position: {x: 8, y: -2}
-    Type: 4
-  - Position: {x: 7, y: -4}
-    Type: 3
-  Player1TurnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 56033650}
-        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
-        m_MethodName: StartTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 404247153}
-        m_TargetAssemblyTypeName: TurnChangeDisplay, Assembly-CSharp
-        m_MethodName: Display
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Your Turn
-          m_BoolArgument: 0
-        m_CallState: 2
-  Player2TurnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 56033653}
-        m_TargetAssemblyTypeName: Game.EnemyAI, Assembly-CSharp
-        m_MethodName: StartTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 404247153}
-        m_TargetAssemblyTypeName: TurnChangeDisplay, Assembly-CSharp
-        m_MethodName: Display
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Demon Turn
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 56033650}
-        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
-        m_MethodName: EndTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Demon Turn
-          m_BoolArgument: 0
-        m_CallState: 2
-  TutorialOnStart:
-    m_PersistentCalls:
-      m_Calls: []
-  MoveDone:
-    m_PersistentCalls:
-      m_Calls: []
-  gridSystem: {fileID: 651517034}
-  isPlayer1Turn: 1
-  canvas: {fileID: 1234673372}
-  uiStates: {fileID: 2031621820}
-  infoDisplay: {fileID: 1412942823}
-  displayStats: {fileID: 1037766086}
-  displayName: {fileID: 508322861}
-  displayDescription: {fileID: 1584170117}
-  entityParent: {fileID: 2146461521}
-  humanSpearman: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
-  humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
-  humanTank: {fileID: 8272381331362142641, guid: ba01e862aa35fbb4fbc8322daac05720, type: 3}
-  demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
-  demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
-  damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
-  humanNameList: {fileID: 4900000, guid: 6fa49bc455e33ab4dad59d976707edbd, type: 3}
-  demonNameList: {fileID: 4900000, guid: 8f6a527c19742f44a9deac7b851c6da8, type: 3}
-  selectHighlight: {fileID: 0}
---- !u!4 &56033652
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56033649}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.24, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &56033653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56033649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 445eab3bd243dab40aec2af1bb9d6f98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  battleController: {fileID: 56033651}
-  gridSystem: {fileID: 651517034}
---- !u!43 &134715475
+--- !u!43 &13223059
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -619,6 +422,203 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &56033649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56033652}
+  - component: {fileID: 56033651}
+  - component: {fileID: 56033650}
+  - component: {fileID: 56033653}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &56033650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56033649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c603f19528ad324bbe2d6f1f049cf35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSystem: {fileID: 651517034}
+  endTurnButton: {fileID: 1392535647}
+  pathLine: {fileID: 1425331444}
+  selectHighlight: {fileID: 1920762834}
+--- !u!114 &56033651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56033649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5400c73ac8a704439c603de2cce798f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelEntities:
+  - Position: {x: -8, y: -2}
+    Type: 1
+  - Position: {x: -7, y: 0}
+    Type: 0
+  - Position: {x: -8, y: 2}
+    Type: 1
+  - Position: {x: -6, y: -1}
+    Type: 2
+  - Position: {x: -6, y: 0}
+    Type: 0
+  - Position: {x: -6, y: 1}
+    Type: 2
+  - Position: {x: -5, y: 0}
+    Type: 2
+  - Position: {x: 7, y: 2}
+    Type: 3
+  - Position: {x: 9, y: -1}
+    Type: 3
+  - Position: {x: 7, y: -1}
+    Type: 3
+  - Position: {x: 8, y: 1}
+    Type: 4
+  - Position: {x: 8, y: 0}
+    Type: 4
+  - Position: {x: 8, y: -1}
+    Type: 4
+  - Position: {x: 8, y: -2}
+    Type: 4
+  - Position: {x: 7, y: -4}
+    Type: 3
+  Player1TurnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: StartTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 404247153}
+        m_TargetAssemblyTypeName: TurnChangeDisplay, Assembly-CSharp
+        m_MethodName: Display
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Your Turn
+          m_BoolArgument: 0
+        m_CallState: 2
+  Player2TurnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 56033653}
+        m_TargetAssemblyTypeName: Game.EnemyAI, Assembly-CSharp
+        m_MethodName: StartTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 404247153}
+        m_TargetAssemblyTypeName: TurnChangeDisplay, Assembly-CSharp
+        m_MethodName: Display
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Demon Turn
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56033650}
+        m_TargetAssemblyTypeName: Game.PlayerAttackSystem, Assembly-CSharp
+        m_MethodName: EndTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Demon Turn
+          m_BoolArgument: 0
+        m_CallState: 2
+  TutorialOnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  MoveDone:
+    m_PersistentCalls:
+      m_Calls: []
+  gridSystem: {fileID: 651517034}
+  isPlayer1Turn: 1
+  canvas: {fileID: 1234673372}
+  uiStates: {fileID: 2031621820}
+  infoDisplay: {fileID: 1412942823}
+  displayStats: {fileID: 1037766086}
+  displayName: {fileID: 508322861}
+  displayDescription: {fileID: 1584170117}
+  entityParent: {fileID: 2146461521}
+  humanSpearman: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
+  humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
+  humanTank: {fileID: 8272381331362142641, guid: ba01e862aa35fbb4fbc8322daac05720, type: 3}
+  demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
+  demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
+  damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
+  humanNameList: {fileID: 4900000, guid: 6fa49bc455e33ab4dad59d976707edbd, type: 3}
+  demonNameList: {fileID: 4900000, guid: 8f6a527c19742f44a9deac7b851c6da8, type: 3}
+  selectHighlight: {fileID: 0}
+--- !u!4 &56033652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56033649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.24, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &56033653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56033649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445eab3bd243dab40aec2af1bb9d6f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleController: {fileID: 56033651}
+  gridSystem: {fileID: 651517034}
 --- !u!1 &173022033
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,20 +765,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetUIElement: {fileID: 173022034}
-  enableShake: 1
+  enableShake: 0
   shakeDelay: 1
   shakeDuration: 0.5
-  shakeStrength: 2.4
-  shakeVibrato: 5
+  shakeStrength: 5
+  shakeVibrato: 10
   enableSizeAnimation: 1
-  sizeLoopType: 1
-  sizeEase: 4
-  sizeDuration: 0.5
+  sizeEase: 5
+  sizeDuration: 2
   sizeMultiplier: 1.1
-  enableRotation: 1
-  rotationLoopType: 1
-  rotationEase: 4
-  rotationDuration: 1
+  enableRotation: 0
+  rotationEase: 5
+  rotationDuration: 2
   rotationAngle: 10
 --- !u!1 &189659177
 GameObject:
@@ -1126,7 +1124,6 @@ GameObject:
   - component: {fileID: 435890373}
   - component: {fileID: 435890372}
   - component: {fileID: 435890374}
-  - component: {fileID: 435890375}
   m_Layer: 5
   m_Name: FORWARD!
   m_TagString: Untagged
@@ -1150,7 +1147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 567.20703, y: 323.8833}
+  m_AnchoredPosition: {x: 560, y: 300}
   m_SizeDelta: {x: 257.7259, y: 89.7666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435890372
@@ -1173,7 +1170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Forward
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c14b040c278ad514bb8e1580d352e4e8, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 3418b455ae507df4eb7f95f176b62590, type: 2}
@@ -1200,8 +1197,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.9
-  m_fontSizeBase: 76.9
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1268,34 +1265,6 @@ MonoBehaviour:
   targetValue: 1
   loopType: 1
   easeType: 4
---- !u!114 &435890375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435890370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e6ac93d4bca114ab483bbbd84d5b3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetUIElement: {fileID: 435890371}
-  enableShake: 1
-  shakeDelay: 4
-  shakeDuration: 0.5
-  shakeStrength: 1.5
-  shakeVibrato: 3
-  enableSizeAnimation: 1
-  sizeLoopType: 1
-  sizeEase: 4
-  sizeDuration: 2.01
-  sizeMultiplier: 2.01
-  enableRotation: 1
-  rotationLoopType: 0
-  rotationEase: 2
-  rotationDuration: 1
-  rotationAngle: 10
 --- !u!1 &470267979
 GameObject:
   m_ObjectHideFlags: 0
@@ -10538,8 +10507,8 @@ MonoBehaviour:
   - {x: 10, y: 5, z: 0}
   - {x: 10, y: -6, z: 0}
   m_ShapePathHash: 1054209301
-  m_Mesh: {fileID: 134715475}
-  m_InstanceId: 33810
+  m_Mesh: {fileID: 13223059}
+  m_InstanceId: 31044
   m_LocalBounds:
     m_Center: {x: -0.5, y: -0.5, z: 0}
     m_Extent: {x: 10.5, y: 5.5, z: 0}
