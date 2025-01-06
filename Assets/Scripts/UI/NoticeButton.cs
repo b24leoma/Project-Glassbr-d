@@ -17,7 +17,7 @@ public class NoticeButton : MonoBehaviour
     [Header("Size Settings")] [SerializeField]
     private bool enableSizeAnimation = true;
 
-    [SerializeField] private LoopType sizeLoopType = LoopType.Yoyo;
+    // [SerializeField] private LoopType sizeLoopType = LoopType.Yoyo;
     [SerializeField] private Ease sizeEase = Ease.InOutSine;
     [Range(0f, 5f), SerializeField] private float sizeDuration = 0.5f;
     [Range(0f, 5f), SerializeField] private float sizeMultiplier = 1.1f;
@@ -25,7 +25,7 @@ public class NoticeButton : MonoBehaviour
     [Header("Rotation Settings")] [SerializeField]
     private bool enableRotation = true;
 
-    [SerializeField] private LoopType rotationLoopType = LoopType.Yoyo;
+    //[SerializeField] private LoopType rotationLoopType = LoopType.Yoyo;
     [SerializeField] private Ease rotationEase = Ease.InOutSine;
     [Range(0f, 5f), SerializeField] private float rotationDuration = 1f;
     [Range(-45f, 45f), SerializeField] private float rotationAngle = 10f;
@@ -33,6 +33,7 @@ public class NoticeButton : MonoBehaviour
     private Vector3 _startScale;
     private Vector3 _startRotation;
     private float _actualRotationDuration;
+    private float _actualSizeDuration;
 
     private void Start()
     {
@@ -40,14 +41,22 @@ public class NoticeButton : MonoBehaviour
         {
             targetUIElement = gameObject.GetComponent<RectTransform>();
         }
-        _startScale = targetUIElement.localScale;
-        _startRotation = targetUIElement.eulerAngles;
-        _actualRotationDuration = rotationDuration / 2;
+       
+        
         
     }
 
     private void OnEnable()
     {
+        _startScale = targetUIElement.localScale;
+        _startRotation = targetUIElement.eulerAngles;
+        _actualRotationDuration = rotationDuration / 2;
+        _actualSizeDuration = sizeDuration /2 ;
+        
+        
+        
+
+        
         if (enableShake)
         {
             StartCoroutine(ShakeLoop());
@@ -93,10 +102,16 @@ public class NoticeButton : MonoBehaviour
 
     private void DoScale()
     {
-        targetUIElement.DOScale(_startScale * sizeMultiplier, sizeDuration)
-            .SetLoops(-1, sizeLoopType)
-            .SetEase(sizeEase);
+        targetUIElement.DOScale(_startScale * sizeMultiplier, _actualSizeDuration)
+            .SetEase(sizeEase)
+            .OnComplete(DoScaleReverse);
     }
+
+    private void DoScaleReverse()
+    {
+        targetUIElement.DOScale(_startScale, _actualRotationDuration).SetEase(sizeEase).OnComplete(DoScale);
+    }
+    
 
     private void DoRotate()
     {
