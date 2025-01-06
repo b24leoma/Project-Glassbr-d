@@ -198,18 +198,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 56033654}
-        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: OnEndTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1564250857}
         m_TargetAssemblyTypeName: TurnChangeDisplay, Assembly-CSharp
         m_MethodName: Display
@@ -220,6 +208,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Your Turn
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56033654}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: OnEndTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   Player2TurnStart:
@@ -7669,7 +7669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -7686,7 +7686,7 @@ PrefabInstance:
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 56033654}
+      objectReference: {fileID: 711383860}
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -7705,7 +7705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnEndTurn
+      value: PlayUIClick
       objectReference: {fileID: 0}
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -7713,7 +7713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: TutorialManager, Assembly-CSharp
+      value: PlayThis, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8608769860012422066, guid: 2cfe9cf53d9fd5548810cf9c4c59e980, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName

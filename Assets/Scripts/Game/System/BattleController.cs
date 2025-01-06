@@ -119,13 +119,13 @@ namespace Game
             
             if (entity.isHuman)
             {
-                entity.GetComponent<Human>().SetMoving(true);
                 if (isTutorial && ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
                                    (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
                                    (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot)))
                 {
                     yield break;
                 }
+                entity.GetComponent<Human>().SetMoving(true);
             }
             
             if (pos.Length > 1)
@@ -180,13 +180,7 @@ namespace Game
 
         public void Attack(Entity attacker, Entity target)
         {
-            if (isTutorial && attacker.isHuman)
-            {
-                if (!tutorialManager.TutorialAttackTime())
-                {
-                    return;
-                }
-            }
+            if (isTutorial && attacker.isHuman && !tutorialManager.TutorialAttackTime()) return;
 
             if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0 ||
                 attacker.Type != Entity.EntityType.HumanArcher)
