@@ -210,7 +210,7 @@ namespace Game
             else
             {
                 Vector3 targetPos = target.transform.position;
-                if (Random.Range(1, 100) < attacker.CritChance)
+                if (Random.Range(1, 100) <= attacker.CritChance)
                 {
                     // ---CRIT---
                     damage = attacker.MaxDamage + 10;
