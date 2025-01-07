@@ -64,11 +64,22 @@ public class NameSystem : MonoBehaviour
                 
             }
 
-            if (e.isHuman)
+            if (true)
             {
                 e.AssignIdentity(GenerateIdentity(e.isHuman));
-                used.Add(new Identity(){type = e.Type, gender = e.IsMale?"M":"F", name = e.Name, age = e.Age, description = e.Description});
-                currentlyUsed.Add(e.Name);   
+                used.Add(new Identity()
+                {
+                    type = e.Type, gender = e.IsMale ? "M" : "F", name = e.Name, age = e.Age,
+                    description = e.Description
+                });
+                currentlyUsed.Add(e.Name);
+                /*}
+                else
+                {
+                    e.AssignIdentity(GenerateIdentity(false));
+                    used.Add(new Identity(){type = e.Type, name = e.Name, description = e.Description});
+                    currentlyUsed.Add(e.Name);
+                }*/
             }
     }
     
@@ -76,15 +87,16 @@ public class NameSystem : MonoBehaviour
     {
         if (isHuman)
         {
-            string[] name = humanInfo[Random.Range(1, humanInfo.Count)];
-            humanInfo.Remove(name);
-            return name;
+            string[] namn = humanInfo[Random.Range(1, humanInfo.Count)];
+            humanInfo.Remove(namn);
+            return namn;
         }
         else
         {
-            string[] name = demonInfo[Random.Range(1, demonInfo.Count)];
-            demonInfo.Remove(name);
-            return name;
+            string[] namn = demonInfo[Random.Range(1, demonInfo.Count)];
+            namn = new[] { namn[0], "D", "", namn[1] };
+            demonInfo.Remove(namn);
+            return namn;
         }
     }
 

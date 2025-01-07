@@ -47,20 +47,12 @@ namespace Game
 
         public void AssignIdentity(string[] identity)
         {
-            if (isHuman)
-            {
-                Name = identity[0];
-                IsMale = identity[1] == "M";
-                Age = identity[2];
-                Description = identity[3];
-            }
-            else
-            {
-                Name = identity[0];
-                Description = identity[1];
-            }
+            Name = identity[0];
+            IsMale = identity[1][0] == 'M';
+            Age = identity[2];
+            Description = identity[3];
         }
-        
+
         public Vector2Int Position
         {
             get => new((int)(transform.position.x + 0.5f), (int)(transform.position.y + 0.5f));
