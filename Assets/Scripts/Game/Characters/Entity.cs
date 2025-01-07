@@ -31,6 +31,8 @@ namespace Game
         public int MaxDamage;
         public int MoveRange;
         public int AttackRange;
+        public int CritChance;
+        public int MissChance;
         public bool IsMelee { get; protected set; }
         public bool Flipped { get; protected set; }
         

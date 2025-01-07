@@ -42,8 +42,6 @@ namespace Game
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
         [SerializeField] private Transform selectHighlight;
-        private int critChance;
-        private int missChance;
         private List<Entity> characters;
         private int level;
         private string currentScene;
@@ -57,8 +55,6 @@ namespace Game
         
         void Start()
         {
-            critChance = 5;
-            missChance = 3;
             currentScene = SceneManager.GetActiveScene().name;
             tutorialScene = "Tutorial";
             nameSystem = FindObjectOfType<NameSystem>();
@@ -203,9 +199,8 @@ namespace Game
             if (!attacker.isHuman) selectHighlight.position = attacker.transform.position;
             Tile tile = gridSystem.GetTile(target.Position);
             int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
-            bool crit = Random.Range(1, 100) < critChance;
             DamageNumber num;
-            if (Random.Range(1, 100) < tile.missChancePercent || Random.Range(1, 100) < critChance)
+            if (Random.Range(1, 100) <= attacker.MissChance)
             {
                 // ---MISS---
                 num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
@@ -215,8 +210,9 @@ namespace Game
             else
             {
                 Vector3 targetPos = target.transform.position;
-                if (crit)
+                if (Random.Range(1, 100) < attacker.CritChance)
                 {
+                    // ---CRIT---
                     damage = attacker.MaxDamage + 10;
                     num = Instantiate(damageNumbers, targetPos + Vector3.up * 1.25f, quaternion.identity)
                         .GetComponent<DamageNumber>();
