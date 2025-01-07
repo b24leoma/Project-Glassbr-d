@@ -24,6 +24,7 @@ namespace Game
         public GameObject arrowPrefab;
         public string Name { get; protected set; }
         public string Age { get; protected set; }
+        public bool IsMale { get; protected set; }
         public string Description { get; protected set; }
         public int MaxHealth;
         public int CurrentHealth { get; protected set; }
@@ -44,15 +45,20 @@ namespace Game
         [HideInInspector] public bool hasAttacked;
 
 
-        public void GiveIdentity(string[] identity)
+        public void AssignIdentity(string[] identity)
         {
-            Name = identity[0];
             if (isHuman)
             {
-                Age = identity[1];
-                Description = identity[2];
+                Name = identity[0];
+                IsMale = identity[1] == "M";
+                Age = identity[2];
+                Description = identity[3];
             }
-            else Description = identity[1];
+            else
+            {
+                Name = identity[0];
+                Description = identity[1];
+            }
         }
         
         public Vector2Int Position

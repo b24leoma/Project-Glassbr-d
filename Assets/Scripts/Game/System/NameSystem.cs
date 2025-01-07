@@ -29,10 +29,10 @@ public class NameSystem : MonoBehaviour
         demonInfo = new List<string[]>();
 
         string[] info = human.text.Split('\n');
-        if (info.Length % 3 != 0) Debug.Log("Human file has incorrect amount of lines");
-        for (int i = 0; i < info.Length; i += 3)
+        if (info.Length % 4 != 0) Debug.Log("Human file has incorrect amount of lines");
+        for (int i = 0; i < info.Length; i += 4)
         {
-            humanInfo.Add(new[] { info[i], info[i + 1], info[i + 2] });
+            humanInfo.Add(new[] { info[i], info[i + 1], info[i + 2], info[i + 3] });
         }
 
         info = demons.text.Split('\n');
@@ -56,16 +56,20 @@ public class NameSystem : MonoBehaviour
                 {
                     if (!currentlyUsed.Contains(identity.name))
                     {
-                        e.GiveIdentity(new[] { identity.name, identity.age, identity.description });
+                        e.AssignIdentity(new[] { identity.name, identity.gender, identity.age, identity.description });
                         currentlyUsed.Add(identity.name);
                         return;
                     }
                 }
                 
             }
-            e.GiveIdentity(GenerateIdentity(e.isHuman));
-            used.Add(new Identity(){type = e.Type, name = e.Name, age = e.Age, description = e.Description});
-            currentlyUsed.Add(e.Name);
+
+            if (e.isHuman)
+            {
+                e.AssignIdentity(GenerateIdentity(e.isHuman));
+                used.Add(new Identity(){type = e.Type, gender = e.IsMale?"M":"F", name = e.Name, age = e.Age, description = e.Description});
+                currentlyUsed.Add(e.Name);   
+            }
     }
     
     private string[] GenerateIdentity(bool isHuman)
@@ -95,6 +99,7 @@ public class Identity
 {
     public Entity.EntityType type;
     public string name;
+    public string gender;
     public string age;
     public string description;
 }
