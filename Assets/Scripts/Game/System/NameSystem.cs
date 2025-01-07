@@ -50,39 +50,30 @@ public class NameSystem : MonoBehaviour
 
     public void GiveIdentity(Entity e)
     {
-            foreach (Identity identity in used)
+        foreach (Identity identity in used)
+        {
+            if (e.Type == identity.type)
             {
-                if (e.Type == identity.type)
+                if (!currentlyUsed.Contains(identity.name))
                 {
-                    if (!currentlyUsed.Contains(identity.name))
-                    {
-                        e.AssignIdentity(new[] { identity.name, identity.gender, identity.age, identity.description });
-                        currentlyUsed.Add(identity.name);
-                        return;
-                    }
+                    e.AssignIdentity(new[] { identity.name, identity.gender, identity.age, identity.description });
+                    currentlyUsed.Add(identity.name);
+                    return;
                 }
-                
             }
 
-            if (true)
-            {
-                e.AssignIdentity(GenerateIdentity(e.isHuman));
-                used.Add(new Identity()
-                {
-                    type = e.Type, gender = e.IsMale ? "M" : "F", name = e.Name, age = e.Age,
-                    description = e.Description
-                });
-                currentlyUsed.Add(e.Name);
-                /*}
-                else
-                {
-                    e.AssignIdentity(GenerateIdentity(false));
-                    used.Add(new Identity(){type = e.Type, name = e.Name, description = e.Description});
-                    currentlyUsed.Add(e.Name);
-                }*/
-            }
+        }
+        
+        e.AssignIdentity(GenerateIdentity(e.isHuman));
+        used.Add(new Identity()
+        {
+            type = e.Type, gender = e.IsMale ? "M" : "F", name = e.Name, age = e.Age,
+            description = e.Description
+        });
+        currentlyUsed.Add(e.Name);
+
     }
-    
+
     private string[] GenerateIdentity(bool isHuman)
     {
         if (isHuman)
