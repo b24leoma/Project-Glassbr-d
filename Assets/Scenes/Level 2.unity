@@ -415,7 +415,7 @@ MonoBehaviour:
   displayStats: {fileID: 1037766086}
   displayName: {fileID: 508322861}
   displayDescription: {fileID: 1584170117}
-  displayHealthSlider: {fileID: 0}
+  displayHealthSlider: {fileID: 1283833178}
   entityParent: {fileID: 2146461521}
   humanSpearman: {fileID: 7205145530146460040, guid: dc4c939ce792ac847b58257e69f534a8, type: 3}
   humanArcher: {fileID: 7205145530146460040, guid: b43c251bb38563c4f95c21f4f2b4d1d4, type: 3}
@@ -10513,6 +10513,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5108078682439849397, guid: 79960bc2c810cff42b51a1bd29059bb3, type: 3}
   m_PrefabInstance: {fileID: 1283833176}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1283833178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6957371111934976830, guid: 79960bc2c810cff42b51a1bd29059bb3, type: 3}
+  m_PrefabInstance: {fileID: 1283833176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1290126557
 GameObject:
   m_ObjectHideFlags: 0
