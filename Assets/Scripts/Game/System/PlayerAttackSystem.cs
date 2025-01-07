@@ -101,6 +101,9 @@ namespace Game
                                     else
                                     {
                                         StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
+                                        hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
+                                        pathLine.positionCount = 1;
+                                        SetPathLinePos(0, hoveredTile);
                                     }
                                 }
                                 else if (!actingEntity.IsMelee &&
@@ -109,11 +112,6 @@ namespace Game
                                          actingEntity.AttackRange)
                                 {
                                     StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
-                                }
-                                
-                                Debug.Log(actingEntity.isMoving);
-                                if (actingEntity.isMoving)
-                                {
                                     hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
                                     pathLine.positionCount = 1;
                                     SetPathLinePos(0, hoveredTile);
@@ -384,6 +382,10 @@ namespace Game
         {
             isPlayerTurn = true;
             endTurnButton.SetActive(true);
+            foreach (Vector2Int pos in gridSystem.humans)
+            {
+                gridSystem.GetTile(pos).linkedEntity.GetComponent<Human>().isDefending = false;
+            }
         }
 
         public void SetPaused(bool paused)
