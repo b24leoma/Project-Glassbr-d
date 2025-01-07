@@ -66,6 +66,7 @@ public class UIStates : MonoBehaviour
     {
         bool open = !settingsAnimator.GetBool(IsOpen);
         settingsAnimator.SetBool(IsOpen, open);
+        Debug.Log($"Toggling panel. Open: {open}");
         if (open) onOpenSettings?.Invoke();
         else onCloseSettings?.Invoke();
     }
