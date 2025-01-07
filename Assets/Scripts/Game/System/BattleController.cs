@@ -61,12 +61,13 @@ namespace Game
             currentScene = SceneManager.GetActiveScene().name;
             tutorialScene = "Tutorial";
             nameSystem = FindObjectOfType<NameSystem>();
-
+            
+            if (nameSystem.NoNames()) nameSystem.RefillNames(humanNameList, demonNameList);
+            
             if (currentScene == tutorialScene)
             {
                tutorialManager = GetComponent<TutorialManager>();
                 isTutorial = true;
-                nameSystem.RefillNames(humanNameList, demonNameList);
             }
             
             if (gridSystem == null || uiStates == null || canvas == null)
