@@ -30,6 +30,7 @@ namespace Game
         [SerializeField] private TextMeshProUGUI displayStats;
         [SerializeField] private TextMeshProUGUI displayName;
         [SerializeField] private TextMeshProUGUI displayDescription;
+        [SerializeField] private Image displayPortrait;
         [SerializeField] private Slider displayHealthSlider;
         [SerializeField] private Transform entityParent;
         [SerializeField] private GameObject humanSpearman;
@@ -313,6 +314,10 @@ namespace Game
                 displayStats.text = $"{entity.MinDamage}-{entity.MaxDamage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
                 displayName.text = $"{entity.Name}\n{entity.Age}";
                 displayDescription.text = entity.Description;
+                
+                Texture2D tex = Resources.Load<Texture2D>("CharacterPortrait\\Human"+(entity.Name.Split(' ')[0]));
+                if (tex != null) displayPortrait.sprite = Sprite.Create(tex, new Rect(0.0f,0.0f,tex.width,tex.height), new Vector2(0.5f,0.5f), 100.0f);
+                
                 HealthDisplayCalculator(entity.CurrentHealth, entity.MaxHealth);
                 
             }
