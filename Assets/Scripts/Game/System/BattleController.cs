@@ -184,12 +184,13 @@ namespace Game
         {
             if (isTutorial && attacker.isHuman && !tutorialManager.TutorialAttackTime()) return;
             if (attacker.isHuman && attacker.GetComponent<Human>().isDefending) return;
-            if (attacker.isHuman && attacker.hasAttacked && _attackvoids != 0) return;
+            if (attacker.isHuman && attacker.Type !=Entity.EntityType.HumanArcher && attacker.hasAttacked ) return;
             
-            attacker.SetAttacking(true);
+           
             if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0 ||
                 attacker.Type != Entity.EntityType.HumanArcher)
             {
+                attacker.SetAttacking(true);
             }
 
 
@@ -355,7 +356,10 @@ namespace Game
 
         private void HealthDisplayCalculator(float currentHealth, float maxHealth)
         {
-            if (currentHealth <= 0) return;
+            if (currentHealth <= 0)
+            {
+                displayHealthSlider.value = 0;
+            }
 
             if (displayHealthSlider.maxValue != maxHealth)
             {
