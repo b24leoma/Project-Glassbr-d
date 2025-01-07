@@ -43,6 +43,11 @@ public class NameSystem : MonoBehaviour
         }
     }
 
+    public bool NoNames()
+    {
+        return humanInfo == null;
+    }
+
     public void GiveIdentity(Entity e)
     {
             foreach (Identity identity in used)
