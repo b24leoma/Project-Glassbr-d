@@ -403,5 +403,10 @@ namespace Game
             pathLine.positionCount = 1;
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
         }
+
+        public void ToDefendingMode()
+        {
+            if (actingEntity != null) actingEntity.isDefending = true;
+        }
     }
 }

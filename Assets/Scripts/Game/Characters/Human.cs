@@ -8,6 +8,9 @@ namespace Game
         private LightFader _lightFader;
         private Color _hasAttackedColor;
         public bool isMoving;
+        public bool isDefending;
+        
+        // M_HumanLeopold
         
         void Awake()
         {
