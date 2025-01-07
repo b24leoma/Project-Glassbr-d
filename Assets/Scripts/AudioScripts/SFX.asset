@@ -61,3 +61,11 @@ MonoBehaviour:
         Data3: 242161568
         Data4: 1749155694
       Path: event:/Lost
+  - nameRef: PageFlip
+    eventReference:
+      Guid:
+        Data1: -1112270654
+        Data2: 1230010615
+        Data3: 77934727
+        Data4: -1694558306
+      Path: event:/PageFlip
