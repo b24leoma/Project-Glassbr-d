@@ -119,7 +119,8 @@ namespace Game
             
             if (entity.isHuman)
             {
-                if (entity.GetComponent<Human>().isDefending || 
+                if (entity.hasAttacked ||
+                    entity.GetComponent<Human>().isDefending || 
                     (isTutorial && ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
                                     (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
                                     (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot))))
@@ -131,7 +132,7 @@ namespace Game
             
             if (pos.Length > 1)
             {
-                UpdateCharacterDisplay(true, entity);
+                if (entity.isHuman) UpdateCharacterDisplay(true, entity);
                 gridSystem.MoveUnit(pos[0], pos[^1]);
                 entity.MoveDistance(pos.Length - 2);
                 if (gridSystem.GetTile(pos[0]).hidingSpot)
@@ -182,12 +183,13 @@ namespace Game
         public void Attack(Entity attacker, Entity target)
         {
             if (isTutorial && attacker.isHuman && !tutorialManager.TutorialAttackTime()) return;
-            if (attacker.GetComponent<Human>().isDefending)
+            if (attacker.isHuman && attacker.GetComponent<Human>().isDefending) return;
+            if (attacker.isHuman && attacker.hasAttacked && _attackvoids != 0) return;
             
+            attacker.SetAttacking(true);
             if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0 ||
                 attacker.Type != Entity.EntityType.HumanArcher)
             {
-                attacker.SetAttacking(true);
             }
 
 
@@ -320,7 +322,6 @@ namespace Game
                 if (entity.isHuman)
                 {
                     Texture2D tex = Resources.Load<Texture2D>($"CharacterPortrait/{(entity.IsMale?"M":"F")}_Human{entity.Name.Split(' ')[0]}");
-                    Debug.Log($"CharacterPortrait/{(entity.IsMale?"M":"F")}_Human{entity.Name.Split(' ')[0]}");
                     if (tex != null)
                         displayPortrait.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height),
                             new Vector2(0.5f, 0.5f), 100.0f);

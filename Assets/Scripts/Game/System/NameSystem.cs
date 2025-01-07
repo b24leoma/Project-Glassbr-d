@@ -50,6 +50,8 @@ public class NameSystem : MonoBehaviour
 
     public void GiveIdentity(Entity e)
     {
+        if (e.isHuman)
+        {
             foreach (Identity identity in used)
             {
                 if (e.Type == identity.type)
@@ -61,28 +63,24 @@ public class NameSystem : MonoBehaviour
                         return;
                     }
                 }
-                
+
             }
 
-            if (true)
+            e.AssignIdentity(GenerateIdentity(true));
+            used.Add(new Identity()
             {
-                e.AssignIdentity(GenerateIdentity(e.isHuman));
-                used.Add(new Identity()
-                {
-                    type = e.Type, gender = e.IsMale ? "M" : "F", name = e.Name, age = e.Age,
-                    description = e.Description
-                });
-                currentlyUsed.Add(e.Name);
-                /*}
-                else
-                {
-                    e.AssignIdentity(GenerateIdentity(false));
-                    used.Add(new Identity(){type = e.Type, name = e.Name, description = e.Description});
-                    currentlyUsed.Add(e.Name);
-                }*/
-            }
+                type = e.Type, gender = e.IsMale ? "M" : "F", name = e.Name, age = e.Age,
+                description = e.Description
+            });
+            currentlyUsed.Add(e.Name);
+
+        }
+        else
+        {
+            e.AssignIdentity(GenerateIdentity(false));
+        }
     }
-    
+
     private string[] GenerateIdentity(bool isHuman)
     {
         if (isHuman)
