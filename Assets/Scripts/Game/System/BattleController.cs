@@ -125,6 +125,7 @@ namespace Game
                 {
                     yield break;
                 }
+                entity.GetComponent<Human>().isDefending = false;
                 entity.GetComponent<Human>().SetMoving(true);
             }
             
@@ -157,6 +158,7 @@ namespace Game
             if (entity.isHuman)
             {
                 entity.GetComponent<Human>().SetMoving(false);
+                entity.GetComponent<Human>().isDefending = false;
                 MoveDone?.Invoke();
             }
 
@@ -199,6 +201,7 @@ namespace Game
             if (!attacker.isHuman) selectHighlight.position = attacker.transform.position;
             Tile tile = gridSystem.GetTile(target.Position);
             int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
+            if (target.isHuman && target.GetComponent<Human>().isDefending) damage = Mathf.RoundToInt(damage * 0.95f);
             DamageNumber num;
             if (Random.Range(1, 100) <= attacker.MissChance)
             {
@@ -214,6 +217,7 @@ namespace Game
                 {
                     // ---CRIT---
                     damage = attacker.MaxDamage + 10;
+                    if (target.isHuman && target.GetComponent<Human>().isDefending) damage = Mathf.RoundToInt(damage * 0.95f);
                     num = Instantiate(damageNumbers, targetPos + Vector3.up * 1.25f, quaternion.identity)
                         .GetComponent<DamageNumber>();
                     num.SetDamage($"CRITICAL HIT");
@@ -243,6 +247,7 @@ namespace Game
                 }
 
                 target.TakeDamage(damage);
+                if (target.isHuman) target.GetComponent<Human>().isDefending = false;
             }
 
             UpdateCharacterDisplay(true, target);
@@ -307,13 +312,23 @@ namespace Game
             infoDisplay.SetActive(showDisplay);
             if (showDisplay)
             {
-                displayStats.text = $"{entity.MinDamage}-{entity.MaxDamage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
+                displayStats.text =
+                    $"{entity.MinDamage}-{entity.MaxDamage}\n{entity.CurrentHealth}/{entity.MaxHealth}\n{(entity.IsMelee ? "MELEE" : "RANGED")}";
                 displayName.text = $"{entity.Name}\n{entity.Age}";
                 displayDescription.text = entity.Description;
-                
-                Texture2D tex = Resources.Load<Texture2D>("CharacterPortrait\\Human"+(entity.Name.Split(' ')[0]));
-                if (tex != null) displayPortrait.sprite = Sprite.Create(tex, new Rect(0.0f,0.0f,tex.width,tex.height), new Vector2(0.5f,0.5f), 100.0f);
-                
+
+                if (entity.isHuman)
+                {
+                    Texture2D tex = Resources.Load<Texture2D>($"CharacterPortrait\\{(entity.IsMale?"M":"F")}_Human{entity.Name.Split(' ')[0]}");
+                    if (tex != null)
+                        displayPortrait.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height),
+                            new Vector2(0.5f, 0.5f), 100.0f);
+                }
+                else
+                {
+                    //DEMON ICON HERE :3
+                }
+
                 HealthDisplayCalculator(entity.CurrentHealth, entity.MaxHealth);
                 
             }
