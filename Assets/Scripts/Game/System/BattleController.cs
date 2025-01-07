@@ -119,13 +119,13 @@ namespace Game
             
             if (entity.isHuman)
             {
-                if (isTutorial && ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
-                                   (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
-                                   (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot)))
+                if (entity.GetComponent<Human>().isDefending || 
+                    (isTutorial && ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
+                                    (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
+                                    (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot))))
                 {
                     yield break;
                 }
-                entity.GetComponent<Human>().isDefending = false;
                 entity.GetComponent<Human>().SetMoving(true);
             }
             
@@ -158,7 +158,6 @@ namespace Game
             if (entity.isHuman)
             {
                 entity.GetComponent<Human>().SetMoving(false);
-                entity.GetComponent<Human>().isDefending = false;
                 MoveDone?.Invoke();
             }
 
@@ -183,7 +182,8 @@ namespace Game
         public void Attack(Entity attacker, Entity target)
         {
             if (isTutorial && attacker.isHuman && !tutorialManager.TutorialAttackTime()) return;
-
+            if (attacker.GetComponent<Human>().isDefending)
+            
             if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0 ||
                 attacker.Type != Entity.EntityType.HumanArcher)
             {
@@ -319,7 +319,8 @@ namespace Game
 
                 if (entity.isHuman)
                 {
-                    Texture2D tex = Resources.Load<Texture2D>($"CharacterPortrait\\{(entity.IsMale?"M":"F")}_Human{entity.Name.Split(' ')[0]}");
+                    Texture2D tex = Resources.Load<Texture2D>($"CharacterPortrait/{(entity.IsMale?"M":"F")}_Human{entity.Name.Split(' ')[0]}");
+                    Debug.Log($"CharacterPortrait/{(entity.IsMale?"M":"F")}_Human{entity.Name.Split(' ')[0]}");
                     if (tex != null)
                         displayPortrait.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height),
                             new Vector2(0.5f, 0.5f), 100.0f);
