@@ -63,20 +63,17 @@ public class NameSystem : MonoBehaviour
                     if (!currentlyUsed.Contains(identity.name) && !dead.Contains(identity.name))
                     {
                         e.AssignIdentity(identity);
+                        used.Add(identity);
                         currentlyUsed.Add(identity.name);
                         return;
                     }
-                    if (dead.Contains(identity.name)) Debug.Log(identity.name + " är död");
                 }
 
             }
 
-            e.AssignIdentity(GenerateIdentity(true));
-            used.Add(new Identity()
-            {
-                type = e.Type, isMale = e.IsMale, name = e.Name, age = e.Age,
-                description = e.Description
-            });
+            Identity id = GenerateIdentity(true);
+            e.AssignIdentity(id);
+            used.Add(id);
             currentlyUsed.Add(e.Name);
 
         }
