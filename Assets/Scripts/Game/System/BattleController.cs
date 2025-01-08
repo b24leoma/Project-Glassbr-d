@@ -114,6 +114,7 @@ namespace Game
             else gridSystem.demons.Add(pos);
             gridSystem.ConnectToTile(pos, e);
             characters.Add(e);
+            e.Position = e.Position;
         }
 
         public IEnumerator Move(Vector2Int[] pos, bool tryAttackAfter, Entity attackTarget = null, bool skipAnimation = false)

@@ -964,6 +964,7 @@ MonoBehaviour:
   light2D: {fileID: 323397692}
   ease: 5
   duration: 0.2
+  fadeDuration: 0.2
   targetMaxIntensity: 1
   targetMinIntensity: 0
 --- !u!114 &323397692
@@ -1883,6 +1884,7 @@ MonoBehaviour:
   light2D: {fileID: 765211384}
   ease: 5
   duration: 0.2
+  fadeDuration: 0.2
   targetMaxIntensity: 1
   targetMinIntensity: 0
 --- !u!114 &765211384
@@ -2597,6 +2599,7 @@ MonoBehaviour:
   light2D: {fileID: 1351657127}
   ease: 2
   duration: 0.2
+  fadeDuration: 0.2
   targetMaxIntensity: 0.58
   targetMinIntensity: 0
 --- !u!1 &1450874065
@@ -2651,6 +2654,7 @@ MonoBehaviour:
   light2D: {fileID: 1450874068}
   ease: 5
   duration: 0.2
+  fadeDuration: 0.2
   targetMaxIntensity: 1
   targetMinIntensity: 0
 --- !u!114 &1450874068
@@ -2810,6 +2814,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeController: {fileID: 0}
   audioManager: {fileID: 0}
+  masterVolumeUI: {fileID: 0}
+  musicVolumeUI: {fileID: 0}
+  sfxVolumeUI: {fileID: 0}
 --- !u!4 &1578944124
 Transform:
   m_ObjectHideFlags: 0
