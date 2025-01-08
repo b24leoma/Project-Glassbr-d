@@ -158,6 +158,7 @@ MonoBehaviour:
   endTurnButton: {fileID: 1392535647}
   pathLine: {fileID: 1425331444}
   selectHighlight: {fileID: 1812253157}
+  InfoDisplay: {fileID: 1615615148}
 --- !u!114 &56033651
 MonoBehaviour:
   m_ObjectHideFlags: 0

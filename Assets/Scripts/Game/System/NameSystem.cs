@@ -7,6 +7,7 @@ public class NameSystem : MonoBehaviour
 {
     private List<Identity> used = new List<Identity>();
     private List<string> currentlyUsed = new List<string>();
+    private List<string> dead = new List<string>();
     private List<string[]> humanInfo;
     private List<string[]> demonInfo;
     private StreamReader reader;
@@ -56,7 +57,7 @@ public class NameSystem : MonoBehaviour
             {
                 if (e.Type == identity.type)
                 {
-                    if (!currentlyUsed.Contains(identity.name))
+                    if (!currentlyUsed.Contains(identity.name) && !dead.Contains(identity.name))
                     {
                         e.AssignIdentity(new[] { identity.name, identity.gender, identity.age, identity.description });
                         currentlyUsed.Add(identity.name);
@@ -98,6 +99,11 @@ public class NameSystem : MonoBehaviour
         }
     }
 
+    public void Kill(string name)
+    {
+        dead.Add(name);
+    }
+    
     public void NewLevel()
     {
         currentlyUsed.Clear();
