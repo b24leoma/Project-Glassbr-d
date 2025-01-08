@@ -233,10 +233,14 @@ MonoBehaviour:
   MaxDamage: 25
   MoveRange: 3
   AttackRange: 6
+  CritChance: 10
+  MissChance: 3
   healthBar: {fileID: 3180496315834477746}
   isHuman: 0
   moveDistanceRemaining: 0
   hasAttacked: 0
+  isMoving: 0
+  isDefending: 0
 --- !u!114 &8312680754708699319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +267,7 @@ MonoBehaviour:
   - {x: 1.3333334, y: -1.3333334, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 50888
+  m_InstanceId: 39186
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1.3333334, y: 1.3333334, z: 0}

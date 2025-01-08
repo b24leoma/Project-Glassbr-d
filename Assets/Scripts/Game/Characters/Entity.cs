@@ -14,7 +14,8 @@ namespace Game
             HumanArcher,
             HumanTank, 
             DemonSwordsman,
-            DemonTank
+            DemonTank,
+            DemonArcher
         };
 
         public EntityType Type;
