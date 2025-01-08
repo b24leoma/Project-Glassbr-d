@@ -12,6 +12,7 @@ namespace Game
         [SerializeField] private GameObject endTurnButton;
         [SerializeField] private LineRenderer pathLine;
         [SerializeField] private Transform selectHighlight;
+        [SerializeField] private RectTransform InfoDisplay;
         private Camera cam;
         private Entity hoveredEntity;
         private Vector2Int hoveredTile;
@@ -172,8 +173,12 @@ namespace Game
         {
             //Reset board colors
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
-            
-            if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null) battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
+
+            if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null)
+            {
+                battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
+                InfoDisplay.localPosition = new Vector3(0, hoveredTile.y < -3 ? 435 : -435, 0);
+            }
             else  battleController.UpdateCharacterDisplay(false, null);
             
             if (gridSystem.GetTile(hoveredTile) == null) return;
