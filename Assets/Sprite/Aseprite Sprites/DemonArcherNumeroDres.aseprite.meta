@@ -128,9 +128,9 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 56
-      width: 16
+      x: 29
+      y: 4
+      width: 15
       height: 18
     spriteID: 6be98ee285deb2c4db9531622b430682
     spriteBone: []
@@ -140,7 +140,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 56}
+    uvTransform: {x: 29, y: 4}
   - name: DemonArcherNumeroDres_Frame_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +148,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 53
+      x: 52
       y: 30
       width: 14
       height: 17
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 53, y: 30}
+    uvTransform: {x: 52, y: 30}
   - name: DemonArcherNumeroDres_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 82
+      y: 56
       width: 16
       height: 18
     spriteID: 7dee9dacc452b4b4c99fcf58e23751ac
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 82}
+    uvTransform: {x: 4, y: 56}
   - name: DemonArcherNumeroDres_Frame_6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -268,8 +268,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 29
-      y: 4
+      x: 4
+      y: 82
       width: 16
       height: 18
     spriteID: a3730d55c6f57654c99c1ad15b8f16b8
@@ -280,7 +280,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 29, y: 4}
+    uvTransform: {x: 4, y: 82}
   - name: DemonArcherNumeroDres_Frame_8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -308,7 +308,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 53
+      x: 52
       y: 55
       width: 14
       height: 17
@@ -320,7 +320,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 53, y: 55}
+    uvTransform: {x: 52, y: 55}
   - name: DemonArcherNumeroDres_Frame_10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -328,7 +328,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 53
+      x: 52
       y: 4
       width: 14
       height: 18
@@ -340,7 +340,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 53, y: 4}
+    uvTransform: {x: 52, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -356,7 +356,7 @@ ScriptedImporter:
       cellRect:
         x: 1
         y: 0
-        width: 16
+        width: 15
         height: 18
       spriteId: 6be98ee285deb2c4db9531622b430682
     - name: DemonArcherNumeroDres_Frame_1
