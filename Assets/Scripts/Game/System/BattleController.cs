@@ -326,18 +326,8 @@ namespace Game
                 displayName.text = $"{entity.Name}\n{entity.Age}";
                 displayDescription.text = entity.Description;
 
-                if (entity.isHuman)
-                {
-                    Texture2D tex = Resources.Load<Texture2D>($"CharacterPortrait/{(entity.IsMale?"M":"F")}_Human{entity.Name.Split(' ')[0]}");
-                    if (tex != null)
-                        displayPortrait.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height),
-                            new Vector2(0.5f, 0.5f), 100.0f);
-                }
-                else
-                {
-                    //DEMON ICON HERE :3
-                }
-
+                displayPortrait.sprite = entity.face;
+                
                 HealthDisplayCalculator(entity.CurrentHealth, entity.MaxHealth);
                 
             }

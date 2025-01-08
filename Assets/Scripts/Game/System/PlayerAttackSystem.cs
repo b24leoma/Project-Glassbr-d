@@ -178,7 +178,7 @@ namespace Game
             if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null)
             {
                 battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
-                InfoDisplay.localPosition = new Vector3(0, hoveredTile.y < -3 ? 435 : -435, 0);
+                InfoDisplay.localPosition = new Vector3(-50, hoveredTile.y < -3 ? 435 : -435, 0);
             }
             else  battleController.UpdateCharacterDisplay(false, null);
             

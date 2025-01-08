@@ -44,14 +44,16 @@ namespace Game
         [HideInInspector] public bool isHuman;
         [HideInInspector] public int moveDistanceRemaining;
         [HideInInspector] public bool hasAttacked;
+        [HideInInspector] public Sprite face;
 
 
-        public void AssignIdentity(string[] identity)
+        public void AssignIdentity(Identity id)
         {
-            Name = identity[0];
-            IsMale = identity[1][0] == 'M';
-            Age = identity[2];
-            Description = identity[3];
+            Name = id.name;
+            IsMale = id.isMale;
+            Age = id.age;
+            Description = id.description;
+            face = id.face;
         }
 
         public Vector2Int Position
