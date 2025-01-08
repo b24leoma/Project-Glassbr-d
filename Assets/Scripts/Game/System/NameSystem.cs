@@ -7,7 +7,7 @@ public class NameSystem : MonoBehaviour
 {
     private List<Identity> used = new List<Identity>();
     private List<string> currentlyUsed = new List<string>();
-    private List<string> dead = new List<string>();
+    public List<string> dead = new List<string>();
     private List<string[]> humanInfo;
     private List<string[]> demonInfo;
     private StreamReader reader;
@@ -26,6 +26,9 @@ public class NameSystem : MonoBehaviour
 
     public void RefillNames(TextAsset human, TextAsset demons)
     {
+        used = new List<Identity>();
+        currentlyUsed = new List<string>();
+        dead = new List<string>();
         humanInfo = new List<string[]>();
         demonInfo = new List<string[]>();
 
