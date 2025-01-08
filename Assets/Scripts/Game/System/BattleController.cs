@@ -38,6 +38,7 @@ namespace Game
         [SerializeField] private GameObject humanTank;
         [SerializeField] private GameObject demonSwordsman;
         [SerializeField] private GameObject demonTank;
+        [SerializeField] private GameObject demonArcher;
         [SerializeField] private GameObject damageNumbers;
         [SerializeField] private TextAsset humanNameList;
         [SerializeField] private TextAsset demonNameList;
@@ -102,6 +103,9 @@ namespace Game
                     break;
                 case Entity.EntityType.DemonTank:
                     g = Instantiate(demonTank, Vector3.zero, Quaternion.identity, entityParent);
+                    break;
+                case Entity.EntityType.DemonArcher:
+                    g = Instantiate(demonArcher, Vector3.zero, Quaternion.identity, entityParent);
                     break;
             }
             Entity e = g.GetComponent<Entity>();

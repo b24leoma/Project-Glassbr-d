@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5590693125722938472}
   - component: {fileID: 5329892779925400542}
   - component: {fileID: 8231440762334719409}
+  - component: {fileID: 5016755892431582462}
   m_Layer: 0
-  m_Name: DemonArcherNumeroDres_Frame_0
+  m_Name: DemonArcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3954771391834597446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8838816, y: -1.5504627, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 5039763891133769099, guid: bc7ca57597c418343920f3dc69920817, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,6 +110,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5016755892431582462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954771391834597446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1099870ede8624ab2465828894a2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  arrowPrefab: {fileID: 0}
+  MaxHealth: 50
+  MinDamage: 15
+  MaxDamage: 20
+  MoveRange: 3
+  AttackRange: 6
+  CritChance: 20
+  MissChance: 35
+  healthBar: {fileID: 5593726804125683786}
+  isHuman: 0
+  moveDistanceRemaining: 0
+  hasAttacked: 0
+  AttackingImage: {fileID: 7963264733646892651}
+  target: {fileID: 0}
 --- !u!1 &7963264733646892651
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +397,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccb5ebdf50e8c0843ac695c247fd885a, type: 3}
+--- !u!114 &5593726804125683786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6677257812671726160, guid: ccb5ebdf50e8c0843ac695c247fd885a, type: 3}
+  m_PrefabInstance: {fileID: 1227946123868377626}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7169448884186169559 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8247346251784442573, guid: ccb5ebdf50e8c0843ac695c247fd885a, type: 3}

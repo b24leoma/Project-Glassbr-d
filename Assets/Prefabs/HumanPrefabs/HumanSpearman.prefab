@@ -98,6 +98,7 @@ MonoBehaviour:
   light2D: {fileID: 3842869588068588203}
   ease: 5
   duration: 6
+  fadeDuration: 0.2
   targetMaxIntensity: 1
   targetMinIntensity: 0
 --- !u!1 &1357693100537087349
@@ -292,15 +293,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
+  arrowPrefab: {fileID: 0}
   MaxHealth: 100
   MinDamage: 40
   MaxDamage: 50
   MoveRange: 5
   AttackRange: 1
+  CritChance: 7
+  MissChance: 3
   healthBar: {fileID: 6363835082180808399}
   isHuman: 0
   moveDistanceRemaining: 0
   hasAttacked: 0
+  isMoving: 0
+  isDefending: 0
 --- !u!198 &1735242544581986166
 ParticleSystem:
   m_ObjectHideFlags: 0

@@ -297,10 +297,14 @@ MonoBehaviour:
   MaxDamage: 25
   MoveRange: 4
   AttackRange: 1
+  CritChance: 2
+  MissChance: 1
   healthBar: {fileID: 6804006120872860169}
   isHuman: 0
   moveDistanceRemaining: 0
   hasAttacked: 0
+  isMoving: 0
+  isDefending: 0
 --- !u!1001 &200072765724022873
 PrefabInstance:
   m_ObjectHideFlags: 0
