@@ -66,6 +66,7 @@ public class NameSystem : MonoBehaviour
                         currentlyUsed.Add(identity.name);
                         return;
                     }
+                    if (dead.Contains(identity.name)) Debug.Log(identity.name + " är död");
                 }
 
             }
