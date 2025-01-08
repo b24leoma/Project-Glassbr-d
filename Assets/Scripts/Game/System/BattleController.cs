@@ -189,17 +189,17 @@ namespace Game
         {
             if (isTutorial && attacker.isHuman && !tutorialManager.TutorialAttackTime()) return;
             if (attacker.isHuman && attacker.GetComponent<Human>().isDefending) return;
-            if (attacker.isHuman && attacker.Type !=Entity.EntityType.HumanArcher && attacker.hasAttacked ) return;
+            if (attacker.isHuman && attacker.IsMelee && attacker.hasAttacked ) return;
             
            
-            if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0 ||
-                attacker.Type != Entity.EntityType.HumanArcher)
+            if (!attacker.IsMelee && _attackvoids == 0 ||
+                attacker.IsMelee )
             {
                 attacker.SetAttacking(true);
             }
 
 
-            if (attacker.Type == Entity.EntityType.HumanArcher && _attackvoids == 0)
+            if (!attacker.IsMelee && _attackvoids == 0)
             {
                StartCoroutine( ShootArrowAfterDelay(attacker, target, 0.3f));
                StartCoroutine( DelayAttackLogic(attacker, target, 0.55f));
