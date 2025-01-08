@@ -66,7 +66,7 @@ namespace Game
                     }
                 }
             }
-            if(!skipDelay) yield return new WaitForSeconds(1);
+            //if(!skipDelay) yield return new WaitForSeconds(0.25f);
             EndTurn();
         }
 

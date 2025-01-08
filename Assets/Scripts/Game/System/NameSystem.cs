@@ -62,7 +62,8 @@ public class NameSystem : MonoBehaviour
                 {
                     if (!currentlyUsed.Contains(identity.name) && !dead.Contains(identity.name))
                     {
-                        e.AssignIdentity(new[] { identity.name, identity.gender, identity.age, identity.description });
+                        e.AssignIdentity(identity);
+                        used.Add(identity);
                         currentlyUsed.Add(identity.name);
                         return;
                     }
@@ -70,12 +71,9 @@ public class NameSystem : MonoBehaviour
 
             }
 
-            e.AssignIdentity(GenerateIdentity(true));
-            used.Add(new Identity()
-            {
-                type = e.Type, gender = e.IsMale ? "M" : "F", name = e.Name, age = e.Age,
-                description = e.Description
-            });
+            Identity id = GenerateIdentity(true);
+            e.AssignIdentity(id);
+            used.Add(id);
             currentlyUsed.Add(e.Name);
 
         }
@@ -85,21 +83,54 @@ public class NameSystem : MonoBehaviour
         }
     }
 
-    private string[] GenerateIdentity(bool isHuman)
+    private Identity GenerateIdentity(bool isHuman)
     {
         if (isHuman)
         {
             string[] namn = humanInfo[Random.Range(1, humanInfo.Count)];
             humanInfo.Remove(namn);
-            return namn;
+            Identity id = new Identity()
+            {
+                name = namn[0],
+                isMale = namn[1][0] == 'M',
+                age = namn[2],
+                description = namn[3],
+                face = GetFace(namn[0], true, namn[1][0] == 'M')
+            };
+            return id;
         }
         else
         {
             string[] namn = demonInfo[Random.Range(1, demonInfo.Count)];
-            namn = new[] { namn[0], "D", "", namn[1] };
             demonInfo.Remove(namn);
-            return namn;
+            Identity id = new Identity()
+            {
+                name = namn[0],
+                isMale = false,
+                age = "",
+                description = namn[1],
+                face = GetFace(namn[0], false, false)
+            };
+            return id;
         }
+    }
+
+    private Sprite GetFace(string namn, bool isHuman, bool isMale)
+    {
+        if (isHuman)
+        {
+            Texture2D tex = Resources.Load<Texture2D>($"CharacterPortrait/{(isMale?"M":"F")}_Human{namn.Split(' ')[0]}");
+            if (tex != null)
+                return Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height),
+                    new Vector2(0.5f, 0.5f), 100.0f);
+            Debug.LogError($"COULD NOT FIND HUMAN FACE ICON {(isMale?"M":"F")}_Human{namn.Split(' ')[0]}");
+        }
+        else
+        {
+            //DEMON ICON HERE :3
+        }
+
+        return null;
     }
 
     public void Kill(string name)
@@ -118,7 +149,8 @@ public class Identity
 {
     public Entity.EntityType type;
     public string name;
-    public string gender;
+    public bool isMale;
     public string age;
     public string description;
+    public Sprite face;
 }
