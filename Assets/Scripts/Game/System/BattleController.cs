@@ -266,6 +266,8 @@ namespace Game
                     {
                         uiStates.TogglePanel(0);
                     }
+
+                    nameSystem.Kill(target.Name);
                 }
                 else
                 {
