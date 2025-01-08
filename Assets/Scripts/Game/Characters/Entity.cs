@@ -59,7 +59,7 @@ namespace Game
         public Vector2Int Position
         {
             get => new((int)(transform.position.x + 0.5f), (int)(transform.position.y + 0.5f));
-            set => transform.position = new Vector3(value.x - 0.5f, value.y - 0.5f);
+            set => transform.position = new Vector3(value.x - 0.5f, value.y - 0.5f, value.y + 5);
         }
 
         public void TakeDamage(float damage)
