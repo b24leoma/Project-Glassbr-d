@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 namespace Game
 {
@@ -191,6 +192,7 @@ namespace Game
             if (isActing)
             {
                 selectHighlight.position = actingEntity.transform.position;
+                //selectHighlight.GetChild(0).gameObject.SetActive(!actingEntity.isDefending);
 
                 if (actingEntity.isMoving)
                 {
@@ -199,7 +201,7 @@ namespace Game
                 }
                 
                 //MOVE PATH IF WITHIN RANGE
-                if (actingEntity.moveDistanceRemaining > 0 &&  !actingEntity.isMoving)
+                if (actingEntity.moveDistanceRemaining > 0 &&  !actingEntity.isMoving && !actingEntity.isDefending)
                 {                    
                     if (gridSystem.GetTile(hoveredTile).walkable &&
                          (gridSystem.GetTile(hoveredTile).linkedEntity == null ||
@@ -239,7 +241,7 @@ namespace Game
                 else 
                 {
                     // ATTACK HIGHLIGHT
-                    if (!actingEntity.hasAttacked && !actingEntity.isMoving)
+                    if (!actingEntity.hasAttacked && !actingEntity.isMoving && !actingEntity.isDefending)
                     {
                         if (actingEntity.IsMelee)
                             gridSystem.HighlightMoveTiles(actingEntity.Position,
@@ -249,7 +251,7 @@ namespace Game
                     }
                 }
 
-                if (!actingEntity.hasAttacked)
+                if (!actingEntity.hasAttacked && !actingEntity.isDefending)
                 {
                     foreach (Vector2Int pos in gridSystem.demons) // ATTACK ICON
                     {
@@ -307,7 +309,7 @@ namespace Game
             }
             else if (gridSystem.GetTile(hoveredTile).linkedEntity != null && hoveredEntity != null)
             {
-                if (hoveredEntity.moveDistanceRemaining > 0)
+                if (hoveredEntity.moveDistanceRemaining > 0 && !(hoveredEntity.isHuman && hoveredEntity.GetComponent<Human>().isDefending))
                 {
                     //MOVE HIGHLIGHT
                     if (hoveredEntity.IsMelee)
@@ -327,7 +329,7 @@ namespace Game
                 }
                 else 
                 {   // ATTACK HIGHLIGHT
-                    if (!hoveredEntity.hasAttacked)
+                    if (!hoveredEntity.hasAttacked  && !hoveredEntity.GetComponent<Human>().isDefending)
                     {
                         if (hoveredEntity.IsMelee)
                             gridSystem.HighlightMoveTiles(hoveredEntity.Position,
@@ -352,6 +354,15 @@ namespace Game
                             else demon.DisplayAttackingImage(false, Color.white);
                         }
                     }
+                }
+            }
+            else
+            {
+                if (pathLine.positionCount > 0)
+                {
+                    hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
+                    pathLine.positionCount = 1;
+                    SetPathLinePos(0, hoveredTile);
                 }
             }
         }
@@ -413,7 +424,12 @@ namespace Game
 
         public void ToDefendingMode()
         {
-            if (actingEntity != null) actingEntity.isDefending = true;
+            Debug.Log(actingEntity);
+            if (actingEntity != null)
+            {
+                actingEntity.isDefending = true;
+                selectHighlight.GetChild(0).gameObject.SetActive(false);
+            }
         }
     }
 }
