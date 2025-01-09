@@ -52,7 +52,6 @@ namespace Game
                             StartCoroutine(battleController.Move(GetFullPathLine(), false));
                             if (actingEntity != null && actingEntity.isMoving)
                             {
-                                hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
                                 pathLine.positionCount = 1;
                                 SetPathLinePos(0, hoveredTile);
                             }
@@ -201,13 +200,6 @@ namespace Game
             if (isActing)
             {
                 selectHighlight.position = actingEntity.transform.position;
-                //selectHighlight.GetChild(0).gameObject.SetActive(!actingEntity.isDefending);
-
-                if (actingEntity.isMoving)
-                {
-                    pathLine.positionCount = 1;
-                    SetPathLinePos(0, actingEntity.Position);
-                }
                 
                 //MOVE PATH IF WITHIN RANGE
                 if (actingEntity.moveDistanceRemaining > 0 &&  !actingEntity.isMoving && !actingEntity.isDefending)
