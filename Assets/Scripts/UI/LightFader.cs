@@ -14,15 +14,16 @@ public class LightFader : MonoBehaviour
     public Tween CurrentTween;
     private float _valueOnPause;
     private FriendlyDayNight _friendlyDayNight;
-    private string currentScene;
+    private string _currentScene;
     
     
     
     private bool _toMaxIntensity = true;
-    private bool isFriendlyDayNightNull;
+    private bool _isFriendlyDayNightNull;
 
     private void Start()
     {
+       
         if (light2D == null)
         {
             light2D = GetComponent<Light2D>();
@@ -30,15 +31,22 @@ public class LightFader : MonoBehaviour
 
         if (_friendlyDayNight == null)
         {
-            currentScene = SceneManager.GetActiveScene().name;
-            switch (currentScene)
+            _currentScene = SceneManager.GetActiveScene().name;
+            switch (_currentScene)
             {
                 case "MainMenu":
                 case "IntroHistoryBook":
                     return;
                 default:
+
+                    if (_currentScene.Contains("Journal"))
+                    {
+                        return;
+                    }
+
                     _friendlyDayNight = GameObject.Find("DayNightCycle").GetComponent<FriendlyDayNight>();
                     break;
+
             }
         }
     }
