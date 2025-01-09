@@ -196,6 +196,8 @@ namespace Game
                 attacker.IsMelee )
             {
                 attacker.SetAttacking(true);
+                if (target.Position.x < attacker.Position.x && !attacker.Flipped) attacker.Flip();
+                if (target.Position.x > attacker.Position.x && attacker.Flipped) attacker.Flip();
             }
 
 
