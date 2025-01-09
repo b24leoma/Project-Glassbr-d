@@ -320,6 +320,7 @@ MonoBehaviour:
   humanTank: {fileID: 8272381331362142641, guid: ba01e862aa35fbb4fbc8322daac05720, type: 3}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
+  demonArcher: {fileID: 0}
   damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
   humanNameList: {fileID: 4900000, guid: 6fa49bc455e33ab4dad59d976707edbd, type: 3}
   demonNameList: {fileID: 4900000, guid: 8f6a527c19742f44a9deac7b851c6da8, type: 3}
@@ -10280,9 +10281,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: More losses, I guess you aren't ready yet, soldier.
+  m_text: "More losses, I guess you aren't ready yet, \nsoldier."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c14b040c278ad514bb8e1580d352e4e8, type: 2}
   m_sharedMaterial: {fileID: -753063563923673396, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10347,7 +10348,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1819534370
