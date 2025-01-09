@@ -829,6 +829,7 @@ MonoBehaviour:
 
 
       Journal Entry 1'
+    - 
 --- !u!114 &1356230947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,6 +945,7 @@ MonoBehaviour:
 
 
       Journal Entry 1'
+    - 
 --- !u!1 &1631513192
 GameObject:
   m_ObjectHideFlags: 0

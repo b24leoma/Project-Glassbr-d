@@ -930,6 +930,7 @@ MonoBehaviour:
 
 
       Journal Entry 44'
+    - 
 --- !u!114 &1356230947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,6 +1047,7 @@ MonoBehaviour:
 
 
       Journal Entry 44'
+    - 
 --- !u!1001 &1494008146
 PrefabInstance:
   m_ObjectHideFlags: 0

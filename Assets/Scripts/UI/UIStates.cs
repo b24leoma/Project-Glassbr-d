@@ -31,6 +31,7 @@ public class UIStates : MonoBehaviour
 
     public void TogglePanel(int magicnumber)
     {
+        if (gameEnded) return;
         switch (magicnumber)
         {
             case 0:
@@ -65,6 +66,7 @@ public class UIStates : MonoBehaviour
     private void AnimateToggle()
     {
         bool open = !settingsAnimator.GetBool(IsOpen);
+        if (!open && gameEnded) return;
         settingsAnimator.SetBool(IsOpen, open);
         Debug.Log($"Toggling panel. Open: {open}");
         if (open) onOpenSettings?.Invoke();
