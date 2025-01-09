@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 namespace Game
 {
@@ -329,7 +328,7 @@ namespace Game
                 }
                 else 
                 {   // ATTACK HIGHLIGHT
-                    if (!hoveredEntity.hasAttacked  && !hoveredEntity.GetComponent<Human>().isDefending)
+                    if (hoveredEntity!= null && !hoveredEntity.hasAttacked  && !hoveredEntity.GetComponent<Human>().isDefending)
                     {
                         if (hoveredEntity.IsMelee)
                             gridSystem.HighlightMoveTiles(hoveredEntity.Position,

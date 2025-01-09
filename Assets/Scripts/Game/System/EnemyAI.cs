@@ -25,48 +25,53 @@ namespace Game
 
             demonList = gridSystem.demons;
             ShuffleDemonList();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f);
             for (int i = 0; i < demonList.Count; i++)
             {
+                yield return new WaitForSeconds(0.5f);
                 if (gridSystem.GetTile(demonList[i]).linkedEntity is Demon demon)
                 {
                     Vector2Int demonCurrentPos = demon.Position;
-                    if (demon.target == null) demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(1, gridSystem.humans.Count) - 1]).linkedEntity as Human;
+                    
+                    //first round get random target, then closest
+                    if (demon.target == null && gridSystem.humans.Count > 0) demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(1, gridSystem.humans.Count) - 1]).linkedEntity as Human;
                     else GetClosestTarget(demon);
 
                     //Attack before move
-                    if (demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
+                    if (demon.target != null && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
                         demon.AttackRange)
                     {
                         gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                         battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
-                        if(!skipDelay) yield return new WaitForSeconds(2.5f);
+                        if(!skipDelay) yield return new WaitForSeconds(1f);
                         if (gridSystem.humans.Count == 0) yield break;
                         continue;
                     }
                     
                     //Move
-                    if (demon.target.CurrentHealth > 0)
+                    if (demon.target != null && demon.target.CurrentHealth > 0)
                     {
                         
                         Vector2Int[] path =
                             gridSystem.PathFindValidPath(demon.Position, demon.target.Position, demon.MoveRange);
                         if(path.Length > 1 && !skipDelay) yield return new WaitForSeconds(1.5f);
-                        StartCoroutine(battleController.Move(path, true, demon.target));
-                        if (!skipDelay) yield return new WaitForSeconds(0.25f * path.Length);
+                        yield return StartCoroutine(battleController.Move(path, true, demon.target));
+                        if (!skipDelay) yield return new WaitForSeconds(0.5f);
                     }
 
                     //Attack After move
-                    if (demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
+                    if (demon.target != null && demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
                         demon.AttackRange)
                     {
                         gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
                         battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
                         if (gridSystem.humans.Count == 0) yield break;
+                        GetClosestTarget(demon);
+                        if(!skipDelay) yield return new WaitForSeconds(0.5f);
                     }
                 }
             }
-            //if(!skipDelay) yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.5f);
             EndTurn();
         }
 
