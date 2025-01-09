@@ -133,9 +133,9 @@ public class NameSystem : MonoBehaviour
         return null;
     }
 
-    public void Kill(string name)
+    public void Kill(string namn)
     {
-        dead.Add(name);
+        dead.Add(namn);
     }
     
     public void NewLevel()

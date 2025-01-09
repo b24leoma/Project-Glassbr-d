@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 
 namespace Game
 {
@@ -49,8 +50,9 @@ namespace Game
                         if (hoveredTile == GetPathLinePos(pathLine.positionCount - 1))
                         {
                             StartCoroutine(battleController.Move(GetFullPathLine(), false));
-                            if (gridSystem.GetTile(GetPathLinePos(0)).linkedEntity != null && gridSystem.GetTile(GetPathLinePos(0)).linkedEntity.GetComponent<Human>().isMoving)
+                            if (actingEntity != null && actingEntity.isMoving)
                             {
+                                hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
                                 pathLine.positionCount = 1;
                                 SetPathLinePos(0, hoveredTile);
                             }
@@ -71,6 +73,7 @@ namespace Game
                                 actingEntity = hoveredEntity.GetComponent<Human>();
                                 pathLine.positionCount = 1;
                                 SetPathLinePos(0, hoveredTile);
+                                selectHighlight.position = actingEntity.transform.position;
                             }
                             else // DESELECTS ACTOR
                             {
@@ -102,9 +105,12 @@ namespace Game
                                     else
                                     {
                                         StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
-                                        hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
-                                        pathLine.positionCount = 1;
-                                        SetPathLinePos(0, hoveredTile);
+                                        if (actingEntity != null && actingEntity.isMoving)
+                                        {
+                                            hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
+                                            pathLine.positionCount = 1;
+                                            SetPathLinePos(0, hoveredTile);
+                                        }
                                     }
                                 }
                                 else if (!actingEntity.IsMelee &&
@@ -113,9 +119,12 @@ namespace Game
                                          actingEntity.AttackRange)
                                 {
                                     StartCoroutine(battleController.Move(GetFullPathLine(), true, hoveredEntity));
-                                    hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
-                                    pathLine.positionCount = 1;
-                                    SetPathLinePos(0, hoveredTile);
+                                    if (actingEntity != null && actingEntity.isMoving)
+                                    {
+                                        hoveredTile = GetPathLinePos(pathLine.positionCount - 1);
+                                        pathLine.positionCount = 1;
+                                        SetPathLinePos(0, hoveredTile);
+                                    }
                                 }
                             }
                         }
@@ -132,6 +141,7 @@ namespace Game
                             isActing = true;
                             pathLine.positionCount = 1;
                             if (hoveredEntity != null) actingEntity = hoveredEntity.GetComponent<Human>();
+                            selectHighlight.position = actingEntity.transform.position;
                             SetPathLinePos(0, actingEntity.Position);
                         }
                     }

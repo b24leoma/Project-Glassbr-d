@@ -92,6 +92,24 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator TypeSentence(string sentence)
     {
         dialogueField.text = "";
+        if (sentence.Length == 0)
+        {
+            NameSystem ns = FindObjectOfType<NameSystem>();
+            sentence = $"Deaths: {ns.dead.Count}\n\n";
+            if (ns.dead.Count == 0)
+            {
+                sentence += "No deaths yet!";
+            }
+            else
+            {
+                foreach (string name in ns.dead)
+                {
+                    sentence += $"{name}\n";
+                }
+            }
+
+            currentSentenceString = sentence;
+        }
         foreach (char letter in sentence)
         {
 

@@ -50,6 +50,7 @@ namespace Game
         private bool isTutorial;
         private TutorialManager tutorialManager;
         private NameSystem nameSystem;
+        private List<string> deadHumans;
 
         private int _attackvoids;
 
@@ -60,13 +61,13 @@ namespace Game
             tutorialScene = "Tutorial";
             nameSystem = FindObjectOfType<NameSystem>();
             
-            if (nameSystem.NoNames()) nameSystem.RefillNames(humanNameList, demonNameList);
-            
             if (currentScene == tutorialScene)
-            {
-               tutorialManager = GetComponent<TutorialManager>();
+            { 
+                nameSystem.RefillNames(humanNameList, demonNameList);
+                tutorialManager = GetComponent<TutorialManager>();
                 isTutorial = true;
             }
+            else if (nameSystem.NoNames()) nameSystem.RefillNames(humanNameList, demonNameList);
             
             if (gridSystem == null || uiStates == null || canvas == null)
             {
@@ -82,6 +83,7 @@ namespace Game
             infoDisplay.SetActive(false);
             Player1TurnStart.Invoke();
             if (isTutorial) TutorialOnStart?.Invoke();
+            deadHumans = new List<string>();
         }
 
         void CreateEntity(Vector2Int pos, Entity.EntityType type)
@@ -164,7 +166,6 @@ namespace Game
             if (entity.isHuman)
             {
                 entity.GetComponent<Human>().SetMoving(false);
-                MoveDone?.Invoke();
             }
 
             if (tryAttackAfter && gridSystem.GetGridDistance(entity.Position, attackTarget.Position) <=
@@ -183,6 +184,7 @@ namespace Game
                     tutorialManager.Bushing();
                 }
             }
+            MoveDone?.Invoke();
         }
 
         public void Attack(Entity attacker, Entity target)
@@ -269,18 +271,21 @@ namespace Game
                 if (target.isHuman)
                 {
                     gridSystem.humans.Remove(target.Position);
+                    deadHumans.Add(name);
                     if (gridSystem.humans.Count == 0)
                     {
                         uiStates.TogglePanel(0);
                     }
-
-                    nameSystem.Kill(target.Name);
                 }
                 else
                 {
                     gridSystem.demons.Remove(target.Position);
                     if (gridSystem.demons.Count == 0)
                     {
+                        foreach (string namn in deadHumans)
+                        {
+                            nameSystem.Kill(namn);
+                        }
                         uiStates.TogglePanel(1);
                     }
                 }
@@ -312,6 +317,7 @@ namespace Game
 
         public void EndTurn()
         {
+            if (gridSystem.humans.Count <= 0 || gridSystem.humans.Count <= 0) return;
             selectHighlight.position = Vector3.down * 100;
             isPlayer1Turn = !isPlayer1Turn;
             if(isPlayer1Turn) Player1TurnStart?.Invoke();
