@@ -32,14 +32,14 @@ public class NameSystem : MonoBehaviour
         humanInfo = new List<string[]>();
         demonInfo = new List<string[]>();
 
-        string[] info = human.text.Split('\n');
+        string[] info = human.text.Split("\r\n");
         if (info.Length % 4 != 0) Debug.Log("Human file has incorrect amount of lines");
         for (int i = 0; i < info.Length; i += 4)
         {
             humanInfo.Add(new[] { info[i], info[i + 1], info[i + 2], info[i + 3] });
         }
 
-        info = demons.text.Split('\n');
+        info = demons.text.Split("\r\n");
         if (info.Length % 2 != 0) Debug.Log("Demon file has incorrect amount of lines");
         for (int i = 0; i < info.Length; i += 2)
         {
@@ -71,7 +71,7 @@ public class NameSystem : MonoBehaviour
 
             }
 
-            Identity id = GenerateIdentity(true);
+            Identity id = GenerateIdentity(true, e.Type);
             e.AssignIdentity(id);
             used.Add(id);
             currentlyUsed.Add(e.Name);
@@ -80,14 +80,16 @@ public class NameSystem : MonoBehaviour
         else
         {
             Identity id;
-            do id = GenerateIdentity(false);
+            
+            do id = GenerateIdentity(false, e.Type);
             while (currentlyUsed.Contains(id.name));
+            
             e.AssignIdentity(id);
             currentlyUsed.Add(id.name);
         }
     }
 
-    private Identity GenerateIdentity(bool isHuman)
+    private Identity GenerateIdentity(bool isHuman, Entity.EntityType type)
     {
         if (isHuman)
         {
@@ -105,21 +107,26 @@ public class NameSystem : MonoBehaviour
         }
         else
         {
-            string[] namn = demonInfo[Random.Range(1, demonInfo.Count)];
+            string[] namn;
+            
+            do namn = demonInfo[Random.Range(1, demonInfo.Count)];
+            while (namn[0] == "Bob" && type != Entity.EntityType.DemonTank);
+            
             demonInfo.Remove(namn);
-            Identity id = new Identity()
+            Identity id = new Identity
             {
                 name = namn[0],
                 isMale = false,
                 age = "",
                 description = namn[1],
-                face = GetFace(namn[0], false, false)
+                type = type,
+                face = GetFace(namn[0], false, false, type)
             };
             return id;
         }
     }
 
-    private Sprite GetFace(string namn, bool isHuman, bool isMale)
+    private Sprite GetFace(string namn, bool isHuman, bool isMale, Entity.EntityType? type = null)
     {
         if (isHuman)
         {
@@ -131,7 +138,27 @@ public class NameSystem : MonoBehaviour
         }
         else
         {
-            //DEMON ICON HERE :3
+            Texture2D tex;
+            switch (type)
+            {
+                case Entity.EntityType.DemonSwordsman:
+                    tex = Resources.Load<Texture2D>($"CharacterPortrait/DemonRogue{Random.Range(1,4)}");
+                    break;
+                case Entity.EntityType.DemonTank:
+                    tex = Resources.Load<Texture2D>($"CharacterPortrait/DemonTank{Random.Range(1,4)}");
+                    break;
+                case Entity.EntityType.DemonArcher:
+                    tex = Resources.Load<Texture2D>($"CharacterPortrait/DemonArcher{Random.Range(1,4)}");
+                    break;
+                default:
+                    tex = null;
+                    break;
+            }
+            if (namn == "Bob") tex = Resources.Load<Texture2D>($"CharacterPortrait/Bob");
+            if (tex != null) 
+                return Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), 
+                    new Vector2(0.5f, 0.5f), 100.0f);
+            Debug.LogError($"COULD NOT FIND DEMON FACE ICON! ENTITY TYPE ERROR");
         }
 
         return null;
