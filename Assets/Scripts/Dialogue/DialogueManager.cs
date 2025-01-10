@@ -108,6 +108,7 @@ public class DialogueManager : MonoBehaviour
                     else sentence = "Sacrifices needed for the war:\n";
                     foreach (string namn in ns.dead)
                     {
+                        Debug.Log(namn);
                         sentence += $"{namn}\n";
                     }
                 }
