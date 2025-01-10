@@ -271,7 +271,7 @@ namespace Game
                 if (target.isHuman)
                 {
                     gridSystem.humans.Remove(target.Position);
-                    deadHumans.Add(target.name);
+                    deadHumans.Add(target.Name);
                     if (gridSystem.humans.Count == 0)
                     {
                         uiStates.TogglePanel(0);

@@ -99,12 +99,12 @@ public class DialogueManager : MonoBehaviour
             {
                 if (ns.dead.Count == 0)
                 {
-                    sentence = "No deaths yet!";
+                    sentence = "";
                 }
                 else
                 {
                     if (ns.dead.Count < 3) sentence = "The people I have killed:\n";
-                    else if (ns.dead.Count < 5) sentence = "The people who have died in the war:\n";
+                    else if (ns.dead.Count < 5) sentence = "The people we have lost in the war:\n";
                     else sentence = "Sacrifices needed for the war:\n";
                     foreach (string namn in ns.dead)
                     {
