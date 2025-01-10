@@ -142,7 +142,6 @@ public class DialogueManager : MonoBehaviour
         if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
         dialogueField.text = "";
         whenComplete?.Invoke();
-        Debug.Log("Ending conversation");
     }
 
 
@@ -177,7 +176,7 @@ public class DialogueManager : MonoBehaviour
             StopCoroutine(_currentCoroutine);
             _currentCoroutine = null;
             dialogueField.text = currentSentenceString;
-            Debug.Log("Skipped text");
+
             typingPaused = true;
         }
     }
