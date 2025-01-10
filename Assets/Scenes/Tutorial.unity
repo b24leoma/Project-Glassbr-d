@@ -320,7 +320,7 @@ MonoBehaviour:
   humanTank: {fileID: 8272381331362142641, guid: ba01e862aa35fbb4fbc8322daac05720, type: 3}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
-  demonArcher: {fileID: 0}
+  demonArcher: {fileID: 3954771391834597446, guid: 0ca03d6fa42d2d947ab92110bf0e2267, type: 3}
   damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
   humanNameList: {fileID: 4900000, guid: 6fa49bc455e33ab4dad59d976707edbd, type: 3}
   demonNameList: {fileID: 4900000, guid: 8f6a527c19742f44a9deac7b851c6da8, type: 3}
@@ -7345,24 +7345,40 @@ MonoBehaviour:
     - AAAAAAARRRGH! Help! Help us!
     - Good virtue! What's going on?! Follow me.
     - Demons. We'll have to make this lesson practical instead.
-    - When you encounter a demon force, you want to command your troops to move through
-      the battlefield. [Select the troop you want to move and click on a blue tile
-      to move there]. Now push forth.
-    - Great, now a filthy demon is in attacking range, order one of your troops to
-      attack it General! [To attack, select the troop you want to attack with, if
-      it isn't selected already, and then click on the demon you want to attack within
-      the red grid].
+    - 'When you encounter a demon force, you want to command your troops to move
+      through the battlefield.
+
+      [Select the troop you want to move and click
+      on a blue tile to move there]. Now push forth.'
+    - 'Great, now a filthy demon is in attacking range, order one of your troops
+      to attack it General! [To attack,
+
+      select the troop you want to attack
+      with, if it isn''t selected already, and then click on the demon you want
+
+      to
+      attack within the red grid].'
     - '[Each troop can only move a certain distance and attack once per turn, after
-      that, demons will respond. When you move or attack, the colored tiles for that
-      action disappear. Press "End turn" to continue the battle].'
-    - Looks like your troop is in a dangerous situation. Move it to a more strategic
-      point, like a bush. They give troops cover making attacks lighter against it.
-      Try commanding a troop to a bush.
-    - There exist different types of troops and they each have their own strengths
-      and weaknesses. Try different ways to utilize their strengths to see what works
-      best.
-    - I think you are ready. I taught you the basics. Now good luck General. I look
-      forward to hearing about your future victories.
+      that, demons will respond.
+
+      When you move or attack, the colored tiles
+      for that action disappear. Press "End turn" to continue
+
+      the battle].'
+    - 'Looks like your troop is in a dangerous situation. Move it to a more strategic
+      point, like a bush. They give
+
+      troops cover making attacks lighter against
+      it. Try commanding a troop to a bush.'
+    - 'There exist different types of troops and they each have their own strengths
+      and weaknesses. Try different
+
+      ways to utilize their strengths to see
+      what works best.'
+    - 'I think you are ready. I taught you the basics. Now good luck General. I look
+      forward to hearing about your
+
+      future victories.'
 --- !u!114 &847310680
 MonoBehaviour:
   m_ObjectHideFlags: 0
