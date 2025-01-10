@@ -939,9 +939,19 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'I''m now a general. Maybe I can make a change, I mean I managed to command
-      the troops to victory in the first battle as a general. I will move out with
-      my battalion tomorrow.
+    - 'I''m now a general. Maybe I can
+
+      make a change, I mean I managed to
+
+      command
+      the troops to victory in
+
+      the first battle as a general. I will
+
+      move
+      out with my battalion
+
+      tomorrow.
 
 
       Journal Entry 1'
