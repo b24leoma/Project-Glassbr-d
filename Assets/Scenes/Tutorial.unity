@@ -320,7 +320,7 @@ MonoBehaviour:
   humanTank: {fileID: 8272381331362142641, guid: ba01e862aa35fbb4fbc8322daac05720, type: 3}
   demonSwordsman: {fileID: 5302196309894914950, guid: 4656ad2d1877a8c4d896e9dc0f2e9639, type: 3}
   demonTank: {fileID: 5302196309894914950, guid: 429c8a9873b952447ba0082da6aa8fa2, type: 3}
-  demonArcher: {fileID: 0}
+  demonArcher: {fileID: 3954771391834597446, guid: 0ca03d6fa42d2d947ab92110bf0e2267, type: 3}
   damageNumbers: {fileID: 1049714409004756809, guid: 3a8809eee5085ec4a8d35a447f6a4856, type: 3}
   humanNameList: {fileID: 4900000, guid: 6fa49bc455e33ab4dad59d976707edbd, type: 3}
   demonNameList: {fileID: 4900000, guid: 8f6a527c19742f44a9deac7b851c6da8, type: 3}

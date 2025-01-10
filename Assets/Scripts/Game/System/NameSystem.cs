@@ -79,7 +79,11 @@ public class NameSystem : MonoBehaviour
         }
         else
         {
-            e.AssignIdentity(GenerateIdentity(false));
+            Identity id;
+            do id = GenerateIdentity(false);
+            while (currentlyUsed.Contains(id.name));
+            e.AssignIdentity(id);
+            currentlyUsed.Add(id.name);
         }
     }
 

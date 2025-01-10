@@ -97,13 +97,15 @@ public class DialogueManager : MonoBehaviour
             NameSystem ns = FindObjectOfType<NameSystem>();
             if (ns != null)
             {
-                sentence = $"Deaths: {ns.dead.Count}\n\n";
                 if (ns.dead.Count == 0)
                 {
-                    sentence += "No deaths yet!";
+                    sentence = "No deaths yet!";
                 }
                 else
                 {
+                    if (ns.dead.Count < 3) sentence = "The people I have killed:\n";
+                    else if (ns.dead.Count < 5) sentence = "The people who have died in the war:\n";
+                    else sentence = "Sacrifices needed for the war:\n";
                     foreach (string name in ns.dead)
                     {
                         sentence += $"{name}\n";
