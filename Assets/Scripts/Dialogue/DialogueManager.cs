@@ -99,7 +99,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (ns.dead.Count == 0)
                 {
-                    sentence = "";
+                    sentence = "No casualties yet.";
                 }
                 else
                 {

@@ -1186,6 +1186,10 @@ MonoBehaviour:
 
     Leo
 
+    <1>Quinary Artist:<2>
+
+    Adam
+
 
     <1>Animator:<2>
 
@@ -2237,7 +2241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7607183687823288658, guid: 112bc023598801f4e808ab2150c861d1, type: 3}
+  m_Sprite: {fileID: -2610952189090092575, guid: a629bb98f5802a0449e68011a8d4738a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2293,7 +2297,7 @@ Animator:
   m_GameObject: {fileID: 6969460406105611359}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 197b119433100f5489c8faa10edd9989, type: 2}
+  m_Controller: {fileID: 9100000, guid: b277211bc712d1f4993a256ca17f3cb7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
