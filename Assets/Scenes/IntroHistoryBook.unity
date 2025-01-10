@@ -970,6 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   images:
   - {fileID: 2800000, guid: b85b415b4c48bb54faecd7780a927b3b, type: 3}
+  - {fileID: 2800000, guid: 0e2bfdde124fdf941a22b7da64db8ddf, type: 3}
 --- !u!114 &1053591169
 MonoBehaviour:
   m_ObjectHideFlags: 0
