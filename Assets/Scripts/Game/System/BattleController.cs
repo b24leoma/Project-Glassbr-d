@@ -207,6 +207,7 @@ namespace Game
             {
                StartCoroutine( ShootArrowAfterDelay(attacker, target, 0.3f));
                StartCoroutine( DelayAttackLogic(attacker, target, 0.55f));
+               
                return;
             }
 
@@ -395,11 +396,14 @@ namespace Game
         private static IEnumerator ShootArrowAfterDelay(Entity attacker, Entity target, float delay)
         {
             yield return new WaitForSeconds(delay); 
+            FMODManager.instance.OneShot("BowString", attacker.Position );
             ShootArrow(attacker, target);  
         }
+
         private static void ShootArrow(Entity attacker, Entity target)
         {
             var arrow = Instantiate(attacker.arrowPrefab, attacker.transform.position, Quaternion.identity);
+            var arrowSound = arrow.GetComponent<ArrowSound>();
 
             const float minArch = 0.2f;
             const float maxArch = 1f;
@@ -409,38 +413,32 @@ namespace Game
             var clampedDistance = Mathf.Clamp(distance, minArch, maxArch);
 
             var arcHeight = Mathf.Lerp(minArch, maxArch, Mathf.InverseLerp(minArch, maxArch, clampedDistance));
-            
 
-           var middlePos = (attackerPos + targetPos)*0.5f;
-            
-           
-            
+
+            var middlePos = (attackerPos + targetPos) * 0.5f;
+
+
             middlePos.y += arcHeight;
-          
-          
-          var point1 = Vector3.Lerp(attackerPos, middlePos, 0.5f);
-          var point2 = Vector3.Lerp(middlePos, targetPos, 0.5f);
-          
-          
-          
-         
-       
-            
-           
-            
 
-          Vector3[] arrowPath = { point1,point2, targetPos, };
-          
-          Debug.DrawLine(attackerPos, point1, Color.red, 10f);
-          Debug.DrawLine(point1, middlePos, Color.yellow, 10f);
-          Debug.DrawLine(middlePos, point2, Color.cyan, 10f);
-          Debug.DrawLine(point2, targetPos, Color.blue,10f);
 
-            
-       
+            var point1 = Vector3.Lerp(attackerPos, middlePos, 0.5f);
+            var point2 = Vector3.Lerp(middlePos, targetPos, 0.5f);
+
+
+            Vector3[] arrowPath = { point1, point2, targetPos, };
+
+            Debug.DrawLine(attackerPos, point1, Color.red, 10f);
+            Debug.DrawLine(point1, middlePos, Color.yellow, 10f);
+            Debug.DrawLine(middlePos, point2, Color.cyan, 10f);
+            Debug.DrawLine(point2, targetPos, Color.blue, 10f);
+
+
             var duration = Mathf.Clamp(distance * 0.05f, 0.2f, 0.5f);
+            arrowSound.ArrowDuration(duration);
 
-            arrow.transform.DOPath(arrowPath, duration, PathType.CatmullRom, PathMode.TopDown2D, gizmoColor: Color.red).SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
+
+            arrow.transform.DOPath(arrowPath, duration, PathType.CatmullRom, PathMode.TopDown2D, gizmoColor: Color.red)
+                .SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
         }
         
         private IEnumerator DelayAttackLogic(Entity attacker, Entity target, float delay)

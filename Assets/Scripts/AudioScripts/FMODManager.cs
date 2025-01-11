@@ -167,4 +167,11 @@ public class FMODManager : MonoBehaviour
             RuntimeManager.PlayOneShot(eventReference);
         }
     }
+    
+    
+    public void OneShot(string eventName, Vector2Int position)
+    {
+        var adjustedTopDownPosition = new Vector3(position.x, position.y, 0f);
+        OneShot(eventName, adjustedTopDownPosition);
+    }
 }

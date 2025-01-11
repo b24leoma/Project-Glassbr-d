@@ -69,3 +69,11 @@ MonoBehaviour:
         Data3: 77934727
         Data4: -1694558306
       Path: event:/PageFlip
+  - nameRef: BowString
+    eventReference:
+      Guid:
+        Data1: 1532468490
+        Data2: 1291660967
+        Data3: 2041632410
+        Data4: -2083023300
+      Path: event:/BowString
