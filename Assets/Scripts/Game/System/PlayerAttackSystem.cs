@@ -184,10 +184,10 @@ namespace Game
 
             if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null)
             {
-                battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
+                battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity, true);
                 InfoDisplay.localPosition = new Vector3(-50, hoveredTile.y < -3 ? 435 : -435, 0);
             }
-            else  battleController.UpdateCharacterDisplay(false, null);
+            else  battleController.UpdateCharacterDisplay(false, null, true) ;
             
             if (gridSystem.GetTile(hoveredTile) == null) return;
             gridSystem.ResetUnusedHidingspotColor();

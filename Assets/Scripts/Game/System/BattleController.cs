@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using DG.Tweening;
 using TMPro;
 using Unity.Mathematics;
@@ -7,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
 namespace Game
@@ -139,7 +141,7 @@ namespace Game
             
             if (pos.Length > 1)
             {
-                if (entity.isHuman) UpdateCharacterDisplay(true, entity);
+                if (entity.isHuman) UpdateCharacterDisplay(true, entity, true);
                 gridSystem.MoveUnit(pos[0], pos[^1]);
                 entity.MoveDistance(pos.Length - 2);
                 if (gridSystem.GetTile(pos[0]).hidingSpot)
@@ -263,7 +265,9 @@ namespace Game
                 if (target.isHuman) target.GetComponent<Human>().isDefending = false;
             }
 
-            UpdateCharacterDisplay(true, target);
+            UpdateCharacterDisplay(true, target, false);
+            PortraitAnim(displayPortrait, "DMG");
+            
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
             if (target.CurrentHealth <= 0)
@@ -290,7 +294,8 @@ namespace Game
                         uiStates.TogglePanel(1);
                     }
                 }
-                UpdateCharacterDisplay(true, target);
+                UpdateCharacterDisplay(true, target, false);
+                PortraitAnim(displayPortrait, "DEATH");
                 target.Kill();
             }
 
@@ -326,7 +331,7 @@ namespace Game
         }
 
 
-        public void UpdateCharacterDisplay(bool showDisplay, Entity entity)
+        public void UpdateCharacterDisplay(bool showDisplay, Entity entity, bool instant)
         {
             infoDisplay.SetActive(showDisplay);
             if (showDisplay)
@@ -338,7 +343,7 @@ namespace Game
 
                 displayPortrait.sprite = entity.face;
                 
-                HealthDisplayCalculator(entity.CurrentHealth, entity.MaxHealth);
+                HealthDisplayCalculator(currentHealth: entity.CurrentHealth, maxHealth: entity.MaxHealth, instant: instant);
                 
             }
         }
@@ -360,22 +365,64 @@ namespace Game
             uiStates.TogglePanel(1);
         }
 
-        private void HealthDisplayCalculator(float currentHealth, float maxHealth)
+        private void HealthDisplayCalculator(float currentHealth, float maxHealth, bool instant)
         {
-            if (currentHealth <= 0)
+            if (instant)
             {
-                displayHealthSlider.value = 0;
-            }
+                if (currentHealth <= 0)
+                {
+                    displayHealthSlider.value = 0;
+                }
 
-            if (displayHealthSlider.maxValue != maxHealth)
-            {
-                displayHealthSlider.maxValue = maxHealth;
-            }
+                if (displayHealthSlider.maxValue != maxHealth)
+                {
+                    displayHealthSlider.maxValue = maxHealth;
+                }
 
-            if (displayHealthSlider.value != currentHealth)
-            {
-                displayHealthSlider.value = currentHealth;
+                if (displayHealthSlider.value != currentHealth)
+                {
+                    displayHealthSlider.value = currentHealth;
+                }
             }
+            else
+            {
+                if (currentHealth <= 0)
+                {
+                    displayHealthSlider.DOValue(0, 0.1f);
+                }
+
+                if (displayHealthSlider.maxValue != maxHealth)
+                {
+                    displayHealthSlider.maxValue = maxHealth;
+                }
+
+                if (displayHealthSlider.value != currentHealth)
+                {
+                    displayHealthSlider.DOValue(currentHealth, 0.1f);
+                }
+            }
+            
+        }
+
+
+        private static void PortraitAnim(Image face, string type)
+        {
+            switch (type)
+            {
+                case "DMG":
+                    face.DOColor(Color.red, 0.2f).OnKill(() => { face.DOColor(Color.white, 0.2f); });
+                    face.rectTransform.DOShakeScale(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);
+                    face.rectTransform.DOShakeRotation(0.2f, 0.3f).SetLoops(1, LoopType.Yoyo);
+                    face.rectTransform.DOShakePosition(0.2f, 0.1f, 1).SetLoops(1, LoopType.Yoyo);
+                    break;
+                case "DEATH":
+                    face.DOColor(Color.red, 0.5f).OnKill(() => { face.DOColor(Color.white, 0.2f); });
+                    break;
+                case "MOVE":
+                    break;
+            }
+            
+            
         }
         
         
