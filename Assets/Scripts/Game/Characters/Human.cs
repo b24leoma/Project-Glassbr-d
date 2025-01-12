@@ -11,14 +11,14 @@ namespace Game
         public bool isDefending;
         
         // M_HumanLeopold
-        
+
         void Awake()
         {
-           isHuman = true;
-           _lightFader = GetComponentInChildren<LightFader>();
-           if (_lightFader == null) Debug.LogWarning("No LightFader found");
-            
-           _hasAttackedColor= new Color (0.6f, 0.6f, 0.6f);
+            isHuman = true;
+            _lightFader = GetComponentInChildren<LightFader>();
+            if (_lightFader == null) Debug.LogWarning("No LightFader found");
+
+            _hasAttackedColor = new Color(0.6f, 0.6f, 0.6f);
         }
         public override void SetAttacking(bool attacking)
         {

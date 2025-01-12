@@ -15,7 +15,7 @@ MonoBehaviour:
   audioEvents: []
   miscEvents: []
   attackEvents:
-  - nameRef: ATK_Demon.Tank
+  - nameRef: ATK_DemonTank
     eventReference:
       Guid:
         Data1: -826245639
@@ -24,7 +24,7 @@ MonoBehaviour:
         Data4: -441335229
       Path: event:/Demon_Tank_01_ATK
   damageEvents:
-  - nameRef: DMG_Demon.Tank
+  - nameRef: DMG_DemonTank
     eventReference:
       Guid:
         Data1: 1579187407
@@ -33,7 +33,7 @@ MonoBehaviour:
         Data4: -232160840
       Path: event:/Demon_Tank_01_DMG
   deathEvents:
-  - nameRef: DEATH_Demon.Tank
+  - nameRef: DEATH_DemonTank
     eventReference:
       Guid:
         Data1: 1606507154
@@ -42,7 +42,7 @@ MonoBehaviour:
         Data4: -1996578110
       Path: event:/Demon_Tank_01_DEATH
   moveEvents:
-  - nameRef: MOVE_Demon.Tank
+  - nameRef: MOVE_DemonTank
     eventReference:
       Guid:
         Data1: -580347939

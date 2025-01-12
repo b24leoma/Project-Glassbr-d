@@ -1,102 +1,92 @@
-using System;
+using System.Collections.Generic;
 using Game;
 using UnityEngine;
 
 public static class SFX
 {
-   
-   public static void ATK(Entity.EntityType entityType, Vector3 position) => PlaySfx(FXType.Attack, entityType, position);
-   public static void DMG(Entity.EntityType entityType, Vector3 position) => PlaySfx(FXType.Damage, entityType, position);
-   public static void DEATH(Entity.EntityType entityType, Vector3 position) => PlaySfx(FXType.Death, entityType, position);
-   public static void MOVE(Entity.EntityType entityType, Vector3 position) => PlaySfx(FXType.Move, entityType, position);
+    private static readonly Dictionary<(FXType, string, Entity.EntityType), string> HumanEventNameCache = new();
+    private static readonly Dictionary<(FXType, Entity.EntityType), string> DemonEventNameCache = new();
+    public static void ATK(Entity entity) => PlaySfx(FXType.ATK, entity);
+    public static void DMG(Entity entity) => PlaySfx(FXType.DMG, entity);
+    public static void DEATH(Entity entity) => PlaySfx(FXType.DEATH, entity);
+    public static void MOVE(Entity entity) => PlaySfx(FXType.MOVE, entity);
 
-
-   private static void PlaySfx(FXType fxType, Entity.EntityType entityType, Vector3 position)
-   {
-       var fmodManager = FMODManager.instance;
-       string eventName = null;
- switch (fxType)
+    private static void PlaySfx(FXType fxType, Entity entity)
     {
-        case FXType.Attack:
-            switch (entityType)
-            {
-                case Entity.EntityType.HumanSpearman: eventName = "ATK_Human.Spear"; break;
-                case Entity.EntityType.HumanArcher: eventName = "ATK_Human.Archer"; break;
-                case Entity.EntityType.HumanTank: eventName = "ATK_Human.Tank"; break;
-                //case Entity.EntityType.DemonArcher: eventName = "ATK_Demon.Archer"; break;
-                case Entity.EntityType.DemonSwordsman: eventName = "ATK_Demon.Sword"; break;
-                case Entity.EntityType.DemonTank: eventName = "ATK_Demon.Tank"; break;
-            }
-            break;
+        var fmodManager = FMODManager.instance;
 
-        case FXType.Damage:
-            switch (entityType)
-            {
-                case Entity.EntityType.HumanSpearman: eventName = "DMG_Human.Spear"; break;
-                case Entity.EntityType.HumanArcher: eventName = "DMG_Human.Archer"; break;
-                case Entity.EntityType.HumanTank: eventName = "DMG_Human.Tank"; break;
-                //case Entity.EntityType.DemonArcher: eventName = "DMG_Demon.Archer"; break;
-                case Entity.EntityType.DemonSwordsman: eventName = "DMG_Demon.Sword"; break;
-                case Entity.EntityType.DemonTank: eventName = "DMG_Demon.Tank"; break;
-            }
-            break;
+        var eventName = GetEventName(fxType, entity);
 
-        case FXType.Death:
-            switch (entityType)
-            {
-                case Entity.EntityType.HumanSpearman: eventName = "DEATH_Human.Spear"; break;
-                case Entity.EntityType.HumanArcher: eventName = "DEATH_Human.Archer"; break;
-                case Entity.EntityType.HumanTank: eventName = "DEATH_Human.Tank"; break;
-              //  case Entity.EntityType.DemonArcher: eventName = "DEATH_Demon.Archer"; break;
-                case Entity.EntityType.DemonSwordsman: eventName = "DEATH_Demon.Sword"; break;
-                case Entity.EntityType.DemonTank: eventName = "DEATH_Demon.Tank"; break;
-            }
-            break;
-
-        case FXType.Move:
-            switch (entityType)
-            {
-                case Entity.EntityType.HumanSpearman: eventName = "MOVE_Human.Spear"; break;
-                case Entity.EntityType.HumanArcher: eventName = "MOVE_Human.Archer"; break;
-                case Entity.EntityType.HumanTank: eventName = "MOVE_Human.Tank"; break;
-             //   case Entity.EntityType.DemonArcher: eventName = "MOVE_Demon.Archer"; break;
-                case Entity.EntityType.DemonSwordsman: eventName = "MOVE_Demon.Sword"; break;
-                case Entity.EntityType.DemonTank: eventName = "MOVE_Demon.Tank"; break;
-            }
-            break;
-        default:
-            throw new ArgumentOutOfRangeException(nameof(fxType), fxType, null);
+        if (eventName == null)
+        {
+            Debug.Log("Event name not found."); 
+            return;
+        }
+        
+        fmodManager.OneShot(eventName, entity.transform.position);
+        
     }
-       
 
-    if (eventName != null)
+    private static string GetEventName(FXType fxType, Entity entity)
     {
-        fmodManager.OneShot(eventName, position);
+        if (entity.isHuman)   //För Humans
+        {
+            var key = (fxType, GetHumanInfo(entity), entity.Type);
+            if (HumanEventNameCache.TryGetValue(key, out var name))
+            {
+                return name;
+            }
+
+            var eventName = $"{fxType}_{GetHumanInfo(entity)}_{entity.Type}";
+            HumanEventNameCache[key] = eventName;
+            return eventName;
+        }
+        else    //För Demons
+        {
+            var key = (fxType, entity.Type);
+            if (DemonEventNameCache.TryGetValue(key, out var name))
+            {
+                return name;
+            }
+
+            var eventName = $"{fxType}_{entity.Type}";
+            DemonEventNameCache[key] = eventName;
+            return eventName;
+        }
     }
-    else
+
+    private static string GetHumanInfo(Entity entity)
     {
-        Debug.Log("Event name not found.");
+        var boolConverter = "";
+
+        if (entity.IsMale)
+        {
+            boolConverter += "M";
+        }
+        else
+        {
+            boolConverter += "F";
+        }
+
+        if (entity.isOld)
+        {
+            boolConverter += "_Old";
+        }
+        else
+        {
+            boolConverter += "_Young";
+        }
+
+        return boolConverter;
     }
-   }
-   }
+}
 
-   public enum FXType
-   {
-      Attack,
-      Damage,
-      Death,
-      Move
-      
-      
-   }
+public enum FXType
+{
+    ATK,
+    DMG,
+    DEATH,
+    MOVE
+}
 
-   // omg allt detta jobbet bara så jag slipper skriva två extra ord varje gång pog!
-
-   
-         
-         
-         
-         
-
-
-
+// omg allt detta jobbet bara så jag slipper skriva två extra ord varje gång pog!

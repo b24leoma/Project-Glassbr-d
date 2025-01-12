@@ -15,7 +15,15 @@ MonoBehaviour:
   audioEvents: []
   miscEvents: []
   attackEvents:
-  - nameRef: ATK_Human.Tank
+  - nameRef: ATK_M_Young_HumanTank
+    eventReference:
+      Guid:
+        Data1: -52996860
+        Data2: 1100024294
+        Data3: 1586616742
+        Data4: -1347007884
+      Path: event:/M_Young_02_ATK
+  - nameRef: ATK_M_Old_HumanTank
     eventReference:
       Guid:
         Data1: 1275121491
@@ -23,8 +31,32 @@ MonoBehaviour:
         Data3: -961685356
         Data4: 556775425
       Path: event:/M_Old_01_ATK
+  - nameRef: ATK_F_Old_HumanTank
+    eventReference:
+      Guid:
+        Data1: -1688944232
+        Data2: 1202333392
+        Data3: 1269534363
+        Data4: -950175362
+      Path: event:/F_Old_01_ATK
+  - nameRef: ATK_F_Young_HumanTank
+    eventReference:
+      Guid:
+        Data1: -669551210
+        Data2: 1185173429
+        Data3: -257039476
+        Data4: -1419758288
+      Path: event:/F_Young_01_ATK
   damageEvents:
-  - nameRef: DMG_Human.Tank
+  - nameRef: DMG_M_Young_HumanTank
+    eventReference:
+      Guid:
+        Data1: -101165017
+        Data2: 1107318079
+        Data3: 1848551838
+        Data4: 2040597619
+      Path: event:/M_Young_01_DMG
+  - nameRef: DMG_M_Old_HumanTank
     eventReference:
       Guid:
         Data1: -473405524
@@ -32,8 +64,32 @@ MonoBehaviour:
         Data3: -1008388199
         Data4: 1628090656
       Path: event:/M_Old_01_DMG
+  - nameRef: DMG_F_Old_HumanTank
+    eventReference:
+      Guid:
+        Data1: -382634082
+        Data2: 1298094910
+        Data3: -1760995444
+        Data4: -1243884539
+      Path: event:/F_Old_01_DMG
+  - nameRef: DMG_F_Young_HumanTank
+    eventReference:
+      Guid:
+        Data1: -1481947064
+        Data2: 1162883017
+        Data3: -1801088595
+        Data4: 1029121588
+      Path: event:/F_Young_01_DMG
   deathEvents:
-  - nameRef: DEATH_Human.Tank
+  - nameRef: DEATH_M_Young_HumanTank
+    eventReference:
+      Guid:
+        Data1: -1593788182
+        Data2: 1209730976
+        Data3: -1399769968
+        Data4: -1672308501
+      Path: event:/M_Young_01_DEATH
+  - nameRef: DEATH_M_Old_HumanTank
     eventReference:
       Guid:
         Data1: -1115724831
@@ -41,8 +97,48 @@ MonoBehaviour:
         Data3: 785883270
         Data4: 1788093087
       Path: event:/M_Old_01_DEATH
+  - nameRef: DEATH_F_Old_HumanTank
+    eventReference:
+      Guid:
+        Data1: -1438855587
+        Data2: 1296910615
+        Data3: -2071011672
+        Data4: -416486042
+      Path: event:/F_Old_01_DEATH
+  - nameRef: DEATH_F_Young_HumanTank
+    eventReference:
+      Guid:
+        Data1: 1015896948
+        Data2: 1144822304
+        Data3: -1743303007
+        Data4: 1049885448
+      Path: event:/F_Young_01_DEATH
   moveEvents:
-  - nameRef: MOVE_Human.Tank
+  - nameRef: MOVE_M_Young_HumanTank
+    eventReference:
+      Guid:
+        Data1: -229300437
+        Data2: 1250876390
+        Data3: 891156660
+        Data4: -271788847
+      Path: event:/Walk
+  - nameRef: MOVE_M_Old_HumanTank
+    eventReference:
+      Guid:
+        Data1: -229300437
+        Data2: 1250876390
+        Data3: 891156660
+        Data4: -271788847
+      Path: event:/Walk
+  - nameRef: MOVE_F_Old_HumanTank
+    eventReference:
+      Guid:
+        Data1: -229300437
+        Data2: 1250876390
+        Data3: 891156660
+        Data4: -271788847
+      Path: event:/Walk
+  - nameRef: MOVE_F_Young_HumanTank
     eventReference:
       Guid:
         Data1: -229300437

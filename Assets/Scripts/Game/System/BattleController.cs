@@ -155,7 +155,7 @@ namespace Game
                     }
                     entity.MoveToTile(pos[i]);
                     selectHighlight.position = entity.transform.position;
-                    SFX.MOVE(entity.Type, entity.transform.position);
+                    SFX.MOVE(entity);
                     entity.transform.DOShakeRotation(0.2f, (1 + pos.Length)).SetLoops(1, LoopType.Yoyo).SetEase(Ease.OutBounce);
                     if (gridSystem.GetTile(pos[i]).hidingSpot)
                         gridSystem.SetHidingSpotColor(pos[i], new Color(1, 1, 1, 0.4f));
