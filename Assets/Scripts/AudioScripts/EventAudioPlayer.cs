@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventAudioPlay : MonoBehaviour
 {
-
+    private string sound;
     // This is intended to be used with Unity events.
     
     public void PlayUISelect()
@@ -15,5 +15,11 @@ public class EventAudioPlay : MonoBehaviour
     public void PlayUIClick()
     {
         FMODManager.instance.OneShot("UIClick", transform.position);
+    }
+
+
+    public void PlayShittySound (string bleh)
+    {
+        FMODManager.instance.OneShot(bleh, transform.position);
     }
 }

@@ -673,14 +673,50 @@ MonoBehaviour:
   targetCanvas: {fileID: 0}
   targetObject: {fileID: 0}
   startPosition: {x: 0, y: 0}
-  targetPosition: {x: 121.05, y: 0}
-  duration: 3.67
+  targetPosition: {x: 100, y: 0}
+  duration: 2
   easeType: 1
   teleportOnStart: 0
   shouldMove: 1
   onMovedToTarget:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1343385851}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1589331880}
+        m_TargetAssemblyTypeName: MoveUIElementToggle, Assembly-CSharp
+        m_MethodName: ToggleMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1589331880}
+        m_TargetAssemblyTypeName: MoveUIElementToggle, Assembly-CSharp
+        m_MethodName: ToggleMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onMovedToStart:
     m_PersistentCalls:
       m_Calls: []
@@ -755,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetUIElement: {fileID: 1343385850}
-  enableShake: 1
+  enableShake: 0
   shakeDelay: 3
   shakeDuration: 0.5
   shakeStrength: 32.2
@@ -766,8 +802,19 @@ MonoBehaviour:
   sizeMultiplier: 1.04
   enableRotation: 1
   rotationEase: 4
-  rotationDuration: 1.68
+  rotationDuration: 1
   rotationAngle: 10.1
+--- !u!114 &1414760881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826435098738064917, guid: f35f8ce8fbc03484ba08044f1c9f0c9c, type: 3}
+  m_PrefabInstance: {fileID: 5199948414765585349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177d2c3c52c62ec4582b9fe1ee0fe9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1557605108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,68 +829,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 43d9970ed4fc4cc4587faff7905134af, type: 3}
   m_ActionId: 2b00d9e1-cd66-4004-993e-0d96b2b92331
---- !u!1 &1578944122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1578944124}
-  - component: {fileID: 1578944123}
-  - component: {fileID: 1578944125}
-  m_Layer: 0
-  m_Name: AudioSilvertejp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1578944123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578944122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b6b1d86453bae8488354c3f2f5af499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeController: {fileID: 0}
-  audioManager: {fileID: 0}
-  masterVolumeUI: {fileID: 0}
-  musicVolumeUI: {fileID: 0}
-  sfxVolumeUI: {fileID: 0}
---- !u!4 &1578944124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578944122}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1130.952, y: 126.2768, z: 1.894667}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1578944125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578944122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae186b3841b57014c8b91cc736ae8db4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1589331876
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +840,7 @@ GameObject:
   - component: {fileID: 1589331877}
   - component: {fileID: 1589331879}
   - component: {fileID: 1589331878}
+  - component: {fileID: 1589331880}
   m_Layer: 5
   m_Name: "Br\xF6det"
   m_TagString: Untagged
@@ -919,6 +905,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589331876}
   m_CullTransparentMesh: 1
+--- !u!114 &1589331880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589331876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae953ebb58e5254caa6d50819c95376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCanvas: {fileID: 0}
+  targetObject: {fileID: 0}
+  startPosition: {x: 0, y: 0}
+  targetPosition: {x: 250, y: -572.9}
+  duration: 1
+  easeType: 5
+  teleportOnStart: 0
+  shouldMove: 1
+  onMovedToTarget:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1414760881}
+        m_TargetAssemblyTypeName: EventAudioPlay, Assembly-CSharp
+        m_MethodName: PlayShittySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Chewy
+          m_BoolArgument: 0
+        m_CallState: 2
+  onMovedToStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1802616478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,9 +1189,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 865937998}
-  - {fileID: 1578944124}
-  - {fileID: 5199948414765585349}
   - {fileID: 429547655}
   - {fileID: 1970836313}
   - {fileID: 139459944}
   - {fileID: 1802616480}
+  - {fileID: 5199948414765585349}
