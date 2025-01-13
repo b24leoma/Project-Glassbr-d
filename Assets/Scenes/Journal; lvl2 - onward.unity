@@ -768,9 +768,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light2D: {fileID: 330552529}
   ease: 0
-  duration: 10
+  duration: 2
   fadeDuration: 10
-  targetMaxIntensity: 10
+  targetMaxIntensity: 3
   targetMinIntensity: 0
 --- !u!114 &330552529
 MonoBehaviour:
@@ -787,8 +787,8 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0
-  m_Color: {r: 1, g: 0.5702769, b: 0.23137254, a: 1}
+  m_FalloffIntensity: 0.3
+  m_Color: {r: 1, g: 0.5686275, b: 0.23137255, a: 1}
   m_Intensity: 0
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
@@ -808,10 +808,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 19.652515
-  m_PointLightOuterAngle: 51.7
-  m_PointLightInnerRadius: 5.656415
-  m_PointLightOuterRadius: 15.294379
+  m_PointLightInnerAngle: 30
+  m_PointLightOuterAngle: 70
+  m_PointLightInnerRadius: 9
+  m_PointLightOuterRadius: 15
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -1186,6 +1186,10 @@ MonoBehaviour:
 
     Leo
 
+    <1>Quinary Artist:<2>
+
+    Adam
+
 
     <1>Animator:<2>
 
@@ -1261,7 +1265,7 @@ MonoBehaviour:
 
     Leo
 
-    <1>Technicl Support:<2>
+    <1>Technical Support:<2>
 
     Leo
 
@@ -1413,7 +1417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 1, b: 1, a: 0}
   color1ReplacedText: <1>
-  color2: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+  color2: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 0}
   color2ReplacedText: <2>
 --- !u!1 &883006695
 GameObject:
@@ -1526,8 +1530,8 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0
-  m_Color: {r: 1, g: 0.5702769, b: 0.23137254, a: 1}
+  m_FalloffIntensity: 0.3
+  m_Color: {r: 1, g: 0.5686275, b: 0.23137255, a: 1}
   m_Intensity: 0
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
@@ -1547,10 +1551,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 19.652515
-  m_PointLightOuterAngle: 51.7
-  m_PointLightInnerRadius: 5.656415
-  m_PointLightOuterRadius: 15.294379
+  m_PointLightInnerAngle: 30
+  m_PointLightOuterAngle: 70
+  m_PointLightInnerRadius: 9
+  m_PointLightOuterRadius: 15
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -1590,9 +1594,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light2D: {fileID: 1251891619}
   ease: 0
-  duration: 10
+  duration: 2
   fadeDuration: 10
-  targetMaxIntensity: 10
+  targetMaxIntensity: 3
   targetMinIntensity: 0
 --- !u!1 &1356230944
 GameObject:
@@ -1766,10 +1770,24 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'When we searched the ruins for survivors I found one half of a young girl
-      clutching a toy. Can I even make a change? There has been so much death in
-      our path and probably more in the coming battles. But I can''t give up, not
-      yet, can I?
+    - 'When we searched the ruins for
+
+      survivors I found one half of a
+
+      young
+      girl clutching a toy.
+
+      Can I even make a change?
+
+      There has been
+      so much death in
+
+      our path and probably more in the
+
+      coming battles.
+      But I can''t give up,
+
+      not yet, can I?
 
 
       Journal Entry 44'
@@ -2223,7 +2241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7607183687823288658, guid: 112bc023598801f4e808ab2150c861d1, type: 3}
+  m_Sprite: {fileID: -2610952189090092575, guid: a629bb98f5802a0449e68011a8d4738a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2279,7 +2297,7 @@ Animator:
   m_GameObject: {fileID: 6969460406105611359}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 197b119433100f5489c8faa10edd9989, type: 2}
+  m_Controller: {fileID: 9100000, guid: b277211bc712d1f4993a256ca17f3cb7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

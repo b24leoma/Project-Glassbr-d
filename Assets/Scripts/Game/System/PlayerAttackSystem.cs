@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem;
 
 namespace Game
 {
@@ -61,6 +60,7 @@ namespace Game
                             isActing = false;
                             selectHighlight.position = Vector3.down * 100;
                             pathLine.positionCount = 0;
+                            battleController.UpdateCharacterDisplay(false,null, false);
                         }
                     }
                     else if (hoveredEntity != null ) //TILE HAS ENTITY
@@ -128,6 +128,12 @@ namespace Game
                             }
                         }
                     }
+                    else // DESELECTS ACTOR
+                    {
+                        isActing = false;
+                        selectHighlight.position = Vector3.down * 100;
+                        pathLine.positionCount = 0;
+                    }
 
                 }
                 else
@@ -185,10 +191,10 @@ namespace Game
 
             if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null)
             {
-                battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity);
+                battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity, true);
                 InfoDisplay.localPosition = new Vector3(-50, hoveredTile.y < -3 ? 435 : -435, 0);
             }
-            else  battleController.UpdateCharacterDisplay(false, null);
+            else  battleController.UpdateCharacterDisplay(false, null, true) ;
             
             if (gridSystem.GetTile(hoveredTile) == null) return;
             gridSystem.ResetUnusedHidingspotColor();
@@ -199,6 +205,12 @@ namespace Game
             
             if (isActing)
             {
+                if (actingEntity.hasAttacked)
+                {
+                    isActing = false;
+                    pathLine.positionCount = 1;
+                }
+                
                 selectHighlight.position = actingEntity.transform.position;
                 
                 //MOVE PATH IF WITHIN RANGE

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.IO;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,7 +35,8 @@ namespace Game
         public int MissChance;
         public bool IsMelee { get; protected set; }
         public bool Flipped { get; protected set; }
-        
+        public bool isOld { get; protected set; }
+        private const int AgeThreshold = 35;
         
 
         [SerializeField] private Slider healthBar;
@@ -73,7 +72,7 @@ namespace Game
             transform.DOShakePosition(0.1f, 0.1f, 1).SetLoops(1, LoopType.Yoyo);
             _sprite.DOColor(Color.red, 0.1f).SetLoops(2, LoopType.Yoyo);
             
-            SFX.DMG(Type, transform.position);
+            SFX.DMG(this);
             if (_particle != null) _particle.Play();
         }
 
@@ -88,6 +87,10 @@ namespace Game
             moveDistanceRemaining = MoveRange;
             healthBar.maxValue = MaxHealth;
             healthBar.value = MaxHealth;
+
+            AmIOld();
+            
+
         }
 
         public void MoveToTile(Vector2Int pos)
@@ -116,7 +119,7 @@ namespace Game
 
         public void Kill()
         {
-            SFX.DEATH(Type, transform.position);
+            SFX.DEATH(this);
             transform.DOShakeRotation(0.4f, 1080f);
             transform.DOMoveY(1.5f, 0.2f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutBounce).OnComplete(() =>
             {
@@ -139,7 +142,18 @@ namespace Game
         protected void PlayAttack()
         {
             animator.SetTrigger("Attack");
-            SFX.ATK(Type, transform.position);
+            SFX.ATK(this);
         }
+
+        private void AmIOld()
+        {
+            if (string.IsNullOrEmpty(Age)) return;
+            var parts = Age.Split(':');
+            if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out var ageInt))
+            {
+                isOld = ageInt >= AgeThreshold;
+            }
+        }
+        
     }
 }

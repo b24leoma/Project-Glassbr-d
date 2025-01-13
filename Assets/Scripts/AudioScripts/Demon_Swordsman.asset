@@ -15,7 +15,7 @@ MonoBehaviour:
   audioEvents: []
   miscEvents: []
   attackEvents:
-  - nameRef: ATK_Demon.Sword
+  - nameRef: ATK_DemonSwordsman
     eventReference:
       Guid:
         Data1: -1216127830
@@ -24,7 +24,7 @@ MonoBehaviour:
         Data4: 1357404878
       Path: event:/Demon_Rogue_01_ATK
   damageEvents:
-  - nameRef: DMG_Demon.Sword
+  - nameRef: DMG_DemonSwordsman
     eventReference:
       Guid:
         Data1: -1777231860
@@ -33,7 +33,7 @@ MonoBehaviour:
         Data4: 1290975195
       Path: event:/Demon_Rogue_01_DMG
   deathEvents:
-  - nameRef: DEATH_Demon.Sword
+  - nameRef: DEATH_DemonSwordsman
     eventReference:
       Guid:
         Data1: 2109026818
@@ -42,7 +42,7 @@ MonoBehaviour:
         Data4: -386544127
       Path: event:/Demon_Rogue_01_DEATH
   moveEvents:
-  - nameRef: MOVE_Demon.Sword
+  - nameRef: MOVE_DemonSwordsman
     eventReference:
       Guid:
         Data1: -234692519
