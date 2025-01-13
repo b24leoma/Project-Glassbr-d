@@ -229,8 +229,8 @@ MonoBehaviour:
   Type: 1
   arrowPrefab: {fileID: 544397617371360787, guid: af09b339ba99c784f9bd583c1aa333c5, type: 3}
   MaxHealth: 50
-  MinDamage: 20
-  MaxDamage: 25
+  MinDamage: 25
+  MaxDamage: 35
   MoveRange: 3
   AttackRange: 6
   CritChance: 10
@@ -239,6 +239,7 @@ MonoBehaviour:
   isHuman: 0
   moveDistanceRemaining: 0
   hasAttacked: 0
+  face: {fileID: 0}
   isMoving: 0
   isDefending: 0
 --- !u!114 &8312680754708699319

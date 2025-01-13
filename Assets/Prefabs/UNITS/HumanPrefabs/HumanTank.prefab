@@ -295,7 +295,7 @@ MonoBehaviour:
   Type: 2
   arrowPrefab: {fileID: 0}
   MaxHealth: 125
-  MinDamage: 15
+  MinDamage: 20
   MaxDamage: 25
   MoveRange: 4
   AttackRange: 1
