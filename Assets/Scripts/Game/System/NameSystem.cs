@@ -80,9 +80,7 @@ public class NameSystem : MonoBehaviour
         else
         {
             Identity id;
-            
-            do id = GenerateIdentity(false, e.Type);
-            while (currentlyUsed.Contains(id.name));
+            id = GenerateIdentity(false, e.Type);
             
             e.AssignIdentity(id);
             currentlyUsed.Add(id.name);
@@ -108,10 +106,11 @@ public class NameSystem : MonoBehaviour
         else
         {
             string[] namn;
-            
+            Debug.Log(demonInfo.Count);
             do namn = demonInfo[Random.Range(1, demonInfo.Count)];
-            while (namn[0] == "Bob" && type != Entity.EntityType.DemonTank);
+            while ((namn[0] == "Bob" && type != Entity.EntityType.DemonTank || currentlyUsed.Contains(namn[0])));
             
+            currentlyUsed.Add(namn[0]);
             demonInfo.Remove(namn);
             Identity id = new Identity
             {
