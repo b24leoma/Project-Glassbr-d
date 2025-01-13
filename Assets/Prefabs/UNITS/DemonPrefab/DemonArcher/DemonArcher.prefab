@@ -129,8 +129,8 @@ MonoBehaviour:
   MaxHealth: 50
   MinDamage: 15
   MaxDamage: 20
-  MoveRange: 3
-  AttackRange: 6
+  MoveRange: 4
+  AttackRange: 8
   CritChance: 50
   MissChance: 35
   healthBar: {fileID: 5593726804125683786}

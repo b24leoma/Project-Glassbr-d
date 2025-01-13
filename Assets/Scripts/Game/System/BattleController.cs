@@ -21,6 +21,7 @@ namespace Game
         [SerializeField] private UnityEvent Player2TurnStart;
         [SerializeField] private UnityEvent TutorialOnStart;
         [SerializeField] private UnityEvent MoveDone;
+        [SerializeField] private UnityEvent GameDone;
         [Header("Components")]
         [SerializeField] private GridSystem gridSystem;
         [SerializeField] private bool isPlayer1Turn;
@@ -278,6 +279,7 @@ namespace Game
                     deadHumans.Add(target.Name);
                     if (gridSystem.humans.Count == 0)
                     {
+                        GameDone?.Invoke();
                         uiStates.TogglePanel(0);
                     }
                 }
@@ -290,6 +292,7 @@ namespace Game
                         {
                             nameSystem.Kill(namn);
                         }
+                        GameDone?.Invoke();
                         uiStates.TogglePanel(1);
                     }
                 }
@@ -316,7 +319,7 @@ namespace Game
                     Player2TurnStart?.Invoke();
                 }
             }
-
+            MoveDone?.Invoke();
             _attackvoids = 0;
         }
 

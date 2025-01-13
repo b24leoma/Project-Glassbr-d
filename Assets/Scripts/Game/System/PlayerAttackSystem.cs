@@ -60,6 +60,7 @@ namespace Game
                             isActing = false;
                             selectHighlight.position = Vector3.down * 100;
                             pathLine.positionCount = 0;
+                            battleController.UpdateCharacterDisplay(false,null, false);
                         }
                     }
                     else if (hoveredEntity != null ) //TILE HAS ENTITY
@@ -126,6 +127,12 @@ namespace Game
                                 }
                             }
                         }
+                    }
+                    else // DESELECTS ACTOR
+                    {
+                        isActing = false;
+                        selectHighlight.position = Vector3.down * 100;
+                        pathLine.positionCount = 0;
                     }
 
                 }
@@ -198,6 +205,12 @@ namespace Game
             
             if (isActing)
             {
+                if (actingEntity.hasAttacked)
+                {
+                    isActing = false;
+                    pathLine.positionCount = 1;
+                }
+                
                 selectHighlight.position = actingEntity.transform.position;
                 
                 //MOVE PATH IF WITHIN RANGE
