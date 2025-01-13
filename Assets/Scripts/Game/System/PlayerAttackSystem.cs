@@ -57,6 +57,7 @@ namespace Game
                         }
                         else // DESELECTS ACTOR
                         {
+                            actingEntity = null;
                             isActing = false;
                             selectHighlight.position = Vector3.down * 100;
                             pathLine.positionCount = 0;
@@ -77,6 +78,7 @@ namespace Game
                             else // DESELECTS ACTOR
                             {
                                 isActing = false;
+                                actingEntity = null;
                                 selectHighlight.position = Vector3.down * 100;
                                 pathLine.positionCount = 0;
                             }
@@ -130,6 +132,7 @@ namespace Game
                     }
                     else // DESELECTS ACTOR
                     {
+                        actingEntity = null;
                         isActing = false;
                         selectHighlight.position = Vector3.down * 100;
                         pathLine.positionCount = 0;
@@ -141,6 +144,7 @@ namespace Game
                     if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null) actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity.GetComponent<Human>();
                     if (actingEntity != null) // SWAP CHARACTER
                     {
+                        Debug.Log("AHHAHA");
                         if (actingEntity.isHuman)
                         {
                             isActing = true;
@@ -404,6 +408,7 @@ namespace Game
             isActing = false;
             selectHighlight.position = Vector3.down * 100;
             isPlayerTurn = false;
+            gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
             endTurnButton.SetActive(false);
         }
 
