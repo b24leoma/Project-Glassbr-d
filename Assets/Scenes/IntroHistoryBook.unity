@@ -544,7 +544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skip Tutorial
+  m_text: Skip Intro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4af9e9a2d9875ed4cafa0593af5402ed, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 460abf3aba0b5a0439ac2f9018cfd4ca, type: 2}
@@ -1126,6 +1126,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b85b415b4c48bb54faecd7780a927b3b, type: 3}
   - {fileID: 2800000, guid: 0e2bfdde124fdf941a22b7da64db8ddf, type: 3}
   - {fileID: 2800000, guid: f05160145825fad43b180aea8f6fd27e, type: 3}
+  - {fileID: 2800000, guid: 20eb03ea5ee13e849acaf392871c0ebe, type: 3}
+  - {fileID: 2800000, guid: 0444f0af71ca16a40a4c4bcff907f17d, type: 3}
 --- !u!114 &1053591169
 MonoBehaviour:
   m_ObjectHideFlags: 0
