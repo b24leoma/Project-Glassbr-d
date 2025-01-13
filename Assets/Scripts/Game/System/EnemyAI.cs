@@ -34,8 +34,9 @@ namespace Game
                     Vector2Int demonCurrentPos = demon.Position;
                     
                     //first round get random target, then closest
-                    if (demon.target == null && gridSystem.humans.Count > 0) demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(1, gridSystem.humans.Count) - 1]).linkedEntity as Human;
-                    else GetClosestTarget(demon);
+                    //if (demon.target == null && gridSystem.humans.Count > 0) demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(1, gridSystem.humans.Count) - 1]).linkedEntity as Human;
+                    //else 
+                        GetClosestTarget(demon);
 
                     //Attack before move
                     if (demon.target != null && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
@@ -112,6 +113,11 @@ namespace Game
                 demonList[k] = demonList[n];  
                 demonList[n] = value;
             }  
+        }
+
+        public void StopTurn()
+        {
+            StopAllCoroutines();
         }
     }
 }

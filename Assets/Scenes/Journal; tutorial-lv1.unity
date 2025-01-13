@@ -823,9 +823,19 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - 'I''m now a general. Maybe I can make a change, I mean I managed to command
-      the troops to victory in the first battle as a general. I will move out with
-      my battalion tomorrow.
+    - 'I''m now a general. Maybe I can
+
+      make a change, I mean I managed to
+
+      command
+      the troops to victory in
+
+      the first battle as a general. I will
+
+      move
+      out with my troops
+
+      tomorrow.
 
 
       Journal Entry 1'
@@ -949,7 +959,7 @@ MonoBehaviour:
       the first battle as a general. I will
 
       move
-      out with my battalion
+      out with my troops
 
       tomorrow.
 
