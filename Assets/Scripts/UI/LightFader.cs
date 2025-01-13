@@ -37,6 +37,7 @@ public class LightFader : MonoBehaviour
             {
                 case "MainMenu":
                 case "IntroHistoryBook":
+                case "MainMenuTryingNewThings":
                     return;
                 default:
 
@@ -76,7 +77,7 @@ public class LightFader : MonoBehaviour
 
     public void FadeInLight()
     {
-        if (GetComponentInParent<Entity>().hasAttacked) return;
+        if (GetComponentInParent<Entity>() != null && GetComponentInParent<Entity>().hasAttacked) return;
         
         CurrentTween?.Kill();
 
