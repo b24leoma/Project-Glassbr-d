@@ -2119,6 +2119,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5047922107180955381, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 178765492605231524}
+    - target: {fileID: 5047922107180955381, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047922107180955381, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIStates, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5253507256172239673, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
       propertyPath: m_fontSize
       value: 32
@@ -2126,6 +2138,10 @@ PrefabInstance:
     - target: {fileID: 5253507256172239673, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
       propertyPath: m_fontSizeBase
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471129214041838001, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
+      propertyPath: m_text
+      value: Quit to Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5471129214041838001, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
       propertyPath: m_fontSize
@@ -2240,6 +2256,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
+--- !u!114 &178765492605231524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6223137739388802827, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
+  m_PrefabInstance: {fileID: 178765492605231523}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4fb9b5a9f4290499d364ea48210f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &3626916398080449491
 SpriteRenderer:
   m_ObjectHideFlags: 0

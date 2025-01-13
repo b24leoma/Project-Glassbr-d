@@ -138,6 +138,10 @@ namespace Game
                 }
                 entity.GetComponent<Human>().SetMoving(true);
             }
+            else
+            {
+                UpdateCharacterDisplay(false, null, false);
+            }
             
             if (pos.Length > 1)
             {
@@ -319,7 +323,7 @@ namespace Game
                     Player2TurnStart?.Invoke();
                 }
             }
-            MoveDone?.Invoke();
+            //MoveDone?.Invoke();
             _attackvoids = 0;
         }
 
