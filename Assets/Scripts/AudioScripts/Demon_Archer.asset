@@ -18,35 +18,35 @@ MonoBehaviour:
   - nameRef: ATK_DemonArcher
     eventReference:
       Guid:
-        Data1: -1216127830
-        Data2: 1096066358
-        Data3: 1011031699
-        Data4: 1357404878
-      Path: event:/Demon_Rogue_01_ATK
+        Data1: 1249619042
+        Data2: 1114439636
+        Data3: 1715029641
+        Data4: -1044542979
+      Path: event:/Demon_Archer_ATK
   damageEvents:
   - nameRef: DMG_DemonArcher
     eventReference:
       Guid:
-        Data1: 1579187407
-        Data2: 1330944784
-        Data3: 73565326
-        Data4: -232160840
-      Path: event:/Demon_Tank_01_DMG
+        Data1: 1001286187
+        Data2: 1112431654
+        Data3: -1452945743
+        Data4: -1898965473
+      Path: event:/Demon_Archer_DMG
   deathEvents:
   - nameRef: DEATH_DemonArcher
     eventReference:
       Guid:
-        Data1: 2109026818
-        Data2: 1161272294
-        Data3: -1352234360
-        Data4: -386544127
-      Path: event:/Demon_Rogue_01_DEATH
+        Data1: -1083072582
+        Data2: 1288598255
+        Data3: 653756043
+        Data4: 2083774051
+      Path: event:/Demon_Archer_DEATH
   moveEvents:
   - nameRef: MOVE_DemonArcher
     eventReference:
       Guid:
-        Data1: -580347939
-        Data2: 1150662037
-        Data3: 539498151
-        Data4: -946908988
-      Path: event:/Demon_Tank_01_MOVE
+        Data1: 1940161783
+        Data2: 1301385309
+        Data3: 887342992
+        Data4: 1209242396
+      Path: event:/Demon_Archer_MOVE
