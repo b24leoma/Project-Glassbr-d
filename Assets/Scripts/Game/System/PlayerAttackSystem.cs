@@ -60,6 +60,7 @@ namespace Game
                             isActing = false;
                             selectHighlight.position = Vector3.down * 100;
                             pathLine.positionCount = 0;
+                            battleController.UpdateCharacterDisplay(false,null, false);
                         }
                     }
                     else if (hoveredEntity != null ) //TILE HAS ENTITY
