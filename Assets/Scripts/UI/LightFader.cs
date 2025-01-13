@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Game;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -75,6 +76,7 @@ public class LightFader : MonoBehaviour
 
     public void FadeInLight()
     {
+        if (GetComponentInParent<Entity>().hasAttacked) return;
         
         CurrentTween?.Kill();
 
