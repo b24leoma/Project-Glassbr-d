@@ -1,0 +1,941 @@
+fileFormatVersion: 2
+guid: 96d976037658e9546a124a5b21a1a459
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 16
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638724483046502156
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_0
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 42
+      height: 103
+    spriteID: 1c51fc1688490214183408a441829653
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_1
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 115
+      width: 42
+      height: 103
+    spriteID: 3e7f1d5df51f1c0468f5851e10dca802
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 115}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_2
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 226
+      width: 42
+      height: 103
+    spriteID: 523af0f2d1c6c8948b8fe2ad58c93830
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 226}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_3
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 337
+      width: 42
+      height: 103
+    spriteID: 9c6b718d3d74dab468dc217a2c24fcb7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 337}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_4
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 4
+      width: 42
+      height: 103
+    spriteID: 4e7d418eca501374298eda6242e73d7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 4}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_5
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 115
+      width: 42
+      height: 103
+    spriteID: 775e92f436fd67e43a85168a5e9209a4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 115}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_6
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 226
+      width: 42
+      height: 103
+    spriteID: 37c8bafaff0aed34f91ff6259ec40b30
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 226}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_7
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 337
+      width: 42
+      height: 103
+    spriteID: 62e0c6386f0b4494f8fd2bc88b494579
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 337}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_8
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 4
+      width: 42
+      height: 103
+    spriteID: 7b0c0f2656fade4419c0f4e03a57a206
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 4}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_9
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 115
+      width: 42
+      height: 103
+    spriteID: c96cb76a3fea4464b92223a36b0b3766
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 115}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_10
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 226
+      width: 42
+      height: 103
+    spriteID: c667c5e8e9d92ac4181ee9e3d7676e44
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 226}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_11
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 337
+      width: 42
+      height: 103
+    spriteID: 666f21a44f6fa2947bc72f4c81bf9b26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 337}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_12
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 4
+      width: 42
+      height: 103
+    spriteID: e37a524247a61fd40948091837db1b22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 4}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_13
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 115
+      width: 42
+      height: 103
+    spriteID: 1b0c9d99036fa2648a12fc4a461e67e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 115}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_14
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 226
+      width: 42
+      height: 103
+    spriteID: f570cac106ee7634891e952634379a63
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 226}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_15
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 337
+      width: 42
+      height: 103
+    spriteID: 8f7f5e3c9f8b23b479e9f030a958986e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 337}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_16
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 4
+      width: 42
+      height: 103
+    spriteID: 557606b06aa7f214a9883e35eda757e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 4}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_17
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 115
+      width: 42
+      height: 103
+    spriteID: 74acd79aab602a3498c334820e242bbc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 115}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_18
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 226
+      width: 42
+      height: 103
+    spriteID: 37309228f3ed300488778c4a08508dbc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 226}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_19
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 337
+      width: 42
+      height: 103
+    spriteID: 4f9d02849763f7941a7e870c9cb8c2c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 337}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_20
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 254
+      y: 4
+      width: 42
+      height: 103
+    spriteID: 0a6483848b4c4be4ea43fe2a216b9604
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 254, y: 4}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_21
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 254
+      y: 115
+      width: 42
+      height: 103
+    spriteID: 12ab7b190b1897a47bfd81a3e0735ee2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 254, y: 115}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_22
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 254
+      y: 226
+      width: 42
+      height: 103
+    spriteID: e3c5c4398fd5d4c46b449b900c609414
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 254, y: 226}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_23
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 254
+      y: 337
+      width: 42
+      height: 103
+    spriteID: 0e2cd0a165d692a4db43c63588b58398
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 254, y: 337}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_24
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 4
+      width: 42
+      height: 103
+    spriteID: 59a5306600a194e469f50e4b186f009f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 304, y: 4}
+  - name: BookPicBloodAnimFastUtanBakgrund_Frame_25
+    originalName: 
+    pivot: {x: 0.5119048, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 115
+      width: 42
+      height: 103
+    spriteID: 2dec0353c20e31c47a8b82214d96e3e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 304, y: 115}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 801054702
+    name: BookPicBloodAnimFastUtanBakgrund
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 1c51fc1688490214183408a441829653
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 3e7f1d5df51f1c0468f5851e10dca802
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 523af0f2d1c6c8948b8fe2ad58c93830
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 9c6b718d3d74dab468dc217a2c24fcb7
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 4e7d418eca501374298eda6242e73d7b
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 775e92f436fd67e43a85168a5e9209a4
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 37c8bafaff0aed34f91ff6259ec40b30
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 62e0c6386f0b4494f8fd2bc88b494579
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 7b0c0f2656fade4419c0f4e03a57a206
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: c96cb76a3fea4464b92223a36b0b3766
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: c667c5e8e9d92ac4181ee9e3d7676e44
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 666f21a44f6fa2947bc72f4c81bf9b26
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: e37a524247a61fd40948091837db1b22
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 1b0c9d99036fa2648a12fc4a461e67e7
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: f570cac106ee7634891e952634379a63
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 8f7f5e3c9f8b23b479e9f030a958986e
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 557606b06aa7f214a9883e35eda757e4
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 74acd79aab602a3498c334820e242bbc
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 37309228f3ed300488778c4a08508dbc
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 4f9d02849763f7941a7e870c9cb8c2c0
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 0a6483848b4c4be4ea43fe2a216b9604
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 12ab7b190b1897a47bfd81a3e0735ee2
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: e3c5c4398fd5d4c46b449b900c609414
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 0e2cd0a165d692a4db43c63588b58398
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 59a5306600a194e469f50e4b186f009f
+    - name: BookPicBloodAnimFastUtanBakgrund_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 0
+        width: 42
+        height: 103
+      spriteId: 2dec0353c20e31c47a8b82214d96e3e8
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 109, y: 103}
