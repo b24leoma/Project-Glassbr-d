@@ -333,8 +333,16 @@ namespace Game
             if (gridSystem.humans.Count <= 0 || gridSystem.humans.Count <= 0) return;
             selectHighlight.position = Vector3.down * 100;
             isPlayer1Turn = !isPlayer1Turn;
-            if(isPlayer1Turn) Player1TurnStart?.Invoke();
-            else Player2TurnStart?.Invoke();
+            if (isPlayer1Turn)
+            {
+                selectHighlight.GetComponent<SpriteRenderer>().color = Color.white;
+                Player1TurnStart?.Invoke();
+            }
+            else
+            {
+                selectHighlight.GetComponent<SpriteRenderer>().color = Color.red;
+                Player2TurnStart?.Invoke();
+            }
         }
 
 
