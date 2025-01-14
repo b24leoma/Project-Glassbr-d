@@ -1975,7 +1975,7 @@ MonoBehaviour:
 
 
       We have decied to set up camp in the towns ruins.
-      When searching the ruins I found one half of a young girl clutching a toy.
+      When searching the ruins I found upper half of a young girl clutching a toy.
       Can I even make a change? There has been so much death in our path. Probably
       more to come in the coming battles, but I can''t give up, not yet, can I?
 
@@ -2095,7 +2095,7 @@ MonoBehaviour:
 
 
       We have decied to set up camp in the towns ruins.
-      When searching the ruins I found one half of a young girl clutching a toy.
+      When searching the ruins I found upper half of a young girl clutching a toy.
       Can I even make a change? There has been so much death in our path. Probably
       more to come in the coming battles, but I can''t give up, not yet, can I?
 
@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -163.64029, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
