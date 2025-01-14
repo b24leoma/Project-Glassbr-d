@@ -144,7 +144,6 @@ namespace Game
                     if (gridSystem.GetTile(hoveredTile) != null && gridSystem.GetTile(hoveredTile).linkedEntity != null) actingEntity = gridSystem.GetTile(hoveredTile).linkedEntity.GetComponent<Human>();
                     if (actingEntity != null) // SWAP CHARACTER
                     {
-                        Debug.Log("AHHAHA");
                         if (actingEntity.isHuman)
                         {
                             isActing = true;
