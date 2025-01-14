@@ -77,8 +77,8 @@ namespace Game
                             demon.AttackRange)
                         {
                             demon.target = closest;
-                            gridSystem.GetTile(demonCurrentPos).linkedEntity.SetAttacking(true);
-                            battleController.Attack(gridSystem.GetTile(demonCurrentPos).linkedEntity, demon.target);
+                           demon.SetAttacking(true);
+                            battleController.Attack(demon, demon.target);
                             if (gridSystem.humans.Count == 0) yield break;
                             GetClosestTarget(demon);
                             if(!skipDelay) yield return new WaitForSeconds(0.5f);
