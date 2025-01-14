@@ -28,7 +28,6 @@ namespace Game
             yield return new WaitForSeconds(1.5f);
             for (int i = 0; i < demonList.Count; i++)
             {
-                yield return new WaitForSeconds(0.5f);
                 if (gridSystem.GetTile(demonList[i]).linkedEntity is Demon demon)
                 {
                     Vector2Int demonCurrentPos = demon.Position;
