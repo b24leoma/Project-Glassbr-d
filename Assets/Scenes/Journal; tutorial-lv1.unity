@@ -1331,11 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 2800000, guid: b85b415b4c48bb54faecd7780a927b3b, type: 3}
-  - {fileID: 2800000, guid: 0e2bfdde124fdf941a22b7da64db8ddf, type: 3}
-  - {fileID: 2800000, guid: f05160145825fad43b180aea8f6fd27e, type: 3}
-  - {fileID: 2800000, guid: 20eb03ea5ee13e849acaf392871c0ebe, type: 3}
-  - {fileID: 2800000, guid: 0444f0af71ca16a40a4c4bcff907f17d, type: 3}
+  - {fileID: 2800000, guid: 4df1e9c3013930f4185c89023f3071a1, type: 3}
 --- !u!114 &1694634325
 MonoBehaviour:
   m_ObjectHideFlags: 0
