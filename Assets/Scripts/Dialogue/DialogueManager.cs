@@ -118,7 +118,7 @@ public class DialogueManager : MonoBehaviour
             }
             currentSentenceString = sentence;
         }
-        foreach (char letter in sentence)
+        for (int i = 0; i < sentence.Length; i++)
         {
 
             while (typingPaused)
@@ -128,7 +128,15 @@ public class DialogueManager : MonoBehaviour
             
             
             
-            dialogueField.text += letter;
+            dialogueField.text += sentence[i];
+            if (sentence[i] == '<')
+            {
+                while (sentence[i] != '>')
+                {
+                    i++;
+                    dialogueField.text += sentence[i];
+                }
+            }
             yield return new WaitForSeconds(0.04f);
         }
 
