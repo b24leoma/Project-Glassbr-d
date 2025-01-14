@@ -196,10 +196,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -461.0000305175781,
-            "y": 500.0,
-            "width": 208.0,
-            "height": 435.0
+            "x": -530.0,
+            "y": 375.0000305175781,
+            "width": 182.99996948242188,
+            "height": 250.99996948242188
         }
     },
     "m_Slots": [
@@ -256,10 +256,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -689.0,
-            "y": 487.0000305175781,
-            "width": 129.00006103515626,
-            "height": 33.999969482421878
+            "x": -735.0000610351563,
+            "y": 350.0,
+            "width": 128.99993896484376,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -944,7 +944,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "b20e9836fcc74b5e84fb578ec035ac9d",
     "m_Id": 0,
-    "m_DisplayName": "Color",
+    "m_DisplayName": "HDRColor",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -971,10 +971,10 @@
     "m_Guid": {
         "m_GuidSerialized": "b5d59d1b-dc14-4ecf-8ab4-da6b154be09b"
     },
-    "m_Name": "Color",
+    "m_Name": "HDRColor",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Color",
-    "m_DefaultReferenceName": "_Color",
+    "m_RefNameGeneratedByDisplayName": "HDRColor",
+    "m_DefaultReferenceName": "_HDRColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,

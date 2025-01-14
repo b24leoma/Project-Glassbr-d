@@ -127,8 +127,8 @@ MonoBehaviour:
   Type: 5
   arrowPrefab: {fileID: 544397617371360787, guid: af09b339ba99c784f9bd583c1aa333c5, type: 3}
   MaxHealth: 50
-  MinDamage: 15
-  MaxDamage: 20
+  MinDamage: 10
+  MaxDamage: 15
   MoveRange: 4
   AttackRange: 8
   CritChance: 45
