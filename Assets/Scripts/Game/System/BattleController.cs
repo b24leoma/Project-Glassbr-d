@@ -228,6 +228,7 @@ namespace Game
                 num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
                     .GetComponent<DamageNumber>();
                 num.SetDamage($"MISS");
+                damage = 0;
             }
             else
             {
@@ -267,14 +268,14 @@ namespace Game
 
                 target.TakeDamage(damage);
                 if (target.isHuman) target.GetComponent<Human>().isDefending = false;
+                PortraitAnim(displayPortrait, "DMG");
             }
 
             UpdateCharacterDisplay(true, target, false);
-            PortraitAnim(displayPortrait, "DMG");
             
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
-            if (target.CurrentHealth <= 0)
+            if (target.CurrentHealth <= 0 && damage > 0)
             {
                 target.TakeDamage(target.CurrentHealth);
                 if (target.isHuman)
