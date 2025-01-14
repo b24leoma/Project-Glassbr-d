@@ -132,7 +132,10 @@ namespace Game
                
                 _sprite.DOFade(0, 0.3f).OnComplete(() =>
                 {
-                    if (isHuman) DOTween.Kill(GetComponentInChildren<LightFader>().gameObject);
+                    if (isHuman)
+                    {
+                        GetComponentInChildren<LightFader>().CurrentTween.Kill();
+                    }
                     DOTween.Kill(transform);
                     DOTween.Kill(_sprite);
                     Destroy(gameObject);
