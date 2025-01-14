@@ -61,7 +61,7 @@ public class LightFader : MonoBehaviour
         
         var targetIntensity = _toMaxIntensity ? targetMaxIntensity : targetMinIntensity;
 
-       CurrentTween= DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease).OnComplete(()=>_toMaxIntensity = !_toMaxIntensity);
+        if (gameObject != null) CurrentTween = DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, duration).SetEase(ease).OnComplete(()=>_toMaxIntensity = !_toMaxIntensity);
 
         
 

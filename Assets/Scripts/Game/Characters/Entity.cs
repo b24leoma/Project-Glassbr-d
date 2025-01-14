@@ -119,7 +119,6 @@ namespace Game
 
         public void Kill()
         {
-            if (isHuman) DOTween.Kill(GetComponentInChildren<LightFader>().gameObject);
             SFX.DEATH(this);
             transform.DOShakeRotation(0.4f, 1080f);
             transform.DOMoveY(1.5f, 0.2f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutBounce).OnComplete(() =>
@@ -133,6 +132,7 @@ namespace Game
                
                 _sprite.DOFade(0, 0.3f).OnComplete(() =>
                 {
+                    if (isHuman) DOTween.Kill(GetComponentInChildren<LightFader>().gameObject);
                     DOTween.Kill(transform);
                     DOTween.Kill(_sprite);
                     Destroy(gameObject);
