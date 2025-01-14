@@ -267,10 +267,10 @@ namespace Game
 
                 target.TakeDamage(damage);
                 if (target.isHuman) target.GetComponent<Human>().isDefending = false;
+                PortraitAnim(displayPortrait, "DMG");
             }
 
             UpdateCharacterDisplay(true, target, false);
-            PortraitAnim(displayPortrait, "DMG");
             
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
