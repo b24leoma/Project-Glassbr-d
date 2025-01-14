@@ -1653,13 +1653,16 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - 'We have decied to set up camp in the towns ruins. When searching the ruins
-      I found one half of a young girl clutching a toy. Can I even make a change?
-      There has been so much death in our path. Probably more to come in the coming
-      battles, but I can''t give up, not yet, can I?
+    - 'Journal Entry 44
 
 
-      Journal Entry 44'
+      We have decied to set up camp in the towns ruins.
+      When searching the ruins I found one half of a young girl clutching a toy.
+      Can I even make a change? There has been so much death in our path. Probably
+      more to come in the coming battles, but I can''t give up, not yet, can I?
+
+
+      14-05-1845'
     - 
 --- !u!114 &1356230947
 MonoBehaviour:
@@ -1770,27 +1773,16 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'When we searched the ruins for
-
-      survivors I found one half of a
-
-      young
-      girl clutching a toy.
-
-      Can I even make a change?
-
-      There has been
-      so much death in
-
-      our path and probably more in the
-
-      coming battles.
-      But I can''t give up,
-
-      not yet, can I?
+    - 'Journal Entry 44
 
 
-      Journal Entry 44'
+      We have decied to set up camp in the towns ruins.
+      When searching the ruins I found one half of a young girl clutching a toy.
+      Can I even make a change? There has been so much death in our path. Probably
+      more to come in the coming battles, but I can''t give up, not yet, can I?
+
+
+      14-05-1845'
     - 
 --- !u!1001 &1494008146
 PrefabInstance:

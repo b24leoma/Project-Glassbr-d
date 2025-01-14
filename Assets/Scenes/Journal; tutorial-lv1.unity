@@ -823,22 +823,25 @@ MonoBehaviour:
   dialogue:
     name: HistoryBook
     sentences:
-    - 'I''m now a general. Maybe I can
+    - 'Journal Entry 1
 
-      make a change, I mean I managed to
 
-      command
-      the troops to victory in
+      I''m now a general. Maybe I can
 
-      the first battle as a general. I will
+      make a change,
+      I mean I managed to
 
-      move
-      out with my troops
+      command the troops to victory in
+
+      the first
+      battle as a general. I will
+
+      move out with my troops
 
       tomorrow.
 
 
-      Journal Entry 1'
+      23-7-1844'
     - 
 --- !u!114 &1356230947
 MonoBehaviour:
@@ -949,22 +952,25 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'I''m now a general. Maybe I can
+    - 'Journal Entry 1
 
-      make a change, I mean I managed to
 
-      command
-      the troops to victory in
+      I''m now a general. Maybe I can
 
-      the first battle as a general. I will
+      make a change,
+      I mean I managed to
 
-      move
-      out with my troops
+      command the troops to victory in
+
+      the first
+      battle as a general. I will
+
+      move out with my troops
 
       tomorrow.
 
 
-      Journal Entry 1'
+      23-7-1844'
     - 
 --- !u!1 &1631513192
 GameObject:
