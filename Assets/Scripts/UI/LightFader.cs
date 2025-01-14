@@ -12,7 +12,7 @@ public class LightFader : MonoBehaviour
     [Range (0f,10f),SerializeField] private float fadeDuration = 0.2f;
     [Range (0f,10f),SerializeField] private float targetMaxIntensity = 1f;
     [Range (0f,10f),SerializeField] private float targetMinIntensity ;
-    public Tween CurrentTween;
+    private Tween CurrentTween;
     private float _valueOnPause;
     private FriendlyDayNight _friendlyDayNight;
     private string _currentScene;
