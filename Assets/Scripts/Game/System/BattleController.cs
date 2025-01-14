@@ -229,6 +229,7 @@ namespace Game
                     .GetComponent<DamageNumber>();
                 num.SetDamage($"MISS");
                 damage = 0;
+                FMODManager.instance.OneShot("Miss", target.transform.position);
             }
             else
             {

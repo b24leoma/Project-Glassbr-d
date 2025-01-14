@@ -77,3 +77,19 @@ MonoBehaviour:
         Data3: 2041632410
         Data4: -2083023300
       Path: event:/BowString
+  - nameRef: Miss
+    eventReference:
+      Guid:
+        Data1: -174475000
+        Data2: 1205327957
+        Data3: -533153106
+        Data4: -1833794054
+      Path: event:/Miss
+  - nameRef: Bell
+    eventReference:
+      Guid:
+        Data1: 2112431612
+        Data2: 1090084703
+        Data3: 1039752605
+        Data4: -35471010
+      Path: event:/Bell

@@ -7,6 +7,7 @@ public class PlayOnStart : MonoBehaviour
         void OnEnable()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
+            
         }
 
         void OnDisable()
@@ -17,7 +18,14 @@ public class PlayOnStart : MonoBehaviour
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             var currentScene = scene.name;
-
+            
+            if (currentScene.Contains("Journal"))
+            {
+                FMODManager.instance.SetParameter("Battle", 0f);
+                FMODManager.instance.SetParameter("IntenseBattle", 0f);
+                return;
+            }
+            
             switch (currentScene)
             {
                 case "MainMenu":
@@ -36,7 +44,7 @@ public class PlayOnStart : MonoBehaviour
                     break;
                 
                 case "Level 2":
-                    FMODManager.instance.SetParameter("Battle", 1f);
+                    FMODManager.instance.SetParameter("Battle", 2f);
                     break;
 
                 default:

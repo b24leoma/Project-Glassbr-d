@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences = new Queue<string>();
     public Animator animator;
     public UnityEvent whenComplete;
+    public int delayBell;
 
     
     
@@ -31,9 +32,12 @@ public class DialogueManager : MonoBehaviour
      [SerializeField] private UnityEvent onDialogueUnpause;
      public UnityEvent FlipPage;
      private string currentSentenceString;
-    
 
-     
+
+     private void Start()
+     {
+         delayBell = 0;
+     }
 
 
      public void StartDialogue(Dialogue dialogue)
@@ -109,6 +113,20 @@ public class DialogueManager : MonoBehaviour
                     foreach (string namn in ns.dead)
                     {
                         sentence += $"{namn}\n";
+
+
+                        if (delayBell == 0)
+                        {
+                            DOVirtual.DelayedCall(1.5f, () => StartCoroutine(Bells()));
+                        }
+                        else
+                        {
+                            StartCoroutine(Bells());
+                        }
+                        
+                        
+                        delayBell++;
+
                     }
                 }
             }
@@ -195,4 +213,14 @@ public class DialogueManager : MonoBehaviour
     {
         typingPaused = false;
     }
+
+
+    IEnumerator Bells()
+    {
+        yield return new WaitForSeconds(delayBell);
+        FMODManager.instance.OneShot("Bell");
+    }
+    
+    
+    
 }
