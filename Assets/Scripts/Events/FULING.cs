@@ -17,9 +17,11 @@ public class FULING : MonoBehaviour
    public void Fulinghaha()
    {
 
-      
-         target.SetActive(true); 
-         target2.SetActive(true); 
+       if (target && target2 != null)
+       {
+           target.SetActive(true);
+           target2.SetActive(true);
+       }
 
    }
 
