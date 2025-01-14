@@ -623,7 +623,7 @@ ScriptedImporter:
     uvTransform: {x: 38, y: 4}
   - name: BaraBlod_Frame_25
     originalName: 
-    pivot: {x: 0.83333325, y: -2.8421052}
+    pivot: {x: 1.1666667, y: -2.8421052}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -879,7 +879,7 @@ ScriptedImporter:
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
-        x: 52
+        x: 51
         y: 54
         width: 3
         height: 19
