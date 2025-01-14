@@ -228,6 +228,7 @@ namespace Game
                 num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
                     .GetComponent<DamageNumber>();
                 num.SetDamage($"MISS");
+                damage = 0;
             }
             else
             {
@@ -274,7 +275,7 @@ namespace Game
             
             attacker.MoveDistance(attacker.moveDistanceRemaining);
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
-            if (target.CurrentHealth <= 0)
+            if (target.CurrentHealth <= 0 && damage > 0)
             {
                 target.TakeDamage(target.CurrentHealth);
                 if (target.isHuman)
