@@ -131,8 +131,8 @@ MonoBehaviour:
   MaxDamage: 20
   MoveRange: 4
   AttackRange: 8
-  CritChance: 50
-  MissChance: 35
+  CritChance: 45
+  MissChance: 25
   healthBar: {fileID: 5593726804125683786}
   isHuman: 0
   moveDistanceRemaining: 0

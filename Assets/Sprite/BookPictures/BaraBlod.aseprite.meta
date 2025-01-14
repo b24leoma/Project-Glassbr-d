@@ -1,0 +1,941 @@
+fileFormatVersion: 2
+guid: 148317e92b607bd4fa81471e620de80c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 16
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638724521109541043
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: BaraBlod_Frame_0
+    originalName: 
+    pivot: {x: 1.2499999, y: -23.333332}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 247
+      width: 2
+      height: 3
+    spriteID: bbeab129ce8195d4b88b4d94aaa6cdcf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 247}
+  - name: BaraBlod_Frame_1
+    originalName: 
+    pivot: {x: 1.2499999, y: -13.6}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 245
+      width: 2
+      height: 5
+    spriteID: a3351d1b9f4afab48921d21a52911618
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 245}
+  - name: BaraBlod_Frame_2
+    originalName: 
+    pivot: {x: 1.1666667, y: -8.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 52
+      width: 3
+      height: 8
+    spriteID: ab6f45c996d37b04e94e6ce31cece7dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 52}
+  - name: BaraBlod_Frame_3
+    originalName: 
+    pivot: {x: 1.1666667, y: -4.615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 31
+      width: 3
+      height: 13
+    spriteID: 72f31125b68d5ed468ef3dc68c221f99
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 31}
+  - name: BaraBlod_Frame_4
+    originalName: 
+    pivot: {x: 1.1666667, y: -2.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 233
+      width: 3
+      height: 19
+    spriteID: 8b0792f11531a064781735f5df6a783c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 233}
+  - name: BaraBlod_Frame_5
+    originalName: 
+    pivot: {x: 1.1666667, y: -1.92}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 179
+      width: 3
+      height: 25
+    spriteID: 9ff1d11b64ca06c479cc6a352a491637
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 179}
+  - name: BaraBlod_Frame_6
+    originalName: 
+    pivot: {x: 1.1666667, y: -1.2121211}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 97
+      width: 3
+      height: 33
+    spriteID: b985cc5f56380cc43bd5154aead0f7a9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 97}
+  - name: BaraBlod_Frame_7
+    originalName: 
+    pivot: {x: 1.1666667, y: -0.9210526}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 51
+      width: 3
+      height: 38
+    spriteID: 3c1402a7bcf5f41468529e4e82b8cb22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 51}
+  - name: BaraBlod_Frame_8
+    originalName: 
+    pivot: {x: 1.1666667, y: -0.69767445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 132
+      width: 3
+      height: 43
+    spriteID: e1965c3bb7006a347bc7239a09e45523
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 132}
+  - name: BaraBlod_Frame_9
+    originalName: 
+    pivot: {x: 1.1000003, y: -0.30357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 4
+      width: 5
+      height: 56
+    spriteID: d86990e957669dd4b9aecde2ed5ff1ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 4}
+  - name: BaraBlod_Frame_10
+    originalName: 
+    pivot: {x: 0.6875002, y: -0.1060606}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 85
+      width: 8
+      height: 66
+    spriteID: ccaf815f7832adc4c91120568cd2bc13
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 85}
+  - name: BaraBlod_Frame_11
+    originalName: 
+    pivot: {x: 0.6111113, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 9
+      height: 73
+    spriteID: 535222062350cc24cbe4ec2e96ec0582
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: BaraBlod_Frame_12
+    originalName: 
+    pivot: {x: 0.6111113, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 85
+      width: 9
+      height: 73
+    spriteID: a0c068c2e61b0594096f19d6f5e11c6f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 85}
+  - name: BaraBlod_Frame_13
+    originalName: 
+    pivot: {x: 0.6111113, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 166
+      width: 9
+      height: 73
+    spriteID: aa139bbd6b1ac0b4a8d5f30d3db91ecf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 166}
+  - name: BaraBlod_Frame_14
+    originalName: 
+    pivot: {x: 1.1666667, y: -2.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 233
+      width: 3
+      height: 19
+    spriteID: 05ca368c869d2904c8bbb3f08498113d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 233}
+  - name: BaraBlod_Frame_15
+    originalName: 
+    pivot: {x: 1.1666667, y: -1.92}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 212
+      width: 3
+      height: 25
+    spriteID: 31cd255260e2d3840a67ebd824091f66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 212}
+  - name: BaraBlod_Frame_16
+    originalName: 
+    pivot: {x: 1.1666667, y: -1.2121211}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 138
+      width: 3
+      height: 33
+    spriteID: ba895ef0f98ed9e41a9d88ca84d7b5d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 138}
+  - name: BaraBlod_Frame_17
+    originalName: 
+    pivot: {x: 1.1666667, y: -0.8717948}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 67
+      y: 4
+      width: 3
+      height: 39
+    spriteID: ff4555d1863b8d441b0e4a4a903ceb75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 67, y: 4}
+  - name: BaraBlod_Frame_18
+    originalName: 
+    pivot: {x: 1.1666667, y: -0.7380952}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 183
+      width: 3
+      height: 42
+    spriteID: 2fb12e5547d95ce4ba437d37c4c4e7f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 183}
+  - name: BaraBlod_Frame_19
+    originalName: 
+    pivot: {x: 1.1250002, y: -0.30357143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 68
+      width: 4
+      height: 56
+    spriteID: 8d8827857bacb7f4ebd22c8beab12a37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 68}
+  - name: BaraBlod_Frame_20
+    originalName: 
+    pivot: {x: 0.5625001, y: -0.1060606}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 159
+      width: 8
+      height: 66
+    spriteID: de1f6068c8d848c44989bd9c6ac54c71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 159}
+  - name: BaraBlod_Frame_21
+    originalName: 
+    pivot: {x: 0.50000006, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 21
+      y: 4
+      width: 9
+      height: 73
+    spriteID: f38c0e6d1b794be4eb349156620fe652
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 21, y: 4}
+  - name: BaraBlod_Frame_22
+    originalName: 
+    pivot: {x: 0.50000006, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 21
+      y: 85
+      width: 9
+      height: 73
+    spriteID: 112f6831d8962d14697b26c4d5bc5c87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 21, y: 85}
+  - name: BaraBlod_Frame_23
+    originalName: 
+    pivot: {x: 0.43750006, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 21
+      y: 166
+      width: 8
+      height: 73
+    spriteID: 0b6c68037e55ac640a6c7edb07a692f2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 21, y: 166}
+  - name: BaraBlod_Frame_24
+    originalName: 
+    pivot: {x: 0.43750006, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 4
+      width: 8
+      height: 73
+    spriteID: e75600a00aa3615498150f876e259b10
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 4}
+  - name: BaraBlod_Frame_25
+    originalName: 
+    pivot: {x: 0.83333325, y: -2.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 4
+      width: 3
+      height: 19
+    spriteID: 557747799d8c2c041a6e3af3227cbc7a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 984202629
+    name: BaraBlod
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BaraBlod_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 70
+        width: 2
+        height: 3
+      spriteId: bbeab129ce8195d4b88b4d94aaa6cdcf
+    - name: BaraBlod_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 68
+        width: 2
+        height: 5
+      spriteId: a3351d1b9f4afab48921d21a52911618
+    - name: BaraBlod_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 65
+        width: 3
+        height: 8
+      spriteId: ab6f45c996d37b04e94e6ce31cece7dd
+    - name: BaraBlod_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 60
+        width: 3
+        height: 13
+      spriteId: 72f31125b68d5ed468ef3dc68c221f99
+    - name: BaraBlod_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 54
+        width: 3
+        height: 19
+      spriteId: 8b0792f11531a064781735f5df6a783c
+    - name: BaraBlod_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 48
+        width: 3
+        height: 25
+      spriteId: 9ff1d11b64ca06c479cc6a352a491637
+    - name: BaraBlod_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 40
+        width: 3
+        height: 33
+      spriteId: b985cc5f56380cc43bd5154aead0f7a9
+    - name: BaraBlod_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 35
+        width: 3
+        height: 38
+      spriteId: 3c1402a7bcf5f41468529e4e82b8cb22
+    - name: BaraBlod_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 30
+        width: 3
+        height: 43
+      spriteId: e1965c3bb7006a347bc7239a09e45523
+    - name: BaraBlod_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 49
+        y: 17
+        width: 5
+        height: 56
+      spriteId: d86990e957669dd4b9aecde2ed5ff1ff
+    - name: BaraBlod_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 49
+        y: 7
+        width: 8
+        height: 66
+      spriteId: ccaf815f7832adc4c91120568cd2bc13
+    - name: BaraBlod_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 49
+        y: 0
+        width: 9
+        height: 73
+      spriteId: 535222062350cc24cbe4ec2e96ec0582
+    - name: BaraBlod_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 49
+        y: 0
+        width: 9
+        height: 73
+      spriteId: a0c068c2e61b0594096f19d6f5e11c6f
+    - name: BaraBlod_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 49
+        y: 0
+        width: 9
+        height: 73
+      spriteId: aa139bbd6b1ac0b4a8d5f30d3db91ecf
+    - name: BaraBlod_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 54
+        width: 3
+        height: 19
+      spriteId: 05ca368c869d2904c8bbb3f08498113d
+    - name: BaraBlod_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 48
+        width: 3
+        height: 25
+      spriteId: 31cd255260e2d3840a67ebd824091f66
+    - name: BaraBlod_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 40
+        width: 3
+        height: 33
+      spriteId: ba895ef0f98ed9e41a9d88ca84d7b5d1
+    - name: BaraBlod_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 34
+        width: 3
+        height: 39
+      spriteId: ff4555d1863b8d441b0e4a4a903ceb75
+    - name: BaraBlod_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 31
+        width: 3
+        height: 42
+      spriteId: 2fb12e5547d95ce4ba437d37c4c4e7f9
+    - name: BaraBlod_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 50
+        y: 17
+        width: 4
+        height: 56
+      spriteId: 8d8827857bacb7f4ebd22c8beab12a37
+    - name: BaraBlod_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 50
+        y: 7
+        width: 8
+        height: 66
+      spriteId: de1f6068c8d848c44989bd9c6ac54c71
+    - name: BaraBlod_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 50
+        y: 0
+        width: 9
+        height: 73
+      spriteId: f38c0e6d1b794be4eb349156620fe652
+    - name: BaraBlod_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 50
+        y: 0
+        width: 9
+        height: 73
+      spriteId: 112f6831d8962d14697b26c4d5bc5c87
+    - name: BaraBlod_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 0
+        width: 8
+        height: 73
+      spriteId: 0b6c68037e55ac640a6c7edb07a692f2
+    - name: BaraBlod_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 0
+        width: 8
+        height: 73
+      spriteId: e75600a00aa3615498150f876e259b10
+    - name: BaraBlod_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 54
+        width: 3
+        height: 19
+      spriteId: 557747799d8c2c041a6e3af3227cbc7a
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 109, y: 103}

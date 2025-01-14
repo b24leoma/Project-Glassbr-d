@@ -28,15 +28,13 @@ namespace Game
             yield return new WaitForSeconds(1.5f);
             for (int i = 0; i < demonList.Count; i++)
             {
-                yield return new WaitForSeconds(0.5f);
                 if (gridSystem.GetTile(demonList[i]).linkedEntity is Demon demon)
                 {
                     Vector2Int demonCurrentPos = demon.Position;
                     
                     //first round get random target, then closest
-                    //if (demon.target == null && gridSystem.humans.Count > 0) demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(1, gridSystem.humans.Count) - 1]).linkedEntity as Human;
-                    //else 
-                        GetClosestTarget(demon);
+                    if (demon.target == null && gridSystem.humans.Count > 0) demon.target = gridSystem.GetTile(gridSystem.humans[Random.Range(1, gridSystem.humans.Count) - 1]).linkedEntity as Human;
+                    else demon.target = GetClosestTarget(demon);
 
                     //Attack before move
                     if (demon.target != null && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
@@ -59,7 +57,7 @@ namespace Game
                         yield return StartCoroutine(battleController.Move(path, true, demon.target));
                         if (!skipDelay) yield return new WaitForSeconds(0.5f);
                     }
-
+                    
                     //Attack After move
                     if (demon.target != null && demon.target.CurrentHealth > 0 && gridSystem.GetGridDistance(demon.target.Position, demonCurrentPos) <=
                         demon.AttackRange)
@@ -69,6 +67,21 @@ namespace Game
                         if (gridSystem.humans.Count == 0) yield break;
                         GetClosestTarget(demon);
                         if(!skipDelay) yield return new WaitForSeconds(0.5f);
+                    }
+
+                    if (!demon.hasAttacked)
+                    {
+                        Human closest = GetClosestTarget(demon);
+                        if (gridSystem.GetGridDistance(demon.Position, closest.Position) <=
+                            demon.AttackRange)
+                        {
+                            demon.target = closest;
+                           demon.SetAttacking(true);
+                            battleController.Attack(demon, demon.target);
+                            if (gridSystem.humans.Count == 0) yield break;
+                            GetClosestTarget(demon);
+                            if(!skipDelay) yield return new WaitForSeconds(0.5f);
+                        }
                     }
                 }
             }
@@ -89,17 +102,20 @@ namespace Game
             if (gridSystem.humans.Count != 0) battleController.EndTurn();
         }
         
-        void GetClosestTarget(Demon demon)
+        Human GetClosestTarget(Demon demon)
         {
+            Human target = null;
             int distance = 999;
             for (int i = 0; i < gridSystem.humans.Count; i++)
             {
                 if (gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]) < distance)
                 {
                     distance = gridSystem.GetGridDistance(demon.Position, gridSystem.humans[i]);
-                    demon.target = gridSystem.GetTile(gridSystem.humans[i]).linkedEntity as Human;
+                    target = gridSystem.GetTile(gridSystem.humans[i]).linkedEntity as Human;
                 }
             }
+
+            return target;
         }
         
         private void ShuffleDemonList()
