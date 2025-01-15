@@ -7179,6 +7179,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  delayBell: 0
   stopAfterSentence: 05000000060000000700000008000000
   canStopSentence: 0
   currentSentence: 0
