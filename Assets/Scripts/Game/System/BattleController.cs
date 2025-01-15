@@ -448,7 +448,7 @@ namespace Game
             
             foreach (var entity in characters)
             {
-                if (entity is Human human && human.CurrentHealth <= 0)
+                if (entity is Human { CurrentHealth: > 0 } human)
                 {
                   human.NightLightToggle(toNight);
                 }
