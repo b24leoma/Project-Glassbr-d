@@ -447,11 +447,12 @@ namespace Game
         public void ToggleNightLightOnHumans(bool toNight)
         {
             
-            foreach (var entity in characters)
+            foreach (Vector2Int entity in gridSystem.humans)
             {
-                if (entity is Human { CurrentHealth: > 0 } human)
+                Human h = gridSystem.GetTile(entity).linkedEntity as Human;
+                if (h != null && h.CurrentHealth > 0)
                 {
-                  human.NightLightToggle(toNight);
+                    h.NightLightToggle(toNight);
                 }
             }
         }
