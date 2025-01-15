@@ -205,7 +205,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator Bells()
     {
-        yield return new WaitForSeconds(delayBell);
+        yield return new WaitForSeconds(delayBell + 1.5f);
         FMODManager.instance.OneShot("Bell");
     }
     
