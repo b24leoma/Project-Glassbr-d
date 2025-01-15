@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using Game;
 using UnityEngine;
@@ -118,12 +119,11 @@ public class LightFader : MonoBehaviour
       CurrentTween = DOTween.To(() => light2D.intensity, x => light2D.intensity = x, targetIntensity, fadeDuration)
           .SetEase(ease);
     }
-    
-    
-    
-    
 
 
-
-    
+    public void OnDestroy()
+    {
+        CurrentTween.Kill();
+        DOTween.Kill(this);
+    }
 }

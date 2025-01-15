@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -54,6 +55,7 @@ namespace Game
 
         public void NightLightToggle(bool toNight)
         {
+            if (CurrentHealth <= 0) return;
             switch (toNight )
             {
                 case true:
@@ -65,6 +67,11 @@ namespace Game
             }
             
         }
-            
+
+
+        public void OnDestroy()
+        {
+            DOTween.Kill(this);
+        }
     }
 }
