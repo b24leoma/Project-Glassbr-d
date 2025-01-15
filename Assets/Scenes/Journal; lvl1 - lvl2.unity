@@ -505,6 +505,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  delayBell: 0
   stopAfterSentence: 
   canStopSentence: 1
   currentSentence: 0
@@ -644,6 +645,7 @@ GameObject:
   - component: {fileID: 614981599}
   - component: {fileID: 614981598}
   - component: {fileID: 614981597}
+  - component: {fileID: 614981604}
   m_Layer: 5
   m_Name: HistoryImage
   m_TagString: Untagged
@@ -833,6 +835,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614981595}
   m_CullTransparentMesh: 1
+--- !u!95 &614981604
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614981595}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 685c7a0d2d5f13041a7b6c19ffb3fac0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &617356669
 GameObject:
   m_ObjectHideFlags: 0
