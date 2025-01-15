@@ -136,6 +136,11 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(0.04f);
         }
 
+        if (stopAfterSentence.Contains(currentSentence))
+        {
+            onDialoguePause.Invoke();
+        }
+
         typingPaused = true;
         sentenceIsStopped = false;
         _currentCoroutine = null;
