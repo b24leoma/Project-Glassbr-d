@@ -198,7 +198,8 @@ namespace Game
         {
             if (isTutorial && attacker.isHuman && !tutorialManager.TutorialAttackTime()) return;
             if (attacker.isHuman && attacker.GetComponent<Human>().isDefending) return;
-            if (attacker.isHuman && attacker.IsMelee && attacker.hasAttacked ) return;
+            if (attacker.isHuman && attacker.IsMelee && attacker.hasAttacked) return;
+            if (target == null) return;
             
            
             if (!attacker.IsMelee && _attackvoids == 0 ||
@@ -446,11 +447,12 @@ namespace Game
         public void ToggleNightLightOnHumans(bool toNight)
         {
             
-            foreach (var entity in characters)
+            foreach (Vector2Int entity in gridSystem.humans)
             {
-                if (entity is Human { CurrentHealth: > 0 } human)
+                Human h = gridSystem.GetTile(entity).linkedEntity as Human;
+                if (h != null && h.CurrentHealth > 0)
                 {
-                  human.NightLightToggle(toNight);
+                    h.NightLightToggle(toNight);
                 }
             }
         }
