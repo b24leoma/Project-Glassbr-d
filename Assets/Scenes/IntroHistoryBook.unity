@@ -2142,7 +2142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5471129214041838001, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
       propertyPath: m_text
-      value: Quit to Main Menu
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 5471129214041838001, guid: 1487d56805d36f845b15c85c81537e5a, type: 3}
       propertyPath: m_fontSize
