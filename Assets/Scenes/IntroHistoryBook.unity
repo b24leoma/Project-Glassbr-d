@@ -357,6 +357,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  delayBell: 0
   stopAfterSentence: 
   canStopSentence: 1
   currentSentence: 0
@@ -1123,11 +1124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 2800000, guid: b85b415b4c48bb54faecd7780a927b3b, type: 3}
-  - {fileID: 2800000, guid: 0e2bfdde124fdf941a22b7da64db8ddf, type: 3}
-  - {fileID: 2800000, guid: f05160145825fad43b180aea8f6fd27e, type: 3}
-  - {fileID: 2800000, guid: 20eb03ea5ee13e849acaf392871c0ebe, type: 3}
-  - {fileID: 2800000, guid: 0444f0af71ca16a40a4c4bcff907f17d, type: 3}
+  - {fileID: 2800000, guid: 1d755deee90c0904096ed30fc9c5812a, type: 3}
+  - {fileID: 2800000, guid: f916bc9a18f627e4abdfb1f6661b9fb5, type: 3}
+  - {fileID: 2800000, guid: 07ff958463a01cc409bdbb20ebbb03e9, type: 3}
+  - {fileID: 2800000, guid: 1ff1fe987015e024a95dad0a3c937f0f, type: 3}
+  - {fileID: 2800000, guid: 04b4abced32951f4e81d17cd676f4dde, type: 3}
 --- !u!114 &1053591169
 MonoBehaviour:
   m_ObjectHideFlags: 0
