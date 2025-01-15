@@ -44,9 +44,23 @@ public class MoveUIElementToggle : MonoBehaviour
 
     private Vector2 _middleOfScreen;
     private bool _isFirstMove = true;
+    private bool firstVines;
+    private Animator c1a;
+    private Animator c1b;
+    private Animator c2a;
+    private Animator c2b;
+    private Animator c3a;
+    private Animator c3b;
 
     private void OnEnable()
     {
+        firstVines = true;
+        c1a = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+        c1b = transform.GetChild(0).GetChild(1).GetComponent<Animator>();
+        c2a = transform.GetChild(1).GetChild(0).GetComponent<Animator>();
+        c2b = transform.GetChild(1).GetChild(1).GetComponent<Animator>();
+        c3a = transform.GetChild(2).GetChild(0).GetComponent<Animator>();
+        c3b = transform.GetChild(2).GetChild(1).GetComponent<Animator>();
         if (targetObject == null)
         {
             targetObject = gameObject;
@@ -82,36 +96,37 @@ public class MoveUIElementToggle : MonoBehaviour
         targetPosition = _middleOfScreen;
     }
 
-    private void MoveToPosition(Vector2 position)
+    public void ActivateSelection(int choice)
     {
-        float durationVar = teleportOnStart && _isFirstMove ? 0 : duration;
-
-        targetObject.GetComponent<RectTransform>().DOAnchorPos(position, durationVar).SetEase(easeType).OnComplete(() => MoveCompleted(position));
-        _isFirstMove = false;
-    }
-
-    
-
-    public void ToggleMove()
-    {
-        Vector2 currentPosition = targetObject.GetComponent<RectTransform>().anchoredPosition;
-
-        MoveToPosition(currentPosition == targetPosition ? startPosition : targetPosition);
-    }
-
-    
-    
-    public void TargetPositionIsThis(Vector2 moveHere)
-    {
-          
-        
-        targetPosition = moveHere;
-        
-
-        if (shouldMove)
+        switch (choice)
         {
-            MoveToPosition(targetPosition);
+            case 0:
+                c1a.SetBool("FadeIn", true);
+                c1b.SetBool("FadeIn", true);
+                c2a.SetBool("FadeIn", false);
+                c2b.SetBool("FadeIn", false);
+                c3a.SetBool("FadeIn", false);
+                c3b.SetBool("FadeIn", false);
+                break;
+            case 1:
+                c1a.SetBool("FadeIn", false);
+                c1b.SetBool("FadeIn", false);
+                c2a.SetBool("FadeIn", true);
+                c2b.SetBool("FadeIn", true);
+                c3a.SetBool("FadeIn", false);
+                c3b.SetBool("FadeIn", false);
+                break;
+            case 2:
+                c1a.SetBool("FadeIn", false);
+                c1b.SetBool("FadeIn", false);
+                c2a.SetBool("FadeIn", false);
+                c2b.SetBool("FadeIn", false);
+                c3a.SetBool("FadeIn", true);
+                c3b.SetBool("FadeIn", true);
+                break;
         }
+        float durationVar = 0;
+        _isFirstMove = false;
     }
 
     public void InformationBroker(GameObject sentObject)
@@ -120,16 +135,16 @@ public class MoveUIElementToggle : MonoBehaviour
         RectTransform sentRect = sentObject.GetComponent<RectTransform>();
         
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(targetCanvas.worldCamera, sentRect.position);
+    }
 
-        
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPoint, targetCanvas.worldCamera, out var localPoint))
-        {
-            TargetPositionIsThis(localPoint);
-        }
-        else
-        {
-            Debug.LogError("Failed to convert screen point to local point");
-        }
+    public void FadeThemOut()
+    {
+        c1a.SetBool("FadeIn", false);
+        c1b.SetBool("FadeIn", false);
+        c2a.SetBool("FadeIn", false);
+        c2b.SetBool("FadeIn", false);
+        c3a.SetBool("FadeIn", false);
+        c3b.SetBool("FadeIn", false);
     }
     
 
@@ -147,10 +162,8 @@ public class MoveUIElementToggle : MonoBehaviour
     
     private void MoveCompleted(Vector2 position)
     {
-        if (position == targetPosition)
-            onMovedToTarget.Invoke();
-        else
-            onMovedToStart.Invoke();
+        if (position == targetPosition) onMovedToTarget.Invoke();
+        else onMovedToStart.Invoke();
     }
 
   
