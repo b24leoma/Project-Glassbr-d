@@ -14,9 +14,6 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public UnityEvent whenComplete;
     public int delayBell;
-
-    
-    
     
     
     // För dialogue kontroll
@@ -48,23 +45,12 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
     {
         if (sentenceIsStopped) return;
-        if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
-        {
-
-            sentenceIsStopped = true;
-            alwaysStop = false;
-            Debug.Log(
-                "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
-            onDialoguePause.Invoke();
-            return;
-        }
 
 
         if (sentences.Count == 0)
@@ -82,15 +68,7 @@ public class DialogueManager : MonoBehaviour
         if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
         dialogueField.text = "";
         _currentCoroutine = StartCoroutine(TypeSentence(currentSentenceString));
-       if (currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
-       {
-
-           sentenceIsStopped = true;
-           alwaysStop = false;
-           Debug.Log(
-               "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
-           onDialoguePause.Invoke();
-       }
+        sentenceIsStopped = true;
     }
 
     private IEnumerator TypeSentence(string sentence)
@@ -198,7 +176,17 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-        
+            if (sentenceIsStopped && currentSentence >= 0 && canStopSentence && stopAfterSentence.Contains(currentSentence) || alwaysStop)
+            {
+
+                sentenceIsStopped = true;
+                alwaysStop = false;
+                Debug.Log(
+                    "Dialogue paused... please start it with UnpauseDialogue in DialogueManagerScript (Works with Unity Events)");
+                onDialoguePause.Invoke();
+                //return;
+            }
+            
             StopCoroutine(_currentCoroutine);
             _currentCoroutine = null;
             dialogueField.text = currentSentenceString;

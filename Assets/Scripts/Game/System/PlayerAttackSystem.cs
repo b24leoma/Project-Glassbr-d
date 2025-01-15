@@ -206,15 +206,17 @@ namespace Game
                 gridSystem.GetTile(pos).linkedEntity.GetComponent<Demon>().DisplayAttackingImage(false, Color.white);
             }
             
-            if (isActing)
+            if (actingEntity != null)
             {
                 if (actingEntity.hasAttacked)
                 {
+                    hoveredEntity = null;
                     isActing = false;
+                    selectHighlight.position = Vector3.down * 100;
                     pathLine.positionCount = 1;
                 }
                 
-                selectHighlight.position = actingEntity.transform.position;
+                //selectHighlight.position = actingEntity.transform.position;
                 
                 //MOVE PATH IF WITHIN RANGE
                 if (actingEntity.moveDistanceRemaining > 0 &&  !actingEntity.isMoving && !actingEntity.isDefending)
@@ -441,7 +443,6 @@ namespace Game
 
         public void ToDefendingMode()
         {
-            Debug.Log(actingEntity);
             if (actingEntity != null)
             {
                 actingEntity.isDefending = true;
