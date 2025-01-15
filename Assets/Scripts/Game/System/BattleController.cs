@@ -198,7 +198,8 @@ namespace Game
         {
             if (isTutorial && attacker.isHuman && !tutorialManager.TutorialAttackTime()) return;
             if (attacker.isHuman && attacker.GetComponent<Human>().isDefending) return;
-            if (attacker.isHuman && attacker.IsMelee && attacker.hasAttacked ) return;
+            if (attacker.isHuman && attacker.IsMelee && attacker.hasAttacked) return;
+            if (target == null) return;
             
            
             if (!attacker.IsMelee && _attackvoids == 0 ||
