@@ -40,6 +40,10 @@ public class TutorialManager : MonoBehaviour
     {
         return dialogueManager.currentSentence == introduceBushOnSentence;
     }
+    public bool TutorialEndTurnTime()
+    {
+        return dialogueManager.currentSentence == introduceEndTurnOnSentence;
+    }
     
     public void Moving()
     {

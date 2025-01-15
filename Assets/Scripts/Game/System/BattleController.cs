@@ -132,7 +132,8 @@ namespace Game
                     entity.GetComponent<Human>().isDefending || 
                     (isTutorial && ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
                                     (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
-                                    (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot))))
+                                    (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot) ||
+                                    tutorialManager.TutorialEndTurnTime())))
                 {
                     yield break;
                 }
