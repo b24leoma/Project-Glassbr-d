@@ -289,7 +289,6 @@ namespace Game
                             {
                                 if (hoveredTile == pos)
                                 {
-                                    pathLine.positionCount = 1;
                                     if (gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
                                             hoveredTile) <= actingEntity.AttackRange)
                                     {
@@ -297,6 +296,7 @@ namespace Game
                                     }
                                     else
                                     {
+                                        pathLine.positionCount = 1;
                                         Vector2Int[] path = gridSystem.PathFindValidPath(actingEntity.Position, hoveredTile,
                                             actingEntity.moveDistanceRemaining);
                                         foreach (Vector2Int p in path)
