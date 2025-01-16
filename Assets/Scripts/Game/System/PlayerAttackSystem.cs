@@ -74,6 +74,7 @@ namespace Game
                                 pathLine.positionCount = 1;
                                 SetPathLinePos(0, hoveredTile);
                                 selectHighlight.position = actingEntity.transform.position;
+                                selectHighlight.GetComponent<SpriteRenderer>().color = Color.white;
                             }
                             else // DESELECTS ACTOR
                             {
@@ -150,6 +151,7 @@ namespace Game
                             pathLine.positionCount = 1;
                             if (hoveredEntity != null) actingEntity = hoveredEntity.GetComponent<Human>();
                             selectHighlight.position = actingEntity.transform.position;
+                            selectHighlight.GetComponent<SpriteRenderer>().color = Color.white;
                             SetPathLinePos(0, actingEntity.Position);
                         }
                     }
@@ -215,8 +217,6 @@ namespace Game
                     selectHighlight.position = Vector3.down * 100;
                     pathLine.positionCount = 1;
                 }
-                
-                //selectHighlight.position = actingEntity.transform.position;
                 
                 //MOVE PATH IF WITHIN RANGE
                 if (actingEntity.moveDistanceRemaining > 0 &&  !actingEntity.isMoving && !actingEntity.isDefending)
@@ -406,6 +406,7 @@ namespace Game
 
         public void EndTurn()
         {
+            actingEntity = null;
             isActing = false;
             selectHighlight.position = Vector3.down * 100;
             isPlayerTurn = false;

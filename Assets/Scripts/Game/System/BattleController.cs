@@ -162,6 +162,7 @@ namespace Game
                     }
                     entity.MoveToTile(pos[i]);
                     selectHighlight.position = entity.transform.position;
+                    selectHighlight.GetComponent<SpriteRenderer>().color = entity.isHuman ? Color.white : Color.red;
                     SFX.MOVE(entity);
                     entity.transform.DOShakeRotation(0.2f, (1 + pos.Length)).SetLoops(1, LoopType.Yoyo).SetEase(Ease.OutBounce);
                     if (gridSystem.GetTile(pos[i]).hidingSpot)
@@ -219,7 +220,11 @@ namespace Game
                return;
             }
 
-            if (!attacker.isHuman) selectHighlight.position = attacker.transform.position;
+            if (!attacker.isHuman)
+            {
+                selectHighlight.position = attacker.transform.position;
+                selectHighlight.GetComponent<SpriteRenderer>().color = Color.red;
+            }
             Tile tile = gridSystem.GetTile(target.Position);
             int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
             if (target.isHuman && target.GetComponent<Human>().isDefending) damage = Mathf.RoundToInt(damage * 0.95f);
@@ -333,17 +338,19 @@ namespace Game
 
         public void EndTurn()
         {
-            if (gridSystem.humans.Count <= 0 || gridSystem.humans.Count <= 0) return;
+            if (gridSystem.humans.Count <= 0 || _attackvoids != 0) return;
+            foreach (Vector2Int pos in gridSystem.humans)
+            {
+                if (gridSystem.GetTile(pos).linkedEntity.GetComponent<Human>().isMoving) return;
+            }
             selectHighlight.position = Vector3.down * 100;
             isPlayer1Turn = !isPlayer1Turn;
             if (isPlayer1Turn)
             {
-                selectHighlight.GetComponent<SpriteRenderer>().color = Color.white;
                 Player1TurnStart?.Invoke();
             }
             else
             {
-                selectHighlight.GetComponent<SpriteRenderer>().color = Color.red;
                 Player2TurnStart?.Invoke();
             }
         }
