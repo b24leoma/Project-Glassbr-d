@@ -294,6 +294,9 @@ namespace Game
                     {
                         GameDone?.Invoke();
                         uiStates.TogglePanel(0);
+                        UpdateCharacterDisplay(false, null, false);
+                        GetComponent<PlayerAttackSystem>().SetTutorialPaused(true);
+                        return;
                         
                     }
                 }
@@ -308,6 +311,9 @@ namespace Game
                         }
                         GameDone?.Invoke();
                         uiStates.TogglePanel(1);
+                        UpdateCharacterDisplay(false, null, false);
+                        GetComponent<PlayerAttackSystem>().SetTutorialPaused(true);
+                        return;
                     }
                 }
                 UpdateCharacterDisplay(true, target, false);
