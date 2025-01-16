@@ -339,6 +339,10 @@ namespace Game
         public void EndTurn()
         {
             if (gridSystem.humans.Count <= 0 || gridSystem.humans.Count <= 0) return;
+            foreach (Vector2Int pos in gridSystem.humans)
+            {
+                if (gridSystem.GetTile(pos).linkedEntity.GetComponent<Human>().isMoving) return;
+            }
             selectHighlight.position = Vector3.down * 100;
             isPlayer1Turn = !isPlayer1Turn;
             if (isPlayer1Turn)
