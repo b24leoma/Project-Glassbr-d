@@ -294,6 +294,7 @@ namespace Game
                     {
                         GameDone?.Invoke();
                         uiStates.TogglePanel(0);
+                        
                     }
                 }
                 else
@@ -338,7 +339,7 @@ namespace Game
 
         public void EndTurn()
         {
-            if (gridSystem.humans.Count <= 0 || _attackvoids != 0) return;
+            if (gridSystem.demons.Count <= 0 || gridSystem.humans.Count <= 0 || _attackvoids != 0) return;
             foreach (Vector2Int pos in gridSystem.humans)
             {
                 if (gridSystem.GetTile(pos).linkedEntity.GetComponent<Human>().isMoving) return;
