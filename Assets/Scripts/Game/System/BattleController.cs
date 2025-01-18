@@ -53,8 +53,7 @@ namespace Game
         private TutorialManager tutorialManager;
         private NameSystem nameSystem;
         private List<string> deadHumans;
-
-        private int _attackvoids;
+        
 
         
         void Start()
@@ -202,24 +201,26 @@ namespace Game
             if (attacker.isHuman && attacker.IsMelee && attacker.hasAttacked) return;
             if (target == null) return;
             
-           
-            if (!attacker.IsMelee && _attackvoids == 0 ||
-                attacker.IsMelee )
+            switch (attacker.Type)
             {
-                attacker.SetAttacking(true);
-                if (target.Position.x < attacker.Position.x && !attacker.Flipped) attacker.Flip();
-                if (target.Position.x > attacker.Position.x && attacker.Flipped) attacker.Flip();
+                case Entity.EntityType.DemonArcher :
+                    SetAttackingAndFlip(attacker, target);
+                    StartCoroutine( ShootArrowAfterDelay(attacker, target, 0.3f));
+                    break;
+                case Entity.EntityType.HumanArcher :
+                    SetAttackingAndFlip(attacker, target);
+                    StartCoroutine( ShootArrowAfterDelay(attacker, target, 0.3f));
+                    break;
+                
+                default:
+                    SetAttackingAndFlip(attacker, target); AttackLogic(attacker, target); break;
             }
+            
+            //MoveDone?.Invoke();
+        }
 
-
-            if (!attacker.IsMelee && _attackvoids == 0)
-            {
-               StartCoroutine( ShootArrowAfterDelay(attacker, target, 0.3f));
-               StartCoroutine( DelayAttackLogic(attacker, target, 0.55f));
-               
-               return;
-            }
-
+        private void AttackLogic(Entity attacker, Entity target)
+        {
             if (!attacker.isHuman)
             {
                 DemonHighlightEntity(attacker);
@@ -264,8 +265,13 @@ namespace Game
             {
                 AllAttacked();
             }
-            //MoveDone?.Invoke();
-            _attackvoids = 0;
+        }
+
+        private static void SetAttackingAndFlip(Entity attacker, Entity target)
+        {
+            attacker.SetAttacking(true);
+            if (target.Position.x < attacker.Position.x && !attacker.Flipped) attacker.Flip();
+            if (target.Position.x > attacker.Position.x && attacker.Flipped) attacker.Flip();
         }
 
         private void DemonHighlightEntity(Entity attacker)
@@ -420,7 +426,7 @@ namespace Game
 
         public void EndTurn()
         {
-            if (gridSystem.demons.Count <= 0 || gridSystem.humans.Count <= 0 || _attackvoids != 0) return;
+            if (gridSystem.demons.Count <= 0 || gridSystem.humans.Count <= 0 ) return;
             foreach (Vector2Int pos in gridSystem.humans)
             {
                 if (gridSystem.GetTile(pos).linkedEntity.GetComponent<Human>().isMoving) return;
@@ -548,14 +554,14 @@ namespace Game
 
 
 
-        private static IEnumerator ShootArrowAfterDelay(Entity attacker, Entity target, float delay)
+        private  IEnumerator ShootArrowAfterDelay(Entity attacker, Entity target, float delay)
         {
             yield return new WaitForSeconds(delay); 
             FMODManager.instance.OneShot("BowString", attacker.Position );
             ShootArrow(attacker, target);  
         }
 
-        private static void ShootArrow(Entity attacker, Entity target)
+        private void ShootArrow(Entity attacker, Entity target)
         {
             var arrow = Instantiate(attacker.arrowPrefab, attacker.transform.position, Quaternion.identity);
             var arrowSound = arrow.GetComponent<ArrowSound>();
@@ -593,15 +599,14 @@ namespace Game
 
 
             arrow.transform.DOPath(arrowPath, duration, PathType.CatmullRom, PathMode.TopDown2D, gizmoColor: Color.red)
-                .SetEase(Ease.InOutSine).OnKill(() => Destroy(arrow));
+                .SetEase(Ease.InOutSine).OnKill(() =>
+                {
+                    AttackLogic(attacker, target);
+                    Destroy(arrow);
+                });
         }
         
-        private IEnumerator DelayAttackLogic(Entity attacker, Entity target, float delay)
-        {
-            _attackvoids++;
-            yield return new WaitForSeconds(delay);
-            Attack(attacker, target);
-        }
+        
 
 
         
