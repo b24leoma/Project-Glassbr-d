@@ -222,61 +222,33 @@ namespace Game
 
             if (!attacker.isHuman)
             {
-                selectHighlight.position = attacker.transform.position;
-                selectHighlight.GetComponent<SpriteRenderer>().color = Color.red;
+                DemonHighlightEntity(attacker);
             }
-            Tile tile = gridSystem.GetTile(target.Position);
-            int  damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
+            var tile = DoDamage(attacker, target, out var damage);
             if (target.isHuman && target.GetComponent<Human>().isDefending) damage = Mathf.RoundToInt(damage * 0.95f);
             DamageNumber num;
             if (Random.Range(1, 100) <= attacker.MissChance)
             {
-                // ---MISS---
-                num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
-                    .GetComponent<DamageNumber>();
-                num.SetDamage($"MISS");
-                damage = 0;
-                FMODManager.instance.OneShot("Miss", target.transform.position);
+                damage = MissDamageUIUpdate(target);
             }
             else
             {
                 Vector3 targetPos = target.transform.position;
                 if (Random.Range(1, 100) <= attacker.CritChance)
                 {
-                    // ---CRIT---
-                    damage = attacker.MaxDamage + 10;
-                    if (target.isHuman && target.GetComponent<Human>().isDefending) damage = Mathf.RoundToInt(damage * 0.95f);
-                    num = Instantiate(damageNumbers, targetPos + Vector3.up * 1.25f, quaternion.identity)
-                        .GetComponent<DamageNumber>();
-                    num.SetDamage($"CRITICAL HIT");
+                    damage = CritDamageUIUpdate(attacker, target, targetPos);
                 }
 
                 if (tile.damageReductionPercent > 0)
                 {
-                    // ---REDUCTION---
-                    float reduction = 1 - tile.damageReductionPercent / 100f;
-                    damage = Mathf.RoundToInt(damage * reduction);
-                    num = Instantiate(damageNumbers, targetPos, quaternion.identity)
-                        .GetComponent<DamageNumber>();
-                    num.SetDamage($"-{damage}");
-                    num.SetSize(5.5f);
-
-                    num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.65f, quaternion.identity)
-                        .GetComponent<DamageNumber>();
-                    num.SetDamage($"{tile.damageReductionPercent}% reduction");
-                    num.SetSize(4.5f);
+                    damage = ReducedDamageUIUpdate(tile, damage, targetPos);
                 }
                 else
                 {
-                    // ---NORMAL ATTACK---
-                    num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
-                    num.SetDamage($"-{damage}");
-                    num.SetSize(5.5f);
+                    NormalDamageUIUpdate(targetPos, damage);
                 }
 
-                target.TakeDamage(damage);
-                if (target.isHuman) target.GetComponent<Human>().isDefending = false;
-                PortraitAnim(displayPortrait, "DMG");
+                DamageTarget(target, damage);
             }
 
             UpdateCharacterDisplay(true, target, false);
@@ -285,62 +257,165 @@ namespace Game
             if (isTutorial && attacker.isHuman) tutorialManager.Attacking();
             if (target.CurrentHealth <= 0 && damage > 0)
             {
-                target.TakeDamage(target.CurrentHealth);
-                if (target.isHuman)
-                {
-                    gridSystem.humans.Remove(target.Position);
-                    deadHumans.Add(target.Name);
-                    if (gridSystem.humans.Count == 0)
-                    {
-                        GameDone?.Invoke();
-                        uiStates.TogglePanel(0);
-                        UpdateCharacterDisplay(false, null, false);
-                        GetComponent<PlayerAttackSystem>().SetTutorialPaused(true);
-                        return;
-                        
-                    }
-                }
-                else
-                {
-                    gridSystem.demons.Remove(target.Position);
-                    if (gridSystem.demons.Count == 0)
-                    {
-                        foreach (string namn in deadHumans)
-                        {
-                            nameSystem.Kill(namn);
-                        }
-                        GameDone?.Invoke();
-                        uiStates.TogglePanel(1);
-                        UpdateCharacterDisplay(false, null, false);
-                        GetComponent<PlayerAttackSystem>().SetTutorialPaused(true);
-                        return;
-                    }
-                }
-                UpdateCharacterDisplay(true, target, false);
-                PortraitAnim(displayPortrait, "DEATH");
-                target.Kill();
+                if (IfTargetDied(target)) return;
             }
 
             if (attacker.isHuman)
             {
-                selectHighlight.position = Vector3.down * 100;
-                bool allAttacked = true;
-                foreach (Vector2Int humanPos in gridSystem.humans)
-                {
-                    if (!gridSystem.GetTile(humanPos).linkedEntity.hasAttacked)
-                    {
-                        allAttacked = false;
-                    }
-                }
-
-                if (allAttacked)
-                {
-                    isPlayer1Turn = false;
-                    Player2TurnStart?.Invoke();
-                }
+                AllAttacked();
             }
             //MoveDone?.Invoke();
             _attackvoids = 0;
+        }
+
+        private void DemonHighlightEntity(Entity attacker)
+        {
+            selectHighlight.position = attacker.transform.position;
+            selectHighlight.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+
+        private Tile DoDamage(Entity attacker, Entity target, out int damage)
+        {
+            Tile tile = gridSystem.GetTile(target.Position);
+            damage = Random.Range(attacker.MinDamage, attacker.MaxDamage);
+            return tile;
+        }
+
+        private int MissDamageUIUpdate(Entity target)
+        {
+            DamageNumber num;
+            int damage;
+            // ---MISS---
+            num = Instantiate(damageNumbers, target.transform.position, quaternion.identity)
+                .GetComponent<DamageNumber>();
+            num.SetDamage($"MISS");
+            damage = 0;
+            FMODManager.instance.OneShot("Miss", target.transform.position);
+            return damage;
+        }
+
+        private int CritDamageUIUpdate(Entity attacker, Entity target, Vector3 targetPos)
+        {
+            int damage;
+            DamageNumber num;
+            // ---CRIT---
+            damage = attacker.MaxDamage + 10;
+            if (target.isHuman && target.GetComponent<Human>().isDefending) damage = Mathf.RoundToInt(damage * 0.95f);
+            num = Instantiate(damageNumbers, targetPos + Vector3.up * 1.25f, quaternion.identity)
+                .GetComponent<DamageNumber>();
+            num.SetDamage($"CRITICAL HIT");
+            return damage;
+        }
+
+        private int ReducedDamageUIUpdate(Tile tile, int damage, Vector3 targetPos)
+        {
+            DamageNumber num;
+            // ---REDUCTION---
+            float reduction = 1 - tile.damageReductionPercent / 100f;
+            damage = Mathf.RoundToInt(damage * reduction);
+            num = Instantiate(damageNumbers, targetPos, quaternion.identity)
+                .GetComponent<DamageNumber>();
+            num.SetDamage($"-{damage}");
+            num.SetSize(5.5f);
+
+            num = Instantiate(damageNumbers, targetPos + Vector3.down * 0.65f, quaternion.identity)
+                .GetComponent<DamageNumber>();
+            num.SetDamage($"{tile.damageReductionPercent}% reduction");
+            num.SetSize(4.5f);
+            return damage;
+        }
+
+        private void NormalDamageUIUpdate(Vector3 targetPos, int damage)
+        {
+            DamageNumber num;
+            // ---NORMAL ATTACK---
+            num = Instantiate(damageNumbers, targetPos, quaternion.identity).GetComponent<DamageNumber>();
+            num.SetDamage($"-{damage}");
+            num.SetSize(5.5f);
+        }
+
+        private void DamageTarget(Entity target, int damage)
+        {
+            target.TakeDamage(damage);
+            if (target.isHuman) target.GetComponent<Human>().isDefending = false;
+            PortraitAnim(displayPortrait, "DMG");
+        }
+
+        private bool IfTargetDied(Entity target)
+        {
+            target.TakeDamage(target.CurrentHealth);
+            if (target.isHuman)
+            {
+                gridSystem.humans.Remove(target.Position);
+                deadHumans.Add(target.Name);
+                if (LossCheck()) return true;
+            }
+            else
+            {
+                gridSystem.demons.Remove(target.Position);
+                if (WinCheck()) return true;
+            }
+            UpdateUIOnDeath(target);
+            target.Kill();
+            return false;
+        }
+
+        private void UpdateUIOnDeath(Entity target)
+        {
+            UpdateCharacterDisplay(true, target, false);
+            PortraitAnim(displayPortrait, "DEATH");
+        }
+
+        private bool LossCheck()
+        {
+            if (gridSystem.humans.Count == 0)
+            {
+                GameDone?.Invoke();
+                uiStates.TogglePanel(0);
+                UpdateCharacterDisplay(false, null, false);
+                GetComponent<PlayerAttackSystem>().SetTutorialPaused(true);
+                return true;
+                        
+            }
+
+            return false;
+        }
+
+        private bool WinCheck()
+        {
+            if (gridSystem.demons.Count == 0)
+            {
+                foreach (string namn in deadHumans)
+                {
+                    nameSystem.Kill(namn);
+                }
+                GameDone?.Invoke();
+                uiStates.TogglePanel(1);
+                UpdateCharacterDisplay(false, null, false);
+                GetComponent<PlayerAttackSystem>().SetTutorialPaused(true);
+                return true;
+            }
+
+            return false;
+        }
+
+        private void AllAttacked()
+        {
+            selectHighlight.position = Vector3.down * 100;
+            bool allAttacked = true;
+            foreach (Vector2Int humanPos in gridSystem.humans)
+            {
+                if (!gridSystem.GetTile(humanPos).linkedEntity.hasAttacked)
+                {
+                    allAttacked = false;
+                }
+            }
+
+            if (allAttacked)
+            {
+                isPlayer1Turn = false;
+                Player2TurnStart?.Invoke();
+            }
         }
 
         public void EndTurn()
