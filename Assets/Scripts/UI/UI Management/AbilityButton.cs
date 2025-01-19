@@ -1,17 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class AbilityButton : MonoBehaviour
+public class AbilityButton : UIVisualElement
 {
-
-    void Start()
+    protected override string target => "AbilityButton";
+    
+    protected override void OnClick(Button button)
     {
-        string input = gameObject.name;
-        string numberPart = input.Substring(7);
+        Debug.Log($"Ability button clicked: {button.name}");
+    }
 
-        int number = int.Parse(numberPart);
-        Debug.Log(number);
+    protected override void OnEnter(VisualElement uiElement)
+    {
+        Debug.Log($"Hovering over ability button: {uiElement.name}");
+    }
+
+    protected override void OnLeave(VisualElement uiElement)
+    {
+        Debug.Log($"Stopped hovering over ability button: {uiElement.name}");
     }
 
 }
