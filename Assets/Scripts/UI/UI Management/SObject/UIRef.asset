@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85acfd38ff5a27a4898a39bed50edf01, type: 3}
+  m_Name: UIRef
+  m_EditorClassIdentifier: 
+  UIPrefab: {fileID: 1574019498965522840, guid: efd1c652aac4ec448819ac15d98f1987, type: 3}
+  canvas: {fileID: 1415451045636540111, guid: efd1c652aac4ec448819ac15d98f1987, type: 3}
+  buttonList: {fileID: 11400000, guid: de27d46fe3d63024994b05662ee46282, type: 2}
+  sliderList: {fileID: 11400000, guid: 9926506d75757404a9d1106d3a6ea0bc, type: 2}
+  imageList: {fileID: 11400000, guid: 6a39675a5f3a3d540a401e5bac2f8e11, type: 2}
