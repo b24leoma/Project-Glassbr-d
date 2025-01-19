@@ -124,18 +124,22 @@ namespace Game
         {
             Entity entity = gridSystem.GetTile(pos[0]).linkedEntity;
             if (entity == null) yield break;
-            
+
             if (entity.isHuman)
             {
-                if (entity.hasAttacked ||
-                    entity.GetComponent<Human>().isDefending || 
-                    (isTutorial && ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
-                                    (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
-                                    (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot) ||
-                                    tutorialManager.TutorialEndTurnTime())))
+                UIManager.instance.PlayerUnitUI(entity);
+                if (entity.hasAttacked || entity.GetComponent<Human>().isDefending || (isTutorial &&
+                        ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
+                         (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
+                         (tutorialManager.TutorialBushTime() && !gridSystem.GetTile(pos[^1]).hidingSpot) ||
+                         tutorialManager.TutorialEndTurnTime())))
                 {
                     yield break;
                 }
+
+                
+                
+                
                 entity.GetComponent<Human>().SetMoving(true);
             }
             else

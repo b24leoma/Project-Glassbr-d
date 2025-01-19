@@ -1,16 +1,11 @@
-using System;
 using Game;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
     
-    
-    [SerializeField] private GameObject uiPrefab;
-    private GameObject ui;
 
     private void Awake()
     {
@@ -28,8 +23,28 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-                ui = Instantiate(uiPrefab);
+        
     }
+
+
+    public void PlayerUnitUI(Entity entity)
+    {
+        switch (entity.Type)
+        {
+            case Entity.EntityType.HumanArcher: break;
+            case Entity.EntityType.HumanSpearman: break;
+            case Entity.EntityType.HumanTank: break;
+           // case Entity.EntityType.HumanMage: MageUI(); break;
+            
+        }
+    }
+    
+    public void MageUI()
+    {
+        
+    }
+    
+    
 }
 
     

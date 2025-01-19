@@ -11,6 +11,7 @@ namespace Game
             HumanSpearman,
             HumanArcher,
             HumanTank, 
+           // HumanMage,
             DemonSwordsman,
             DemonTank,
             DemonArcher
