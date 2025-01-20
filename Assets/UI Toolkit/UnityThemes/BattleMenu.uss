@@ -13,3 +13,28 @@
     transition-duration: 100ms;
     -unity-background-image-tint-color: rgb(217, 217, 217);
 }
+
+.AbilityBar {
+    align-items: auto;
+}
+
+.DisplayBox {
+}
+
+.InfoText {
+    -unity-font-definition: initial;
+    -unity-font: url("project://database/Assets/Fonts/GermaniaOne-Regular.ttf?fileID=12800000&guid=725d2829d96c6a3468d852ef771d941e&type=3#GermaniaOne-Regular");
+    font-size: 30px;
+}
+
+.HealthBar {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    align-items: stretch;
+    -unity-font: url("project://database/Assets/Fonts/GermaniaOne-Regular.ttf?fileID=12800000&guid=725d2829d96c6a3468d852ef771d941e&type=3#GermaniaOne-Regular");
+    -unity-font-definition: initial;
+    font-size: 20px;
+    opacity: 1;
+}
