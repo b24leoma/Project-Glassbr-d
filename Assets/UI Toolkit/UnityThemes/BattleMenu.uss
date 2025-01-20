@@ -1,0 +1,15 @@
+.AbilityButton {
+}
+
+.AbilityButton:hover {
+    scale: 1.1 1.1;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+}
+
+.AbilityButton:active {
+    scale: 0.9 0.9;
+    transition-timing-function: ease-in-out;
+    transition-duration: 100ms;
+    -unity-background-image-tint-color: rgb(217, 217, 217);
+}

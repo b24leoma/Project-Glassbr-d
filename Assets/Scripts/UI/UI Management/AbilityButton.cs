@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class AbilityButton : UIVisualElement
 {
-    protected override string target => "AbilityButton";
+    protected override string targetClass => "AbilityButton";
     
     protected override void OnClick(Button button)
     {
