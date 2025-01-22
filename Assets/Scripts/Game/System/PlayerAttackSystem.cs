@@ -9,7 +9,6 @@ namespace Game
         [Header("Components")]
         [SerializeField]private GridSystem gridSystem;
         [Header("Assets")]
-        [SerializeField] private GameObject endTurnButton;
         [SerializeField] private LineRenderer pathLine;
         [SerializeField] private Transform selectHighlight;
         [SerializeField] private RectTransform InfoDisplay;
@@ -406,18 +405,19 @@ namespace Game
 
         public void EndTurn()
         {
+            UIManager.PlayerEndTurn();
             actingEntity = null;
             isActing = false;
             selectHighlight.position = Vector3.down * 100;
             isPlayerTurn = false;
             gridSystem.HighlightSquaresInRange(Vector2.zero, 50, Color.white);
-            endTurnButton.SetActive(false);
+            
         }
 
         public void StartTurn()
         {
             isPlayerTurn = true;
-            endTurnButton.SetActive(true);
+            UIManager.PlayerStartTurn();
             foreach (Vector2Int pos in gridSystem.humans)
             {
                 gridSystem.GetTile(pos).linkedEntity.GetComponent<Human>().isDefending = false;

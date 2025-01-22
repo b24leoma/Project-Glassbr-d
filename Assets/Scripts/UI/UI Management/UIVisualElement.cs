@@ -39,7 +39,16 @@ public abstract class UIVisualElement : MonoBehaviour
         }
     }
 
-    protected abstract void OnClick(Button button);
-    protected abstract void OnEnter(VisualElement uiElement);
-    protected abstract void OnLeave(VisualElement uiElement);
+    protected virtual void OnClick(Button button)
+    {
+        Debug.Log($"Button clicked: {targetClass} : {button.name}");
+    }
+    protected virtual void OnEnter(VisualElement uiElement)
+    {
+        Debug.Log($"Hovering over {targetClass} : {uiElement.name}");
+    }
+    protected virtual void OnLeave(VisualElement uiElement)
+    {
+        Debug.Log($"Stopped hovering over {targetClass} : {uiElement.name}");
+    }
 }

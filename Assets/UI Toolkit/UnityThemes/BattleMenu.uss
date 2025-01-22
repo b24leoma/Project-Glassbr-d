@@ -38,3 +38,6 @@
     font-size: 20px;
     opacity: 1;
 }
+
+.EndTurnButton {
+}

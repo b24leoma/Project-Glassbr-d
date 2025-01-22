@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using Game;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
     private UIDocument _uiDocument;
+    [SerializeField] private UIScripts uiScripts;
     
 
     private void Awake()
@@ -60,6 +63,7 @@ public class UIManager : MonoBehaviour
         if (uiElementList.Count == 0) return;
 
         DisableRayCastsOnHidden(uiElementList);
+        FindAllUIScripts();
     }
 
     private static void DisableRayCastsOnHidden(List<VisualElement> listOfTargets)
@@ -75,8 +79,35 @@ public class UIManager : MonoBehaviour
     {
         
     }
+
+
+
+    public static void PlayerEndTurn()
+    {
+        
+    }
+
+
+    public static void PlayerStartTurn()
+    {
+        
+    }
     
-    
+    public void FindAllUIScripts()
+    {
+        
+
+       
+        var assembly = Assembly.GetAssembly(typeof(UIVisualElement)); 
+        var types = assembly.GetTypes(); 
+        foreach (var type in types)
+        {
+            if (type.IsSubclassOf(typeof(UIVisualElement)) && !type.IsAbstract)
+            {
+              gameObject.AddComponent(type);
+            }
+        }
+    }
 }
 
     

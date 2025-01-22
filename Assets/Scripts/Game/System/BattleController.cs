@@ -127,7 +127,7 @@ namespace Game
 
             if (entity.isHuman)
             {
-                UIManager.instance.PlayerUnitUI(entity);
+                
                 if (entity.hasAttacked || entity.GetComponent<Human>().isDefending || (isTutorial &&
                         ((tutorialManager.TutorialMoveTime() && pos.Length < 2) ||
                          (tutorialManager.TutorialAttackTime() && !tryAttackAfter) ||
