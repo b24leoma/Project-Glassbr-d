@@ -405,7 +405,7 @@ namespace Game
 
         public void EndTurn()
         {
-            UIManager.PlayerEndTurn();
+            UIManager.WhenPlayerEndTurn();
             actingEntity = null;
             isActing = false;
             selectHighlight.position = Vector3.down * 100;
@@ -417,7 +417,7 @@ namespace Game
         public void StartTurn()
         {
             isPlayerTurn = true;
-            UIManager.PlayerStartTurn();
+            UIManager.WhenPlayerStartTurn();
             foreach (Vector2Int pos in gridSystem.humans)
             {
                 gridSystem.GetTile(pos).linkedEntity.GetComponent<Human>().isDefending = false;

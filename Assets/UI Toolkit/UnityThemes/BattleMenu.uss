@@ -14,11 +14,7 @@
     -unity-background-image-tint-color: rgb(217, 217, 217);
 }
 
-.AbilityBar {
-    align-items: auto;
-}
-
-.DisplayBox {
+.InfoBox {
 }
 
 .InfoText {
@@ -40,4 +36,23 @@
 }
 
 .EndTurnButton {
+}
+
+.CharPortrait {
+}
+
+.InfoBox {
+    opacity: 1;
+}
+
+.InfoBox.hidden {
+    opacity: 0;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.InfoBox.visible {
+    opacity: 1;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
 }

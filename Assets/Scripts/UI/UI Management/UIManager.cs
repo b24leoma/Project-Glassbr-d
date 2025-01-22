@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Reflection;
 using Game;
 using UnityEngine;
@@ -9,9 +7,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance { get; private set; }
     private UIDocument _uiDocument;
+    public static event EndTurn EndTurnEvent;
     [SerializeField] private UIScripts uiScripts;
-    
 
+    private VisualElement _infoBox;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -59,21 +58,33 @@ public class UIManager : MonoBehaviour
     
     private void InitUI()
     {
+        _infoBox = _uiDocument.rootVisualElement.Query("InfoBar").First();
+        InfoBoxDisable();
+        
+        
+        
         var uiElementList = _uiDocument.rootVisualElement.Query<VisualElement>().ToList();
         if (uiElementList.Count == 0) return;
-
-        DisableRayCastsOnHidden(uiElementList);
+        
         FindAllUIScripts();
     }
 
-    private static void DisableRayCastsOnHidden(List<VisualElement> listOfTargets)
+    public void InfoBoxEnable()
     {
-        foreach (var uiElement in listOfTargets)
-        {
-            uiElement.pickingMode = uiElement.style.display == DisplayStyle.None ? PickingMode.Ignore : PickingMode.Position;
-        }
+        Debug.Log("UI Manager InfoBoxEnable");
+        _infoBox.RemoveFromClassList("hidden");
+        _infoBox.AddToClassList("visible");
+
     }
     
+    public void InfoBoxDisable()
+    {
+        Debug.Log("UI Manager InfoBoxDisable");
+        
+        _infoBox.RemoveFromClassList("visible");
+        _infoBox.AddToClassList("hidden");
+     
+    }
     
     public void MageUI()
     {
@@ -82,18 +93,24 @@ public class UIManager : MonoBehaviour
 
 
 
-    public static void PlayerEndTurn()
+    public static void WhenPlayerEndTurn()
     {
         
     }
 
 
-    public static void PlayerStartTurn()
+    public static void WhenPlayerStartTurn()
     {
         
     }
-    
-    public void FindAllUIScripts()
+
+
+    public static void OnEndTurn()
+    {
+        EndTurnEvent?.Invoke();
+    }
+
+    private void FindAllUIScripts()
     {
         
 
@@ -108,6 +125,10 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
+  
 }
+
+public delegate void EndTurn();
 
     

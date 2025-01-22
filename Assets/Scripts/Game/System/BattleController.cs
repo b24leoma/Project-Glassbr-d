@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -86,6 +87,18 @@ namespace Game
             if (isTutorial) TutorialOnStart?.Invoke();
             deadHumans = new List<string>();
         }
+
+        private void OnEnable()
+        {
+            UIManager.EndTurnEvent += EndTurn;
+        }
+
+
+        private void OnDisable()
+        {
+            UIManager.EndTurnEvent -= EndTurn;
+        }
+        
 
         void CreateEntity(Vector2Int pos, Entity.EntityType type)
         {
@@ -463,6 +476,16 @@ namespace Game
                 HealthDisplayCalculator(currentHealth: entity.CurrentHealth, maxHealth: entity.MaxHealth, instant: instant);
                 
             }
+
+            if (showDisplay)
+            {
+                UIManager.instance.InfoBoxEnable();
+            }
+            else
+            {
+                UIManager.instance.InfoBoxDisable();
+            }
+            
         }
         
         
