@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -6,6 +7,8 @@ public abstract class UIInteractable : MonoBehaviour
     private UIDocument _uiDocument;
 
     protected virtual string targetClass => "";
+
+    protected List<VisualElement> TargetElementList;
 
     private void Awake()
     {
@@ -26,6 +29,7 @@ public abstract class UIInteractable : MonoBehaviour
     {
         var uiElementList = _uiDocument.rootVisualElement.Query<VisualElement>().Class(targetClass).ToList();
         if (uiElementList.Count == 0) return;
+        TargetElementList = uiElementList;
 
         foreach (var uiElement in uiElementList)
         {

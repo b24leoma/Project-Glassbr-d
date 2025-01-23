@@ -474,12 +474,12 @@ namespace Game
                 displayPortrait.sprite = entity.face;
                 
                 HealthDisplayCalculator(currentHealth: entity.CurrentHealth, maxHealth: entity.MaxHealth, instant: instant);
-                UIManager.instance.RunThis("CharPortrait.DoThis");
+                
             }
 
             if (showDisplay)
             {
-                UIManager.instance.RunThis("InfoBox.InfoBoxEnable");
+               UIManager.instance.RunThis("InfoBox.InfoBoxEnable");
             }
             else
             {

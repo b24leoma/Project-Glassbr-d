@@ -113,6 +113,22 @@ public class UIManager : MonoBehaviour
         Debug.Log($"Ran {scriptdotmethod}!");
         method.Invoke(component, null);
     }
+    
+    
+    public void RunThis(string scriptdotmethod, object[] parameters)
+    {
+        if (!_uiMethodDictionary.TryGetValue(scriptdotmethod, out var value)) return;
+        var (component, method) = value;
+
+        if (component == null || method == null)
+        {
+            Debug.LogError($"Script {scriptdotmethod} has not been found!");
+            return;
+        }
+
+        Debug.Log($"Ran {scriptdotmethod}!");
+        method.Invoke(component, parameters);
+    }
 
    
 
@@ -129,6 +145,8 @@ public class UIManager : MonoBehaviour
     {
         EndTurnEvent?.Invoke();
     }
+
+    
 }
 
 public delegate void EndTurn();

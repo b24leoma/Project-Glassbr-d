@@ -197,8 +197,13 @@ namespace Game
             {
                 battleController.UpdateCharacterDisplay(true, gridSystem.GetTile(hoveredTile).linkedEntity, true);
                 InfoDisplay.localPosition = new Vector3(-50, hoveredTile.y < -3 ? 435 : -435, 0);
+                HideUI(false);
             }
-            else  battleController.UpdateCharacterDisplay(false, null, true) ;
+            else
+            {
+                HideUI(false);
+                battleController.UpdateCharacterDisplay(false, null, true) ;
+            }
             
             if (gridSystem.GetTile(hoveredTile) == null) return;
             gridSystem.ResetUnusedHidingspotColor();
@@ -209,6 +214,7 @@ namespace Game
             
             if (actingEntity != null)
             {
+                HideUI(true);
                 if (actingEntity.hasAttacked)
                 {
                     hoveredEntity = null;
@@ -382,6 +388,8 @@ namespace Game
                     SetPathLinePos(0, hoveredTile);
                 }
             }
+            
+           
         }
 
         private Vector2Int[] GetFullPathLine()
@@ -450,5 +458,16 @@ namespace Game
                 selectHighlight.GetChild(0).gameObject.SetActive(false);
             }
         }
+
+
+
+        
+
+        private void HideUI(bool hide)
+        {
+            UIManager.instance.RunThis("HideUIArea.HideUI", new object[] { hide });
+        }
+        
+        
     }
 }

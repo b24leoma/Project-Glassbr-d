@@ -47,12 +47,31 @@
 
 .InfoBox.hidden {
     opacity: 0;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease;
+    transition-duration: 1s;
+    transition-delay: 1s;
 }
 
 .InfoBox.visible {
     opacity: 1;
     transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.TopMiddle {
+}
+
+.HideUIArea {
+}
+
+.HideUIArea.hidden {
+    opacity: 0.3;
+    transition-duration: 1s;
+    transition-delay: 1s;
+}
+
+.HideUIArea.visible {
+    transition-duration: 0.2s;
+    transition-delay: 0s;
 }

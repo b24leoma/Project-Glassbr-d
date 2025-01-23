@@ -4,30 +4,30 @@ using UnityEngine.UIElements;
 
 public class UIClassMethod : MonoBehaviour
 {
-    protected UIDocument UIDocument;
+    private UIDocument _uiDocument;
 
     protected virtual string targetClass => "";
     protected List<VisualElement> TargetElementList;
 
     protected virtual void Awake()
     {
-        if (UIDocument == null)
+        if (_uiDocument == null)
         {
-            UIDocument = GetComponent<UIDocument>();
+            _uiDocument = GetComponent<UIDocument>();
         }
     }
 
     public virtual void Start()
     {
-        if (UIDocument == null || string.IsNullOrEmpty(targetClass)) return;
+        if (_uiDocument == null || string.IsNullOrEmpty(targetClass)) return;
 
         InitUIEvents();
     }
 
     protected virtual void InitUIEvents()
     {
-        if (UIDocument == null) return;
-        var uiElementList = UIDocument.rootVisualElement.Query<VisualElement>().Class(targetClass).ToList();
+        if (_uiDocument == null) return;
+        var uiElementList = _uiDocument.rootVisualElement.Query<VisualElement>().Class(targetClass).ToList();
         if (uiElementList.Count == 0) return;
 
         TargetElementList = uiElementList;
