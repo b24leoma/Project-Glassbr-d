@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public abstract class UIVisualElement : MonoBehaviour
+public abstract class UIInteractable : MonoBehaviour
 {
     private UIDocument _uiDocument;
 
@@ -9,7 +9,7 @@ public abstract class UIVisualElement : MonoBehaviour
 
     private void Awake()
     {
-        if (_uiDocument == null )
+        if (_uiDocument == null)
         {
             _uiDocument = GetComponent<UIDocument>();
         }
@@ -43,10 +43,12 @@ public abstract class UIVisualElement : MonoBehaviour
     {
         Debug.Log($"Button clicked: {targetClass} : {button.name}");
     }
+
     protected virtual void OnEnter(VisualElement uiElement)
     {
         Debug.Log($"Hovering over {targetClass} : {uiElement.name}");
     }
+
     protected virtual void OnLeave(VisualElement uiElement)
     {
         Debug.Log($"Stopped hovering over {targetClass} : {uiElement.name}");

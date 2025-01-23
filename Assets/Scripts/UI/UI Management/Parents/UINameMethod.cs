@@ -6,7 +6,7 @@ public class UINameMethod : MonoBehaviour
     private UIDocument _uiDocument;
 
     protected virtual string targetName => "";
-    private VisualElement _targetElement;
+    protected VisualElement TargetElement;
 
 
     private void Awake()
@@ -33,18 +33,22 @@ public class UINameMethod : MonoBehaviour
             if (uiElement == null) return;
 
 
-            _targetElement = uiElement;
+            TargetElement = uiElement;
         }
     }
 
-    protected virtual void TargetNameDoThis1()
+    public virtual void DoThis()
     {
-        Debug.Log($"Ran void1 for "+ _targetElement);
+        Debug.Log($"Ran void for "+ TargetElement);
+    }
+    public virtual void DoThis1()
+    {
+        Debug.Log($"Ran void1 for "+ TargetElement);
     }
 
-    protected virtual void TargetNameDoThis2()
+    public virtual void DoThis2()
     {
-        Debug.Log($"Ran void2 for "+ _targetElement);
+        Debug.Log($"Ran void2 for "+ TargetElement);
     }
     
 }

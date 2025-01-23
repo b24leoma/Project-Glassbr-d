@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EndTurnButton : UIVisualElement
+public class EndTurnButton : UIInteractable
 {
     protected override string targetClass => "EndTurnButton";
     
