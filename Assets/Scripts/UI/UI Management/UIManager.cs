@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Game;
 using UnityEngine;
@@ -11,6 +14,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private UIScripts uiScripts;
 
     private VisualElement _infoBox;
+    private Dictionary<string, UINameMethod> _nameMethodDictionary;
+    private List <Component> _componentList;
+    private List <MethodInfo> _methodList;
+    private Dictionary<string, string> _componentMethodDictionary;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -69,6 +76,36 @@ public class UIManager : MonoBehaviour
         FindAllUIScripts();
     }
 
+
+    public void RunThis(string scriptName, string methodName)
+    {
+        var targetComponent = GetComponent(scriptName);
+        if (targetComponent== null)
+        {
+            Debug.Log($"{scriptName} not found!");
+            return;
+        }
+        _componentList.Add(targetComponent);
+        
+        var targetMethod = targetComponent.GetType().GetMethod(methodName);
+        if (targetMethod == null)
+        {
+            Debug.Log($"{methodName} not found!");
+            return;
+        }
+        _methodList.Add(targetMethod);
+        
+        
+        
+        targetMethod.Invoke(targetComponent, null);
+        
+        
+        
+        
+    }
+    
+    
+    
     public void InfoBoxEnable()
     {
         Debug.Log("UI Manager InfoBoxEnable");
@@ -112,18 +149,27 @@ public class UIManager : MonoBehaviour
 
     private void FindAllUIScripts()
     {
-        
+        var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
-       
-        var assembly = Assembly.GetAssembly(typeof(UIVisualElement)); 
-        var types = assembly.GetTypes(); 
-        foreach (var type in types)
+
+        foreach (var assembly in assemblies)
         {
-            if (type.IsSubclassOf(typeof(UIVisualElement)) && !type.IsAbstract)
+            var types = assembly.GetTypes().Where(type =>
+                type.IsSubclassOf(typeof(UIVisualElement)) || type.IsSubclassOf(typeof(UINameMethod)) && !type.IsAbstract);
+            
+            foreach (var type in types)
             {
-              gameObject.AddComponent(type);
+                {
+                    gameObject.AddComponent(type);
+                }
             }
         }
+
+
+
+
+
+
     }
 
   
