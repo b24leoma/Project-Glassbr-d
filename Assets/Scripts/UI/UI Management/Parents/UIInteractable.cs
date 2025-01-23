@@ -41,6 +41,12 @@ public abstract class UIInteractable : MonoBehaviour
             uiElement.RegisterCallback<PointerEnterEvent>(_ => OnEnter(uiElement));
             uiElement.RegisterCallback<PointerLeaveEvent>(_ => OnLeave(uiElement));
         }
+        DoThisAfterInit();
+    }
+
+    protected virtual void DoThisAfterInit()
+    {
+        
     }
 
     protected virtual void OnClick(Button button)

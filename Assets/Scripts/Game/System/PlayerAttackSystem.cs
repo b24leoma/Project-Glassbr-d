@@ -25,6 +25,8 @@ namespace Game
         private Color moveColor;
         private Color attackColor;
         private Color possibleAttackColor;
+        private bool isAbility;
+        private int abilityInt;
 
         void Start()
         {
@@ -34,8 +36,14 @@ namespace Game
             moveColor = new Color(0.6f, 0.6f, 1f);
             attackColor = new Color(1f, 0.6f, 0.6f);
             possibleAttackColor = new Color(0.6f, 0.2f, 1f);
+            UIManager.AbilityEvent += SetAbility;
         }
 
+        private void SetAbility(int abilityNumber)
+        {
+            isAbility = true;
+            abilityInt = abilityNumber;
+        }
         public void TileClicked(InputAction.CallbackContext context)
         {
             if (!isPlayerTurn || isPaused || isTutorialPaused) return;
@@ -53,10 +61,16 @@ namespace Game
         {
             if (isActing) // MOVE AND ATTACK MODE
             {
-                if (hoveredEntity == null && pathLine.positionCount > 0) //MOVES TO EMPTY TILE
+                if (hoveredEntity == null && isAbility)
+                {
+                    //Hello yes detta är inte så man gör det men jag är trött tack och hej leverpastej
+                    battleController.Ability(actingEntity, abilityInt, gridSystem.GetTile(hoveredTile));
+                }
+                else if (hoveredEntity == null && pathLine.positionCount > 0) //MOVES TO EMPTY TILE
                 {
                     MovesToEmptyTile();
                 }
+                
                 else if (hoveredEntity != null) //TILE HAS ENTITY
                 {
                     TileHasEntity();
@@ -120,7 +134,7 @@ namespace Game
 
         private void AttacksEnemy()
         {
-            bool withinRange = gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
+            var withinRange = gridSystem.GetGridDistance(GetPathLinePos(pathLine.positionCount - 1),
                 hoveredEntity.Position) <= actingEntity.AttackRange;
 
             if (actingEntity.hasAttacked || hoveredEntity.isHuman) return;

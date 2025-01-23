@@ -632,8 +632,16 @@ namespace Game
                     Destroy(arrow);
                 });
         }
-        
-        
+
+        public void Ability(Entity attacker, int abilityNumber, Tile targetTile)
+        {
+            Debug.Log(abilityNumber + "penis");
+        }
+
+        public void AOEAttack(Entity attacker, Tile targetTile)
+        {
+            
+        }
 
 
         

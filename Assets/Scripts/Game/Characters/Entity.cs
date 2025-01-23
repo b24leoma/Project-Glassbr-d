@@ -160,5 +160,13 @@ namespace Game
             }
         }
         
+        
+        
+        public void TryAbility(int abilityNumber)
+        {
+            var entityType = Type;
+            SpecialAbilities.CheckForAbility(entityType, abilityNumber);
+        }
+        
     }
 }

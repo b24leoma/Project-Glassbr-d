@@ -10,7 +10,7 @@ namespace Game
         private Color _hasAttackedColor;
         public bool isMoving;
         public bool isDefending;
-        
+
         // M_HumanLeopold
 
         void Awake()
@@ -21,21 +21,22 @@ namespace Game
 
             _hasAttackedColor = new Color(0.6f, 0.6f, 0.6f);
         }
+
         public override void SetAttacking(bool attacking)
         {
             hasAttacked = attacking;
             if (attacking)
             {
                 PlayAttack();
-                _sprite.DOColor(_hasAttackedColor,  0.2f).SetEase(Ease.InSine);      
-               
-              _lightFader.PauseTween();
-                
+                _sprite.DOColor(_hasAttackedColor, 0.2f).SetEase(Ease.InSine);
+
+                _lightFader.PauseTween();
+
             }
-            
+
             if (!attacking)
             {
-                _sprite.DOColor(Color.white,  0.2f).SetEase(Ease.InSine);
+                _sprite.DOColor(Color.white, 0.2f).SetEase(Ease.InSine);
 
                 if (_lightFader)
                 {
@@ -56,7 +57,7 @@ namespace Game
         public void NightLightToggle(bool toNight)
         {
             if (CurrentHealth <= 0) return;
-            switch (toNight )
+            switch (toNight)
             {
                 case true:
                     _lightFader.FadeInLight();
@@ -65,7 +66,7 @@ namespace Game
                     _lightFader.FadeOutLight();
                     break;
             }
-            
+
         }
 
 
@@ -73,5 +74,6 @@ namespace Game
         {
             DOTween.Kill(this);
         }
+
     }
 }

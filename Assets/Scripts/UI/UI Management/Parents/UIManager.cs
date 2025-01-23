@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance { get; private set; }
     private UIDocument _uiDocument;
     public static event EndTurn EndTurnEvent;
+    public static Action<int>  AbilityEvent;
     [SerializeField] private UIScripts uiScripts;
 
     private VisualElement _infoBox;
