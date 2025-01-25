@@ -46,10 +46,10 @@
 }
 
 .InfoBox.hidden {
-    opacity: 0;
+    opacity: 0.3;
     transition-timing-function: ease;
     transition-duration: 1s;
-    transition-delay: 1s;
+    transition-delay: 0s;
 }
 
 .InfoBox.visible {
@@ -67,8 +67,8 @@
 
 .HideUIArea.hidden {
     opacity: 0.3;
-    transition-duration: 1s;
-    transition-delay: 1s;
+    transition-duration: 6s;
+    transition-delay: 0s;
 }
 
 .HideUIArea.visible {
